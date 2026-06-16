@@ -18,7 +18,9 @@ Current standing (2026-06-16): v001_random μ=**603.6**; leaderboard top-1 ≈ 1
 4. Append a dated entry to the **Status Log** (bottom). Update checkboxes. Update `results/submissions.csv`.
 5. If you discover a fact worth keeping across sessions, write it to memory (see CLAUDE.md memory rules).
 
-**NEXT ACTION:** Start **Phase 0 / P0-1** (Docker linux/amd64 self-play harness). Nothing is built yet beyond v001.
+**NEXT ACTION:** P0-1 ✅ done. Critical path to the first cheap win: do **P0-5** (champion.txt + `gate.sh` +
+`promote.sh`, reusing `src/sim_harness.py`), then **Phase 1** (ship **v002_lucario**). P0-4 (replay tooling) can
+follow. P0-2/P0-3 (Kaggle timing + deps probe) require a Kaggle notebook run — schedule when convenient.
 
 ---
 
@@ -61,8 +63,10 @@ Current standing (2026-06-16): v001_random μ=**603.6**; leaderboard top-1 ≈ 1
 - **Q-TIME → ANSWERED.** `cabt.json`: `actTimeout=0`, `runTimeout=3000`, `episodeSteps=10000`,
   `observation.remainingOverageTime=600`. Effectively each agent has a **~600s time BANK for the WHOLE game**
   (not per move). Deep search is viable — just budget so the bank lasts all decisions in a long game.
-- **Q-LEGAL → ANSWERED.** `cabt.py`: deck must be **exactly 60** cards; the engine validates legality at
-  `battle_start` (returns `errorPlayer`). An invalid deck = INVALID status = loss.
+- **Q-LEGAL → ANSWERED** (verified in P0-1). Two rejection modes: (1) wrong length (≠60) → the Python wrapper
+  `battle_start` raises `ValueError` before the C lib; (2) illegal composition (e.g. no Basic Pokémon) → `battle_start`
+  returns `(None, start_data)` with `start_data.errorPlayer>=0` and `errorType` set (saw `errorType=3` = deck error).
+  An invalid deck = INVALID status = loss. Always validate decks before submitting; callers must check `obs_dict is None`.
 - **Q-RULES → ANSWERED** (thread 708586). Differences from official TCG are **minor and don't affect strategy**:
   (1) some unresolvable attacks are simply non-selectable; (2) Mega Zygarde ex "Nullifying Zero" coin order is
   auto left-to-right; (3) simultaneous-KO prize order differs but if both reach 0 prizes it's a **draw**.
@@ -74,6 +78,8 @@ Current standing (2026-06-16): v001_random μ=**603.6**; leaderboard top-1 ≈ 1
 ### Still open
 - **Q-DEPS:** Which libs import in the Kaggle submission runtime (`torch`/`lightgbm`/`onnxruntime`/`sklearn`)? → P0-3.
 - **Q-SEARCH:** Real cost of one `search_begin`→`search_step` cycle; depth/`K` feasible within the 600s bank. → P2.
+  (Data point from P0-1: a plain engine `select` is ~0.089 ms even under ARM emulation, so the bank is huge relative
+  to engine cost — search budget will be dominated by our own sampling/eval, not the engine.)
 
 ## META & reference assets (from forum 708617 + sample notebooks)
 
@@ -102,11 +108,14 @@ Current standing (2026-06-16): v001_random μ=**603.6**; leaderboard top-1 ≈ 1
 
 > Goal: a junior model can write an agent, validate it, and gate-test it WITHOUT guessing.
 
-- [ ] **P0-1 Docker self-play harness.** Create `docker/Dockerfile` (`--platform=linux/amd64`, py3.11, numpy/pandas)
-      that mounts the repo and can `import cg`. Add `scripts/sim.sh` that runs `src/sim_harness.py`.
-      Extend `src/simulate.py` → `src/sim_harness.py`: `tournament(agentA, agentB, deckA, deckB, n, seed)`
-      returning winrate + Wilson 95% CI + mean per-move time. Confirm `battle_start` rejects an illegal deck (Q-LEGAL).
-      **Done when:** `./scripts/sim.sh` runs random-vs-random for 20 games in Docker and prints winrate+CI+timing.
+- [x] **P0-1 Docker self-play harness.** ✅ DONE 2026-06-16. Created `docker/Dockerfile` (`--platform=linux/amd64`,
+      py3.11, numpy/pandas), `.dockerignore`, `scripts/sim.sh`, `src/sim_harness.py` (`tournament()` → winrate +
+      Wilson 95% CI + mean move time; `check_illegal_deck()`). Verified: `./scripts/sim.sh 20 42` ran in Docker →
+      random-vs-random 12–8, winrate 0.600 CI [0.387,0.781], **mean move time 0.089 ms** (engine is cheap even
+      emulated → search depth is bounded by OUR logic, not engine cost). Notes for future sessions:
+      if `docker info` fails on macOS, run `open -a Docker` and wait; `random_agent` returns `[]` on deck-selection
+      steps (caller already passed decks to `battle_start`); `battle_start` returns `(None, start_data)` on a bad
+      deck — callers MUST check `obs_dict is None`.
 - [ ] **P0-2 Timing/throughput probe on Kaggle.** Q-TIME already known (600s bank/game). Create
       `notebooks/selfplay.ipynb`: measure (a) games/min native, (b) wall-time per decision, (c) cost of one
       `search_begin`→`search_step` cycle and how many sims fit in the bank for a long game (→ Q-SEARCH).
@@ -232,6 +241,10 @@ Current standing (2026-06-16): v001_random μ=**603.6**; leaderboard top-1 ≈ 1
 
 ## Status Log (append-only; newest on top)
 
+- **2026-06-16 (d)** — P0-1 DONE (pilot via Sonnet subagent). Docker harness works: `src/sim_harness.py`
+  (`tournament` + Wilson CI + timing), `docker/Dockerfile`, `.dockerignore`, `scripts/sim.sh`. 20-game smoke:
+  0.600 winrate, 0.089 ms/move. Q-LEGAL verified (ValueError on bad length; null battlePtr + errorType=3 on illegal
+  composition). Pilot confirmed the planner is followable by a cheap model. NEXT: P0-5 gate scripts → P1 v002_lucario.
 - **2026-06-16 (c)** — Pulled top-1 player's replay (net-deck access via `team-submissions`→`episodes`→`replay` works;
   saved to `data/episodes/top_players/`). KEY: #1 `platypus2000jp` (μ=1030) plays a **tuned Abomasnow** (our archetype)
   → piloting/tuning > deck choice; don't discard Abomasnow. Recorded hackathon-input note. Files/memory audited complete.

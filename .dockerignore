@@ -1,0 +1,13 @@
+# Keep the build context small so image rebuilds are fast.
+.git
+.venv
+__pycache__
+**/__pycache__
+*.pyc
+.DS_Store
+data/episodes
+data/*.pdf
+data/*.zip
+results/*.tar.gz
+notebooks
+.ipynb_checkpoints
