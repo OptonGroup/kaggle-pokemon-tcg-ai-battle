@@ -2,6 +2,9 @@
 
 Kaggle simulation competition — build an AI agent that plays Pokemon Trading Card Game.
 
+> **Execution planner: see [PLAN.md](PLAN.md)** — the single source of truth for what to do next
+> (phases, acceptance criteria, submission gate, guardrails, status log). Read it before starting work.
+
 - Competition: https://www.kaggle.com/competitions/pokemon-tcg-ai-battle
 - Organizer: The Pokémon Company
 - Deadline: **August 16, 2026** (then ~2 weeks of additional games, final leaderboard ~Sep 1)
