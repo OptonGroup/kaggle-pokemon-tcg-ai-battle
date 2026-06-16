@@ -116,7 +116,7 @@ Record each submission in `results/submissions.csv`.
 
 ## Strategy Roadmap
 
-1. **v001** ✅ Random baseline (sample submission)
+1. **v001** ✅ Random baseline — score **600.0** (2026-06-16, starting μ)
 2. **v002** — Heuristic: always attack if possible, pick highest damage, retreat wisely
 3. **v003** — MCTS using `search_begin`/`search_step` engine API
 4. **v004** — MCTS + opponent hand/deck modeling
