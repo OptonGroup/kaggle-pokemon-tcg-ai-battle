@@ -28,6 +28,7 @@ Thumbs.db
 
 # Results / local experiments
 results/*.zip
+results/*.tar.gz
 *.log
 
 # IDE

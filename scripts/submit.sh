@@ -13,13 +13,18 @@ if [ ! -d "$SUBMIT_DIR" ]; then
   exit 1
 fi
 
-echo "Zipping $SUBMIT_DIR..."
-cd "$SUBMIT_DIR"
-zip -r "../../results/${VERSION}.zip" . -x "*.pyc" -x "__pycache__/*"
-cd - > /dev/null
+ARCHIVE="results/${VERSION}.tar.gz"
+echo "Packing $SUBMIT_DIR -> $ARCHIVE ..."
+mkdir -p results
+(cd "$SUBMIT_DIR" && tar -czvf "../../$ARCHIVE" \
+  --exclude="*.pyc" \
+  --exclude="__pycache__" \
+  --exclude=".DS_Store" \
+  .)
 
 echo "Submitting to Kaggle..."
-kaggle competitions submit -c "$COMP" -f "results/${VERSION}.zip" -m "$MESSAGE"
+.venv/bin/kaggle competitions submit -c "$COMP" -f "$ARCHIVE" -m "$MESSAGE"
 
-echo "Done. Check scores:"
-echo "  kaggle competitions submissions -c $COMP"
+echo ""
+echo "Done. Track your submission:"
+echo "  .venv/bin/kaggle competitions submissions -c $COMP"

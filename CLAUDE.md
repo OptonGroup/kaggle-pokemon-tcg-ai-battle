@@ -1,37 +1,58 @@
 # Pokemon TCG AI Battle
 
-Kaggle simulation competition: build an AI agent that plays Pokemon Trading Card Game.
-Competition: https://www.kaggle.com/competitions/pokemon-tcg-ai-battle
+Kaggle simulation competition — build an AI agent that plays Pokemon Trading Card Game.
+
+- Competition: https://www.kaggle.com/competitions/pokemon-tcg-ai-battle
+- Organizer: The Pokémon Company
+- Deadline: **August 16, 2026** (then ~2 weeks of additional games, final leaderboard ~Sep 1)
+- Prize: Knowledge tier (the $240K `pokemon-tcg-ai-battle-challenge-strategy` is a separate hackathon)
+- API docs: https://matsuoinstitute.github.io/cabt/
+- Rule differences from official TCG: https://www.kaggle.com/competitions/pokemon-tcg-ai-battle/discussion/708586
 
 ## Task
 
-Build an agent that beats opponents in Pokemon TCG matches. The game engine is a compiled C library (`libcg.so` / `cg.dll`) provided by the organizers.
+Build an agent that beats opponents in Pokemon TCG matches via the **cabt Engine** (C library wrapped in Python).
 
-**Agent interface** (`submissions/<version>/main.py`):
 ```python
 def agent(obs_dict: dict) -> list[int]:
-    # returns list of option indices (selections)
-    # on first call (obs.select is None) must return list of 60 card IDs (the deck)
+    # First call: obs.select is None → return list of 60 card IDs (the deck)
+    # All other calls: return list of chosen option indices
+    # Each index must be in range [0, len(obs.select.option))
+    # List length must be in [obs.select.minCount, obs.select.maxCount], no duplicates
 ```
 
-**Deck rules**: exactly 60 cards, standard Pokemon TCG deck-building rules.
+## Submission Rules
+
+- **Format**: `.tar.gz` created with `tar -czvf submission.tar.gz *` from inside the submission dir
+- `main.py` must be at the **top level** (not nested)
+- Must include `deck.csv` (60 card IDs, one per line)
+- Must include the `cg/` directory (game engine)
+- **5 submissions per day** max; only the **latest 2** are tracked for final evaluation
+- Each submission plays self-validation first, then joins matchmaking pool
+
+## Ranking System
+
+- Skill rating: Gaussian N(μ, σ²), initialized at μ₀=600
+- Win → μ increases, Loss → μ decreases, Draw → both μ move toward their mean
+- Only best-scoring submission shown on public leaderboard
+- Episode replays downloadable from Submissions tab
 
 ## Project Structure
 
 ```
-data/                       # Competition data files (large PDFs gitignored)
-  EN_Card_Data.csv          # English card database
+data/                       # Competition data (large PDFs gitignored)
+  EN_Card_Data.csv          # English card database (Card ID, Name, HP, Type, moves, etc.)
   JP_Card_Data.csv          # Japanese card database
-  sample_submission/        # Organizer's sample code + game engine
+  sample_submission/        # Organizer's sample code + game engine (reference only)
 
 src/
-  cg/                       # Game engine Python wrappers (copied from sample_submission)
+  cg/                       # Game engine Python wrappers
   cards.py                  # Card data loading utilities
-  simulate.py               # Self-play simulation harness
+  simulate.py               # Self-play simulation harness (Linux only)
   agents/
-    random_agent.py         # Baseline
+    random_agent.py         # Baseline random agent
 
-submissions/                # Versioned submission directories
+submissions/                # Versioned submission directories (what gets submitted)
   v001_random/              # v001: baseline random agent
     main.py
     deck.csv
@@ -42,26 +63,27 @@ scripts/
 
 results/
   submissions.csv           # Track submission history + scores
-  *.zip                     # Submission zips (gitignored)
+  *.tar.gz                  # Submission archives (gitignored)
 ```
 
 ## Key API
 
 ```python
-# Game engine (Linux only — use Kaggle or Docker for testing)
+# Game engine (Linux x86_64 only — use Kaggle notebook or Docker for testing)
 from cg.game import battle_start, battle_select, battle_finish
-from cg.api import to_observation_class, all_card_data, all_attack, search_begin, search_step, search_end
+from cg.api import to_observation_class, all_card_data, all_attack
+from cg.api import search_begin, search_step, search_end  # for MCTS
 
 # Card data
-all_card_data()   # -> list[CardData]
-all_attack()      # -> list[Attack]
+cards = all_card_data()   # -> list[CardData]  (id, name, hp, type, attacks, etc.)
+attacks = all_attack()    # -> list[Attack]
 
-# Self-play
+# Self-play (Linux only)
 obs_dict, start = battle_start(deck0, deck1)  # deck = list[60 card IDs]
 obs_dict = battle_select([option_index])
 battle_finish()
 
-# Tree search (MCTS support)
+# Tree search — built-in MCTS support via game engine
 state = search_begin(obs, your_deck, your_prize, opp_deck, opp_prize, opp_hand, opp_active)
 state = search_step(state.searchId, [option_index])
 search_end()
@@ -69,9 +91,9 @@ search_end()
 
 ## Platform Notes
 
-- **libcg.so is Linux x86_64 only** — won't load on macOS ARM. Test on Kaggle notebooks or in Docker (`--platform linux/amd64`).
-- Kaggle runs Python 3.10+. We use 3.11 locally via uv.
-- Submission = zip of `main.py` + `deck.csv` + `cg/` directory.
+- `libcg.so` is **Linux x86_64 only** — won't load on macOS ARM
+- For local simulation: use Kaggle notebook, or Docker `--platform linux/amd64`
+- We use Python 3.11 locally (via uv). Kaggle runs 3.10+.
 
 ## Workflow
 
@@ -79,22 +101,23 @@ search_end()
 # Setup
 uv sync
 
-# Submit a version
+# Submit a version (creates .tar.gz and uploads)
 ./scripts/submit.sh v002_heuristic "heuristic agent"
 
-# Check leaderboard
-kaggle competitions submissions -c pokemon-tcg-ai-battle
+# Check submissions
+.venv/bin/kaggle competitions submissions -c pokemon-tcg-ai-battle
 ```
 
 ## Versioning Convention
 
 `v{NNN}_{description}` — e.g. `v001_random`, `v002_heuristic`, `v003_mcts`
 
-Track scores in `results/submissions.csv`.
+Record each submission in `results/submissions.csv`.
 
-## Strategy Ideas
+## Strategy Roadmap
 
-1. **v001** (done): Random baseline
-2. **v002**: Rule-based heuristic (always attack if possible, prefer high damage)
-3. **v003**: MCTS using `search_begin/search_step` API
-4. **v004**: MCTS + opponent modeling
+1. **v001** ✅ Random baseline (sample submission)
+2. **v002** — Heuristic: always attack if possible, pick highest damage, retreat wisely
+3. **v003** — MCTS using `search_begin`/`search_step` engine API
+4. **v004** — MCTS + opponent hand/deck modeling
+5. **v005+** — RL / self-play training
