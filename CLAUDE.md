@@ -44,6 +44,9 @@ data/                       # Competition data (large PDFs gitignored)
   EN_Card_Data.csv          # English card database (Card ID, Name, HP, Type, moves, etc.)
   JP_Card_Data.csv          # Japanese card database
   sample_submission/        # Organizer's sample code + game engine (reference only)
+  episodes/                 # Episode replay JSONs (gitignored, download from Submissions tab)
+                            # Format: {episodeId}.json (full replay), {episodeId}-0/1.json (agent logs)
+                            # rewards: [-1,1] means player0 lost, player1 won
 
 src/
   cg/                       # Game engine Python wrappers

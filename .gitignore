@@ -18,6 +18,7 @@ build/
 # Data (large files)
 data/*.pdf
 data/*.zip
+data/episodes/
 
 # Kaggle API
 ~/.kaggle/kaggle.json
