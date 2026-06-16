@@ -18,9 +18,8 @@ Current standing (2026-06-16): v001_random μ=**603.6**; leaderboard top-1 ≈ 1
 4. Append a dated entry to the **Status Log** (bottom). Update checkboxes. Update `results/submissions.csv`.
 5. If you discover a fact worth keeping across sessions, write it to memory (see CLAUDE.md memory rules).
 
-**NEXT ACTION:** P0-1 ✅ done. Critical path to the first cheap win: do **P0-5** (champion.txt + `gate.sh` +
-`promote.sh`, reusing `src/sim_harness.py`), then **Phase 1** (ship **v002_lucario**). P0-4 (replay tooling) can
-follow. P0-2/P0-3 (Kaggle timing + deps probe) require a Kaggle notebook run — schedule when convenient.
+**NEXT ACTION:** P1-3: submit v002_lucario (awaiting human approval) → promote on ladder win.
+P0-4 (replay tooling) and P0-2/P0-3 (Kaggle timing + deps probe) can run in parallel while waiting.
 
 ---
 
@@ -128,10 +127,12 @@ follow. P0-2/P0-3 (Kaggle timing + deps probe) require a Kaggle notebook run —
       (b) each player's revealed deck/cards. Helper `scripts/fetch_episodes.sh` already exists — extend to also
       pull organizers' published top-rated episode exports when available.
       **Done when:** parsing existing episodes yields a tidy list of (obs, action) pairs + a per-player card multiset.
-- [ ] **P0-5 Champion bookkeeping + gate script.** `results/champion.txt` (init: `v001_random`).
-      `scripts/gate.sh <candidate_version>`: runs the gauntlet candidate-vs-champion, prints PASS/FAIL per Guardrails.
-      `scripts/promote.sh <version>`: updates `champion.txt` after a confirmed ladder win.
-      **Done when:** `./scripts/gate.sh` prints a correct PASS/FAIL verdict.
+- [x] **P0-5 Champion bookkeeping + gate script.** ✅ DONE 2026-06-16. `results/champion.txt` (init: `v001_random`).
+      `scripts/gate.sh <candidate_version> [n_games] [seed]`: Docker gate runner candidate-vs-champion.
+      `scripts/gate.sh v002_lucario 300 42` → PASS (292/300 wins, 97.3%, Wilson CI [0.9483, 0.9864]).
+      `scripts/promote.sh <version>`: updates `champion.txt` (refuses if submission dir missing).
+      `src/eval/gate_runner.py`: loads both agents via importlib with CWD trick for deck.csv.
+      **Done when:** `./scripts/gate.sh` prints a correct PASS/FAIL verdict. ✅
 
 ---
 
@@ -142,11 +143,12 @@ follow. P0-2/P0-3 (Kaggle timing + deps probe) require a Kaggle notebook run —
 > saved in `data/sample_agents/mega_lucario_ex/{main.py, deck.csv}`. This becomes the first real champion AND the
 > rollout/eval policy reused by search/self-play later.
 
-- [ ] **P1-1** Create `submissions/v002_lucario/`: copy `main.py` + `deck.csv` from `data/sample_agents/mega_lucario_ex/`,
-      copy `src/cg/` into `submissions/v002_lucario/cg/`. Wrap the agent body in a try/except → always-legal fallback
-      (see "Never throw" guardrail). Keep `src/agents/heuristic_agent.py` as a clean importable copy.
-- [ ] **P1-2** Validate in Docker (P0-1): runs without error vs random for ≥20 games; then gate vs champion
-      (v001_random) — expect a large winrate. Sanity-check no exceptions across many games.
+- [x] **P1-1** ✅ DONE 2026-06-16. Created `submissions/v002_lucario/` (main.py + deck.csv + cg/). Renamed original
+      `agent` to `_agent_impl`; added never-throw `agent()` wrapper. Clean importable copy at
+      `src/agents/heuristic_agent.py` (loads deck from co-located deck.csv via `__file__`, falls back to CWD/Kaggle path).
+- [x] **P1-2** ✅ DONE 2026-06-16. Deck legality: `battle_start` returned valid obs_dict (errorPlayer=-1) — Lucario deck is legal.
+      Smoke: 20 games, ZERO exceptions, v002 won 19/20 (95.0%). Full gate 300 games: 292W–8L–0D,
+      winrate=0.9733, Wilson CI=[0.9483, 0.9864] — **PASS all gate conditions**.
 - [ ] **P1-3** Submit via gate, `promote.sh` after ladder confirms. Update `results/submissions.csv` + CLAUDE.md roadmap.
       **Done when:** v002 is the champion and μ is meaningfully above 603.6.
 - [ ] **P1-4 (optional, parallel):** also pull the other 3 sample agents/decks (Dragapult ex = 2nd best 55.6%, Iono,
@@ -240,6 +242,13 @@ follow. P0-2/P0-3 (Kaggle timing + deps probe) require a Kaggle notebook run —
 ---
 
 ## Status Log (append-only; newest on top)
+
+- **2026-06-16 (e)** — P0-5 + P1-1 + P1-2 DONE (subagent run). Built: `results/champion.txt` (v001_random),
+  `src/eval/gate_runner.py` (importlib CWD trick, PASS/FAIL verdict), `scripts/gate.sh`, `scripts/promote.sh`,
+  `submissions/v002_lucario/` (main.py with never-throw wrapper + deck.csv + cg/), `src/agents/heuristic_agent.py`.
+  Deck legality: `battle_start(v002_deck, v001_deck)` → valid obs (errorPlayer=-1). Smoke 20 games: 19W–1L–0D, ZERO exceptions.
+  Full gate 300 games (seed=42): **292W–8L–0D, winrate=0.9733, Wilson CI=[0.9483, 0.9864] → GATE PASS**.
+  v002 NOT submitted (awaiting human approval). NEXT: P1-3 — submit v002_lucario → promote on ladder win.
 
 - **2026-06-16 (d)** — P0-1 DONE (pilot via Sonnet subagent). Docker harness works: `src/sim_harness.py`
   (`tournament` + Wilson CI + timing), `docker/Dockerfile`, `.dockerignore`, `scripts/sim.sh`. 20-game smoke:

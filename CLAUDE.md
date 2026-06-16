@@ -5,6 +5,15 @@ Kaggle simulation competition — build an AI agent that plays Pokemon Trading C
 > **Execution planner: see [PLAN.md](PLAN.md)** — the single source of truth for what to do next
 > (phases, acceptance criteria, submission gate, guardrails, status log). Read it before starting work.
 
+## ПРАВИЛА ПРОЕКТА (постоянные, NON-NEGOTIABLE)
+
+1. **Общение — на русском.** Всегда отвечать пользователю по-русски в этом проекте.
+2. **Загрузка на Kaggle — только с явного одобрения человека.** Никогда не запускать
+   `scripts/submit.sh` / `kaggle competitions submit` без прямого подтверждения пользователя
+   именно на сабмит ("залить"/"submit"/"да, грузи"). Слова вроде "continue"/"продолжай" — НЕ
+   являются одобрением на загрузку. Локальный гейт можно гонять свободно; сам аплоад необратим,
+   жжёт дневной лимит (5/сутки) и влияет на правило последних-2 — поэтому всегда ждать "ок".
+
 - Competition: https://www.kaggle.com/competitions/pokemon-tcg-ai-battle
 - Organizer: The Pokémon Company
 - Deadline: **August 16, 2026** (then ~2 weeks of additional games, final leaderboard ~Sep 1)
