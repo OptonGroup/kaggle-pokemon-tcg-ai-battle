@@ -1,3 +1,3 @@
 version,date,score,rank,notes
-v001_random,2026-06-16,600.0,,"baseline random agent from sample_submission"
-v002_lucario,2026-06-16,,,"Mega Lucario ex deck + reference heuristic pilot; gate vs v001 292-8 (97.3%, Wilson [0.948,0.986]); awaiting ladder"
+v001_random,2026-06-16,483.8,,"baseline random agent; sank from 600 over 4 public games (1W-3L: W vs porply; L vs Kazuyoshi SUZUKI, taichi-1, Jose Coronel)"
+v002_lucario,2026-06-16,600.0,,"Mega Lucario ex deck + reference heuristic pilot; gate vs v001 292-8 (97.3%, Wilson [0.948,0.986]); validation passed, 0 public games yet"

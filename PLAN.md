@@ -6,7 +6,9 @@
 
 Competition: https://www.kaggle.com/competitions/pokemon-tcg-ai-battle
 Sim deadline: **2026-08-16** → ~2 weeks extra games → final ~2026-09-01.
-Current standing (2026-06-16): v001_random μ=**603.6**; leaderboard top-1 ≈ 1030, top-20 ≈ 810.
+Current standing (2026-06-16): v001_random μ=**483.8** (sank from 600 over 4 public games, 1W-3L);
+v002_lucario submitted, validation passed, μ=600 fresh (0 public games yet). LB top-1 ≈ 1030, top-20 ≈ 810.
+NOTE: μ is LIVE — each submission keeps playing ranked games in the pool; always re-read via the CLI.
 
 ---
 
