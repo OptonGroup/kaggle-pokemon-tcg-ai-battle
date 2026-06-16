@@ -1,1 +1,1 @@
-v001_random
+v002_lucario
