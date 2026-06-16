@@ -1,0 +1,20 @@
+[project]
+name = "kaggle-pokemon-tcg-ai-battle"
+version = "0.1.0"
+description = "Pokemon TCG AI Battle - Kaggle competition"
+requires-python = ">=3.11"
+dependencies = [
+    "numpy>=1.26",
+    "pandas>=2.0",
+    "kaggle>=1.6",
+    "tqdm>=4.66",
+    "rich>=13.0",
+]
+
+[dependency-groups]
+dev = [
+    "ipykernel>=6.0",
+    "jupyter>=1.0",
+    "matplotlib>=3.8",
+    "seaborn>=0.13",
+]

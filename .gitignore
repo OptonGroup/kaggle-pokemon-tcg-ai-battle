@@ -1,0 +1,35 @@
+# Python
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+dist/
+build/
+.pytest_cache/
+
+# uv
+.python-version
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb~
+
+# Data (large files)
+data/*.pdf
+data/*.zip
+
+# Kaggle API
+~/.kaggle/kaggle.json
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Results / local experiments
+results/*.zip
+*.log
+
+# IDE
+.vscode/
+.idea/
