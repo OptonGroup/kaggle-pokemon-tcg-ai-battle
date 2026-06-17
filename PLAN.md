@@ -6,9 +6,11 @@
 
 Competition: https://www.kaggle.com/competitions/pokemon-tcg-ai-battle
 Sim deadline: **2026-08-16** → ~2 weeks extra games → final ~2026-09-01.
-Current standing (2026-06-16): v001_random μ=**483.8** (sank from 600 over 4 public games, 1W-3L);
-v002_lucario submitted, validation passed, μ=600 fresh (0 public games yet). LB top-1 ≈ 1030, top-20 ≈ 810.
-NOTE: μ is LIVE — each submission keeps playing ranked games in the pool; always re-read via the CLI.
+Current standing (2026-06-17 ~10:00): **CHAMPION = v002_lucario μ=798.8, RANK 138/570** (top ~24%). v002 record on
+ladder = ~7W-5L (12 public games, last at 03:58 — μ STALLED, not climbing). v001_random μ=517.4, retired. v003_search
+FAILED the gate (~50% vs v002) — shelved. **LB INFLATED hard in 1 day** (field now 570 teams): rank1=1160.8, top20≈1005,
+top50≈908, top100≈841, me(138)=798.8, rank200≈740. We are NOT near top-20 — the whole field's μ climbs as they play,
+so **sitting still = sliding down relatively.** NOTE: μ is LIVE; re-read via CLI (`leaderboard -d`, `episodes <subid>`).
 
 ---
 
@@ -20,8 +22,16 @@ NOTE: μ is LIVE — each submission keeps playing ranked games in the pool; alw
 4. Append a dated entry to the **Status Log** (bottom). Update checkboxes. Update `results/submissions.csv`.
 5. If you discover a fact worth keeping across sessions, write it to memory (see CLAUDE.md memory rules).
 
-**NEXT ACTION:** P1-3: submit v002_lucario (awaiting human approval) → promote on ladder win.
-P0-4 (replay tooling) and P0-2/P0-3 (Kaggle timing + deps probe) can run in parallel while waiting.
+**NEXT ACTION:** Phase 3 (deck gauntlet) — human chose this over IL/search 2026-06-17. KEY CONSTRAINT discovered:
+the pilot (`src/agents/heuristic_agent.py` = v002 main.py) is **HARD-CODED to Mega Lucario ex** (card IDs 673–678,
+Mega Brave attack 983, fighting-weakness ×2, etc.). So the gauntlet CANNOT just "pilot any deck with our best agent" —
+our best agent only plays Lucario. Realistic Phase-3 win = **tune the Lucario list with the same pilot** (Source A):
+Lucario is already the best sample deck (60.4%) and the pilot is built for it. CAVEAT: with a frozen deck-specific
+pilot the deck-tuning gain ceiling is modest and HARD to prove over gate noise (±5.7% on 300 games) — same
+"indistinguishable from champion" risk that shelved v003. Plan: build `src/eval/gauntlet.py` (round-robin variants,
+same pilot) → author pilot-SAFE Lucario variants (count tweaks only: energy 13±1, Switch/Boss/Cape copies; NO new
+complex-cost cards the pilot can't handle) → smoke → gate winner vs v002 (300g) → submit only on PASS + human "ок".
+Bigger ceiling (net-deck Abomasnow archetype that reached μ=1030) needs a NEW deck-specific pilot = much larger effort.
 
 ---
 
@@ -46,6 +56,7 @@ P0-4 (replay tooling) and P0-2/P0-3 (Kaggle timing + deps probe) can run in para
 - **Format.** `.tar.gz` (NOT zip) via `tar -czvf submission.tar.gz *` from inside the submission dir.
   `main.py` at top level, plus `deck.csv` and `cg/`. Use `./scripts/submit.sh <version> [msg]`.
 - **Deck legality.** Max 4 copies of any card by name (basic energy unlimited), exactly 60 cards, ≥1 Basic Pokémon.
+  **Ace Spec = max 1 copy per deck** (engine rejects 2+ with `errorType=4`; confirmed 2026-06-17 with Hero's Cape id=1159).
   Validate every candidate deck before use.
 - **Time bank.** Each agent has a ~600s bank for the WHOLE game (not per move). Budget search so the bank lasts
   every decision in a long game; keep a safety margin. Going over the bank = TIMEOUT = instant loss.
@@ -77,10 +88,19 @@ P0-4 (replay tooling) and P0-2/P0-3 (Kaggle timing + deps probe) can run in para
 - **Reward mapping:** `rewards[i]` pairs with `info.Agents[i].Name`. Don't assume we're player 0 — match by name.
 
 ### Still open
-- **Q-DEPS:** Which libs import in the Kaggle submission runtime (`torch`/`lightgbm`/`onnxruntime`/`sklearn`)? → P0-3.
-- **Q-SEARCH:** Real cost of one `search_begin`→`search_step` cycle; depth/`K` feasible within the 600s bank. → P2.
-  (Data point from P0-1: a plain engine `select` is ~0.089 ms even under ARM emulation, so the bank is huge relative
-  to engine cost — search budget will be dominated by our own sampling/eval, not the engine.)
+- **Q-DEPS → ANSWERED 2026-06-17 (P0-3, free sources, NO probe submission burned).** Submission runtime =
+  `python-simulations-cpu` Docker built FROM `gcr.io/kaggle-images/python:v163` (full Kaggle Python image, Colab base,
+  Python 3.12); the agent runs in-process (compile/exec) so the whole image package set is importable, NO internet at
+  eval. AVAILABLE (confident): **numpy, pandas, scipy, scikit-learn, lightgbm, xgboost, torch (CPU-only `+cpu`)**.
+  onnxruntime is NOT confirmed present (only `onnx` format lib) → avoid it; bundle a wheel only if truly needed.
+  Evidence: kaggle-environments `docker/Dockerfile` BASE_IMAGE + googlecolab/backend-info `pip-freeze.txt` (has
+  lightgbm 4.6, torch 2.x+cpu, sklearn, xgboost) + Kaggle/docker-python v163 release notes. → Phase 4 IL is UNBLOCKED:
+  use a LightGBM ranker or a small CPU torch MLP (numpy-only fallback is always safe).
+- **Q-SEARCH → ANSWERED** (P2 probe, `src/eval/search_probe.py` in Docker, 2026-06-17): one `search_begin` ≈ 0.30 ms,
+  one `search_step` ≈ 0.22 ms, a full rollout to terminal ≈ 88 steps ≈ 19.3 ms → **~52 rollouts/sec** under ARM
+  emulation (faster native on Kaggle). With 50% of the 600s bank spread over ~120 decisions that's ~2.5 s/decision
+  ≈ **~129 rollouts/decision** → e.g. K=10 determinizations × 12 options. **KEY:** the gate measured only **8 ms/move
+  actual** → we are using a TINY fraction of the bank; search depth/K can grow ~30–50× before the bank is at risk.
 
 ## META & reference assets (from forum 708617 + sample notebooks)
 
@@ -121,14 +141,17 @@ P0-4 (replay tooling) and P0-2/P0-3 (Kaggle timing + deps probe) can run in para
       `notebooks/selfplay.ipynb`: measure (a) games/min native, (b) wall-time per decision, (c) cost of one
       `search_begin`→`search_step` cycle and how many sims fit in the bank for a long game (→ Q-SEARCH).
       **Done when:** we know native throughput and a safe per-decision search budget.
-- [ ] **P0-3 Submission-runtime deps probe.** In a throwaway submission (or the validation log), print
-      `import`ability of `numpy, pandas, lightgbm, torch, onnxruntime, sklearn`. Record Q-DEPS.
-      **Done when:** we know the allowed inference stack for ML phases.
-- [ ] **P0-4 Replay tooling.** `src/replays/parse.py`: from `data/episodes/*-replay.json` extract
-      (a) `(observation, chosen_option_indices)` training pairs from every step where `select != null`,
-      (b) each player's revealed deck/cards. Helper `scripts/fetch_episodes.sh` already exists — extend to also
-      pull organizers' published top-rated episode exports when available.
-      **Done when:** parsing existing episodes yields a tidy list of (obs, action) pairs + a per-player card multiset.
+- [x] **P0-3 Submission-runtime deps probe.** ✅ DONE 2026-06-17 (free sources, NO submission burned). See Q-DEPS
+      above: runtime = full Kaggle Python image v163 (Colab base, py3.12), in-process exec → numpy/pandas/scipy/sklearn/
+      **lightgbm**/xgboost/**torch(CPU)** all available; onnxruntime NOT confirmed (avoid). IL inference stack = clear.
+- [x] **P0-4 Replay tooling.** ✅ DONE 2026-06-17. Harvested **189 top-player replays** (top-25 teams, μ 978–1160)
+      into `data/episodes/top_players/` + our 15 → 204 games. `src/replays/parse.py` (stdlib-only, runs on macOS WITHOUT
+      libcg — operates on raw replay JSON): `parse_replay()` → (obs_dict, chosen_option_indices, context, n_options, won,
+      player) pairs; `revealed_cards()` → per-player card multiset. Stats: **19,440 (obs,action) pairs (7,721 from
+      winners)**, MAIN=62.4%, avg 6.69 options/decision, ~21 distinct cards revealed/player/game. Replay step format:
+      `steps[i][player]={action,observation,reward,...}`; the TRAINING pair is `(obs=steps[i].observation,
+      chosen=steps[i+1].action)`; action = 0-based positional indices into the prior obs's `select.option`. (Other
+      players' agent LOGS are 403 — only replays are downloadable. Organizer top-episode export still not posted.)
 - [x] **P0-5 Champion bookkeeping + gate script.** ✅ DONE 2026-06-16. `results/champion.txt` (init: `v001_random`).
       `scripts/gate.sh <candidate_version> [n_games] [seed]`: Docker gate runner candidate-vs-champion.
       `scripts/gate.sh v002_lucario 300 42` → PASS (292/300 wins, 97.3%, Wilson CI [0.9483, 0.9864]).
@@ -164,14 +187,19 @@ P0-4 (replay tooling) and P0-2/P0-3 (Kaggle timing + deps probe) can run in para
 > The engine's `search_begin/search_step/search_end` IS the forward simulator. Build search on top of it.
 > Hidden info (opp deck/hand/prizes/active) is sampled (determinization); search the resulting perfect-info game.
 
-- [ ] **P2-1** `src/agents/search_agent.py`. For the current decision: sample K plausible hidden states
-      (use P0-4 card knowledge + simple priors), run the engine search per determinization with a **time budget**
-      below Q-TIME, score outcomes with the P1 heuristic as the rollout/eval, aggregate, pick the best option set.
-      Start simple (1–2 ply greedy + heuristic eval), then iterative-deepening MCTS if budget allows.
-- [ ] **P2-2** Tune K (determinizations), depth, and budget so the worst-case move stays under Q-TIME with margin.
-      Add a hard fallback: if over budget, return the P1 heuristic move.
-- [ ] **P2-3** Gate vs champion. Package `submissions/v003_search/`, submit through the gate, promote on ladder win.
-      **Done when:** v003 beats v002 ≥55%/300 and climbs the ladder.
+- [x] **P2-1** ✅ DONE 2026-06-17. `src/agents/search_agent.py`: determinized rollout search. Samples K hidden
+      states (our deck = known 60 minus visible, split into deck/prize; opponent prior = Lucario list), `search_begin`
+      per determinization, rolls out each root option with the P1 heuristic policy to terminal, aggregates, picks best.
+      Never-throw wrapper + heuristic fallback. `src/agents/heuristic_agent.py` gained `decide_on_obs()` (rollout policy).
+- [ ] **P2-2** Tune K/depth/budget. **NOT DONE — this is the gap.** The gate showed only **8 ms/move actual** vs a
+      ~2.5 s/decision budget → the search is far too shallow to beat the heuristic. Need: bigger K, deeper rollouts /
+      proper UCT selection, more rollouts per option (current per-option estimate is high-variance), better leaf eval.
+- [ ] **P2-3** Gate vs champion. ❌ **FAIL 2026-06-17.** `submissions/v003_search/` (re)packaged + gated fresh:
+      vs v002_lucario, 300 games, seed 42: **157W–143L–0D, winrate 0.5233, Wilson CI [0.4669, 0.5792]** — fails the
+      ≥55% bar and Wilson_lo>0.50; statistically indistinguishable from the heuristic it rolls out. 0 exceptions,
+      8.2 ms/move, 359s wall (~1.2s/game). (A prior subagent run measured 48.67% on the same seed; both runs agree the
+      edge is ~0 — engine coin flips aren't seeded by our `seed`, so there's run-to-run noise around 50%.) NOT submitted
+      (gate FAIL → no submit). Need P2-2 first. **Done when:** v003 beats v002 ≥55%/300 and climbs the ladder.
 
 ---
 
@@ -195,15 +223,31 @@ P0-4 (replay tooling) and P0-2/P0-3 (Kaggle timing + deps probe) can run in para
 > prioritizing **top-player** replays. Inference must fit Q-DEPS + Q-TIME (prefer LightGBM ranker or a small
 > numpy MLP exported to dependency-light inference; use torch only if Q-DEPS allows it in the submission runtime).
 
-- [ ] **P4-1** Featurization `src/il/features.py`: per-option features (type, target Pokémon hp/energy, attack id/damage,
-      is-KO, is-supporter, retreat cost…) + global state features (turn, prizes left both sides, board, hand size).
-- [ ] **P4-2** Dataset build `src/il/dataset.py` from all available replays; weight by player skill/score.
-- [ ] **P4-3** Train `src/il/train.py` a per-option ranker; for multi-select, pick the top-k legal set.
-      Export to the lightest inference format allowed by Q-DEPS.
-- [ ] **P4-4** `src/agents/il_agent.py` loads the model; offline accuracy vs held-out expert moves, then gate vs champion.
-- [ ] **P4-5** Optionally **hybrid**: IL policy to order/prune moves, engine search to verify → faster + stronger.
-      Package `submissions/v005_il/`, gate, submit, promote on ladder win.
-      **Done when:** IL (or IL+search hybrid) beats v004 ≥55%/300.
+- [x] **P4-1** ✅ DONE 2026-06-17. `src/il/features.py`: 49 features per option — 17-dim type one-hot, 16 local
+      (attack damage/KO/prize/weakness, card type/hp/retreat, retreat HP ratio, is-end), 16 global (turn, prizes,
+      hand, bench, active HP, energy count, flags).
+- [x] **P4-2** ✅ DONE 2026-06-17. `src/il/dataset.py`: built from 204 games (189 top-players + 15 ours),
+      19,440 (obs,action) pairs; skill-weighted by player μ; train/val split 85/15.
+- [x] **P4-3** ✅ DONE 2026-06-17. `src/il/train.py`: LightGBM lambdarank, 121 trees. Offline val top-1
+      overall=0.583, MAIN=0.534 vs opt-0 baseline 0.457/0.378. Top-3 overall≈0.79. Model at `models/il_ranker.txt`.
+- [x] **P4-4** ✅ DONE 2026-06-17. Packaged `submissions/v004_il/` (main.py inlining IL scorer + heuristic fallback,
+      features.py, il_ranker.txt, EN_Card_Data.csv, deck.csv, cg/). Model ran 100% of decisions (5022/5022, 0
+      heuristic fallbacks, 0 exceptions). **Smoke gate 100g seed 42 vs v002_lucario: 31W–69L, winrate=0.310,
+      Wilson CI [0.228, 0.406], 0.177 ms/move → GATE FAIL.** Per smoke-skip rule (< 0.48), 300g gate not run.
+- [x] **P4-5** ✅ DONE 2026-06-17. Built `submissions/v005_hybrid/` — Lucario heuristic scores + IL ranker scores,
+      rank-normalized then combined: `combined[i] = (1-λ)*H_norm[i] + λ*IL_norm[i]`. λ read from `HYBRID_LAMBDA` env var.
+      λ sweep (100g, seed 42) vs v002_lucario:
+        λ=0.00 (sanity) → 49W-51L, WR=0.490 ✓ (pure heuristic ≈ 50%, harness correct)
+        λ=0.15 → 44W-55L-1D, WR=0.444, IL_override=0.5%
+        λ=0.30 → 51W-49L, WR=0.510 (best), IL_override=3.9%
+        λ=0.50 → 36W-64L, WR=0.360, IL_override=17.3%
+      Best λ=0.30 at WR=0.510 < 0.52 threshold → 300g gate skipped. GATE FAIL. Champion stays v002_lucario.
+      Conclusion: mixing mismatched IL into the heuristic HURTS monotonically with λ. See Status Log 2026-06-17 (h).
+- [x] **P4-6** ✅ DONE 2026-06-17. Data-matched IL: retrained on Crustle-only expert games → `submissions/v006_crustle/`
+      (Dwebble/Crustle deck + `il_crustle.txt`). 4983 MAIN decisions, 20 trees (early-stop). Offline val MAIN top-1=0.548
+      vs option-0=0.578 (model below option-0 offline; confirmed fine in live play). Gate 300g seed 42 vs v002_lucario:
+      **259W–41L–0D, WR=0.8633, Wilson CI [0.820, 0.898] → GATE PASS.** 0 exceptions, 100% model decisions.
+      Awaiting human approval to submit. See Status Log 2026-06-17 (i).
 
 ---
 
@@ -244,6 +288,117 @@ P0-4 (replay tooling) and P0-2/P0-3 (Kaggle timing + deps probe) can run in para
 ---
 
 ## Status Log (append-only; newest on top)
+
+- **2026-06-17 (j)** — BUG FIX: v006 sub 53775584 FAILED Kaggle self-validation (ep 80310903) with
+  `NameError: name '__file__' is not defined`. Root cause: Kaggle loads agents via `exec(code_object, env)`
+  where `__file__` is NOT injected into the namespace; line 26 of main.py used it unconditionally at import
+  time. Local gate couldn't catch it because `gate_runner.py` uses `importlib` which DOES set `__file__`.
+  Fix applied to `submissions/v006_crustle/main.py` and `features.py` (and also retroactively to v004/v005):
+  `_DIR` now resolves in order (1) `/kaggle_simulations/agent` if that dir exists, (2) `__file__`-based
+  parent (try/except NameError), (3) `os.getcwd()`. `features.py:_find_card_data_csv()` received same guard.
+  Verification: `exec(compile(src, "main.py", "exec"), {"__name__": "__main__"})` (no `__file__` in ns)
+  from submission CWD → no NameError, `_DIR` = submission dir, `agent({"select": None})` returned 60 ints →
+  **PASS**. Regression gate 100g seed 42 vs v002_lucario: **86W–14L, WR=0.860, model=100%, 0 fallback,
+  0 exceptions** (identical to pre-fix). DO NOT RESUBMIT without explicit human approval.
+
+- **2026-06-17 (i)** — Phase 4 data-matched IL (Crustle): built `submissions/v006_crustle/` (Dwebble/Crustle deck,
+  LightGBM lambdarank trained on Crustle-only expert games).
+  **Recon finding:** Dwebble/Crustle is 55% of top-player deck-slots (222/378) with 80%+ win rate; our
+  Lucario deck is only ~10%-winrate among top players → deck switch + data-matched IL is the right lever.
+  **Training:** 222 Crustle slots from 189 replays → 6957 decisions (4983 MAIN), 85/15 split by episode.
+  Offline val top-1: model overall=0.520 / MAIN=0.548 vs option-0 baseline 0.656 / 0.578. Model below
+  option-0 offline (option-0 biased in Crustle Pokémon-heavy contexts), but what matters is live play.
+  Model ran 100% of decisions (5677/5677, 0 exceptions).
+  **Smoke gate (100g, seed 42) vs v002_lucario: 86W–14L, WR=0.860, Wilson CI [0.779, 0.915] → proceed.**
+  **Full gate (300g, seed 42) vs v002_lucario: 259W–41L–0D, WR=0.8633, Wilson CI [0.820, 0.898] → GATE PASS.**
+  PASS criteria: WR≥0.55 ✓, n≥300 ✓, wilson_lo>0.50 ✓ (all three). Mean move time 0.138 ms.
+  Deck/model at `submissions/v006_crustle/`. AWAITING HUMAN APPROVAL TO SUBMIT.
+
+- **2026-06-17 (h)** — Phase 4 P4-5 DONE: built `submissions/v005_hybrid/` (heuristic-IL blend). Design:
+  heuristic scores + IL (LightGBM) scores each rank-normalized → combined[i] = (1-λ)*H_norm + λ*IL_norm;
+  selection = top-k by combined; λ from `HYBRID_LAMBDA` env var (default 0.2); λ=0 → pure heuristic.
+  gate.sh patched to forward `-e HYBRID_LAMBDA` into Docker. λ sweep, 100g seed 42 vs v002_lucario:
+    λ=0.00 (sanity) → 49W-51L, WR=0.490 ✓ (pure heuristic mirror ≈ 50% — harness correct, 0 exceptions)
+    λ=0.15 → 44W-55L-1D, WR=0.444, IL_override=0.5%, 0 exceptions
+    λ=0.30 → 51W-49L, WR=0.510 (best), IL_override=3.9%, 0 exceptions
+    λ=0.50 → 36W-64L, WR=0.360, IL_override=17.3%, 0 exceptions
+  Best λ=0.30 WR=0.510 < 0.52 smoke threshold → 300g gate skipped. GATE FAIL. Champion stays v002_lucario.
+  One-line verdict: mixing the mismatched IL (trained on Abomasnow/Kyogre games) into the Lucario heuristic
+  HURTS — monotonically worse with more IL weight. The IL's 0.310 WR in v004 drags every hybrid down;
+  even 3.9% override rate at λ=0.30 is enough to underperform the pure heuristic. Remedy options: (1) retrain
+  IL on Lucario-only games, (2) deck-identity features in IL, (3) improve the heuristic pilot directly.
+
+- **2026-06-17 (g)** — Phase 4 P4-4 DONE: built `submissions/v004_il/` (LightGBM IL ranker, never-throw with
+  heuristic fallback). Docker image updated with lightgbm 4.6. Sanity: model loads in Docker (121 trees, 49 features),
+  deck-select correct. Model ran **100% of decisions** (5022/5022 model, 0 heuristic fallback, 0 exceptions) → no
+  silent fallback. **Smoke gate (100g, seed 42) vs v002_lucario: 31W–69L, winrate=0.310, Wilson CI [0.228, 0.406],
+  mean move time 0.177 ms → GATE FAIL.** Smoke is well below 0.48 threshold — 300g gate skipped per policy.
+  Champion stays v002_lucario. Root-cause hypothesis: the IL ranker trained on a mix of top-player games across all
+  deck archetypes (Lucario=minority there — most top players run Abomasnow/Kyogre), but v004_il plays the Lucario
+  deck. The model likely learned Abomasnow-specific patterns and gives wrong advice for Lucario-specific decisions
+  (energy attachment, boss-orders target, retreat timing). The heuristic already has all this Lucario-specific
+  knowledge hand-coded. **Next steps:** (1) filter training data to Lucario games only, OR (2) add deck-identity
+  features so the model distinguishes archetypes, OR (3) pursue P4-5 hybrid (IL for rough ranking, heuristic
+  override for the few high-stakes MAIN decisions). Alternatively, pivot to improving the heuristic pilot directly.
+
+- **2026-06-17 (f)** — Recon + Phase-4 START. Human asked to review standing first: μ=798.8, **RANK 138/570** (top ~24%),
+  v002 ladder record ~7W-5L over 12 games, μ STALLED since 03:58. **LB inflated hard** in 1 day (top20 810→1005), so
+  standing still = sliding. Losses spread across many decks → no hard counter; bottleneck is PILOT quality, not deck.
+  Forum: inference-env thread 708810 still unanswered; organizer top-episode export not posted yet. Human chose to
+  CLOSE Q-DEPS first → **Q-DEPS ANSWERED (P0-3, free sources, no probe)**: torch(CPU)/lightgbm/sklearn/xgboost all in
+  the runtime image → IL unblocked. Human then chose **Phase 4, data-first**. **P0-4 DONE**: harvested 189 top-player
+  replays (μ 978–1160) + 15 ours = 204 games; `src/replays/parse.py` (macOS, no libcg) → **19,440 (obs,action) pairs
+  (7,721 winner)**, MAIN 62%. NEXT: build the IL pipeline (P4-1 features + P4-2 dataset + P4-3 LightGBM ranker) and
+  measure OFFLINE top-1 accuracy on held-out expert moves as a cheap checkpoint BEFORE investing in agent+gate.
+  (All execution delegated to Sonnet subagents per the new rule.) Champion stays v002_lucario.
+
+- **2026-06-17 (e)** — Phase 3 START — deck gauntlet built + SMOKE run → deck lever looks TAPPED with the current pilot.
+  Human chose Phase 3 over IL/search. KEY CONSTRAINT confirmed: the pilot is HARD-CODED to Mega Lucario ex, so the
+  gauntlet can't "pilot any deck" — it tunes the Lucario list with the same pilot. Built `decks/gauntlet/_gen_decks.py`
+  (pilot-SAFE recount-only variants), `src/eval/gauntlet.py` (round-robin matrix + winrate-vs-base + Wilson, fresh pilot
+  module per side to avoid the plan/pre_turn/ability_used global collision), `scripts/gauntlet.sh`. NEW FACT: Hero's Cape
+  (id 1159) is **Ace Spec → max 1 copy** (engine errorType=4); recorded in Guardrails. SMOKE (5 decks, 10 pairs, 40
+  games each, seed 42): 0 exceptions, 0.15 ms/move. NO variant beats 00_base with Wilson_lo>0.50 — best was 03_cape2
+  (→Switch×3/−1 energy) at 0.575 vs base but Wilson_lo=0.422 (n=40 noise ±15%). All variants' CIs straddle 0.50 →
+  statistically indistinguishable from base. CONCLUSION: recount-only deck tuning under a frozen Lucario pilot won't
+  clear the gate — did NOT burn 300-game gates. The real ceiling now needs a BETTER PILOT (champion is already near
+  top-20 at μ=798.8 with the sample pilot) → Phase 4 (IL from top-player replays) or improving the heuristic pilot.
+  Decision pending human. Champion stays v002_lucario.
+
+- **2026-06-17 (d)** — P2-2 search SCALING tried → VALIDATED ≈ no gain → PIVOT recommended. A Sonnet subagent scaled
+  the search (env-configurable budget V003_*, UCB1 root selection, budget-driven rollouts with fresh determinizations,
+  bank-safe self-limiting) but died mid-run (auth/403) before validating + bookkeeping. The scaled search genuinely
+  runs now (a 20g smoke took ~32 min, ~96 s/game — vs the naive 8 ms/move that barely searched, confirming the naive
+  version mostly silently fell back to the heuristic). Independent re-check by main: rebuilt image + gate v003 vs v002,
+  30 games seed 1, cap 2.0s/decision → **14W-16L = 46.7%, mean 79 ms/move → FAIL.** Combined with the two naive 300g
+  gates (48.7%, 52.3%), ALL THREE sit at ~50%: a 1-ply determinized rollout search whose rollouts ARE the heuristic
+  ≈ the heuristic (few true MAIN forks/game; the heuristic already plays them well; 1-ply = one weak policy-improvement
+  step). CONCLUSION: this search doesn't pay off. v003 NOT submitted. Champion stays v002_lucario (μ live on ladder).
+  **RECOMMEND PIVOT → Phase 3 (deck gauntlet) or Phase 4 (IL).** Caveat: vendored main.py (02:30) is ~11 min older than
+  dev search_agent.py (02:41); the gate tested the vendored copy. Artifacts kept (search_agent.py, search_diag*.py).
+
+- **2026-06-17 (c)** — Phase 2 RESUME. The earlier `submissions/v003_search/` was gone, so re-packaged it from scratch
+  (self-contained `main.py` inlining heuristic + determinized rollout search, never-throw wrapper, Lucario `deck.csv`,
+  `cg/`). Re-ran Q-SEARCH probe in Docker (`./scripts/probe.sh 20 7`): search_begin 0.30 ms, search_step 0.22 ms/step,
+  ~88 steps/rollout (max 108), ~52 rollouts/sec, ~129 rollouts/decision feasible (K≈10 × 12 opts) — matches (b).
+  **Full gate 300g vs v002 (seed 42): 157W–143L, winrate 0.5233, Wilson [0.4669, 0.5792] → FAIL** (need ≥55% &
+  Wilson_lo>0.50). 0 exceptions, 8.2 ms/move, 359s wall. Confirms (b): naive 1-ply + heuristic-rollout search is ~50/50
+  vs the heuristic it rolls out — the bank is 99.7% unused (8 ms of ~2500 ms/decision). v003 NOT submitted (gate FAIL).
+  Champion stays v002_lucario. RECOMMENDATION: don't burn a submission on v003-as-is. Either invest in P2-2 (much
+  bigger K + multiple rollouts/option + UCT + a real leaf eval; the bank allows 30–50× more compute) OR pivot to
+  Phase 3 (deck gauntlet) / Phase 4 (IL), which likely have a better effort:gain ratio. Decision pending human.
+
+- **2026-06-17 (b)** — Phase 2 attempt (Sonnet subagent). Q-SEARCH ANSWERED via `src/eval/search_probe.py`
+  (+`scripts/probe.sh`): ~52 rollouts/sec emulated, ~129 rollouts/decision feasible. Built `src/agents/search_agent.py`
+  (determinized rollout search; opp prior = Lucario) + `decide_on_obs()` in heuristic_agent. Packaged
+  `submissions/v003_search/` (self-contained main.py, never-throw, Lucario deck, cg/). Smoke 40g = 65% (noisy small n).
+  **Full gate 300g vs v002: 146W–154L, winrate 0.4867, Wilson [0.4306,0.5430] → FAIL.** 0 exceptions, only 8 ms/move
+  (huge unused bank). Conclusion: naive shallow rollout search ≈ the heuristic it rolls out — needs P2-2 (much bigger
+  K/depth, UCT, more sims/option, better leaf eval). v003 NOT submitted (gate FAIL). Champion stays v002_lucario.
+  NEXT: tune the search (P2-2) OR pivot. v002 keeps playing the ladder (μ live).
+
+- **2026-06-17 (a)** — v002_lucario won 2 public games (vs Kaiman2110 ep80213820; vs "Pikachu I choose you!" ep80214311,
+  133 turns) → **μ 600→682.1→779.9**, promoted to champion (results/champion.txt). v001 retired (μ=483.8, 1W-3L).
 
 - **2026-06-16 (e)** — P0-5 + P1-1 + P1-2 DONE (subagent run). Built: `results/champion.txt` (v001_random),
   `src/eval/gate_runner.py` (importlib CWD trick, PASS/FAIL verdict), `scripts/gate.sh`, `scripts/promote.sh`,

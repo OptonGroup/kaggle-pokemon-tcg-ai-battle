@@ -19,6 +19,13 @@ build/
 data/*.pdf
 data/*.zip
 data/episodes/
+data/il/*.npz
+
+# Trained models (binary weights)
+models/
+
+# Submission engine copies (redundant — already in src/cg/)
+submissions/*/cg/
 
 # Kaggle API
 ~/.kaggle/kaggle.json

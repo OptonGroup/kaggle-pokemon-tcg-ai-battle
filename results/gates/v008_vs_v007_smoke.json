@@ -1,0 +1,16 @@
+{
+  "candidate": "v008_crustle",
+  "opponent": "v007_crustle",
+  "n_games": 100,
+  "seed": 0,
+  "wins_A": 37,
+  "wins_B": 57,
+  "draws": 6,
+  "winrate_A": 0.3936,
+  "wilson_lo": 0.3009,
+  "wilson_hi": 0.4947,
+  "verdict": "FAIL",
+  "exit_code": 1,
+  "timed_out": false,
+  "timestamp": "2026-06-17T19:09:53.730769Z"
+}

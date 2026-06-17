@@ -1,0 +1,9 @@
+{
+  "candidate": "v008_crustle",
+  "opponent": "v007_crustle",
+  "skipped": true,
+  "skip_reason": "Smoke gate winrate 0.3936 < 0.45 early-stop threshold; full gate not run",
+  "smoke_ref": "results/gates/v008_vs_v007_smoke.json",
+  "verdict": "FAIL",
+  "timestamp": "2026-06-17T19:10:00.000000Z"
+}

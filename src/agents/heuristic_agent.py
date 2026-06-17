@@ -148,8 +148,17 @@ def pokemon_score(pokemon: Pokemon) -> int:
 
 
 def _agent_impl(obs_dict: dict) -> list[int]:
-    """Core heuristic agent logic for the Mega Lucario ex deck."""
+    """Core heuristic agent logic for the Mega Lucario ex deck (dict entry-point)."""
     obs = to_observation_class(obs_dict)
+    return decide_on_obs(obs)
+
+
+def decide_on_obs(obs: Observation) -> list[int]:
+    """Heuristic decision on an already-parsed Observation dataclass.
+
+    Shared by _agent_impl (live obs_dict) and the search rollout/eval policy,
+    which operates on SearchState.observation (a dataclass with no source dict).
+    """
     if obs.select is None:
         return my_deck
 

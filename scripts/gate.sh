@@ -18,9 +18,10 @@ IMAGE_NAME="pokemon-tcg-sim"
 CANDIDATE="${1:-}"
 N_GAMES="${2:-50}"
 SEED="${3:-42}"
+OPPONENT="${4:-}"  # optional: override champion (e.g. v006_crustle for mirror gate)
 
 if [[ -z "$CANDIDATE" ]]; then
-    echo "Usage: $0 <candidate_version> [n_games] [seed]"
+    echo "Usage: $0 <candidate_version> [n_games] [seed] [opponent_version]"
     exit 1
 fi
 
@@ -43,8 +44,18 @@ docker build \
     "$REPO_ROOT"
 
 echo ""
-echo "=== Running gate: candidate=$CANDIDATE n_games=$N_GAMES seed=$SEED ==="
-docker run --rm \
-    --platform linux/amd64 \
-    "$IMAGE_NAME" \
-    python src/eval/gate_runner.py "$CANDIDATE" "$N_GAMES" "$SEED"
+echo "=== Running gate: candidate=$CANDIDATE n_games=$N_GAMES seed=$SEED${OPPONENT:+ opponent=$OPPONENT} ==="
+if [[ -n "$OPPONENT" ]]; then
+    # Mirror gate: pass explicit opponent version as second positional arg
+    docker run --rm \
+        --platform linux/amd64 \
+        ${HYBRID_LAMBDA:+-e HYBRID_LAMBDA="$HYBRID_LAMBDA"} \
+        "$IMAGE_NAME" \
+        python src/eval/gate_runner.py "$CANDIDATE" "$OPPONENT" "$N_GAMES" "$SEED"
+else
+    docker run --rm \
+        --platform linux/amd64 \
+        ${HYBRID_LAMBDA:+-e HYBRID_LAMBDA="$HYBRID_LAMBDA"} \
+        "$IMAGE_NAME" \
+        python src/eval/gate_runner.py "$CANDIDATE" "$N_GAMES" "$SEED"
+fi

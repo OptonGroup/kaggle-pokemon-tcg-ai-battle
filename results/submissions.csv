@@ -1,3 +1,6 @@
 version,date,score,rank,notes
 v001_random,2026-06-16,483.8,,"baseline random agent; sank from 600 over 4 public games (1W-3L: W vs porply; L vs Kazuyoshi SUZUKI, taichi-1, Jose Coronel)"
-v002_lucario,2026-06-17,682.1,,"Mega Lucario ex deck + reference heuristic pilot; gate vs v001 292-8 (97.3%); 1 public game: WIN vs Kaiman2110; PROMOTED to champion"
+v002_lucario,2026-06-17,779.9,,"Mega Lucario ex deck + reference heuristic pilot; gate vs v001 292-8 (97.3%); 2 public games: WIN vs Kaiman2110 (ep 80213820), WIN vs Pikachu I choose you! (ep 80214311, 133 turns); PROMOTED to champion"
+v006_crustle,2026-06-17,,,"Dwebble/Crustle deck + deck-matched IL ranker (il_crustle.txt + features.py); submission ID 53775584; FAILED self-validation (import crash: unguarded __file__ in exec() context)"
+v006_crustle_fix,2026-06-17,,,"v006_crustle re-upload with guarded __file__ (try/except NameError + Kaggle-dir-first); submission ID 53775919; PENDING after 2.5 min (no early ERROR — fix likely working)"
+v007_crustle,2026-06-17,831.3,,"Crustle pilot v2; mirror-gate vs v006 0.651 (+15pp, Wilson_LB 0.594); +data 395 replays, +12 features (FEATURE_DIM 61), 300-tree C6 model; validation=COMPLETE; submission ID 53783594"

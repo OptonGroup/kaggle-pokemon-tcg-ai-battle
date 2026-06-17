@@ -10,7 +10,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     && rm -rf /var/lib/apt/lists/*
 
 # Python deps
-RUN pip install --no-cache-dir numpy pandas
+RUN pip install --no-cache-dir numpy pandas lightgbm
 
 # Copy the repo (src/ contains cg/ with libcg.so, agents/, etc.)
 COPY . /workspace/

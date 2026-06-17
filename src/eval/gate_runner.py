@@ -33,12 +33,14 @@ from sim_harness import tournament
 # Helpers
 # ---------------------------------------------------------------------------
 
-def _load_agent(submission_dir: str, module_name: str):
+def _load_agent(submission_dir: str, module_name: str, return_module: bool = False):
     """Import main.py from a submission directory as a uniquely-named module.
 
     Before importing, os.chdir() into the submission directory so any
     module-level code that reads 'deck.csv' from CWD finds the right file.
     CWD is restored afterwards.
+
+    If return_module=True, returns (agent_fn, module); else returns agent_fn.
     """
     main_path = os.path.join(submission_dir, "main.py")
     if not os.path.exists(main_path):
@@ -55,6 +57,8 @@ def _load_agent(submission_dir: str, module_name: str):
 
     if not hasattr(mod, "agent"):
         raise AttributeError(f"No 'agent' function found in {main_path}")
+    if return_module:
+        return mod.agent, mod
     return mod.agent
 
 
@@ -152,7 +156,7 @@ def main():
 
     # Load agents with unique module names and CWD trick for deck.csv
     print(f"Loading candidate agent from {cand_dir}/main.py ...")
-    candidate_agent = _load_agent(cand_dir, "cand_main")
+    candidate_agent, cand_mod = _load_agent(cand_dir, "cand_main", return_module=True)
     print(f"Loading champion agent from {champ_dir}/main.py ...")
     champion_agent = _load_agent(champ_dir, "champ_main")
     print()
@@ -184,6 +188,29 @@ def main():
     print(f"  Winrate (excl. draws): {winrate_A:.4f}")
     print(f"  Wilson 95% CI        : [{lo:.4f}, {hi:.4f}]")
     print(f"  Mean move time       : {mean_time_ms:.3f} ms")
+
+    # Instrumentation counters (present in IL agent and hybrid agent)
+    n_model = getattr(cand_mod, "_n_model_decisions", None)
+    n_heur = getattr(cand_mod, "_n_heuristic_fallback", None)
+    n_trivial = getattr(cand_mod, "_n_trivial_fallback", None)
+    # v005_hybrid: _n_heuristic_fallback = IL_override count (not a true fallback)
+    lam = getattr(cand_mod, "_LAMBDA", None)
+    if n_model is not None:
+        total_dec = (n_model or 0) + (n_trivial or 0)
+        pct_model = 100.0 * (n_model or 0) / total_dec if total_dec > 0 else 0.0
+        il_override = n_heur or 0
+        pct_override = 100.0 * il_override / (n_model or 1) if n_model else 0.0
+        print()
+        print("=== Candidate Decision Breakdown ===")
+        if lam is not None:
+            print(f"  HYBRID_LAMBDA      : {lam}")
+        print(f"  Model decisions    : {n_model}  ({pct_model:.1f}%)")
+        if lam is not None:
+            print(f"  IL overrode top-1  : {il_override}  ({pct_override:.1f}% of model decisions)")
+        else:
+            print(f"  Heuristic fallback : {n_heur}  ({100.0*(n_heur or 0)/total_dec if total_dec else 0:.1f}%)")
+        print(f"  Exception fallback : {n_trivial}  ({100.0*(n_trivial or 0)/total_dec if total_dec else 0:.1f}%)")
+        print(f"  Total decisions    : {total_dec}")
     print()
 
     # Gate thresholds (from PLAN.md Guardrails)
