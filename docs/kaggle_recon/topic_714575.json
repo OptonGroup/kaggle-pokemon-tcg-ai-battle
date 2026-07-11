@@ -1,0 +1,30 @@
+{
+  "topic_id": 714575,
+  "title": "Error in EN_Card_Data.csv",
+  "topic_metadata": {
+    "commentCount": 1,
+    "votes": 1,
+    "postDate": "2026-06-26 15:07:10.577000",
+    "authorName": null
+  },
+  "messages": [
+    {
+      "id": "3481906",
+      "authorName": null,
+      "postDate": "2026-06-26 15:07:10.577000",
+      "votes": 1,
+      "content_html": "<p>It looks like the Collection No. values for Telepatic Psychic Energy and Rock Fighting Energy are reversed. This is what is currently shown in the file:</p>\n<p>19    Telepath Psychic Energy POR 87</p>\n<p>20    Rock Fighting Energy    POR 88</p>\n<p>This was fixed in Card_ID List_EN.pdf</p>\n<p>19 Telepath Psychic Energy POR 88 View Image</p>\n<p>20 Rock Fighting Energy POR 87 View Image</p>\n<p>The id numbers are consistent, but this will affect competitors looking to import their own decks using the Expansion and Collection No. </p>",
+      "content_text": "It looks like the Collection No. values for Telepatic Psychic Energy and Rock Fighting Energy are reversed. This is what is currently shown in the file:\n\n19    Telepath Psychic Energy POR 87\n20    Rock Fighting Energy    POR 88\n\nThis was fixed in Card_ID List_EN.pdf:\n\n19 Telepath Psychic Energy POR 88\n20 Rock Fighting Energy POR 87\n\nThe id numbers are consistent, but this will affect competitors looking to import their own decks using the Expansion and Collection No."
+    },
+    {
+      "id": "3486898",
+      "authorName": null,
+      "postDate": "2026-07-03 06:23:42.823000",
+      "votes": 0,
+      "content_html": "<p>The names are also slightly wrong. Telepath(ic) Psychic Energy\" and \"Rock(y) Fighting Energy\" would match the printed card. </p>",
+      "content_text": "The names are also slightly wrong. Telepath(ic) Psychic Energy and Rock(y) Fighting Energy would match the printed card."
+    }
+  ],
+  "source": "kaggle CLI: competitions topic-messages pokemon-tcg-ai-battle 714575 -v --quiet (CSV)",
+  "fetch_date": "2026-07-11"
+}

@@ -1,0 +1,131 @@
+{
+  "topic_id": 708929,
+  "topic_title": "Game engine source code?",
+  "topic_url": "https://www.kaggle.com/competitions/pokemon-tcg-ai-battle/discussion/708929",
+  "fetched_via": "kaggle CLI: competitions topic-messages pokemon-tcg-ai-battle 708929 -v --quiet -n -1",
+  "note": "authorName column was empty in CLI output for ALL posts (Kaggle API limitation) — author usernames are not exposed by this endpoint. WebFetch could not retrieve JS-rendered Kaggle page content either. Content/dates/votes/post-ids below are from the CLI dump.",
+  "post_count": 14,
+  "date_range": "2026-06-17 to 2026-06-19",
+  "messages": [
+    {
+      "id": "3473897",
+      "authorName": null,
+      "postDate": "2026-06-17 07:39:43.823000",
+      "votes": 29,
+      "content": "For serius RL work, we usually need to build the game engine e.g. in torch/jax. Usually we have full source code e.g. for orbit-wars, lux etc. My agent insist that for this competition we don't have source code, only wrapper around binary that is private. Is he right? Do we have any solution besides reverse-engineering the binary? Can the organizers please give as the source code if it really isn't available?",
+      "role": "OP / question"
+    },
+    {
+      "id": "3473925",
+      "authorName": null,
+      "postDate": "2026-06-17 08:33:53.367000",
+      "votes": 0,
+      "content": "In the tab Data, you can click Download All at the bottom. In sample submission you can find the files in cg.",
+      "role": "reply — points to sample_submission/cg"
+    },
+    {
+      "id": "3473938",
+      "authorName": null,
+      "postDate": "2026-06-17 08:47:24.300000",
+      "votes": 7,
+      "content": "Well yes…and what there is incide? Two binaries (cg.dll, libcg.so) and no source code so how can we port it to e.g. torch for rl?",
+      "role": "reply — clarifies only binaries, no source"
+    },
+    {
+      "id": "3474063",
+      "authorName": null,
+      "postDate": "2026-06-17 11:58:16.713000",
+      "votes": 0,
+      "content": "I'm thinking of writing a c++ and python wrapper for parallel execution",
+      "role": "reply — parallel wrapper idea"
+    },
+    {
+      "id": "3474078",
+      "authorName": null,
+      "postDate": "2026-06-17 12:28:24.570000",
+      "votes": 0,
+      "content": "How will it hold against full jax implemention? 🤔",
+      "role": "reply — questions c++ vs jax/gpu"
+    },
+    {
+      "id": "3474089",
+      "authorName": null,
+      "postDate": "2026-06-17 12:50:57.987000",
+      "votes": 0,
+      "content": "I don't think it's going to be that slow, especially when it's already written in a fast language like c++/rust.",
+      "role": "reply — binary is already c++/rust, speed OK"
+    },
+    {
+      "id": "3474111",
+      "authorName": null,
+      "postDate": "2026-06-17 13:38:12.937000",
+      "votes": 0,
+      "content": "It is still bound to CPU tho. Can't compare to full jax loop that run natively on gpu/tpu (is it possible? IDK. But if it is)",
+      "role": "reply — CPU-bound, GPU advantage uncertain"
+    },
+    {
+      "id": "3474165",
+      "authorName": null,
+      "postDate": "2026-06-17 15:11:48.300000",
+      "votes": -2,
+      "content": "There is the source code in it, the python skripts in the same folder",
+      "role": "reply — mistakenly calls python wrappers 'source code'"
+    },
+    {
+      "id": "3474191",
+      "authorName": null,
+      "postDate": "2026-06-17 16:14:40.763000",
+      "votes": 2,
+      "content": "They are wrapper for the binary, not source code of the binary itself which is at the core.",
+      "role": "reply — corrects: python wrappers ≠ core binary source"
+    },
+    {
+      "id": "3474505",
+      "authorName": null,
+      "postDate": "2026-06-18 05:00:41.490000",
+      "votes": 0,
+      "content": "",
+      "role": "reply — empty content"
+    },
+    {
+      "id": "3474608",
+      "authorName": null,
+      "postDate": "2026-06-18 10:29:28.853000",
+      "votes": 1,
+      "content": "Still no replay from host. Ok. Just a reminder that if reverse engineering the game engine can provide big advantage (e.g. much faster development/research with GPU port), this competition can and most definitely will devolve to reverse-engineering competition. Good luck to all and happy kaggling…",
+      "role": "reply — warns of RE race, no host reply"
+    },
+    {
+      "id": "3474702",
+      "authorName": null,
+      "postDate": "2026-06-18 14:49:26.187000",
+      "votes": 2,
+      "content": "@bovard Can we please get and update on this? I am not sure whether i should invest time building a game engine. I don't mind building a game engine but would rather not if possible.",
+      "role": "reply — pings @bovard (Kaggle comp host) for update"
+    },
+    {
+      "id": "3474836",
+      "authorName": null,
+      "postDate": "2026-06-18 20:47:10.377000",
+      "votes": 0,
+      "content": "No reply from the host, although they have replied in other threads. Seems like they do not plan to address this topic. I have been trying to reverse engineer the engine to create an arm64 version — not a simple task.",
+      "role": "reply — host silent on this topic; attempting RE for arm64"
+    },
+    {
+      "id": "3474862",
+      "authorName": null,
+      "postDate": "2026-06-18 23:10:37.080000",
+      "votes": 0,
+      "content": "I'm on it too. With Claude code it might be possible. It currently work lets see~ if I have something good I will share with the community. I just love exposing data that should be public and host abstain from giving 🤣",
+      "role": "reply — using Claude Code for RE, will share if good"
+    },
+    {
+      "id": "3474913",
+      "authorName": null,
+      "postDate": "2026-06-19 03:20:36.057000",
+      "votes": 5,
+      "content": "Maybe the community can create a c++ game engine together on github. Similar to what we did for the Jigsaw competition.",
+      "role": "reply — proposes community open-source c++ engine"
+    }
+  ]
+}

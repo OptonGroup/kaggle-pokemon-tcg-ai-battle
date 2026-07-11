@@ -1,0 +1,292 @@
+{
+  "topic_id": "709160",
+  "title": "Daily Top Episodes Datasets",
+  "source_cli": "kaggle competitions topic-messages pokemon-tcg-ai-battle 709160 -v --quiet -n -1",
+  "note_authorName": "authorName is blank in Kaggle CLI output (known CLI limitation); the topic author is @bovard (referenced in reply). Message 3477742 has empty content (likely deleted/blank).",
+  "messages": [
+    {
+      "id": "3474299",
+      "authorName": "(not exposed by CLI)",
+      "postDate": "2026-06-17 19:00:15.950000",
+      "votes": "60",
+      "content_html": "<p>For this competition we'll be creating a dataset of the top episodes each day. This should help in reviewing replays as well as training agents. Each new dataset will be added to the index here: <a href=\"https://www.kaggle.com/datasets/kaggle/pokemon-tcg-ai-battle-episodes-index\" target=\"_blank\">https://www.kaggle.com/datasets/kaggle/pokemon-tcg-ai-battle-episodes-index</a></p>",
+      "content_text": "For this competition we'll be creating a dataset of the top episodes each day. This should help in reviewing replays as well as training agents. Each new dataset will be added to the index here: https://www.kaggle.com/datasets/kaggle/pokemon-tcg-ai-battle-episodes-index"
+    },
+    {
+      "id": "3481016",
+      "authorName": "(not exposed by CLI)",
+      "postDate": "2026-06-25 14:12:20.977000",
+      "votes": "4",
+      "content_html": "<p><a href=\"https://www.kaggle.com/bovard\" target=\"_blank\">@bovard</a> \nThank you, this is really helpful!</p>\n<p>Could you add each team's score (rating) to the dataset? Right now the replay JSON only has the team names and the win/loss result (+1/-1) — there's no rating in it.</p>\n<p>For each episode, it would be great to have, for both teams:</p>\n<p>the rating before or after the episode</p>",
+      "content_text": "@bovard \nThank you, this is really helpful!\nCould you add each team's score (rating) to the dataset? Right now the replay JSON only has the team names and the win/loss result (+1/-1) — there's no rating in it.\nFor each episode, it would be great to have, for both teams:\nthe rating before or after the episode"
+    },
+    {
+      "id": "3482719",
+      "authorName": "(not exposed by CLI)",
+      "postDate": "2026-06-27 17:49:53.150000",
+      "votes": "0",
+      "content_html": "<p>Adding to this, I would want to have each agent's <code>agent_id</code> in the json file.</p>",
+      "content_text": "Adding to this, I would want to have each agent's agent_id in the json file."
+    },
+    {
+      "id": "3476832",
+      "authorName": "(not exposed by CLI)",
+      "postDate": "2026-06-21 02:54:36.917000",
+      "votes": "2",
+      "content_html": "<p>Thank you for all the valuable data!  If it is at all possible to share, what criteria is being used for which episodes get included in each day's index?</p>",
+      "content_text": "Thank you for all the valuable data!  If it is at all possible to share, what criteria is being used for which episodes get included in each day's index?"
+    },
+    {
+      "id": "3479295",
+      "authorName": "(not exposed by CLI)",
+      "postDate": "2026-06-23 16:14:57.993000",
+      "votes": "0",
+      "content_html": "<p>We rate the episodes by highest average participant rating. This will bias the dataset towards the episodes from the top competitors. </p>",
+      "content_text": "We rate the episodes by highest average participant rating. This will bias the dataset towards the episodes from the top competitors."
+    },
+    {
+      "id": "3477742",
+      "authorName": "(not exposed by CLI)",
+      "postDate": "2026-06-22 01:25:15.450000",
+      "votes": "0",
+      "content_html": "",
+      "content_text": ""
+    }
+  ],
+  "index_dataset": {
+    "slug": "kaggle/pokemon-tcg-ai-battle-episodes-index",
+    "url": "https://www.kaggle.com/datasets/kaggle/pokemon-tcg-ai-battle-episodes-index",
+    "manifest_file": "manifest.csv",
+    "license": "CC0-1.0",
+    "last_updated": "2026-07-11 00:08:22.420000",
+    "daily_datasets": [
+      {
+        "date": "2026-06-16",
+        "daily_dataset_slug": "pokemon-tcg-ai-battle-episodes-2026-06-16",
+        "daily_dataset_url": "https://www.kaggle.com/datasets/kaggle/pokemon-tcg-ai-battle-episodes-2026-06-16",
+        "episode_count": 1277,
+        "total_bytes": 2854565943,
+        "top_avg_score": 1024.643707,
+        "median_avg_score": 627.771126
+      },
+      {
+        "date": "2026-06-17",
+        "daily_dataset_slug": "pokemon-tcg-ai-battle-episodes-2026-06-17",
+        "daily_dataset_url": "https://www.kaggle.com/datasets/kaggle/pokemon-tcg-ai-battle-episodes-2026-06-17",
+        "episode_count": 7819,
+        "total_bytes": 21474554811,
+        "top_avg_score": 1259.804498,
+        "median_avg_score": 761.005766
+      },
+      {
+        "date": "2026-06-18",
+        "daily_dataset_slug": "pokemon-tcg-ai-battle-episodes-2026-06-18",
+        "daily_dataset_url": "https://www.kaggle.com/datasets/kaggle/pokemon-tcg-ai-battle-episodes-2026-06-18",
+        "episode_count": 6532,
+        "total_bytes": 21474554331,
+        "top_avg_score": 1327.123541,
+        "median_avg_score": 926.601386
+      },
+      {
+        "date": "2026-06-19",
+        "daily_dataset_slug": "pokemon-tcg-ai-battle-episodes-2026-06-19",
+        "daily_dataset_url": "https://www.kaggle.com/datasets/kaggle/pokemon-tcg-ai-battle-episodes-2026-06-19",
+        "episode_count": 5426,
+        "total_bytes": 21472784639,
+        "top_avg_score": 1324.930326,
+        "median_avg_score": 1013.694841
+      },
+      {
+        "date": "2026-06-20",
+        "daily_dataset_slug": "pokemon-tcg-ai-battle-episodes-2026-06-20",
+        "daily_dataset_url": "https://www.kaggle.com/datasets/kaggle/pokemon-tcg-ai-battle-episodes-2026-06-20",
+        "episode_count": 5178,
+        "total_bytes": 21474153388,
+        "top_avg_score": 1311.233883,
+        "median_avg_score": 1063.76085
+      },
+      {
+        "date": "2026-06-21",
+        "daily_dataset_slug": "pokemon-tcg-ai-battle-episodes-2026-06-21",
+        "daily_dataset_url": "https://www.kaggle.com/datasets/kaggle/pokemon-tcg-ai-battle-episodes-2026-06-21",
+        "episode_count": 5054,
+        "total_bytes": 21473248282,
+        "top_avg_score": 1331.998069,
+        "median_avg_score": 1110.66096
+      },
+      {
+        "date": "2026-06-22",
+        "daily_dataset_slug": "pokemon-tcg-ai-battle-episodes-2026-06-22",
+        "daily_dataset_url": "https://www.kaggle.com/datasets/kaggle/pokemon-tcg-ai-battle-episodes-2026-06-22",
+        "episode_count": 5062,
+        "total_bytes": 21472042818,
+        "top_avg_score": 1346.785101,
+        "median_avg_score": 1049.009917
+      },
+      {
+        "date": "2026-06-23",
+        "daily_dataset_slug": "pokemon-tcg-ai-battle-episodes-2026-06-23",
+        "daily_dataset_url": "https://www.kaggle.com/datasets/kaggle/pokemon-tcg-ai-battle-episodes-2026-06-23",
+        "episode_count": 6420,
+        "total_bytes": 21471799701,
+        "top_avg_score": 1314.073137,
+        "median_avg_score": 735.64663
+      },
+      {
+        "date": "2026-06-24",
+        "daily_dataset_slug": "pokemon-tcg-ai-battle-episodes-2026-06-24",
+        "daily_dataset_url": "https://www.kaggle.com/datasets/kaggle/pokemon-tcg-ai-battle-episodes-2026-06-24",
+        "episode_count": 5516,
+        "total_bytes": 21471061743,
+        "top_avg_score": 1343.560242,
+        "median_avg_score": 1004.755931
+      },
+      {
+        "date": "2026-06-25",
+        "daily_dataset_slug": "pokemon-tcg-ai-battle-episodes-2026-06-25",
+        "daily_dataset_url": "https://www.kaggle.com/datasets/kaggle/pokemon-tcg-ai-battle-episodes-2026-06-25",
+        "episode_count": 5495,
+        "total_bytes": 21472346483,
+        "top_avg_score": 1369.202561,
+        "median_avg_score": 1005.657011
+      },
+      {
+        "date": "2026-06-26",
+        "daily_dataset_slug": "pokemon-tcg-ai-battle-episodes-2026-06-26",
+        "daily_dataset_url": "https://www.kaggle.com/datasets/kaggle/pokemon-tcg-ai-battle-episodes-2026-06-26",
+        "episode_count": 5600,
+        "total_bytes": 21474755362,
+        "top_avg_score": 1367.712989,
+        "median_avg_score": 1009.137685
+      },
+      {
+        "date": "2026-06-27",
+        "daily_dataset_slug": "pokemon-tcg-ai-battle-episodes-2026-06-27",
+        "daily_dataset_url": "https://www.kaggle.com/datasets/kaggle/pokemon-tcg-ai-battle-episodes-2026-06-27",
+        "episode_count": 5919,
+        "total_bytes": 21470002917,
+        "top_avg_score": 1392.573343,
+        "median_avg_score": 1011.754205
+      },
+      {
+        "date": "2026-06-28",
+        "daily_dataset_slug": "pokemon-tcg-ai-battle-episodes-2026-06-28",
+        "daily_dataset_url": "https://www.kaggle.com/datasets/kaggle/pokemon-tcg-ai-battle-episodes-2026-06-28",
+        "episode_count": 6002,
+        "total_bytes": 21474629150,
+        "top_avg_score": 1403.542784,
+        "median_avg_score": 1021.319575
+      },
+      {
+        "date": "2026-06-29",
+        "daily_dataset_slug": "pokemon-tcg-ai-battle-episodes-2026-06-29",
+        "daily_dataset_url": "https://www.kaggle.com/datasets/kaggle/pokemon-tcg-ai-battle-episodes-2026-06-29",
+        "episode_count": 5992,
+        "total_bytes": 21473872622,
+        "top_avg_score": 1411.126738,
+        "median_avg_score": 1031.893209
+      },
+      {
+        "date": "2026-06-30",
+        "daily_dataset_slug": "pokemon-tcg-ai-battle-episodes-2026-06-30",
+        "daily_dataset_url": "https://www.kaggle.com/datasets/kaggle/pokemon-tcg-ai-battle-episodes-2026-06-30",
+        "episode_count": 5734,
+        "total_bytes": 21469488677,
+        "top_avg_score": 1386.942931,
+        "median_avg_score": 1112.832961
+      },
+      {
+        "date": "2026-07-01",
+        "daily_dataset_slug": "pokemon-tcg-ai-battle-episodes-2026-07-01",
+        "daily_dataset_url": "https://www.kaggle.com/datasets/kaggle/pokemon-tcg-ai-battle-episodes-2026-07-01",
+        "episode_count": 5266,
+        "total_bytes": 21472709170,
+        "top_avg_score": 1344.584468,
+        "median_avg_score": 1180.260904
+      },
+      {
+        "date": "2026-07-02",
+        "daily_dataset_slug": "pokemon-tcg-ai-battle-episodes-2026-07-02",
+        "daily_dataset_url": "https://www.kaggle.com/datasets/kaggle/pokemon-tcg-ai-battle-episodes-2026-07-02",
+        "episode_count": 5153,
+        "total_bytes": 21473785185,
+        "top_avg_score": 1274.779486,
+        "median_avg_score": 1135.927808
+      },
+      {
+        "date": "2026-07-03",
+        "daily_dataset_slug": "pokemon-tcg-ai-battle-episodes-2026-07-03",
+        "daily_dataset_url": "https://www.kaggle.com/datasets/kaggle/pokemon-tcg-ai-battle-episodes-2026-07-03",
+        "episode_count": 5133,
+        "total_bytes": 21473781654,
+        "top_avg_score": 1250.921561,
+        "median_avg_score": 1104.464801
+      },
+      {
+        "date": "2026-07-04",
+        "daily_dataset_slug": "pokemon-tcg-ai-battle-episodes-2026-07-04",
+        "daily_dataset_url": "https://www.kaggle.com/datasets/kaggle/pokemon-tcg-ai-battle-episodes-2026-07-04",
+        "episode_count": 4975,
+        "total_bytes": 21473046866,
+        "top_avg_score": 1258.026805,
+        "median_avg_score": 1101.42247
+      },
+      {
+        "date": "2026-07-05",
+        "daily_dataset_slug": "pokemon-tcg-ai-battle-episodes-2026-07-05",
+        "daily_dataset_url": "https://www.kaggle.com/datasets/kaggle/pokemon-tcg-ai-battle-episodes-2026-07-05",
+        "episode_count": 5034,
+        "total_bytes": 21473460761,
+        "top_avg_score": 1237.003858,
+        "median_avg_score": 1077.617445
+      },
+      {
+        "date": "2026-07-06",
+        "daily_dataset_slug": "pokemon-tcg-ai-battle-episodes-2026-07-06",
+        "daily_dataset_url": "https://www.kaggle.com/datasets/kaggle/pokemon-tcg-ai-battle-episodes-2026-07-06",
+        "episode_count": 5333,
+        "total_bytes": 21473632225,
+        "top_avg_score": 1240.853827,
+        "median_avg_score": 1078.668509
+      },
+      {
+        "date": "2026-07-07",
+        "daily_dataset_slug": "pokemon-tcg-ai-battle-episodes-2026-07-07",
+        "daily_dataset_url": "https://www.kaggle.com/datasets/kaggle/pokemon-tcg-ai-battle-episodes-2026-07-07",
+        "episode_count": 5202,
+        "total_bytes": 21473647467,
+        "top_avg_score": 1224.934665,
+        "median_avg_score": 1069.906913
+      },
+      {
+        "date": "2026-07-08",
+        "daily_dataset_slug": "pokemon-tcg-ai-battle-episodes-2026-07-08",
+        "daily_dataset_url": "https://www.kaggle.com/datasets/kaggle/pokemon-tcg-ai-battle-episodes-2026-07-08",
+        "episode_count": 5198,
+        "total_bytes": 21471837733,
+        "top_avg_score": 1179.68842,
+        "median_avg_score": 1072.877271
+      },
+      {
+        "date": "2026-07-09",
+        "daily_dataset_slug": "pokemon-tcg-ai-battle-episodes-2026-07-09",
+        "daily_dataset_url": "https://www.kaggle.com/datasets/kaggle/pokemon-tcg-ai-battle-episodes-2026-07-09",
+        "episode_count": 4870,
+        "total_bytes": 21469602103,
+        "top_avg_score": 1250.800564,
+        "median_avg_score": 1081.919526
+      },
+      {
+        "date": "2026-07-10",
+        "daily_dataset_slug": "pokemon-tcg-ai-battle-episodes-2026-07-10",
+        "daily_dataset_url": "https://www.kaggle.com/datasets/kaggle/pokemon-tcg-ai-battle-episodes-2026-07-10",
+        "episode_count": 5226,
+        "total_bytes": 21474580839,
+        "top_avg_score": 1297.150877,
+        "median_avg_score": 1085.958407
+      }
+    ],
+    "daily_dataset_count": 25,
+    "date_range": "2026-06-16 .. 2026-07-10"
+  }
+}

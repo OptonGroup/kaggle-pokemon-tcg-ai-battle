@@ -1,0 +1,24 @@
+{
+  "topic": {
+    "id": 716378,
+    "title": "Where is the SDK mentioned in the competition description?",
+    "authorName": "InspiredCoder",
+    "postDate": "2026-06-30 13:40:40.070000",
+    "commentCount": 0,
+    "votes": 0,
+    "forum": "pokemon-tcg-ai-battle"
+  },
+  "messages": [
+    {
+      "id": 3484523,
+      "authorName": "InspiredCoder",
+      "postDate": "2026-06-30 13:40:40.070000",
+      "votes": 0,
+      "content": "Hi all,\nThe competition overview mentions that participants will be provided with an SDK/toolkit for local development, but I'm a little confused about what exactly that refers to.\nAfter looking through the sample notebooks, I found the cg-lib dataset, which contains the cg package (api.py, game.py, sim.py, utils.py) along with the platform-specific libraries (libcg.so, libcg.dylib, etc.).\nIs cg-lib the SDK referred to in the competition description, or is there another SDK/toolkit that I'm missing?\nIf cg-lib is the intended SDK, it might be helpful to add a link to it from the competition overview or Data page, as it wasn't immediately obvious where the SDK was located.\nThanks!"
+    }
+  ],
+  "source_cli": ".venv/bin/kaggle competitions topic-messages pokemon-tcg-ai-battle 716378 -v --quiet -n -1",
+  "source_show": ".venv/bin/kaggle competitions topics show 716378 -v --quiet",
+  "replies": "NONE (commentCount=0). No organizer/participant answer.",
+  "fetched_at": "2026-07-11"
+}

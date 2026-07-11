@@ -1,0 +1,20 @@
+{
+  "topic_id": 713650,
+  "title": "The Referee",
+  "author_name": "Benard Otieno",
+  "post_date": "2026-06-24 21:02:24.517000",
+  "votes": -2,
+  "comment_count": 0,
+  "source": "kaggle CLI: competitions topics show 713650 + topic-messages 713650",
+  "fetched_at": "2026-07-11",
+  "messages": [
+    {
+      "id": 3480466,
+      "author_name": "",
+      "post_date": "2026-06-24 21:02:24.517000",
+      "votes": -2,
+      "content_html": "<p>Anyone who knows the rules of the game? I thought I exhaust them but the referee is unpredictable. He keeps on changing the rules and flagging the game.</p>",
+      "content_text": "Anyone who knows the rules of the game? I thought I exhaust them but the referee is unpredictable. He keeps on changing the rules and flagging the game."
+    }
+  ]
+}

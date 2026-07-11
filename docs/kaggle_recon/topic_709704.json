@@ -1,0 +1,36 @@
+{
+  "topic": {
+    "id": 709704,
+    "title": "CPU vs GPU runtime",
+    "authorName": "Manan Gupta",
+    "commentCount": 1,
+    "votes": 2,
+    "postDate": "2026-06-19 18:09:35.295000"
+  },
+  "messages": [
+    {
+      "id": 3475270,
+      "authorName": "Manan Gupta",
+      "authorNote": "original post (author inferred from topic metadata; authorName empty in topic-messages endpoint)",
+      "postDate": "2026-06-19 18:09:35.297000",
+      "votes": 2,
+      "content_html": "<p>Does Kaggle's grading rerun honor the CPU setting (→ gemma-26B on CPU → timeout) or run on GPU regardless (→ we're unblocked)? I've spent all my GPU quota haha…</p>",
+      "content_text": "Does Kaggle's grading rerun honor the CPU setting (→ gemma-26B on CPU → timeout) or run on GPU regardless (→ we're unblocked)? I've spent all my GPU quota haha…"
+    },
+    {
+      "id": 3478373,
+      "authorName": "Bovard Doerschuk-Tiberi",
+      "authorNote": "competition organizer (The Pokémon Company / matsuoinstitute)",
+      "postDate": "2026-06-22 16:25:01.260000",
+      "votes": 0,
+      "content_html": "<p>All of the games are played on CPU machines, no GPU is available.</p>",
+      "content_text": "All of the games are played on CPU machines, no GPU is available."
+    }
+  ],
+  "source": [
+    "kaggle CLI: .venv/bin/kaggle competitions topics show 709704 -v --quiet",
+    "kaggle CLI: .venv/bin/kaggle competitions topic-messages pokemon-tcg-ai-battle 709704 -v --quiet -n -1 -s old",
+    "WebFetch attempted on https://www.kaggle.com/competitions/pokemon-tcg-ai-battle/discussion/709704 but returned no content (JS-rendered page); CLI was the working source."
+  ],
+  "recon_date": "2026-07-11"
+}

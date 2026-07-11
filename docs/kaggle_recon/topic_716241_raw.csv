@@ -1,0 +1,4 @@
+usage: kaggle [-h] [-v] [-W]
+              {competitions,c,datasets,d,kernels,k,models,m,files,forums,f,benchmarks,b,config,auth,quota}
+              ...
+kaggle: error: unrecognized arguments: -n -1

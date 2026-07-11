@@ -1,0 +1,34 @@
+{
+  "topic_id": 709642,
+  "topic_title": "Question about submission file size limit",
+  "url": "https://www.kaggle.com/competitions/pokemon-tcg-ai-battle/discussion/709642",
+  "source": "kaggle CLI: .venv/bin/kaggle competitions topic-messages pokemon-tcg-ai-battle 709642 -v -q -n -1",
+  "fetched_at": "2026-07-11",
+  "note": "authorName field returned empty by Kaggle CLI for all messages (known CLI quirk); WebFetch returned no rendered content (JS-rendered page). Content captured from CLI CSV dump.",
+  "messages": [
+    {
+      "id": 3475161,
+      "authorName": "",
+      "postDate": "2026-06-19 13:30:44.403000",
+      "votes": 3,
+      "content": "<p>Could you please clarify if there is a specific file size limit for the submission? I couldn't find this information in the rules or overview. Thank you!</p>",
+      "role": "question (original poster)"
+    },
+    {
+      "id": 3481387,
+      "authorName": "",
+      "postDate": "2026-06-25 23:43:55.083000",
+      "votes": 0,
+      "content": "",
+      "role": "reply (empty/deleted/image-only content as returned by CLI)"
+    },
+    {
+      "id": 3481447,
+      "authorName": "",
+      "postDate": "2026-06-26 03:38:44.870000",
+      "votes": 0,
+      "content": "<p>Submission Resources\nHDD Space: 11.8 GiB\nRAM: 12.2 GiB\nvCPUs: 2\nSubmission Size Limit: 197.7 MiB\n-From the other tabs.</p>",
+      "role": "answer (quoted from competition submission resources tab)"
+    }
+  ]
+}

@@ -1,0 +1,82 @@
+{
+  "topic_id": "717141",
+  "topic_title": "Game Engine Source Code",
+  "competition": "pokemon-tcg-ai-battle",
+  "fetched_at": "2026-07-11",
+  "source": "kaggle CLI: competitions topic-messages (authorName column empty in CLI output; author inferred from content where possible)",
+  "message_count": 8,
+  "messages": [
+    {
+      "id": "3485524",
+      "authorName_cli": "",
+      "inferred_author": "Addison (AddisonHoward — competition host)",
+      "postDate": "2026-07-01 15:07:46.610000",
+      "votes": 100,
+      "content_html": "<p>Hi all,</p>\n<p>Thank you very much for your patience as we've worked to provide the official game engine. We have now added the engine source code to the competition Data page as <code>ptcg_engine.zip</code>.</p>\n<p>Please make sure to read and follow the included license, README, and related files carefully. There are also several important notes regarding the use of the source code:</p>\n<p>Notes:</p>\n<ul>\n<li>The source code is provided solely for use in this competition. Before using it, please read the Competition Rules and make sure your use complies with them.</li>\n<li>This is the game engine used for this specific competition. It may differ from official rulings or behavior in the actual Pokémon Trading Card Game and as such, it is provided solely for the purposes of this competition. [continues] vulnerabilities. Should you find any, report it immediately in the competition forums.</li>\n<li>The intended use of the source code is for local testing, verification, and training for this competition.</li>\n<li>Do not attempt to exploit implementation bugs, unintended simulator behavior, or other [vulnerabilities].</li>\n<li>Some parts of the source code may contain comments written in Japanese. We appreciate your understanding that the Kaggle and Pokémon teams may not be able to answer individual questions about every such comment.</li>\n<li>You may not separate, delete, or modify the included License, README, or other related files when using the source code.</li>\n</ul>\n<p>We hope this helps participants with local testing and further development of their agents!</p>\n<p>Addison</p>",
+      "content_text": "Official announcement: game engine source code released as ptcg_engine.zip on the competition Data page. Notes: (1) source provided solely for this competition, comply with Rules; (2) engine may differ from official TCG rulings/behavior, provided only for this competition; (3) report any vulnerabilities in the forums; (4) intended use = local testing, verification, training; (5) do NOT exploit implementation bugs/unintended simulator behavior; (6) some comments in Japanese — hosts may not answer questions about each; (7) may not separate/delete/modify included License/README/related files. Signed Addison."
+    },
+    {
+      "id": "3487194",
+      "authorName_cli": "",
+      "inferred_author": "unknown participant",
+      "postDate": "2026-07-03 14:01:32.053000",
+      "votes": 1,
+      "content_html": "<p>This is very important for  using RL!</p>",
+      "content_text": "'This is very important for using RL!' — reaction noting the source release matters for reinforcement-learning approaches."
+    },
+    {
+      "id": "3487573",
+      "authorName_cli": "",
+      "inferred_author": "participant asking about licensing (mentions @shimishige @addisonhoward)",
+      "postDate": "2026-07-04 02:33:20.073000",
+      "votes": 4,
+      "content_html": "<p><a href=\"https://www.kaggle.com/shimishige\" target=\"_blank\">@shimishige</a> <a href=\"https://www.kaggle.com/addisonhoward\" target=\"_blank\">@addisonhoward</a> </p>\n<p>Thank you very much for releasing <code>ptcg_engine.zip</code> ...</p>\n<p>I would like to ask for one additional clarification about the allowed use of the released engine source code in submissions.</p>\n<p>The announcement says that the intended use is “local testing, verification, and training for this competition.” The Rules also mention that source code provided on Kaggle is Competition Data and may be reproduced/adapted as reasonably necessary for developing submissions.</p>\n<p>Could the hosts clarify whether participants are allowed to include code derived from, adapted from, or compiled from <code>ptcg_engine.zip</code> inside their <code>submission.tar.gz</code>, if it is used only during this competition and only as part of the submitted agent?</p>\n<p>For example, this could include helper code for validating game states or otherwise supporting the agent’s decision-making at runtime.</p>\n<p>A clear ruling would help avoid different teams making different assumptions about what is allowed.</p>",
+      "content_text": "Participant asks: can we include code derived/adapted/compiled from ptcg_engine.zip inside submission.tar.gz, used only during the competition and only as part of the submitted agent (e.g. helper code for validating game states / supporting agent decision-making at runtime)? Wants a clear ruling so teams don't assume differently."
+    },
+    {
+      "id": "3490820",
+      "authorName_cli": "",
+      "inferred_author": "competition host (Addison/howard) — official ruling",
+      "postDate": "2026-07-06 13:36:56.320000",
+      "votes": 3,
+      "content_html": "<p>Code derived from, adapted from, or compiled from <code>ptcg_engine.zip</code> is permitted, but note per the competition rules:</p>\n<ul>\n<li>Participants may not use any models trained on Pokémon Elements, or the Pokémon Elements themselves, for any purpose <em>outside</em> of participating in the Competition.</li>\n<li>Participants may not use the Pokémon Elements or models derived from them for commercial purposes or to create products that compete with the Sponsor.</li>\n<li>Winners of the Competition will grant the Sponsor a license to or assignment of their winning submissions as set forth in the Winner License agreement.</li>\n</ul>",
+      "content_text": "OFFICIAL RULING: Code derived/adapted/compiled from ptcg_engine.zip IS permitted in submissions. Caveats per rules: (1) no use of models trained on Pokémon Elements or the Elements themselves outside the Competition; (2) no commercial use / competing products; (3) Winners grant Sponsor a license/assignment of winning submissions per Winner License."
+    },
+    {
+      "id": "3490847",
+      "authorName_cli": "",
+      "inferred_author": "asking participant (acknowledging the ruling)",
+      "postDate": "2026-07-06 13:50:16.253000",
+      "votes": 0,
+      "content_html": "<p>That’s clear now. Thank you!</p>",
+      "content_text": "'That's clear now. Thank you!' — asker acknowledges the official ruling."
+    },
+    {
+      "id": "3493211",
+      "authorName_cli": "",
+      "inferred_author": "unknown participant",
+      "postDate": "2026-07-07 11:23:48.003000",
+      "votes": 0,
+      "content_html": "<p>Great update! Providing the engine source code will make local testing and agent development much easier. Thanks to the Kaggle and Pokémon teams for making the competition more accessible.</p>",
+      "content_text": "Positive reaction: engine source makes local testing/agent development easier."
+    },
+    {
+      "id": "3494148",
+      "authorName_cli": "",
+      "inferred_author": "participant reporting off-by-one replay bug (analysis done with Gemini 3.5 Flash)",
+      "postDate": "2026-07-09 08:56:43.603000",
+      "votes": 0,
+      "content_html": "<p>Visualizer Replay Bug: selected actions are shifted by 1 step (off-by-one)</p>\n<p>Hi everyone,</p>\n<p>While working on offline behavioral cloning and log analysis using the visualizer replay files (the JSON files in list format), we discovered a critical bug in the C++ simulator engine's serialization logic. This bug was successfully analyzed, and the following solution was proposed by Gemini 3.5 Flash during our pair programming session.</p>\n<p>The Problem: The chosen actions in the \"selected\" key are shifted by 1 step.</p>\n<p>Because of this shift, entry[0].selected (the initial coin flip / first-player decision) is always recorded as null. The actual choice for entry[0] is stored in entry[1].selected. The actual choice for entry[1] (e.g. setting up active Pokemon) is stored in entry[2].selected, and so on. The very last action of the match is written into a dummy terminal step at the end. If you are using local visualizer replays to train your policy models offline, this shift introduces significant noise (essentially training the model to predict the previous turn's action in the current state).</p>\n<p>Root Cause: In Export.cpp, inside GetBattleData, the step is serialized with data->selected from the previous step because the state has already advanced to the next step (following data->next() in Select).</p>\n<p>Proposed Fix: serialize steps to visData at the moment the decision is actually made inside ApiSelect (Api.h), right before calling data->next(). In Export.cpp, change GetBattleData to only append the final terminal step when the match finishes.</p>",
+      "content_text": "OFF-BY-ONE REPLAY BUG REPORT (2026-07-09): In visualizer replay JSON (list format), the 'selected' key actions are shifted by 1 step. entry[0].selected (initial coin flip / first-player decision) is always null; actual choice for entry[0] is in entry[1].selected; entry[1] choice in entry[2].selected; etc. The very last action is written into a dummy terminal step at the end. Impact: using local visualizer replays to train policy models offline introduces significant noise (trains model to predict previous turn's action in current state). Root cause: Export.cpp GetBattleData serializes with data->selected from PREVIOUS step because state already advanced via data->next() in Select. Fix: serialize to visData at decision time inside ApiSelect (Api.h) before data->next(); in Export.cpp GetBattleData only append final terminal step when match finishes. Analysis done with Gemini 3.5 Flash."
+    },
+    {
+      "id": "3487378",
+      "authorName_cli": "",
+      "inferred_author": "unknown participant",
+      "postDate": "2026-07-03 17:25:38.137000",
+      "votes": 0,
+      "content_html": "<p>Helpful++ :)</p>",
+      "content_text": "'Helpful++ :)' — short positive reaction."
+    }
+  ]
+}

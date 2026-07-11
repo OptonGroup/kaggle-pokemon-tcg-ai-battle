@@ -1,0 +1,192 @@
+{
+  "topic_id": 711737,
+  "topic_title": "Request for an explicit ruling on game engine source, reverse engineering, and community engine",
+  "competition": "pokemon-tcg-ai-battle",
+  "message_count": 23,
+  "messages": [
+    {
+      "id": 3477706,
+      "authorName": "",
+      "postDate": "2026-06-21 23:46:27.860000",
+      "votes": 98,
+      "content_html": "<p>Context: <a href=\"https://www.kaggle.com/competitions/pokemon-tcg-ai-battle/discussion/708929\" target=\"_blank\">https://www.kaggle.com/competitions/pokemon-tcg-ai-battle/discussion/708929</a></p>\n<p><a href=\"https://www.kaggle.com/shimishige\" target=\"_blank\">@shimishige</a> <a href=\"https://www.kaggle.com/bovard\" target=\"_blank\">@bovard</a></p>\n<p>There has already been a discussion about whether the actual game engine source code will be made available, but as far as I can tell there has not yet been an official response from the host.</p>\n<p>Having a local, inspectable game engine is a crucial factor for both RL and tree-search based approaches. It is important not only for understanding the rules precisely, but also for accelerating simulation, which can become a major bottleneck in training and search.</p>\n<p>At the same time, I understand that this may be an IP-sensitive issue. Releasing the full engine source code could potentially raise concerns such as facilitating unofficial or pirated implementations of the game, or other issues that the host and The Pokémon Company may need to consider. So I am not necessarily asking that the source code must be released. What I would like to ask for is an explicit ruling early in the competition, because this is a strategy-critical point for many participants.</p>\n<p>Could the host please clarify the following points explicitly?</p>\n<ol>\n<li><p>Will the source code of the game engine be released, or will participants only have access to the provided binary and wrapper?</p></li>\n<li><p>If the source code will not be released, are participants allowed to reverse engineer, decompile, disassemble, or otherwise reproduce the behavior of the provided <code>.so</code> / <code>.dll</code> files in order to build their own game engine?</p></li>\n<li><p>If reverse engineering or reimplementation is allowed, is the host aware that this may become a major competitive advantage?</p>\n<p>I strongly expect that some top teams will attempt this for faster RL training or faster search. In the RL case, the reimplemented engine may only be used privately for training and may never be shared. In the tree-search case, however, if a team uses its own engine during actual gameplay, then publishing the final submission code may effectively expose that self-built engine. Is this intended and acceptable?</p></li>\n<li><p>If the official source code will not be released, are participants from multiple teams allowed to collaborate publicly on a shared open-source game engine, for example in a public GitHub repository?</p>\n<p>There have been somewhat similar community efforts in previous Kaggle competitions, such as participants jointly investigating leaderboard/test-data behavior:\n<a href=\"https://www.kaggle.com/competitions/jigsaw-agile-community-rules/discussion/607118\" target=\"_blank\">https://www.kaggle.com/competitions/jigsaw-agile-community-rules/discussion/607118</a></p>\n<p>If there is no official clarification on this point, participants may reasonably assume that public community-driven reimplementation is allowed unless explicitly prohibited. In that case, I may consider creating a public GitHub repository for a community-built engine, so I would really appreciate an explicit ruling before people start investing time in that direction.</p></li>\n<li><p>If the host wants to allow some forms of reimplementation but restrict others, could you clarify the boundary?</p>\n<p>For example, there may be reasonable middle-ground options: allowing teams to develop their own internal engine for training/search, but prohibiting public cross-team collaboration on a shared engine; or asking participants to exclude engine-reimplementation details as much as possible from public solution code or writeups. I think several compromises may be possible, but the important part is that the rules are stated clearly.</p></li>\n</ol>\n<p>The main concern is that if there is no official clarification, this competition may partially turn into a reverse-engineering competition, and different teams may make different assumptions about what is allowed. A clear ruling would help participants decide whether to invest time in building a game engine, and would also make the competition fairer and less ambiguous.</p>\n<p>Thank you.</p>",
+      "content_text": "Context: https://www.kaggle.com/competitions/pokemon-tcg-ai-battle/discussion/708929\n@shimishige @bovard\nThere has already been a discussion about whether the actual game engine source code will be made available, but as far as I can tell there has not yet been an official response from the host.\nHaving a local, inspectable game engine is a crucial factor for both RL and tree-search based approaches. It is important not only for understanding the rules precisely, but also for accelerating simulation, which can become a major bottleneck in training and search.\nAt the same time, I understand that this may be an IP-sensitive issue. Releasing the full engine source code could potentially raise concerns such as facilitating unofficial or pirated implementations of the game, or other issues that the host and The Pokémon Company may need to consider. So I am not necessarily asking that the source code must be released. What I would like to ask for is an explicit ruling early in the competition, because this is a strategy-critical point for many participants.\nCould the host please clarify the following points explicitly?\n\nWill the source code of the game engine be released, or will participants only have access to the provided binary and wrapper?\nIf the source code will not be released, are participants allowed to reverse engineer, decompile, disassemble, or otherwise reproduce the behavior of the provided .so / .dll files in order to build their own game engine?\nIf reverse engineering or reimplementation is allowed, is the host aware that this may become a major competitive advantage?\nI strongly expect that some top teams will attempt this for faster RL training or faster search. In the RL case, the reimplemented engine may only be used privately for training and may never be shared. In the tree-search case, however, if a team uses its own engine during actual gameplay, then publishing the final submission code may effectively expose that self-built engine. Is this intended and acceptable?\nIf the official source code will not be released, are participants from multiple teams allowed to collaborate publicly on a shared open-source game engine, for example in a public GitHub repository?\nThere have been somewhat similar community efforts in previous Kaggle competitions, such as participants jointly investigating leaderboard/test-data behavior:\nhttps://www.kaggle.com/competitions/jigsaw-agile-community-rules/discussion/607118\nIf there is no official clarification on this point, participants may reasonably assume that public community-driven reimplementation is allowed unless explicitly prohibited. In that case, I may consider creating a public GitHub repository for a community-built engine, so I would really appreciate an explicit ruling before people start investing time in that direction.\nIf the host wants to allow some forms of reimplementation but restrict others, could you clarify the boundary?\nFor example, there may be reasonable middle-ground options: allowing teams to develop their own internal engine for training/search, but prohibiting public cross-team collaboration on a shared engine; or asking participants to exclude engine-reimplementation details as much as possible from public solution code or writeups. I think several compromises may be possible, but the important part is that the rules are stated clearly.\n\nThe main concern is that if there is no official clarification, this competition may partially turn into a reverse-engineering competition, and different teams may make different assumptions about what is allowed. A clear ruling would help participants decide whether to invest time in building a game engine, and would also make the competition fairer and less ambiguous.\nThank you."
+    },
+    {
+      "id": 3477711,
+      "authorName": "",
+      "postDate": "2026-06-22 00:01:27.367000",
+      "votes": 8,
+      "content_html": "<p>At the very least, please compile and release binaries for arm based machines.</p>",
+      "content_text": "At the very least, please compile and release binaries for arm based machines."
+    },
+    {
+      "id": 3477854,
+      "authorName": "",
+      "postDate": "2026-06-22 05:07:07.007000",
+      "votes": 20,
+      "content_html": "<p>Thank you for raising this important point.</p>\n<p>We are currently discussing exactly these questions, including whether and how the game engine source code can be made available, and what boundaries should apply regarding reverse engineering, reimplementation, and community collaboration.</p>\n<p>We will share an explicit official clarification as soon as possible. Please allow us a little more time.</p>",
+      "content_text": "Thank you for raising this important point.\nWe are currently discussing exactly these questions, including whether and how the game engine source code can be made available, and what boundaries should apply regarding reverse engineering, reimplementation, and community collaboration.\nWe will share an explicit official clarification as soon as possible. Please allow us a little more time."
+    },
+    {
+      "id": 3477859,
+      "authorName": "",
+      "postDate": "2026-06-22 05:15:04.087000",
+      "votes": 2,
+      "content_html": "<p>Thanks for the quick response!</p>\n<p>I'm really glad to hear that an official clarification is coming. Please take your time, I completely understand that this needs internal discussion.</p>\n<p>Thanks again for looking into this!</p>",
+      "content_text": "Thanks for the quick response!\nI'm really glad to hear that an official clarification is coming. Please take your time, I completely understand that this needs internal discussion.\nThanks again for looking into this!"
+    },
+    {
+      "id": 3478160,
+      "authorName": "",
+      "postDate": "2026-06-22 12:01:51.633000",
+      "votes": 9,
+      "content_html": "<p>This is what happen when host release conpetition on RL without thinking all details through before 😅<br>\nI will share a bit from my experience. Letting Claude code run ~2 days on the mission of constructing the engine from scratch, using the cards text and provided game engine as oracle, was on the one hand sucsessful in the sense of 'can inplement, iterate and improve', on the other hand I feel like no matter how much it grind, there would still be mismatches that it miss with true game engine. Maybe it is viable for people that can afford running tens of agents concurrently on the mission, or if the community collaborates on this.</p>\n<p>Another interesting possibility, esp. for tree-based strategy, is 'cracking' the internals of the binary, bypassing the pickling step which consume most of the time and submit to/read from stright the underlaying c-engine. Going this route my agent claim he could speed it *10. However IDK how much I can trust him since I don't have knoledge in this domain  and did not tried yet to look into what he deed. It's just his claims.</p>",
+      "content_text": "This is what happen when host release conpetition on RL without thinking all details through before 😅\nI will share a bit from my experience. Letting Claude code run ~2 days on the mission of constructing the engine from scratch, using the cards text and provided game engine as oracle, was on the one hand sucsessful in the sense of 'can inplement, iterate and improve', on the other hand I feel like no matter how much it grind, there would still be mismatches that it miss with true game engine. Maybe it is viable for people that can afford running tens of agents concurrently on the mission, or if the community collaborates on this.\nAnother interesting possibility, esp. for tree-based strategy, is 'cracking' the internals of the binary, bypassing the pickling step which consume most of the time and submit to/read from stright the underlaying c-engine. Going this route my agent claim he could speed it *10. However IDK how much I can trust him since I don't have knoledge in this domain  and did not tried yet to look into what he deed. It's just his claims."
+    },
+    {
+      "id": 3479005,
+      "authorName": "",
+      "postDate": "2026-06-23 08:58:54.607000",
+      "votes": 0,
+      "content_html": "<p>following this!</p>",
+      "content_text": "following this!"
+    },
+    {
+      "id": 3479007,
+      "authorName": "",
+      "postDate": "2026-06-23 08:59:15.600000",
+      "votes": 0,
+      "content_html": "<p>Is it a good idea to reverse-engineer? <a href=\"https://www.kaggle.com/cnumber\" target=\"_blank\">@cnumber</a> </p>",
+      "content_text": "Is it a good idea to reverse-engineer? @cnumber"
+    },
+    {
+      "id": 3479576,
+      "authorName": "",
+      "postDate": "2026-06-23 23:14:53.700000",
+      "votes": 0,
+      "content_html": "<p>Yes, I searched for the rules and they are hidden beyond our reach. RL training requires those rules.</p>",
+      "content_text": "Yes, I searched for the rules and they are hidden beyond our reach. RL training requires those rules."
+    },
+    {
+      "id": 3479577,
+      "authorName": "",
+      "postDate": "2026-06-23 23:17:34.880000",
+      "votes": 1,
+      "content_html": "<p>Without the rules, you reroute to trial and error technique. Your agent break a rule, crash and the validation process fails. You read the logs and find the issues, code again and upload until you exhaust all those errors. It's cumbersome </p>",
+      "content_text": "Without the rules, you reroute to trial and error technique. Your agent break a rule, crash and the validation process fails. You read the logs and find the issues, code again and upload until you exhaust all those errors. It's cumbersome"
+    },
+    {
+      "id": 3480049,
+      "authorName": "",
+      "postDate": "2026-06-24 12:00:46.823000",
+      "votes": 1,
+      "content_html": "<p>Using GLM 5.2 and DeepSeek v4 Flash, I reimplemented the engine. It provides the same ctypes interface with 13 functions, and it runs without errors locally simply by changing the lib_path in sm.py from the official sample code to the library I built. However, on Kaggle, is it currently only possible to submit using the official engine? Or is it possible that my engine is not working due to differences in the execution environment? I am getting the following error when trying to submit: 500 Server Error: Internal Server Error</p>",
+      "content_text": "Using GLM 5.2 and DeepSeek v4 Flash, I reimplemented the engine. It provides the same ctypes interface with 13 functions, and it runs without errors locally simply by changing the lib_path in sm.py from the official sample code to the library I built. However, on Kaggle, is it currently only possible to submit using the official engine? Or is it possible that my engine is not working due to differences in the execution environment? I am getting the following error when trying to submit: 500 Server Error: Internal Server Error"
+    },
+    {
+      "id": 3480257,
+      "authorName": "",
+      "postDate": "2026-06-24 16:22:04.210000",
+      "votes": -15,
+      "content_html": "<p>I think it would be <strong>better not to reveal</strong> it publicly for marketing or PR purposes.</p>\n<p>The moment the engine is revealed… 😆</p>\n<p>It becomes a realist’s duel.</p>\n<p>In other words, a small group of people who are skilled at programming would be able to exploit it to the extreme,</p>\n<p>while the majority of fans who simply love Pokémon cards would be put at a disadvantage.</p>\n<p>Since this uses the Pokémon Card IP, I believe the focus should be on understanding the cards themselves, rather than on programming ability.</p>\n<hr>\n<p>I was speaking from the perspective of the speed of competition and user churn.</p>\n<p>For events like this, I personally think it is more ideal to have many users <strong>continuously join and compete against each other with their bots</strong>, <strong>rather than</strong> focusing on producing a perfect answer in the competition using <strong>fully automated AI</strong>.</p>\n<hr>\n<p>Please carefully consider whether you want control over the competition to rest with an AI company that has no connection to this event, or with The Pokémon Company, which organized and oversaw the competition.</p>\n<p>In order to achieve that, I hope you will think carefully about which choice is the right one.</p>",
+      "content_text": "I think it would be better not to reveal it publicly for marketing or PR purposes.\nThe moment the engine is revealed… 😆\nIt becomes a realist’s duel.\nIn other words, a small group of people who are skilled at programming would be able to exploit it to the extreme,\nwhile the majority of fans who simply love Pokémon cards would be put at a disadvantage.\nSince this uses the Pokémon Card IP, I believe the focus should be on understanding the cards themselves, rather than on programming ability.\n\nI was speaking from the perspective of the speed of competition and user churn.\nFor events like this, I personally think it is more ideal to have many users continuously join and compete against each other with their bots, rather than focusing on producing a perfect answer in the competition using fully automated AI.\n\nPlease carefully consider whether you want control over the competition to rest with an AI company that has no connection to this event, or with The Pokémon Company, which organized and oversaw the competition.\nIn order to achieve that, I hope you will think carefully about which choice is the right one."
+    },
+    {
+      "id": 3480350,
+      "authorName": "",
+      "postDate": "2026-06-24 18:01:44.463000",
+      "votes": 0,
+      "content_html": "<p>The rules are embedded in the dataset. Open your eyes 👀</p>",
+      "content_text": "The rules are embedded in the dataset. Open your eyes 👀"
+    },
+    {
+      "id": 3480638,
+      "authorName": "",
+      "postDate": "2026-06-25 04:40:34.627000",
+      "votes": -8,
+      "content_html": "<p><a href=\"https://www.kaggle.com/benoch\" target=\"_blank\">@benoch</a><br>\nI understand that you may see it that way.<br>\nBut that is not the kind of competition I seek.</p>\n<p>It is not limited to this competition.<br>\nBy nature, I enjoy moving on the world stage.</p>\n<p>However, the recent flow of capital has been concentrating in one direction.<br>\nIn such a situation, it becomes difficult for me to move around the world in a way that feels exciting and free.</p>\n<p>When capital is more balanced, that is when I can most enjoyably surf against the world.<br>\nBut right now, the ocean of the world is not fit for surfing.</p>",
+      "content_text": "@benoch\nI understand that you may see it that way.\nBut that is not the kind of competition I seek.\nIt is not limited to this competition.\nBy nature, I enjoy moving on the world stage.\nHowever, the recent flow of capital has been concentrating in one direction.\nIn such a situation, it becomes difficult for me to move around the world in a way that feels exciting and free.\nWhen capital is more balanced, that is when I can most enjoyably surf against the world.\nBut right now, the ocean of the world is not fit for surfing."
+    },
+    {
+      "id": 3481776,
+      "authorName": "",
+      "postDate": "2026-06-26 12:15:23.673000",
+      "votes": 1,
+      "content_html": "<p>Many people will directly reverse engineer it.</p>",
+      "content_text": "Many people will directly reverse engineer it."
+    },
+    {
+      "id": 3482032,
+      "authorName": "",
+      "postDate": "2026-06-26 17:56:49.413000",
+      "votes": 3,
+      "content_html": "<p>Has any official response been released on this matter?</p>\n<p>It certainly shapes the approach we should for this competition.</p>",
+      "content_text": "Has any official response been released on this matter?\nIt certainly shapes the approach we should for this competition."
+    },
+    {
+      "id": 3482110,
+      "authorName": "",
+      "postDate": "2026-06-26 19:44:25.510000",
+      "votes": 0,
+      "content_html": "<p>People are going to inevitably reverse engineer and recreate the engine. The question is whether or not the source should be released to level the playing field. If not, the competition will become a reverse engineering competition.</p>",
+      "content_text": "People are going to inevitably reverse engineer and recreate the engine. The question is whether or not the source should be released to level the playing field. If not, the competition will become a reverse engineering competition."
+    },
+    {
+      "id": 3483749,
+      "authorName": "",
+      "postDate": "2026-06-29 13:31:17.770000",
+      "votes": 6,
+      "content_html": "<p><a href=\"https://www.kaggle.com/shimishige\" target=\"_blank\">@shimishige</a> \nIt was already a week and this competition is no particularly long.<br>\nCan we please get an update already.<br>\n(or better: give the source code…)</p>",
+      "content_text": "@shimishige \nIt was already a week and this competition is no particularly long.\nCan we please get an update already.\n(or better: give the source code…)"
+    },
+    {
+      "id": 3483957,
+      "authorName": "",
+      "postDate": "2026-06-29 19:30:50.070000",
+      "votes": 4,
+      "content_html": "<p><a href=\"https://www.kaggle.com/shimishige\" target=\"_blank\">@shimishige</a></p>\n<p>I agree.</p>\n<p>Even from now, 2 weeks for making our own environment code leaves us only a month for trying out highly optimized tree-based methods / RL, which is not enough.</p>",
+      "content_text": "@shimishige\nI agree.\nEven from now, 2 weeks for making our own environment code leaves us only a month for trying out highly optimized tree-based methods / RL, which is not enough."
+    },
+    {
+      "id": 3484002,
+      "authorName": "",
+      "postDate": "2026-06-29 21:12:57.480000",
+      "votes": 2,
+      "content_html": "<p>It's really too bad this competition is only 2 months…it deserves more</p>",
+      "content_text": "It's really too bad this competition is only 2 months…it deserves more"
+    },
+    {
+      "id": 3484395,
+      "authorName": "",
+      "postDate": "2026-06-30 10:28:06.837000",
+      "votes": 6,
+      "content_html": "<p>Thank you for the comments.</p>\n<p>We understand that whether the game engine source code can be made available has a significant impact on how participants can approach this competition.</p>\n<p>We are still discussing whether it can be shared, and if it cannot be shared, what the appropriate line should be for what participants are allowed to do.</p>\n<p>We also understand that time is an important factor, given the competition timeline. We are taking this seriously and will try to provide an update as soon as we can.</p>\n<p>Thank you for your patience.</p>",
+      "content_text": "Thank you for the comments.\nWe understand that whether the game engine source code can be made available has a significant impact on how participants can approach this competition.\nWe are still discussing whether it can be shared, and if it cannot be shared, what the appropriate line should be for what participants are allowed to do.\nWe also understand that time is an important factor, given the competition timeline. We are taking this seriously and will try to provide an update as soon as we can.\nThank you for your patience."
+    },
+    {
+      "id": 3485700,
+      "authorName": "",
+      "postDate": "2026-07-01 18:09:39.563000",
+      "votes": 10,
+      "content_html": "<p>Thank you again for the discussion and for your patience.</p>\n<p>We have decided to make the game engine source code available.</p>\n<p>Please make sure to read and follow the Competition Rules and the notes included with the released files before using it. The engine is provided for the purpose of participating in this competition, and should be used only within the permitted scope.</p>\n<p>We have posted the official announcement here:\n<a href=\"https://www.kaggle.com/competitions/pokemon-tcg-ai-battle/discussion/717141\" target=\"_blank\">https://www.kaggle.com/competitions/pokemon-tcg-ai-battle/discussion/717141</a></p>",
+      "content_text": "Thank you again for the discussion and for your patience.\nWe have decided to make the game engine source code available.\nPlease make sure to read and follow the Competition Rules and the notes included with the released files before using it. The engine is provided for the purpose of participating in this competition, and should be used only within the permitted scope.\nWe have posted the official announcement here:\nhttps://www.kaggle.com/competitions/pokemon-tcg-ai-battle/discussion/717141"
+    },
+    {
+      "id": 3485854,
+      "authorName": "",
+      "postDate": "2026-07-01 21:18:20.670000",
+      "votes": 0,
+      "content_html": "<p>Thank you!</p>",
+      "content_text": "Thank you!"
+    },
+    {
+      "id": 3485880,
+      "authorName": "",
+      "postDate": "2026-07-01 22:09:04.533000",
+      "votes": 0,
+      "content_html": "<p>Thank you!!!</p>",
+      "content_text": "Thank you!!!"
+    }
+  ]
+}

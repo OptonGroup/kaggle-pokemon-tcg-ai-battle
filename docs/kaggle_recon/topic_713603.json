@@ -1,0 +1,40 @@
+{
+  "topic_id": 713603,
+  "title": "Game timer",
+  "url": "https://www.kaggle.com/competitions/pokemon-tcg-ai-battle/discussion/713603",
+  "topic_author": "Tim Inzitari",
+  "topic_postDate": "2026-06-24 19:30:47.652000",
+  "commentCount": 2,
+  "topic_votes": 0,
+  "fetched_at": "2026-07-11",
+  "source": "kaggle CLI: competitions topics show 713603 -v",
+  "messages": [
+    {
+      "id": 3480404,
+      "authorName": "Tim Inzitari",
+      "role": "original_poster",
+      "postDate": "2026-06-24 19:30:47.653000",
+      "votes": 0,
+      "content_html": "<p>The simulations appear to have a 10 minute chess timer on the website</p>\n<p>What are the rules of that chess timer</p>\n<p>I was unable to find this in the documentation</p>",
+      "content_text": "The simulations appear to have a 10 minute chess timer on the website. What are the rules of that chess timer. I was unable to find this in the documentation."
+    },
+    {
+      "id": 3480580,
+      "authorName": "Bovard Doerschuk-Tiberi",
+      "role": "organizer_host",
+      "postDate": "2026-06-25 02:42:37.990000",
+      "votes": 1,
+      "content_html": "<p>You start each game with 600 seconds to spend doing whatever you want. For example you could spend 60 seconds on your init/deck selection, then you have 540 seconds. Each turn you take consumes this time. Let's say you spend 1 second on your first time, now you have 539. If any player reaches 0 seconds left, they immediately lose the game on timeout.</p>\n<p>Does that make sense? Happy to clarify further.</p>",
+      "content_text": "You start each game with 600 seconds to spend doing whatever you want. For example you could spend 60 seconds on your init/deck selection, then you have 540 seconds. Each turn you take consumes this time. Let's say you spend 1 second on your first time, now you have 539. If any player reaches 0 seconds left, they immediately lose the game on timeout. Does that make sense? Happy to clarify further."
+    },
+    {
+      "id": 3482158,
+      "authorName": "alekh",
+      "role": "competitor",
+      "postDate": "2026-06-26 21:38:56.523000",
+      "votes": 0,
+      "content_html": "<blockquote>\n  <p>spend 60 sec on your init/deck selection</p>\n</blockquote>\n<p>That contradicts the host again on the agent should play a single static deck. So what is it, single deck or multi-deck?</p>",
+      "content_text": "[quoting: 'spend 60 sec on your init/deck selection'] That contradicts the host again on the agent should play a single static deck. So what is it, single deck or multi-deck?"
+    }
+  ]
+}

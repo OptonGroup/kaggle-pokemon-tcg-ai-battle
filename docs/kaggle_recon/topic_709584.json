@@ -1,0 +1,34 @@
+{
+  "topic_id": 709584,
+  "topic_title": "\"Gouging Fire\" is missing from the card pool.",
+  "source": "kaggle CLI: kaggle competitions topic-messages pokemon-tcg-ai-battle 709584 --sort-by old -n -1 -v --quiet",
+  "fetched_at": "2026-07-11",
+  "note": "authorName field is empty in Kaggle CLI output for all messages (API limitation). Authors inferred from context: post 3475036 = OP (Japanese user, machine translation); post 3478332 = official organizer/tournament response; post 3486842 = OP follow-up (same user as 3475036).",
+  "message_count": 3,
+  "messages": [
+    {
+      "id": 3475036,
+      "postDate": "2026-06-19 08:03:58.597000",
+      "votes": 0,
+      "author": "(unknown - empty in CLI; OP, Japanese user using machine translation)",
+      "content_html": "<p>This is my first post, so apologies if I'm breaking any rules.\n(I'm Japanese and I'm writing this using machine translation.)</p>\n<p>I get the impression that the non-ex \"Gouging Fire\" does not exist in the data files JP_Card_Data.csv or EN_Card_Data.csv. It's a \"Regulation H\" card originally included in \"Paradise Dragona\" (楽園ドラゴーナ), and I believe it should be part of the card pool.</p>\n<p>I'd love to share information on whether there are other cards like this as well!</p>",
+      "content_text": "This is my first post, so apologies if I'm breaking any rules. (I'm Japanese and I'm writing this using machine translation.) I get the impression that the non-ex \"Gouging Fire\" does not exist in the data files JP_Card_Data.csv or EN_Card_Data.csv. It's a \"Regulation H\" card originally included in \"Paradise Dragona\" (楽園ドラゴーナ), and I believe it should be part of the card pool. I'd love to share information on whether there are other cards like this as well!"
+    },
+    {
+      "id": 3478332,
+      "postDate": "2026-06-22 15:45:34.107000",
+      "votes": 0,
+      "author": "(unknown - empty in CLI; official organizer response, tone = \"Hi there\" + policy language)",
+      "content_html": "<p>Hi there,</p>\n<p>The tournament card pool is specifically defined for this competition and may differ from the current in-person Pokémon Trading Card Game card pool. The card pool is also intended to remain fixed for the duration of the tournament, unless a rebalance becomes necessary.</p>\n<p>All matches in the Pokémon TCG AI Battle Challenge will use rules and regulations based on the Standard format, but uniquely tailored for this tournament. Only cards included in the designated card list provided by the sponsors may be used.</p>",
+      "content_text": "Hi there, The tournament card pool is specifically defined for this competition and may differ from the current in-person Pokémon Trading Card Game card pool. The card pool is also intended to remain fixed for the duration of the tournament, unless a rebalance becomes necessary. All matches in the Pokémon TCG AI Battle Challenge will use rules and regulations based on the Standard format, but uniquely tailored for this tournament. Only cards included in the designated card list provided by the sponsors may be used."
+    },
+    {
+      "id": 3486842,
+      "postDate": "2026-07-03 04:33:06.350000",
+      "votes": 1,
+      "author": "(unknown - empty in CLI; OP follow-up acknowledging the official reply)",
+      "content_html": "<p>Thank you for the reply!\nI understand the rules now, and I plan to make the most of the current card pool.</p>",
+      "content_text": "Thank you for the reply! I understand the rules now, and I plan to make the most of the current card pool."
+    }
+  ]
+}

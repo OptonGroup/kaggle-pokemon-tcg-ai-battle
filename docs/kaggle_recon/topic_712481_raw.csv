@@ -1,0 +1,35 @@
+id,authorName,postDate,votes,content
+3478692,,2026-06-22 23:51:07.017000,4,"<p><strong>What it is:</strong>
+<em>a live dashboard + open JSON API for the ladder meta</em> </p>
+<ul>
+<li>🔗 <a href=""https://ptcg-ladder-meta.vercel.app"" target=""_blank"">https://ptcg-ladder-meta.vercel.app</a> , API: /api (open, CORS, Swagger at /api-docs)</li>
+</ul>
+<p><strong>Video</strong></p>
+
+<a href=""https://youtu.be/sLpVoRvqT7U"" target=""_blank"">Link</a>
+<img src=""https://www.googleapis.com/download/storage/v1/b/kaggle-forum-message-attachments/o/inbox%2F20697227%2Fc7dd0046e58b84e7e169ab13a69f449f%2Fptcgtn.png?generation=1782172064892143&amp;alt=media"" alt=""image of the site""><p></p>
+<p><strong>The honest caveat first:</strong>
+this is the OBSERVED public surface — the host's daily TOP-episode sample. NOT the full ladder, NOT the hidden eval distribution. Sample sizes + Wilson CIs shown, thin data faded not hidden.</p>
+<p><strong>In it (6 days so far):</strong></p>
+<ul>
+<li><em>Meta over time</em> — prevalence, diversity, per-tier composition, churn</li>
+<li><em>Win-rate matrices</em> — archetype-vs-archetype + team-vs-team, with n + CIs</li>
+<li><em>Per-team pages</em> — WR trajectory, deck-version history, matchups, VISUAL decks (card images), tier staying-power</li>
+<li><em>Deck vs. agent</em> — your archetype's WR vs the field average for the SAME archetype, so you can tell empirically whether it's your deck or your agent</li>
+<li><em>Open API + Swagger docs</em> — build on it</li>
+</ul>
+<p>Corrections are welcome, if a number looks off vs your own decode, tell me, and I'll fix it.</p>
+<p><strong>Credit where it's due, this stands on a lot of community work:</strong></p>
+<ul>
+<li>The host's Daily Top Episodes Datasets ( <a href=""https://www.kaggle.com/bovard"" target=""_blank"">@bovard</a> , <a href=""https://www.kaggle.com/shimishige"" target=""_blank"">@shimishige</a> , <a href=""https://www.kaggle.com/addisonhoward"" target=""_blank"">@addisonhoward</a> )</li>
+<li>The existing meta site <a href=""ptcg-kaggle-meta.vercel.app"" target=""_blank"">ptcg-kaggle-meta.vercel.app</a> from <a href=""https://www.kaggle.com/jonanakaiml"" target=""_blank"">@jonanakaiml</a> </li>
+<li>The PTCG_ABCS_Visualizer ( <a href=""https://www.kaggle.com/hiro094"" target=""_blank"">@hiro094</a> )</li>
+<li>the deck-image-renderer notebook ( <a href=""https://www.kaggle.com/ichigoe"" target=""_blank"">@ichigoe</a> )</li>
+<li><a href=""https://www.kaggle.com/yu0307"" target=""_blank"">@yu0307</a> tournament-decks dataset · the daily public meta-note posters</li>
+<li><a href=""https://www.kaggle.com/isakatsuyoshi"" target=""_blank"">@isakatsuyoshi</a> matchup baselines.</li>
+</ul>"
+3478722,,2026-06-23 01:03:46.307000,1,"<p>Hi Paul, thanks for the shout! Really interesting to see another website that is trying to solve the same problem, especially the differences in our products. Best of luck to you!</p>"
+3478723,,2026-06-23 01:05:30.127000,1,"<p>One question, I'm curious how you put together your leaderboard page. I couldn't find any data in the publicly posted dataset on elo's of teams. How did you retrieve this information? Did you calculate it yourself? Did you webscrape it from the leaderboard?</p>"
+3478770,,2026-06-23 03:00:38.580000,0,"<p>Webscraped vis CDP a la browser harness.</p>
+<p>Then just Claude making metrics after that</p>"
+3479557,,2026-06-23 22:17:08.097000,0,<p>Board has been updated!</p>

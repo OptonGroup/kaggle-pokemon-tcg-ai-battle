@@ -42,3 +42,11 @@ results/*.tar.gz
 # IDE
 .vscode/
 .idea/
+
+# Engine source + binaries (competition-use-only license: do NOT distribute)
+data/engine/
+*.so
+*.dylib
+*.dll
+# Scratch/working files
+scratchpad/

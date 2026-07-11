@@ -1,0 +1,18 @@
+{
+  "topic_id": 724378,
+  "title": "Action Order: [0,2,4] vs [2,0,4]",
+  "url": "https://www.kaggle.com/competitions/pokemon-tcg-ai-battle/discussion/724378",
+  "author_name": "Jake",
+  "author_url": "https://www.kaggle.com/decotoj",
+  "post_date": "2026-07-10T21:42:21.014000",
+  "last_comment_date": null,
+  "votes": 0,
+  "comment_count": 0,
+  "forum_id": 8948467,
+  "forum_name": "The Pokémon Company - PTCG AI Battle Challenge Simulation",
+  "content_html": "<p>Does the order of actions as returned by the agent when selecting multiple actions ever matter?  For example is [0,2,4] always the same as [2,0,4]?  Appreciate the help with basic question.</p>",
+  "content_text": "Does the order of actions as returned by the agent when selecting multiple actions ever matter? For example is [0,2,4] always the same as [2,0,4]? Appreciate the help with basic question.",
+  "comments": [],
+  "fetch_method": "kaggle API forums_topic_show (CLI topic-messages + forums_topic_show both agree: 0 comments)",
+  "fetched_at": "2026-07-11"
+}

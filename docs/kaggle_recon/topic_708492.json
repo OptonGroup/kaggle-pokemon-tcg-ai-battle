@@ -1,0 +1,44 @@
+{
+  "topic_id": 708492,
+  "topic_title": "How to Get Started + Competition's Official Discord",
+  "fetched_at": "2026-07-11",
+  "source": "kaggle competitions topic-messages pokemon-tcg-ai-battle 708492 -v --quiet -n -1",
+  "message_count": 5,
+  "messages": [
+    {
+      "id": 3473124,
+      "author": "(Kaggle Staff - official)",
+      "postDate": "2026-06-15T20:27:17.390000",
+      "votes": 13,
+      "content_summary": "Official 'Information for First Timers' + 'Competition's Official Discord' sticky. Links to Kaggle etiquette/lingo/how-to-enter videos, Team Up feature, community guidelines. Official Discord: discord.gg/kaggle. Two key rules: (1) Discord competition channels are 'public' — private sharing of code/data outside team not permitted, code sharing must be public via Kaggle forums/notebooks; (2) Discord channels are NOT monitored by Kaggle Staff/Hosts — keep important questions/insights/writeups on the Kaggle forums. Discord is casual space only."
+    },
+    {
+      "id": 3474434,
+      "author": "(Kaggle Staff)",
+      "postDate": "2026-06-18T01:31:36.600000",
+      "votes": 3,
+      "content_summary": "Clarification: tips and useful information related to the competition should generally be posted in the official Kaggle Discussion forums. Sharing information ONLY on X or other channels is not recommended and MAY BE A RULE VIOLATION if not publicly available for all participants."
+    },
+    {
+      "id": 3473912,
+      "author": "(participant)",
+      "postDate": "2026-06-17T07:59:57.057000",
+      "votes": 0,
+      "content_summary": "Participant asks: unable to post in the #pokemon-tcg-ai-battle Discord channel, how to get permission to post there. (No reply captured in this topic.)"
+    },
+    {
+      "id": 3473690,
+      "author": "Grogoat",
+      "postDate": "2026-06-16T22:29:22.827000",
+      "votes": 0,
+      "content_summary": "Participant 'Grogoat' asks: are participants expected to submit (1) an agent specialized for a single deck chosen by the team, or (2) a general-purpose agent capable of playing multiple decks? Is the deck fixed throughout evaluation or may agents be tested with different decks?"
+    },
+    {
+      "id": 3473726,
+      "author": "(Host/Staff reply to Grogoat)",
+      "postDate": "2026-06-17T00:13:50.043000",
+      "votes": 0,
+      "content_summary": "Official reply: preferred submission method is to zip a main.py file (the agent that plays the deck) and a deck.csv file it reads from. You're allowed two active submissions at any time, can make multiple submissions as meta materializes, but only most recent two are active — may need to resubmit if a better agent is pushed out. EXPECTATION IS #1 (single-deck-specialized agent), but you can have two active and change up your submission as you wish."
+    }
+  ]
+}

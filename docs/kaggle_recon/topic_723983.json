@@ -1,0 +1,38 @@
+{
+  "topic_id": 723983,
+  "title": "About \"five (5) Submissions per day\"",
+  "forum": "pokemon-tcg-ai-battle",
+  "url": "https://www.kaggle.com/competitions/pokemon-tcg-ai-battle/discussion/723983",
+  "fetched_via": "kaggle CLI: competitions topic-messages pokemon-tcg-ai-battle 723983 -v --quiet -n -1",
+  "fetched_at": "2026-07-11",
+  "note": "authorName field was empty in CLI output for all 3 messages (CLI limitation). WebFetch could not render dynamic discussion content. Ordering below is chronological by postDate.",
+  "messages": [
+    {
+      "id": "3494018",
+      "authorName": "(CLI empty)",
+      "postDate": "2026-07-09 01:03:07.280000",
+      "votes": 0,
+      "content_html": "<p>According to the Rules, it states: “You may submit a maximum of five (5) Submissions per day.”</p><p>If a submission results in an ERROR after being submitted, does that submission still count toward the daily limit of five submissions?</p>",
+      "content_text": "According to the Rules, it states: “You may submit a maximum of five (5) Submissions per day.” If a submission results in an ERROR after being submitted, does that submission still count toward the daily limit of five submissions?",
+      "role": "question (original post, earliest timestamp)"
+    },
+    {
+      "id": "3494223",
+      "authorName": "(CLI empty)",
+      "postDate": "2026-07-09 12:56:48.087000",
+      "votes": 0,
+      "content_html": "<p>Error messages do not count against your submission limit in this competition. They do in prediction competitions, where errors may be able to provide information about the test set.</p>",
+      "content_text": "Error messages do not count against your submission limit in this competition. They do in prediction competitions, where errors may be able to provide information about the test set.",
+      "role": "answer (likely host/staff; authoritative phrasing)"
+    },
+    {
+      "id": "3494450",
+      "authorName": "(CLI empty)",
+      "postDate": "2026-07-10 02:14:07.047000",
+      "votes": 0,
+      "content_html": "<p>Thank you!!</p>",
+      "content_text": "Thank you!!",
+      "role": "reply (thanks)"
+    }
+  ]
+}

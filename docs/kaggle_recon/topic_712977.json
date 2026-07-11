@@ -1,0 +1,35 @@
+{
+  "topic_id": 712977,
+  "competition": "pokemon-tcg-ai-battle",
+  "title_from_context": "cardId = 481 'Serperior ex' skill contains japanese text",
+  "fetch_method": "kaggle CLI: competitions topic-messages pokemon-tcg-ai-battle 712977 -v --quiet -n -1",
+  "fetch_date": "2026-07-11",
+  "note": "authorName is empty for all messages in the CLI CSV output (Kaggle does not expose author names for this topic via API). WebFetch on the discussion page returned no content (JS-rendered). Raw CSV dump preserved below.",
+  "raw_csv": "id,authorName,postDate,votes,content\n3479510,,2026-06-23 20:24:22.847000,0,\"<p>This too:</p>\\n<p>attackId = 678</p>\\n<p>damage = 20</p>\\n<p>energies = [1]</p>\\n<p>name = 'Wrap'</p>\\n<p>text = 'コインを1回投でオモテなら、相手のバトルポケモンを【マヒ】にする。'</p>\"\n3479429,,2026-06-23 18:45:27.953000,0,\"<p>The attack is also in Japanese</p>\\n<p>attackId = 680</p>\\n<p>damage = 150</p>\\n<p>energies = [1, 0, 0, 0]</p>\\n<p>name = 'Command the Grass'</p>\\n<p>text = 'のぞむなら、自分の山札から好きなカードを3枚まで選び、手札に加える。そして山札を切る。'</p>\"\n3479421,,2026-06-23 18:39:27.513000,0,\"<p>The 'Serperior ex' info from all_card_data() has Japanese text.</p>\\n<p>Also, many of the skill names have a leading space.</p>\\n<p>name =' Regal Cheer'</p>\\n<p>text = 'このポケモンがいるかぎり、自分のポケモンが使うワザの、相手のバトルポケモンへのダメージは「+20」される。'</p>\"",
+  "messages": [
+    {
+      "id": "3479421",
+      "authorName": null,
+      "postDate": "2026-06-23 18:39:27.513000",
+      "votes": 0,
+      "content_plain": "The 'Serperior ex' info from all_card_data() has Japanese text. Also, many of the skill names have a leading space. name =' Regal Cheer' text = 'このポケモンがいるかぎり、自分のポケモンが使うワザの、相手のバトルポケモンへのダメージは「+20」される。'",
+      "content_html": "<p>The 'Serperior ex' info from all_card_data() has Japanese text.</p><p>Also, many of the skill names have a leading space.</p><p>name =' Regal Cheer'</p><p>text = 'このポケモンがいるかぎり、自分のポケモンが使うワザの、相手のバトルポケモンへのダメージは「+20」される。'</p>"
+    },
+    {
+      "id": "3479429",
+      "authorName": null,
+      "postDate": "2026-06-23 18:45:27.953000",
+      "votes": 0,
+      "content_plain": "The attack is also in Japanese. attackId = 680, damage = 150, energies = [1, 0, 0, 0], name = 'Command the Grass', text = 'のぞむなら、自分の山札から好きなカードを3枚まで選び、手札に加える。そして山札を切る。'",
+      "content_html": "<p>The attack is also in Japanese</p><p>attackId = 680</p><p>damage = 150</p><p>energies = [1, 0, 0, 0]</p><p>name = 'Command the Grass'</p><p>text = 'のぞむなら、自分の山札から好きなカードを3枚まで選び、手札に加える。そして山札を切る。'</p>"
+    },
+    {
+      "id": "3479510",
+      "authorName": null,
+      "postDate": "2026-06-23 20:24:22.847000",
+      "votes": 0,
+      "content_plain": "This too: attackId = 678, damage = 20, energies = [1], name = 'Wrap', text = 'コインを1回投でオモテなら、相手のバトルポケモンを【マヒ】にする。'",
+      "content_html": "<p>This too:</p><p>attackId = 678</p><p>damage = 20</p><p>energies = [1]</p><p>name = 'Wrap'</p><p>text = 'コインを1回投でオモテなら、相手のバトルポケモンを【マヒ】にする。'</p>"
+    }
+  ]
+}

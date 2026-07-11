@@ -1,0 +1,43 @@
+{
+  "topic_id": 712481,
+  "title": "Live meta dashboard + open API for the ladder",
+  "source": "kaggle CLI (topic-messages), authorName fields empty in API output; authors inferred from context",
+  "fetched_at": "2026-07-11",
+  "messages": [
+    {
+      "id": 3478692,
+      "author": "Paul (inferred — thanked by jonanakaiml in reply)",
+      "postDate": "2026-06-22 23:51:07",
+      "votes": 4,
+      "content": "What it is: a live dashboard + open JSON API for the ladder meta.\n- Site: https://ptcg-ladder-meta.vercel.app , API: /api (open, CORS, Swagger at /api-docs)\n- Video: https://youtu.be/sLpVoRvqT7U\n\nThe honest caveat first: this is the OBSERVED public surface — the host's daily TOP-episode sample. NOT the full ladder, NOT the hidden eval distribution. Sample sizes + Wilson CIs shown, thin data faded not hidden.\n\nIn it (6 days so far):\n- Meta over time — prevalence, diversity, per-tier composition, churn\n- Win-rate matrices — archetype-vs-archetype + team-vs-team, with n + CIs\n- Per-team pages — WR trajectory, deck-version history, matchups, VISUAL decks (card images), tier staying-power\n- Deck vs agent — your archetype's WR vs the field average for the SAME archetype, so you can tell empirically whether it's your deck or your agent\n- Open API + Swagger docs — build on it\n\nCorrections are welcome, if a number looks off vs your own decode, tell me, and I'll fix it.\n\nCredit where it's due, this stands on a lot of community work:\n- The host's Daily Top Episodes Datasets (@bovard, @shimishige, @addisonhoward)\n- The existing meta site ptcg-kaggle-meta.vercel.app from @jonanakaiml\n- The PTCG_ABCS_Visualizer (@hiro094)\n- the deck-image-renderer notebook (@ichigoe)\n- @yu0307 tournament-decks dataset · the daily public meta-note posters\n- @isakatsuyoshi matchup baselines."
+    },
+    {
+      "id": 3478722,
+      "author": "@jonanakaiml (inferred — author of ptcg-kaggle-meta.vercel.app, addresses Paul)",
+      "postDate": "2026-06-23 01:03:46",
+      "votes": 1,
+      "content": "Hi Paul, thanks for the shout! Really interesting to see another website that is trying to solve the same problem, especially the differences in our products. Best of luck to you!"
+    },
+    {
+      "id": 3478723,
+      "author": "@jonanakaiml (inferred — same author, follow-up question)",
+      "postDate": "2026-06-23 01:05:30",
+      "votes": 1,
+      "content": "One question, I'm curious how you put together your leaderboard page. I couldn't find any data in the publicly posted dataset on elo's of teams. How did you retrieve this information? Did you calculate it yourself? Did you webscrape it from the leaderboard?"
+    },
+    {
+      "id": 3478770,
+      "author": "Paul (inferred — answers jonanakaiml's question about elo source)",
+      "postDate": "2026-06-23 03:00:38",
+      "votes": 0,
+      "content": "Webscraped vis CDP a la browser harness.\nThen just Claude making metrics after that"
+    },
+    {
+      "id": 3479557,
+      "author": "Paul (inferred — dashboard owner announcing update)",
+      "postDate": "2026-06-23 22:17:08",
+      "votes": 0,
+      "content": "Board has been updated!"
+    }
+  ]
+}

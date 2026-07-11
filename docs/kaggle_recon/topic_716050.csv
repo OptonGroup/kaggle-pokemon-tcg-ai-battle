@@ -1,0 +1,24 @@
+id,authorName,postDate,votes,content
+3484071,,2026-06-30 00:57:55.557000,1,"<p>Hi,
+I'm in the Pokémon TCG AI Battle simulation competition (username: dcallega).
+While downloading episode replays for analysis via the public API
+(<code>kaggle competitions replay</code>), I triggered a rate limit on the episode-replay
+endpoint. It's now been ~3 days and it hasn't cleared: I get HTTP 429 /
+""Too many requests"" not only from the API but also when trying to view episode
+replays in the browser on the competition site.
+Could you help me understand:</p>
+<ol>
+<li>Is a multi-day cooldown expected here, or might my account be stuck?</li>
+<li>What are the intended rate limits for episode-replay downloads, so I can
+stay within them going forward?</li>
+<li>Is there a sanctioned way to bulk-access episodes for analysis? (I'm aware of
+and using the official daily <code>pokemon-tcg-ai-battle-episodes-YYYY-MM-DD</code>
+datasets.)
+I'm not trying to bypass any limits: I just want to view episodes again and
+respect the proper ones. Thanks!</li>
+</ol>"
+3484123,,2026-06-30 04:12:24.993000,1,"<p>I also met a similar situation when I participated in another competition (I crawled kaggle notebooks), and at that time it had remained for at least one year.
+I don't know whether the block has been finally unlocked because I have moved from my past place before unlocking.</p>
+<p>The term must be case-dependent, but the extreme case it could be perma-ban.</p>"
+3484167,,2026-06-30 05:13:59.477000,0,<p>Thank you! How would I know? Did anyone reach out saying your account caused any issues / violated some ToS? Anyone emailed or messaged you from Kaggle?</p>
+3484267,,2026-06-30 07:17:16.453000,0,<p>In my case there is no message or warning except the API error response.</p>

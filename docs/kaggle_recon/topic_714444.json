@@ -1,0 +1,49 @@
+{
+  "topic_id": 714444,
+  "topic_title": "[RESOLVED] Cinderace's Explosiveness does not prevent mulligan",
+  "competition": "pokemon-tcg-ai-battle",
+  "fetched_at": "2026-07-11",
+  "source": "kaggle CLI: competitions topic-messages pokemon-tcg-ai-battle 714444 -v --quiet -n -1",
+  "raw_csv": "docs/kaggle_recon/topic_714444_raw.csv",
+  "messages_in_chronological_order": [
+    {
+      "id": 3481682,
+      "authorName": "",
+      "postDate": "2026-06-26 09:59:27.120000",
+      "votes": 1,
+      "is_original_post": true,
+      "content_html": "<h2>Issue</h2>\n<p>When the initial hand contains <strong>Cinderace (card ID 666)</strong> but no Basic Pokémon, the simulator triggers a mulligan. According to the official Pokémon TCG rulings, Cinderace's Explosiveness skill (\"If this Pokémon is in your hand when you are setting up to play, you may put it face down in the Active Spot.\") should allow the player to place Cinderace in the Active Spot instead of mulliganing.</p>\n<h3>Official Q&A (from the Pokémon Card Game official rulings)</h3>\n<blockquote>\n  <p><strong>Q:</strong> During setup, if the initial 7-card hand contains no Basic Pokémon but only a Cinderace with the Explosiveness Ability, can the player place Cinderace in the Active Spot and begin the game?\n  <strong>A:</strong> Yes, they can.</p>\n  <p><strong>Q:</strong> In that same situation, can the player choose NOT to place Cinderace?\n  <strong>A:</strong> Yes. The player may choose whether or not to place Cinderace. If they choose not to, a mulligan occurs as normal.</p>\n</blockquote>\n<h3>Current simulator behavior</h3>\n<p>In the existing thread (Rules and Clarifications 708586), the organizers confirmed that Cinderace can be placed in the Active Spot during setup. However, this only works when a Basic Pokémon is also in hand. When Cinderace is the <strong>only</strong> eligible Pokémon (no Basics), the simulator forces a mulligan instead of offering the choice to place Cinderace.</p>\n<h3>Evidence from replays</h3>\n<p>We observed multiple games where the hand contained Cinderace but no Basic Pokémon, and the game repeatedly mulliganed until a Basic was drawn. In one case, 7 consecutive mulligans occurred despite Cinderace being in every hand.</p>\n<p>Episode ID: 81121967\nDataset URL: https://www.kaggle.com/datasets/peppernxt/ptcg-explosiveness-mulligan-bug</p>\n<h3>Expected behavior</h3>\n<p>When the hand contains Cinderace (with Explosiveness) but no Basic Pokémon, the simulator should offer the player a choice: place Cinderace in the Active Spot (no mulligan) or decline (mulligan as normal).</p>",
+      "content_text": "ISSUE: When the initial hand contains Cinderace (card ID 666) but no Basic Pokémon, the simulator triggers a mulligan. Per official rulings, Cinderace's Explosiveness Ability (\"If this Pokémon is in your hand when you are setting up to play, you may put it face down in the Active Spot.\") should allow placing Cinderace in the Active Spot instead of mulliganing.\n\nOfficial Q&A confirms: (Q) if the starting 7-card hand has no Basic Pokémon but only a Cinderace with Explosiveness, can the player place Cinderace Active and begin? (A) Yes. (Q) Can the player choose NOT to place Cinderace? (A) Yes — optional; if declined, mulligan occurs as normal.\n\nCurrent simulator behavior: organizers confirmed in thread 708586 that Cinderace CAN be placed Active during setup — but this only works when a Basic Pokémon is also in hand. When Cinderace is the ONLY eligible Pokémon (no Basics), the simulator forces a mulligan instead of offering the choice.\n\nEvidence: multiple games where hand had Cinderace but no Basic, game repeatedly mulliganed until a Basic was drawn. One case: 7 consecutive mulligans despite Cinderace in every hand. Episode ID 81121967. Dataset: https://www.kaggle.com/datasets/peppernxt/ptcg-explosiveness-mulligan-bug\n\nExpected: simulator should offer choice — place Cinderace Active (no mulligan) or decline (mulligan as normal)."
+    },
+    {
+      "id": 3481740,
+      "authorName": "",
+      "postDate": "2026-06-26 11:32:51.940000",
+      "votes": 0,
+      "is_original_post": false,
+      "content_html": "<p>If I understand it correctly, this is not a simulator bug.</p>\n<p>Explosiveness says \"you may put it face down\" — so the simulator gives you the choice, and your agent needs to take it.</p>\n<p>When your hand has no Basic Pokémon and Cinderace is the only Pokémon that can be placed Active, the simulator offers two steps:</p>\n<pre><code>Step 1: MULLIGAN context (context=42)\n  options: [YES (type=1), NO (type=2)]\n  → Return NO to decline mulligan\n\nStep 2: SETUP_ACTIVE_POKEMON context (context=1)\n  options: [Cinderace (hand index 5), Cinderace (hand index 6)]\n  → Pick one to place as Active\n</code></pre>\n<p>If you return NO at step 1, Cinderace appears as an option at step 2. The 7 consecutive mulligans likely mean the agent returned YES each time.</p>\n<p>If you'd like a working reference, my Cinderace-based agent handles this here: https://www.kaggle.com/code/masamikobayashi/a-sample-archaludon-75-wr-vs-my-1300-starmie</p>",
+      "content_text": "NOT a simulator bug. Explosiveness says \"you may put it face down\" — simulator gives the choice, the agent must take it.\n\nWhen hand has no Basic Pokémon and Cinderace is the only Pokémon that can be placed Active, simulator offers two steps:\n  Step 1: MULLIGAN context (context=42)\n    options: [YES (type=1), NO (type=2)]\n    → Return NO to decline mulligan\n  Step 2: SETUP_ACTIVE_POKEMON context (context=1)\n    options: [Cinderace (hand index 5), Cinderace (hand index 6)]\n    → Pick one to place as Active\n\nIf you return NO at step 1, Cinderace appears as an option at step 2. The 7 consecutive mulligans likely mean the agent returned YES each time.\n\nWorking reference: https://www.kaggle.com/code/masamikobayashi/a-sample-archaludon-75-wr-vs-my-1300-starmie"
+    },
+    {
+      "id": 3481748,
+      "authorName": "",
+      "postDate": "2026-06-26 11:44:34.057000",
+      "votes": 0,
+      "is_original_post": false,
+      "content_html": "<p>Also, here are the official ruling references, so I think the current simulator behavior is probably correct here.</p>\n<p>English official ruling reference for the same \"Explosiveness\" Ability:</p>\n<p>https://asia.pokemon-card.com/sg/rules/search/?keyword=Explosiveness</p>\n<blockquote>\n  <p>If while setting up I don't have any Basic Pokémon in my starting hand, but I do have a Luxray with the \"Explosiveness\" Ability, do I have the option of not putting Luxray face down as my Active Pokémon?</p>\n  <p>Yes, you can decide to not put Luxray face down as your Active Pokémon.</p>\n</blockquote>\n<p>So the ruling confirms that this is optional. You may use Explosiveness to set up the Pokémon as Active, but you may also decline it and take a mulligan instead.</p>\n<p>That seems to match the simulator flow: the agent first gets a <code>MULLIGAN</code> choice, and if it chooses <code>NO</code>, it proceeds to <code>SETUP_ACTIVE_POKEMON</code>, where Cinderace can be selected.</p>\n<p>Japanese official FAQ:</p>\n<p>https://www.pokemon-card.com/rules/faq/search.php?freeword=しゅんぱつりょく&regulation_faq_main_item1=XY</p>\n<blockquote>\n  <p>対戦準備のとき、最初に引いた7枚の手札の中にたねポケモンがなく、特性「しゅんぱつりょく」を持つエースバーンのみがある場合、エースバーンをバトル場に出さないことはできますか？</p>\n  <p>はい、できます。この場合、エースバーンをバトル場に出すかどうかをえらぶことができます。</p>\n</blockquote>",
+      "content_text": "Official ruling references — current simulator behavior is probably correct.\n\nEnglish official ruling (Explosiveness, applies to Luxray too): https://asia.pokemon-card.com/sg/rules/search/?keyword=Explosiveness\n  Q: If while setting up I don't have any Basic Pokémon in my starting hand, but I do have a Luxray with the \"Explosiveness\" Ability, do I have the option of not putting Luxray face down as my Active Pokémon?\n  A: Yes, you can decide to not put Luxray face down as your Active Pokémon.\n\nSo ruling confirms optional. You may use Explosiveness to set up the Pokémon as Active, but you may also decline and take a mulligan instead. Matches simulator flow: agent first gets MULLIGAN choice; if it chooses NO, proceeds to SETUP_ACTIVE_POKEMON where Cinderace can be selected.\n\nJapanese official FAQ: https://www.pokemon-card.com/rules/faq/search.php?freeword=しゅんぱつりょく&regulation_faq_main_item1=XY — confirms same (acebān/Cinderace with しゅんぱつりょく/Explosiveness can choose whether to place Active)."
+    },
+    {
+      "id": 3481755,
+      "authorName": "",
+      "postDate": "2026-06-26 11:51:59.383000",
+      "votes": 1,
+      "is_original_post": false,
+      "is_original_poster_resolution": true,
+      "content_html": "<p>Thank you, you're absolutely right. I confirmed that our agent was returning <a href=\"YES\" target=\"_blank\">0</a> at the MULLIGAN context every time, which accepted the mulligan instead of declining it. There was no handler for context=42 in our agent at all.\nWe'll fix the agent to return <a href=\"NO\" target=\"_blank\">1</a> when Cinderace is in hand, so it skips the mulligan and places Cinderace as Active. Thanks for the clear explanation and the reference code.</p>",
+      "content_text": "RESOLUTION (from OP): Confirmed our agent was returning 0 (YES) at the MULLIGAN context every time, which accepted the mulligan instead of declining it. There was no handler for context=42 in our agent at all.\n\nFix: return 1 (NO) when Cinderace is in hand, so it skips the mulligan and places Cinderace as Active."
+    }
+  ],
+  "resolved": true,
+  "resolution_summary": "NOT a simulator bug — the agent must handle the MULLIGAN context (context=42). Returning option index 0 (YES) accepts the mulligan; returning 1 (NO) declines it, after which SETUP_ACTIVE_POKEMON (context=1) offers Cinderace as a placeable Active option. The OP's agent had no handler for context=42 and defaulted to YES, causing repeated mulligans."
+}

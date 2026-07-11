@@ -1,0 +1,23 @@
+{
+  "topic_id": "723591",
+  "title": "First or second — which do agents pick?",
+  "competition": "pokemon-tcg-ai-battle",
+  "fetched_via": "kaggle CLI competitions topic-messages (-v --quiet -n -1 -s old)",
+  "fetched_at": "2026-07-11",
+  "messages": [
+    {
+      "id": "3493225",
+      "authorName_cli": "",
+      "postDate": "2026-07-07 11:53:27.860000",
+      "votes": 10,
+      "content_html": "<p>I went through the <strong>5,333 most recent games</strong> (2026-07-06 daily top episode dataset) and, for each game, pulled out which side held the first/second choice, what they chose, and who won. Sharing the numbers.</p>\n<h3>1. What the choosing side picks</h3>\n<p>The player who holds the choice picks <strong>first</strong> by a wide margin:</p>\n<table><thead><tr><th>Choice</th><th>Games</th><th>Share</th></tr></thead><tbody><tr><td>Take first</td><td>4,879</td><td>91.5%</td></tr><tr><td>Take second</td><td>454</td><td>8.5%</td></tr></tbody></table>\n<h3>2. Win rate by turn order</h3>\n<p>And that preference looks correct — first wins more often:</p>\n<table><thead><tr><th>Turn order</th><th>Wins</th><th>Win rate</th></tr></thead><tbody><tr><td>First</td><td>2,939</td><td>55.2%</td></tr><tr><td>Second</td><td>2,382</td><td>44.8%</td></tr></tbody></table>\n<p>Going first is worth roughly <strong>+10 points</strong>.</p>\n<h3>3. Can you actually get the order you want?</h3>\n<p>The choice belongs to the coin-toss winner. Assuming a fair 50/50 toss and that the opponent behaves like the population above (takes first ~91.5% of the time), the probability of actually <strong>ending up</strong> with the order you want is:</p>\n<table><thead><tr><th>Order you want</th><th>Probability you get it</th></tr></thead><tbody><tr><td>Second</td><td>~96%</td></tr><tr><td>First</td><td>~54%</td></tr></tbody></table>\n<ul><li><strong>Want second → you almost always get it.</strong> If you win the toss you just pick it; and if you lose the toss, the opponent takes first (91.5%), which leaves you going second anyway.</li><li><strong>Want first → basically luck.</strong> If you lose the toss, the opponent takes first and you get pushed to second.</li></ul>\n<h3>4. Discussion — does this matter competitively?</h3>\n<p>This creates an asymmetry worth thinking about:</p>\n<ul><li>The <strong>advantageous</strong> order (first) is the one you <strong>can't reliably secure</strong> — it comes down to the coin toss (~54%).</li><li>The <strong>disadvantageous</strong> order (second) is the one you <strong>can almost always secure</strong> (~96%), precisely because everyone fights over first.</li></ul>\n<p>Two implications:</p>\n<ol><li><strong>You can't engineer your way into the first-turn advantage.</strong> No matter how much you value first, ~46% of the time you lose the toss and get put on second. A deck that \"only works going first\" is exposed to that variance every game.</li><li><strong>\"Second\" is the controllable state.</strong> If a deck/strategy could actually fight well on the second turn, you could steer into your intended position ~96% of the time, converting coin-toss variance into consistency. In the current data second is clearly a disadvantage, so this is still a <em>hypothesis</em>, not a solution — <strong>but second is one of the few positions you can reliably aim for</strong>, so a build that's strong going second might be worth investing in.</li></ol>\n<p><em>Note: win rates are pooled across all archetypes and agents.</em></p>\n<p>I'd be curious whether others see the same split, and whether anyone has tried a build designed around going second.</p>"
+    },
+    {
+      "id": "3495126",
+      "authorName_cli": "",
+      "postDate": "2026-07-11 13:56:58.713000",
+      "votes": 0,
+      "content_html": "<p>Thanks for great insight! ありがとうございます！</p>"
+    }
+  ]
+}

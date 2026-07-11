@@ -1,0 +1,20 @@
+id,authorName,postDate,votes,content
+3484745,,2026-06-30 17:55:33.980000,0,"<p>I’m trying to use the public episode JSON dataset for behavioral cloning / imitation learning, and I wanted to sanity-check the correct way to align observations and actions.
+From my parsing, each decision row has an <code>obs.select</code> with legal options and a logged action list. I’m currently filtering to rows where:</p>
+<ul>
+<li><code>obs.select</code> is not <code>None</code></li>
+<li><code>maxCount &gt; 0</code></li>
+<li>number of legal options &gt; 1</li>
+<li>selected indices are inside the option range</li>
+<li><code>minCount &lt;= len(action) &lt;= maxCount</code></li>
+<li>no final reward/rank/player identity is used as model input
+A few questions:</li>
+</ul>
+<ol>
+<li>Should the logged action be paired with the same step’s <code>obs.select</code>, or the previous step’s <code>obs.select</code>?</li>
+<li>Are rows with <code>action=[]</code> but <code>minCount=1</code> expected artifacts from the logging format, or am I misaligning actions/observations?</li>
+<li>Are both agents in these public episode logs generally suitable for BC, or do people filter to winner-only / specific agents / specific ranks?</li>
+<li>For behavior cloning, are people mainly training on single-choice <code>maxCount=1</code> decisions first, or including multi-select decisions from the start?</li>
+<li>Is there any official or commonly accepted interpretation of deck-return/start rows vs real decision rows in these logs?
+, just trying to avoid training on incorrectly aligned or illegal action labels. Any clarification on the dataset format would be appreciated.</li>
+</ol>"

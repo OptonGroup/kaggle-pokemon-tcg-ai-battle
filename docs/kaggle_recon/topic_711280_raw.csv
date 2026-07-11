@@ -1,0 +1,16 @@
+id,authorName,postDate,votes,content
+3477119,,2026-06-21 09:22:21.387000,4,"<p>Hi all, and thanks to the organizers for a great challenge.</p>
+<p>We're entering both the Simulation and Strategy categories, and we keep running into the same set of design questions. Since every submission ships a fixed <code>deck.csv</code> together with <code>main.py</code>, there's a real architectural fork:</p>
+<ul>
+<li><strong>(A) Deck-specific agent</strong> — the policy contains logic tied to the actual cards in its own deck (e.g. ""this is my main attacker, evolve this line, attach N energy, gust with this Supporter"").</li>
+<li><strong>(B) General / ""universal"" agent</strong> — the policy derives everything from card metadata and the simulator (attacks, costs, evolution lines, HP, prizes) and could in principle pilot <em>any</em> deck, with no card-specific branches.</li>
+</ul>
+<p>We'd really appreciate clarification on the following, even if maybe are impossible to know yet:</p>
+<ol>
+<li><p><strong>Model Score (70%) — what does it actually reward?</strong> The Strategy rubric weights Model Score at 70%, including ""originality and technically sound approach"", ""consistency"", and ""robustness across matchups / initial states"". Does this implicitly favor a general agent (B), or is a strong single-archetype specialist (A) scored just as highly as long as it performs well and is clearly explained?</p></li>
+<li><p><strong>Is deck-specific logic intended / acceptable?</strong> Is it within the spirit of the challenge for an agent's policy to branch on the specific cards in its own deck, or is the intended goal a general engine that reads card data and plays the deck it's given?</p></li>
+<li><p><strong>Using your own deck's information.</strong> Since the deck is fixed and shipped with the agent, is it legitimate for the agent to use full knowledge of its own decklist (card effects, attack costs, evolution lines) to plan? We assume yes, but want to confirm there is no penalty in the Strategy scoring for ""knowing your own deck"".</p></li>
+<li><p><strong>Opponent-specific logic.</strong> Is branching on the opponent's archetype / specific revealed cards acceptable, or is it discouraged as overfitting compared to inferring threats purely from the visible board?</p></li>
+<li><p><strong>Does specialization ""lock"" an entry?</strong> Is an agent specialized to a single deck at any disadvantage — for example in the Second Round / finals if those use different decks or formats — versus an agent that generalizes?</p></li>
+</ol>
+<p>We want to make sure we're building in the intended direction before investing further. Thanks a lot</p>"

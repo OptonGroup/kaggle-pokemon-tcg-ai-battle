@@ -1,0 +1,3 @@
+id,authorName,postDate,votes,content
+3486453,,2026-07-02 14:46:59.613000,1,"<p>After being stuck for a while i decided to make a little data curation script utilizing the downloadable replay logs. simple set up and thought i would make it modular for everyone. hope it helps</p>
+<p><a href=""https://www.kaggle.com/code/chrisgendryx/pokemon-ptcg-log-curation"" target=""_blank"">https://www.kaggle.com/code/chrisgendryx/pokemon-ptcg-log-curation</a></p>"

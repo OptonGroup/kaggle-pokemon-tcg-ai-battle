@@ -1,0 +1,299 @@
+{
+  "generated_at": "2026-07-11T18:12:58.372188",
+  "anchor_mu": {
+    "v015_exit_pilot": 317.7,
+    "v001_random": 483.8,
+    "v018_grimmsnarl": 484.1,
+    "v012_iono_heur": 499.2,
+    "v009a_crustle": 724.1,
+    "v007_crustle": 733.1,
+    "v002_lucario": 779.9
+  },
+  "weak_anchor_excluded_in_variant2": "v002_lucario",
+  "variant_all7": {
+    "anchors": [
+      "v015_exit_pilot",
+      "v001_random",
+      "v018_grimmsnarl",
+      "v012_iono_heur",
+      "v009a_crustle",
+      "v007_crustle",
+      "v002_lucario"
+    ],
+    "s": 575.9246527621576,
+    "loss": 3759.9339363791614,
+    "mu_true": {
+      "v015_exit_pilot": 317.7,
+      "v001_random": 483.8,
+      "v018_grimmsnarl": 484.1,
+      "v012_iono_heur": 499.2,
+      "v009a_crustle": 724.1,
+      "v007_crustle": 733.1,
+      "v002_lucario": 779.9
+    },
+    "mu_hat": {
+      "v015_exit_pilot": 267.4323360989081,
+      "v001_random": 164.27752906902305,
+      "v018_grimmsnarl": 571.8673875934455,
+      "v012_iono_heur": 717.5188443602392,
+      "v009a_crustle": 818.0930733065231,
+      "v007_crustle": 794.0947318877941,
+      "v002_lucario": 626.7389135498786
+    },
+    "spearman": 0.7142857142857143,
+    "inversions": [
+      {
+        "a": "v015_exit_pilot",
+        "b": "v001_random",
+        "mu_true_a": 317.7,
+        "mu_true_b": 483.8,
+        "mu_hat_a": 267.4323360989081,
+        "mu_hat_b": 164.27752906902305
+      },
+      {
+        "a": "v012_iono_heur",
+        "b": "v002_lucario",
+        "mu_true_a": 499.2,
+        "mu_true_b": 779.9,
+        "mu_hat_a": 717.5188443602392,
+        "mu_hat_b": 626.7389135498786
+      },
+      {
+        "a": "v009a_crustle",
+        "b": "v007_crustle",
+        "mu_true_a": 724.1,
+        "mu_true_b": 733.1,
+        "mu_hat_a": 818.0930733065231,
+        "mu_hat_b": 794.0947318877941
+      },
+      {
+        "a": "v009a_crustle",
+        "b": "v002_lucario",
+        "mu_true_a": 724.1,
+        "mu_true_b": 779.9,
+        "mu_hat_a": 818.0930733065231,
+        "mu_hat_b": 626.7389135498786
+      },
+      {
+        "a": "v007_crustle",
+        "b": "v002_lucario",
+        "mu_true_a": 733.1,
+        "mu_true_b": 779.9,
+        "mu_hat_a": 794.0947318877941,
+        "mu_hat_b": 626.7389135498786
+      }
+    ],
+    "chain": [
+      "v007_crustle",
+      "v009a_crustle",
+      "v012_iono_heur",
+      "v018_grimmsnarl",
+      "v015_exit_pilot"
+    ],
+    "chain_monotonic": false,
+    "verdict": "FAIL"
+  },
+  "variant_no_v002": {
+    "anchors": [
+      "v015_exit_pilot",
+      "v001_random",
+      "v018_grimmsnarl",
+      "v012_iono_heur",
+      "v009a_crustle",
+      "v007_crustle"
+    ],
+    "s": 549.4807142295067,
+    "loss": 2702.5081171353536,
+    "mu_true": {
+      "v015_exit_pilot": 317.7,
+      "v001_random": 483.8,
+      "v018_grimmsnarl": 484.1,
+      "v012_iono_heur": 499.2,
+      "v009a_crustle": 724.1,
+      "v007_crustle": 733.1
+    },
+    "mu_hat": {
+      "v015_exit_pilot": 272.3765431452057,
+      "v001_random": 193.86758872135175,
+      "v018_grimmsnarl": 535.8641343378611,
+      "v012_iono_heur": 784.3602009671055,
+      "v009a_crustle": 713.8018301158138,
+      "v007_crustle": 696.8692137402545
+    },
+    "spearman": 0.7142857142857143,
+    "inversions": [
+      {
+        "a": "v015_exit_pilot",
+        "b": "v001_random",
+        "mu_true_a": 317.7,
+        "mu_true_b": 483.8,
+        "mu_hat_a": 272.3765431452057,
+        "mu_hat_b": 193.86758872135175
+      },
+      {
+        "a": "v012_iono_heur",
+        "b": "v009a_crustle",
+        "mu_true_a": 499.2,
+        "mu_true_b": 724.1,
+        "mu_hat_a": 784.3602009671055,
+        "mu_hat_b": 713.8018301158138
+      },
+      {
+        "a": "v012_iono_heur",
+        "b": "v007_crustle",
+        "mu_true_a": 499.2,
+        "mu_true_b": 733.1,
+        "mu_hat_a": 784.3602009671055,
+        "mu_hat_b": 696.8692137402545
+      },
+      {
+        "a": "v009a_crustle",
+        "b": "v007_crustle",
+        "mu_true_a": 724.1,
+        "mu_true_b": 733.1,
+        "mu_hat_a": 713.8018301158138,
+        "mu_hat_b": 696.8692137402545
+      }
+    ],
+    "chain": [
+      "v007_crustle",
+      "v009a_crustle",
+      "v012_iono_heur",
+      "v018_grimmsnarl",
+      "v015_exit_pilot"
+    ],
+    "chain_monotonic": false,
+    "verdict": "FAIL"
+  },
+  "variant_no_v012": {
+    "anchors": [
+      "v015_exit_pilot",
+      "v001_random",
+      "v018_grimmsnarl",
+      "v009a_crustle",
+      "v007_crustle",
+      "v002_lucario"
+    ],
+    "s": 504.8006272822305,
+    "loss": 2516.9990789102353,
+    "mu_true": {
+      "v015_exit_pilot": 317.7,
+      "v001_random": 483.8,
+      "v018_grimmsnarl": 484.1,
+      "v009a_crustle": 724.1,
+      "v007_crustle": 733.1,
+      "v002_lucario": 779.9
+    },
+    "mu_hat": {
+      "v015_exit_pilot": 360.817689627051,
+      "v001_random": 229.88926205039573,
+      "v018_grimmsnarl": 590.3803414352137,
+      "v009a_crustle": 901.8101251315821,
+      "v007_crustle": 882.1091514349735,
+      "v002_lucario": 570.6471326100507
+    },
+    "spearman": 0.5428571428571428,
+    "inversions": [
+      {
+        "a": "v015_exit_pilot",
+        "b": "v001_random",
+        "mu_true_a": 317.7,
+        "mu_true_b": 483.8,
+        "mu_hat_a": 360.817689627051,
+        "mu_hat_b": 229.88926205039573
+      },
+      {
+        "a": "v018_grimmsnarl",
+        "b": "v002_lucario",
+        "mu_true_a": 484.1,
+        "mu_true_b": 779.9,
+        "mu_hat_a": 590.3803414352137,
+        "mu_hat_b": 570.6471326100507
+      },
+      {
+        "a": "v009a_crustle",
+        "b": "v007_crustle",
+        "mu_true_a": 724.1,
+        "mu_true_b": 733.1,
+        "mu_hat_a": 901.8101251315821,
+        "mu_hat_b": 882.1091514349735
+      },
+      {
+        "a": "v009a_crustle",
+        "b": "v002_lucario",
+        "mu_true_a": 724.1,
+        "mu_true_b": 779.9,
+        "mu_hat_a": 901.8101251315821,
+        "mu_hat_b": 570.6471326100507
+      },
+      {
+        "a": "v007_crustle",
+        "b": "v002_lucario",
+        "mu_true_a": 733.1,
+        "mu_true_b": 779.9,
+        "mu_hat_a": 882.1091514349735,
+        "mu_hat_b": 570.6471326100507
+      }
+    ],
+    "chain": [
+      "v007_crustle",
+      "v009a_crustle",
+      "v018_grimmsnarl",
+      "v015_exit_pilot"
+    ],
+    "chain_monotonic": false,
+    "verdict": "FAIL"
+  },
+  "variant_no_v012_no_v002": {
+    "anchors": [
+      "v015_exit_pilot",
+      "v001_random",
+      "v018_grimmsnarl",
+      "v009a_crustle",
+      "v007_crustle"
+    ],
+    "s": 413.31195488498753,
+    "loss": 1564.647808718076,
+    "mu_true": {
+      "v015_exit_pilot": 317.7,
+      "v001_random": 483.8,
+      "v018_grimmsnarl": 484.1,
+      "v009a_crustle": 724.1,
+      "v007_crustle": 733.1
+    },
+    "mu_hat": {
+      "v015_exit_pilot": 394.91902401751884,
+      "v001_random": 288.0650489770519,
+      "v018_grimmsnarl": 550.1638564908176,
+      "v009a_crustle": 759.9133532246269,
+      "v007_crustle": 750.0161443295488
+    },
+    "spearman": 0.8,
+    "inversions": [
+      {
+        "a": "v015_exit_pilot",
+        "b": "v001_random",
+        "mu_true_a": 317.7,
+        "mu_true_b": 483.8,
+        "mu_hat_a": 394.91902401751884,
+        "mu_hat_b": 288.0650489770519
+      },
+      {
+        "a": "v009a_crustle",
+        "b": "v007_crustle",
+        "mu_true_a": 724.1,
+        "mu_true_b": 733.1,
+        "mu_hat_a": 759.9133532246269,
+        "mu_hat_b": 750.0161443295488
+      }
+    ],
+    "chain": [
+      "v007_crustle",
+      "v009a_crustle",
+      "v018_grimmsnarl",
+      "v015_exit_pilot"
+    ],
+    "chain_monotonic": false,
+    "verdict": "FAIL"
+  }
+}

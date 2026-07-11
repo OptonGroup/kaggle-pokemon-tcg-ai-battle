@@ -1,0 +1,196 @@
+{
+  "topic_id": 712621,
+  "title": "Leaderboard Scoring Inconsistency",
+  "topic_author": "djschmit",
+  "topic_postDate": "2026-06-23 06:59:37.557000",
+  "commentCount": "22",
+  "topic_votes": "66",
+  "message_count": 23,
+  "messages": [
+    {
+      "id": "3478917",
+      "authorName": "djschmit",
+      "postDate": "2026-06-23 06:59:37.557000",
+      "votes": "66",
+      "content_raw": "<p>Making this post partially as a warning to other competitors and partially as a plea for change: the current scoring system is incredibly inconsistent. </p>\n<p>I first noticed this when I was experimenting with a kangaskhan/crustle deck, similar to the ones that have been performing well in the recent standard meta. After making what in local testing were improvements, the agent's leaderboard score regressed. I was curious, so I submitted two identical agents (<a href=\"https://www.kaggle.com/competitions/pokemon-tcg-ai-battle/submissions?submissionId=53879890&amp;episodeId=81018137#\" target=\"_blank\">one</a> and <a href=\"https://www.kaggle.com/competitions/pokemon-tcg-ai-battle/submissions?submissionId=53892632&amp;episodeId=81059056#\" target=\"_blank\">two</a>). While they were active, one converged to a score of 940.7 and the other 790.8 (~150pt gap). After this, I did some work on a different archetype, festival lead. I would expect this deck to have less polarizing matchups than crustle, but I observed the opposite. Like crustle, I submitted two identical agents. <a href=\"https://www.kaggle.com/competitions/pokemon-tcg-ai-battle/submissions?submissionId=53957772&amp;episodeId=81422227#\" target=\"_blank\">One</a> is currently scoring 1104.6 while <a href=\"https://www.kaggle.com/competitions/pokemon-tcg-ai-battle/submissions?submissionId=53957319&amp;episodeId=81455280#\" target=\"_blank\">the other</a> is currently scoring 687.4 (&gt;400pt gap). This is a huge gap for identical decks that are played the same. To be fair to the scoring algorithm these have only been active for ~10hrs (and I will likely leave them active for awhile), but it's still concerning.</p>\n<p>For now here's my advice to others: if you want a good picture of how you stack up vs the leaderboard meta submit each agent twice. You can have two agents active at once, and as long as you're not running into the daily submissions cap you can a clearer picture this way. Beyond that, running local evaluations vs the example decks and other public agents is a great way to test and refine on a much larger (but less varied) sample size.</p>\n<p>I'm not sure how this can be fixed. I would guess playing more games per agent and/or converging an agent's rating slower could help? It appears an agent's fate is largely decided by its first 5-10 games, although I don't have the full episode dataset so I can't get a clear picture. If nothing changes, I expect the top of the leaderboard will be submitting their final agents over and over until they \"high roll\" and get a good score. We <a href=\"https://www.kaggle.com/competitions/pokemon-tcg-ai-battle/discussion/712476\" target=\"_blank\">already see</a> people hesitant to switch off of high scoring leaderboard agents, which is bad for the competition imo.</p>\n<p>Hopefully this can be fixed, and good luck to everyone!</p>",
+      "content_plain": "Making this post partially as a warning to other competitors and partially as a plea for change: the current scoring system is incredibly inconsistent. \nI first noticed this when I was experimenting with a kangaskhan/crustle deck, similar to the ones that have been performing well in the recent standard meta. After making what in local testing were improvements, the agent's leaderboard score regressed. I was curious, so I submitted two identical agents (one (https://www.kaggle.com/competitions/pokemon-tcg-ai-battle/submissions?submissionId=53879890&episodeId=81018137#) and two (https://www.kaggle.com/competitions/pokemon-tcg-ai-battle/submissions?submissionId=53892632&episodeId=81059056#)). While they were active, one converged to a score of 940.7 and the other 790.8 (~150pt gap). After this, I did some work on a different archetype, festival lead. I would expect this deck to have less polarizing matchups than crustle, but I observed the opposite. Like crustle, I submitted two identical agents. One (https://www.kaggle.com/competitions/pokemon-tcg-ai-battle/submissions?submissionId=53957772&episodeId=81422227#) is currently scoring 1104.6 while the other (https://www.kaggle.com/competitions/pokemon-tcg-ai-battle/submissions?submissionId=53957319&episodeId=81455280#) is currently scoring 687.4 (>400pt gap). This is a huge gap for identical decks that are played the same. To be fair to the scoring algorithm these have only been active for ~10hrs (and I will likely leave them active for awhile), but it's still concerning.\nFor now here's my advice to others: if you want a good picture of how you stack up vs the leaderboard meta submit each agent twice. You can have two agents active at once, and as long as you're not running into the daily submissions cap you can a clearer picture this way. Beyond that, running local evaluations vs the example decks and other public agents is a great way to test and refine on a much larger (but less varied) sample size.\nI'm not sure how this can be fixed. I would guess playing more games per agent and/or converging an agent's rating slower could help? It appears an agent's fate is largely decided by its first 5-10 games, although I don't have the full episode dataset so I can't get a clear picture. If nothing changes, I expect the top of the leaderboard will be submitting their final agents over and over until they \"high roll\" and get a good score. We already see (https://www.kaggle.com/competitions/pokemon-tcg-ai-battle/discussion/712476) people hesitant to switch off of high scoring leaderboard agents, which is bad for the competition imo.\nHopefully this can be fixed, and good luck to everyone!"
+    },
+    {
+      "id": "3479027",
+      "authorName": "Santiago J.",
+      "postDate": "2026-06-23 09:19:02.160000",
+      "votes": "6",
+      "content_raw": "<p>thanks for the writeup! we realized the same during the first day. Early matches have such a heavy weight that losing even just 1 of your first ~8 games is probably enough not to reach the top leaderboard spots. PTCG has a lot of inherit randomness and submitting an agent without changes several times, just to \"hit the jackpot\" on those first matches feels very \"cheesy\". This would fix itself if agents would play over 100s of matches per day, but right now the rate of matches is so slow, that we never converge on bigger numbers. Hope this gets addressed soon! As a side note, i would also love if i could lock in one of my well performing agents while i test with the other one, instead of deleting the older entry.</p>",
+      "content_plain": "thanks for the writeup! we realized the same during the first day. Early matches have such a heavy weight that losing even just 1 of your first ~8 games is probably enough not to reach the top leaderboard spots. PTCG has a lot of inherit randomness and submitting an agent without changes several times, just to \"hit the jackpot\" on those first matches feels very \"cheesy\". This would fix itself if agents would play over 100s of matches per day, but right now the rate of matches is so slow, that we never converge on bigger numbers. Hope this gets addressed soon! As a side note, i would also love if i could lock in one of my well performing agents while i test with the other one, instead of deleting the older entry."
+    },
+    {
+      "id": "3479042",
+      "authorName": "tomatomato",
+      "postDate": "2026-06-23 09:51:47.793000",
+      "votes": "1",
+      "content_raw": "<p>Thanks for the writeup, and thanks for linking to my discussion!</p>\n<p>This is exactly the dilemma I’ve been struggling with. Once an agent gets a lucky high score, the optimal behavior seems to become “don’t submit anything anymore,” which is a bit awkward… </p>\n<p>I hope the rules or scoring system can be adjusted so people can keep testing and improving their agents without feeling punished for submitting new versions.</p>",
+      "content_plain": "Thanks for the writeup, and thanks for linking to my discussion!\nThis is exactly the dilemma I’ve been struggling with. Once an agent gets a lucky high score, the optimal behavior seems to become “don’t submit anything anymore,” which is a bit awkward… \nI hope the rules or scoring system can be adjusted so people can keep testing and improving their agents without feeling punished for submitting new versions."
+    },
+    {
+      "id": "3479135",
+      "authorName": "zakopuro",
+      "postDate": "2026-06-23 12:20:12.907000",
+      "votes": "19",
+      "content_raw": "<p>I think Kaggle needs to increase the number of matches used for scoring in order to produce more reliable ratings. At the moment, an agent’s score can change a lot depending on whether it runs into bad matchups in the first few games.</p>",
+      "content_plain": "I think Kaggle needs to increase the number of matches used for scoring in order to produce more reliable ratings. At the moment, an agent’s score can change a lot depending on whether it runs into bad matchups in the first few games."
+    },
+    {
+      "id": "3479219",
+      "authorName": "",
+      "postDate": "2026-06-23 14:47:10.880000",
+      "votes": "0",
+      "content_raw": "",
+      "content_plain": ""
+    },
+    {
+      "id": "3479221",
+      "authorName": "LagrangianLocomotive",
+      "postDate": "2026-06-23 14:47:55.377000",
+      "votes": "1",
+      "content_raw": "<p>Yeah I dropped from 7th to 1100th lol</p>",
+      "content_plain": "Yeah I dropped from 7th to 1100th lol"
+    },
+    {
+      "id": "3479285",
+      "authorName": "tomatomato",
+      "postDate": "2026-06-23 16:03:00.863000",
+      "votes": "1",
+      "content_raw": "<p>Oh no… I’m so sorry to hear that. Dropping from 7th to 1100th is brutal 😭</p>",
+      "content_plain": "Oh no… I’m so sorry to hear that. Dropping from 7th to 1100th is brutal 😭"
+    },
+    {
+      "id": "3479769",
+      "authorName": "",
+      "postDate": "2026-06-24 05:31:30.437000",
+      "votes": "8",
+      "content_raw": "",
+      "content_plain": ""
+    },
+    {
+      "id": "3479873",
+      "authorName": "MagicTrashBag",
+      "postDate": "2026-06-24 07:57:27.983000",
+      "votes": "2",
+      "content_raw": "<p>Thanks for sharing, I feel like this opinion coming from 2nd place validates it even more, I dropped from 12th to 400-100</p>",
+      "content_plain": "Thanks for sharing, I feel like this opinion coming from 2nd place validates it even more, I dropped from 12th to 400-100"
+    },
+    {
+      "id": "3482652",
+      "authorName": "Shun_PI",
+      "postDate": "2026-06-27 15:32:29.023000",
+      "votes": "29",
+      "content_raw": "<p>I also think that the current rating system used in Kaggle Simulation competitions is not well suited for games with high randomness and strong matchup dynamics, such as the Pokémon Trading Card Game. In my view, the current leaderboard has several serious issues.</p>\n<p>This was not a major problem in previous Simulation competitions, such as the recently finished Orbit Wars. In Orbit Wars, differences in skill translated into clear win-rate gaps, and matchup dependency between models was relatively small. However, I do not think the same system can be directly applied to the Pokémon Card Game.</p>\n<p>I see four main problems.</p>\n<p><strong>1. Too few games and too little rating movement after convergence</strong></p>\n<p>Once an agent’s rating has more or less converged, the number of games it plays drops sharply, and the rating change per game becomes very small, often around 5 points.\nFor a highly stochastic game like Pokémon Card Game, where improving the win rate from 50% to 60% is already very meaningful, this number of games and this amount of rating movement are simply not enough.</p>\n<p><strong>2. Excessively large rating swings immediately after submission</strong></p>\n<p>Right after an agent is submitted, its rating volatility is extremely high. This makes the first problem even worse.</p>\n<p>As a result, instead of “submit an agent and wait several days until its rating properly increases,” the optimal strategy becomes something like: “submit repeatedly, and if one submission happens to win several early games and reaches a high rating, stop submitting.”\nThis turns the submission process into something much more luck-based than it should be.</p>\n<p><strong>3. Large variance in converged ratings due to randomness and deck matchups</strong></p>\n<p>Because the game has both high randomness and strong deck matchup effects, I think it is entirely possible for the four publicly provided sample decks to beat even top-level decks in some games.</p>\n<p>For example, a player can brick, place only one Basic Pokémon on the first turn, and immediately lose on the opponent’s following turn. Situations like this are perfectly possible in Pokémon Card Game.</p>\n<p>Therefore, even against low-rated agents, it is not easy to win consistently. Combined with problem 2, this further encourages a gambling-like strategy where participants simply hope for an early winning streak right after submission.</p>\n<p><strong>4. The rating range for opponent selection is too narrow</strong></p>\n<p>Suppose someone builds a deck that is specifically strong against the current first-place deck. Even then, unless that deck first reaches a rating close to first place, it never be selected as an opponent for the top deck.</p>\n<p>From the perspective of the first-place deck, its opponents are also concentrated among only a small number of high-rated decks. Once a deck reaches first place, it becomes much easier to optimize only against those few opponents.</p>\n<p>Even if that deck is actually weak against many decks in the low-to-mid rating range, it can avoid facing them if it gets lucky early and skips past that rating range due to the issue described in point 2. In that case, it may never need to fix those weaknesses.</p>\n<p>Given how much randomness and matchup dependency this game has, I feel that the current rating range used for opponent selection is too narrow.</p>",
+      "content_plain": "I also think that the current rating system used in Kaggle Simulation competitions is not well suited for games with high randomness and strong matchup dynamics, such as the Pokémon Trading Card Game. In my view, the current leaderboard has several serious issues.\nThis was not a major problem in previous Simulation competitions, such as the recently finished Orbit Wars. In Orbit Wars, differences in skill translated into clear win-rate gaps, and matchup dependency between models was relatively small. However, I do not think the same system can be directly applied to the Pokémon Card Game.\nI see four main problems.\n1. Too few games and too little rating movement after convergence\nOnce an agent’s rating has more or less converged, the number of games it plays drops sharply, and the rating change per game becomes very small, often around 5 points.\nFor a highly stochastic game like Pokémon Card Game, where improving the win rate from 50% to 60% is already very meaningful, this number of games and this amount of rating movement are simply not enough.\n2. Excessively large rating swings immediately after submission\nRight after an agent is submitted, its rating volatility is extremely high. This makes the first problem even worse.\nAs a result, instead of “submit an agent and wait several days until its rating properly increases,” the optimal strategy becomes something like: “submit repeatedly, and if one submission happens to win several early games and reaches a high rating, stop submitting.”\nThis turns the submission process into something much more luck-based than it should be.\n3. Large variance in converged ratings due to randomness and deck matchups\nBecause the game has both high randomness and strong deck matchup effects, I think it is entirely possible for the four publicly provided sample decks to beat even top-level decks in some games.\nFor example, a player can brick, place only one Basic Pokémon on the first turn, and immediately lose on the opponent’s following turn. Situations like this are perfectly possible in Pokémon Card Game.\nTherefore, even against low-rated agents, it is not easy to win consistently. Combined with problem 2, this further encourages a gambling-like strategy where participants simply hope for an early winning streak right after submission.\n4. The rating range for opponent selection is too narrow\nSuppose someone builds a deck that is specifically strong against the current first-place deck. Even then, unless that deck first reaches a rating close to first place, it never be selected as an opponent for the top deck.\nFrom the perspective of the first-place deck, its opponents are also concentrated among only a small number of high-rated decks. Once a deck reaches first place, it becomes much easier to optimize only against those few opponents.\nEven if that deck is actually weak against many decks in the low-to-mid rating range, it can avoid facing them if it gets lucky early and skips past that rating range due to the issue described in point 2. In that case, it may never need to fix those weaknesses.\nGiven how much randomness and matchup dependency this game has, I feel that the current rating range used for opponent selection is too narrow."
+    },
+    {
+      "id": "3482831",
+      "authorName": "ShumpeiNomura",
+      "postDate": "2026-06-28 01:01:55.860000",
+      "votes": "10",
+      "content_raw": "<p>I completely agree with the concerns raised in this discussion.</p>\n<p>I'm lucky to be near the top of the leaderboard, but because of the current system, I feel that not only I, but many other top competitors are reluctant to submit new versions of our agents.</p>\n<p>As a result, the meta stays largely unchanged, which ultimately makes the competition feel somewhat stale.</p>\n<p>I hope the scoring system can be adjusted so that everyone can keep improving and submitting their agents without being discouraged.</p>",
+      "content_plain": "I completely agree with the concerns raised in this discussion.\nI'm lucky to be near the top of the leaderboard, but because of the current system, I feel that not only I, but many other top competitors are reluctant to submit new versions of our agents.\nAs a result, the meta stays largely unchanged, which ultimately makes the competition feel somewhat stale.\nI hope the scoring system can be adjusted so that everyone can keep improving and submitting their agents without being discouraged."
+    },
+    {
+      "id": "3482853",
+      "authorName": "tomatomato",
+      "postDate": "2026-06-28 02:15:14.487000",
+      "votes": "0",
+      "content_raw": "<p>Totally!</p>\n<p>Still, reaching 1st place is amazing — congrats Shumpei-san!\nYour deck and your AI are both really strong 😄</p>",
+      "content_plain": "Totally!\nStill, reaching 1st place is amazing — congrats Shumpei-san!\nYour deck and your AI are both really strong 😄"
+    },
+    {
+      "id": "3482882",
+      "authorName": "Russell Kirk",
+      "postDate": "2026-06-28 04:29:16.447000",
+      "votes": "-1",
+      "content_raw": "<p>I just want to say that some of your points, without agreeing or disagreeing with them, are a problem for games like this and a huge part of the strategy is in addressing that.   Specifically, if your deck has winrate wn% against deck n and deck n has mn% metashare percentage, then you're trying to actually maximize the expected value\n<code>w1% * m1% + w2% * m2% ...</code></p>\n<p>It's because of this that deciding the best deck is also largely influenced not just by deck ability, but your ability to predict what decks other people think is best.</p>\n<p>E.g. The best deck here is not the best deck against average decks, the best deck here is the deck that is best against what the average person thinks the best deck is.  </p>\n<p>Part of what makes games like Poker and Pokemon so addictive and fun is that even new players can win sometimes, but experts understand why they won and understand the \"chances they took\" and are able to reason under uncertainty better. </p>",
+      "content_plain": "I just want to say that some of your points, without agreeing or disagreeing with them, are a problem for games like this and a huge part of the strategy is in addressing that.   Specifically, if your deck has winrate wn% against deck n and deck n has mn% metashare percentage, then you're trying to actually maximize the expected value\nw1% * m1% + w2% * m2% ...\nIt's because of this that deciding the best deck is also largely influenced not just by deck ability, but your ability to predict what decks other people think is best.\nE.g. The best deck here is not the best deck against average decks, the best deck here is the deck that is best against what the average person thinks the best deck is.  \nPart of what makes games like Poker and Pokemon so addictive and fun is that even new players can win sometimes, but experts understand why they won and understand the \"chances they took\" and are able to reason under uncertainty better."
+    },
+    {
+      "id": "3482938",
+      "authorName": "Navneet",
+      "postDate": "2026-06-28 07:14:38.400000",
+      "votes": "-3",
+      "content_raw": "<p>What can we do about Scoring Inconsistency <a href=\"https://www.kaggle.com/djschmit\" target=\"_blank\">@djschmit</a> </p>",
+      "content_plain": "What can we do about Scoring Inconsistency @djschmit (https://www.kaggle.com/djschmit)"
+    },
+    {
+      "id": "3482963",
+      "authorName": "Timmy Juicehouse",
+      "postDate": "2026-06-28 08:27:48.270000",
+      "votes": "2",
+      "content_raw": "<p>Your point applies to the normal ladder-climbing logic of card games. For example, in card games like Hearthstone, each rank tier has a clearly defined deck meta, because players can adjust their decks appropriately based on the current meta and competitive dynamics. However, the problem is that in this Kaggle Pokémon TCG competition, you are not allowed to change your deck in one agent. Combined with the immature Elo rating rules, this leads everyone to gravitate toward decks that can gain rating quickly. But once they reach a high ranking, unless their rank is threatened by stronger decks, they are unlikely to switch decks easily — because under the Elo rating system, as the number of matches increases over time, the penalty for losing becomes smaller and smaller.</p>",
+      "content_plain": "Your point applies to the normal ladder-climbing logic of card games. For example, in card games like Hearthstone, each rank tier has a clearly defined deck meta, because players can adjust their decks appropriately based on the current meta and competitive dynamics. However, the problem is that in this Kaggle Pokémon TCG competition, you are not allowed to change your deck in one agent. Combined with the immature Elo rating rules, this leads everyone to gravitate toward decks that can gain rating quickly. But once they reach a high ranking, unless their rank is threatened by stronger decks, they are unlikely to switch decks easily — because under the Elo rating system, as the number of matches increases over time, the penalty for losing becomes smaller and smaller."
+    },
+    {
+      "id": "3483023",
+      "authorName": "Russell Kirk",
+      "postDate": "2026-06-28 10:33:07.560000",
+      "votes": "0",
+      "content_raw": "<p>That is exactly how tournaments works in card games, as far as I know.  You lock in a deck -- survive the meta -- then face off in the champs!   If you get a loss early, your chance of making \"T8\" is worse because you'll have worse tiebreakers and the like (similar situation to here with final rank).  I'm just trying to draw the parallels so others realize the problem isn't local to just Kaggle.</p>",
+      "content_plain": "That is exactly how tournaments works in card games, as far as I know.  You lock in a deck -- survive the meta -- then face off in the champs!   If you get a loss early, your chance of making \"T8\" is worse because you'll have worse tiebreakers and the like (similar situation to here with final rank).  I'm just trying to draw the parallels so others realize the problem isn't local to just Kaggle."
+    },
+    {
+      "id": "3483083",
+      "authorName": "ShumpeiNomura",
+      "postDate": "2026-06-28 11:58:12.193000",
+      "votes": "1",
+      "content_raw": "<p>Thanks! Let’s both build something great 👍</p>",
+      "content_plain": "Thanks! Let’s both build something great 👍"
+    },
+    {
+      "id": "3484041",
+      "authorName": "djschmit",
+      "postDate": "2026-06-29 22:59:29.790000",
+      "votes": "2",
+      "content_raw": "<p>A quick disclaimer: I'm not an expert in statistics and don't have thousands of unique agents to run against each other so take this with a grain of salt.</p>\n<p>I did some experimentation on my local meta (~10 decks, including examples) running a ladder with 200 individual agents for 20000 matches in an attempt to see how much running bo1 vs bo3 vs bo5 (and so on through bo9) affected ranking stability. I used the the trueskill algorithm for ranking the agents as a proxy for kaggle's ranking system and paired matches based on ranking. Every 100 matches I took a snapshot of the leaderboard and measured how much each agent's ranking changed. Here's the full results:\n <img src=\"https://www.googleapis.com/download/storage/v1/b/kaggle-forum-message-attachments/o/inbox%2F35172999%2F0ecf379dc6193ec14c94333176248bf4%2Fstability_combined_rank_change.png?generation=1782773382785339&amp;alt=media\" alt=\"\"></p>\n<p>Looking specifically at bo1 vs bo3, bo3 seems much more stable throughout the entirety of the graph, while bo5+ only slightly increases stability. I don't know how the competition infrastructure is set up, but if the cost to run another game (or two) within an episode is much less than the cost run a new episode it could make sense to run bo3 matches instead of the current bo1.</p>",
+      "content_plain": "A quick disclaimer: I'm not an expert in statistics and don't have thousands of unique agents to run against each other so take this with a grain of salt.\nI did some experimentation on my local meta (~10 decks, including examples) running a ladder with 200 individual agents for 20000 matches in an attempt to see how much running bo1 vs bo3 vs bo5 (and so on through bo9) affected ranking stability. I used the the trueskill algorithm for ranking the agents as a proxy for kaggle's ranking system and paired matches based on ranking. Every 100 matches I took a snapshot of the leaderboard and measured how much each agent's ranking changed. Here's the full results:\n [image:]\nLooking specifically at bo1 vs bo3, bo3 seems much more stable throughout the entirety of the graph, while bo5+ only slightly increases stability. I don't know how the competition infrastructure is set up, but if the cost to run another game (or two) within an episode is much less than the cost run a new episode it could make sense to run bo3 matches instead of the current bo1."
+    },
+    {
+      "id": "3484089",
+      "authorName": "Russell Kirk",
+      "postDate": "2026-06-30 02:18:06.907000",
+      "votes": "0",
+      "content_raw": "<p>That is how they deal with it in tournaments.</p>",
+      "content_plain": "That is how they deal with it in tournaments."
+    },
+    {
+      "id": "3484532",
+      "authorName": "Zhenyu Zhang",
+      "postDate": "2026-06-30 14:01:50.007000",
+      "votes": "4",
+      "content_raw": "<p>I’m seeing very similar behavior on my side.</p>\n<p>We submitted effectively the same agent multiple times. The best run reached 1100+ public score, while another run of the same agent is currently only in the 800s. Both have been active for about a day, so this does not look like a temporary “just submitted” rating artifact anymore. The ratings seem mostly converged, but the gap is still huge.</p>\n<p>This also makes local validation very hard to interpret. In our local round-robin / public-agent pool, one RL/ranker-style agent was the strongest candidate, but on the Kaggle leaderboard it only converged to around 965. Meanwhile other variants that were not clearly better locally could reach much higher leaderboard scores. So the leaderboard result seems to depend heavily on the initial matchmaking path and matchup distribution, not only on actual agent strength.</p>\n<p>I think this issue is especially severe for Pokemon TCG because the game has:</p>\n<ul>\n<li>high variance from draws and prize cards,</li>\n<li>very polarizing deck matchups,</li>\n<li>fixed decks per submission,</li>\n<li>and a relatively small number of games per agent.</li>\n</ul>\n<p>As a result, the first few games can put an agent into a favorable or unfavorable rating/opponent region, and that early path may dominate the final score for a long time.</p>\n<p>I agree with the suggestion that, under the current system, submitting the same final agent twice may give a more realistic estimate than a single submission. But ideally the scoring system would reduce this variance, for example by playing more games per submission, using a wider opponent range, showing uncertainty/confidence intervals, or evaluating duplicated submissions with shared/randomized matchmaking seeds.</p>\n<p>Right now it feels difficult to distinguish “this agent is truly better” from “this copy got a better early matchmaking path.”</p>",
+      "content_plain": "I’m seeing very similar behavior on my side.\nWe submitted effectively the same agent multiple times. The best run reached 1100+ public score, while another run of the same agent is currently only in the 800s. Both have been active for about a day, so this does not look like a temporary “just submitted” rating artifact anymore. The ratings seem mostly converged, but the gap is still huge.\nThis also makes local validation very hard to interpret. In our local round-robin / public-agent pool, one RL/ranker-style agent was the strongest candidate, but on the Kaggle leaderboard it only converged to around 965. Meanwhile other variants that were not clearly better locally could reach much higher leaderboard scores. So the leaderboard result seems to depend heavily on the initial matchmaking path and matchup distribution, not only on actual agent strength.\nI think this issue is especially severe for Pokemon TCG because the game has:\n\nhigh variance from draws and prize cards,\nvery polarizing deck matchups,\nfixed decks per submission,\nand a relatively small number of games per agent.\n\nAs a result, the first few games can put an agent into a favorable or unfavorable rating/opponent region, and that early path may dominate the final score for a long time.\nI agree with the suggestion that, under the current system, submitting the same final agent twice may give a more realistic estimate than a single submission. But ideally the scoring system would reduce this variance, for example by playing more games per submission, using a wider opponent range, showing uncertainty/confidence intervals, or evaluating duplicated submissions with shared/randomized matchmaking seeds.\nRight now it feels difficult to distinguish “this agent is truly better” from “this copy got a better early matchmaking path.”"
+    },
+    {
+      "id": "3484534",
+      "authorName": "Zhenyu Zhang",
+      "postDate": "2026-06-30 14:06:19.050000",
+      "votes": "1",
+      "content_raw": "<p>One more thing to add: as shown on the leaderboard, the current top entries were all submitted a long time ago. I think this scoring system actually discourages players from exploring new agents, and instead encourages everyone to keep resubmitting the same agent over and over, hoping to get lucky and hit a high score.</p>",
+      "content_plain": "One more thing to add: as shown on the leaderboard, the current top entries were all submitted a long time ago. I think this scoring system actually discourages players from exploring new agents, and instead encourages everyone to keep resubmitting the same agent over and over, hoping to get lucky and hit a high score."
+    },
+    {
+      "id": "3487685",
+      "authorName": "LagrangianLocomotive",
+      "postDate": "2026-07-04 06:42:07.250000",
+      "votes": "0",
+      "content_raw": "<p>top 20, we are so back</p>",
+      "content_plain": "top 20, we are so back"
+    },
+    {
+      "id": "3488037",
+      "authorName": "MR.h",
+      "postDate": "2026-07-04 13:58:00.077000",
+      "votes": "0",
+      "content_raw": "<p>I've had the same problem<img src=\"https://www.googleapis.com/download/storage/v1/b/kaggle-forum-message-attachments/o/inbox%2F24651009%2Fa62a37f46fc866456b6f97d0857952dc%2F2026-07-04%20215634.png?generation=1783173477711638&amp;alt=media\" alt=\"\"></p>",
+      "content_plain": "I've had the same problem[image:]"
+    }
+  ],
+  "root_post_id": "3478917"
+}

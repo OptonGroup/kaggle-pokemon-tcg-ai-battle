@@ -1,0 +1,33 @@
+{
+  "topic_id": 713398,
+  "title": "Pokémon TCG UI based Deck Builder Utility",
+  "competition": "pokemon-tcg-ai-battle",
+  "fetched_at": "2026-07-11",
+  "source": "kaggle CLI: competitions topic-messages pokemon-tcg-ai-battle 713398 -v --quiet",
+  "messages": [
+    {
+      "id": 3480074,
+      "author": "",
+      "postDate": "2026-06-24 12:45:50",
+      "votes": 1,
+      "content_summary": "Author shares a deck-building utility they built to make deck iteration easier. Features: browse Pokemon/Trainer/Energy cards in a UI, search and filter cards, view card details while building, automatically enforce deck-building rules (max 60 cards, max 4 copies per card, ACE SPEC restrictions), export decks directly in required CSV format. GitHub repo: https://github.com/Ashutosh-agarwal2004/Pokemon-TCG-Competition-Deck-Builder.git. Repository contains only source code, no competition data/card images/PDFs. Users must obtain official competition data separately. Community tool, not affiliated with The Pokemon Company, Kaggle, or organizers. Author asks if sharing a code-only utility is permitted under competition rules and offers to remove the post if not.",
+      "content_raw": "<p>Hi everyone,</p>\n<p>While working on the competition, I found that creating and editing decks manually could be quite time-consuming. Every time I wanted to try a new idea, I had to search for card IDs, edit the CSV by hand, double-check deck legality, and make sure I hadn't made any formatting mistakes.</p>\n<p>To make deck iteration easier, I built a small deck-building utility and decided to share it with the community.</p>\n<h3>Features</h3>\n<ul>\n<li><p>Browse Pokémon, Trainer, and Energy cards in a simple UI</p></li>\n<li><p>Search and filter cards quickly</p></li>\n<li><p>View card details while building a deck</p></li>\n<li><p>Automatically enforce deck-building rules\n<ul>\n<li>Maximum 60 cards</li>\n<li>Maximum 4 copies per card</li>\n<li>ACE SPEC restrictions</li></ul></li>\n<li><p>Export decks directly in the required CSV format</p>\n</ul>\n<h3>Repository</h3>\n<p><a href=\"https://github.com/Ashutosh-agarwal2004/Pokemon-TCG-Competition-Deck-Builder.git\" target=\"_blank\">GitHub Repository Link</a></p>\n<h3>Important</h3>\n<ul>\n<li>The repository contains only the source code for the tool.</li>\n<li>No competition data, card images, PDFs, or other competition assets are included.</li>\n<li>Users must obtain the official competition data separately and comply with all competition rules.</li>\n</ul>\n<p>This is a community tool and is not affiliated with The Pokémon Company, Kaggle, or the competition organizers.</p>\n<p>If you encounter any bugs or have suggestions for improvements, feel free to leave feedback or open an issue. I hope it helps make deck experimentation a little faster for everyone.</p>\n<p>Good luck in the competition!</p>\n<p><em>Please let me know if sharing a code-only utility like this is not permitted under the competition rules and I will remove the post.</em></p>"
+    },
+    {
+      "id": 3483627,
+      "author": "",
+      "postDate": "2026-06-29 09:07:06",
+      "votes": 0,
+      "content_summary": "User appreciates the work, says it helped with deckbuilding.",
+      "content_raw": "<p>I appreciate your work, man. It helped me with the deckbuilding!</p>"
+    },
+    {
+      "id": 3483925,
+      "author": "",
+      "postDate": "2026-06-29 18:09:57",
+      "votes": 0,
+      "content_summary": "Author thanks the user, glad they find it helpful.",
+      "content_raw": "<p>Thank you Sir. Glad you find it helpful😊</p>"
+    }
+  ]
+}

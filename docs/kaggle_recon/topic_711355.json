@@ -1,0 +1,43 @@
+{
+  "topic": {
+    "id": 711355,
+    "title": "Is the Training Required ?",
+    "author": "Chunibyo",
+    "commentCount": 1,
+    "votes": 2,
+    "postDate": "2026-06-21 11:12:25.655000",
+    "url": "https://www.kaggle.com/competitions/pokemon-tcg-ai-battle/discussion/711355"
+  },
+  "messages": [
+    {
+      "id": 3477214,
+      "author": "Chunibyo",
+      "postDate": "2026-06-21 11:12:25.657000",
+      "votes": 2,
+      "type": "original_post",
+      "content_html": "<p>Thanks to the host, staff, and participants. I'm glad to be involved in this event. However, I have a few questions.</p>\n<p>The subtitle says it is an AI \"\"Training\"\" Agent. Does that mean all submissions should use reinforcement learning? In the past, we also called MSTC and minimax as AI, especially in game related areas. So, do the top-ranking agents mostly use machine learning methods?</p>\n<p>Additionally, I used PPO to train an agent that learns from the battle history of four official sample agents, as well as from random and self-play. However, I'm not sure how to fine-tune it for better performance. Could I ask for any advice or examples on how to improve it?</p>",
+      "content_text": "Thanks to the host, staff, and participants. I'm glad to be involved in this event. However, I have a few questions. The subtitle says it is an AI \"Training\" Agent. Does that mean all submissions should use reinforcement learning? In the past, we also called MSTC and minimax as AI, especially in game related areas. So, do the top-ranking agents mostly use machine learning methods? Additionally, I used PPO to train an agent that learns from the battle history of four official sample agents, as well as from random and self-play. However, I'm not sure how to fine-tune it for better performance. Could I ask for any advice or examples on how to improve it?"
+    },
+    {
+      "id": 3477545,
+      "author": "david valor",
+      "postDate": "2026-06-21 17:34:47.267000",
+      "votes": 2,
+      "type": "reply",
+      "content_html": "<p>I tried RL and PPO and do not get good results, my bests results where with heuristic agents 😭</p>",
+      "content_text": "I tried RL and PPO and do not get good results, my bests results where with heuristic agents"
+    }
+  ],
+  "related_topics": [
+    {
+      "id": 711644,
+      "title": "How has your experience been with RL/PPO/MCTS in this competition so far?",
+      "commentCount": 5,
+      "votes": 10,
+      "postDate": "2026-06-21 18:03:57.774000",
+      "note": "Highly related, more active (10 votes, 5 comments) — worth separate recon"
+    }
+  ],
+  "_source": "kaggle CLI: competitions topics show + topic-messages (2026-07-11)",
+  "_fetch_method": "CLI 'topics show pokemon-tcg-ai-battle 711355 -v' gave author names; 'topic-messages' gave message content. WebFetch failed (JS-rendered page)."
+}

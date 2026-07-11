@@ -1,0 +1,22 @@
+id,authorName,postDate,votes,content
+3486441,,2026-07-02 14:33:45.943000,0,"<p>Hi organizers,</p>
+<p>I would like to confirm whether the following is allowed under the competition rules.</p>
+<p>In the Simulation competition, can a submitted agent call an external generative AI API, such as OpenAI/Gemini/Anthropic, during the agent's decision-making logic while evaluation episodes are running?</p>
+<p>Specifically:</p>
+<ul>
+<li>The API would be called at inference time by the submitted agent, not only during offline training.</li>
+<li>The prompt may include the current game state and/or derived features from the observation.</li>
+<li>The API would return an action recommendation or intermediate reasoning used by the agent.</li>
+<li>The API may require a paid subscription or API key.</li>
+</ul>
+<p>Could you clarify whether this is allowed, and if so, what conditions apply regarding:</p>
+<ol>
+<li>external network access during evaluation,</li>
+<li>API keys/secrets,</li>
+<li>cost and equal accessibility for all participants,</li>
+<li>use of Competition Data or Pokémon-related content in prompts,</li>
+<li>reproducibility and winner obligations?</li>
+</ol>
+<p>Thank you.</p>"
+3486522,,2026-07-02 16:20:00.727000,0,<p>There's no network access.</p>
+3486659,,2026-07-02 19:15:35.530000,0,"<p>I don't think it's possible, and even if you find a way it violates the ""NO INGRESS OR EGRESS"" clause in the rules.</p>"

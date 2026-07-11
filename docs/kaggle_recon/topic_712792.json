@@ -1,0 +1,22 @@
+{
+  "topic_id": 712792,
+  "title": "cards sets allowed for Limited Card Battle.",
+  "author": "Kulwinder Kapoor",
+  "postDate": "2026-06-23 13:16:37.636000",
+  "commentCount": 0,
+  "votes": 0,
+  "url": "https://www.kaggle.com/competitions/pokemon-tcg-ai-battle/discussion/712792",
+  "source": "kaggle CLI (topic-messages + topics show)",
+  "fetched_at": "2026-07-11",
+  "messages": [
+    {
+      "id": 3479164,
+      "authorName": "Kulwinder Kapoor",
+      "postDate": "2026-06-23 13:16:37.637000",
+      "votes": 0,
+      "content_html": "<p>cards sets allowed for first submission, Limited Card Battle.. please help me as cards which I am selecting are failing </p>",
+      "content_text": "cards sets allowed for first submission, Limited Card Battle.. please help me as cards which I am selecting are failing"
+    }
+  ],
+  "notes": "Single-post topic, 0 replies/comments, 0 votes. WebFetch returned empty (Kaggle JS-rendered). No official answer. 'Limited Card Battle' term — not the main competition format; participant was confused about allowed card sets."
+}

@@ -1,0 +1,128 @@
+{
+  "topic_id": "711741",
+  "topic_title": "【Question to Host】Is it allowed that one agent use multi-decks?",
+  "url": "https://www.kaggle.com/competitions/pokemon-tcg-ai-battle/discussion/711741",
+  "message_count": 15,
+  "messages": [
+    {
+      "id": "3477714",
+      "authorName": "",
+      "postDate": "2026-06-22 00:13:57.883000",
+      "votes": 24,
+      "content_raw": "<p>According to sample agents notebooks provided by hosts(<a href=\"https://www.kaggle.com/code/kiyotah/a-sample-rule-based-agent-mega-lucario-ex-deck\" target=\"_blank\">Mega Lucario ex</a>, <a href=\"https://www.kaggle.com/code/kiyotah/a-sample-rule-based-agent-iono-s-deck\" target=\"_blank\">Iono</a>, <a href=\"http://kaggle.com/code/kiyotah/a-sample-rule-based-agent-dragapult-ex-deck\" target=\"_blank\">Dragapult ex</a>, <a href=\"https://www.kaggle.com/code/kiyotah/a-sample-rule-based-agent-mega-abomasnow-ex-deck\" target=\"_blank\">Mega Abomasnow ex</a>) and <a href=\"https://matsuoinstitute.github.io/cabt/api.html\" target=\"_blank\">the document of the simulator <code>cabt</code></a>, it seems to me that <code>cabt</code> <strong>does not read <code>deck.csv</code> directly</strong> but each agent read the csv file and pass its recipe on to <code>cabt</code>.</p>\n<p>This means, if my understand is correct, submitted agents <strong>can change their deck game by game</strong>.</p>\n<p>Then my question is that <strong>Is it allowed that one agent (one submission) uses multi-decks?</strong></p>\n<p>My take is that the host's answer would be <strong>No</strong>. It is because if multi-deck strategy is allowed to us, it places more emphasis on meta-game strategy than on agents' game-by-game strategy.</p>",
+      "content_text": "According to sample agents notebooks provided by hosts(Mega Lucario ex, Iono, Dragapult ex, Mega Abomasnow ex) and the document of the simulator cabt, it seems to me that cabt does not read deck.csv directly but each agent read the csv file and pass its recipe on to cabt.\nThis means, if my understand is correct, submitted agents can change their deck game by game.\nThen my question is that Is it allowed that one agent (one submission) uses multi-decks?\nMy take is that the host's answer would be No. It is because if multi-deck strategy is allowed to us, it places more emphasis on meta-game strategy than on agents' game-by-game strategy."
+    },
+    {
+      "id": "3477716",
+      "authorName": "",
+      "postDate": "2026-06-22 00:19:55.107000",
+      "votes": 0,
+      "content_raw": "<p>I thought this was allowed, because people are also allowed to use different decks at different matches</p>",
+      "content_text": "I thought this was allowed, because people are also allowed to use different decks at different matches"
+    },
+    {
+      "id": "3477720",
+      "authorName": "",
+      "postDate": "2026-06-22 00:31:25.243000",
+      "votes": 0,
+      "content_raw": "<p><em>people</em> means participants in this competition? </p>\n<p>I think participants can submit different agents using different decks,  but one agent (one submission) can using one deck indicated by <code>deck.csv</code>.</p>",
+      "content_text": "people means participants in this competition? \nI think participants can submit different agents using different decks,  but one agent (one submission) can using one deck indicated by deck.csv."
+    },
+    {
+      "id": "3477731",
+      "authorName": "",
+      "postDate": "2026-06-22 01:02:59.310000",
+      "votes": 1,
+      "content_raw": "<p><em>people</em> meaning like when actual people normally play card games.</p>\n<p>We'll get a clarification from the host soon, I hope.</p>",
+      "content_text": "people meaning like when actual people normally play card games.\nWe'll get a clarification from the host soon, I hope."
+    },
+    {
+      "id": "3477804",
+      "authorName": "",
+      "postDate": "2026-06-22 03:38:04.303000",
+      "votes": 0,
+      "content_raw": "<p>This is important and something the competition host needs to clarify. Like can i write a different deck.csv for each game before the environment make function runs? Or is each agent single deck? This makes a big difference for what kind of problem to optimize for.</p>",
+      "content_text": "This is important and something the competition host needs to clarify. Like can i write a different deck.csv for each game before the environment make function runs? Or is each agent single deck? This makes a big difference for what kind of problem to optimize for."
+    },
+    {
+      "id": "3477810",
+      "authorName": "",
+      "postDate": "2026-06-22 03:51:26.657000",
+      "votes": 0,
+      "content_raw": "<p>I looked into this now: <a href=\"https://github.com/Kaggle/kaggle-environments/blob/master/kaggle_environments/envs/cabt/cabt.py\" target=\"_blank\">https://github.com/Kaggle/kaggle-environments/blob/master/kaggle_environments/envs/cabt/cabt.py</a></p>\n<p>Looks like you can return a deck on first observation like the random agent etc. You don't need a deck.csv</p>",
+      "content_text": "I looked into this now: https://github.com/Kaggle/kaggle-environments/blob/master/kaggle_environments/envs/cabt/cabt.py\nLooks like you can return a deck on first observation like the random agent etc. You don't need a deck.csv"
+    },
+    {
+      "id": "3477862",
+      "authorName": "",
+      "postDate": "2026-06-22 05:17:35.630000",
+      "votes": 10,
+      "content_raw": "<p>Thank you for the question.\nDue to Kaggle’s submission mechanics, it may be technically possible for an agent to include and read multiple deck files. \nHowever, this is not the intended setup for this competition.</p>\n<p>Participants are expected to submit agents that use a single deck consistently. \nAgents should not switch between multiple decks from game to game within the same submission.</p>\n<p>We will update the Dataset documentation to clarify this point.</p>",
+      "content_text": "Thank you for the question.\nDue to Kaggle’s submission mechanics, it may be technically possible for an agent to include and read multiple deck files. \nHowever, this is not the intended setup for this competition.\nParticipants are expected to submit agents that use a single deck consistently. \nAgents should not switch between multiple decks from game to game within the same submission.\nWe will update the Dataset documentation to clarify this point."
+    },
+    {
+      "id": "3477866",
+      "authorName": "",
+      "postDate": "2026-06-22 05:23:47.153000",
+      "votes": 6,
+      "content_raw": "<p>Thank you for the clarification. </p>\n<p>One concern I have is about the late stage meta at the top of the leaderboard. If each submission must use exactly one deck, then among a small number of strong teams, say the top 10 or so, once deck choices become known or inferred, the competition may partly turn into memorizing specific decks and preparing targeted counters against them.</p>\n<p>That feels a bit less essential to me than building generally strong agents. Would allowing an agent to choose from multiple decks make the competition less prone to individual counter strategies and more focused on robust decision making?</p>\n<p>I’m not trying to argue against the ruling, but I think this point may be worth considering when deciding the final policy.</p>",
+      "content_text": "Thank you for the clarification. \nOne concern I have is about the late stage meta at the top of the leaderboard. If each submission must use exactly one deck, then among a small number of strong teams, say the top 10 or so, once deck choices become known or inferred, the competition may partly turn into memorizing specific decks and preparing targeted counters against them.\nThat feels a bit less essential to me than building generally strong agents. Would allowing an agent to choose from multiple decks make the competition less prone to individual counter strategies and more focused on robust decision making?\nI’m not trying to argue against the ruling, but I think this point may be worth considering when deciding the final policy."
+    },
+    {
+      "id": "3477944",
+      "authorName": "",
+      "postDate": "2026-06-22 06:56:35.633000",
+      "votes": 5,
+      "content_raw": "<p>Thank you for the thoughtful comment.</p>\n<p>We understand that a single-deck setup can create incentives for counter strategies, especially near the top of the leaderboard. We also recognize that the Kaggle metagame may shift quickly as participants respond to the decks and strategies that are currently performing well. For example, if a certain deck or strategy becomes common or successful, other participants may try to build decks or strategies that are strong against it.</p>\n<p>At the same time, we see this kind of metagame awareness and adaptation as part of the strategic challenge of Pokémon TCG. In this competition, we expect participants to choose and build a deck while considering the likely metagame, and then compete through robust in-game decision-making with that chosen deck.</p>\n<p>The evaluation is not based on a single match only. Since submissions continue to play multiple matches over the evaluation period, targeting one specific opponent or one short-lived metagame should not be enough on its own. Strong agents will need to perform consistently across repeated matches and different opponents.</p>\n<p>For that reason, our expectation remains that each submitted agent uses a single deck consistently.</p>",
+      "content_text": "Thank you for the thoughtful comment.\nWe understand that a single-deck setup can create incentives for counter strategies, especially near the top of the leaderboard. We also recognize that the Kaggle metagame may shift quickly as participants respond to the decks and strategies that are currently performing well. For example, if a certain deck or strategy becomes common or successful, other participants may try to build decks or strategies that are strong against it.\nAt the same time, we see this kind of metagame awareness and adaptation as part of the strategic challenge of Pokémon TCG. In this competition, we expect participants to choose and build a deck while considering the likely metagame, and then compete through robust in-game decision-making with that chosen deck.\nThe evaluation is not based on a single match only. Since submissions continue to play multiple matches over the evaluation period, targeting one specific opponent or one short-lived metagame should not be enough on its own. Strong agents will need to perform consistently across repeated matches and different opponents.\nFor that reason, our expectation remains that each submitted agent uses a single deck consistently."
+    },
+    {
+      "id": "3477962",
+      "authorName": "",
+      "postDate": "2026-06-22 07:11:23.357000",
+      "votes": 2,
+      "content_raw": "<blockquote>\n  <p>Participants are expected to submit agents that use a single deck consistently. Agents should not switch between multiple decks from game to game within the same submission.</p>\n</blockquote>\n<p>Thank you for the clarification! I actually thought we were allowed to switch between multiple decks based on the actual environment implementation.</p>\n<p>If we are expected to stick to just one deck, could you please make sure there are actual measures in place so honest participants don't end up at a disadvantage? For example, it would be great if submissions that break this rule are automatically rejected, or if they are removed from the final leaderboard entirely.</p>",
+      "content_text": "Participants are expected to submit agents that use a single deck consistently. Agents should not switch between multiple decks from game to game within the same submission.\n\nThank you for the clarification! I actually thought we were allowed to switch between multiple decks based on the actual environment implementation.\nIf we are expected to stick to just one deck, could you please make sure there are actual measures in place so honest participants don't end up at a disadvantage? For example, it would be great if submissions that break this rule are automatically rejected, or if they are removed from the final leaderboard entirely."
+    },
+    {
+      "id": "3477998",
+      "authorName": "",
+      "postDate": "2026-06-22 07:56:33.400000",
+      "votes": 2,
+      "content_raw": "<p>For the Strategy category, submissions that use multiple decks within a single submission will not be evaluated positively as part of the intended competition approach.</p>\n<p>For the Simulation category and other possible enforcement measures, we are currently discussing what checks or countermeasures may be appropriate. We will share further clarification once we have confirmed the details.</p>",
+      "content_text": "For the Strategy category, submissions that use multiple decks within a single submission will not be evaluated positively as part of the intended competition approach.\nFor the Simulation category and other possible enforcement measures, we are currently discussing what checks or countermeasures may be appropriate. We will share further clarification once we have confirmed the details."
+    },
+    {
+      "id": "3481304",
+      "authorName": "",
+      "postDate": "2026-06-25 20:14:11.193000",
+      "votes": 0,
+      "content_raw": "<p>Lame, that takes a away a big part of the game as it is right now. You should fix the engine so its not possible to come with a Nash optimized portfolio of hands.</p>",
+      "content_text": "Lame, that takes a away a big part of the game as it is right now. You should fix the engine so its not possible to come with a Nash optimized portfolio of hands."
+    },
+    {
+      "id": "3481865",
+      "authorName": "",
+      "postDate": "2026-06-26 14:18:49.913000",
+      "votes": 0,
+      "content_raw": "<p>It is very difficult to climb the ladder in any card game using only one deck. We choose which cards to use based on the overall strength of opponents and the current ladder environment. If everyone could only use a single set of cards, and if everyone's deck strategies were vastly different, they would likely counter each other, making it hard to determine who is the best.</p>",
+      "content_text": "It is very difficult to climb the ladder in any card game using only one deck. We choose which cards to use based on the overall strength of opponents and the current ladder environment. If everyone could only use a single set of cards, and if everyone's deck strategies were vastly different, they would likely counter each other, making it hard to determine who is the best."
+    },
+    {
+      "id": "3482131",
+      "authorName": "",
+      "postDate": "2026-06-26 20:46:29.060000",
+      "votes": 1,
+      "content_raw": "<p>Normally in a tournament you cannot change decks between games.</p>",
+      "content_text": "Normally in a tournament you cannot change decks between games."
+    },
+    {
+      "id": "3489334",
+      "authorName": "",
+      "postDate": "2026-07-05 15:51:39.313000",
+      "votes": 0,
+      "content_raw": "<p>Any updates on this?</p>",
+      "content_text": "Any updates on this?"
+    }
+  ]
+}

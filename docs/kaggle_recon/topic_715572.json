@@ -1,0 +1,26 @@
+{
+  "topic_id": 715572,
+  "title": "Attack damage lookup for supervised value network",
+  "url": "https://www.kaggle.com/competitions/pokemon-tcg-ai-battle/discussion/715572",
+  "fetched_via": "kaggle CLI: .venv/bin/kaggle competitions topic-messages pokemon-tcg-ai-battle 715572 -v --quiet -n -1",
+  "fetched_at": "2026-07-11",
+  "note": "authorName field is EMPTY in both CSV and table output of kaggle CLI (CLI bug / API does not populate author for this topic). WebFetch could not retrieve thread content (Kaggle discussion pages are JS-rendered). Authors unknown — content extracted from CLI only.",
+  "messages": [
+    {
+      "id": "3483381",
+      "authorName": "",
+      "postDate": "2026-06-28 21:34:55.163000",
+      "votes": 0,
+      "is_original_post": true,
+      "content_text": "Hey all,\nI'm trying to build a supervised learning value network to see if I can use it for pre-training a value function for an RL agent.\nOne of the architecture choices I'd like to make is encoding cards based on their attributes. This means I'd need to know how much each attack does, so that the model can pick up on \"270 damage for 2 energy --> attacker/threat\" (in this case Mega Lucario).\nDo we have any good way to put together a table of which cards have what attacks?"
+    },
+    {
+      "id": "3483471",
+      "authorName": "",
+      "postDate": "2026-06-29 04:05:48.277000",
+      "votes": 0,
+      "is_original_post": false,
+      "content_text": "Looking at the cg api, you should be able to use \"all_card_data\" to get card data (including attack IDs), and \"all_attack\" to get attack info (including damage)."
+    }
+  ]
+}

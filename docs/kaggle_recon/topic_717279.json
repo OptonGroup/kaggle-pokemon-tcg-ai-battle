@@ -1,0 +1,85 @@
+{
+  "topic_id": "717279",
+  "topic_title": "Stale agents?",
+  "competition": "pokemon-tcg-ai-battle",
+  "url": "https://www.kaggle.com/competitions/pokemon-tcg-ai-battle/discussion/717279",
+  "retrieved_at": "2026-07-11",
+  "retrieval_method": "kaggle CLI: .venv/bin/kaggle competitions topic-messages pokemon-tcg-ai-battle 717279 -v --quiet",
+  "note": "authorName column returned empty by Kaggle API for all messages; WebFetch also failed (JS-rendered page). Authors inferred from thread structure: msg 3485707 = OP (original poster); 3485732 = Kaggle admin/staff reply; 3485777/3485818/3486769 = OP follow-ups (same user).",
+  "raw_dump_file": "scratchpad/kaggle_recon/topic_717279_raw.csv",
+  "message_count": 5,
+  "messages_chronological": [
+    {
+      "id": "3485707",
+      "author": "(unknown — OP)",
+      "role": "original_post",
+      "postDate": "2026-07-01 18:25:27.697",
+      "votes": 0,
+      "content_html": "<p>When I submit a new agent it seems that json logs based on the old agent are showing up under the new agent submission.  Bugs that are validated corrected using the sim still show under the new submission. I know that the last 2 submittals are scored, but believe each agents games are recorded and scored under their own submission on the submissions page. Am I missing something?</p>",
+      "content_plain": "When I submit a new agent it seems that json logs based on the old agent are showing up under the new agent submission. Bugs that are validated corrected using the sim still show under the new submission. I know that the last 2 submittals are scored, but believe each agents games are recorded and scored under their own submission on the submissions page. Am I missing something?"
+    },
+    {
+      "id": "3485732",
+      "author": "(unknown — Kaggle staff/admin)",
+      "role": "staff_reply",
+      "postDate": "2026-07-01 18:51:38.093",
+      "votes": 0,
+      "content_html": "<p>Hey there,</p><p>Can you provide an episode reply URL we can investigate? They're each scored under different submissions, and the URL should indicate the submission ID it's referring to.</p>",
+      "content_plain": "Hey there. Can you provide an episode reply URL we can investigate? They're each scored under different submissions, and the URL should indicate the submission ID it's referring to."
+    },
+    {
+      "id": "3485777",
+      "author": "(unknown — OP follow-up)",
+      "role": "op_detail",
+      "postDate": "2026-07-01 19:39:22.187",
+      "votes": 0,
+      "content_html": "<p>Thanks. Here is a bit more context. I am debugging a discrepancy between what our agent's code should decide and what our replay logs show it actually did, and would appreciate a sanity check before assuming it's a bug in my code.</p><p>Setup:</p><ul><li>Submission: submission_20260701_123739.tar.gz, confirmed as the active/scored submission (matches what I can re-download from the Submissions page byte-for-byte against the local build).</li><li>Episode: 83135199, step 99 (turn 15).</li></ul><p>What I found: At that decision point, the active Pokémon (Archaludon ex) had 1 Metal Energy attached, with Relicanth in play (its Memory Dive ability lets evolved Pokémon use their pre-evolution's attacks). The options offered were:</p><ol><li>Play a Switch card from hand</li><li>Attack with attackId 223 (a 1-Energy attack inherited via Memory Dive)</li><li>End turn</li></ol><p>The replay records the agent choosing option 2 (the attack).</p><p>I took the exact obs_dict from that step and ran it directly through the submitted main.py's agent() function locally (same file, byte-verified against the tarball downloaded from my Submissions page) — through both the forward-search path and the plain heuristic fallback. Both paths deterministically return option 0 (play Switch) for this exact input, because my code has a check that skips evaluating any attack option when the active Pokémon has fewer than 3 Energy, regardless of which specific attack is being offered. I confirmed this isn't a crash/exception being silently caught and traced execution manually and it completes normally.</p><p>So: given the identical game state, my submitted code never picks option 2, yet the replay shows it did.</p><p>Question: Is there a known difference between the cg engine bundled in the submission template (cg.dll/libcg.so) and whatever engine actually adjudicates matches server-side? I am trying to figure out if the local reproduction of a decision can differ from what really happened in a scored match even when the code and game state are identical, or if there's something else in the harness (e.g., action validation/substitution) that could explain this. Any pointers appreciated.</p>",
+      "content_plain": "Thanks. Here is a bit more context. I am debugging a discrepancy between what our agent's code should decide and what our replay logs show it actually did, and would appreciate a sanity check before assuming it's a bug in my code. Setup: Submission: submission_20260701_123739.tar.gz, confirmed as the active/scored submission (matches what I can re-download from the Submissions page byte-for-byte against the local build). Episode: 83135199, step 99 (turn 15). What I found: At that decision point, the active Pokémon (Archaludon ex) had 1 Metal Energy attached, with Relicanth in play (its Memory Dive ability lets evolved Pokémon use their pre-evolution's attacks). The options offered were: (1) Play a Switch card from hand, (2) Attack with attackId 223 (a 1-Energy attack inherited via Memory Dive), (3) End turn. The replay records the agent choosing option 2 (the attack). I took the exact obs_dict from that step and ran it directly through the submitted main.py's agent() function locally (same file, byte-verified against the tarball downloaded from my Submissions page) — through both the forward-search path and the plain heuristic fallback. Both paths deterministically return option 0 (play Switch) for this exact input, because my code has a check that skips evaluating any attack option when the active Pokémon has fewer than 3 Energy, regardless of which specific attack is being offered. I confirmed this isn't a crash/exception being silently caught and traced execution manually and it completes normally. So: given the identical game state, my submitted code never picks option 2, yet the replay shows it did. Question: Is there a known difference between the cg engine bundled in the submission template (cg.dll/libcg.so) and whatever engine actually adjudicates matches server-side? I am trying to figure out if the local reproduction of a decision can differ from what really happened in a scored match even when the code and game state are identical, or if there's something else in the harness (e.g., action validation/substitution) that could explain this. Any pointers appreciated.",
+      "key_entities": {
+        "submission_file": "submission_20260701_123739.tar.gz",
+        "submission_id": 54238648,
+        "episode_id": 83135199,
+        "step": 99,
+        "turn": 15,
+        "active_pokemon": "Archaludon ex",
+        "energy": "1 Metal Energy",
+        "supporting_pokemon": "Relicanth (Memory Dive ability — evolved Pokémon use pre-evolution's attacks)",
+        "attack_id": 223,
+        "options_offered": ["Play Switch from hand", "Attack (attackId 223, 1-Energy via Memory Dive)", "End turn"],
+        "replay_recorded_choice": "option 2 (attack)",
+        "local_code_choice": "option 0 (play Switch) — deterministic, both forward-search and heuristic paths"
+      }
+    },
+    {
+      "id": "3485818",
+      "author": "(unknown — OP follow-up)",
+      "role": "op_url_and_engine_question",
+      "postDate": "2026-07-01 20:27:36.620",
+      "votes": 0,
+      "content_html": "<p>Here's the replay URL for that episode:</p><p><a href=\"https://www.kaggle.com/competitions/pokemon-tcg-ai-battle/submissions?submissionId=54238648&amp;episodeId=83135199\">https://www.kaggle.com/competitions/pokemon-tcg-ai-battle/submissions?submissionId=54238648&amp;episodeId=83135199</a></p><p>That's episode 83135199, step 99 (turn 15) — the discrepancy is exactly as described above (real action was the attack at option index 2, but running the exact same obs_dict through our submitted code returns option 0 instead).</p><p>One more thing that might be relevant: in the June 30 update thread, you mentioned the cg library gets updated as its own dataset independent of individual submissions (\"there are no changes to main.py, deck.csv, or the rest of the cg API, so existing submissions should be unaffected\"). Is it possible that the cg.dll/libcg.so frozen inside a submission's tarball at build time can end up out of sync with whatever engine build actually adjudicates matches server-side? That would explain what we're seeing — the code and reported game state look identical, but the outcome doesn't match what that exact code should produce against that exact state. If the server always uses its own authoritative/current engine rather than whatever's bundled in the submission, that'd be good to know either way.</p>",
+      "content_plain": "Here's the replay URL for that episode: https://www.kaggle.com/competitions/pokemon-tcg-ai-battle/submissions?submissionId=54238648&episodeId=83135199. That's episode 83135199, step 99 (turn 15) — the discrepancy is exactly as described above (real action was the attack at option index 2, but running the exact same obs_dict through our submitted code returns option 0 instead). One more thing that might be relevant: in the June 30 update thread, you mentioned the cg library gets updated as its own dataset independent of individual submissions (\"there are no changes to main.py, deck.csv, or the rest of the cg API, so existing submissions should be unaffected\"). Is it possible that the cg.dll/libcg.so frozen inside a submission's tarball at build time can end up out of sync with whatever engine build actually adjudicates matches server-side? That would explain what we're seeing — the code and reported game state look identical, but the outcome doesn't match what that exact code should produce against that exact state. If the server always uses its own authoritative/current engine rather than whatever's bundled in the submission, that'd be good to know either way.",
+      "key_references": {
+        "replay_url": "https://www.kaggle.com/competitions/pokemon-tcg-ai-battle/submissions?submissionId=54238648&episodeId=83135199",
+        "june30_update_thread": "referenced — cg library updated as own dataset; 'no changes to main.py, deck.csv, or rest of cg API, so existing submissions should be unaffected'"
+      }
+    },
+    {
+      "id": "3486769",
+      "author": "(unknown — OP resolution)",
+      "role": "op_resolution",
+      "postDate": "2026-07-03 00:32:14.427",
+      "votes": 0,
+      "content_html": "<p>Found the issue. I had been assumed steps[i][player]['action'] is the response to that same step's steps[i][player]['observation']. That assumption turned out to be wrong more often than expected: for minCount==maxCount==1 decisions specifically, I measured ~20% of same-step (observation, action) pairs where the recorded action's index literally falls outside that step's own select.option range (or the count doesn't satisfy minCount/maxCount) — meaning the action cannot be a valid response to that step's select, full stop.</p><p>The fix: instead of trusting the same-step action, search forward from step i for the next step where that player's status == \"ACTIVE\" and action is non-empty, and treat that as the real response to step i's observation. (Steps 0/1 are the exception — the initial deck submission at step 1 is genuinely same-step-paired.)</p><p>I validated this by extracting the submitted tarball and replaying real recorded obs_dicts from 22 scored episodes (1,277 decision points, spanning several different opponent archetypes) through main.agent(). With naive same-step pairing there was a 35% mismatch rate. With the corrected forward-search pairing: 1,277/1,277 (100%) match, no exceptions, across every archetype.</p><p>So I don't believe there is engine or build staleness — it was a bug in how I paired observations and actions when parsing the replay JSON.</p>",
+      "content_plain": "Found the issue. I had assumed steps[i][player]['action'] is the response to that same step's steps[i][player]['observation']. That assumption turned out to be wrong more often than expected: for minCount==maxCount==1 decisions specifically, I measured ~20% of same-step (observation, action) pairs where the recorded action's index literally falls outside that step's own select.option range (or the count doesn't satisfy minCount/maxCount) — meaning the action cannot be a valid response to that step's select, full stop. The fix: instead of trusting the same-step action, search forward from step i for the next step where that player's status == \"ACTIVE\" and action is non-empty, and treat that as the real response to step i's observation. (Steps 0/1 are the exception — the initial deck submission at step 1 is genuinely same-step-paired.) I validated this by extracting the submitted tarball and replaying real recorded obs_dicts from 22 scored episodes (1,277 decision points, spanning several different opponent archetypes) through main.agent(). With naive same-step pairing there was a 35% mismatch rate. With the corrected forward-search pairing: 1,277/1,277 (100%) match, no exceptions, across every archetype. So I don't believe there is engine or build staleness — it was a bug in how I paired observations and actions when parsing the replay JSON.",
+      "key_findings": {
+        "root_cause": "replay JSON observation/action pairing bug (NOT engine staleness)",
+        "assumption_corrected": "steps[i][player]['action'] is NOT the response to steps[i][player]['observation'] (for minCount==maxCount==1 decisions ~20% of same-step pairs are invalid)",
+        "invalid_rate_min1max1": "~20% of same-step (obs,action) pairs have action index outside that step's select.option range for minCount==maxCount==1",
+        "naive_mismatch_rate": "35% mismatch with naive same-step pairing",
+        "fix": "forward-search: from step i find next step where that player status==ACTIVE and action non-empty; treat THAT as the real response to step i's observation (steps 0/1 exception: deck submission genuinely same-step-paired)",
+        "validation": "22 scored episodes, 1,277 decision points, multiple archetypes → 1,277/1,277 (100%) match with forward-search pairing",
+        "conclusion": "NO engine/build staleness; was a replay-parsing bug"
+      }
+    }
+  ]
+}

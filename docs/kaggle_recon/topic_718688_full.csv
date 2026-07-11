@@ -1,0 +1,32 @@
+id,title,authorName,commentCount,votes,postDate
+718688,"""Player 1's deck does not have 60 cards."",",Jamie Dixon,6,1,2026-07-04 00:00:18.446000
+id,authorName,postDate,votes,content
+3488836,djschmit,2026-07-05 09:05:54.990000,1,<p>Had a similar issue and it was due to the agent() function not being the last one in main.py. Took me way too many attempts to figure it out haha</p>
+3487827,RMensinck,2026-07-04 09:59:43.140000,0,"<p>Hey, </p>
+<p>Sounds about right, i've attached a deck.csv file that works for me, feel free to test/compare</p>"
+3488044,Jamie Dixon,2026-07-04 14:07:27.077000,0,<p>I can't download it from this discussion.  I copy/pasted your deck into a new file and got the same error.  What encoding are you using?  I wonder if my MacBook is throwing some random EOF character in there.</p>
+3488050,RMensinck,2026-07-04 14:13:32.193000,0,"<p>Just to doublecheck, are you sure its not saved as a .numbers file with just the naming being.csv?</p>"
+3489657,Jamie Dixon,2026-07-05 18:56:30.343000,0,<p>let me verify</p>
+3489764,Jamie Dixon,2026-07-05 20:41:55.343000,0,"<p>I am still getting the same errors and Claude and Copilot are 0 help
+I created a simple agent in main.py</p>
+<p>import os</p>
+<p>def load_deck():
+    path = os.path.join(os.path.dirname(<strong>file</strong>), ""deck.csv"")
+    with open(path, ""r"", encoding=""utf-8"") as f:
+        return [int(line.strip()) for line in f if line.strip()]</p>
+<p>def agent(obs_dict):
+    # Deck-selection phase: step == 0 → return 60-card deck
+    if obs_dict.get(""step"", 0) == 0:
+        return load_deck()</p>
+<pre><code>select = obs_dict.get(""select"")
+if not isinstance(select, dict):
+    return []
+
+options = select.get(""option"") or []
+if not options:
+    return []
+
+# Always pick the first legal option
+return [0]
+</code></pre>
+<p>And it still fails.  Is there a template somewhere that I can use to submit the most basic agent possible?</p>"

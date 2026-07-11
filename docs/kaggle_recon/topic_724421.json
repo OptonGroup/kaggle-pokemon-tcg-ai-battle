@@ -1,0 +1,32 @@
+{
+  "topic_id": 724421,
+  "title": "私のループエンジニアリング失敗の記録 (Record of my loop engineering failure)",
+  "fetched_at": "2026-07-11",
+  "source": "kaggle CLI topic-messages (-v -q --page-size -1)",
+  "messages": [
+    {
+      "id": "3494974",
+      "authorName": "",
+      "postDate": "2026-07-11 07:18:47",
+      "votes": 0,
+      "content_html": "<p>ポケカKaggleの現状共有。ループエンジニアリング自体は完成したけど、evalが上手に作れてなくて思考ルーチンの方が育ってない</p><p>・思考ルーチン・一番強いデッキ</p><p>2つのループで放置してても期日までに完成するように組み上げたいと思っています。<a href=\"https://x.com/m2ai_jp/status/2075841795842568580/photo\" target=\"_blank\">https://x.com/m2ai_jp/status/2075841795842568580/photo</a></p><p>*Xだけで公開すると規約違反の可能性があるため、メモとして</p>",
+      "content_plain": "[JP] Sharing current state of Pokeka Kaggle. The loop engineering itself is complete, but eval was poorly built so the thinking routine has not grown. Two loops: (1) thinking routine, (2) strongest deck. Want to build it so that even if left alone it completes by the deadline. Link to X post (m2ai_jp). *Posting only on X may violate rules, so as a memo here."
+    },
+    {
+      "id": "3494975",
+      "authorName": "",
+      "postDate": "2026-07-11 07:20:54",
+      "votes": 0,
+      "content_html": "<p>なぜレートが上がらないのか（因果の順に）</p><p>私たちのAIは、対戦相手の手を4つの候補に絞り、2手先まで読んで手を選びます。この読みの浅さが弱さの原因です。レートは731で止まっています。上位の人たちは1087以上です。</p><p>上位の人と私たちのAIに、まったく同じ場面を1886回見せて、選ぶ手を比べました。攻撃の選び方はだいたい同じでした。違ったのは「どのカードをいつ場に出すか」「いつ攻めずに我慢するか」でした。つまり、私たちのAIは攻撃は正しく選べるが、盤面の作り方が下手です。</p><p>私はこれまで8回、AIに手を加えて改良を試みました。8回ともルールの追加や数値の調整でした。8回とも失敗しました。理由は単純で、「盤面の作り方」はルールの追加では直らなかったからです。</p><p>改良が失敗し続けたのに気づけなかった理由は、テストの相手が悪かったからです。改良版のテストは「自分たちの弱いAI（レート731相当）に勝てるか」で行っていました。弱い相手に勝てても、強い相手に勝てるかは分かりません。実際、このテストに合格した改良版が、本番では逆に点を下げました。</p><p>いちばんの見落としはこれです。競技の運営は毎日、上位の人たちが実際に打った手の記録を全員に無料で配っています。強い打ち方の見本が大量に手元にあったのに、私はそれを集計にしか使わず、AIに真似させることを一度も試していませんでした。</p><p>まとめ: 弱い原因は盤面の作り方。それはルール追加では直らない。直せる見込みがあるのは、上位の手の記録をAIに真似させる方法。この方法だけがまだ試されていません。</p>",
+      "content_plain": "[JP] Why the rating won't go up (in causal order). Our AI narrows opponent's moves to 4 candidates and reads 2 moves ahead to choose. This shallow reading is the cause of weakness. Rating is stuck at 731. Top players are 1087+. // Showed the exact same positions 1886 times to a top player and our AI, compared chosen moves. Attack selection was about the same. What differed was 'which card to put on the field and when' and 'when to be patient and not attack'. I.e. our AI can choose attacks correctly but is bad at building the board. // I tried to improve the AI 8 times — each time adding rules or tuning numbers. All 8 failed. Reason is simple: 'board building' is not fixed by adding rules. // Why I didn't notice the failures kept going: the test opponent was bad. Improvement tests were 'can it beat our own weak AI (~731)'. Beating a weak opponent doesn't mean beating a strong one. In fact, versions that passed this test actually lowered the score in production. // The biggest oversight: organizers distribute records of top players' actual moves to everyone for free every day. Had a huge sample of strong play in hand, but only used it for aggregation stats, never tried to make the AI imitate it. // Summary: the weakness cause is board building. Rule additions won't fix it. The promising approach is imitating top players' move records (IL). This is the only method not yet tried."
+    },
+    {
+      "id": "3495011",
+      "authorName": "",
+      "postDate": "2026-07-11 09:02:35",
+      "votes": 0,
+      "content_html": "<p>I believe cost-effectiveness is crucial in competitive games.</p><blockquote><p>It is more important to keep playing 80-point moves than to find a 100-point move</p></blockquote><p>— Lee Chang-ho (Legendary Go Player)</p><p>For example, to achieve a high score, I intuitively estimate that we need to win consistently over roughly 100 matches.</p><p>If 100 opponents each attack with a budget of $2, we would need a total defense budget of $200. To maintain an equal cost-exchange ratio, we should be able to defend against a $2 attack using only $0.02.</p><p>Therefore, I believe the most important factor is being able to maintain a bot with comparable performance at the lowest possible cost.</p>",
+      "content_plain": "[EN] Believes cost-effectiveness is crucial in competitive games. Quote Lee Chang-ho (legendary Go player): 'It is more important to keep playing 80-point moves than to find a 100-point move.' To achieve a high score, intuitively need to win consistently over ~100 matches. If 100 opponents each attack with $2 budget, total defense budget needed = $200. To maintain equal cost-exchange ratio, should defend against a $2 attack using only $0.02. The most important factor is maintaining a bot with comparable performance at the lowest possible cost."
+    }
+  ]
+}

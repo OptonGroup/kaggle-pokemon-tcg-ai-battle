@@ -1,0 +1,30 @@
+id,authorName,postDate,votes,content
+3480074,,2026-06-24 12:45:50.143000,1,"<p>Hi everyone,</p>
+<p>While working on the competition, I found that creating and editing decks manually could be quite time-consuming. Every time I wanted to try a new idea, I had to search for card IDs, edit the CSV by hand, double-check deck legality, and make sure I hadn't made any formatting mistakes.</p>
+<p>To make deck iteration easier, I built a small deck-building utility and decided to share it with the community.</p>
+<h3>Features</h3>
+<ul>
+<li><p>Browse Pokémon, Trainer, and Energy cards in a simple UI</p></li>
+<li><p>Search and filter cards quickly</p></li>
+<li><p>View card details while building a deck</p></li>
+<li><p>Automatically enforce deck-building rules</p>
+<ul>
+<li>Maximum 60 cards</li>
+<li>Maximum 4 copies per card</li>
+<li>ACE SPEC restrictions</li></ul></li>
+<li><p>Export decks directly in the required CSV format</p></li>
+</ul>
+<h3>Repository</h3>
+<p><a href=""https://github.com/Ashutosh-agarwal2004/Pokemon-TCG-Competition-Deck-Builder.git"" target=""_blank"">GitHub Repository Link</a></p>
+<h3>Important</h3>
+<ul>
+<li>The repository contains only the source code for the tool.</li>
+<li>No competition data, card images, PDFs, or other competition assets are included.</li>
+<li>Users must obtain the official competition data separately and comply with all competition rules.</li>
+</ul>
+<p>This is a community tool and is not affiliated with The Pokémon Company, Kaggle, or the competition organizers.</p>
+<p>If you encounter any bugs or have suggestions for improvements, feel free to leave feedback or open an issue. I hope it helps make deck experimentation a little faster for everyone.</p>
+<p>Good luck in the competition!</p>
+<p><em>Please let me know if sharing a code-only utility like this is not permitted under the competition rules and I will remove the post.</em></p>"
+3483627,,2026-06-29 09:07:06.280000,0,"<p>I appreciate your work, man. It helped me with the deckbuilding!</p>"
+3483925,,2026-06-29 18:09:57.280000,0,<p>Thank you Sir. Glad you find it helpful😊</p>

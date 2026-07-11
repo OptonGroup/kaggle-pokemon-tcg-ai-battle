@@ -136,3 +136,8 @@ Record each submission in `results/submissions.csv`.
 3. **v003** — MCTS using `search_begin`/`search_step` engine API
 4. **v004** — MCTS + opponent hand/deck modeling
 5. **v005+** — RL / self-play training
+6. **v012** Iono heuristic — local gate 0.70 vs v009a but **LIVE 499.2**: local gates vs own agents don't predict ladder
+7. **v007/v009a** (Crustle IL) = proven champions (**930.7/905.9** live), re-submitted 2026-07-03
+8. **2026-07-03**: plan v2 (PLAN.md F0-F5) — meta rotated (Grimmsnarl toolbox top), deck decision by fresh data, then IL pilot v2 → PIMC → ExIt
+9. **2026-07-05**: plan v3 (PLAN.md §S, PIMC v1) — ЗАКРЫТ в тот же день: S4a mirror ≈0.50, S4b field −0.40/−0.15 (rollout обеих сторон = Crustle-IL)
+10. **2026-07-11**: **plan v4 CURRENT (PLAN.md §H, HYBRID PIMC)** — аудит off-by-one реплеев (форум 717141) → retrain prior → анкерный пул predicted-μ → PIMC v2 с раздельными rollout-политиками → live-probe → опц. ExIt-lite/deck-swap

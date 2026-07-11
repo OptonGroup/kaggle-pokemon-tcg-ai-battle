@@ -1,0 +1,33 @@
+id,authorName,postDate,votes,content
+3484065,,2026-06-30 00:30:46.483000,37,"<p>Hey all</p>
+<p>A few quick announcements as we head into a long holiday weekend here in the US:</p>
+<ol>
+<li><p>The simulation environment has been updated, including an update to the sample submission (`sample_submission.zip` on the `Data` tab).   </p>
+<ol>
+<li>Dataset update:<br><ol>
+<li>Update: cg library now supports macOS and Linux ARM64.  </li>
+<li>We updated the cg library to fix the library-loading issue reported in the thread, and the data has been refreshed accordingly. Changes:<br><ol>
+<li>Added libcg.dylib — macOS binary  </li>
+<li>Added libcg-arm64.so — Linux ARM64 binary  </li></ol></li>
+<li>There are no changes to main.py, deck.csv, or the rest of the cg API, so existing submissions should be unaffected.  </li></ol></li>
+<li>Simulator update:<br><ol>
+<li>This update is intended to address the issue where games could end in a draw due to the step limit, instead of the looping player eventually losing by timeout.  </li>
+<li>Existing scores will be preserved. Under the updated environment, there is now a sufficiently large step limit so that, if a player enters an infinite loop, they should eventually lose by timeout rather than the game ending in a draw.</li></ol></li></ol></li>
+<li><p>We have also been working on increasing game throughput, and we are gradually increasing the game rate as improvements land. We will share updated game-rate targets once the next round of improvement ship, which we expect in the coming days. We're also continuing to monitor things like how the meta may change by rating band, the number of games required for a submission to achieve a high level of stability, etc. We'll be sure to keep everyone updated with any findings or changes to matchmaking or the post-deadline gameplay.</p></li>
+</ol>
+<p>Best,</p>
+<p>Addison</p>"
+3484121,,2026-06-30 04:05:15.357000,0,"<p>Yay, thank you so much for the update!
+My poor Mac can now process games about 3 times faster 😂</p>"
+3484522,,2026-06-30 13:39:58.423000,0,"<p>Thanks for the update! One quick question: is the cg-lib dataset the SDK/toolkit referenced in the competition overview, or is there another SDK that participants should be using? I found it via the sample notebooks, but I wasn't sure if that was the intended entry point.</p>"
+3484878,,2026-06-30 20:34:53.330000,8,"<p>We've increased our target matches per submission to 48 per day per submission, and we've added a probability of being matched against a random opponent to 10%. We'll monitor matchmaking performance and keep everyone updated of any changes</p>"
+3485123,,2026-07-01 05:38:41.233000,0,"<p>I think the new matchmaking feels a bit unfair for higher-rated agents. Sometimes we get matched against much lower-rated opponents, and winning only gives a few points, but losing once can cost a huge amount of points. In a card game with opening-hand variance and matchup randomness, this feels really harsh😆</p>"
+3485480,,2026-07-01 14:05:23.217000,0,"<p>We can certainly understand the concern here - with a high volume of games, this normalizes over time. That doesn't mean it will necessarily be fair within a single game, but over hundreds of games there's much more confidence in your position.</p>"
+3485718,,2026-07-01 18:34:42.423000,0,<p>The 10% random opponent chance is very interesting. It shifts some incentives (your deck has to be strong into the low-rating meta) but overall I think it’s a positive change. </p>
+3485061,,2026-07-01 03:40:29.590000,0,"<p>Thanks for the update and for the matchmaking improvements!</p>
+<p>I noticed that sometimes after my submission gets matched into a game and wins, the result shows a +0 rating change. Is this expected behavior, for example due to rounding or the opponent being random/lower-rated, or could it indicate an issue?</p>
+<p>Thanks!</p>"
+3485303,,2026-07-01 09:46:08.933000,0,"<p><a href=""https://www.kaggle.com/competitions/pokemon-tcg-ai-battle/submissions?submissionId=54223883&amp;episodeId=83036328#"" target=""_blank"">https://www.kaggle.com/competitions/pokemon-tcg-ai-battle/submissions?submissionId=54223883&amp;episodeId=83036328#</a>
+<a href=""https://www.kaggle.com/competitions/pokemon-tcg-ai-battle/submissions?submissionId=54223883&amp;episodeId=83035695#"" target=""_blank"">https://www.kaggle.com/competitions/pokemon-tcg-ai-battle/submissions?submissionId=54223883&amp;episodeId=83035695#</a>
+such as these episodes, my submission won and got 0 point.</p>"
+3485479,,2026-07-01 14:04:32.060000,0,"<p>Hi there - this is expected when the difference between your submission and your opponent's is large enough. If your opponent won, there would be a much larger shift if a ""weaker"" opponent beat a ""stronger"" player.</p>"

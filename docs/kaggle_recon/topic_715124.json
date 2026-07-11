@@ -1,0 +1,34 @@
+{
+  "topic_id": 715124,
+  "title": "エネルギーなし　オーガポンコントロール",
+  "title_translation": "Energy-less Ogerpon Control",
+  "commentCount": 1,
+  "votes": -5,
+  "postDate_topic": "2026-06-27 19:47:01.995000",
+  "fetched_at": "2026-07-11",
+  "source": "kaggle competitions topic-messages pokemon-tcg-ai-battle 715124 -v --quiet -n -1 -s old",
+  "messages": [
+    {
+      "id": "3482762",
+      "authorName": "",
+      "postDate": "2026-06-27 19:47:01.997000",
+      "votes": -5,
+      "content_html": "<p>こんにちはやまだです。\n今回は私が考えたデッキを紹介します。\nオーガポンコントロールです。\nオーガポンexいしずえのめんを特性を活かしたLOデッキです。\nコンセプトとしてはひたすら相手の妨害をし相手の山札が切れるまで待つです。\n何度かログを見てる時相手の山札切れで勝つことがあったので考えました。\nそこで工夫したのはターン中の行動です。\nクラッシュハンマーなどはバトル場にエネルギーがついてる時\nボスの指令は相手のバトル場に特性を持ってるポケモンがいなくてベンチに特性を持ってるポケモンがいる時にそのポケモンも選び使いその条件に満たさなかったら次のサポートの条件をチェックするなど極力使うカードに無駄がないようにコードを組んでいました。\nまだ良い順位は取れていませんが今後はこのデッキをもっと改良し今の環境のデッキ全てに勝てるように調整したいとおもってます！\nイワパレス　ミロカロスexを使うなど\n現状のデッキを共有するのでぜひ参考にしてみてください。</p>",
+      "content_translation": "Hello, I'm Yamada. This time I'd like to introduce a deck I came up with. It's Ogerpon Control. It's a LO [Lost Out / deck-out] deck that leverages the ability of Ogerpon ex Cornerstone Mask (ishizue-no-men). The concept is to relentlessly disrupt the opponent and wait until the opponent's deck runs out. I came up with this because when I looked through the logs several times, there were wins by opponent deck-out. The thing I worked on was in-turn behavior. For things like Crush Hammer, only when energy is attached to the battle [active] position. Boss's Orders: only when there is no Pokemon with an ability in the opponent's active position but there IS a Pokemon with an ability on the bench — target that Pokemon; if those conditions aren't met, check the next supporter's conditions, etc. — I coded so that, as much as possible, cards aren't wasted. I haven't got a good ranking yet, but I'd like to improve this deck more and adjust it so it can beat all of the current meta decks! Using Crustle (Iwapalesu) and Milotic ex, etc. I'm sharing the current deck, so please use it as a reference."
+    },
+    {
+      "id": "3482907",
+      "authorName": "",
+      "postDate": "2026-06-28 05:55:16.960000",
+      "votes": 1,
+      "content_html": "<p>こんにちは (Konnichiwa)!</p>\n<p>Thank you for sharing this fascinating \"Energy-less Ogerpon Control\" deck strategy. I found your approach to coding the AI's decision logic very impressive.</p>\n<p>Specifically, your method of creating strict conditions for cards like Crush Hammer (only using it when energy is present) and Boss's Orders (checking specific ability conditions on the bench) is a great example of efficient rule-based programming. Optimizing the AI to avoid \"wasted\" moves is crucial for winning in this competition.</p>\n<p>The idea of focusing on a Mill strategy (winning by depleting the opponent's deck) using Hearthflame Mask Ogerpon ex's defensive ability is very creative. I am curious to see how adding Rocky Stadium (Iwaparesu) or Milotic ex might improve the consistency against faster meta decks.</p>\n<p>Good luck with your further adjustments and the competition!</p>",
+      "content_translation": "English reply praising the rule-based coding: strict conditions for Crush Hammer (only when energy present) and Boss's Orders (checking ability conditions on bench) as efficient rule-based programming; avoiding 'wasted' moves is crucial. Notes the Mill strategy (winning by depleting opponent's deck) using Hearthflame Mask Ogerpon ex's defensive ability is creative; suggests adding 'Rocky Stadium (Iwaparesu)' or Milotic ex to improve consistency vs faster meta decks."
+    }
+  ],
+  "notes": [
+    "Original post (Yamada) says 'ishizue-no-men' = Cornerstone Mask Ogerpon ex; the English reply says 'Hearthflame Mask' — likely a misidentification by the replier. Cornerstone Mask Ogerpon ex has a defensive ability that prevents damage from attacks with no energy attached, hence 'Energy-less' in the title (attacks with no energy deal no damage to it).",
+    "'Iwaparesu' = Crustle (Japanese name). Replier calls it 'Rocky Stadium (Iwaparesu)' — ambiguous whether they mean a Crustle card or a stadium; likely a Crustle line for the deck.",
+    "Topic has negative votes (-5 on original post), commentCount=1, low engagement.",
+    "Deck is NOT yet performing well per author ('まだ良い順位は取れていません' = hasn't achieved good ranking yet)."
+  ]
+}

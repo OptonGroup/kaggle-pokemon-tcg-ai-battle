@@ -1,0 +1,13 @@
+id,authorName,postDate,votes,content
+3473820,,2026-06-17 05:25:02.293000,37,<p>Would be helpful for reading some of our own local runs quick and diagnosing obvious issues without taking up 1/5 daily runs for each issue. We can view the JSON logs but visualizer locally would be nice.</p>
+3474059,,2026-06-17 11:50:23.153000,1,<p>It would be great if we can see actual cards in the visualizer.</p>
+3474682,,2026-06-18 14:01:52.907000,5,"<p><img src=""https://www.googleapis.com/download/storage/v1/b/kaggle-forum-message-attachments/o/inbox%2F35130830%2Fb790196346a43e2945a4684eb828c23c%2F2026-06-18%20231141.png?generation=1781791956533453&amp;alt=media"" alt=""""><a href=""https://github.com/hiro094/PTCG_ABCS_Visualizer"" target=""_blank"">https://github.com/hiro094/PTCG_ABCS_Visualizer</a></p>
+<p>I made this using AI.
+Feel free to give it a try if you like.</p>"
+3474876,,2026-06-19 00:28:07.837000,5,"<p>Hi there,</p>
+<p>The sponsor team has created this official notebook you can use: <a href=""https://www.kaggle.com/code/kiyotah/how-to-output-local-battle-as-json-and-view"" target=""_blank"">https://www.kaggle.com/code/kiyotah/how-to-output-local-battle-as-json-and-view</a></p>"
+3474957,,2026-06-19 05:13:02.830000,0,"<p>I think so <a href=""https://www.kaggle.com/chinoki346"" target=""_blank"">@chinoki346</a> </p>"
+3477195,,2026-06-21 10:43:55.487000,0,"<p>You can save this (AI generated) javascript as bookmark of your browser. And click it at the official ptcg visualizer website, and upload your vis.json</p>
+<pre><code>javascript:(function(){const i=document.createElement('input');i.type='file';i.accept='.json';i.onchange=function(e){const f=e.target.files[0];if(!f)return;const r=new FileReader();r.onload=function(ev){const o=JSON.parse(ev.target.result);const h=document.createElement('input');h.type='hidden';h.name='json';h.value='steps'in o?JSON.stringify(o.steps[0][0].visualize):ev.target.result;const%20fm=document.createElement(%27form%27);fm.method=%27POST%27;fm.action=%27https://ptcgvis.heroz.jp/Visualizer/Replay/0%27;fm.target=%27_blank%27;fm.appendChild(h);document.body.appendChild(fm);fm.submit();document.body.removeChild(fm);};r.readAsText(f);};i.click();})();
+</code></pre>"
+3477202,,2026-06-21 10:53:09.713000,0,<p>this was refrectored from the official notebook which requires a local html to jump to the website and upload the json file</p>

@@ -1,0 +1,38 @@
+{
+  "topic_id": 712716,
+  "title": "make a option to download all of the replays in once",
+  "competition": "pokemon-tcg-ai-battle",
+  "fetched_at": "2026-07-11",
+  "source": "kaggle CLI: competitions topic-messages -v --quiet -n -1",
+  "note": "authorName is empty for all messages in CLI output (Kaggle API does not populate author for topic-messages in this competition). WebFetch could not render the JS-heavy page. Content HTML stripped to plain text below.",
+  "message_count": 3,
+  "messages": [
+    {
+      "id": 3479055,
+      "authorName": null,
+      "postDate": "2026-06-23 10:07:15.997",
+      "votes": 1,
+      "role": "original_post",
+      "content_html": "<p><img src=\"https://www.googleapis.com/download/storage/v1/b/kaggle-forum-message-attachments/o/inbox%2F21014133%2F9152f61fece4d23accb5f9a959b04484%2FScreenshot%20from%202026-06-23%2015-31-59.png?generation=1782208936083438&amp;alt=media\" alt=\"\"></p>\n<p>Hi <a href=\"https://www.kaggle.com/shimishige\" target=\"_blank\">@shimishige</a> ,\njust wanted to express my opinion as in I think having a download button to download all of the episodes as in one buttond will be very cool relaxing feature as it gets hard doing it the manual way…\nIg it's an issue kaggle might need to bring but I think here in this competition you are the boss  who I can reach to in order to get my suggestion to correct people.</p>\n<p>BTW enjoying this new gen of competitions \nPIkachu, I chose you</p>",
+      "content_text": "[image screenshot attached]\nHi @shimishige, just wanted to express my opinion as in I think having a download button to download all of the episodes as in one buttond will be very cool relaxing feature as it gets hard doing it the manual way... Ig it's an issue kaggle might need to bring but I think here in this competition you are the boss who I can reach out to in order to get my suggestion to correct people.\nBTW enjoying this new gen of competitions. PIkachu, I chose you"
+    },
+    {
+      "id": 3479317,
+      "authorName": null,
+      "postDate": "2026-06-23 16:46:47.957",
+      "votes": 3,
+      "role": "kaggle_staff_reply",
+      "content_html": "<p>Hey there,</p>\n<p>This is available via the Kaggle CLI. Take a look at the documentation here: <a href=\"https://github.com/Kaggle/kaggle-cli/blob/main/docs/simulation_competitions.md\" target=\"_blank\">https://github.com/Kaggle/kaggle-cli/blob/main/docs/simulation_competitions.md</a></p>",
+      "content_text": "Hey there, This is available via the Kaggle CLI. Take a look at the documentation here: https://github.com/Kaggle/kaggle-cli/blob/main/docs/simulation_competitions.md"
+    },
+    {
+      "id": 3479736,
+      "authorName": null,
+      "postDate": "2026-06-24 04:36:55.300",
+      "votes": 0,
+      "role": "thanks_reply",
+      "content_html": "<p>thanks for informing👍</p>",
+      "content_text": "thanks for informing"
+    }
+  ]
+}

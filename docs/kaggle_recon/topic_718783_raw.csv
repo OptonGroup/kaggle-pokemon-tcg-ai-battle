@@ -1,0 +1,71 @@
+id,authorName,postDate,votes,content
+3487665,,2026-07-04 06:23:51.637000,1,"<p>Notebook: <a href=""https://www.kaggle.com/code/rurururumi/ptcg-replay-triage-starter"" target=""_blank"">https://www.kaggle.com/code/rurururumi/ptcg-replay-triage-starter</a></p>
+<p>Live score is noisy, so I started using public replays more like a debugging dataset.</p>
+<p>The workflow is simple:</p>
+<ol>
+<li>Let a submission collect enough games.</li>
+<li>Review losses before changing rules.</li>
+<li>Put each loss into a small bucket.</li>
+<li>Reproduce the repeated bucket locally with fixed seeds.</li>
+<li>Change one thing at a time.</li>
+</ol>
+<p>The review row I use is roughly:</p>
+<table>
+<thead>
+<tr>
+<th>field</th>
+<th>example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>episode_id</td>
+<td>replay id</td>
+</tr>
+<tr>
+<td>visible_archetype</td>
+<td>broad visible-card bucket</td>
+</tr>
+<tr>
+<td>seat</td>
+<td>first / second</td>
+</tr>
+<tr>
+<td>first_real_attacker_turn</td>
+<td>first meaningful attack turn</td>
+</tr>
+<tr>
+<td>final_board</td>
+<td>active + bench count</td>
+</tr>
+<tr>
+<td>loss_shape</td>
+<td>setup miss / tempo loss / no backup attacker</td>
+</tr>
+<tr>
+<td>likely_actionable</td>
+<td>yes / no / unclear</td>
+</tr>
+</tbody>
+</table>
+<p>The labels I currently use are:</p>
+<ul>
+<li>setup miss</li>
+<li>tempo loss</li>
+<li>no backup attacker</li>
+<li>bench-snipe collapse</li>
+<li>wrong target priority</li>
+<li>resource exhaustion</li>
+<li>deck-out / low-deck risk</li>
+<li>probably variance</li>
+</ul>
+<p>This is mostly useful because it stops rule changes based on one bad replay. If the same loss shape shows up several times, I test a narrow change locally.</p>
+<p>I also made a small starter notebook that reads public episode JSON files and exports:</p>
+<ul>
+<li>episode summary</li>
+<li>broad visible archetype summary</li>
+<li>visible attack usage summary</li>
+<li>manual loss-label template</li>
+</ul>
+<p>It uses the public daily episode dataset as a capped sample, and also handles the index-only dataset case by showing a short note instead of failing silently.</p>
+<p>The notebook is intentionally light. Exact deck choices and rule weights can stay in a private review sheet.</p>"

@@ -1,0 +1,77 @@
+id,authorName,postDate,votes,content
+3477183,,2026-06-21 10:29:44.647000,22,"<h1>Proposal: an official API extension for simulation / search-based agents</h1>
+<p><em>(English first; 日本語は下にあります)</em></p>
+<h2>TL;DR</h2>
+<p>In the Pokémon TCG you take several uncertainty-bearing actions in a single turn. Especially around draws, the game branches a lot (""if I draw this, then I do that""). When you try to implement search over multiple plays (e.g. MCTS), the current API makes this hard. To enable stronger solutions, I'd like to propose an API to shuffle the deck at an arbitrary point during a Search.</p>
+<h2>Background / Motivation</h2>
+<p>As an example, take Alakazam (the Psychic Draw ability), which is in the current environment. It is often paired with Dudunsparce (Run Away Draw) and is a typical deck that repeats several draws in a single turn. Meanwhile, the card pool contains hand-disruption cards such as Unfair Stamp and Judge. Against those, deliberately NOT using Dudunsparce's ability and keeping cards in hand (to play around Unfair Stamp) can be the correct play.</p>
+<p>Consider the decision of whether to use Dudunsparce's ability <em>after</em> Psychic Draw:</p>
+<ul>
+<li>Psychic Draw gives you the card you need → don't use Dudunsparce</li>
+<li>Psychic Draw doesn't → use Dudunsparce to dig further</li>
+</ul>
+<p>That is the natural decision. However, because the deck order is already fixed before Psychic Draw, a search-based algorithm can decide while <strong>already knowing</strong> what using Dudunsparce would draw. That is,</p>
+<ul>
+<li>in a deck order where ""using Dudunsparce hits the card"" → use it</li>
+<li>in a deck order where ""using Dudunsparce misses"" → don't use it (do something else)</li>
+</ul>
+<p>so the search can optimize <em>after seeing</em> the fixed deck order (clairvoyance), which overestimates the true expected value. To avoid this, we need an API that shuffles the deck after Psychic Draw and issues a new SearchId.</p>
+<h2>Observed behavior (black-box)</h2>
+<ul>
+<li>Issuing a top-of-deck draw (e.g. a draw ability) from the same SearchId is deterministic.<ul>
+<li>Measured: Lunar Cycle from the same SearchId ×8 → drew the identical 3 cards every time. Re-determinizing the root (SearchBegin with a different deck order) ×8 → 8 different draws.</li></ul></li>
+<li>When a shuffle happens, the (new) deck order is fixed at that moment.<ul>
+<li>Cards like Lillie's Determination shuffle before drawing, so re-stepping the same move gives a different result (it is re-rolled).</li></ul></li>
+<li>Going deeper / branching within a search is unrestricted (SearchStep), but you cannot start a fresh search with a new deck order mid-way (no SearchBegin / re-determinization from a mid-search state).<ul>
+<li>Measured: search_begin_input is only present on a real battle observation (even the root SearchState's observation, and every stepped state, is None); calling SearchBegin on a mid-search observation fails with <code>ValueError: Not agent observation.</code></li></ul></li>
+</ul>
+<h2>Request to the organizers</h2>
+<p>I propose adding a feature to shuffle the deck at an arbitrary point during a Search.
+Note: the card pool also contains effects that fix the top/bottom of the deck (e.g. Ciphermaniac's Codebreaking / Dusk Ball / Drakloak's Recon Directive), so it would be ideal if the shuffle range could be limited too.
+Without this, participants who want to search would have to reimplement the whole simulator for all cards themselves, which would significantly raise the barrier to entry.</p>
+<h2>Closing</h2>
+<ul>
+<li>This is only what I found on my own; apologies if I have missed anything.</li>
+<li>This is my first Kaggle competition, so if this kind of proposal is inappropriate, I will delete the post.</li>
+<li>The English section was drafted with Claude Code, so apologies if any parts read awkwardly.</li>
+</ul>
+<hr>
+<h1>（日本語）シミュレーション・探索実装に向けた公式 API 拡張の提案</h1>
+<h2>TL;DR</h2>
+<p>ポケモンカードでは不確実性を伴う行動を1ターンに複数回行う。特にドローを伴うプレイをしたときに、「これが引けたらこれをする」のような分岐が多く発生するゲームである。
+MCTS を始めとした複数のプレイに対する探索を行う際、今の API ではこの探索を実装することが難しい。
+より強い解法の探求のためにも、Search 中の任意タイミングでの山のシャッフル機能の実装を提案したい。</p>
+<h2>背景 / 動機</h2>
+<p>例として現状の環境にいるフーディン（特性サイコドロー）を挙げる。このデッキはノココッチ（特性にげあしドロー）と組み合わせていることが多く、特に一度のターンに複数のドローを繰り返す典型的なデッキである。
+一方、現在のカードプールにはアンフェアスタンプやジャッジマンなどのハンド干渉を行うカードが存在する。この場合、ノココッチの特性を使わずにあえて残してアンフェアスタンプに備えるというプレイが正当化される。</p>
+<p>ここではサイコドローをしたあと、ノココッチの特性を使うかどうかという問題を考える。</p>
+<ul>
+<li>サイコドローをして必要なカードが引ける → ノココッチの特性を使わない</li>
+<li>サイコドローをして必要なカードを引けない → ノココッチの特性を使ってさらに引けるかを試行する</li>
+</ul>
+<p>となるのが自然ではある。しかしサイコドロー以前に山の順番が固定されているため、探索ベースのアルゴリズムでは「ノココッチの特性を使ったら何が引けるか」を <strong>すでに知った上で</strong> 判断できてしまう。すなわち</p>
+<ul>
+<li>「ノココッチを使えば当たり札を引ける」山順 → 使う</li>
+<li>「ノココッチを使っても当たり札を引けない」山順 → 使わない（別の手に回す）</li>
+</ul>
+<p>のように、固定された山順を見てから最適化（透視 / clairvoyance）でき、実戦の期待値を過大評価してしまう。
+これを避けるために、サイコドロー後に山をシャッフルして新たな SearchId を発行するような API が必要となる。</p>
+<h2>検証した挙動（ブラックボックス）</h2>
+<ul>
+<li>同じ SearchId に対し、山の上から引く系（ドロー特性など）を発行すると決定的な動作になること<ul>
+<li>実測: 同じ SearchId からルナサイクルを 8 回 → 引いた 3 枚は毎回同一。root を re-determinize（別の山順で SearchBegin）×8 → 毎回別の 3 枚。</li></ul></li>
+<li>山のシャッフルが行われると、その時点で（新しい）山の順番が決まること<ul>
+<li>リーリエの決心などはドロー前に山をシャッフルするため、同じ手を踏み直すと別の結果になる（再抽選される）</li></ul></li>
+<li>探索を深く進める／枝分かれするのは自由（SearchStep）だが、<strong>探索の途中から新しい山順を与えて探索し直す（SearchBegin による re-determinize）ことはできない</strong><ul>
+<li>実測: <code>search_begin_input</code> は本物の対戦観測にしか付かない（root の SearchState の観測も、その先の途中状態も None）。途中状態に SearchBegin を呼ぶと <code>ValueError: Not agent observation.</code> で弾かれる。</li></ul></li>
+</ul>
+<h2>運営への要望</h2>
+<p>Search 中の任意タイミングでの山のシャッフルができる機能を実装することを提案する。
+なお、カードプールには暗号マニアの解読やダークボール、ドロンチの特性ていさつしれいなど、山の上下を固定するようなテキストが存在するため、シャッフルする範囲も限定できることが望ましい。</p>
+<p>これがない場合、（探索を行う参加者は）全カードに対するシミュレーターを自前実装する必要が生じてしまい、参入障壁を大きく高めることにつながると考えられる。</p>
+<h2>最後に</h2>
+<ul>
+<li>あくまでも自分で調べた範囲であり、調査漏れがあれば申し訳ないです</li>
+<li>Kaggle の参加は初めてであるため、こうした提案が不適切であれば投稿を削除します</li>
+<li>英訳部分は Claude Code で書いているため、読みづらい部分があれば申し訳ありません</li>
+</ul>"

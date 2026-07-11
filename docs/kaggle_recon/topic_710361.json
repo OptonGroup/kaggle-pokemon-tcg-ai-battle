@@ -1,0 +1,87 @@
+{
+  "topic_id": 710361,
+  "title": "A Vibecoded Website to View Metas and Cards",
+  "url": "https://www.kaggle.com/competitions/pokemon-tcg-ai-battle/discussion/710361",
+  "competition": "pokemon-tcg-ai-battle",
+  "fetched_via": "kaggle CLI (topic-messages pokemon-tcg-ai-battle 710361 -v --quiet)",
+  "note": "authorName column is empty in CLI output for ALL posts (Kaggle CLI bug); WebFetch could not retrieve JS-rendered Kaggle page; author names unavailable. Author of website (post id 3476013, votes 32) is the OP. Commenter 3476762 is addressed as 'Ryan' by the OP in reply (3476769).",
+  "posts": [
+    {
+      "id": 3476013,
+      "authorName": "",
+      "postDate": "2026-06-20 08:49:33",
+      "votes": 32,
+      "content": "https://ptcg-kaggle-meta.vercel.app/ — Check out this website I made to view deck metas and card usage! Let me know if you would like to see anything else!"
+    },
+    {
+      "id": 3476762,
+      "authorName": "Ryan (addressed by name in reply)",
+      "postDate": "2026-06-20 22:44:38",
+      "votes": 1,
+      "content": "Thanks for sharing. Based on the first deck # and percentage, I saw that the total number of decks decreased over the past few days. I'm assuming the meta is reading every submitted deck on the leaderboard. A decreasing total number seems odd - I wonder if people are un-submitting their deck, or if it's something else? From day 0 to now, the total decks submitted per the website are 2,555, 15,632, 13,040, & 10,855 decks."
+    },
+    {
+      "id": 3476769,
+      "authorName": "",
+      "postDate": "2026-06-20 23:19:26",
+      "votes": 0,
+      "content": "Hi Ryan, great observation. This website does not contain every single matchup in the competition. The competition hosts post daily datasets containing top matchups in the competition here (https://www.kaggle.com/datasets/kaggle/pokemon-tcg-ai-battle-episodes-index). They do not post every single submission and matchup in the competition, only top ranked matchups. The website is a way to visualize this data. Your math was spot on. If you check episode count in the dataset, each episode contains two players battling each other. Meaning two deck appearances per episode. The number of decks you calculated are 2x the number of episodes they posted for each date. Not really sure why they're posting less matchups each day. Hope that answers your question! Let me know if you have any suggestions!"
+    },
+    {
+      "id": 3477743,
+      "authorName": "",
+      "postDate": "2026-06-22 01:25:34",
+      "votes": 0,
+      "content": "6/21 results are available here: https://ptcg-kaggle-meta.vercel.app/2026-06-21"
+    },
+    {
+      "id": 3477361,
+      "authorName": "",
+      "postDate": "2026-06-21 13:50:13",
+      "votes": 1,
+      "content": "Isn't it an issue that your link uses the attribute without rel = \"noopener, noreferrer\"?"
+    },
+    {
+      "id": 3477641,
+      "authorName": "",
+      "postDate": "2026-06-21 20:16:49",
+      "votes": -1,
+      "content": "Thank you, I just changed that"
+    },
+    {
+      "id": 3478718,
+      "authorName": "",
+      "postDate": "2026-06-23 00:45:15",
+      "votes": 0,
+      "content": "6/22: https://ptcg-kaggle-meta.vercel.app/2026-06-22"
+    },
+    {
+      "id": 3479739,
+      "authorName": "",
+      "postDate": "2026-06-24 04:45:09",
+      "votes": 0,
+      "content": "6/23 is up: https://ptcg-kaggle-meta.vercel.app/2026-06-23"
+    },
+    {
+      "id": 3480290,
+      "authorName": "",
+      "postDate": "2026-06-24 16:54:35",
+      "votes": 0,
+      "content": "6/23 is posted: https://ptcg-kaggle-meta.vercel.app/2026-06-23"
+    },
+    {
+      "id": 3480544,
+      "authorName": "",
+      "postDate": "2026-06-25 00:22:32",
+      "votes": 0,
+      "content": "6/24 posted now: https://ptcg-kaggle-meta.vercel.app/2026-06-24"
+    },
+    {
+      "id": 3489848,
+      "authorName": "",
+      "postDate": "2026-07-05 22:33:42",
+      "votes": 0,
+      "content": "The website is great, for some reason it stopped working :/"
+    }
+  ]
+}

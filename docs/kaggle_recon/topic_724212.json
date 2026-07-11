@@ -1,0 +1,30 @@
+{
+  "source": "kaggle CLI (.venv/bin/kaggle competitions topic-messages pokemon-tcg-ai-battle 724212 -v --quiet -n -1)",
+  "topic": {
+    "topic_id": 724212,
+    "title": "Can i train on my own hardware / cloud ? :)",
+    "authorName": "",
+    "forum_votes": 0,
+    "reply_count": 1,
+    "created": "2026-07-10 04:24:01.074000"
+  },
+  "messages": [
+    {
+      "message_id": "3494560",
+      "authorName": null,
+      "postDate": "2026-07-10 08:27:39.357000",
+      "votes": 1,
+      "content_raw": "<p>yes                  </p>",
+      "content_text": "yes"
+    },
+    {
+      "message_id": "3494480",
+      "authorName": null,
+      "postDate": "2026-07-10 04:24:01.073000",
+      "votes": 0,
+      "content_raw": "<p>Is it ok to run training in cloud? </p>",
+      "content_text": "Is it ok to run training in cloud?"
+    }
+  ],
+  "note": "authorName empty in CLI output for both messages (Kaggle API does not expose forum-post authors here). WebFetch of the discussion URL returned only the page title (JS-rendered, no static content). Two messages total: original question + one reply."
+}

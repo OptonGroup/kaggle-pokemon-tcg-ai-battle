@@ -1,0 +1,33 @@
+{
+  "topic_id": 724054,
+  "topic_title": "Can we play this game in browser just like orbit wars was there ?",
+  "source": "kaggle CLI: .venv/bin/kaggle competitions topic-messages pokemon-tcg-ai-battle 724054 -s old -v --quiet",
+  "fetch_date": "2026-07-11",
+  "note": "authorName field empty in CLI output (both CSV and table) -- Kaggle API limitation. WebFetch of the discussion page returned only the SPA shell title, no rendered posts. Authors could not be recovered; message content is authoritative.",
+  "messages": [
+    {
+      "id": 3494156,
+      "authorName": "",
+      "postDate": "2026-07-09 09:26:30.123000",
+      "votes": 0,
+      "content_raw": "<p><a href=\"https://www.kaggle.com/bovard\" target=\"_blank\">@bovard</a> Is there option like we can manually play this game in browser to get more idea about how the game actually works </p>",
+      "content_text": "@bovard Is there option like we can manually play this game in browser to get more idea about how the game actually works"
+    },
+    {
+      "id": 3494173,
+      "authorName": "",
+      "postDate": "2026-07-09 10:04:48.383000",
+      "votes": 0,
+      "content_raw": "<p><a href=\"https://tcg.pokemon.com/en-us/tcgl/\" target=\"_blank\">https://tcg.pokemon.com/en-us/tcgl/</a></p>\n<p>I felt that TCG Live had the card pool and meta that most closely resembled this comp.</p>",
+      "content_text": "https://tcg.pokemon.com/en-us/tcgl/\nI felt that TCG Live had the card pool and meta that most closely resembled this comp."
+    },
+    {
+      "id": 3494189,
+      "authorName": "",
+      "postDate": "2026-07-09 11:01:17.763000",
+      "votes": 1,
+      "content_raw": "<p>Okay i will try that </p>",
+      "content_text": "Okay i will try that"
+    }
+  ]
+}

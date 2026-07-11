@@ -1,0 +1,196 @@
+id,authorName,postDate,votes,content
+3481505,,2026-06-26 05:38:04.373000,1,"<p>I did a light scan of public Notebooks and Discussions around the PTCG AI Battle competition today. This is not a recommendation to copy or submit any specific Notebook. It is only a public-signal watch: which topics seem to be getting attention, and which ones may be worth reading more carefully.</p>
+<p>The main thing I noticed is that the public surface became more interesting around a few themes: Starmie, Psychic / Strong Start variants, planning-style agents, and Discussions about simulation behavior.</p>
+<h2>Quick Summary</h2>
+<ul>
+<li>Several new or updated public Notebooks appeared.</li>
+<li><code>Prize Card Tracking: 1300+ Starmie</code> stood out because of both the title and vote count.</li>
+<li><code>Pokemon TCG AI Battle - 1084.5 Baseline</code> moved up in score rank.</li>
+<li>Multiple Psychic / Strong Start / planning-agent style Notebooks are now visible.</li>
+<li>Discussions about infinite moves, scoring interpretation, simulation format, and file-size limits may matter when interpreting public scores.</li>
+<li>I would treat titles, votes, and rank movements as signals only, not proof of a submission-ready agent.</li>
+</ul>
+<h2>Public Notebook Signals</h2>
+<table>
+<thead>
+<tr>
+<th>Notebook</th>
+<th>Why it caught my eye</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href=""https://www.kaggle.com/code/masamikobayashi/prize-card-tracking-1300-starmie"" target=""_blank""><code>Prize Card Tracking: 1300+ Starmie</code></a></td>
+<td>Starmie with a <code>1300+</code> claim and a relatively strong public reaction. Worth watching as a possible public meta signal.</td>
+</tr>
+<tr>
+<td><a href=""https://www.kaggle.com/code/makthanithin/pokemon-tcg-ai-battle-1084-5-baseline"" target=""_blank""><code>Pokemon TCG AI Battle - 1084.5 Baseline</code></a></td>
+<td>Updated Notebook with a visible score-rank move. Could be worth comparing with other public baseline-style work.</td>
+</tr>
+<tr>
+<td><a href=""https://www.kaggle.com/code/seokjeongeum/strong-start-psychic-anti-meta-v8-lb-1100"" target=""_blank""><code>[STRONG START]: Psychic Anti-Meta V8 | LB 1100+</code></a></td>
+<td>A high-LB Psychic / anti-meta claim. Interesting, but the title alone is not enough evidence.</td>
+</tr>
+<tr>
+<td><a href=""https://www.kaggle.com/code/seokjeongeum/strong-start-baseline-agent-v10-lb-950"" target=""_blank""><code>[STRONG START]: Baseline Agent V10 | LB 950+</code></a></td>
+<td>Another Strong Start-style public signal. Useful to read together with older baseline-style Notebooks.</td>
+</tr>
+<tr>
+<td><a href=""https://www.kaggle.com/code/map1e114514/starmie-cinderace-budew-skill-agent"" target=""_blank""><code>Starmie Cinderace Budew Skill Agent</code></a></td>
+<td>Another Starmie-related signal from a different author. The repeated Starmie theme is what makes it interesting.</td>
+</tr>
+</tbody>
+</table>
+<p>There are also several planning-agent style Notebooks from Tom:</p>
+<ul>
+<li><a href=""https://www.kaggle.com/code/tom99763/hops-zacian-snorlax-planning-agent"" target=""_blank""><code>Hops Zacian Snorlax Planning Agent</code></a></li>
+<li><a href=""https://www.kaggle.com/code/tom99763/mega-gengar-ex-planning-agent"" target=""_blank""><code>Mega Gengar ex Planning Agent</code></a></li>
+<li><a href=""https://www.kaggle.com/code/tom99763/mega-kangaskhan-ex-planning-agent"" target=""_blank""><code>Mega Kangaskhan ex Planning Agent</code></a></li>
+<li><a href=""https://www.kaggle.com/code/tom99763/gardevoir-planning-agent"" target=""_blank""><code>Gardevoir Planning Agent</code></a></li>
+</ul>
+<p>For these, I would not look only at win-rate claims. In simulation competitions, stability, timing, and clean behavior under edge cases matter a lot.</p>
+<h2>Public Discussion Signals</h2>
+<table>
+<thead>
+<tr>
+<th>Discussion</th>
+<th>Why it may matter</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href=""https://www.kaggle.com/competitions/pokemon-tcg-ai-battle/discussion/714030"" target=""_blank""><code>Possible Infinite Move by Opponent Agent and Unfair Rating</code></a></td>
+<td>Infinite-move or unfair-rating reports affect how we should interpret public scores.</td>
+</tr>
+<tr>
+<td><a href=""https://www.kaggle.com/competitions/pokemon-tcg-ai-battle/discussion/714189"" target=""_blank""><code>Reminder about the Kaggle Simulation Competition Format</code></a></td>
+<td>Format reminders are worth reading before over-interpreting Notebook results.</td>
+</tr>
+<tr>
+<td><a href=""https://www.kaggle.com/competitions/pokemon-tcg-ai-battle/discussion/709642"" target=""_blank""><code>Question about submission file size limit</code></a></td>
+<td>File-size constraints can affect whether an approach is actually usable.</td>
+</tr>
+<tr>
+<td><a href=""https://www.kaggle.com/competitions/pokemon-tcg-ai-battle/discussion/709160"" target=""_blank""><code>Daily Top Episodes Datasets</code></a></td>
+<td>Useful public data for understanding the visible top environment.</td>
+</tr>
+<tr>
+<td><a href=""https://www.kaggle.com/competitions/pokemon-tcg-ai-battle/discussion/709263"" target=""_blank""><code>Daily public meta notes from visible Game History</code></a></td>
+<td>Another useful public source for watching broad meta movement.</td>
+</tr>
+</tbody>
+</table>
+<h2>How I Would Read These Signals</h2>
+<p>I would not treat any of these as proven strong agents just because the title contains a high score or because the Notebook has votes. Those are useful signals, but they are still only signals.</p>
+<p>For public analysis, I would first ask:</p>
+<ul>
+<li>Does the Notebook explanation match the public output?</li>
+<li>Is the result understandable without relying only on the title?</li>
+<li>Is the same archetype or idea appearing from multiple sources?</li>
+<li>Does the idea conflict with any active Discussion about simulation behavior or scoring?</li>
+</ul>
+<p>The Starmie theme is the most interesting to me right now because it appears in more than one public place. The Strong Start / Psychic signals are also worth watching, but I would be careful not to overread title scores before checking the public output.</p>
+<h2>What This Post Does Not Cover</h2>
+<p>I am intentionally not sharing detailed deck lists, replay raw data, non-public tactical notes, or large chunks of other people’s agent code here. This is only a public-surface observation post.</p>
+<h2>Current Takeaway</h2>
+<p>My current takeaway is not “a new best public agent has been found.” It is more modest:</p>
+<blockquote>
+  <p>The public signals became denser today. Starmie, Psychic / Strong Start variants, planning agents, and simulation-rule Discussions all look worth watching.</p>
+</blockquote>
+<p>If any of these signals become more reproducible from public output, they may change how we read the public meta.</p>
+<hr>
+<h1>公開Notebook / Discussionで気になったシグナル - 2026-06-26</h1>
+<p>今日、PTCG AI Battleの公開NotebookとDiscussionを軽く確認した。これは、特定のNotebookをそのまま使うべきという話ではない。あくまで、公開ページから見えるシグナルの整理である。</p>
+<p>今回気になったのは、Starmie系、Psychic / Strong Start系、planning agent系、そしてシミュレーション挙動に関するDiscussionが同じタイミングで目立ってきたことだ。</p>
+<h2>要約</h2>
+<ul>
+<li>新規/更新Notebookが複数出ていた。</li>
+<li><code>Prize Card Tracking: 1300+ Starmie</code> は、タイトルとvote数の両方で目立つ。</li>
+<li><code>Pokemon TCG AI Battle - 1084.5 Baseline</code> はscore rankの上昇が見えた。</li>
+<li>Psychic / Strong Start / planning agent系のNotebookが複数見えている。</li>
+<li>無限手、スコア解釈、Simulation形式、file size limitに関するDiscussionは、公開スコアを見るうえで重要そう。</li>
+<li>タイトル、vote数、rank moverはシグナルであって、提出可能な強agentの証明ではない。</li>
+</ul>
+<h2>気になった公開Notebook</h2>
+<table>
+<thead>
+<tr>
+<th>Notebook</th>
+<th>気になった理由</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href=""https://www.kaggle.com/code/masamikobayashi/prize-card-tracking-1300-starmie"" target=""_blank""><code>Prize Card Tracking: 1300+ Starmie</code></a></td>
+<td>Starmie系で <code>1300+</code> を名乗り、公開反応も強め。公開メタのシグナルとして気になる。</td>
+</tr>
+<tr>
+<td><a href=""https://www.kaggle.com/code/makthanithin/pokemon-tcg-ai-battle-1084-5-baseline"" target=""_blank""><code>Pokemon TCG AI Battle - 1084.5 Baseline</code></a></td>
+<td>更新され、score rankの動きも見えた。baseline風Notebookとして比較対象になりそう。</td>
+</tr>
+<tr>
+<td><a href=""https://www.kaggle.com/code/seokjeongeum/strong-start-psychic-anti-meta-v8-lb-1100"" target=""_blank""><code>[STRONG START]: Psychic Anti-Meta V8 | LB 1100+</code></a></td>
+<td>Psychic / anti-meta系の高LB主張。タイトルだけでは判断できないが、読む価値はある。</td>
+</tr>
+<tr>
+<td><a href=""https://www.kaggle.com/code/seokjeongeum/strong-start-baseline-agent-v10-lb-950"" target=""_blank""><code>[STRONG START]: Baseline Agent V10 | LB 950+</code></a></td>
+<td>Strong Start系の公開シグナル。過去のbaseline風Notebookと合わせて読みたい。</td>
+</tr>
+<tr>
+<td><a href=""https://www.kaggle.com/code/map1e114514/starmie-cinderace-budew-skill-agent"" target=""_blank""><code>Starmie Cinderace Budew Skill Agent</code></a></td>
+<td>別作者からもStarmie系が見えている点が面白い。</td>
+</tr>
+</tbody>
+</table>
+<p>Tomさんのplanning agent群も気になった。</p>
+<ul>
+<li><a href=""https://www.kaggle.com/code/tom99763/hops-zacian-snorlax-planning-agent"" target=""_blank""><code>Hops Zacian Snorlax Planning Agent</code></a></li>
+<li><a href=""https://www.kaggle.com/code/tom99763/mega-gengar-ex-planning-agent"" target=""_blank""><code>Mega Gengar ex Planning Agent</code></a></li>
+<li><a href=""https://www.kaggle.com/code/tom99763/mega-kangaskhan-ex-planning-agent"" target=""_blank""><code>Mega Kangaskhan ex Planning Agent</code></a></li>
+<li><a href=""https://www.kaggle.com/code/tom99763/gardevoir-planning-agent"" target=""_blank""><code>Gardevoir Planning Agent</code></a></li>
+</ul>
+<p>このあたりは、勝率だけでなく、安定性、時間制限下での挙動、極端なケースで変な動きをしないかも見たい。</p>
+<h2>気になったDiscussion</h2>
+<table>
+<thead>
+<tr>
+<th>Discussion</th>
+<th>気になった理由</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href=""https://www.kaggle.com/competitions/pokemon-tcg-ai-battle/discussion/714030"" target=""_blank""><code>Possible Infinite Move by Opponent Agent and Unfair Rating</code></a></td>
+<td>無限手や不公平ratingの話は、公開スコアの読み方に影響する。</td>
+</tr>
+<tr>
+<td><a href=""https://www.kaggle.com/competitions/pokemon-tcg-ai-battle/discussion/714189"" target=""_blank""><code>Reminder about the Kaggle Simulation Competition Format</code></a></td>
+<td>Simulation形式の注意喚起は、Notebook結果を読む前に見ておきたい。</td>
+</tr>
+<tr>
+<td><a href=""https://www.kaggle.com/competitions/pokemon-tcg-ai-battle/discussion/709642"" target=""_blank""><code>Question about submission file size limit</code></a></td>
+<td>file size制約は、実際に使える手法かどうかに関わる。</td>
+</tr>
+<tr>
+<td><a href=""https://www.kaggle.com/competitions/pokemon-tcg-ai-battle/discussion/709160"" target=""_blank""><code>Daily Top Episodes Datasets</code></a></td>
+<td>公開上位環境を見るための重要な公開データ。</td>
+</tr>
+<tr>
+<td><a href=""https://www.kaggle.com/competitions/pokemon-tcg-ai-battle/discussion/709263"" target=""_blank""><code>Daily public meta notes from visible Game History</code></a></td>
+<td>公開Game Historyから環境傾向を見る材料になる。</td>
+</tr>
+</tbody>
+</table>
+<h2>どう読むとよさそうか</h2>
+<p>高いスコアがタイトルに入っていたり、voteが多かったりすると目を引く。ただ、Simulation系のコンペでは、タイトルやvoteだけで強さを判断するのは危ない。</p>
+<p>まず見たいのは、Notebookの説明と公開outputが自然につながっているか。同じアーキタイプや考え方が複数ソースで出ているか。Discussionで話題になっている評価上の注意点と矛盾しないか。</p>
+<p>今回でいうと、Starmie系が複数ソースで見えている点が一番気になる。Strong Start / Psychic系も気になるが、タイトルの数字だけで判断するのは早いと思う。</p>
+<h2>この投稿で扱わないこと</h2>
+<p>この投稿では、個別のデッキ詳細、replayの生データ、公開されていない個別メモ、他の人のagentコードの大きな転載は扱わない。公開ページから見えるシグナルだけを整理している。</p>
+<h2>現時点の見方</h2>
+<p>現時点の結論は、「新しい最強agentが見つかった」ではない。</p>
+<blockquote>
+  <p>公開シグナルがかなり濃くなってきた。Starmie、Psychic / Strong Start、planning agent、Simulationルール周りのDiscussionはしばらく追う価値がありそう。</p>
+</blockquote>
+<p>このあたりが公開outputでも継続して確認できるなら、公開メタの見方が少し変わるかもしれない。</p>"
+3481539,,2026-06-26 06:42:47.323000,0,<p>haha I forgot to set those notebook to private </p>

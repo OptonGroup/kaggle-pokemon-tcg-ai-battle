@@ -1,0 +1,11 @@
+id,authorName,postDate,votes,content
+3474299,,2026-06-17 19:00:15.950000,60,"<p>For this competition we'll be creating a dataset of the top episodes each day. This should help in reviewing replays as well as training agents. Each new dataset will be added to the index here: <a href=""https://www.kaggle.com/datasets/kaggle/pokemon-tcg-ai-battle-episodes-index"" target=""_blank"">https://www.kaggle.com/datasets/kaggle/pokemon-tcg-ai-battle-episodes-index</a></p>"
+3481016,,2026-06-25 14:12:20.977000,4,"<p><a href=""https://www.kaggle.com/bovard"" target=""_blank"">@bovard</a> 
+Thank you, this is really helpful!</p>
+<p>Could you add each team's score (rating) to the dataset? Right now the replay JSON only has the team names and the win/loss result (+1/-1) — there's no rating in it.</p>
+<p>For each episode, it would be great to have, for both teams:</p>
+<p>the rating before or after the episode</p>"
+3482719,,2026-06-27 17:49:53.150000,0,"<p>Adding to this, I would want to have each agent's <code>agent_id</code> in the json file.</p>"
+3476832,,2026-06-21 02:54:36.917000,2,"<p>Thank you for all the valuable data!  If it is at all possible to share, what criteria is being used for which episodes get included in each day's index?</p>"
+3479295,,2026-06-23 16:14:57.993000,0,<p>We rate the episodes by highest average participant rating. This will bias the dataset towards the episodes from the top competitors. </p>
+3477742,,2026-06-22 01:25:15.450000,0,

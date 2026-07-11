@@ -1,0 +1,29 @@
+{
+  "topic_id": 722907,
+  "competition": "pokemon-tcg-ai-battle",
+  "url": "https://www.kaggle.com/competitions/pokemon-tcg-ai-battle/discussion/722907",
+  "title": "disabled due to the competition's active submission limit",
+  "fetched_via": ".venv/bin/kaggle competitions topic-messages pokemon-tcg-ai-battle 722907 -v --quiet -n -1 --sort-by old",
+  "fetched_at": "2026-07-11",
+  "note": "authorName field is empty in Kaggle API output for this topic (API quirk, no usernames returned). WebFetch returned no rendered content (JS-rendered page). Content below is complete from CLI.",
+  "messages": [
+    {
+      "id": "3492407",
+      "authorName": "",
+      "postDate": "2026-07-07 02:05:54.167000",
+      "votes": 1,
+      "content_html": "<p>I submit 5 notebook ， My highest-scoring notebook shows \"disabled due to the competition's active submission limit.\"</p>",
+      "content_text": "I submit 5 notebook, My highest-scoring notebook shows \"disabled due to the competition's active submission limit.\"",
+      "role": "question (OP)"
+    },
+    {
+      "id": "3492424",
+      "authorName": "",
+      "postDate": "2026-07-07 02:16:25.977000",
+      "votes": 1,
+      "content_html": "<p>You may only have two active submissions at a time - those two submissions will play episodes against others in the competition. If you submit a new one, the older ones are disabled, and your two most recent ones are active.</p><p>In order to have your highest-scoring notebook active, it must be re-submitted.</p>",
+      "content_text": "You may only have two active submissions at a time - those two submissions will play episodes against others in the competition. If you submit a new one, the older ones are disabled, and your two most recent ones are active. In order to have your highest-scoring notebook active, it must be re-submitted.",
+      "role": "answer (likely organizer/moderator reply)"
+    }
+  ]
+}

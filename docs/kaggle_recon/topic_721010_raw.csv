@@ -1,0 +1,2929 @@
+id,authorName,postDate,votes,content
+3490323,,2026-07-06 08:05:40.213000,15,"<p>I’m sharing a brief summary of basic deck sources I found through online research</p>
+<p>I’m documenting this together with the game engine’s card IDs for reference,<br>
+and I hope it will be helpful for this competition.</p>
+<h1>Summary</h1>
+<table>
+<thead>
+<tr>
+<th>Deck</th>
+<th>Core Feature</th>
+<th>Main Strength</th>
+<th>Main Weakness</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Dragapult</strong></td>
+<td>Bench pressure with <code>Phantom Dive</code> damage spread</td>
+<td>Strong board control</td>
+<td>Needs Stage 2 setup</td>
+</tr>
+<tr>
+<td><strong>Dragapult / Dusknoir</strong></td>
+<td>Adds <code>Cursed Blast</code> for forced KO math</td>
+<td>High KO potential</td>
+<td>Prize/risk management is hard</td>
+</tr>
+<tr>
+<td><strong>Dragapult / Blaziken</strong></td>
+<td>Blaziken ex accelerates Energy from discard</td>
+<td>Faster attacking tempo</td>
+<td>More setup pieces</td>
+</tr>
+<tr>
+<td><strong>Slowking</strong></td>
+<td>Copies attacks from non-Rule Box Pokémon via deck-top control</td>
+<td>Flexible attack options</td>
+<td>Requires careful sequencing</td>
+</tr>
+<tr>
+<td><strong>Ogerpon / Meganium</strong></td>
+<td>Grass Energy acceleration and Energy doubling</td>
+<td>Strong mid-game scaling</td>
+<td>Evolution-heavy setup</td>
+</tr>
+<tr>
+<td><strong>Raging Bolt / Ogerpon</strong></td>
+<td>Discards Energy for big one-hit damage</td>
+<td>Explosive damage output</td>
+<td>Burns resources quickly</td>
+</tr>
+<tr>
+<td><strong>Mega Venusaur / Ogerpon</strong></td>
+<td>Moves Grass Energy and heals while attacking</td>
+<td>Durable late-game board</td>
+<td>Slow setup</td>
+</tr>
+<tr>
+<td><strong>Crustle</strong></td>
+<td>Blocks attack damage from opponent’s Pokémon ex</td>
+<td>Strong anti-ex matchup</td>
+<td>Weak to non-ex answers</td>
+</tr>
+<tr>
+<td><strong>Mega Lucario</strong></td>
+<td>Direct Fighting-type damage with Energy acceleration</td>
+<td>Simple high-damage plan</td>
+<td>Predictable attacks</td>
+</tr>
+<tr>
+<td><strong>Mega Lucario / Hariyama</strong></td>
+<td>Adds gust pressure through Hariyama evolution</td>
+<td>Can target key Bench Pokémon</td>
+<td>More complex setup</td>
+</tr>
+<tr>
+<td><strong>Alakazam / Dudunsparce</strong></td>
+<td>Builds large hand size for <code>Powerful Hand</code> damage</td>
+<td>Strong draw engine</td>
+<td>Damage drops if hand is disrupted</td>
+</tr>
+<tr>
+<td><strong>Starmie / Froslass</strong></td>
+<td>Spreads damage counters and pressures Bench</td>
+<td>Good chip-damage control</td>
+<td>Slow against fast decks</td>
+</tr>
+<tr>
+<td><strong>Marnie’s Grimmsnarl ex</strong></td>
+<td>Attaches many Darkness Energy to Marnie’s Pokémon</td>
+<td>Big Energy acceleration</td>
+<td>Depends on setup/stadium support</td>
+</tr>
+<tr>
+<td><strong>Kangaskhan / Bouffalant</strong></td>
+<td>Basic Pokémon durability with Bouffalant damage reduction</td>
+<td>Tanky and simple</td>
+<td>Lacks strong finishing power</td>
+</tr>
+<tr>
+<td><strong>Mega Absol Box</strong></td>
+<td>Toolbox deck with many situational attackers</td>
+<td>Very flexible</td>
+<td>Hard to pilot consistently</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h1>Deck List</h1>
+<hr>
+<h1>Dragapult</h1>
+<hr>
+<h2>1. Dragapult</h2>
+<h3>1.1. Pokémon Deck List Details</h3>
+<table>
+<thead>
+<tr>
+<th>Qty</th>
+<th>Card ID</th>
+<th>Card Name (Expansion)</th>
+<th>Key Ability / Attack Effects</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>4</td>
+<td>119</td>
+<td>Dreepy (TWM)</td>
+<td>Petty Grudge: {P} 10 damage. / Bite: {R}{P} 40 damage.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>120</td>
+<td>Drakloak (TWM)</td>
+<td>[Ability] Recon Directive: Once during your turn, look at the top 2 cards of your deck and put 1 into your hand. Put the other on the bottom. / Dragon Headbutt: 70 damage.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>121</td>
+<td>Dragapult ex (TWM)</td>
+<td>[Tera]: Prevent all damage done to this Pokémon by attacks while it is on your Bench. / Jet Headbutt: 70 damage. / Phantom Dive: 200 damage. Put 6 damage counters on your opponent’s Benched Pokémon in any way you like.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>112</td>
+<td>Munkidori (TWM)</td>
+<td>[Ability] Adrena-Brain: Once during your turn, if this Pokémon has any {D} Energy attached, you may move up to 3 damage counters from 1 of your Pokémon to 1 of your opponent’s Pokémon.</td>
+</tr>
+<tr>
+<td>1</td>
+<td>305</td>
+<td>Dunsparce (JTG)</td>
+<td>Trading Places: Switch this Pokémon with 1 of your Benched Pokémon. / Ram: 20 damage.</td>
+</tr>
+<tr>
+<td>1</td>
+<td>66</td>
+<td>Dudunsparce (TEF)</td>
+<td>[Ability] Run Away Draw: Once during your turn, you may draw 3 cards. If you do, shuffle this Pokémon and all attached cards into your deck.</td>
+</tr>
+<tr>
+<td>1</td>
+<td>1071</td>
+<td>Meowth ex (POR)</td>
+<td>[Ability] Last-Ditch Catch: When you play this Pokémon from your hand onto your Bench, search your deck for a Supporter card. / Tuck Tail: 60 damage. Put this Pokémon and all attached cards into your hand.</td>
+</tr>
+<tr>
+<td>1</td>
+<td>140</td>
+<td>Fezandipiti ex (SFA*)</td>
+<td>[Ability] Flip the Script: Once during your turn, if any of your Pokémon were Knocked Out during your opponent’s last turn, you may draw 3 cards. / Cruel Arrow: 100 damage to 1 of your opponent’s Pokémon.</td>
+</tr>
+<tr>
+<td>1</td>
+<td>235</td>
+<td>Budew (PRE*)</td>
+<td>Itchy Pollen: 0 cost, 10 damage. During your opponent’s next turn, they can’t play any Item cards from their hand.</td>
+</tr>
+</tbody>
+</table>
+<h3>1.2. Trainer &amp; Energy Details</h3>
+<table>
+<thead>
+<tr>
+<th>Qty</th>
+<th>Card ID</th>
+<th>Card Name (Type)</th>
+<th>Effect Summary</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>4</td>
+<td>1227</td>
+<td>Lillie's Determination (Supporter)</td>
+<td>Shuffle your hand into your deck. Then, draw 6 cards. If you have exactly 6 Prize cards remaining, draw 8 cards instead.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>1198</td>
+<td>Crispin (Supporter)</td>
+<td>Search your deck for up to 2 Basic Energy cards of different types, reveal them, and put 1 into your hand. Attach the other to 1 of your Pokémon.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>1182</td>
+<td>Boss’s Orders (Supporter)</td>
+<td>Switch in 1 of your opponent’s Benched Pokémon to the Active Spot.</td>
+</tr>
+<tr>
+<td>1</td>
+<td>1213</td>
+<td>Judge (Supporter)</td>
+<td>Each player shuffles their hand into their deck and draws 4 cards.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>1152</td>
+<td>Poké Pad (Item)</td>
+<td>Search your deck for a Pokémon that doesn’t have a Rule Box, reveal it, and put it into your hand.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>1086</td>
+<td>Buddy-Buddy Poffin (Item)</td>
+<td>Search your deck for up to 2 Basic Pokémon with 70 HP or less and put them onto your Bench.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>1121</td>
+<td>Ultra Ball (Item)</td>
+<td>Discard 2 other cards from your hand. Search your deck for a Pokémon and put it into your hand.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>1120</td>
+<td>Crushing Hammer (Item)</td>
+<td>Flip a coin. If heads, discard an Energy from 1 of your opponent’s Pokémon.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>1097</td>
+<td>Night Stretcher (Item)</td>
+<td>Put a Pokémon or a Basic Energy card from your discard pile into your hand.</td>
+</tr>
+<tr>
+<td>1</td>
+<td>1080</td>
+<td>Unfair Stamp (ACE SPEC)</td>
+<td>Can only be used if any of your Pokémon were KO'd last turn. Each player shuffles their hand into their deck; you draw 5 cards, opponent draws 2.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>1260</td>
+<td>Risky Ruins (Stadium)</td>
+<td>Whenever any player puts a Basic non-{D} Pokémon onto their Bench during their turn, place 2 damage counters on that Pokémon.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>5</td>
+<td>Basic {P} Energy</td>
+<td>Provides Psychic Energy.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>2</td>
+<td>Basic {R} Energy</td>
+<td>Provides Fire Energy.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>7</td>
+<td>Basic {D} Energy</td>
+<td>Provides Darkness Energy.</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2>2. Dragapult / Dusknoir</h2>
+<h3>2.1. Pokémon List Details</h3>
+<table>
+<thead>
+<tr>
+<th>Qty</th>
+<th>Card ID</th>
+<th>Card Name (Expansion)</th>
+<th>Key Ability / Attack Effects</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>4</td>
+<td>119</td>
+<td>Dreepy (TWM)</td>
+<td>Petty Grudge: {P} 10 damage. / Bite: {R}{P} 40 damage.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>120</td>
+<td>Drakloak (TWM)</td>
+<td>[Ability] Recon Directive: Look at top 2 cards, 1 to hand, 1 to bottom. / Dragon Headbutt: 70 damage.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>121</td>
+<td>Dragapult ex (TWM)</td>
+<td>[Tera]: Prevent damage while on Bench. / Jet Headbutt: 70. / Phantom Dive: 200, put 6 damage counters on opponent's Bench.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>131</td>
+<td>Duskull (SFA*)</td>
+<td>Come and Get You: Put up to 3 Duskull from discard onto Bench.</td>
+</tr>
+<tr>
+<td>1</td>
+<td>132</td>
+<td>Dusclops (SFA*)</td>
+<td>[Ability] Cursed Blast: Put 5 damage counters on 1 opponent's Pokémon. This Pokémon is KO'd.</td>
+</tr>
+<tr>
+<td>1</td>
+<td>133</td>
+<td>Dusknoir (SFA*)</td>
+<td>[Ability] Cursed Blast: Put 13 damage counters on 1 opponent's Pokémon. This Pokémon is KO'd.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>112</td>
+<td>Munkidori (TWM)</td>
+<td>[Ability] Adrena-Brain: Move up to 3 damage counters from your Pokémon to opponent's if {D} Energy is attached.</td>
+</tr>
+<tr>
+<td>1</td>
+<td>235</td>
+<td>Budew (PRE*)</td>
+<td>Itchy Pollen: 0 cost, 10 damage. Opponent cannot play Item cards next turn.</td>
+</tr>
+<tr>
+<td>1</td>
+<td>140</td>
+<td>Fezandipiti ex (SFA*)</td>
+<td>[Ability] Flip the Script: Draw 3 cards if your Pokémon was KO'd last turn. / Cruel Arrow: 100 to 1 Pokémon.</td>
+</tr>
+<tr>
+<td>1</td>
+<td>1071</td>
+<td>Meowth ex (POR)</td>
+<td>[Ability] Last-Ditch Catch: Search deck for a Supporter when played to Bench. / Tuck Tail: 60, return this Pokémon to hand.</td>
+</tr>
+</tbody>
+</table>
+<h3>2.2. Trainer &amp; Energy Details</h3>
+<table>
+<thead>
+<tr>
+<th>Qty</th>
+<th>Card ID</th>
+<th>Card Name (Type)</th>
+<th>Effect Summary</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>4</td>
+<td>1227</td>
+<td>Lillie's Determination (Supp)</td>
+<td>Shuffle hand into deck, draw 6 or 8 if 6 Prize cards remain.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>1198</td>
+<td>Crispin (Supporter)</td>
+<td>Search deck for 2 different Basic Energy; 1 to hand, 1 to a Pokémon.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>1182</td>
+<td>Boss’s Orders (Supporter)</td>
+<td>Switch in 1 of your opponent’s Benched Pokémon.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>1231</td>
+<td>Dawn (Supporter)</td>
+<td>Search deck for a Basic, a Stage 1, and a Stage 2 Pokémon.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>1121</td>
+<td>Ultra Ball (Item)</td>
+<td>Discard 2 cards to search deck for a Pokémon.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>1152</td>
+<td>Poké Pad (Item)</td>
+<td>Search deck for a Pokémon without a Rule Box.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>1086</td>
+<td>Buddy-Buddy Poffin (Item)</td>
+<td>Search deck for 2 Basic Pokémon with 70 HP or less to the Bench.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>1079</td>
+<td>Rare Candy (Item)</td>
+<td>Evolve a Basic Pokémon to Stage 2, skipping Stage 1.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>1097</td>
+<td>Night Stretcher (Item)</td>
+<td>Put a Pokémon or Basic Energy from discard into hand.</td>
+</tr>
+<tr>
+<td>1</td>
+<td>1080</td>
+<td>Unfair Stamp (ACE SPEC)</td>
+<td>If your Pokémon was KO'd last turn, you draw 5 and opponent draws 2.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>1260</td>
+<td>Risky Ruins (Stadium)</td>
+<td>Put 2 damage counters on Basic non-{D} Pokémon when played to Bench.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>5</td>
+<td>Basic {P} Energy</td>
+<td>Provides Psychic Energy.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>2</td>
+<td>Basic {R} Energy</td>
+<td>Provides Fire Energy.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>7</td>
+<td>Basic {D} Energy</td>
+<td>Provides Darkness Energy.</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2>3. Dragapult / Blaziken</h2>
+<h3>3.1 Pokémon Card Details</h3>
+<table>
+<thead>
+<tr>
+<th>Qty</th>
+<th>Card ID</th>
+<th>Card Name (Expansion)</th>
+<th>Key Ability / Attack Effects</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>4</td>
+<td>119</td>
+<td>Dreepy (TWM)</td>
+<td>Petty Grudge: {P} 10 damage. / Bite: {R}{P} 40 damage.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>120</td>
+<td>Drakloak (TWM)</td>
+<td>[Ability] Recon Directive: Once during your turn, look at the top 2 cards of your deck and put 1 into your hand.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>121</td>
+<td>Dragapult ex (TWM)</td>
+<td>[Tera]: Prevent damage while on Bench. / Phantom Dive: 200 damage; distribute 6 damage counters on opponent's Bench.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>410</td>
+<td>Torchic (DRI)</td>
+<td>Collect: Draw 1 card. / Combustion: 10 damage.</td>
+</tr>
+<tr>
+<td>1</td>
+<td>411</td>
+<td>Combusken (DRI)</td>
+<td>Combustion: 20 damage. / Double Kick: 40× damage for each of 2 coins that land on heads.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>326</td>
+<td>Blaziken ex (JTG)</td>
+<td>[Ability] Seething Spirit: Once during your turn, attach a Basic Energy card from your discard pile to 1 of your Pokémon.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>112</td>
+<td>Munkidori (TWM)</td>
+<td>[Ability] Adrena-Brain: If this Pokémon has {D} Energy, move up to 3 damage counters from 1 of your Pokémon to 1 of your opponent’s.</td>
+</tr>
+<tr>
+<td>1</td>
+<td>791</td>
+<td>Moltres (PFL)</td>
+<td>Fighting Wings: 20 damage; does 90 more damage if the opponent's Active Pokémon is a Pokémon ex.</td>
+</tr>
+<tr>
+<td>1</td>
+<td>140</td>
+<td>Fezandipiti ex (SFA*)</td>
+<td>[Ability] Flip the Script: Draw 3 cards if any of your Pokémon were KO'd during the opponent's last turn.</td>
+</tr>
+<tr>
+<td>1</td>
+<td>272</td>
+<td>Lillie’s Clefairy ex (JTG)</td>
+<td>[Ability] Fairy Zone: Your opponent’s {N} Pokémon in play now have {P} Weakness.</td>
+</tr>
+<tr>
+<td>1</td>
+<td>235</td>
+<td>Budew (PRE*)</td>
+<td>Itchy Pollen: 0-cost, 10 damage. During your opponent’s next turn, they can’t play Item cards from their hand.</td>
+</tr>
+<tr>
+<td>1</td>
+<td>1071</td>
+<td>Meowth ex (POR)</td>
+<td>[Ability] Last-Ditch Catch: When played from hand to Bench, search your deck for a Supporter card.</td>
+</tr>
+</tbody>
+</table>
+<h3>3.2 Trainer &amp; Energy Details</h3>
+<table>
+<thead>
+<tr>
+<th>Qty</th>
+<th>Card ID</th>
+<th>Card Name (Type)</th>
+<th>Effect Summary</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>4</td>
+<td>1227</td>
+<td>Lillie's Determination (Supp)</td>
+<td>Shuffle hand and draw 6 cards, or 8 if you have exactly 6 Prize cards left.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>1182</td>
+<td>Boss’s Orders (Supporter)</td>
+<td>Switch in 1 of your opponent’s Benched Pokémon to the Active Spot.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>1198</td>
+<td>Crispin (Supporter)</td>
+<td>Search deck for 2 different Basic Energy; 1 to hand, 1 to a Pokémon.</td>
+</tr>
+<tr>
+<td>1</td>
+<td>1231</td>
+<td>Dawn (Supporter)</td>
+<td>Search deck for a Basic, a Stage 1, and a Stage 2 Pokémon.</td>
+</tr>
+<tr>
+<td>1</td>
+<td>1213</td>
+<td>Judge (Supporter)</td>
+<td>Each player shuffles their hand into their deck and draws 4 cards.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>1121</td>
+<td>Ultra Ball (Item)</td>
+<td>Discard 2 cards to search your deck for a Pokémon.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>1086</td>
+<td>Buddy-Buddy Poffin (Item)</td>
+<td>Search deck for up to 2 Basic Pokémon with 70 HP or less to the Bench.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>1152</td>
+<td>Poké Pad (Item)</td>
+<td>Search your deck for a Pokémon that doesn’t have a Rule Box.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>1079</td>
+<td>Rare Candy (Item)</td>
+<td>Evolve a Basic Pokémon to its Stage 2 form, skipping Stage 1.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>1097</td>
+<td>Night Stretcher (Item)</td>
+<td>Put a Pokémon or Basic Energy from your discard pile into your hand.</td>
+</tr>
+<tr>
+<td>1</td>
+<td>1080</td>
+<td>Unfair Stamp (ACE SPEC)</td>
+<td>If your Pokémon was KO'd last turn: you draw 5, opponent draws 2.</td>
+</tr>
+<tr>
+<td>1</td>
+<td>1256</td>
+<td>Team Rocket's Watchtower (Stad)</td>
+<td>{C} Pokémon in play, both yours and your opponent's, have no Abilities.</td>
+</tr>
+<tr>
+<td>1</td>
+<td>1260</td>
+<td>Risky Ruins (Stadium)</td>
+<td>Put 2 damage counters on any Basic non-{D} Pokémon played to the Bench.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>2</td>
+<td>Basic {R} Energy</td>
+<td>Provides Fire Energy.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>5</td>
+<td>Basic {P} Energy</td>
+<td>Provides Psychic Energy.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>7</td>
+<td>Basic {D} Energy</td>
+<td>Provides Darkness Energy.</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h1>2. Slowking</h1>
+<h3>Pokémon Card Details</h3>
+<table>
+<thead>
+<tr>
+<th>Qty</th>
+<th>Card ID</th>
+<th>Card Name (Expansion)</th>
+<th>Key Ability / Attack Effects</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>4</td>
+<td>162</td>
+<td>Slowpoke (SCR)</td>
+<td>Dangle Tail: Put a Pokémon from your discard pile into your hand.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>163</td>
+<td>Slowking (SCR)</td>
+<td>Seek Inspiration: Discard the top card of your deck; if it's a non-Rule Box Pokémon, use 1 of its attacks.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>305</td>
+<td>Dunsparce (JTG)</td>
+<td>Trading Places: Switch this Pokémon with 1 of your Benched Pokémon.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>66</td>
+<td>Dudunsparce (TEF)</td>
+<td>[Ability] Run Away Draw: Draw 3 cards and shuffle this Pokémon and all attached cards into your deck.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>144</td>
+<td>Kyurem (SFA)</td>
+<td>[Ability] Plasma Bane: If the opponent has a ""Colress"" card in their discard, Trifrost costs {C}.</td>
+</tr>
+<tr>
+<td>1</td>
+<td>140</td>
+<td>Fezandipiti ex (SFA*)</td>
+<td>[Ability] Flip the Script: Draw 3 cards if your Pokémon was KO'd last turn. / Cruel Arrow: 100 damage to 1 opponent's Pokémon.</td>
+</tr>
+<tr>
+<td>1</td>
+<td>184</td>
+<td>Latias ex (SSP)</td>
+<td>[Ability] Skyliner: Your Basic Pokémon in play have no Retreat Cost.</td>
+</tr>
+<tr>
+<td>1</td>
+<td>115</td>
+<td>Conkeldurr (TWM)</td>
+<td>Gutsy Swing: If affected by a Special Condition, ignore all Energy in this attack's cost. 250 damage.</td>
+</tr>
+<tr>
+<td>1</td>
+<td>224</td>
+<td>Annihilape (SSP)</td>
+<td>Destined Fight: Both Active Pokémon are Knocked Out.</td>
+</tr>
+<tr>
+<td>1</td>
+<td>550</td>
+<td>Haxorus (BLK)</td>
+<td>Axe Blast: If the opponent's Active is a Basic Pokémon, it is Knocked Out.</td>
+</tr>
+<tr>
+<td>1</td>
+<td>1071</td>
+<td>Meowth ex (POR)</td>
+<td>[Ability] Last-Ditch Catch: Search your deck for a Supporter when played to the Bench.</td>
+</tr>
+<tr>
+<td>1</td>
+<td>272</td>
+<td>Lillie’s Clefairy ex (JTG)</td>
+<td>[Ability] Fairy Zone: Your opponent’s {N} Pokémon in play now have {P} Weakness.</td>
+</tr>
+<tr>
+<td>1</td>
+<td>756</td>
+<td>Mega Kangaskhan ex (MEG)</td>
+<td>[Ability] Run Errand: If in the Active Spot, draw 2 cards once per turn.</td>
+</tr>
+</tbody>
+</table>
+<h3>Trainer &amp; Energy Details</h3>
+<table>
+<thead>
+<tr>
+<th>Qty</th>
+<th>Card ID</th>
+<th>Card Name (Type)</th>
+<th>Effect Summary</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>4</td>
+<td>1227</td>
+<td>Lillie's Determination (Supp)</td>
+<td>Shuffle hand and draw 6 cards, or 8 if exactly 6 Prize cards remain.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>1225</td>
+<td>Hilda (Supporter)</td>
+<td>Search deck for an Evolution Pokémon and an Energy card.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>1188</td>
+<td>Ciphermaniac’s Codebreaking (Supp)</td>
+<td>Search for 2 cards and put them on top of your deck in any order.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>1121</td>
+<td>Ultra Ball (Item)</td>
+<td>Discard 2 cards to search your deck for a Pokémon.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>1152</td>
+<td>Poké Pad (Item)</td>
+<td>Search your deck for a Pokémon that doesn't have a Rule Box.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>1146</td>
+<td>Wondrous Patch (Item)</td>
+<td>Attach a Basic {P} Energy from your discard to 1 of your Benched {P} Pokémon.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>1097</td>
+<td>Night Stretcher (Item)</td>
+<td>Put a Pokémon or Basic Energy from your discard into your hand.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>1123</td>
+<td>Switch (Item)</td>
+<td>Switch your Active Pokémon with 1 of your Benched Pokémon.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>1248</td>
+<td>Academy at Night (Stadium)</td>
+<td>Once per turn, you may put a card from your hand on top of your deck.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>19</td>
+<td>Telepath Psychic Energy (Spec)</td>
+<td>Provides {P}. Search for up to 2 Basic {P} Pokémon when attached to a {P} Pokémon.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>5</td>
+<td>Basic {P} Energy</td>
+<td>Provides Psychic Energy.</td>
+</tr>
+<tr>
+<td>1</td>
+<td>13</td>
+<td>Enriching Energy (ACE SPEC)</td>
+<td>Provides {C}. Draw 4 cards when attached from hand to a Pokémon.</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h1>3. Ogerpon</h1>
+<hr>
+<h1>1. Ogerpon / Meganium</h1>
+<h3>1.1. Pokémon Card Details</h3>
+<table>
+<thead>
+<tr>
+<th>Qty</th>
+<th>Card ID</th>
+<th>Card Name (Expansion)</th>
+<th>Key Ability / Attack Effects</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>4</td>
+<td>96</td>
+<td>Teal Mask Ogerpon ex (TWM)</td>
+<td>[Ability] Teal Dance: Attach a Basic {G} Energy from hand to this Pokémon and draw a card. / Myriad Leaf Shower: 30+ damage for each Energy attached to both Active Pokémon.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>402</td>
+<td>Smoliv (DRI)</td>
+<td>Ram: 10 damage.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>403</td>
+<td>Dolliv (DRI)</td>
+<td>Nutrients: Heal 40 damage from 1 Pokémon. / Tackle: 40 damage.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>404</td>
+<td>Arboliva ex (DRI)</td>
+<td>Oil Salvo: Choose 1 opponent's Pokémon 6 times and do 20 damage each. / Aroma Shot: 160 damage and recover from Special Conditions.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>708</td>
+<td>Chikorita (MEG)</td>
+<td>Razor Leaf: 20 damage.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>709</td>
+<td>Bayleef (MEG)</td>
+<td>Push Down: 50 damage and switch opponent's Active Pokémon.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>710</td>
+<td>Meganium (MEG)</td>
+<td>[Ability] Wild Growth: Each Basic {G} Energy attached to your Pokémon provides {G}{G} Energy.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>1071</td>
+<td>Meowth ex (POR)</td>
+<td>[Ability] Last-Ditch Catch: Search deck for a Supporter when played to Bench. / Tuck Tail: 60 damage and return this Pokémon to hand.</td>
+</tr>
+<tr>
+<td>1</td>
+<td>235</td>
+<td>Budew (PRE*)</td>
+<td>Itchy Pollen: 0 cost, 10 damage. Opponent cannot play Item cards from hand next turn.</td>
+</tr>
+<tr>
+<td>1</td>
+<td>140</td>
+<td>Fezandipiti ex (SFA*)</td>
+<td>[Ability] Flip the Script: Draw 3 cards if your Pokémon was KO'd last turn. / Cruel Arrow: 100 damage to 1 Pokémon.</td>
+</tr>
+</tbody>
+</table>
+<h3>1.2. Trainer &amp; Energy Details</h3>
+<table>
+<thead>
+<tr>
+<th>Qty</th>
+<th>Card ID</th>
+<th>Card Name (Type)</th>
+<th>Effect Summary</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>4</td>
+<td>1227</td>
+<td>Lillie's Determination (Supp)</td>
+<td>Shuffle hand and draw 6 cards, or 8 if exactly 6 Prize cards remain.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>1231</td>
+<td>Dawn (Supporter)</td>
+<td>Search deck for a Basic, a Stage 1, and a Stage 2 Pokémon.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>1213</td>
+<td>Judge (Supporter)</td>
+<td>Each player shuffles their hand and draws 4 cards.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>1182</td>
+<td>Boss’s Orders (Supporter)</td>
+<td>Switch in 1 of your opponent’s Benched Pokémon.</td>
+</tr>
+<tr>
+<td>1</td>
+<td>1184</td>
+<td>Lana’s Aid (Supporter)</td>
+<td>Put up to 3 non-Rule Box Pokémon and Basic Energy from discard into hand.</td>
+</tr>
+<tr>
+<td>1</td>
+<td>1201</td>
+<td>Briar (Supporter)</td>
+<td>If opponent has exactly 2 Prize cards, take 1 more Prize if your Tera Pokémon KOs their Active.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>1121</td>
+<td>Ultra Ball (Item)</td>
+<td>Discard 2 cards to search deck for a Pokémon.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>1094</td>
+<td>Bug Catching Set (Item)</td>
+<td>Look at top 7 cards and reveal up to 2 {G} Pokémon / Basic {G} Energy.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>1152</td>
+<td>Poké Pad (Item)</td>
+<td>Search deck for a Pokémon without a Rule Box.</td>
+</tr>
+<tr>
+<td>1</td>
+<td>1097</td>
+<td>Night Stretcher (Item)</td>
+<td>Put a Pokémon or Basic Energy from discard into hand.</td>
+</tr>
+<tr>
+<td>1</td>
+<td>1080</td>
+<td>Unfair Stamp (ACE SPEC)</td>
+<td>If your Pokémon was KO'd last turn: you draw 5, opponent draws 2.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>1261</td>
+<td>Forest of Vitality (Stadium)</td>
+<td>Each player's {G} Pokémon can evolve during the turn they are played, except first turn.</td>
+</tr>
+<tr>
+<td>12</td>
+<td>1</td>
+<td>Basic {G} Energy</td>
+<td>Provides Grass Energy.</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2>2. Raging Bolt / Ogerpon</h2>
+<h3>2.1. Pokémon Card Details</h3>
+<table>
+<thead>
+<tr>
+<th>Qty</th>
+<th>Card ID</th>
+<th>Card Name (Expansion)</th>
+<th>Key Ability / Attack Effects</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>3</td>
+<td>756</td>
+<td>Mega Kangaskhan ex (MEG)</td>
+<td>[Ability] Run Errand: If this Pokémon is in the Active Spot, draw 2 cards. / Rapid-Fire Combo: 200+ damage based on coin flips until tails.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>1071</td>
+<td>Meowth ex (POR)</td>
+<td>[Ability] Last-Ditch Catch: When played to Bench, search your deck for a Supporter card. / Tuck Tail: 60 damage and return this Pokémon and all cards to your hand.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>96</td>
+<td>Teal Mask Ogerpon ex (TWM)</td>
+<td>[Ability] Teal Dance: Attach a Basic {G} Energy from hand to this Pokémon and draw a card. / Myriad Leaf Shower: 30+ damage for each Energy on both Active Pokémon.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>63</td>
+<td>Raging Bolt ex (TEF)</td>
+<td>Burst Roar: Discard hand and draw 6 cards. / Bellowing Thunder: Discard any amount of Basic Energy from your Pokémon for 70 damage each.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>184</td>
+<td>Latias ex (SSP)</td>
+<td>[Ability] Skyliner: Your Basic Pokémon in play have no Retreat Cost. / Eon Blade: 200 damage.</td>
+</tr>
+<tr>
+<td>1</td>
+<td>272</td>
+<td>Lillie’s Clefairy ex (JTG)</td>
+<td>[Ability] Fairy Zone: Your opponent’s {N} Pokémon in play now have {P} Weakness. / Full Moon Rondo: 20+ damage for each Benched Pokémon.</td>
+</tr>
+<tr>
+<td>1</td>
+<td>108</td>
+<td>Wellspring Mask Ogerpon ex (TWM)</td>
+<td>[Tera]: Prevent damage while on Bench. / Torrential Pump: 100 damage; shuffle 3 Energy into deck to do 120 damage to an opponent's Benched Pokémon.</td>
+</tr>
+<tr>
+<td>1</td>
+<td>75</td>
+<td>Iron Leaves ex (TEF)</td>
+<td>[Ability] Rapid Vernier: When played to Bench, switch with Active and move Energy to this Pokémon. / Prism Edge: 180 damage.</td>
+</tr>
+<tr>
+<td>1</td>
+<td>140</td>
+<td>Fezandipiti ex (SFA*)</td>
+<td>[Ability] Flip the Script: Draw 3 cards if your Pokémon was KO'd last turn. / Cruel Arrow: 100 damage to 1 of your opponent’s Pokémon.</td>
+</tr>
+<tr>
+<td>1</td>
+<td>978</td>
+<td>Passimian (SSP)</td>
+<td>Coordinated Throwing: 20× damage for each of your Basic Pokémon in play.</td>
+</tr>
+<tr>
+<td>1</td>
+<td>209</td>
+<td>Chien-Pao (SSP)</td>
+<td>[Ability] Snow Sink: When played to Bench, discard a Stadium in play. / Icicle Loop: 120 damage and return an Energy to hand.</td>
+</tr>
+</tbody>
+</table>
+<h3>2.2. Trainer &amp; Energy Details</h3>
+<table>
+<thead>
+<tr>
+<th>Qty</th>
+<th>Card ID</th>
+<th>Card Name (Type)</th>
+<th>Effect Summary</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>4</td>
+<td>1198</td>
+<td>Crispin (Supporter)</td>
+<td>Search deck for 2 different Basic Energy; 1 to hand, 1 to a Pokémon.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>1182</td>
+<td>Boss’s Orders (Supporter)</td>
+<td>Switch in 1 of your opponent’s Benched Pokémon to the Active Spot.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>1205</td>
+<td>Cyrano (Supporter)</td>
+<td>Search your deck for up to 3 Pokémon {ex}.</td>
+</tr>
+<tr>
+<td>1</td>
+<td>1188</td>
+<td>Ciphermaniac’s Codebreaking (Supp)</td>
+<td>Search for 2 cards and put them on top of your deck in any order.</td>
+</tr>
+<tr>
+<td>1</td>
+<td>1227</td>
+<td>Lillie's Determination (Supp)</td>
+<td>Shuffle hand and draw 6 cards, or 8 if exactly 6 Prize cards remain.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>1121</td>
+<td>Ultra Ball (Item)</td>
+<td>Discard 2 other cards to search your deck for a Pokémon.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>1116</td>
+<td>Energy Switch (Item)</td>
+<td>Move a Basic Energy from 1 of your Pokémon to another of your Pokémon.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>1097</td>
+<td>Night Stretcher (Item)</td>
+<td>Put a Pokémon or Basic Energy from discard into hand.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>1098</td>
+<td>Glass Trumpet (Item)</td>
+<td>Attach Basic Energy from discard to 2 Benched {C} Pokémon if you have a Tera.</td>
+</tr>
+<tr>
+<td>1</td>
+<td>1080</td>
+<td>Unfair Stamp (ACE SPEC)</td>
+<td>If your Pokémon was KO'd last turn: you draw 5, opponent draws 2.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>1250</td>
+<td>Area Zero Underdepths (Stadium)</td>
+<td>Each player with a Tera Pokémon in play can have up to 8 Benched Pokémon.</td>
+</tr>
+<tr>
+<td>7</td>
+<td>1</td>
+<td>Basic {G} Energy</td>
+<td>Provides Grass Energy.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>4</td>
+<td>Basic {L} Energy</td>
+<td>Provides Lightning Energy.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>6</td>
+<td>Basic {F} Energy</td>
+<td>Provides Fighting Energy.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>5</td>
+<td>Basic {P} Energy</td>
+<td>Provides Psychic Energy.</td>
+</tr>
+<tr>
+<td>1</td>
+<td>3</td>
+<td>Basic {W} Energy</td>
+<td>Provides Water Energy.</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2>3. Mega Venusaur / Ogerpon</h2>
+<h3>3.1. Pokémon Card Details</h3>
+<table>
+<thead>
+<tr>
+<th>Qty</th>
+<th>Card ID</th>
+<th>Card Name (Expansion)</th>
+<th>Key Ability / Attack Effects</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>4</td>
+<td>96</td>
+<td>Teal Mask Ogerpon ex (TWM)</td>
+<td>[Ability] Teal Dance: Attach a Basic {G} from hand and draw a card. / Myriad Leaf Shower: 30+ damage for each Energy on both Active Pokémon.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>650</td>
+<td>Bulbasaur (MEG)</td>
+<td>Bind Down: 10 damage. Opponent’s Active Pokémon can’t retreat.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>651</td>
+<td>Ivysaur (MEG)</td>
+<td>Razor Leaf: 60 damage.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>652</td>
+<td>Mega Venusaur ex (MEG)</td>
+<td>[Ability] Solar Transfer: Move a Basic {G} Energy from 1 Pokémon to another as often as you like. / Jungle Dump: 240 damage and heal 30.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>708</td>
+<td>Chikorita (MEG)</td>
+<td>Razor Leaf: 20 damage.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>709</td>
+<td>Bayleef (MEG)</td>
+<td>Push Down: 50 damage and switch out opponent’s Active.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>710</td>
+<td>Meganium (MEG)</td>
+<td>[Ability] Wild Growth: Each Basic {G} Energy provides {G}{G} Energy.</td>
+</tr>
+<tr>
+<td>1</td>
+<td>919</td>
+<td>Mega Meganium ex (ASC)</td>
+<td>Giant Bouquet: 70+ damage; does 50 more for each {G} Energy attached to this Pokémon.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>1071</td>
+<td>Meowth ex (POR)</td>
+<td>[Ability] Last-Ditch Catch: Search deck for a Supporter when played to Bench.</td>
+</tr>
+<tr>
+<td>1</td>
+<td>140</td>
+<td>Fezandipiti ex (SFA*)</td>
+<td>[Ability] Flip the Script: Draw 3 cards if any of your Pokémon were KO'd last turn.</td>
+</tr>
+<tr>
+<td>1</td>
+<td>785</td>
+<td>Genesect (PFL)</td>
+<td>Bug’s Cannon: 20 damage to 1 opponent's Pokémon for each {G} Energy attached.</td>
+</tr>
+<tr>
+<td>1</td>
+<td>251</td>
+<td>Regigigas (PRE)</td>
+<td>Jewel Breaker: 100+ damage; does 230 more if opponent is a Tera Pokémon.</td>
+</tr>
+</tbody>
+</table>
+<h3>3.2. Trainer &amp; Energy Details</h3>
+<table>
+<thead>
+<tr>
+<th>Qty</th>
+<th>Card ID</th>
+<th>Card Name (Type)</th>
+<th>Effect Summary</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>4</td>
+<td>1227</td>
+<td>Lillie's Determination (Supp)</td>
+<td>Shuffle hand and draw 6 cards, or 8 if exactly 6 Prize cards remain.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>1182</td>
+<td>Boss’s Orders (Supporter)</td>
+<td>Switch in 1 of your opponent’s Benched Pokémon.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>1231</td>
+<td>Dawn (Supporter)</td>
+<td>Search deck for a Basic, a Stage 1, and a Stage 2 Pokémon.</td>
+</tr>
+<tr>
+<td>1</td>
+<td>1194</td>
+<td>Colress’s Tenacity (Supp)</td>
+<td>Search deck for a Stadium card and an Energy card.</td>
+</tr>
+<tr>
+<td>1</td>
+<td>1197</td>
+<td>Xerosic’s Machinations (Supp)</td>
+<td>Opponent discards cards until they have 3 left.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>1094</td>
+<td>Bug Catching Set (Item)</td>
+<td>Look at top 7 cards for up to 2 {G} Pokémon / Basic {G} Energy.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>1152</td>
+<td>Poké Pad (Item)</td>
+<td>Search deck for a Pokémon without a Rule Box.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>1121</td>
+<td>Ultra Ball (Item)</td>
+<td>Discard 2 cards to search deck for a Pokémon.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>1097</td>
+<td>Night Stretcher (Item)</td>
+<td>Put a Pokémon or Basic Energy from discard into hand.</td>
+</tr>
+<tr>
+<td>1</td>
+<td>1118</td>
+<td>Energy Retrieval (Item)</td>
+<td>Put up to 2 Basic Energy cards from discard into hand.</td>
+</tr>
+<tr>
+<td>1</td>
+<td>1110</td>
+<td>Max Rod (ACE SPEC)</td>
+<td>Put up to 5 Pokémon / Basic Energy from discard into hand.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>1261</td>
+<td>Forest of Vitality (Stadium)</td>
+<td>{G} Pokémon can evolve during the turn they are played.</td>
+</tr>
+<tr>
+<td>10</td>
+<td>1</td>
+<td>Basic {G} Energy</td>
+<td>Provides Grass Energy.</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h1>4. Crustle</h1>
+<h3>Pokémon Card Details</h3>
+<table>
+<thead>
+<tr>
+<th>Qty</th>
+<th>Card ID</th>
+<th>Card Name (Expansion)</th>
+<th>Key Ability / Attack Effects</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>4</td>
+<td>756</td>
+<td>Mega Kangaskhan ex (MEG)</td>
+<td>[Ability] Run Errand: If this Pokémon is in the Active Spot, draw 2 cards once per turn. / Rapid-Fire Combo: 200+ damage; flip a coin until you get tails, adding 50 damage for each heads.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>344</td>
+<td>Dwebble (DRI)</td>
+<td>Ascension: Search your deck for a card that evolves from this Pokémon and evolve it.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>345</td>
+<td>Crustle (DRI)</td>
+<td>[Ability] Mysterious Rock Inn: Prevent all damage done to this Pokémon by attacks from your opponent’s Pokémon {ex}. / Superb Scissors: 120 damage.</td>
+</tr>
+<tr>
+<td>1</td>
+<td>117</td>
+<td>Cornerstone Mask Ogerpon ex (TWM)</td>
+<td>[Ability] Cornerstone Stance: Prevent all damage from attacks done to this Pokémon by opponent’s Pokémon that have an Ability.</td>
+</tr>
+<tr>
+<td>1</td>
+<td>858</td>
+<td>Psyduck (ASC)</td>
+<td>[Ability] Damp: Pokémon in play, both yours and your opponent’s, lose any Ability that requires the Pokémon using it to Knock Out itself.</td>
+</tr>
+</tbody>
+</table>
+<h3>Trainer Details</h3>
+<table>
+<thead>
+<tr>
+<th>Qty</th>
+<th>Card ID</th>
+<th>Card Name (Type)</th>
+<th>Effect Summary</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>4</td>
+<td>1182</td>
+<td>Boss’s Orders (Supporter)</td>
+<td>Switch in 1 of your opponent’s Benched Pokémon to the Active Spot.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>1227</td>
+<td>Lillie's Determination (Supp)</td>
+<td>Shuffle hand and draw 6 cards, or 8 if you have exactly 6 Prize cards left.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>1219</td>
+<td>Team Rocket's Petrel (Supp)</td>
+<td>Search your deck for a Trainer card, reveal it, and put it into your hand.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>1186</td>
+<td>Eri (Supporter)</td>
+<td>Your opponent reveals their hand, and you discard up to 2 Item cards you find there.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>1225</td>
+<td>Hilda (Supporter)</td>
+<td>Search your deck for an Evolution Pokémon and an Energy card.</td>
+</tr>
+<tr>
+<td>1</td>
+<td>1197</td>
+<td>Xerosic’s Machinations (Supp)</td>
+<td>Your opponent discards cards from their hand until they have 3 cards left.</td>
+</tr>
+<tr>
+<td>1</td>
+<td>1190</td>
+<td>Bianca’s Devotion (Supp)</td>
+<td>Heal all damage from 1 of your Pokémon that has 30 HP or less remaining.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>1147</td>
+<td>Jumbo Ice Cream (Item)</td>
+<td>Heal 80 damage from your Active Pokémon that has 3 or more Energy attached.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>1122</td>
+<td>Pokégear 3.0 (Item)</td>
+<td>Look at the top 7 cards of your deck and put a Supporter found there into your hand.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>1120</td>
+<td>Crushing Hammer (Item)</td>
+<td>Flip a coin. If heads, discard an Energy from 1 of your opponent’s Pokémon.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>1086</td>
+<td>Buddy-Buddy Poffin (Item)</td>
+<td>Search deck for up to 2 Basic Pokémon with 70 HP or less and put them onto your Bench.</td>
+</tr>
+<tr>
+<td>1</td>
+<td>1121</td>
+<td>Ultra Ball (Item)</td>
+<td>Discard 2 other cards from your hand to search your deck for a Pokémon.</td>
+</tr>
+<tr>
+<td>1</td>
+<td>1153</td>
+<td>Lumiose Galette (Item)</td>
+<td>Heal 20 damage and remove a Special Condition from your Active Pokémon.</td>
+</tr>
+<tr>
+<td>1</td>
+<td>1123</td>
+<td>Switch (Item)</td>
+<td>Switch your Active Pokémon with 1 of your Benched Pokémon.</td>
+</tr>
+<tr>
+<td>1</td>
+<td>1159</td>
+<td>Hero’s Cape (ACE SPEC Tool)</td>
+<td>The Pokémon this card is attached to gets +100 HP.</td>
+</tr>
+<tr>
+<td>1</td>
+<td>1257</td>
+<td>Team Rocket's Factory (Stad)</td>
+<td>Once per turn, if you played a “Team Rocket” Supporter, draw 2 cards.</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h1>5. Mega Lucario</h1>
+<hr>
+<h2>1. Mega Lucario</h2>
+<h3>1.1. Pokémon Card Details</h3>
+<table>
+<thead>
+<tr>
+<th>Qty</th>
+<th>Card ID</th>
+<th>Card Name (Expansion)</th>
+<th>Key Ability / Attack Effects</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2</td>
+<td>333</td>
+<td>Riolu (PRE)</td>
+<td>Quick Attack: 10+ damage; flips a coin for 20 more damage if heads.</td>
+</tr>
+<tr>
+<td>1</td>
+<td>974</td>
+<td>Riolu (SCR)</td>
+<td>Punch: 30 damage.</td>
+</tr>
+<tr>
+<td>1</td>
+<td>677</td>
+<td>Riolu (MEG)</td>
+<td>Accelerating Stab: 30 damage; cannot be used during the next turn.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>678</td>
+<td>Mega Lucario ex (MEG)</td>
+<td>Aura Jab: 130 damage. Attach up to 3 Basic {F} Energy from discard to Benched Pokémon. / Mega Brave: 270 damage.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>305</td>
+<td>Dunsparce (JTG)</td>
+<td>Trading Places: Switch this Pokémon with 1 of your Benched Pokémon.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>66</td>
+<td>Dudunsparce (TEF)</td>
+<td>[Ability] Run Away Draw: Draw 3 cards, then shuffle this Pokémon and all attached cards into your deck.</td>
+</tr>
+<tr>
+<td>1</td>
+<td>306</td>
+<td>Dudunsparce ex (JTG)</td>
+<td>Tenacious Tail: 60× damage for each opponent's Pokémon {ex} in play.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>676</td>
+<td>Solrock (MEG)</td>
+<td>Cosmic Beam: 70 damage. This attack does nothing if Lunatone is not on your Bench.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>675</td>
+<td>Lunatone (MEG)</td>
+<td>[Ability] Lunar Cycle: If Solrock is in play, discard a Basic {F} Energy to draw 3 cards.</td>
+</tr>
+<tr>
+<td>1</td>
+<td>142</td>
+<td>Genesect (SFA)</td>
+<td>[Ability] ACE Nullifier: If this Pokémon has a Tool attached, your opponent can’t play any {ACE SPEC} cards.</td>
+</tr>
+</tbody>
+</table>
+<h3>1.2. Trainer Details</h3>
+<table>
+<thead>
+<tr>
+<th>Qty</th>
+<th>Card ID</th>
+<th>Card Name (Type)</th>
+<th>Effect Summary</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>4</td>
+<td>1227</td>
+<td>Lillie's Determination (Supp)</td>
+<td>Shuffle hand and draw 6 cards, or 8 if exactly 6 Prize cards remain.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>1182</td>
+<td>Boss’s Orders (Supporter)</td>
+<td>Switch in 1 of your opponent’s Benched Pokémon to the Active Spot.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>1225</td>
+<td>Hilda (Supporter)</td>
+<td>Search deck for an Evolution Pokémon and an Energy card.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>1152</td>
+<td>Poké Pad (Item)</td>
+<td>Search your deck for a Pokémon that doesn't have a Rule Box.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>1142</td>
+<td>Fighting Gong (Item)</td>
+<td>Search deck for a Basic {F} Energy card or a Basic {F} Pokémon.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>1141</td>
+<td>Premium Power Pro (Item)</td>
+<td>Attacks used by your {F} Pokémon do 30 more damage this turn.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>1086</td>
+<td>Buddy-Buddy Poffin (Item)</td>
+<td>Search deck for up to 2 Basic Pokémon with 70 HP or less for your Bench.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>1121</td>
+<td>Ultra Ball (Item)</td>
+<td>Discard 2 other cards from your hand to search your deck for a Pokémon.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>1174</td>
+<td>Air Balloon (Tool)</td>
+<td>The Retreat Cost of the Pokémon this card is attached to is {C}{C} less.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>1252</td>
+<td>Gravity Mountain (Stadium)</td>
+<td>Each Stage 2 Pokémon in play gets -30 HP.</td>
+</tr>
+</tbody>
+</table>
+<h3>1.3. Energy Details</h3>
+<table>
+<thead>
+<tr>
+<th>Qty</th>
+<th>Card ID</th>
+<th>Card Name (Type)</th>
+<th>Effect Summary</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>8</td>
+<td>6</td>
+<td>Basic {F} Energy</td>
+<td>Provides Fighting Energy.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>20</td>
+<td>Rock Fighting Energy* (Spec)</td>
+<td>Provides {F}. Prevents all effects of attacks, except damage, done to the {F} Pokémon it is attached to.</td>
+</tr>
+<tr>
+<td>1</td>
+<td>12</td>
+<td>Legacy Energy (ACE SPEC)</td>
+<td>Provides all Energy types, 1 at a time. Opponent takes 1 fewer Prize if the attached Pokémon is KO'd, once per game.</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2>2. Mega Lucario / Hariyama</h2>
+<h3>2.1. Pokémon Card Details</h3>
+<table>
+<thead>
+<tr>
+<th>Qty</th>
+<th>Card ID</th>
+<th>Card Name (Expansion)</th>
+<th>Key Ability / Attack Effects</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>3</td>
+<td>677</td>
+<td>Riolu (MEG)</td>
+<td>Accelerating Stab: 30 damage. During your next turn, this Pokémon can’t use Accelerating Stab.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>678</td>
+<td>Mega Lucario ex (MEG)</td>
+<td>Aura Jab: 130 damage. Attach up to 3 Basic {F} Energy cards from your discard pile to your Benched Pokémon. / Mega Brave: 270 damage.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>673</td>
+<td>Makuhita (MEG)</td>
+<td>Corkscrew Punch: 10 damage. / Confront: 30 damage.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>674</td>
+<td>Hariyama (MEG)</td>
+<td>[Ability] Heave-Ho Catcher: When played to evolve, switch in 1 of your opponent’s Benched Pokémon. / Wild Press: 210 damage; this Pokémon also does 70 damage to itself.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>676</td>
+<td>Solrock (MEG)</td>
+<td>Cosmic Beam: 70 damage. If you don’t have Lunatone on your Bench, this attack does nothing.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>675</td>
+<td>Lunatone (MEG)</td>
+<td>[Ability] Lunar Cycle: If you have Solrock in play, you may discard a Basic {F} Energy to draw 3 cards.</td>
+</tr>
+<tr>
+<td>1</td>
+<td>1071</td>
+<td>Meowth ex (POR)</td>
+<td>[Ability] Last-Ditch Catch: When played to Bench, search your deck for a Supporter card. / Tuck Tail: 60 damage. Put this Pokémon and all attached cards into your hand.</td>
+</tr>
+<tr>
+<td>1</td>
+<td>343</td>
+<td>Shaymin (DRI)</td>
+<td>[Ability] Flower Curtain: Prevent all damage done to your Benched Pokémon that don’t have a Rule Box by opponent's attacks.</td>
+</tr>
+</tbody>
+</table>
+<h3>2.2. Trainer Details</h3>
+<table>
+<thead>
+<tr>
+<th>Qty</th>
+<th>Card ID</th>
+<th>Card Name (Type)</th>
+<th>Effect Summary</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>4</td>
+<td>1227</td>
+<td>Lillie's Determination (Supp)</td>
+<td>Shuffle your hand and draw 6 cards, or 8 if exactly 6 Prize cards remain.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>1225</td>
+<td>Hilda (Supporter)</td>
+<td>Search your deck for an Evolution Pokémon and an Energy card.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>1182</td>
+<td>Boss’s Orders (Supporter)</td>
+<td>Switch in 1 of your opponent’s Benched Pokémon to the Active Spot.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>1223</td>
+<td>Harlequin (Supporter)</td>
+<td>Both players shuffle and flip a coin. Heads: you draw 5, opponent 3. Tails: you draw 3, opponent 5.</td>
+</tr>
+<tr>
+<td>1</td>
+<td>1229</td>
+<td>Wally's Compassion (Supp)</td>
+<td>Heal all damage from 1 Mega Evolution Pokémon {ex} and put all attached Energy into your hand.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>1141</td>
+<td>Premium Power Pro (Item)</td>
+<td>Attacks used by your {F} Pokémon do 30 more damage during this turn.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>1152</td>
+<td>Poké Pad (Item)</td>
+<td>Search your deck for a Pokémon that doesn't have a Rule Box.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>1142</td>
+<td>Fighting Gong (Item)</td>
+<td>Search your deck for a Basic {F} Energy card or a Basic {F} Pokémon.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>1121</td>
+<td>Ultra Ball (Item)</td>
+<td>Discard 2 other cards from your hand to search your deck for a Pokémon.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>1097</td>
+<td>Night Stretcher (Item)</td>
+<td>Put a Pokémon or a Basic Energy card from your discard pile into your hand.</td>
+</tr>
+<tr>
+<td>1</td>
+<td>1137</td>
+<td>Tool Scrapper (Item)</td>
+<td>Choose up to 2 Pokémon Tools attached to Pokémon and discard them.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>1174</td>
+<td>Air Balloon (Tool)</td>
+<td>The Retreat Cost of the Pokémon this card is attached to is {C}{C} less.</td>
+</tr>
+<tr>
+<td>1</td>
+<td>1158</td>
+<td>Maximum Belt (ACE SPEC)</td>
+<td>Attacks used by the attached Pokémon do 50 more damage to your opponent’s Active Pokémon {ex}.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>1252</td>
+<td>Gravity Mountain (Stadium)</td>
+<td>Each Stage 2 Pokémon in play, both yours and your opponent’s, gets -30 HP.</td>
+</tr>
+</tbody>
+</table>
+<h3>2.3. Energy Details</h3>
+<table>
+<thead>
+<tr>
+<th>Qty</th>
+<th>Card ID</th>
+<th>Card Name (Type)</th>
+<th>Effect Summary</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>7</td>
+<td>6</td>
+<td>Basic {F} Energy</td>
+<td>Provides Fighting Energy.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>20</td>
+<td>Rock Fighting Energy* (Spec)</td>
+<td>Provides {F}. Prevents all effects of attacks, except damage, done to the {F} Pokémon it is attached to.</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h1>6. Alakazam / Dudunsparce</h1>
+<h3>Pokémon Card Details</h3>
+<table>
+<thead>
+<tr>
+<th>Qty</th>
+<th>Card ID</th>
+<th>Card Name (Expansion)</th>
+<th>Key Ability / Attack Effects</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>4</td>
+<td>741</td>
+<td>Abra (MEG)</td>
+<td>Teleportation Attack: 10 damage. Switch this Pokémon with 1 of your Benched Pokémon.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>742</td>
+<td>Kadabra (MEG)</td>
+<td>[Ability] Psychic Draw: When played to evolve, draw 2 cards. / Super Psy Bolt: 30 damage.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>743</td>
+<td>Alakazam (MEG)</td>
+<td>[Ability] Psychic Draw: When played to evolve, draw 3 cards. / Powerful Hand: 20 damage counters for each card in hand.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>305</td>
+<td>Dunsparce (JTG)</td>
+<td>Trading Places: Switch this Pokémon with 1 of your Benched Pokémon.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>66</td>
+<td>Dudunsparce (TEF)</td>
+<td>[Ability] Run Away Draw: Draw 3 cards and shuffle this Pokémon and all cards into the deck.</td>
+</tr>
+<tr>
+<td>1</td>
+<td>222</td>
+<td>Dedenne (SSP)</td>
+<td>Electromagnetic Sonar: Put a Trainer card from your discard pile into your hand.</td>
+</tr>
+<tr>
+<td>1</td>
+<td>858</td>
+<td>Psyduck (ASC)</td>
+<td>[Ability] Damp: Pokémon lose any Ability that requires self-KO, like Cursed Blast.</td>
+</tr>
+<tr>
+<td>1</td>
+<td>343</td>
+<td>Shaymin (DRI)</td>
+<td>[Ability] Flower Curtain: Prevent damage to your non-Rule Box Benched Pokémon.</td>
+</tr>
+<tr>
+<td>1</td>
+<td>142</td>
+<td>Genesect (SFA)</td>
+<td>[Ability] ACE Nullifier: If this Pokémon has a Tool, opponent can't play {ACE SPEC} cards.</td>
+</tr>
+<tr>
+<td>1</td>
+<td>140</td>
+<td>Fezandipiti ex (SFA*)</td>
+<td>[Ability] Flip the Script: Draw 3 cards if your Pokémon was KO'd last turn.</td>
+</tr>
+</tbody>
+</table>
+<h3>Trainer &amp; Energy Details</h3>
+<table>
+<thead>
+<tr>
+<th>Qty</th>
+<th>Card ID</th>
+<th>Card Name (Type)</th>
+<th>Effect Summary</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>4</td>
+<td>1231</td>
+<td>Dawn (Supporter)</td>
+<td>Search deck for a Basic, Stage 1, and Stage 2 Pokémon.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>1225</td>
+<td>Hilda (Supporter)</td>
+<td>Search deck for an Evolution Pokémon and an Energy card.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>1182</td>
+<td>Boss’s Orders (Supp)</td>
+<td>Switch in 1 of your opponent’s Benched Pokémon.</td>
+</tr>
+<tr>
+<td>1</td>
+<td>1184</td>
+<td>Lana’s Aid (Supp)</td>
+<td>Recover up to 3 non-Rule Box Pokémon / Basic Energy from discard.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>1152</td>
+<td>Poké Pad (Item)</td>
+<td>Search deck for a Pokémon that doesn’t have a Rule Box.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>1086</td>
+<td>Buddy-Buddy Poffin</td>
+<td>Search deck for 2 Basic Pokémon with 70 HP or less.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>1079</td>
+<td>Rare Candy (Item)</td>
+<td>Evolve a Basic Pokémon to Stage 2, skipping Stage 1.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>1081</td>
+<td>Enhanced Hammer</td>
+<td>Discard a Special Energy from 1 of your opponent’s Pokémon.</td>
+</tr>
+<tr>
+<td>1</td>
+<td>1129</td>
+<td>Sacred Ash (Item)</td>
+<td>Shuffle up to 5 Pokémon from discard into your deck.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>1161</td>
+<td>Handheld Fan (Tool)</td>
+<td>Move an Energy from the Attacking Pokémon to their Bench when damaged.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>1264</td>
+<td>Battle Cage (Stadium)</td>
+<td>Prevent damage counters on Benched Pokémon from effects / Abilities.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>19</td>
+<td>Telepath Psychic Energy*</td>
+<td>Search for 2 Basic {P} Pokémon when attached to a {P} Pokémon.</td>
+</tr>
+<tr>
+<td>1</td>
+<td>5</td>
+<td>Basic {P} Energy</td>
+<td>Provides Psychic Energy.</td>
+</tr>
+<tr>
+<td>1</td>
+<td>13</td>
+<td>Enriching Energy</td>
+<td>{ACE SPEC}: Draw 4 cards when attached from hand.</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h1>7. Starmie / Froslass</h1>
+<h3>Pokémon Card Details</h3>
+<table>
+<thead>
+<tr>
+<th>Qty</th>
+<th>Card ID</th>
+<th>Card Name (Expansion)</th>
+<th>Key Ability / Attack Effects</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>3</td>
+<td>860</td>
+<td>Snorunt (ASC)</td>
+<td>Chilly: {W} 10 damage.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>104</td>
+<td>Froslass (TWM)</td>
+<td>[Ability] Freezing Shroud: During Pokémon Checkup, put 1 damage counter on each Pokémon that has an Ability, except Froslass.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>861</td>
+<td>Mega Froslass ex (ASC)</td>
+<td>Resentful Refrain: 50× damage for each card in your opponent’s hand. / Absolute Snow: 150 damage and the opponent’s Active Pokémon is now Asleep.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>1030</td>
+<td>Staryu (POR)</td>
+<td>Water Gun: {W} 20 damage.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>1031</td>
+<td>Mega Starmie ex (POR)</td>
+<td>Jetting Blow: 120 damage; also does 50 damage to 1 of your opponent’s Benched Pokémon. / Nebula Beam: 210 damage.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>112</td>
+<td>Munkidori (TWM)</td>
+<td>[Ability] Adrena-Brain: Once during your turn, if this Pokémon has any {D} Energy, move up to 3 damage counters from 1 of your Pokémon to 1 of your opponent’s.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>305</td>
+<td>Dunsparce (JTG)</td>
+<td>Trading Places: Switch this Pokémon with 1 of your Benched Pokémon.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>66</td>
+<td>Dudunsparce (TEF)</td>
+<td>[Ability] Run Away Draw: Draw 3 cards and shuffle this Pokémon and all attached cards into your deck.</td>
+</tr>
+<tr>
+<td>1</td>
+<td>306</td>
+<td>Dudunsparce ex (JTG)</td>
+<td>Tenacious Tail: 60× damage for each opponent’s Pokémon {ex} in play.</td>
+</tr>
+<tr>
+<td>1</td>
+<td>235</td>
+<td>Budew (PRE*)</td>
+<td>Itchy Pollen: 0-cost, 10 damage. Your opponent can't play any Item cards from their hand during their next turn.</td>
+</tr>
+<tr>
+<td>1</td>
+<td>1071</td>
+<td>Meowth ex (POR)</td>
+<td>[Ability] Last-Ditch Catch: When played from hand to Bench, search your deck for a Supporter card.</td>
+</tr>
+</tbody>
+</table>
+<h3>Trainer &amp; Energy Details</h3>
+<table>
+<thead>
+<tr>
+<th>Qty</th>
+<th>Card ID</th>
+<th>Card Name (Type)</th>
+<th>Effect Summary</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>4</td>
+<td>1227</td>
+<td>Lillie's Determination (Supp)</td>
+<td>Shuffle hand and draw 6 cards, or 8 if exactly 6 Prize cards remain.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>1225</td>
+<td>Hilda (Supporter)</td>
+<td>Search deck for an Evolution Pokémon and an Energy card.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>1182</td>
+<td>Boss’s Orders (Supporter)</td>
+<td>Switch in 1 of your opponent’s Benched Pokémon to the Active Spot.</td>
+</tr>
+<tr>
+<td>1</td>
+<td>1198</td>
+<td>Crispin (Supporter)</td>
+<td>Search deck for 2 different Basic Energy; 1 to hand, 1 to a Pokémon.</td>
+</tr>
+<tr>
+<td>1</td>
+<td>1213</td>
+<td>Judge (Supporter)</td>
+<td>Each player shuffles their hand and draws 4 cards.</td>
+</tr>
+<tr>
+<td>1</td>
+<td>1229</td>
+<td>Wally's Compassion (Supp)</td>
+<td>Heal all damage from 1 Mega Evolution Pokémon {ex} and return its Energy to hand.</td>
+</tr>
+<tr>
+<td>1</td>
+<td>1206</td>
+<td>Larry’s Skill (Supporter)</td>
+<td>Discard hand and search deck for a Pokémon, a Supporter, and a Basic Energy.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>1086</td>
+<td>Buddy-Buddy Poffin (Item)</td>
+<td>Search deck for up to 2 Basic Pokémon with 70 HP or less for your Bench.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>1152</td>
+<td>Poké Pad (Item)</td>
+<td>Search deck for a Pokémon that doesn’t have a Rule Box.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>1121</td>
+<td>Ultra Ball (Item)</td>
+<td>Discard 2 other cards from your hand to search your deck for a Pokémon.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>1097</td>
+<td>Night Stretcher (Item)</td>
+<td>Put a Pokémon or Basic Energy from discard into hand.</td>
+</tr>
+<tr>
+<td>1</td>
+<td>1122</td>
+<td>Pokégear 3.0 (Item)</td>
+<td>Look at top 7 cards and put a Supporter found there into hand.</td>
+</tr>
+<tr>
+<td>1</td>
+<td>1156</td>
+<td>Lucky Helmet (Tool)</td>
+<td>Draw 2 cards if the attached Pokémon is in the Active Spot and damaged by an attack.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>1260</td>
+<td>Risky Ruins (Stadium)</td>
+<td>Put 2 damage counters on any Basic non-{D} Pokémon played to the Bench.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>3</td>
+<td>Basic {W} Energy</td>
+<td>Provides Water Energy.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>7</td>
+<td>Basic {D} Energy</td>
+<td>Provides Darkness Energy.</td>
+</tr>
+<tr>
+<td>1</td>
+<td>12</td>
+<td>Legacy Energy (ACE SPEC)</td>
+<td>Provides all Energy types, 1 at a time. Opponent takes 1 fewer Prize if KO'd, once per game.</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h1>8. Marnie’s Grimmsnarl ex</h1>
+<h3>Pokémon Card Details</h3>
+<table>
+<thead>
+<tr>
+<th>Qty</th>
+<th>Card ID</th>
+<th>Card Name (Expansion)</th>
+<th>Key Ability / Attack Effects</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>4</td>
+<td>112</td>
+<td>Munkidori (TWM)</td>
+<td>[Ability] Adrena-Brain: Move up to 3 damage counters from 1 of your Pokémon to 1 of your opponent’s if {D} Energy is attached.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>646</td>
+<td>Marnie's Impidimp (DRI)</td>
+<td>Filch: Draw a card. / Corkscrew Punch: 10 damage.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>647</td>
+<td>Marnie's Morgrem (DRI)</td>
+<td>Corkscrew Punch: {D}{D} 60 damage.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>648</td>
+<td>Marnie's Grimmsnarl ex (DRI)</td>
+<td>[Ability] Punk Up: When evolved, search deck for up to 5 Basic {D} Energy and attach to Marnie’s Pokémon.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>860</td>
+<td>Snorunt (ASC)</td>
+<td>Chilly: {W} 10 damage.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>104</td>
+<td>Froslass (TWM)</td>
+<td>[Ability] Freezing Shroud: Put 1 damage counter on each Pokémon with an Ability, except Froslass, during Checkup.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>305</td>
+<td>Dunsparce (JTG)</td>
+<td>Trading Places: Switch this Pokémon with 1 of your Benched Pokémon.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>66</td>
+<td>Dudunsparce (TEF)</td>
+<td>[Ability] Run Away Draw: Draw 3 cards and shuffle this Pokémon and all attached cards into your deck.</td>
+</tr>
+<tr>
+<td>1</td>
+<td>44</td>
+<td>Bloodmoon Ursaluna ex (TWM)</td>
+<td>[Ability] Seasoned Skill: Blood Moon costs {C} less for each Prize card your opponent has taken.</td>
+</tr>
+<tr>
+<td>1</td>
+<td>235</td>
+<td>Budew (PRE*)</td>
+<td>Itchy Pollen: 0-cost, 10 damage. Opponent can't play Items from hand during their next turn.</td>
+</tr>
+<tr>
+<td>1</td>
+<td>689</td>
+<td>Yveltal (MEG)</td>
+<td>Clutch: 20 damage and the Defending Pokémon can't retreat.</td>
+</tr>
+<tr>
+<td>1</td>
+<td>1071</td>
+<td>Meowth ex (POR)</td>
+<td>[Ability] Last-Ditch Catch: Search your deck for a Supporter when played to the Bench.</td>
+</tr>
+<tr>
+<td>1</td>
+<td>140</td>
+<td>Fezandipiti ex (SFA*)</td>
+<td>[Ability] Flip the Script: Draw 3 cards if your Pokémon was KO'd last turn.</td>
+</tr>
+</tbody>
+</table>
+<h3>Trainer &amp; Energy Details</h3>
+<table>
+<thead>
+<tr>
+<th>Qty</th>
+<th>Card ID</th>
+<th>Card Name (Type)</th>
+<th>Effect Summary</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>3</td>
+<td>1227</td>
+<td>Lillie's Determination (Supp)</td>
+<td>Shuffle hand and draw 6 cards, or 8 if exactly 6 Prizes remain.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>1219</td>
+<td>Team Rocket's Petrel (Supp)</td>
+<td>Search your deck for a Trainer card and put it into your hand.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>1182</td>
+<td>Boss’s Orders (Supporter)</td>
+<td>Switch in 1 of your opponent’s Benched Pokémon.</td>
+</tr>
+<tr>
+<td>1</td>
+<td>1194</td>
+<td>Colress’s Tenacity (Supp)</td>
+<td>Search deck for a Stadium card and an Energy card.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>1152</td>
+<td>Poké Pad (Item)</td>
+<td>Search your deck for a Pokémon that doesn’t have a Rule Box.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>1086</td>
+<td>Buddy-Buddy Poffin (Item)</td>
+<td>Search deck for up to 2 Basic Pokémon with 70 HP or less to Bench.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>1079</td>
+<td>Rare Candy (Item)</td>
+<td>Evolve a Basic Pokémon to its Stage 2 form.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>1097</td>
+<td>Night Stretcher (Item)</td>
+<td>Put a Pokémon or Basic Energy from discard into hand.</td>
+</tr>
+<tr>
+<td>1</td>
+<td>1080</td>
+<td>Unfair Stamp (ACE SPEC)</td>
+<td>If your Pokémon was KO'd last turn: you draw 5, opponent 2.</td>
+</tr>
+<tr>
+<td>1</td>
+<td>1116</td>
+<td>Energy Switch (Item)</td>
+<td>Move a Basic Energy from 1 of your Pokémon to another.</td>
+</tr>
+<tr>
+<td>1</td>
+<td>1121</td>
+<td>Ultra Ball (Item)</td>
+<td>Discard 2 cards to search your deck for a Pokémon.</td>
+</tr>
+<tr>
+<td>1</td>
+<td>1137</td>
+<td>Tool Scrapper (Item)</td>
+<td>Choose up to 2 Pokémon Tools in play and discard them.</td>
+</tr>
+<tr>
+<td>1</td>
+<td>1174</td>
+<td>Air Balloon (Tool)</td>
+<td>The Retreat Cost of the attached Pokémon is {C}{C} less.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>1259</td>
+<td>Spikemuth Gym (Stadium)</td>
+<td>Once per turn, search your deck for a Marnie’s Pokémon.</td>
+</tr>
+<tr>
+<td>7</td>
+<td>7</td>
+<td>Basic {D} Energy</td>
+<td>Provides Darkness Energy.</td>
+</tr>
+<tr>
+<td>1</td>
+<td>5</td>
+<td>Basic {P} Energy</td>
+<td>Provides Psychic Energy.</td>
+</tr>
+<tr>
+<td>1</td>
+<td>16</td>
+<td>Prism Energy (Special)</td>
+<td>Provides all Energy types if attached to a Basic Pokémon.</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h1>9. Kangaskhan / Bouffalant</h1>
+<h3>Pokémon Card Details</h3>
+<table>
+<thead>
+<tr>
+<th>Qty</th>
+<th>Card ID</th>
+<th>Card Name (Expansion)</th>
+<th>Key Ability / Attack Effects</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2</td>
+<td>175</td>
+<td>Bouffalant (SCR)</td>
+<td>[Ability] Curly Wall: If you have another Bouffalant in play, your Basic {C} Pokémon take 60 less damage.</td>
+</tr>
+<tr>
+<td>1</td>
+<td>233</td>
+<td>Bouffalant (SSP)</td>
+<td>Ready to Ram: If this Pokémon is damaged by an attack next turn, put 6 damage counters on the Attacking Pokémon.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>160</td>
+<td>Joltik (SCR)</td>
+<td>Jolting Charge: Search your deck for up to 2 Basic {G} and 2 Basic {L} Energy and attach them to your Pokémon.</td>
+</tr>
+<tr>
+<td>1</td>
+<td>126</td>
+<td>Galvantula (SFA)</td>
+<td>[Ability] Compound Eyes: Attacks do 50 more damage to your opponent’s Active Pokémon that has an Ability.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>756</td>
+<td>Mega Kangaskhan ex (MEG)</td>
+<td>[Ability] Run Errand: If in the Active Spot, draw 2 cards once per turn.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>184</td>
+<td>Latias ex (SSP)</td>
+<td>[Ability] Skyliner: Your Basic Pokémon in play have no Retreat Cost.</td>
+</tr>
+<tr>
+<td>1</td>
+<td>24</td>
+<td>Team Rocket's Kangaskhan ex (ASC)</td>
+<td>Wicked Impact: Does 100 more damage if you played a “Team Rocket” Supporter this turn.</td>
+</tr>
+<tr>
+<td>1</td>
+<td>112</td>
+<td>Munkidori (TWM)</td>
+<td>[Ability] Adrena-Brain: If this Pokémon has {D} Energy, move up to 3 damage counters from 1 of your Pokémon to 1 of your opponent’s.</td>
+</tr>
+<tr>
+<td>1</td>
+<td>858</td>
+<td>Psyduck (ASC)</td>
+<td>[Ability] Damp: Pokémon in play lose any Ability that requires self-Knock Out to use.</td>
+</tr>
+<tr>
+<td>1</td>
+<td>44</td>
+<td>Bloodmoon Ursaluna ex (TWM)</td>
+<td>[Ability] Seasoned Skill: Blood Moon costs {C} less for each Prize card your opponent has taken.</td>
+</tr>
+<tr>
+<td>1</td>
+<td>210</td>
+<td>Pikachu ex (SSP)</td>
+<td>[Ability] Resolute Heart: If at full HP, survive an attack that would Knock Out this Pokémon with 10 HP remaining.</td>
+</tr>
+<tr>
+<td>1</td>
+<td>414</td>
+<td>Team Rocket's Articuno (DRI)</td>
+<td>[Ability] Repelling Veil: Prevent all attack effects done to your Basic Team Rocket’s Pokémon.</td>
+</tr>
+</tbody>
+</table>
+<h3>Trainer Details</h3>
+<table>
+<thead>
+<tr>
+<th>Qty</th>
+<th>Card ID</th>
+<th>Card Name (Type)</th>
+<th>Effect Summary</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>4</td>
+<td>1219</td>
+<td>Team Rocket's Petrel (Supp)</td>
+<td>Search your deck for a Trainer card and put it into your hand.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>1188</td>
+<td>Ciphermaniac’s Codebreaking (Supp)</td>
+<td>Search for 2 cards and put them on top of your deck in any order.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>1182</td>
+<td>Boss’s Orders (Supporter)</td>
+<td>Switch in 1 of your opponent’s Benched Pokémon to the Active Spot.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>1198</td>
+<td>Crispin (Supporter)</td>
+<td>Search deck for 2 different Basic Energy; 1 to hand, 1 to a Pokémon.</td>
+</tr>
+<tr>
+<td>1</td>
+<td>1210</td>
+<td>Brock’s Scouting (Supporter)</td>
+<td>Search deck for up to 2 Basic Pokémon or 1 Evolution Pokémon.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>1147</td>
+<td>Jumbo Ice Cream (Item)</td>
+<td>Heal 80 damage from Active Pokémon with 3 or more attached Energy.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>1122</td>
+<td>Pokégear 3.0 (Item)</td>
+<td>Look at top 7 cards of your deck and put a Supporter found there into hand.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>1134</td>
+<td>Team Rocket's Transceiver (Item)</td>
+<td>Search deck for a Supporter card with “Team Rocket” in its name.</td>
+</tr>
+<tr>
+<td>1</td>
+<td>1097</td>
+<td>Night Stretcher (Item)</td>
+<td>Put a Pokémon or Basic Energy from discard into hand.</td>
+</tr>
+<tr>
+<td>1</td>
+<td>1121</td>
+<td>Ultra Ball (Item)</td>
+<td>Discard 2 cards to search your deck for any Pokémon.</td>
+</tr>
+<tr>
+<td>1</td>
+<td>1112</td>
+<td>Super Potion (Item)</td>
+<td>Heal 60 damage and discard 1 Energy from that Pokémon.</td>
+</tr>
+<tr>
+<td>1</td>
+<td>1126</td>
+<td>Precious Trolley (ACE SPEC)</td>
+<td>Search your deck for any number of Basic Pokémon and put them onto your Bench.</td>
+</tr>
+<tr>
+<td>1</td>
+<td>1178</td>
+<td>Light Ball (Tool)</td>
+<td>Pikachu ex does 50 more damage to your opponent’s Active Pokémon {ex}.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>1257</td>
+<td>Team Rocket's Factory (Stad)</td>
+<td>Draw 2 cards if you played a “Team Rocket” Supporter this turn.</td>
+</tr>
+<tr>
+<td>1</td>
+<td>1252</td>
+<td>Gravity Mountain (Stadium)</td>
+<td>Each Stage 2 Pokémon in play gets -30 HP.</td>
+</tr>
+</tbody>
+</table>
+<h3>Energy Details</h3>
+<table>
+<thead>
+<tr>
+<th>Qty</th>
+<th>Card ID</th>
+<th>Card Name (Type)</th>
+<th>Effect Summary</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>4</td>
+<td>1</td>
+<td>Basic {G} Energy</td>
+<td>Provides Grass Energy.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>4</td>
+<td>Basic {L} Energy</td>
+<td>Provides Lightning Energy.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>8</td>
+<td>Basic {M} Energy</td>
+<td>Provides Metal Energy.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>11</td>
+<td>Mist Energy (Special)</td>
+<td>Provides {C}. Prevent all effects of attacks done to the attached Pokémon.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>7</td>
+<td>Basic {D} Energy</td>
+<td>Provides Darkness Energy.</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h1>10. Mega Absol Box</h1>
+<h3>Pokémon Card List</h3>
+<table>
+<thead>
+<tr>
+<th>Qty</th>
+<th>Card ID</th>
+<th>Card Name (Expansion)</th>
+<th>Key Effect / Ability / Attack</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2</td>
+<td>172</td>
+<td>Hoothoot (SCR)</td>
+<td>Triple Stab: Flip 3 coins. This attack does 10 damage for each heads.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>173</td>
+<td>Noctowl (SCR)</td>
+<td>[Ability] Jewel Seeker: When this Pokémon evolves, if you have a Tera Pokémon in play, search your deck for 2 Trainer cards.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>756</td>
+<td>Mega Kangaskhan ex (MEG)</td>
+<td>[Ability] Run Errand: If this Pokémon is in the Active Spot, once during your turn, draw 2 cards.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>96</td>
+<td>Teal Mask Ogerpon ex (TWM)</td>
+<td>[Ability] Teal Dance: Attach a Basic {G} Energy from your hand to this Pokémon and draw 1 card.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>112</td>
+<td>Munkidori (TWM)</td>
+<td>[Ability] Adrena-Brain: If this Pokémon has {D} Energy attached, move up to 3 damage counters from your Pokémon to your opponent’s Pokémon.</td>
+</tr>
+<tr>
+<td>1</td>
+<td>176</td>
+<td>Terapagos ex (SCR)</td>
+<td>Unified Beatdown: Does 30 damage for each of your Benched Pokémon.</td>
+</tr>
+<tr>
+<td>1</td>
+<td>272</td>
+<td>Lillie’s Clefairy ex (JTG)</td>
+<td>[Ability] Fairy Zone: Your opponent’s {N} Pokémon now have {P} Weakness.</td>
+</tr>
+<tr>
+<td>1</td>
+<td>687</td>
+<td>Mega Absol ex (MEG)</td>
+<td>Terminal Period: If your opponent’s Active Pokémon has exactly 6 damage counters on it, it is Knocked Out.</td>
+</tr>
+<tr>
+<td>1</td>
+<td>141</td>
+<td>Pecharunt ex (SFA)</td>
+<td>[Ability] Subjugating Chains: Switch 1 of your Benched {D} Pokémon, except Pecharunt ex, into the Active Spot and make it Poisoned.</td>
+</tr>
+<tr>
+<td>1</td>
+<td>1071</td>
+<td>Meowth ex (POR)</td>
+<td>[Ability] Last-Ditch Catch: When played onto your Bench, search your deck for 1 Supporter card.</td>
+</tr>
+<tr>
+<td>1</td>
+<td>184</td>
+<td>Latias ex (SSP)</td>
+<td>[Ability] Skyliner: Your Basic Pokémon have no Retreat Cost.</td>
+</tr>
+<tr>
+<td>1</td>
+<td>140</td>
+<td>Fezandipiti ex (SFA*)</td>
+<td>[Ability] Flip the Script: If any of your Pokémon were Knocked Out during your opponent’s last turn, draw 3 cards.</td>
+</tr>
+<tr>
+<td>1</td>
+<td>80</td>
+<td>Iron Crown ex (TEF)</td>
+<td>[Ability] Cobalt Command: Attacks used by your Future Pokémon, except Iron Crown ex, do 20 more damage.</td>
+</tr>
+<tr>
+<td>1</td>
+<td>75</td>
+<td>Iron Leaves ex (TEF)</td>
+<td>[Ability] Rapid Vernier: When played onto your Bench, you may switch it into the Active Spot and move Energy to this Pokémon.</td>
+</tr>
+<tr>
+<td>1</td>
+<td>689</td>
+<td>Yveltal (MEG)</td>
+<td>Clutch: 20 damage, and the opponent’s Active Pokémon can’t retreat.</td>
+</tr>
+<tr>
+<td>1</td>
+<td>174</td>
+<td>Fan Rotom (SCR)</td>
+<td>[Ability] Fan Call: On your first turn, search your deck for up to 3 {C} Pokémon with 100 HP or less.</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Fezandipiti ex was confirmed as the SFA expansion version, Card ID 140, instead of the requested ASC version.</li>
+</ul>
+<h3>Trainer Card List</h3>
+<table>
+<thead>
+<tr>
+<th>Qty</th>
+<th>Card ID</th>
+<th>Card Name (Type)</th>
+<th>Effect Summary</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>3</td>
+<td>1227</td>
+<td>Lillie’s Determination (Supporter)</td>
+<td>Shuffle your hand into your deck and draw 6 cards, or 8 cards if you have exactly 6 Prize cards remaining.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>1205</td>
+<td>Cyrano (Supporter)</td>
+<td>Search your deck for up to 3 Pokémon ex and put them into your hand.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>1182</td>
+<td>Boss’s Orders (Supporter)</td>
+<td>Switch 1 of your opponent’s Benched Pokémon into the Active Spot.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>1198</td>
+<td>Crispin (Supporter)</td>
+<td>Search your deck for 2 different Basic Energy cards; put 1 into your hand and attach the other to 1 of your Pokémon.</td>
+</tr>
+<tr>
+<td>1</td>
+<td>1223</td>
+<td>Harlequin (Supporter)</td>
+<td>Shuffle your hand and flip a coin. If heads, draw 5 cards; if tails, draw 3 cards.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>1121</td>
+<td>Ultra Ball (Item)</td>
+<td>Discard 2 cards from your hand and search your deck for 1 Pokémon.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>1116</td>
+<td>Energy Switch (Item)</td>
+<td>Move 1 Basic Energy from 1 of your Pokémon to another of your Pokémon.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>1152</td>
+<td>Poké Pad (Item)</td>
+<td>Search your deck for 1 Pokémon that doesn’t have a Rule Box.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>1097</td>
+<td>Night Stretcher (Item)</td>
+<td>Put 1 Pokémon or Basic Energy card from your discard pile into your hand.</td>
+</tr>
+<tr>
+<td>1</td>
+<td>1080</td>
+<td>Unfair Stamp (ACE SPEC)</td>
+<td>If any of your Pokémon were Knocked Out during your opponent’s last turn, shuffle both players’ hands into their decks; you draw 5 cards and your opponent draws 2.</td>
+</tr>
+<tr>
+<td>1</td>
+<td>1119</td>
+<td>Energy Search (Item)</td>
+<td>Search your deck for 1 Basic Energy card.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>1250</td>
+<td>Area Zero Underdepths (Stadium)</td>
+<td>If a player has a Tera Pokémon in play, that player can have up to 8 Benched Pokémon.</td>
+</tr>
+<tr>
+<td>1</td>
+<td>1256</td>
+<td>Team Rocket’s Watchtower (Stadium)</td>
+<td>{C} Pokémon in play have no Abilities.</td>
+</tr>
+</tbody>
+</table>
+<h3>Energy Card List</h3>
+<table>
+<thead>
+<tr>
+<th>Qty</th>
+<th>Card ID</th>
+<th>Card Name (Type)</th>
+<th>Effect Summary</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>5</td>
+<td>7</td>
+<td>Basic {D} Energy</td>
+<td>Provides Darkness Energy.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>1</td>
+<td>Basic {G} Energy</td>
+<td>Provides Grass Energy.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>5</td>
+<td>Basic {P} Energy</td>
+<td>Provides Psychic Energy.</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<p>I find this competition very difficult.  </p>
+<p>It seems that the number of strong decks is limited,<br>
+and strategies for countering those decks are already documented online.  </p>
+<p>As a result, there may be a significant advantage in finding those resources online and translating them into code.</p>"

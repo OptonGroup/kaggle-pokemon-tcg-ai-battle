@@ -1,0 +1,8 @@
+id,authorName,postDate,votes,content
+3483037,,2026-06-28 10:47:49.690000,0,"<p>Does anyone know how to obtain the full list of episodes of the public LB?</p>
+<p>I only need the agent_ids and the results (win/lose/tie).</p>
+<p>I though it was included in <a href=""https://www.kaggle.com/datasets/kaggle/meta-kaggle/data"" target=""_blank"">Meta Kaggle</a>, but it wasn't.</p>"
+3483198,,2026-06-28 14:34:14.997000,-1,"<p>I think it’s here? Inside this network packet: <a href=""https://www.kaggle.com/api/i/competitions.EpisodeService/GetEpisode"" target=""_blank"">https://www.kaggle.com/api/i/competitions.EpisodeService/GetEpisode</a>
+You need to pass in the episode_id; this is very simple.</p>
+<p><img src=""https://www.googleapis.com/download/storage/v1/b/kaggle-forum-message-attachments/o/inbox%2F18505507%2F19b1128eeedfc6e842515d5f72ff2de6%2F2026-06-28%20223306.png?generation=1782657227185509&amp;alt=media"" alt=""""></p>"
+3483382,,2026-06-28 21:40:46.847000,-1,<p>Is there a way to get a list of <code>episode_id</code>s for all of the matches?</p>

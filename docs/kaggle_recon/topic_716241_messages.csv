@@ -1,0 +1,346 @@
+id,authorName,postDate,votes,content
+3484332,,2026-06-30 08:47:21.670000,2,"<p>Hi everyone,</p>
+<p>We found one replay where <strong>Rare Candy</strong> (<code>ふしぎなアメ</code>, cardId <code>1079</code>) appears to be consumed without performing the selected evolution.</p>
+<p>In this case, the engine offers a Rare Candy skip-evolution as a legal option, the player selects that option, and the Rare Candy is discarded. However, no evolution event is emitted, and the target Pokémon remains a Basic Pokémon.</p>
+<p>We would appreciate confirmation from the organizers on whether this is intended simulator behavior or a possible engine bug.</p>
+<hr>
+<h2>TL;DR</h2>
+<p>In one recorded <code>cabt</code> replay, a player plays <strong>Rare Candy</strong> to skip-evolve a Basic Pokémon into a Stage 2 Pokémon.</p>
+<p>The engine:</p>
+<ol>
+<li>offers the evolution as a legal option,</li>
+<li>the player selects it,</li>
+<li>consumes the Rare Candy,</li>
+</ol>
+<p>but then the engine does <strong>not</strong> perform the evolution.</p>
+<p>Across <strong>660</strong> Rare Candy skip-evolution events in our replay corpus, this happened <strong>exactly once</strong>. Every other event, including cases with the same deck, the same card, and the same observable signature, evolved correctly.</p>
+<p>From the observation-level data available to us, we could not find any observable game-state feature that distinguishes this non-evolving case from correctly-evolving cases. This appears more consistent with a rare internal-state-dependent engine issue than with a normal rules edge case, but we cannot confirm the root cause without engine source or state injection.</p>
+<ul>
+<li><strong>Card:</strong> <code>1079</code> ふしぎなアメ / <strong>Rare Candy</strong></li>
+<li><strong>Expected behavior:</strong> the selected Basic Pokémon should evolve into the chosen Stage 2 Pokémon.</li>
+<li><strong>Observed behavior:</strong> Rare Candy is consumed, but the Pokémon is <strong>not</strong> evolved.</li>
+</ul>
+<hr>
+<h2>Environment / replay provenance</h2>
+<ul>
+<li><p>Engine: <strong>cabt</strong> simulator (<code>libcg.so</code>), driven via <code>kaggle-environments</code>.</p></li>
+<li><p>The attached replays are <strong>cabt self-play games</strong> recorded in the standard <code>kaggle-environments</code> step format.</p>
+<ul>
+<li>Each step is a list of per-player views with <code>action</code>, <code>observation</code>, and <code>status</code>.</li>
+<li><code>observation.logs</code> is the engine event log.</li>
+<li><code>observation.select</code> is the decision prompt.</li>
+<li><code>observation.current</code> is the board state.</li></ul></li>
+<li><p>Bug replay: <code>replay_no_evolve__cl_c55_g1.json</code></p>
+<ul>
+<li><code>name: meta_cl_c55__vs__cl_c550__g1__a1</code></li></ul></li>
+<li><p>Contrast replay, same deck, evolves correctly: <code>replay_evolve_contrast__cl_c55_g0.json</code></p>
+<ul>
+<li><code>name: meta_cl_c55__vs__cl_c550__g0__a-1</code></li></ul></li>
+<li><p>Human-readable extract of the relevant steps for both cases: <code>key_steps_annotated.json</code></p></li>
+</ul>
+<hr>
+<h2>Evolution line involved</h2>
+<p>The relevant line is:</p>
+<pre><code>548 Axew (Basic) → 549 Fraxure (Stage 1) → 550 Haxorus (Stage 2)
+</code></pre>
+<p>Rare Candy should allow <code>548 Axew</code> to evolve directly into <code>550 Haxorus</code>.</p>
+<hr>
+<h2>Reproduction: the divergent decision</h2>
+<p>Bug replay:</p>
+<pre><code>meta_cl_c55__vs__cl_c550__g1
+player 1
+turn 18
+step 86
+</code></pre>
+<p>At this point:</p>
+<ul>
+<li><p>Player 1's board:</p>
+<ul>
+<li><p>Active: Axew <code>548</code></p></li>
+<li><p>serial <code>71</code></p></li>
+<li><p>HP <code>100/100</code></p></li>
+<li><p>1 energy attached</p></li>
+<li><p>Bench: Axew <code>548</code></p></li>
+<li><p>serial <code>68</code></p></li></ul></li>
+<li><p>Player 1's hand:</p>
+<ul>
+<li><p>3× Haxorus <code>550</code></p></li>
+<li><p>serials <code>64</code>, <code>63</code>, <code>65</code></p></li>
+<li><p>1× Fraxure <code>549</code></p></li>
+<li><p>serial <code>66</code></p></li>
+<li><p>energies</p></li>
+<li><p>1 other card</p></li></ul></li>
+</ul>
+<p>Player 1 plays <strong>Rare Candy <code>1079</code></strong> with serial <code>73</code>.</p>
+<p>The engine presents a <code>select</code> prompt with:</p>
+<pre><code>context: 37
+</code></pre>
+<p>This appears to be the Rare Candy skip-evolution choice.</p>
+<p>The prompt contains <strong>6 options</strong>:</p>
+<pre><code>{3 Haxorus in hand} × {Active Axew, Bench Axew}
+</code></pre>
+<p>Player 1's action is:</p>
+<pre><code>[0]
+</code></pre>
+<p>This selects option <code>[0]</code>, which is:</p>
+<pre><code>{""type"":9,""area"":2,""index"":0,""inPlayArea"":4,""inPlayIndex"":0}
+</code></pre>
+<p>Interpreted as:</p>
+<ul>
+<li><code>type 9</code> = evolve</li>
+<li><code>area 2, index 0</code> = Haxorus from hand, serial <code>64</code></li>
+<li><code>inPlayArea 4, inPlayIndex 0</code> = Active Pokémon, Axew serial <code>71</code></li>
+</ul>
+<p>So the selected action is:</p>
+<pre><code>evolve hand Haxorus `550` (serial 64)
+onto Active Axew `548` (serial 71)
+</code></pre>
+<h3>Observed result</h3>
+<p>The engine logs the Rare Candy use, but no evolution event is emitted.</p>
+<p>The Active Pokémon remains Axew <code>548</code> with serial <code>71</code>, and later steps show it continuing to attack as Axew. Its HP later changes:</p>
+<pre><code>100 → 70 → 40 → 10
+</code></pre>
+<hr>
+<h2>Side-by-side event log</h2>
+<p>The main difference between the bug case and a correct case is that the bug case is missing a <code>type 12</code> EVOLVE event after Rare Candy is used.</p>
+<h3>❌ Bug case: Rare Candy consumed, but no EVOLVE event</h3>
+<p>Replay:</p>
+<pre><code>meta_cl_c55__vs__cl_c550__g1
+player 1
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>step</th>
+<th>turn</th>
+<th>prompt</th>
+<th>action</th>
+<th>engine log (<code>observation.logs</code>)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>85</td>
+<td>18</td>
+<td>ctx 0</td>
+<td><code>[0]</code></td>
+<td><code>type 11</code> attach energy <code>8</code> (s120) → Axew <code>548</code> (s71)</td>
+</tr>
+<tr>
+<td><strong>86</strong></td>
+<td>18</td>
+<td><strong>ctx 37</strong> / 6 options</td>
+<td><strong><code>[0]</code> = evolve Haxorus (s64) → Active Axew (s71)</strong></td>
+<td><code>type 10</code> play/use card <code>1079</code> Rare Candy (s73)</td>
+</tr>
+<tr>
+<td>87</td>
+<td>18</td>
+<td>ctx 0</td>
+<td><code>[0]</code></td>
+<td>no log; <strong>no <code>type 12</code> EVOLVE event</strong></td>
+</tr>
+</tbody>
+</table>
+<p>Result:</p>
+<pre><code>Active remains 548 Axew, serial 71.
+</code></pre>
+<p>Later steps show that Pokémon attacking as a Basic Pokémon.</p>
+<hr>
+<h3>✅ Correct case: same deck, Rare Candy evolves correctly</h3>
+<p>Replay:</p>
+<pre><code>meta_cl_c55__vs__cl_c550__g0
+player 1
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>step</th>
+<th>turn</th>
+<th>prompt</th>
+<th>action</th>
+<th>engine log</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>33</td>
+<td>4</td>
+<td>ctx 0</td>
+<td><code>[0]</code></td>
+<td><code>type 6</code> move Haxorus <code>550</code> (s63) into hand, fromArea 1 → toArea 2</td>
+</tr>
+<tr>
+<td><strong>34</strong></td>
+<td>4</td>
+<td><strong>ctx 37</strong> / 3 options</td>
+<td><strong><code>[0]</code> = evolve Haxorus (s63) → Active Axew (s69)</strong></td>
+<td><code>type 10</code> play/use card <code>1079</code> Rare Candy (s72)</td>
+</tr>
+<tr>
+<td><strong>35</strong></td>
+<td>4</td>
+<td>ctx 0</td>
+<td><code>[0]</code></td>
+<td><strong><code>type 12</code> EVOLVE</strong> <code>{cardId: 550 Haxorus(s63), cardIdTarget: 548 Axew(s69)}</code></td>
+</tr>
+</tbody>
+</table>
+<p>Result:</p>
+<pre><code>Active evolves into 550 Haxorus.
+</code></pre>
+<p>In the correct case, the <code>type 12</code> EVOLVE event appears one step after Rare Candy is used. In the bug case, that event is simply absent.</p>
+<hr>
+<h2>Why this looks like a possible bug</h2>
+<p>The engine itself offered the evolution as a legal option:</p>
+<pre><code>select.context = 37
+option type = 9
+</code></pre>
+<p>The player selected that option.</p>
+<p>Given that, the engine seems internally inconsistent in this replay:</p>
+<ul>
+<li>either the evolution should not have been offered,</li>
+<li>or, once selected, the evolution should have been performed.</li>
+</ul>
+<p>Consuming Rare Candy while silently skipping the selected evolution does not seem consistent with either behavior.</p>
+<p>The target also appears to be a valid Rare Candy target from the observable state:</p>
+<ul>
+<li>it is a Basic Pokémon,</li>
+<li>it has a matching Stage 2 Pokémon in hand,</li>
+<li><code>appearThisTurn: false</code>,</li>
+<li>and the engine offered the evolution option.</li>
+</ul>
+<p>In our replay corpus, <strong>659 of 660</strong> Rare Candy events evolved correctly, including events involving this same card and the same deck.</p>
+<hr>
+<h2>Frequency analysis</h2>
+<p>We scanned all <strong>660</strong> <code>context 37</code> Rare Candy events in a 5,200-game replay corpus.</p>
+<p>Only <strong>1</strong> event did not evolve: the case described above.</p>
+<p>We then tried to find any observable feature that separates this case from the 659 correct cases. Every candidate feature we tested was refuted by at least one correctly-evolving counterexample with the same value.</p>
+<table>
+<thead>
+<tr>
+<th>candidate feature</th>
+<th>bug-case value</th>
+<th>result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>same cardId, Axew <code>548</code></td>
+<td><code>548</code></td>
+<td>refuted; Axew evolves elsewhere, for example <code>cl_c994 g2</code></td>
+</tr>
+<tr>
+<td>duplicate of the Basic on board</td>
+<td>yes, Bench also has Axew</td>
+<td>refuted; 400 evolving events also have a duplicate Basic on board, including same-deck games <code>cl_c55 g0/g3</code></td>
+</tr>
+<tr>
+<td>target is Active vs Bench</td>
+<td>Active</td>
+<td>refuted</td>
+</tr>
+<tr>
+<td>Stage 1 Fraxure <code>549</code> in hand</td>
+<td>yes</td>
+<td>refuted; 202 evolving events also have the Stage 1 in hand, including <code>cl_c994 g2</code></td>
+</tr>
+<tr>
+<td>target promoted this turn</td>
+<td>no</td>
+<td>refuted</td>
+</tr>
+<tr>
+<td>number of options offered</td>
+<td>6</td>
+<td>refuted; 30 evolving events also have 6 options</td>
+</tr>
+<tr>
+<td>number of Stage 2 cards in hand</td>
+<td>3</td>
+<td>refuted; 15 evolving events also have 3 Stage 2 cards in hand</td>
+</tr>
+<tr>
+<td>exact observable signature: options=6, Stage2-in-hand=3, valid-targets=2</td>
+<td><code>(6, 3, 2)</code></td>
+<td>refuted; 6 other games share this exact signature and all evolve: <code>cl_c189</code>, <code>cl_c651</code>, <code>cl_c685</code>, <code>cl_c710</code>, <code>cl_c851</code>, <code>cl_c931</code></td>
+</tr>
+</tbody>
+</table>
+<p>So, from the observation-level features we can extract, this non-evolving case shares its observable signature with multiple correctly-evolving games.</p>
+<p>We could not find any observable game-state feature that distinguishes it.</p>
+<hr>
+<h2>Why ordinary per-event randomness seems unlikely</h2>
+<p>We do not think this is ordinary per-event randomness.</p>
+<p>Rare Candy resolution is not a coin-flip or shuffle mechanic. Also, if this were caused by an ordinary randomized branch in Rare Candy resolution, we would expect to see more than a single isolated case across 660 events, unless the branch probability is extremely small.</p>
+<p>Each replay is also a deterministic recorded <code>kaggle-environments</code> replay.</p>
+<p>The observed pattern is:</p>
+<pre><code>1/660 cases
+same observable signature as correct cases
+not explained by any tested observable feature
+</code></pre>
+<p>This makes the issue look more like a rare internal-state-dependent engine behavior than a normal rules edge case. However, without engine source or the ability to inject exact internal state, we cannot determine the root cause.</p>
+<hr>
+<h2>Suggested way to confirm</h2>
+<p>This probably requires engine source access or the ability to re-run from an exact internal state.</p>
+<p>A useful confirmation would be to re-run the engine from the exact internal state at step 86 of the bug replay multiple times.</p>
+<p>Possible outcomes:</p>
+<ul>
+<li><p>If it always fails to evolve:</p>
+<ul>
+<li>this would suggest a deterministic bug in the Rare Candy resolution path for that internal state.</li></ul></li>
+<li><p>If the result varies:</p>
+<ul>
+<li>this would suggest non-determinism, such as uninitialized state or ordering-dependent behavior.</li></ul></li>
+</ul>
+<p>We only have observation-level replays, so we cannot perform this test ourselves.</p>
+<hr>
+<h2>Attached files</h2>
+<table>
+<thead>
+<tr>
+<th>file</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>replay_no_evolve__cl_c55_g1.json</code></td>
+<td>Bug replay in <code>kaggle-environments</code> format. Rare Candy is used at step 86 by player 1.</td>
+</tr>
+<tr>
+<td><code>replay_evolve_contrast__cl_c55_g0.json</code></td>
+<td>Same-deck contrast game where Rare Candy evolves correctly. Rare Candy is used at step 34; EVOLVE appears at step 35.</td>
+</tr>
+<tr>
+<td><code>key_steps_annotated.json</code></td>
+<td>Human-readable extract of steps 84–89 for the bug case and steps 32–37 for the correct case, with annotated log event types and the Rare Candy player's board at each step.</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2>Engine log type legend</h2>
+<p>Observed log types used above:</p>
+<pre><code>type 6   move between zones
+type 10  play/use a card
+type 11  attach energy
+type 12  evolve
+type 15  attack
+type 16  place damage counter
+type 2/3/5 turn/phase markers
+</code></pre>
+<p>Relevant select fields:</p>
+<pre><code>select.option type 9 = evolve choice
+inPlayArea 4 = Active
+inPlayArea 5 = Bench
+</code></pre>"
+3487444,,2026-07-03 19:19:45.140000,0,"<p>Thanks for the detailed post! I tried to reproduce it, and I think the trigger is Bronzong's Evolution Jammer.</p>
+<p>In the failed case, the turn before, your Active was hit by Evolution Jammer. So on that turn the player cannot evolve from hand. But the two evolve paths behave differently:</p>
+<p>normal evolve menu: it correctly hides the evolve option when you are jammed.
+Rare Candy: it still shows the evolve option even when you are jammed. If you pick it, the Rare Candy is discarded but no evolution happens.
+I think this matches your findings. It is rare because Evolution Jammer is not a common card, and the effect only lasts 1 turn. And no board/hand feature can tell it apart, because the ""cannot evolve this turn"" state is not in the observation.</p>
+<p>I tested it like this: let the opponent hit my Active with Evolution Jammer, then next turn use Rare Candy to evolve a Basic into its Stage 2.</p>
+<p>with jammer: 100+ plays, every time the Rare Candy is used but no evolve (the Pokemon stays Basic, the candy goes to discard).
+without jammer (control): the same play evolves every time (hundreds of plays, 0 fail).
+So maybe the fix is: when the player is under Evolution Jammer, the Rare Candy evolve should also be blocked (or the candy should not be consumed), same as the normal evolve menu already does.</p>
+<p>Hope this helps!</p>"

@@ -1,0 +1,45 @@
+{
+  "topic_id": "712011",
+  "title": "[Dataset+Notebook] 16 Decks That Actually Won Real Pokémon Tournaments — Ready-to-Use deck.csv",
+  "source": "kaggle CLI topic-messages + kaggle datasets download yu0307/deck-csv",
+  "fetched_at": "2026-07-11",
+  "messages": [
+    {
+      "id": "3478066",
+      "authorName": "(empty; dataset/notebook owner = yu0307)",
+      "postDate": "2026-06-22 09:21:29",
+      "votes": 5,
+      "content_text": "Shared a dataset of 16 real Japanese City League top-cut decks, already converted to this competition's own card-id format (drop-in deck.csv, no conversion needed), plus a notebook that validates legality and breaks down composition/staple cards/type distribution. Notebook: https://www.kaggle.com/code/yu0307/16-real-city-league-top-cut-decks-deck-csv. Dataset: https://www.kaggle.com/datasets/yu0307/deck-csv/data. Hope it saves someone some deck-building time."
+    }
+  ],
+  "deck_files": [
+    "Arboliva_deck.csv", "ClefairyOgerpon_deck.csv", "DragapultBlaziken_deck.csv",
+    "Dragapult_deck.csv", "FestivalLead_deck.csv", "Garchomp_deck.csv",
+    "Grafaiai_deck.csv", "Honchkrow_deck.csv", "MegaLucario_deck.csv",
+    "MegaSharpedo_deck.csv", "MegaStarmie_deck.csv", "MegaVenusaur_deck.csv",
+    "RagingBolt_deck.csv", "Slowking_deck.csv", "TerastalBox_deck.csv", "Zoroark_deck.csv"
+  ],
+  "deck_archetypes": {
+    "Arboliva": "Arboliva ex (310HP) + Meganium + Ogerpon ex + Fezandipiti ex; Grass; Forest of Vitality",
+    "ClefairyOgerpon": "Lillie's Clefairy ex + Ogerpon ex + Iron Leaves ex + Latias ex + Mega Lopunny ex + Meowth ex; multi-type",
+    "DragapultBlaziken": "Dragapult ex (320HP) + Blaziken ex (320HP) + Fezandipiti ex + Munkidori; Fire+Psychic+Water",
+    "Dragapult": "Dragapult ex + Dusknoir line + Fezandipiti ex + Budew; Psychic+Water; Risky Ruins",
+    "FestivalLead": "Festival Lead basics + Meowth ex + Budew; Grass; Festival Grounds",
+    "Garchomp": "Cynthia's Garchomp ex (330HP) + Roserade + Spiritomb; Fighting; Risky Ruins",
+    "Grafaiai": "Marnie's Grimmsnarl ex (320HP) [file mislabeled 'Grafaiai'] + Froslass + Yveltal + Tatsugiri + Budew; Darkness x9; Spikemuth Gym",
+    "Honchkrow": "Team Rocket's Honchkrow + TR Murkrow + TR Articuno + TR Porygon2 + TR supporter suite; TR Energy + Ignition; TR Factory",
+    "MegaLucario": "Mega Lucario ex (340HP) + Riolu + Hariyama + Lunatone/Solrock + Cornerstone Ogerpon ex; Fighting x10; Gravity Mountain",
+    "MegaSharpedo": "Mega Sharpedo ex (330HP) + Carvanha + Toxtricity + Pecharunt ex + Mega Lopunny ex; Darkness x8; Gravity Mountain",
+    "MegaStarmie": "Mega Starmie ex (330HP) + Staryu + Dusknoir line + Budew + Fezandipiti ex; Water+Darkness; Risky Ruins",
+    "MegaVenusaur": "Mega Venusaur ex (380HP) + Bulbasaur/Ivysaur + Meganium + Ogerpon ex + Fezandipiti ex; Grass x10; Forest of Vitality",
+    "RagingBolt": "Raging Bolt ex (240HP) + Ogerpon ex + Iron Leaves ex + Latias ex + Bloodmoon Ursaluna ex; Lightning+Grass+Psychic",
+    "Slowking": "Slowking (120HP) + Slowpoke + Kyurem + Annihilape + Zeraora + Fezandipiti ex + Latias ex; Psychic+Water; Academy at Night",
+    "TerastalBox": "Noctowl line + Fan Rotom + Pikachu ex + Ogerpon ex + Iron Leaves ex + Latias ex + Chien-Pao + Budew; multi-type",
+    "Zoroark": "N's Zoroark ex (280HP) + N's Zorua + N's Darumaka/Darmanitan + N's Reshiram + N's Zekrom + Pecharunt ex + Budew; Darkness x8; N's Castle"
+  },
+  "common_staples": {
+    "items": ["Ultra Ball (1121)", "Night Stretcher (1097)", "Buddy-Buddy Poffin (1086)", "Poké Pad (1152)", "Unfair Stamp (1080)", "Bug Catching Set (1094)"],
+    "supporters": ["Boss's Orders (1182)", "Lillie's Determination (1227)", "Judge (1213)", "Crispin (1198)", "Cyrano (1205)"],
+    "frequent_basics": ["Fezandipiti ex (140) in ~9/16 decks", "Budew (235) in ~8/16", "Meowth ex (1071) in several"]
+  }
+}

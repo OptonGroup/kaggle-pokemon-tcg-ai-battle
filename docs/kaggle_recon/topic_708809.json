@@ -1,0 +1,72 @@
+{
+  "topic": {
+    "id": 708809,
+    "title": "What are good resources when learning the rules?",
+    "authorName": "c-number",
+    "commentCount": 4,
+    "votes": 8,
+    "postDate": "2026-06-17 00:53:23.371000",
+    "url": "https://www.kaggle.com/competitions/pokemon-tcg-ai-battle/discussion/708809"
+  },
+  "messages": [
+    {
+      "id": 3473739,
+      "authorName": "c-number",
+      "postDate": "2026-06-17 00:53:23.370000",
+      "votes": 8,
+      "content_html": "<p>Any sugestions?</p>",
+      "content_text": "Any sugestions?",
+      "note": "Original post (topic body)"
+    },
+    {
+      "id": 3473998,
+      "authorName": "sue124",
+      "postDate": "2026-06-17 10:07:38.903000",
+      "votes": 4,
+      "content_html": "<p>I reccomend videos from official Youtube channels.</p><p>Japanese ver.  </p><ul><li><a href=\"https://youtu.be/nQqv5dGrJ1A?si=Vt6HnBxs5JRF-LLg\" target=\"_blank\">【公式】レッツポケカ！5分でわかるポケモンカードバトル</a></li><li><a href=\"https://youtu.be/3Ixc4sKaABA?si=gRaDvDHnCZK8Hp5W\" target=\"_blank\">【公式動画】これからポケカを始めるキミに！ルール解説【ポケモンカード】</a></li><li><a href=\"https://youtu.be/cj2VggTjgpI?si=658pKx_fgiflM0UX\" target=\"_blank\">【公式】ポケカの「特殊状態」をマスターしよう！覚えておきたいルール解説！【ポケモンカード】</a></li></ul><p>English ver. </p><ul><li><a href=\"https://youtu.be/eKC5PlYoboE?si=wLheOlx4E_Xnojy3\" target=\"_blank\">Getting Started with the Pokémon TCG</a></li></ul>",
+      "content_text": "I reccomend videos from official Youtube channels.\nJapanese ver.:\n- 【公式】レッツポケカ！5分でわかるポケモンカードバトル (https://youtu.be/nQqv5dGrJ1A)\n- 【公式動画】これからポケカを始めるキミに！ルール解説【ポケモンカード】 (https://youtu.be/3Ixc4sKaABA)\n- 【公式】ポケカの「特殊状態」をマスターしよう！覚えておきたいルール解説！【ポケモンカード】 (https://youtu.be/cj2VggTjgpI)\nEnglish ver.:\n- Getting Started with the Pokémon TCG (https://youtu.be/eKC5PlYoboE)",
+      "links": [
+        "https://youtu.be/nQqv5dGrJ1A?si=Vt6HnBxs5JRF-LLg",
+        "https://youtu.be/3Ixc4sKaABA?si=gRaDvDHnCZK8Hp5W",
+        "https://youtu.be/cj2VggTjgpI?si=658pKx_fgiflM0UX",
+        "https://youtu.be/eKC5PlYoboE?si=wLheOlx4E_Xnojy3"
+      ]
+    },
+    {
+      "id": 3474001,
+      "authorName": "sue124",
+      "postDate": "2026-06-17 10:11:17.967000",
+      "votes": 0,
+      "content_html": "<p>Official “Pokémon Card Classes” are also held regularly, but these are limited to elementary school students.<br><a href=\"https://shop.pokemon.co.jp/ja/shop/pokemoncenter-tokyodx/events/202605/000254.html\" target=\"_blank\">https://shop.pokemon.co.jp/ja/shop/pokemoncenter-tokyodx/events/202605/000254.html</a></p>",
+      "content_text": "Official “Pokémon Card Classes” are also held regularly, but these are limited to elementary school students.\nhttps://shop.pokemon.co.jp/ja/shop/pokemoncenter-tokyodx/events/202605/000254.html",
+      "links": [
+        "https://shop.pokemon.co.jp/ja/shop/pokemoncenter-tokyodx/events/202605/000254.html"
+      ]
+    },
+    {
+      "id": 3473750,
+      "authorName": "Ryuhki Kimura",
+      "postDate": "2026-06-17 02:19:45.347000",
+      "votes": 1,
+      "content_html": "<p>イシズマイの使い方を学ぶのが一番いいのかもしれない。。</p><p><a href=\"https://youtu.be/tUX71X-06hM?si=Pg3B52N4XquM9a_6\" target=\"_blank\">https://youtu.be/tUX71X-06hM?si=Pg3B52N4XquM9a_6</a></p><p>これとか参考になるのかも</p>",
+      "content_text": "イシズマイの使い方を学ぶのが一番いいのかもしれない。\nhttps://youtu.be/tUX71X-06hM?si=Pg3B52N4XquM9a_6\nこれとか参考になるのかも\n\n[Translation: \"Maybe the best thing is to learn how to use Crustle (イシズマイ/Ishizumai). Something like this might be a good reference.\"]",
+      "links": [
+        "https://youtu.be/tUX71X-06hM?si=Pg3B52N4XquM9a_6"
+      ],
+      "note": "イシズマイ (Ishizumai) = Crustle in Japanese. Poster suggests learning Crustle gameplay is the best approach."
+    },
+    {
+      "id": 3482244,
+      "authorName": "BZ",
+      "postDate": "2026-06-27 02:25:50.653000",
+      "votes": 0,
+      "content_html": "<p>English FAQ series playlist:\n<a href=\"https://www.youtube.com/watch?v=l338v4KoX0g\" target=\"_blank\">https://www.youtube.com/watch?v=l338v4KoX0g</a></p>",
+      "content_text": "English FAQ series playlist:\nhttps://www.youtube.com/watch?v=l338v4KoX0g",
+      "links": [
+        "https://www.youtube.com/watch?v=l338v4KoX0g"
+      ]
+    }
+  ],
+  "source": "kaggle CLI: competitions topics show pokemon-tcg-ai-battle 708809 -v",
+  "fetched": "2026-07-11"
+}

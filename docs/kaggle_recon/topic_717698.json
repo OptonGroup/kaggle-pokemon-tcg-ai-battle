@@ -1,0 +1,32 @@
+{
+  "topic_id": 717698,
+  "topic_title": "How fast should the environment be?",
+  "source": "kaggle CLI: competitions topic-messages pokemon-tcg-ai-battle 717698 -v -n -1",
+  "message_count": 3,
+  "messages": [
+    {
+      "id": "3486270",
+      "authorName": "(anonymous)",
+      "postDate": "2026-07-02 11:09:07.820000",
+      "votes": 1,
+      "content_raw": "<p>Hello, have anyone tried doing reinforcement learning yet? I'm curious about how much steps/seconds should be considered fast or slow in this specific environment. I read some writeups in previous RL competitions, such as Orbit Wars and LuxAI and some of them said that the priority is to get a fast environment working first before doing RL.</p>\n<p>My model has 3M parameters. With my current setup I'm only able to get on average 1.3k steps/sec on my local computer. The bottleneck at the moment is on the forward (during rollout) and backward pass, so I'm dead stuck in trying to squeeze out more steps/sec other than using much better GPU. The GPU I use is RTX 3070 and CPU is i5 13600KF.</p>",
+      "content_clean": "Hello, have anyone tried doing reinforcement learning yet? I'm curious about how much steps/seconds should be considered fast or slow in this specific environment. I read some writeups in previous RL competitions, such as Orbit Wars and LuxAI and some of them said that the priority is to get a fast environment working first before doing RL. My model has 3M parameters. With my current setup I'm only able to get on average 1.3k steps/sec on my local computer. The bottleneck at the moment is on the forward (during rollout) and backward pass, so I'm dead stuck in trying to squeeze out more steps/sec other than using much better GPU. The GPU I use is RTX 3070 and CPU is i5 13600KF."
+    },
+    {
+      "id": "3486573",
+      "authorName": "(anonymous)",
+      "postDate": "2026-07-02 17:14:13.007000",
+      "votes": 0,
+      "content_raw": "<p>I think that step count is good for 3M model unless you plan on scaling to 50M steps or so. I would suggest checking what the true botteleneck is beceause the env is fast already most of the wasted time is on the NN. If you want to write the engine for full gpu compatibility, it should be considered due to the nature of this comp. Almost every attack carries effect text, and the real monster isn't the vocabulary of effects —a couple dozen primitives cover nearly everything — it's composition: effects chain in ordered sequences, and abilities/trainers are mostly triggered or passive logic. Doing that properly means building a vectorizable effect/trigger system, not just a transition function. For orbit wars that required compelex aim, planet position etc. calculations during the rollouts especially with forward simulations which made it necessary for full gpu transition. One side note is that if you have tokens just leaving it to an agent for a long session and saying make sure its byte identical might work haven't tried though.</p>",
+      "content_clean": "I think that step count is good for 3M model unless you plan on scaling to 50M steps or so. I would suggest checking what the true botteleneck is beceause the env is fast already most of the wasted time is on the NN. If you want to write the engine for full gpu compatibility, it should be considered due to the nature of this comp. Almost every attack carries effect text, and the real monster isn't the vocabulary of effects —a couple dozen primitives cover nearly everything — it's composition: effects chain in ordered sequences, and abilities/trainers are mostly triggered or passive logic. Doing that properly means building a vectorizable effect/trigger system, not just a transition function. For orbit wars that required compelex aim, planet position etc. calculations during the rollouts especially with forward simulations which made it necessary for full gpu transition. One side note is that if you have tokens just leaving it to an agent for a long session and saying make sure its byte identical might work haven't tried though."
+    },
+    {
+      "id": "3486877",
+      "authorName": "(anonymous)",
+      "postDate": "2026-07-03 05:43:35.717000",
+      "votes": 0,
+      "content_raw": "<p>With the source code available, I think it's possible to port a copy to rust/torch environment. But the current bottleneck that I'm getting  makes me doubt whether trying to do this port is worth it or not.</p>",
+      "content_clean": "With the source code available, I think it's possible to port a copy to rust/torch environment. But the current bottleneck that I'm getting makes me doubt whether trying to do this port is worth it or not."
+    }
+  ]
+}

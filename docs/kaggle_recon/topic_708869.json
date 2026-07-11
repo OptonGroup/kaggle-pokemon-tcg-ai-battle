@@ -1,0 +1,83 @@
+{
+  "topic_id": 708869,
+  "title": "Is there a way to view the visualizer without submitting?",
+  "competition": "pokemon-tcg-ai-battle",
+  "fetched_at": "2026-07-11",
+  "source": "kaggle CLI: competitions topic-messages (authorName field was empty in CLI output for all messages)",
+  "messages": [
+    {
+      "id": 3473820,
+      "author": "(unknown - CLI returned empty authorName)",
+      "postDate": "2026-06-17 05:25:02",
+      "votes": 37,
+      "content": "Would be helpful for reading some of our own local runs quick and diagnosing obvious issues without taking up 1/5 daily runs for each issue. We can view the JSON logs but visualizer locally would be nice."
+    },
+    {
+      "id": 3474059,
+      "author": "(unknown)",
+      "postDate": "2026-06-17 11:50:23",
+      "votes": 1,
+      "content": "It would be great if we can see actual cards in the visualizer."
+    },
+    {
+      "id": 3474682,
+      "author": "(unknown - linked GitHub repo hiro094/PTCG_ABCS_Visualizer)",
+      "postDate": "2026-06-18 14:01:52",
+      "votes": 5,
+      "content": "[screenshot image] https://github.com/hiro094/PTCG_ABCS_Visualizer \n I made this using AI. Feel free to give it a try if you like.",
+      "links": ["https://github.com/hiro094/PTCG_ABCS_Visualizer"]
+    },
+    {
+      "id": 3474876,
+      "author": "(unknown - sponsor team member; linked notebook by kiyotah)",
+      "postDate": "2026-06-19 00:28:07",
+      "votes": 5,
+      "content": "Hi there, The sponsor team has created this official notebook you can use: https://www.kaggle.com/code/kiyotah/how-to-output-local-battle-as-json-and-view",
+      "links": ["https://www.kaggle.com/code/kiyotah/how-to-output-local-battle-as-json-and-view"]
+    },
+    {
+      "id": 3474957,
+      "author": "(unknown - mentions @chinoki346)",
+      "postDate": "2026-06-19 05:13:02",
+      "votes": 0,
+      "content": "I think so @chinoki346"
+    },
+    {
+      "id": 3477195,
+      "author": "(unknown)",
+      "postDate": "2026-06-21 10:43:55",
+      "votes": 0,
+      "content": "You can save this (AI generated) javascript as bookmark of your browser. And click it at the official ptcg visualizer website, and upload your vis.json\njavascript:(function(){const i=document.createElement('input');i.type='file';i.accept='.json';i.onchange=function(e){const f=e.target.files[0];if(!f)return;const r=new FileReader();r.onload=function(ev){const o=JSON.parse(ev.target.result);const h=document.createElement('input');h.type='hidden';h.name='json';h.value='steps'in o?JSON.stringify(o.steps[0][0].visualize):ev.target.result;const fm=document.createElement('form');fm.method='POST';fm.action='https://ptcgvis.heroz.jp/Visualizer/Replay/0';fm.target='_blank';fm.appendChild(h);document.body.appendChild(fm);fm.submit();document.body.removeChild(fm);};r.readAsText(f);};i.click();})();",
+      "links": ["https://ptcgvis.heroz.jp/Visualizer/Replay/0"]
+    },
+    {
+      "id": 3477202,
+      "author": "(unknown)",
+      "postDate": "2026-06-21 10:53:09",
+      "votes": 0,
+      "content": "this was refrectored from the official notebook which requires a local html to jump to the website and upload the json file"
+    }
+  ],
+  "key_external_resources": [
+    {
+      "name": "Official sponsor notebook (kiyotah)",
+      "url": "https://www.kaggle.com/code/kiyotah/how-to-output-local-battle-as-json-and-view",
+      "note": "Official Kaggle notebook: output local battle as JSON and view it in the visualizer"
+    },
+    {
+      "name": "PTCG_ABCS_Visualizer (hiro094)",
+      "url": "https://github.com/hiro094/PTCG_ABCS_Visualizer",
+      "note": "Single-file, dependency-free offline HTML+JS visualizer; drag&drop replay JSON; EN/JP toggle; card images extracted from official PDFs via PyMuPDF"
+    },
+    {
+      "name": "Official PTCG visualizer website (HEROZ)",
+      "url": "https://ptcgvis.heroz.jp/Visualizer/Replay/0",
+      "note": "Official online visualizer; accepts POST of vis.json; a bookmarklet can upload local JSON to it"
+    },
+    {
+      "name": "cabt-viewer (charlielockyer-rice)",
+      "url": "https://github.com/charlielockyer-rice/cabt-viewer",
+      "note": "Svelte 5 viewer for CABT battle states/replays; live local engine play support; works macOS via Docker + Linux native; includes card metadata; 46 stars (found via web search, not in forum thread)"
+    }
+  ]
+}

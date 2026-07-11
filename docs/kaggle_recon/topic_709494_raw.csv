@@ -1,0 +1,100 @@
+id,authorName,postDate,votes,content
+3474865,,2026-06-18 23:27:38.617000,49,"<p>A lot of people are joining Kaggle for the first time through PokeCa ABC, and the whole community couldn't be happier to see it!</p>
+<p>That said, Kaggle has a few rules that can lead to disqualification or account suspension if you break them without realizing it. So that you can enjoy the competition all the way to the end with peace of mind, here's a summary of the most important points for first-time participants. None of this is complicated, so please give it a read.</p>
+<hr>
+<h2>1. Watch out for private sharing</h2>
+<p>The most common source of trouble on Kaggle is ""private sharing."" The idea is very simple:</p>
+<blockquote>
+  <p><strong>Anything about the substance of the competition (ideas, code, strategies, deck recipes, etc.) is either shared with everyone or with no one. Quietly sharing it with only a select few is NOT allowed.</strong></p>
+</blockquote>
+<p>This rule exists to prevent the unfairness of having a small group hold information that gives them an advantage.</p>
+<h3>Examples that are OK</h3>
+<ul>
+<li>Sharing <strong>your own score or rank</strong>, e.g. ""I reached Xth place!"" or ""New personal best!""</li>
+<li>Sharing impressions like ""This competition is so much fun!"" or cheering each other on</li>
+<li>General questions or chat about the competition spec or publicly available information</li>
+</ul>
+<h3>Examples that are NOT OK</h3>
+<ul>
+<li>Telling <strong>only specific people your ideas or deck recipes</strong> via DMs or off-team chats (Discord, LINE, etc.)</li>
+<li>Quietly trading strategies with someone who isn't on your team</li>
+<li>Slipping your tactics to a limited circle of friends as an ""off-the-record"" tip</li>
+</ul>
+<p>The key point is that <strong>""quietly, to only a select few"" is the dangerous part.</strong> Sharing your rank or score is fine, but handing the substance of your approach (ideas or recipes) to only a chosen few is out.</p>
+<h3>Please bring useful information to the Kaggle discussions!</h3>
+<p>Here's the part not to misunderstand: it's <strong>not that sharing information itself is bad.</strong> Quite the opposite—<strong>public sharing on the Kaggle platform is welcomed and encouraged.</strong> Kaggle's official rules even state that if you do share, you should share it on the Kaggle discussion forum or notebooks for the benefit of all participants. As long as you share in a place everyone can see, there's no problem at all.</p>
+<p>If you have a good idea or insight, please post it in the Kaggle discussions. It energizes the whole community, and it can even count toward medals for you (more on those below).</p>
+<p>On the other hand:</p>
+<ul>
+<li><strong>Sharing on X (formerly Twitter), blogs, or other places outside Kaggle is not desirable.</strong> Those aren't places where all participants can see things fairly, so they don't count as the ""share with everyone"" the rules envision. Keep useful information on the Kaggle discussions, not on external platforms.</li>
+<li><strong>However, please refrain from sharing information starting one week before the competition's end date ( -&gt; this is a general rule/etiquette for competitions).</strong> Late-stage sharing can significantly affect the standings and undermine fairness.</li>
+</ul>
+<p>When in doubt, check the official rules or ask the organizers—that's the safe move.</p>
+<hr>
+<h2>2. No multiple accounts</h2>
+<p><strong>One person, one account—this is the fundamental rule.</strong></p>
+<p>Using a sub-account (a second/alt account) to:</p>
+<ul>
+<li>manipulate your ranking,</li>
+<li>rack up extra submissions, or</li>
+<li>unfairly chase medals or prizes</li>
+</ul>
+<p>is entirely prohibited. If discovered, it can lead to account suspension or disqualification. This isn't a temporary penalty—it's a serious one that can affect your entire account for a long time. Don't do it, not even ""just a little.""</p>
+<hr>
+<h2>3. About prizes and medals — the difference between the two tracks</h2>
+<p>PokeCa ABC has two tracks: the <strong>Simulation Track</strong> and the <strong>Strategy Track</strong>. <strong>What you can earn differs by track</strong>, so it's good to be clear about what you're aiming for.</p>
+<table>
+<thead>
+<tr>
+<th>Track</th>
+<th>Medals</th>
+<th>Prize money</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Simulation Track</td>
+<td>Yes</td>
+<td>No</td>
+</tr>
+<tr>
+<td>Strategy Track</td>
+<td>No</td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>Medals in the Simulation Track</strong> accumulate to raise your overall Kaggle ranking and can earn you titles (such as Expert / Master). They're a reward that stays with you as a Kaggler. There is no prize money.</li>
+<li>The <strong>Strategy Track</strong> doesn't come with medals, but it awards prize money.</li>
+</ul>
+<p>Roughly speaking: ""If you want to grow your ranking and titles"" → Simulation Track; ""If you want to go for prize money"" → Strategy Track (and of course you're welcome to take on both). Note that receiving prize money may come with conditions such as identity verification, so please check the official rules page for details.</p>
+<hr>
+<p>One last thing: everything written here isn't a set of ""restrictions""—it's the foundation that lets everyone enjoy the competition comfortably and fairly. Follow the rules and enjoy PokeCa ABC to the fullest. If anything is unclear, don't hesitate to ask in the discussions.</p>
+<hr>
+<h2>Reference links (primary sources)</h2>
+<p>For the exact rules, always check the official primary sources.</p>
+<ul>
+<li><strong><a href=""https://www.kaggle.com/competitions/pokemon-tcg-ai-battle/rules"" target=""_blank"">The ""Rules"" tab of PokeCa ABC</a></strong> … competition-specific rules take precedence (the restriction on sharing in the final week, etc., is governed <a href=""https://www.kaggle.com/spoiler-alert"" target=""_blank"">here</a>)</li>
+<li><strong><a href=""https://www.kaggle.com/progression/competitions"" target=""_blank"">Kaggle official Progression System</a> (how medals and titles work)</strong> </li>
+</ul>"
+3475160,,2026-06-19 13:27:19.743000,1,"<blockquote>
+  <p>Telling only specific people your … deck recipes via DMs or off-team chats (Discord, LINE, etc.)</p>
+</blockquote>
+<p>Is this really a problem? Deck lists are inherently public once you submit an agent because you can see them on the leaderboard, no?</p>"
+3475165,,2026-06-19 13:39:55.160000,1,"<p>Submitted deck recipes might be fine, but aren't unsubmitted deck recipes non-public information? And even the former feels like a gray area to me. Ultimately it should be the host who makes the call — I can't judge individual cases myself.</p>
+<p>Happy Kaggling!</p>"
+3475054,,2026-06-19 08:56:21.007000,1,"<p><a href=""https://www.kaggle.com/isakatsuyoshi"" target=""_blank"">@isakatsuyoshi</a> </p>
+<p>Thank you for very clear introduction. I have a question.</p>
+<blockquote>
+  <p>However, please refrain from sharing information starting one week before the competition's end date (this is a rule for this competition)</p>
+</blockquote>
+<p>I can't find the source for this competition specific rule. Could you tell me it? </p>"
+3475076,,2026-06-19 09:45:28.910000,0,"<p>Here you go!
+<a href=""https://www.kaggle.com/spoiler-alert"" target=""_blank"">https://www.kaggle.com/spoiler-alert</a></p>"
+3475077,,2026-06-19 09:46:56.783000,0,"<p>This is more of a general competition rule than something specific to this competition. During the final week before the deadline, an alert will be displayed if you try to share a notebook.</p>"
+3475088,,2026-06-19 10:17:07.803000,0,"<p>I see. I recoginized this link but I could not find any sentecne referring to it in the ""Rules"" tab of PokeCa ABC, so I confused. Thanks🙏</p>"
+3475091,,2026-06-19 10:22:08.150000,0,<p>Sorry for the confusion! That was my mistake in how I phrased it in English 🙏</p>
+3475096,,2026-06-19 10:29:50.163000,0,<p>I've made some edits to certain expressions.</p>
+3475231,,2026-06-19 16:48:19.963000,-2,<p>Great summary. Easy to understand and very useful.</p>
+3474878,,2026-06-19 00:34:59.527000,4,<p>Thank you :)</p>

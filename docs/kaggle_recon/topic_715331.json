@@ -1,0 +1,23 @@
+{
+  "topic_id": 715331,
+  "title": "Issue with score system",
+  "author": "mikelou1",
+  "commentCount": 0,
+  "votes": 0,
+  "postDate": "2026-06-28 11:11:05.479000",
+  "source_commands": [
+    "kaggle competitions topics show 715331 -v --quiet",
+    "kaggle competitions topic-messages pokemon-tcg-ai-battle 715331 -v --quiet -n -1"
+  ],
+  "messages": [
+    {
+      "id": 3483053,
+      "authorName": "",
+      "postDate": "2026-06-28 11:11:05.480000",
+      "votes": 0,
+      "content_html": "<p>I had two games running at once by the same bot. Both of them finished in roughly the same time, and only one change was applied. One of them showed I had +118 and other one showed I had +107, but I only got +118.</p>",
+      "content_text": "I had two games running at once by the same bot. Both of them finished in roughly the same time, and only one change was applied. One of them showed I had +118 and other one showed I had +107, but I only got +118."
+    }
+  ],
+  "notes": "Thread has a single message (the original post, commentCount=0). WebFetch of the public URL returned only the page title with no dynamically-loaded posts. All sort orders (hot/new/old/top) via topic-messages returned the identical single message."
+}

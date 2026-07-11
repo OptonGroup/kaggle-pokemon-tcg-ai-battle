@@ -1,0 +1,14 @@
+id,authorName,postDate,votes,content
+3478965,,2026-06-23 08:14:05.970000,57,"<p>I faced to matching process disability? when all win on simulation battle.</p>
+<p>My team ""ojicat"" was all win 8 battles now, but matching frequency is not well.
+<a href=""https://www.kaggle.com/competitions/pokemon-tcg-ai-battle/leaderboard?submissionId=53961585&amp;episodeId=81458018"" target=""_blank"">https://www.kaggle.com/competitions/pokemon-tcg-ai-battle/leaderboard?submissionId=53961585&amp;episodeId=81458018</a></p>
+<p>Is there anyone facing a situation like this?</p>"
+3478991,,2026-06-23 08:42:58.980000,2,"<p>We're facing the same issue. After submitting a new submission, a few rounds run automatically, but then it stops working entirely.
+<a href=""https://www.kaggle.com/competitions/pokemon-tcg-ai-battle/leaderboard?search=The+De&amp;submissionId=53972606&amp;episodeId=81474179"" target=""_blank"">https://www.kaggle.com/competitions/pokemon-tcg-ai-battle/leaderboard?search=The+De&amp;submissionId=53972606&amp;episodeId=81474179</a>
+<a href=""https://www.kaggle.com/competitions/pokemon-tcg-ai-battle/leaderboard?search=The+&amp;submissionId=53966651&amp;episodeId=81453916"" target=""_blank"">https://www.kaggle.com/competitions/pokemon-tcg-ai-battle/leaderboard?search=The+&amp;submissionId=53966651&amp;episodeId=81453916</a></p>"
+3479001,,2026-06-23 08:54:24.027000,2,"<p>Yes, I am experiencing the same issue. I've seen similar behavior in other simulation competitions as well, so it might be an issue with the matching system.</p>"
+3479014,,2026-06-23 09:05:48.760000,1,"<p>yes, same for us. happening since ~10h ago for our matches</p>"
+3479021,,2026-06-23 09:10:45.687000,9,"<p>This is likely because, on the final day of the Orbit Wars competition, a rush of last-minute submissions has temporarily strained the available resources.</p>"
+3479159,,2026-06-23 13:04:02.360000,0,<p>How can i locally carry out test plays and check how my agent is doing ? Is there even a way? Or can i only check the performance on kaggle matchups?</p>
+3480294,,2026-06-24 16:57:40.800000,0,<p>I would also want to see if anyone explored this. From my understand local self-play will always a null test adapting to the actual field because the relative difference in variability is just too much.</p>
+3479887,,2026-06-24 08:35:51.937000,-2,"<p>Thanks for the Battle Simulate Matching Process <a href=""https://www.kaggle.com/karacoro"" target=""_blank"">@karacoro</a> </p>"

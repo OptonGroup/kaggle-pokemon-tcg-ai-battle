@@ -1,0 +1,140 @@
+{
+  "generated_at": "2026-07-12T00:24:19",
+  "games_target": 50,
+  "arm_a_mirror": {
+    "n": 50,
+    "wins": 17,
+    "losses": 32,
+    "draws": 1,
+    "WR": 0.35,
+    "wilson_lo": 0.23284838360230825,
+    "wilson_hi": 0.4885566266499873,
+    "gate_pass": false,
+    "ms_per_decision_median": 1502.4395417422056,
+    "bank_spent_max_sec": 785.2398960590363,
+    "search_share": 0.6026315789473684,
+    "rollouts_per_decision_median": 61.0
+  },
+  "arm_b_field": {
+    "table": [
+      {
+        "opp": "v017_alakazam_heur",
+        "n_pimc": 50,
+        "WR_pimc": 0.52,
+        "n_v009a": 50,
+        "WR_v009a": 0.64,
+        "delta": -0.12,
+        "delta_pass": false,
+        "delta_negative": true
+      },
+      {
+        "opp": "v018_grimmsnarl",
+        "n_pimc": 50,
+        "WR_pimc": 1.0,
+        "n_v009a": 50,
+        "WR_v009a": 1.0,
+        "delta": 0.0,
+        "delta_pass": false,
+        "delta_negative": false
+      },
+      {
+        "opp": "meta:alakazam_aidy",
+        "n_pimc": 50,
+        "WR_pimc": 0.4,
+        "n_v009a": 50,
+        "WR_v009a": 0.5,
+        "delta": -0.09999999999999998,
+        "delta_pass": false,
+        "delta_negative": true
+      },
+      {
+        "opp": "meta:grimmsnarl_kazuki",
+        "n_pimc": 50,
+        "WR_pimc": 0.94,
+        "n_v009a": 50,
+        "WR_v009a": 0.96,
+        "delta": -0.020000000000000018,
+        "delta_pass": false,
+        "delta_negative": true
+      },
+      {
+        "opp": "meta:cubchoo_mtn",
+        "n_pimc": 50,
+        "WR_pimc": 0.9,
+        "n_v009a": 50,
+        "WR_v009a": 0.78,
+        "delta": 0.12,
+        "delta_pass": true,
+        "delta_negative": false
+      }
+    ],
+    "field_gate_pass": false,
+    "kill": true
+  },
+  "arm_c_predicted_mu": {
+    "per_anchor": [
+      {
+        "anchor": "v015_exit_pilot",
+        "n": 50,
+        "WR": 0.66,
+        "wilson_lo": 0.5215356854148285,
+        "wilson_hi": 0.7756323036493895,
+        "live_mu": 317.7
+      },
+      {
+        "anchor": "v001_random",
+        "n": 50,
+        "WR": 0.92,
+        "wilson_lo": 0.8116149745493629,
+        "wilson_hi": 0.9684509967442093,
+        "live_mu": 483.8
+      },
+      {
+        "anchor": "v018_grimmsnarl",
+        "n": 50,
+        "WR": 1.0,
+        "wilson_lo": 0.9286499658256813,
+        "wilson_hi": 1.0,
+        "live_mu": 484.1
+      },
+      {
+        "anchor": "v009a_crustle",
+        "n": 50,
+        "WR": 0.35,
+        "wilson_lo": 0.23284838360230825,
+        "wilson_hi": 0.4885566266499873,
+        "live_mu": 724.1
+      },
+      {
+        "anchor": "v007_crustle",
+        "n": 50,
+        "WR": 0.64,
+        "wilson_lo": 0.5014076201030195,
+        "wilson_hi": 0.7586143703281711,
+        "live_mu": 733.1
+      }
+    ],
+    "mu_hat": 738.6245909855759,
+    "gate_pass": false,
+    "s_used": 413.3
+  },
+  "red_flag_v001": {
+    "WR_vs_v001": 0.92,
+    "triggered": false
+  },
+  "verdict": "KILL_PIMC",
+  "timing": {
+    "total_illegal": 0,
+    "total_exceptions": 0,
+    "pimc_games_total": 450,
+    "avg_ms_per_decision": 1503.1370625074487,
+    "bank_spent_max_sec": 1042.8679904937744,
+    "bank_spent_median_sec": 33.410279273986816,
+    "rollout_degradation_total": {}
+  },
+  "field_composition": {
+    "pilot": "greedy_meta_agent (scripts/h3_gate.py)",
+    "meta_decks_identical_for_pimc_and_v009a": true,
+    "note": "PIMC \u0438 v009a \u0438\u0433\u0440\u0430\u044e\u0442 \u043f\u0440\u043e\u0442\u0438\u0432 \u0418\u0414\u0415\u041d\u0422\u0418\u0427\u041d\u041e\u0413\u041e greedy-\u043f\u0438\u043b\u043e\u0442\u0430 \u043d\u0430 \u0442\u043e\u0439 \u0436\u0435 \u043c\u0435\u0442\u0430-\u0434\u0435\u043a\u0435"
+  }
+}

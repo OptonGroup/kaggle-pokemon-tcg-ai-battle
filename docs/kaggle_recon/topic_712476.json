@@ -1,0 +1,82 @@
+{
+  "topic_id": 712476,
+  "topic_title": "How can I keep my older agent active when submitting a new one?",
+  "url": "https://www.kaggle.com/competitions/pokemon-tcg-ai-battle/discussion/712476",
+  "fetched_via": "kaggle CLI topic-messages (-v --quiet -n -1 -s old)",
+  "fetched_at": "2026-07-11",
+  "raw_csv_file": "docs/kaggle_recon/topic_712476_raw.csv",
+  "note_on_authors": "CLI returned empty authorName for all posts. Authors inferred from context: posts 3478708/3478720/3479276 are Kaggle/organizer staff responses (official tone, @addisonhoward tagged). WebFetch could not retrieve JS-rendered page.",
+  "message_count": 10,
+  "messages": [
+    {
+      "id": 3478686,
+      "postDate": "2026-06-22 23:24:55",
+      "votes": 3,
+      "author_inferred": "participant (OP, first Kaggle comp)",
+      "content": "I would like to submit and test a new agent while keeping my older, better-performing agent active. I have already submitted two agents. My understanding is that when I submit another agent, the older of the two active agents will be deactivated automatically. In my case, the older agent is currently performing better on the leaderboard, so I am worried that submitting a new agent will deactivate my best-performing one. Is there a way to keep the older, better-performing agent active while submitting a new agent? For example, can I choose which active agent should be replaced?"
+    },
+    {
+      "id": 3478708,
+      "postDate": "2026-06-23 00:15:54",
+      "votes": 1,
+      "author_inferred": "Kaggle staff / organizer",
+      "content": "We don't currently have that as an option - instead, you should resubmit an older agent if you want it to be one of your two current, active agents."
+    },
+    {
+      "id": 3478715,
+      "postDate": "2026-06-23 00:39:09",
+      "votes": 1,
+      "author_inferred": "participant (OP)",
+      "content": "Thank you for the clarification. That makes sense, but in this simulation competition, the same agent may not always get the same leaderboard performance when resubmitted. In my case, my older agent is currently doing very well, and I am worried that resubmitting it might effectively reset that result and it may not perform as well again. It would be very helpful if there were a way to \"pin\" or keep one active agent, and only replace the other active slot when submitting a new agent. Would it be possible to consider adding such an option in the future?"
+    },
+    {
+      "id": 3478720,
+      "postDate": "2026-06-23 00:52:40",
+      "votes": 1,
+      "author_inferred": "Kaggle staff / organizer",
+      "content": "We've considered it, as well as a different scheduling/scoring function that can better equalize - but the ranking is also designed to continue running games until uncertainty approaches zero. Therefore an older agent resubmitted, all else equal, would return to the same spot. If it were still strong, it would climb. If it was actually weak, it would have fallen eventually as other models climbed."
+    },
+    {
+      "id": 3478730,
+      "postDate": "2026-06-23 01:24:46",
+      "votes": 0,
+      "author_inferred": "participant (OP)",
+      "content": "Thank you, that makes sense. Sorry if I misunderstood the scoring system. My concern is that the number of games per agent appears to be quite small at the moment, and new games seem to be added relatively slowly. Because of that, before convergence, the visible leaderboard can still be affected by short-term variance such as matchup order, the current opponent pool, and in-game RNG. So I understand the current system now, but from a participant's perspective, resubmitting an older high-performing agent still feels a bit risky."
+    },
+    {
+      "id": 3478882,
+      "postDate": "2026-06-23 06:14:06",
+      "votes": 4,
+      "author_inferred": "participant (another competitor)",
+      "content": "This competition is different from a normal simulation competition because deck matchups and in-game luck matter a lot, so even the same agent can get very different results. Even a strong agent can easily lose to a clearly weaker opponent. For example, I submitted the same agent twice, and the two scores now differ by almost 200 points. Could you please consider running more games per agent, or giving more time for the scores to settle? Right now, a few unlucky losses after submitting can have a big impact, and my own two-submission gap shows how large this variance is."
+    },
+    {
+      "id": 3478877,
+      "postDate": "2026-06-23 06:10:35",
+      "votes": 1,
+      "author_inferred": "participant (CLAIM LATER CONTRADICTED BY STAFF)",
+      "content": "I don't think you need to worry. Before the final ranking, all scores are reset and everyone starts over from the same point. So resubmitting your old agent now won't affect your final result."
+    },
+    {
+      "id": 3478909,
+      "postDate": "2026-06-23 06:50:10",
+      "votes": 0,
+      "author_inferred": "participant (OP)",
+      "content": "Oh, I didn't know that was how it worked! This is my first time participating in a Kaggle competition, so I'm still learning how the submission and final evaluation systems work. Thank you very much for the explanation!"
+    },
+    {
+      "id": 3478923,
+      "postDate": "2026-06-23 07:08:16",
+      "votes": 0,
+      "author_inferred": "participant",
+      "content": "in the past competitions I joined, scores were reset before the final ranking. But I'm not sure if this competition works the same way, so I'd recommend reading the rules to be safe. @addisonhoward Are skill ratings reset before the final ranking in this competition?"
+    },
+    {
+      "id": 3479276,
+      "postDate": "2026-06-23 15:45:20",
+      "votes": 2,
+      "author_inferred": "Kaggle staff (@addisonhoward, authoritative final answer)",
+      "content": "Hey there, Yes, a re-submitted identical agent may take time to climb back and may settle at a slightly different score due to matchmaking randomness but given enough games, it will converge to approximately the same rating. The leaderboard reflects skill, not submission order. However, that's all else equal - it's also likely that newly made submissions are stronger and adapting to the strengths on the leaderboard, so you'll face better submissions early on (as opposed to seeing your high-ranking submission slowly erode over time). At the end of the competition we don't reset scores, but instead extend the amount of time that games are played until we are more confident. Games run continuously every few minutes, the system picks which submissions need games most (new bots and uncertain ratings first) and matches them against similarly-rated opponents."
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "topic_id": 715319,
+  "topic_title": "How to obtain results of all episodes",
+  "competition": "pokemon-tcg-ai-battle",
+  "source": "kaggle CLI: competitions topic-messages",
+  "fetch_date": "2026-07-11",
+  "note": "Topic 715319 is NOT listed in `kaggle competitions topics list` output (possibly hidden/deleted from topic index), but messages are still accessible via topic-messages API. Author names are empty in CLI output for all messages.",
+  "message_count": 3,
+  "messages": [
+    {
+      "id": "3483037",
+      "authorName": "",
+      "postDate": "2026-06-28 10:47:49.690000",
+      "votes": 0,
+      "content_html": "<p>Does anyone know how to obtain the full list of episodes of the public LB?</p>\n<p>I only need the agent_ids and the results (win/lose/tie).</p>\n<p>I though it was included in <a href=\"https://www.kaggle.com/datasets/kaggle/meta-kaggle/data\" target=\"_blank\">Meta Kaggle</a>, but it wasn't.</p>",
+      "content_text": "Does anyone know how to obtain the full list of episodes of the public LB? I only need the agent_ids and the results (win/lose/tie). I thought it was included in Meta Kaggle, but it wasn't."
+    },
+    {
+      "id": "3483198",
+      "authorName": "",
+      "postDate": "2026-06-28 14:34:14.997000",
+      "votes": -1,
+      "content_html": "<p>I think it's here? Inside this network packet: <a href=\"https://www.kaggle.com/api/i/competitions.EpisodeService/GetEpisode\" target=\"_blank\">https://www.kaggle.com/api/i/competitions.EpisodeService/GetEpisode</a>\nYou need to pass in the episode_id; this is very simple.</p>\n<p><img src=\"https://www.googleapis.com/download/storage/v1/b/kaggle-forum-message-attachments/o/inbox%2F18505507%2F19b1128eeedfc6e842515d5f72ff2de6%2F2026-06-28%20223306.png?generation=1782657227185509&amp;alt=media\" alt=\"\"></p>",
+      "content_text": "I think it's here? Inside this network packet: https://www.kaggle.com/api/i/competitions.EpisodeService/GetEpisode. You need to pass in the episode_id; this is very simple. (includes screenshot attachment of the API response)"
+    },
+    {
+      "id": "3483382",
+      "authorName": "",
+      "postDate": "2026-06-28 21:40:46.847000",
+      "votes": -1,
+      "content_html": "<p>Is there a way to get a list of <code>episode_id</code>s for all of the matches?</p>",
+      "content_text": "Is there a way to get a list of episode_ids for all of the matches?"
+    }
+  ],
+  "thread_summary": "OP asks how to get the full list of public-LB episodes (agent_ids + win/lose/tie). Reply points to the internal gRPC-style API endpoint https://www.kaggle.com/api/i/competitions.EpisodeService/GetEpisode which returns episode data given an episode_id, but does NOT solve the 'list all episode_ids' problem. Final message re-asks the open question: how to get a list of episode_ids for ALL matches. Thread appears unresolved — no answer to the enumeration problem."
+}

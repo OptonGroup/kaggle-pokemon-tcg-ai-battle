@@ -1,0 +1,28 @@
+{
+  "topic_id": 715126,
+  "title": "対策必須！？ミアレシティ",
+  "source": "kaggle CLI: competitions topic-messages pokemon-tcg-ai-battle 715126 -v --quiet",
+  "fetched_at": "2026-07-11",
+  "messages_count": 1,
+  "messages": [
+    {
+      "id": 3482772,
+      "authorName": "",
+      "postDate": "2026-06-27 20:01:10.013000",
+      "votes": 0,
+      "content_raw": "<p>こんにちは　やまだてす。\n今回注目したカードはミアレシティ\nなんとこのカードをスタジアムとして貼るとターンを強制終了させる可能性があります。</p>\n<p>みなさん気をつけてください！</p>",
+      "content_translated_en": "Hello, this is Yamada. The card I focused on this time is Lumiose City (ミアレシティ). Surprisingly, if you play this card as a Stadium, there is a possibility it will forcibly end your turn. Everyone, please be careful!"
+    }
+  ],
+  "card_context": {
+    "card_id": 1267,
+    "name_en": "Lumiose City",
+    "name_jp": "ミアレシティ",
+    "set": "POR",
+    "number": "077/080",
+    "category": "Stadium",
+    "effect_en": "Once during each player's turn, that player may search their deck for a Basic Pokémon and put it onto their Bench. Then, that player shuffles their deck. If a player searches their deck in this way, their turn ends.",
+    "effect_jp": "おたがいのプレイヤーは、自分の番ごとに1回、自分の山札から【たね】ポケモンを1枚選び、ベンチに出してよい。そして山札を切る。この効果を使ったなら、自分の番は終わる。",
+    "notes": "The official effect ends the turn ONLY if the player chooses to use the search effect. Yamada's post warns that the cabt engine may auto-activate the effect on play, forcibly ending the turn without player choice — a potential engine bug / automation hazard."
+  }
+}
