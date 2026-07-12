@@ -163,16 +163,36 @@ def _worker_fn(args: _WorkerArgs) -> list[GameResult]:
     if src_dir not in sys.path:
         sys.path.insert(0, src_dir)
 
-    # --- Ленивый импорт движка (Linux x86_64 only) ---
+    # --- Ленивый импорт движка ---
+    # Предпочитаем cg_native (macOS arm64 / кроссплатформенный автодетект
+    # бинарника) и алиасим его под 'cg' в sys.modules — это ОБЯЗАТЕЛЬНО,
+    # т.к. агенты-оппоненты (submissions/*/main.py, напр. v001_random,
+    # v002_lucario) сами делают `from cg.api import ...` внутри своего
+    # main.py, и без алиаса это упадёт на macOS (libcg.so — Linux only).
+    # Паттерн — как в scripts/h3_gate.py:62-68.
     try:
-        from cg.game import battle_start, battle_finish, battle_select
-        from cg.api import to_observation_class
-    except OSError as exc:
-        raise RuntimeError(
-            "Не удалось загрузить libcg.so. "
-            "Запускайте в Docker linux/amd64 или Kaggle notebook. "
-            f"Ошибка: {exc}"
-        ) from exc
+        import cg_native
+        import cg_native.api
+        import cg_native.game
+        import cg_native.sim
+        import cg_native.utils
+        sys.modules.setdefault("cg", cg_native)
+        sys.modules.setdefault("cg.api", cg_native.api)
+        sys.modules.setdefault("cg.game", cg_native.game)
+        sys.modules.setdefault("cg.sim", cg_native.sim)
+        sys.modules.setdefault("cg.utils", cg_native.utils)
+        from cg_native.game import battle_start, battle_finish, battle_select
+        from cg_native.api import to_observation_class
+    except ImportError:
+        try:
+            from cg.game import battle_start, battle_finish, battle_select
+            from cg.api import to_observation_class
+        except OSError as exc:
+            raise RuntimeError(
+                "Не удалось загрузить ни cg_native (macOS arm64), ни libcg.so "
+                "(Linux x86_64). Запускайте в Docker linux/amd64, Kaggle "
+                f"notebook, или проверьте src/cg_native/. Ошибка: {exc}"
+            ) from exc
 
     # --- Загрузка агентов ---
     from exit.opponents import _load_agent_module, _make_inline_random_policy

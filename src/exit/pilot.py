@@ -322,17 +322,37 @@ class Pilot:
             g_va = np.array(val_g, dtype=np.int32)
             c_va = np.array(val_ctx, dtype=np.int32)
 
-        # Feature names (для LightGBM interpretability)
+        # Feature names (для LightGBM interpretability).
+        # ВАЖНО: раньше это было захардкожено на features_iono.FEATURE_NAMES
+        # независимо от того, какой feature_fn реально используется — для
+        # не-Iono деков (напр. Crustle, FEATURE_DIM=61 vs Iono 66) это даёт
+        # feature_name длины, не совпадающей с X_tr.shape[1], что LightGBM
+        # либо отвергает, либо (хуже) молча смещает имена. Пробуем найти
+        # FEATURE_NAMES в модуле самого feature_fn первым делом, иначе
+        # fallback на features_iono, но ВСЕГДА проверяем совпадение длины
+        # с реальной размерностью фич перед использованием.
         feat_names = None
-        try:
-            from src.il.features_iono import FEATURE_NAMES
-            feat_names = FEATURE_NAMES
-        except ImportError:
+        _fn_module = getattr(feature_fn, "__module__", None)
+        if _fn_module:
             try:
-                from il.features_iono import FEATURE_NAMES  # type: ignore[import]
+                import importlib
+                feat_names = getattr(importlib.import_module(_fn_module), "FEATURE_NAMES", None)
+            except ImportError:
+                feat_names = None
+        if feat_names is None:
+            try:
+                from src.il.features_iono import FEATURE_NAMES
                 feat_names = FEATURE_NAMES
             except ImportError:
-                pass
+                try:
+                    from il.features_iono import FEATURE_NAMES  # type: ignore[import]
+                    feat_names = FEATURE_NAMES
+                except ImportError:
+                    pass
+        if feat_names is not None and len(feat_names) != X_tr.shape[1]:
+            # Рассинхрон (напр. feature_fn для другой декой/версии) — не
+            # передаём в LightGBM битые имена, лучше без имён, чем крэш/сдвиг.
+            feat_names = None
 
         # LightGBM lambdarank — те же гиперпараметры что в train_iono_il.py (C6 config)
         dtrain = lgb.Dataset(

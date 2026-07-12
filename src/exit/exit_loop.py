@@ -471,6 +471,7 @@ def run_iteration(
     min_reward: float = 1.0,
     out_dir: str = "models",
     filter_mode: str = "win",
+    feature_module: str = "features_iono.py",
 ) -> "tuple[Pilot, IterationResult]":
     """Один шаг ExIt-цикла: эксперт играет поле → фильтр → обучение → переоценка.
 
@@ -484,6 +485,11 @@ def run_iteration(
         min_reward:    Порог фильтрации траекторий (1.0 = только победы).
         out_dir:       Директория для сохранения чекпойнтов (pilot_iterN.txt).
         filter_mode:   "win" | "dagger". "dagger" — NotImplementedError (заглушка).
+        feature_module: Файл фич из src/il/ (например "features_v009a.py" для
+                        Crustle или "features_iono.py" для Iono — ДОЛЖЕН совпадать
+                        с feature_fn, на котором обучен/дообучается pilot). Раньше
+                        было захардкожено на "features_iono.py" в обоих местах
+                        экспорта (PIMC-эксперт + переоценка) — баг для не-Iono деков.
 
     Returns:
         (new_pilot, IterationResult).
@@ -524,6 +530,7 @@ def run_iteration(
             pilot=pilot,
             out_dir=tmp_pimc_dir,
             budget=pimc_budget,
+            feature_module=feature_module,
         )
 
         pimc_agent = Agent(
@@ -637,6 +644,7 @@ def run_iteration(
             pilot=new_pilot_candidate,
             deck=new_pilot_candidate.deck,
             out_dir=tmp_pilot_dir,
+            feature_module=feature_module,
         )
         new_pilot_main_py = os.path.join(tmp_pilot_dir, "main.py")
 
@@ -738,6 +746,7 @@ def run_exit_loop(
     out_dir: str = "models",
     filter_mode: str = "win",
     min_reward: float = 1.0,
+    feature_module: str = "features_iono.py",
 ) -> "Pilot":
     """Полный expert-iteration цикл.
 
@@ -810,6 +819,7 @@ def run_exit_loop(
                 min_reward=min_reward,
                 out_dir=abs_out,
                 filter_mode=filter_mode,
+                feature_module=feature_module,
             )
         except Exception as exc:
             print(f"[ExIt iter={i}] КРИТИЧЕСКАЯ ОШИБКА итерации: {exc}")
@@ -908,6 +918,8 @@ if __name__ == "__main__":
                         help="Директория для чекпойнтов pilot_iter*.txt")
     parser.add_argument("--opponents",     nargs="*",  default=None,
                         help="Имена оппонентов (по умолчанию все доступные)")
+    parser.add_argument("--feature-module", default="features_iono.py",
+                        help="Файл фич из src/il/ (должен совпадать с decкой/моделью pilot)")
     cli = parser.parse_args()
 
     # ── Загрузка пула оппонентов ─────────────────────────────────────────────
@@ -962,6 +974,7 @@ if __name__ == "__main__":
         out_dir=cli.out_dir,
         filter_mode=cli.filter_mode,
         min_reward=cli.min_reward,
+        feature_module=cli.feature_module,
     )
 
     print("\n[ExIt] Готово. Лучший pilot возвращён.")
