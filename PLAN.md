@@ -576,6 +576,17 @@ scratchpad `aidy_decklist_recon.py`.
 
 ## Status Log (append-only; newest on top)
 
+- **2026-07-12 (m)** — **v023 дрейф 756→715 (ранняя волатильность, ≈baseline); ExIt-lite НЕ стоит прогона.**
+  v023 μ: 756.1 → **715.2** за ~15 мин (малый n, μ прыгает; 715 в диапазоне baseline v009a=724). Пока **v023 ≈
+  чистый Crustle, НЕ явный плюс** — подтверждает локальный паритет (плюс был только на смещённом поле, живое поле
+  возможно не так смещено на Alakazam как надеялся recon). Нужно больше игр для вердикта (μ не стабилизирован).
+  **ExIt-lite smoke (F3-3): каркас ПОЧИНЕН** (4 бага: harness cg→cg_native, exit_loop feature_module хардкод
+  features_iono, pilot FEATURE_NAMES, features_v009a off-by-one — падал бы на 100% данных; smoke прошёл, win-filter
+  60.6%, LightGBM переобучился). **НО Step 1 жёстко юзает PIMCAgent как improvement-operator (PIMC закрыт).** Пути:
+  (a) plain-pilot self-play = self-distillation (recon: не проходит учителя, DAgger плато 41%, «никогда не лучше
+  учителя»); (b) PIMC-guided = воскрешать мёртвую ветку. **ВЫВОД: ExIt-lite не стоит полного прогона — оба в
+  известные потолки.** Каркас сохранён рабочим. Артефакты: `scripts/exit_smoke.py`, фиксы в `src/exit/*`,
+  `src/il/features_v009a.py`. [[project-search-vs-rl-ceiling]] [[project-plan-v4]]
 - **2026-07-12 (l)** — **✅ v023 СУБМИТ COMPLETE, ранний live 756.1.** Self-validation прошла (0 краш, exec-no-__file__
   оправдался). Ранний μ **756.1 > baseline** (v007=750.7, v009a=724.1) — tech-версия на старте выше обоих чистых
   Crustle. ОСТОРОЖНО: ранний score по малому n, широкий CI; реальный сигнал за часы (48 игр/день). Читаю как «tech НЕ
