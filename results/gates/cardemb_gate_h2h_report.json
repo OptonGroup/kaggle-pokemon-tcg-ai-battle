@@ -1,0 +1,22 @@
+{
+  "mode": "h2h",
+  "overall": {
+    "n": 400,
+    "wins": 194,
+    "losses": 196,
+    "draws": 10,
+    "bad": 0,
+    "n_decisive": 390,
+    "wr": 0.49743589743589745,
+    "wilson_lo": 0.4480799369465286,
+    "wilson_hi": 0.5468418793369723
+  },
+  "total_illegal": 0,
+  "total_exceptions": 0,
+  "ms_per_decision_median": 0.1581977412570268,
+  "ms_per_decision_max": 258.5738330380991,
+  "model_decisions_total": 92570,
+  "fallback_decisions_total": 34740,
+  "model_share": 0.7271227711884377,
+  "agent_internal_exceptions_total": 0
+}

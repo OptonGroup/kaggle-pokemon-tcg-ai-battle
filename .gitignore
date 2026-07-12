@@ -50,3 +50,9 @@ data/engine/
 *.dll
 # Scratch/working files
 scratchpad/
+
+# Card-embedding artifacts (large model checkpoints)
+scratchpad/gold/cardemb_out*/
+data/il/cardemb/*.pt
+*.pth
+new_data/

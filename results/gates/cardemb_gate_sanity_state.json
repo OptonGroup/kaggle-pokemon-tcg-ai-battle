@@ -1,0 +1,42 @@
+{
+  "games": [
+    {
+      "p0": "cardemb",
+      "p1": "random",
+      "meta_deck": null,
+      "our_first": false,
+      "seed": 20260714,
+      "game_idx": 1,
+      "outcome": "opp_win",
+      "exc_side": null,
+      "winner": 0,
+      "moves": 27,
+      "n_illegal": 0,
+      "n_exceptions": 0,
+      "ms_median": 0.005874957423657179,
+      "ms_max": 0.013584038242697716,
+      "n_model_decisions": 12,
+      "n_fallback_decisions": 4,
+      "n_agent_exceptions": 0
+    },
+    {
+      "p0": "cardemb",
+      "p1": "random",
+      "meta_deck": null,
+      "our_first": true,
+      "seed": 20260713,
+      "game_idx": 0,
+      "outcome": "our_win",
+      "exc_side": null,
+      "winner": 0,
+      "moves": 31,
+      "n_illegal": 0,
+      "n_exceptions": 0,
+      "ms_median": 0.7412920240312815,
+      "ms_max": 197.0875000115484,
+      "n_model_decisions": 13,
+      "n_fallback_decisions": 4,
+      "n_agent_exceptions": 0
+    }
+  ]
+}

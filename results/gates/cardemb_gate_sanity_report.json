@@ -1,0 +1,22 @@
+{
+  "mode": "sanity",
+  "overall": {
+    "n": 2,
+    "wins": 1,
+    "losses": 1,
+    "draws": 0,
+    "bad": 0,
+    "n_decisive": 2,
+    "wr": 0.5,
+    "wilson_lo": 0.09452865480086614,
+    "wilson_hi": 0.9054713451991339
+  },
+  "total_illegal": 0,
+  "total_exceptions": 0,
+  "ms_per_decision_median": 0.3735834907274693,
+  "ms_per_decision_max": 197.0875000115484,
+  "model_decisions_total": 25,
+  "fallback_decisions_total": 8,
+  "model_share": 0.7575757575757576,
+  "agent_internal_exceptions_total": 0
+}

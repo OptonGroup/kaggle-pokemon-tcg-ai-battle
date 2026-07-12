@@ -1,0 +1,227 @@
+{
+  "mode": "field",
+  "overall": {
+    "n": 380,
+    "wins": 348,
+    "losses": 20,
+    "draws": 0,
+    "bad": 12,
+    "n_decisive": 368,
+    "wr": 0.9456521739130435,
+    "wilson_lo": 0.9175498127708792,
+    "wilson_hi": 0.9645462195181385
+  },
+  "per_deck": {
+    "Arboliva": {
+      "n": 20,
+      "wins": 20,
+      "losses": 0,
+      "draws": 0,
+      "bad": 0,
+      "n_decisive": 20,
+      "wr": 1.0,
+      "wilson_lo": 0.8388698745050667,
+      "wilson_hi": 1.0
+    },
+    "ClefairyOgerpon": {
+      "n": 20,
+      "wins": 20,
+      "losses": 0,
+      "draws": 0,
+      "bad": 0,
+      "n_decisive": 20,
+      "wr": 1.0,
+      "wilson_lo": 0.8388698745050667,
+      "wilson_hi": 1.0
+    },
+    "Dragapult": {
+      "n": 20,
+      "wins": 19,
+      "losses": 1,
+      "draws": 0,
+      "bad": 0,
+      "n_decisive": 20,
+      "wr": 0.95,
+      "wilson_lo": 0.7638641064874331,
+      "wilson_hi": 0.9911187805671268
+    },
+    "DragapultBlaziken": {
+      "n": 20,
+      "wins": 20,
+      "losses": 0,
+      "draws": 0,
+      "bad": 0,
+      "n_decisive": 20,
+      "wr": 1.0,
+      "wilson_lo": 0.8388698745050667,
+      "wilson_hi": 1.0
+    },
+    "FestivalLead": {
+      "n": 20,
+      "wins": 19,
+      "losses": 1,
+      "draws": 0,
+      "bad": 0,
+      "n_decisive": 20,
+      "wr": 0.95,
+      "wilson_lo": 0.7638641064874331,
+      "wilson_hi": 0.9911187805671268
+    },
+    "Garchomp": {
+      "n": 20,
+      "wins": 20,
+      "losses": 0,
+      "draws": 0,
+      "bad": 0,
+      "n_decisive": 20,
+      "wr": 1.0,
+      "wilson_lo": 0.8388698745050667,
+      "wilson_hi": 1.0
+    },
+    "Grafaiai": {
+      "n": 20,
+      "wins": 20,
+      "losses": 0,
+      "draws": 0,
+      "bad": 0,
+      "n_decisive": 20,
+      "wr": 1.0,
+      "wilson_lo": 0.8388698745050667,
+      "wilson_hi": 1.0
+    },
+    "Honchkrow": {
+      "n": 20,
+      "wins": 18,
+      "losses": 2,
+      "draws": 0,
+      "bad": 0,
+      "n_decisive": 20,
+      "wr": 0.9,
+      "wilson_lo": 0.6989617935882066,
+      "wilson_hi": 0.9721341060158468
+    },
+    "MegaLucario": {
+      "n": 20,
+      "wins": 18,
+      "losses": 2,
+      "draws": 0,
+      "bad": 0,
+      "n_decisive": 20,
+      "wr": 0.9,
+      "wilson_lo": 0.6989617935882066,
+      "wilson_hi": 0.9721341060158468
+    },
+    "MegaSharpedo": {
+      "n": 20,
+      "wins": 20,
+      "losses": 0,
+      "draws": 0,
+      "bad": 0,
+      "n_decisive": 20,
+      "wr": 1.0,
+      "wilson_lo": 0.8388698745050667,
+      "wilson_hi": 1.0
+    },
+    "MegaStarmie": {
+      "n": 20,
+      "wins": 19,
+      "losses": 1,
+      "draws": 0,
+      "bad": 0,
+      "n_decisive": 20,
+      "wr": 0.95,
+      "wilson_lo": 0.7638641064874331,
+      "wilson_hi": 0.9911187805671268
+    },
+    "MegaVenusaur": {
+      "n": 20,
+      "wins": 7,
+      "losses": 1,
+      "draws": 0,
+      "bad": 12,
+      "n_decisive": 8,
+      "wr": 0.875,
+      "wilson_lo": 0.5291051942301386,
+      "wilson_hi": 0.9775830911367038
+    },
+    "RagingBolt": {
+      "n": 20,
+      "wins": 20,
+      "losses": 0,
+      "draws": 0,
+      "bad": 0,
+      "n_decisive": 20,
+      "wr": 1.0,
+      "wilson_lo": 0.8388698745050667,
+      "wilson_hi": 1.0
+    },
+    "Slowking": {
+      "n": 20,
+      "wins": 20,
+      "losses": 0,
+      "draws": 0,
+      "bad": 0,
+      "n_decisive": 20,
+      "wr": 1.0,
+      "wilson_lo": 0.8388698745050667,
+      "wilson_hi": 1.0
+    },
+    "TerastalBox": {
+      "n": 20,
+      "wins": 20,
+      "losses": 0,
+      "draws": 0,
+      "bad": 0,
+      "n_decisive": 20,
+      "wr": 1.0,
+      "wilson_lo": 0.8388698745050667,
+      "wilson_hi": 1.0
+    },
+    "Zoroark": {
+      "n": 20,
+      "wins": 20,
+      "losses": 0,
+      "draws": 0,
+      "bad": 0,
+      "n_decisive": 20,
+      "wr": 1.0,
+      "wilson_lo": 0.8388698745050667,
+      "wilson_hi": 1.0
+    },
+    "alakazam_aidy": {
+      "n": 20,
+      "wins": 8,
+      "losses": 12,
+      "draws": 0,
+      "bad": 0,
+      "n_decisive": 20,
+      "wr": 0.4,
+      "wilson_lo": 0.21880396741419272,
+      "wilson_hi": 0.613422057684794
+    },
+    "cubchoo_mtn": {
+      "n": 20,
+      "wins": 20,
+      "losses": 0,
+      "draws": 0,
+      "bad": 0,
+      "n_decisive": 20,
+      "wr": 1.0,
+      "wilson_lo": 0.8388698745050667,
+      "wilson_hi": 1.0
+    },
+    "grimmsnarl_kazuki": {
+      "n": 20,
+      "wins": 20,
+      "losses": 0,
+      "draws": 0,
+      "bad": 0,
+      "n_decisive": 20,
+      "wr": 1.0,
+      "wilson_lo": 0.8388698745050667,
+      "wilson_hi": 1.0
+    }
+  },
+  "total_illegal": 0,
+  "total_exceptions": 0
+}
