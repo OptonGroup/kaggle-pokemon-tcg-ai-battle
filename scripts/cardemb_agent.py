@@ -62,7 +62,7 @@ import cardemb_common as cc  # noqa: E402
 # ---------------------------------------------------------------------------
 # Model + deck loading
 # ---------------------------------------------------------------------------
-MODEL_PATH = ROOT / "scratchpad" / "gold" / "cardemb_out_v2" / "out" / "model_best.pth"
+MODEL_PATH = Path(os.environ["CARDEMB_MODEL"]) if os.environ.get("CARDEMB_MODEL") else (ROOT / "scratchpad" / "gold" / "cardemb_out_v2" / "out" / "model_best.pth")
 DECK_PATH = ROOT / "submissions" / "v009a_crustle" / "deck.csv"
 
 # Hyperparameters MUST match training (scripts/train_card_embedding.py defaults,
