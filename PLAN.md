@@ -576,6 +576,12 @@ scratchpad `aidy_decklist_recon.py`.
 
 ## Status Log (append-only; newest on top)
 
+- **2026-07-12 (l)** — **✅ v023 СУБМИТ COMPLETE, ранний live 756.1.** Self-validation прошла (0 краш, exec-no-__file__
+  оправдался). Ранний μ **756.1 > baseline** (v007=750.7, v009a=724.1) — tech-версия на старте выше обоих чистых
+  Crustle. ОСТОРОЖНО: ранний score по малому n, широкий CI; реальный сигнал за часы (48 игр/день). Читаю как «tech НЕ
+  навредил, скорее чуть лучше» — survivorship-регрессии лёгких матчапов не утопили. v018 держит 485 (BC-Grimmsnarl
+  тонет). tracked-2 станет v023 + v007. NEXT: ждать стабилизации μ (>750 успех / ~724 паритет / <700 откат); пока
+  набирает — ExIt-lite (win-filter smoke, каркас готов). [[project-plan-v4]]
 - **2026-07-12 (k)** — **★ DECK-TECH: v023_crustle_techD закрывает обе дыры, паритет по полю → кандидат на live-пробу.**
   Deck-tech аудит (sonnet) + разбавленный вариант (оркестратор). Механика дыр: Alakazam Powerful Hand (743, dmg=0,
   кладёт 2 counter/карту в руке) — **damage-counters обходят ЛЮБОЙ prevent-damage щит движка** (не только Rock Inn,
