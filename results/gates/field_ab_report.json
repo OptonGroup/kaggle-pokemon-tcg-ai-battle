@@ -1,0 +1,252 @@
+{
+  "total_games": 1200,
+  "total_illegal": 0,
+  "total_exceptions": 0,
+  "candidates": [
+    "v009a_crustle",
+    "v023_crustle_techD"
+  ],
+  "decks": [
+    "alakazam_aidy",
+    "FestivalLead",
+    "MegaVenusaur",
+    "cubchoo_mtn",
+    "MegaStarmie"
+  ],
+  "per_candidate": {
+    "v009a_crustle": {
+      "n_games": 600,
+      "wins": 386,
+      "losses": 143,
+      "draws": 0,
+      "bad": 71,
+      "overall_wr": 0.7296786389413988,
+      "wilson_lo": 0.6902758361297268,
+      "wilson_hi": 0.7657696377972338,
+      "worst_matchups": [
+        [
+          "alakazam_aidy",
+          0.383,
+          "46-74"
+        ],
+        [
+          "cubchoo_mtn",
+          0.717,
+          "86-34"
+        ],
+        [
+          "FestivalLead",
+          0.783,
+          "94-26"
+        ],
+        [
+          "MegaStarmie",
+          0.925,
+          "111-9"
+        ],
+        [
+          "MegaVenusaur",
+          1.0,
+          "49-0"
+        ]
+      ],
+      "best_matchups": [
+        [
+          "MegaVenusaur",
+          1.0,
+          "49-0"
+        ],
+        [
+          "MegaStarmie",
+          0.925,
+          "111-9"
+        ],
+        [
+          "FestivalLead",
+          0.783,
+          "94-26"
+        ],
+        [
+          "cubchoo_mtn",
+          0.717,
+          "86-34"
+        ],
+        [
+          "alakazam_aidy",
+          0.383,
+          "46-74"
+        ]
+      ]
+    },
+    "v023_crustle_techD": {
+      "n_games": 600,
+      "wins": 410,
+      "losses": 129,
+      "draws": 0,
+      "bad": 61,
+      "overall_wr": 0.7606679035250464,
+      "wilson_lo": 0.7228821861186204,
+      "wilson_hi": 0.7947642138625161,
+      "worst_matchups": [
+        [
+          "alakazam_aidy",
+          0.608,
+          "73-47"
+        ],
+        [
+          "cubchoo_mtn",
+          0.667,
+          "80-40"
+        ],
+        [
+          "FestivalLead",
+          0.783,
+          "94-26"
+        ],
+        [
+          "MegaStarmie",
+          0.883,
+          "106-14"
+        ],
+        [
+          "MegaVenusaur",
+          0.966,
+          "57-2"
+        ]
+      ],
+      "best_matchups": [
+        [
+          "MegaVenusaur",
+          0.966,
+          "57-2"
+        ],
+        [
+          "MegaStarmie",
+          0.883,
+          "106-14"
+        ],
+        [
+          "FestivalLead",
+          0.783,
+          "94-26"
+        ],
+        [
+          "cubchoo_mtn",
+          0.667,
+          "80-40"
+        ],
+        [
+          "alakazam_aidy",
+          0.608,
+          "73-47"
+        ]
+      ]
+    }
+  },
+  "matrix": {
+    "v009a_crustle": {
+      "alakazam_aidy": {
+        "n": 120,
+        "w": 46,
+        "l": 74,
+        "d": 0,
+        "bad": 0,
+        "wr": 0.38333333333333336,
+        "wilson_lo": 0.30124387764148153,
+        "wilson_hi": 0.47266085227156884
+      },
+      "FestivalLead": {
+        "n": 120,
+        "w": 94,
+        "l": 26,
+        "d": 0,
+        "bad": 0,
+        "wr": 0.7833333333333333,
+        "wilson_lo": 0.7014547414958805,
+        "wilson_hi": 0.8476337715724263
+      },
+      "MegaVenusaur": {
+        "n": 120,
+        "w": 49,
+        "l": 0,
+        "d": 0,
+        "bad": 71,
+        "wr": 1.0,
+        "wilson_lo": 0.9272997032640949,
+        "wilson_hi": 0.9999999999999999
+      },
+      "cubchoo_mtn": {
+        "n": 120,
+        "w": 86,
+        "l": 34,
+        "d": 0,
+        "bad": 0,
+        "wr": 0.7166666666666667,
+        "wilson_lo": 0.6302963078582111,
+        "wilson_hi": 0.7895949080175528
+      },
+      "MegaStarmie": {
+        "n": 120,
+        "w": 111,
+        "l": 9,
+        "d": 0,
+        "bad": 0,
+        "wr": 0.925,
+        "wilson_lo": 0.8635894316089088,
+        "wilson_hi": 0.9600433379935513
+      }
+    },
+    "v023_crustle_techD": {
+      "alakazam_aidy": {
+        "n": 120,
+        "w": 73,
+        "l": 47,
+        "d": 0,
+        "bad": 0,
+        "wr": 0.6083333333333333,
+        "wilson_lo": 0.5189361630897077,
+        "wilson_hi": 0.6910094448481742
+      },
+      "FestivalLead": {
+        "n": 120,
+        "w": 94,
+        "l": 26,
+        "d": 0,
+        "bad": 0,
+        "wr": 0.7833333333333333,
+        "wilson_lo": 0.7014547414958805,
+        "wilson_hi": 0.8476337715724263
+      },
+      "MegaVenusaur": {
+        "n": 120,
+        "w": 57,
+        "l": 2,
+        "d": 0,
+        "bad": 61,
+        "wr": 0.9661016949152542,
+        "wilson_lo": 0.8845621301839242,
+        "wilson_hi": 0.9906542869664985
+      },
+      "cubchoo_mtn": {
+        "n": 120,
+        "w": 80,
+        "l": 40,
+        "d": 0,
+        "bad": 0,
+        "wr": 0.6666666666666666,
+        "wilson_lo": 0.5783093452093498,
+        "wilson_hi": 0.744683897772007
+      },
+      "MegaStarmie": {
+        "n": 120,
+        "w": 106,
+        "l": 14,
+        "d": 0,
+        "bad": 0,
+        "wr": 0.8833333333333333,
+        "wilson_lo": 0.8136649880680831,
+        "wilson_hi": 0.9292194707890375
+      }
+    }
+  }
+}

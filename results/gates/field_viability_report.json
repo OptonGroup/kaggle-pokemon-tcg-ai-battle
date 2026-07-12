@@ -1,0 +1,546 @@
+{
+  "total_games": 4322,
+  "total_illegal": 0,
+  "total_exceptions": 0,
+  "candidates": [
+    "v009a_crustle",
+    "v020_crustle_techA"
+  ],
+  "decks": [
+    "Arboliva",
+    "ClefairyOgerpon",
+    "Dragapult",
+    "DragapultBlaziken",
+    "FestivalLead",
+    "Garchomp",
+    "Grafaiai",
+    "Honchkrow",
+    "MegaLucario",
+    "MegaSharpedo",
+    "MegaStarmie",
+    "MegaVenusaur",
+    "RagingBolt",
+    "Slowking",
+    "TerastalBox",
+    "Zoroark",
+    "alakazam_aidy",
+    "cubchoo_mtn",
+    "grimmsnarl_kazuki"
+  ],
+  "per_candidate": {
+    "v009a_crustle": {
+      "n_games": 1100,
+      "wins": 873,
+      "losses": 162,
+      "draws": 0,
+      "bad": 65,
+      "overall_wr": 0.8434782608695652,
+      "wilson_lo": 0.8200760181566076,
+      "wilson_hi": 0.8643401623275009,
+      "worst_matchups": [
+        [
+          "alakazam_aidy",
+          0.48,
+          "72-78"
+        ],
+        [
+          "cubchoo_mtn",
+          0.667,
+          "100-50"
+        ],
+        [
+          "FestivalLead",
+          0.82,
+          "82-18"
+        ],
+        [
+          "MegaStarmie",
+          0.9,
+          "36-4"
+        ],
+        [
+          "Garchomp",
+          0.925,
+          "37-3"
+        ]
+      ],
+      "best_matchups": [
+        [
+          "Slowking",
+          1.0,
+          "35-0"
+        ],
+        [
+          "RagingBolt",
+          1.0,
+          "40-0"
+        ],
+        [
+          "MegaVenusaur",
+          1.0,
+          "40-0"
+        ],
+        [
+          "MegaSharpedo",
+          1.0,
+          "40-0"
+        ],
+        [
+          "MegaLucario",
+          1.0,
+          "40-0"
+        ]
+      ]
+    },
+    "v020_crustle_techA": {
+      "n_games": 1100,
+      "wins": 884,
+      "losses": 162,
+      "draws": 0,
+      "bad": 54,
+      "overall_wr": 0.8451242829827916,
+      "wilson_lo": 0.8219400111061476,
+      "wilson_hi": 0.8657827844089093,
+      "worst_matchups": [
+        [
+          "alakazam_aidy",
+          0.593,
+          "89-61"
+        ],
+        [
+          "cubchoo_mtn",
+          0.727,
+          "109-41"
+        ],
+        [
+          "FestivalLead",
+          0.73,
+          "73-27"
+        ],
+        [
+          "MegaVenusaur",
+          0.882,
+          "45-6"
+        ],
+        [
+          "Dragapult",
+          0.9,
+          "36-4"
+        ]
+      ],
+      "best_matchups": [
+        [
+          "Zoroark",
+          1.0,
+          "40-0"
+        ],
+        [
+          "Slowking",
+          1.0,
+          "35-0"
+        ],
+        [
+          "Grafaiai",
+          1.0,
+          "40-0"
+        ],
+        [
+          "grimmsnarl_kazuki",
+          0.975,
+          "39-1"
+        ],
+        [
+          "TerastalBox",
+          0.975,
+          "39-1"
+        ]
+      ]
+    }
+  },
+  "matrix": {
+    "v009a_crustle": {
+      "Arboliva": {
+        "n": 40,
+        "w": 40,
+        "l": 0,
+        "d": 0,
+        "bad": 0,
+        "wr": 1.0,
+        "wilson_lo": 0.9123754607496077,
+        "wilson_hi": 1.0
+      },
+      "ClefairyOgerpon": {
+        "n": 40,
+        "w": 40,
+        "l": 0,
+        "d": 0,
+        "bad": 0,
+        "wr": 1.0,
+        "wilson_lo": 0.9123754607496077,
+        "wilson_hi": 1.0
+      },
+      "Dragapult": {
+        "n": 40,
+        "w": 39,
+        "l": 1,
+        "d": 0,
+        "bad": 0,
+        "wr": 0.975,
+        "wilson_lo": 0.8711834051199223,
+        "wilson_hi": 0.9955732825922052
+      },
+      "DragapultBlaziken": {
+        "n": 40,
+        "w": 38,
+        "l": 2,
+        "d": 0,
+        "bad": 0,
+        "wr": 0.95,
+        "wilson_lo": 0.834958291820748,
+        "wilson_hi": 0.9861796228538989
+      },
+      "FestivalLead": {
+        "n": 100,
+        "w": 82,
+        "l": 18,
+        "d": 0,
+        "bad": 0,
+        "wr": 0.82,
+        "wilson_lo": 0.7333246397578691,
+        "wilson_hi": 0.8829986834574896
+      },
+      "Garchomp": {
+        "n": 40,
+        "w": 37,
+        "l": 3,
+        "d": 0,
+        "bad": 0,
+        "wr": 0.925,
+        "wilson_lo": 0.8013546984090248,
+        "wilson_hi": 0.9741644432281419
+      },
+      "Grafaiai": {
+        "n": 40,
+        "w": 40,
+        "l": 0,
+        "d": 0,
+        "bad": 0,
+        "wr": 1.0,
+        "wilson_lo": 0.9123754607496077,
+        "wilson_hi": 1.0
+      },
+      "Honchkrow": {
+        "n": 40,
+        "w": 37,
+        "l": 3,
+        "d": 0,
+        "bad": 0,
+        "wr": 0.925,
+        "wilson_lo": 0.8013546984090248,
+        "wilson_hi": 0.9741644432281419
+      },
+      "MegaLucario": {
+        "n": 40,
+        "w": 40,
+        "l": 0,
+        "d": 0,
+        "bad": 0,
+        "wr": 1.0,
+        "wilson_lo": 0.9123754607496077,
+        "wilson_hi": 1.0
+      },
+      "MegaSharpedo": {
+        "n": 40,
+        "w": 40,
+        "l": 0,
+        "d": 0,
+        "bad": 0,
+        "wr": 1.0,
+        "wilson_lo": 0.9123754607496077,
+        "wilson_hi": 1.0
+      },
+      "MegaStarmie": {
+        "n": 40,
+        "w": 36,
+        "l": 4,
+        "d": 0,
+        "bad": 0,
+        "wr": 0.9,
+        "wilson_lo": 0.7694792561952611,
+        "wilson_hi": 0.9604211124044252
+      },
+      "MegaVenusaur": {
+        "n": 100,
+        "w": 40,
+        "l": 0,
+        "d": 0,
+        "bad": 60,
+        "wr": 1.0,
+        "wilson_lo": 0.9123754607496077,
+        "wilson_hi": 1.0
+      },
+      "RagingBolt": {
+        "n": 40,
+        "w": 40,
+        "l": 0,
+        "d": 0,
+        "bad": 0,
+        "wr": 1.0,
+        "wilson_lo": 0.9123754607496077,
+        "wilson_hi": 1.0
+      },
+      "Slowking": {
+        "n": 40,
+        "w": 35,
+        "l": 0,
+        "d": 0,
+        "bad": 5,
+        "wr": 1.0,
+        "wilson_lo": 0.9010957324106112,
+        "wilson_hi": 1.0
+      },
+      "TerastalBox": {
+        "n": 40,
+        "w": 39,
+        "l": 1,
+        "d": 0,
+        "bad": 0,
+        "wr": 0.975,
+        "wilson_lo": 0.8711834051199223,
+        "wilson_hi": 0.9955732825922052
+      },
+      "Zoroark": {
+        "n": 40,
+        "w": 39,
+        "l": 1,
+        "d": 0,
+        "bad": 0,
+        "wr": 0.975,
+        "wilson_lo": 0.8711834051199223,
+        "wilson_hi": 0.9955732825922052
+      },
+      "alakazam_aidy": {
+        "n": 150,
+        "w": 72,
+        "l": 78,
+        "d": 0,
+        "bad": 0,
+        "wr": 0.48,
+        "wilson_lo": 0.4015497821637989,
+        "wilson_hi": 0.5594490634020298
+      },
+      "cubchoo_mtn": {
+        "n": 150,
+        "w": 100,
+        "l": 50,
+        "d": 0,
+        "bad": 0,
+        "wr": 0.6666666666666666,
+        "wilson_lo": 0.5878960768592673,
+        "wilson_hi": 0.7371135434254931
+      },
+      "grimmsnarl_kazuki": {
+        "n": 40,
+        "w": 39,
+        "l": 1,
+        "d": 0,
+        "bad": 0,
+        "wr": 0.975,
+        "wilson_lo": 0.8711834051199223,
+        "wilson_hi": 0.9955732825922052
+      }
+    },
+    "v020_crustle_techA": {
+      "Arboliva": {
+        "n": 40,
+        "w": 38,
+        "l": 2,
+        "d": 0,
+        "bad": 0,
+        "wr": 0.95,
+        "wilson_lo": 0.834958291820748,
+        "wilson_hi": 0.9861796228538989
+      },
+      "ClefairyOgerpon": {
+        "n": 40,
+        "w": 38,
+        "l": 2,
+        "d": 0,
+        "bad": 0,
+        "wr": 0.95,
+        "wilson_lo": 0.834958291820748,
+        "wilson_hi": 0.9861796228538989
+      },
+      "Dragapult": {
+        "n": 40,
+        "w": 36,
+        "l": 4,
+        "d": 0,
+        "bad": 0,
+        "wr": 0.9,
+        "wilson_lo": 0.7694792561952611,
+        "wilson_hi": 0.9604211124044252
+      },
+      "DragapultBlaziken": {
+        "n": 40,
+        "w": 36,
+        "l": 4,
+        "d": 0,
+        "bad": 0,
+        "wr": 0.9,
+        "wilson_lo": 0.7694792561952611,
+        "wilson_hi": 0.9604211124044252
+      },
+      "FestivalLead": {
+        "n": 100,
+        "w": 73,
+        "l": 27,
+        "d": 0,
+        "bad": 0,
+        "wr": 0.73,
+        "wilson_lo": 0.6356769977376873,
+        "wilson_hi": 0.8073053908233518
+      },
+      "Garchomp": {
+        "n": 40,
+        "w": 38,
+        "l": 2,
+        "d": 0,
+        "bad": 0,
+        "wr": 0.95,
+        "wilson_lo": 0.834958291820748,
+        "wilson_hi": 0.9861796228538989
+      },
+      "Grafaiai": {
+        "n": 40,
+        "w": 40,
+        "l": 0,
+        "d": 0,
+        "bad": 0,
+        "wr": 1.0,
+        "wilson_lo": 0.9123754607496077,
+        "wilson_hi": 1.0
+      },
+      "Honchkrow": {
+        "n": 40,
+        "w": 38,
+        "l": 2,
+        "d": 0,
+        "bad": 0,
+        "wr": 0.95,
+        "wilson_lo": 0.834958291820748,
+        "wilson_hi": 0.9861796228538989
+      },
+      "MegaLucario": {
+        "n": 40,
+        "w": 37,
+        "l": 3,
+        "d": 0,
+        "bad": 0,
+        "wr": 0.925,
+        "wilson_lo": 0.8013546984090248,
+        "wilson_hi": 0.9741644432281419
+      },
+      "MegaSharpedo": {
+        "n": 40,
+        "w": 39,
+        "l": 1,
+        "d": 0,
+        "bad": 0,
+        "wr": 0.975,
+        "wilson_lo": 0.8711834051199223,
+        "wilson_hi": 0.9955732825922052
+      },
+      "MegaStarmie": {
+        "n": 40,
+        "w": 37,
+        "l": 3,
+        "d": 0,
+        "bad": 0,
+        "wr": 0.925,
+        "wilson_lo": 0.8013546984090248,
+        "wilson_hi": 0.9741644432281419
+      },
+      "MegaVenusaur": {
+        "n": 100,
+        "w": 45,
+        "l": 6,
+        "d": 0,
+        "bad": 49,
+        "wr": 0.8823529411764706,
+        "wilson_lo": 0.766188977022052,
+        "wilson_hi": 0.9449500123582724
+      },
+      "RagingBolt": {
+        "n": 40,
+        "w": 38,
+        "l": 2,
+        "d": 0,
+        "bad": 0,
+        "wr": 0.95,
+        "wilson_lo": 0.834958291820748,
+        "wilson_hi": 0.9861796228538989
+      },
+      "Slowking": {
+        "n": 40,
+        "w": 35,
+        "l": 0,
+        "d": 0,
+        "bad": 5,
+        "wr": 1.0,
+        "wilson_lo": 0.9010957324106112,
+        "wilson_hi": 1.0
+      },
+      "TerastalBox": {
+        "n": 40,
+        "w": 39,
+        "l": 1,
+        "d": 0,
+        "bad": 0,
+        "wr": 0.975,
+        "wilson_lo": 0.8711834051199223,
+        "wilson_hi": 0.9955732825922052
+      },
+      "Zoroark": {
+        "n": 40,
+        "w": 40,
+        "l": 0,
+        "d": 0,
+        "bad": 0,
+        "wr": 1.0,
+        "wilson_lo": 0.9123754607496077,
+        "wilson_hi": 1.0
+      },
+      "alakazam_aidy": {
+        "n": 150,
+        "w": 89,
+        "l": 61,
+        "d": 0,
+        "bad": 0,
+        "wr": 0.5933333333333334,
+        "wilson_lo": 0.51334517440468,
+        "wilson_hi": 0.6686602129547861
+      },
+      "cubchoo_mtn": {
+        "n": 150,
+        "w": 109,
+        "l": 41,
+        "d": 0,
+        "bad": 0,
+        "wr": 0.7266666666666667,
+        "wilson_lo": 0.6503534444650609,
+        "wilson_hi": 0.7916596391222133
+      },
+      "grimmsnarl_kazuki": {
+        "n": 40,
+        "w": 39,
+        "l": 1,
+        "d": 0,
+        "bad": 0,
+        "wr": 0.975,
+        "wilson_lo": 0.8711834051199223,
+        "wilson_hi": 0.9955732825922052
+      }
+    }
+  }
+}

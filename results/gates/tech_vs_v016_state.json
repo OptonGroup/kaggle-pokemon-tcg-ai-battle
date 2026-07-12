@@ -1,0 +1,6024 @@
+{
+  "cells": {
+    "v022_crustle_techC": {
+      "candidate": "v022_crustle_techC",
+      "games": [
+        {
+          "candidate": "v022_crustle_techC",
+          "our_first": true,
+          "outcome": "our_win",
+          "winner": 0,
+          "moves": 122,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v022_crustle_techC",
+          "our_first": false,
+          "outcome": "our_win",
+          "winner": 1,
+          "moves": 195,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v022_crustle_techC",
+          "our_first": true,
+          "outcome": "our_win",
+          "winner": 0,
+          "moves": 149,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v022_crustle_techC",
+          "our_first": false,
+          "outcome": "our_win",
+          "winner": 1,
+          "moves": 57,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v022_crustle_techC",
+          "our_first": true,
+          "outcome": "our_win",
+          "winner": 0,
+          "moves": 193,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v022_crustle_techC",
+          "our_first": false,
+          "outcome": "our_win",
+          "winner": 1,
+          "moves": 177,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v022_crustle_techC",
+          "our_first": true,
+          "outcome": "our_win",
+          "winner": 0,
+          "moves": 183,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v022_crustle_techC",
+          "our_first": false,
+          "outcome": "our_win",
+          "winner": 1,
+          "moves": 244,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v022_crustle_techC",
+          "our_first": true,
+          "outcome": "our_win",
+          "winner": 0,
+          "moves": 231,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v022_crustle_techC",
+          "our_first": false,
+          "outcome": "our_win",
+          "winner": 1,
+          "moves": 79,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v022_crustle_techC",
+          "our_first": true,
+          "outcome": "opp_win",
+          "winner": 1,
+          "moves": 35,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v022_crustle_techC",
+          "our_first": false,
+          "outcome": "our_win",
+          "winner": 1,
+          "moves": 108,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v022_crustle_techC",
+          "our_first": true,
+          "outcome": "our_win",
+          "winner": 0,
+          "moves": 181,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v022_crustle_techC",
+          "our_first": false,
+          "outcome": "opp_win",
+          "winner": 0,
+          "moves": 187,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v022_crustle_techC",
+          "our_first": true,
+          "outcome": "our_win",
+          "winner": 0,
+          "moves": 100,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v022_crustle_techC",
+          "our_first": false,
+          "outcome": "our_win",
+          "winner": 1,
+          "moves": 186,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v022_crustle_techC",
+          "our_first": true,
+          "outcome": "our_win",
+          "winner": 0,
+          "moves": 165,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v022_crustle_techC",
+          "our_first": false,
+          "outcome": "our_win",
+          "winner": 1,
+          "moves": 189,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v022_crustle_techC",
+          "our_first": true,
+          "outcome": "opp_win",
+          "winner": 1,
+          "moves": 129,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v022_crustle_techC",
+          "our_first": false,
+          "outcome": "our_win",
+          "winner": 1,
+          "moves": 199,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v022_crustle_techC",
+          "our_first": true,
+          "outcome": "opp_win",
+          "winner": 1,
+          "moves": 82,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v022_crustle_techC",
+          "our_first": true,
+          "outcome": "our_win",
+          "winner": 0,
+          "moves": 29,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v022_crustle_techC",
+          "our_first": false,
+          "outcome": "opp_win",
+          "winner": 0,
+          "moves": 293,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v022_crustle_techC",
+          "our_first": false,
+          "outcome": "our_win",
+          "winner": 1,
+          "moves": 215,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v022_crustle_techC",
+          "our_first": true,
+          "outcome": "our_win",
+          "winner": 0,
+          "moves": 148,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v022_crustle_techC",
+          "our_first": false,
+          "outcome": "our_win",
+          "winner": 1,
+          "moves": 165,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v022_crustle_techC",
+          "our_first": true,
+          "outcome": "opp_win",
+          "winner": 1,
+          "moves": 131,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v022_crustle_techC",
+          "our_first": false,
+          "outcome": "our_win",
+          "winner": 1,
+          "moves": 188,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v022_crustle_techC",
+          "our_first": true,
+          "outcome": "our_win",
+          "winner": 0,
+          "moves": 174,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v022_crustle_techC",
+          "our_first": false,
+          "outcome": "our_win",
+          "winner": 1,
+          "moves": 165,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v022_crustle_techC",
+          "our_first": true,
+          "outcome": "opp_win",
+          "winner": 1,
+          "moves": 279,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v022_crustle_techC",
+          "our_first": false,
+          "outcome": "our_win",
+          "winner": 1,
+          "moves": 157,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v022_crustle_techC",
+          "our_first": true,
+          "outcome": "our_win",
+          "winner": 0,
+          "moves": 201,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v022_crustle_techC",
+          "our_first": false,
+          "outcome": "our_win",
+          "winner": 1,
+          "moves": 181,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v022_crustle_techC",
+          "our_first": true,
+          "outcome": "our_win",
+          "winner": 0,
+          "moves": 165,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v022_crustle_techC",
+          "our_first": true,
+          "outcome": "opp_win",
+          "winner": 1,
+          "moves": 22,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v022_crustle_techC",
+          "our_first": false,
+          "outcome": "our_win",
+          "winner": 1,
+          "moves": 153,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v022_crustle_techC",
+          "our_first": true,
+          "outcome": "our_win",
+          "winner": 0,
+          "moves": 155,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v022_crustle_techC",
+          "our_first": false,
+          "outcome": "our_win",
+          "winner": 1,
+          "moves": 279,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v022_crustle_techC",
+          "our_first": false,
+          "outcome": "our_win",
+          "winner": 1,
+          "moves": 212,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v022_crustle_techC",
+          "our_first": true,
+          "outcome": "our_win",
+          "winner": 0,
+          "moves": 162,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v022_crustle_techC",
+          "our_first": false,
+          "outcome": "our_win",
+          "winner": 1,
+          "moves": 176,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v022_crustle_techC",
+          "our_first": true,
+          "outcome": "our_win",
+          "winner": 0,
+          "moves": 153,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v022_crustle_techC",
+          "our_first": false,
+          "outcome": "opp_win",
+          "winner": 0,
+          "moves": 72,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v022_crustle_techC",
+          "our_first": true,
+          "outcome": "our_win",
+          "winner": 0,
+          "moves": 184,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v022_crustle_techC",
+          "our_first": false,
+          "outcome": "opp_win",
+          "winner": 0,
+          "moves": 152,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v022_crustle_techC",
+          "our_first": true,
+          "outcome": "opp_win",
+          "winner": 1,
+          "moves": 142,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v022_crustle_techC",
+          "our_first": false,
+          "outcome": "our_win",
+          "winner": 1,
+          "moves": 23,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v022_crustle_techC",
+          "our_first": true,
+          "outcome": "our_win",
+          "winner": 0,
+          "moves": 174,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v022_crustle_techC",
+          "our_first": false,
+          "outcome": "opp_win",
+          "winner": 0,
+          "moves": 133,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v022_crustle_techC",
+          "our_first": true,
+          "outcome": "our_win",
+          "winner": 0,
+          "moves": 200,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v022_crustle_techC",
+          "our_first": false,
+          "outcome": "opp_win",
+          "winner": 0,
+          "moves": 166,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v022_crustle_techC",
+          "our_first": true,
+          "outcome": "our_win",
+          "winner": 0,
+          "moves": 184,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v022_crustle_techC",
+          "our_first": false,
+          "outcome": "our_win",
+          "winner": 1,
+          "moves": 255,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v022_crustle_techC",
+          "our_first": true,
+          "outcome": "opp_win",
+          "winner": 1,
+          "moves": 153,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v022_crustle_techC",
+          "our_first": false,
+          "outcome": "our_win",
+          "winner": 1,
+          "moves": 189,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v022_crustle_techC",
+          "our_first": true,
+          "outcome": "our_win",
+          "winner": 0,
+          "moves": 160,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v022_crustle_techC",
+          "our_first": false,
+          "outcome": "our_win",
+          "winner": 1,
+          "moves": 153,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v022_crustle_techC",
+          "our_first": true,
+          "outcome": "our_win",
+          "winner": 0,
+          "moves": 182,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v022_crustle_techC",
+          "our_first": false,
+          "outcome": "our_win",
+          "winner": 1,
+          "moves": 190,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v022_crustle_techC",
+          "our_first": true,
+          "outcome": "our_win",
+          "winner": 0,
+          "moves": 183,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v022_crustle_techC",
+          "our_first": false,
+          "outcome": "our_win",
+          "winner": 1,
+          "moves": 81,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v022_crustle_techC",
+          "our_first": true,
+          "outcome": "our_win",
+          "winner": 0,
+          "moves": 15,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v022_crustle_techC",
+          "our_first": false,
+          "outcome": "our_win",
+          "winner": 1,
+          "moves": 168,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v022_crustle_techC",
+          "our_first": true,
+          "outcome": "opp_win",
+          "winner": 1,
+          "moves": 176,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v022_crustle_techC",
+          "our_first": false,
+          "outcome": "our_win",
+          "winner": 1,
+          "moves": 171,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v022_crustle_techC",
+          "our_first": true,
+          "outcome": "opp_win",
+          "winner": 1,
+          "moves": 77,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v022_crustle_techC",
+          "our_first": false,
+          "outcome": "opp_win",
+          "winner": 0,
+          "moves": 110,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v022_crustle_techC",
+          "our_first": true,
+          "outcome": "our_win",
+          "winner": 0,
+          "moves": 192,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v022_crustle_techC",
+          "our_first": false,
+          "outcome": "our_win",
+          "winner": 1,
+          "moves": 196,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v022_crustle_techC",
+          "our_first": true,
+          "outcome": "our_win",
+          "winner": 0,
+          "moves": 191,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v022_crustle_techC",
+          "our_first": true,
+          "outcome": "our_win",
+          "winner": 0,
+          "moves": 21,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v022_crustle_techC",
+          "our_first": false,
+          "outcome": "opp_win",
+          "winner": 0,
+          "moves": 296,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v022_crustle_techC",
+          "our_first": false,
+          "outcome": "opp_win",
+          "winner": 0,
+          "moves": 187,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v022_crustle_techC",
+          "our_first": true,
+          "outcome": "our_win",
+          "winner": 0,
+          "moves": 157,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v022_crustle_techC",
+          "our_first": false,
+          "outcome": "our_win",
+          "winner": 1,
+          "moves": 159,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v022_crustle_techC",
+          "our_first": true,
+          "outcome": "our_win",
+          "winner": 0,
+          "moves": 171,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v022_crustle_techC",
+          "our_first": false,
+          "outcome": "our_win",
+          "winner": 1,
+          "moves": 174,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v022_crustle_techC",
+          "our_first": true,
+          "outcome": "our_win",
+          "winner": 0,
+          "moves": 154,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v022_crustle_techC",
+          "our_first": false,
+          "outcome": "our_win",
+          "winner": 1,
+          "moves": 182,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v022_crustle_techC",
+          "our_first": true,
+          "outcome": "opp_win",
+          "winner": 1,
+          "moves": 94,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v022_crustle_techC",
+          "our_first": false,
+          "outcome": "our_win",
+          "winner": 1,
+          "moves": 215,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v022_crustle_techC",
+          "our_first": true,
+          "outcome": "our_win",
+          "winner": 0,
+          "moves": 184,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v022_crustle_techC",
+          "our_first": false,
+          "outcome": "opp_win",
+          "winner": 0,
+          "moves": 179,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v022_crustle_techC",
+          "our_first": true,
+          "outcome": "our_win",
+          "winner": 0,
+          "moves": 102,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v022_crustle_techC",
+          "our_first": false,
+          "outcome": "our_win",
+          "winner": 1,
+          "moves": 185,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v022_crustle_techC",
+          "our_first": true,
+          "outcome": "our_win",
+          "winner": 0,
+          "moves": 172,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v022_crustle_techC",
+          "our_first": false,
+          "outcome": "our_win",
+          "winner": 1,
+          "moves": 250,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v022_crustle_techC",
+          "our_first": true,
+          "outcome": "our_win",
+          "winner": 0,
+          "moves": 293,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v022_crustle_techC",
+          "our_first": false,
+          "outcome": "our_win",
+          "winner": 1,
+          "moves": 195,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v022_crustle_techC",
+          "our_first": true,
+          "outcome": "our_win",
+          "winner": 0,
+          "moves": 180,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v022_crustle_techC",
+          "our_first": false,
+          "outcome": "opp_win",
+          "winner": 0,
+          "moves": 53,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v022_crustle_techC",
+          "our_first": true,
+          "outcome": "our_win",
+          "winner": 0,
+          "moves": 148,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v022_crustle_techC",
+          "our_first": false,
+          "outcome": "our_win",
+          "winner": 1,
+          "moves": 207,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v022_crustle_techC",
+          "our_first": true,
+          "outcome": "our_win",
+          "winner": 0,
+          "moves": 173,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v022_crustle_techC",
+          "our_first": false,
+          "outcome": "our_win",
+          "winner": 1,
+          "moves": 194,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v022_crustle_techC",
+          "our_first": true,
+          "outcome": "our_win",
+          "winner": 0,
+          "moves": 187,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v022_crustle_techC",
+          "our_first": false,
+          "outcome": "our_win",
+          "winner": 1,
+          "moves": 107,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v022_crustle_techC",
+          "our_first": true,
+          "outcome": "our_win",
+          "winner": 0,
+          "moves": 150,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v022_crustle_techC",
+          "our_first": false,
+          "outcome": "our_win",
+          "winner": 1,
+          "moves": 164,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v022_crustle_techC",
+          "our_first": true,
+          "outcome": "opp_win",
+          "winner": 1,
+          "moves": 93,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v022_crustle_techC",
+          "our_first": false,
+          "outcome": "our_win",
+          "winner": 1,
+          "moves": 184,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v022_crustle_techC",
+          "our_first": true,
+          "outcome": "opp_win",
+          "winner": 1,
+          "moves": 134,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v022_crustle_techC",
+          "our_first": false,
+          "outcome": "our_win",
+          "winner": 1,
+          "moves": 56,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v022_crustle_techC",
+          "our_first": true,
+          "outcome": "our_win",
+          "winner": 0,
+          "moves": 171,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v022_crustle_techC",
+          "our_first": false,
+          "outcome": "opp_win",
+          "winner": 0,
+          "moves": 123,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v022_crustle_techC",
+          "our_first": true,
+          "outcome": "our_win",
+          "winner": 0,
+          "moves": 108,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v022_crustle_techC",
+          "our_first": false,
+          "outcome": "opp_win",
+          "winner": 0,
+          "moves": 56,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v022_crustle_techC",
+          "our_first": true,
+          "outcome": "opp_win",
+          "winner": 1,
+          "moves": 303,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v022_crustle_techC",
+          "our_first": false,
+          "outcome": "our_win",
+          "winner": 1,
+          "moves": 202,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v022_crustle_techC",
+          "our_first": true,
+          "outcome": "our_win",
+          "winner": 0,
+          "moves": 180,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v022_crustle_techC",
+          "our_first": false,
+          "outcome": "our_win",
+          "winner": 1,
+          "moves": 267,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v022_crustle_techC",
+          "our_first": true,
+          "outcome": "our_win",
+          "winner": 0,
+          "moves": 186,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v022_crustle_techC",
+          "our_first": false,
+          "outcome": "our_win",
+          "winner": 1,
+          "moves": 118,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v022_crustle_techC",
+          "our_first": true,
+          "outcome": "opp_win",
+          "winner": 1,
+          "moves": 49,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v022_crustle_techC",
+          "our_first": false,
+          "outcome": "our_win",
+          "winner": 1,
+          "moves": 166,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v022_crustle_techC",
+          "our_first": true,
+          "outcome": "our_win",
+          "winner": 0,
+          "moves": 182,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v022_crustle_techC",
+          "our_first": false,
+          "outcome": "opp_win",
+          "winner": 0,
+          "moves": 146,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v022_crustle_techC",
+          "our_first": true,
+          "outcome": "our_win",
+          "winner": 0,
+          "moves": 195,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v022_crustle_techC",
+          "our_first": false,
+          "outcome": "opp_win",
+          "winner": 0,
+          "moves": 171,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v022_crustle_techC",
+          "our_first": true,
+          "outcome": "our_win",
+          "winner": 0,
+          "moves": 181,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v022_crustle_techC",
+          "our_first": false,
+          "outcome": "our_win",
+          "winner": 1,
+          "moves": 21,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v022_crustle_techC",
+          "our_first": true,
+          "outcome": "our_win",
+          "winner": 0,
+          "moves": 182,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v022_crustle_techC",
+          "our_first": false,
+          "outcome": "our_win",
+          "winner": 1,
+          "moves": 191,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v022_crustle_techC",
+          "our_first": true,
+          "outcome": "opp_win",
+          "winner": 1,
+          "moves": 40,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v022_crustle_techC",
+          "our_first": false,
+          "outcome": "our_win",
+          "winner": 1,
+          "moves": 137,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v022_crustle_techC",
+          "our_first": true,
+          "outcome": "our_win",
+          "winner": 0,
+          "moves": 146,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v022_crustle_techC",
+          "our_first": false,
+          "outcome": "our_win",
+          "winner": 1,
+          "moves": 172,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v022_crustle_techC",
+          "our_first": true,
+          "outcome": "opp_win",
+          "winner": 1,
+          "moves": 125,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v022_crustle_techC",
+          "our_first": false,
+          "outcome": "our_win",
+          "winner": 1,
+          "moves": 232,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v022_crustle_techC",
+          "our_first": true,
+          "outcome": "our_win",
+          "winner": 0,
+          "moves": 210,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v022_crustle_techC",
+          "our_first": false,
+          "outcome": "opp_win",
+          "winner": 0,
+          "moves": 159,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v022_crustle_techC",
+          "our_first": true,
+          "outcome": "our_win",
+          "winner": 0,
+          "moves": 179,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v022_crustle_techC",
+          "our_first": false,
+          "outcome": "our_win",
+          "winner": 1,
+          "moves": 119,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v022_crustle_techC",
+          "our_first": true,
+          "outcome": "opp_win",
+          "winner": 1,
+          "moves": 288,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v022_crustle_techC",
+          "our_first": false,
+          "outcome": "our_win",
+          "winner": 1,
+          "moves": 275,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v022_crustle_techC",
+          "our_first": true,
+          "outcome": "our_win",
+          "winner": 0,
+          "moves": 173,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v022_crustle_techC",
+          "our_first": false,
+          "outcome": "our_win",
+          "winner": 1,
+          "moves": 89,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v022_crustle_techC",
+          "our_first": true,
+          "outcome": "opp_win",
+          "winner": 1,
+          "moves": 184,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v022_crustle_techC",
+          "our_first": false,
+          "outcome": "our_win",
+          "winner": 1,
+          "moves": 173,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v022_crustle_techC",
+          "our_first": true,
+          "outcome": "our_win",
+          "winner": 0,
+          "moves": 168,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v022_crustle_techC",
+          "our_first": false,
+          "outcome": "our_win",
+          "winner": 1,
+          "moves": 190,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v022_crustle_techC",
+          "our_first": true,
+          "outcome": "our_win",
+          "winner": 0,
+          "moves": 169,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v022_crustle_techC",
+          "our_first": false,
+          "outcome": "our_win",
+          "winner": 1,
+          "moves": 187,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v022_crustle_techC",
+          "our_first": true,
+          "outcome": "our_win",
+          "winner": 0,
+          "moves": 128,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v022_crustle_techC",
+          "our_first": false,
+          "outcome": "opp_win",
+          "winner": 0,
+          "moves": 60,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v022_crustle_techC",
+          "our_first": true,
+          "outcome": "our_win",
+          "winner": 0,
+          "moves": 108,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v022_crustle_techC",
+          "our_first": false,
+          "outcome": "our_win",
+          "winner": 1,
+          "moves": 70,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v022_crustle_techC",
+          "our_first": true,
+          "outcome": "our_win",
+          "winner": 0,
+          "moves": 22,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v022_crustle_techC",
+          "our_first": false,
+          "outcome": "our_win",
+          "winner": 1,
+          "moves": 154,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        }
+      ]
+    },
+    "v020_crustle_techA": {
+      "candidate": "v020_crustle_techA",
+      "games": [
+        {
+          "candidate": "v020_crustle_techA",
+          "our_first": true,
+          "outcome": "our_win",
+          "winner": 0,
+          "moves": 139,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v020_crustle_techA",
+          "our_first": false,
+          "outcome": "our_win",
+          "winner": 1,
+          "moves": 97,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v020_crustle_techA",
+          "our_first": true,
+          "outcome": "our_win",
+          "winner": 0,
+          "moves": 163,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v020_crustle_techA",
+          "our_first": false,
+          "outcome": "our_win",
+          "winner": 1,
+          "moves": 111,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v020_crustle_techA",
+          "our_first": true,
+          "outcome": "our_win",
+          "winner": 0,
+          "moves": 259,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v020_crustle_techA",
+          "our_first": false,
+          "outcome": "our_win",
+          "winner": 1,
+          "moves": 167,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v020_crustle_techA",
+          "our_first": true,
+          "outcome": "opp_win",
+          "winner": 1,
+          "moves": 216,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v020_crustle_techA",
+          "our_first": true,
+          "outcome": "our_win",
+          "winner": 0,
+          "moves": 15,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v020_crustle_techA",
+          "our_first": false,
+          "outcome": "our_win",
+          "winner": 1,
+          "moves": 157,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v020_crustle_techA",
+          "our_first": false,
+          "outcome": "our_win",
+          "winner": 1,
+          "moves": 180,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v020_crustle_techA",
+          "our_first": true,
+          "outcome": "our_win",
+          "winner": 0,
+          "moves": 156,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v020_crustle_techA",
+          "our_first": false,
+          "outcome": "our_win",
+          "winner": 1,
+          "moves": 236,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v020_crustle_techA",
+          "our_first": true,
+          "outcome": "opp_win",
+          "winner": 1,
+          "moves": 151,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v020_crustle_techA",
+          "our_first": false,
+          "outcome": "our_win",
+          "winner": 1,
+          "moves": 170,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v020_crustle_techA",
+          "our_first": true,
+          "outcome": "opp_win",
+          "winner": 1,
+          "moves": 56,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v020_crustle_techA",
+          "our_first": false,
+          "outcome": "our_win",
+          "winner": 1,
+          "moves": 193,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v020_crustle_techA",
+          "our_first": true,
+          "outcome": "our_win",
+          "winner": 0,
+          "moves": 180,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v020_crustle_techA",
+          "our_first": false,
+          "outcome": "our_win",
+          "winner": 1,
+          "moves": 198,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v020_crustle_techA",
+          "our_first": true,
+          "outcome": "our_win",
+          "winner": 0,
+          "moves": 191,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v020_crustle_techA",
+          "our_first": false,
+          "outcome": "our_win",
+          "winner": 1,
+          "moves": 192,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v020_crustle_techA",
+          "our_first": true,
+          "outcome": "our_win",
+          "winner": 0,
+          "moves": 203,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v020_crustle_techA",
+          "our_first": false,
+          "outcome": "our_win",
+          "winner": 1,
+          "moves": 164,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v020_crustle_techA",
+          "our_first": true,
+          "outcome": "our_win",
+          "winner": 0,
+          "moves": 174,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v020_crustle_techA",
+          "our_first": false,
+          "outcome": "opp_win",
+          "winner": 0,
+          "moves": 33,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v020_crustle_techA",
+          "our_first": true,
+          "outcome": "opp_win",
+          "winner": 1,
+          "moves": 40,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v020_crustle_techA",
+          "our_first": false,
+          "outcome": "our_win",
+          "winner": 1,
+          "moves": 148,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v020_crustle_techA",
+          "our_first": true,
+          "outcome": "opp_win",
+          "winner": 1,
+          "moves": 101,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v020_crustle_techA",
+          "our_first": false,
+          "outcome": "opp_win",
+          "winner": 0,
+          "moves": 103,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v020_crustle_techA",
+          "our_first": true,
+          "outcome": "our_win",
+          "winner": 0,
+          "moves": 203,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v020_crustle_techA",
+          "our_first": false,
+          "outcome": "our_win",
+          "winner": 1,
+          "moves": 112,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v020_crustle_techA",
+          "our_first": true,
+          "outcome": "our_win",
+          "winner": 0,
+          "moves": 173,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v020_crustle_techA",
+          "our_first": false,
+          "outcome": "our_win",
+          "winner": 1,
+          "moves": 100,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v020_crustle_techA",
+          "our_first": true,
+          "outcome": "opp_win",
+          "winner": 1,
+          "moves": 143,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v020_crustle_techA",
+          "our_first": false,
+          "outcome": "our_win",
+          "winner": 1,
+          "moves": 99,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v020_crustle_techA",
+          "our_first": true,
+          "outcome": "our_win",
+          "winner": 0,
+          "moves": 157,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v020_crustle_techA",
+          "our_first": false,
+          "outcome": "opp_win",
+          "winner": 0,
+          "moves": 74,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v020_crustle_techA",
+          "our_first": true,
+          "outcome": "opp_win",
+          "winner": 1,
+          "moves": 24,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v020_crustle_techA",
+          "our_first": false,
+          "outcome": "our_win",
+          "winner": 1,
+          "moves": 49,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v020_crustle_techA",
+          "our_first": true,
+          "outcome": "our_win",
+          "winner": 0,
+          "moves": 17,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v020_crustle_techA",
+          "our_first": false,
+          "outcome": "our_win",
+          "winner": 1,
+          "moves": 24,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v020_crustle_techA",
+          "our_first": true,
+          "outcome": "our_win",
+          "winner": 0,
+          "moves": 29,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v020_crustle_techA",
+          "our_first": false,
+          "outcome": "our_win",
+          "winner": 1,
+          "moves": 128,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v020_crustle_techA",
+          "our_first": true,
+          "outcome": "our_win",
+          "winner": 0,
+          "moves": 184,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v020_crustle_techA",
+          "our_first": false,
+          "outcome": "our_win",
+          "winner": 1,
+          "moves": 112,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v020_crustle_techA",
+          "our_first": true,
+          "outcome": "opp_win",
+          "winner": 1,
+          "moves": 102,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v020_crustle_techA",
+          "our_first": false,
+          "outcome": "our_win",
+          "winner": 1,
+          "moves": 134,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v020_crustle_techA",
+          "our_first": true,
+          "outcome": "opp_win",
+          "winner": 1,
+          "moves": 48,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v020_crustle_techA",
+          "our_first": false,
+          "outcome": "our_win",
+          "winner": 1,
+          "moves": 166,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v020_crustle_techA",
+          "our_first": true,
+          "outcome": "opp_win",
+          "winner": 1,
+          "moves": 120,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v020_crustle_techA",
+          "our_first": false,
+          "outcome": "our_win",
+          "winner": 1,
+          "moves": 153,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v020_crustle_techA",
+          "our_first": true,
+          "outcome": "our_win",
+          "winner": 0,
+          "moves": 19,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v020_crustle_techA",
+          "our_first": false,
+          "outcome": "our_win",
+          "winner": 1,
+          "moves": 191,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v020_crustle_techA",
+          "our_first": true,
+          "outcome": "our_win",
+          "winner": 0,
+          "moves": 175,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v020_crustle_techA",
+          "our_first": false,
+          "outcome": "our_win",
+          "winner": 1,
+          "moves": 20,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v020_crustle_techA",
+          "our_first": true,
+          "outcome": "our_win",
+          "winner": 0,
+          "moves": 143,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v020_crustle_techA",
+          "our_first": false,
+          "outcome": "our_win",
+          "winner": 1,
+          "moves": 71,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v020_crustle_techA",
+          "our_first": true,
+          "outcome": "our_win",
+          "winner": 0,
+          "moves": 164,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v020_crustle_techA",
+          "our_first": false,
+          "outcome": "our_win",
+          "winner": 1,
+          "moves": 71,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v020_crustle_techA",
+          "our_first": true,
+          "outcome": "opp_win",
+          "winner": 1,
+          "moves": 86,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v020_crustle_techA",
+          "our_first": false,
+          "outcome": "opp_win",
+          "winner": 0,
+          "moves": 170,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v020_crustle_techA",
+          "our_first": true,
+          "outcome": "our_win",
+          "winner": 0,
+          "moves": 105,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v020_crustle_techA",
+          "our_first": false,
+          "outcome": "our_win",
+          "winner": 1,
+          "moves": 142,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v020_crustle_techA",
+          "our_first": true,
+          "outcome": "our_win",
+          "winner": 0,
+          "moves": 135,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v020_crustle_techA",
+          "our_first": false,
+          "outcome": "our_win",
+          "winner": 1,
+          "moves": 165,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v020_crustle_techA",
+          "our_first": true,
+          "outcome": "our_win",
+          "winner": 0,
+          "moves": 170,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v020_crustle_techA",
+          "our_first": false,
+          "outcome": "our_win",
+          "winner": 1,
+          "moves": 205,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v020_crustle_techA",
+          "our_first": true,
+          "outcome": "our_win",
+          "winner": 0,
+          "moves": 166,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v020_crustle_techA",
+          "our_first": false,
+          "outcome": "our_win",
+          "winner": 1,
+          "moves": 102,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v020_crustle_techA",
+          "our_first": true,
+          "outcome": "our_win",
+          "winner": 0,
+          "moves": 154,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v020_crustle_techA",
+          "our_first": false,
+          "outcome": "opp_win",
+          "winner": 0,
+          "moves": 158,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v020_crustle_techA",
+          "our_first": true,
+          "outcome": "our_win",
+          "winner": 0,
+          "moves": 165,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v020_crustle_techA",
+          "our_first": false,
+          "outcome": "our_win",
+          "winner": 1,
+          "moves": 212,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v020_crustle_techA",
+          "our_first": false,
+          "outcome": "our_win",
+          "winner": 1,
+          "moves": 150,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v020_crustle_techA",
+          "our_first": true,
+          "outcome": "our_win",
+          "winner": 0,
+          "moves": 245,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v020_crustle_techA",
+          "our_first": true,
+          "outcome": "opp_win",
+          "winner": 1,
+          "moves": 102,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v020_crustle_techA",
+          "our_first": false,
+          "outcome": "our_win",
+          "winner": 1,
+          "moves": 185,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v020_crustle_techA",
+          "our_first": true,
+          "outcome": "our_win",
+          "winner": 0,
+          "moves": 159,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v020_crustle_techA",
+          "our_first": false,
+          "outcome": "our_win",
+          "winner": 1,
+          "moves": 192,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v020_crustle_techA",
+          "our_first": true,
+          "outcome": "our_win",
+          "winner": 0,
+          "moves": 189,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v020_crustle_techA",
+          "our_first": false,
+          "outcome": "our_win",
+          "winner": 1,
+          "moves": 156,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v020_crustle_techA",
+          "our_first": true,
+          "outcome": "opp_win",
+          "winner": 1,
+          "moves": 94,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v020_crustle_techA",
+          "our_first": false,
+          "outcome": "our_win",
+          "winner": 1,
+          "moves": 186,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v020_crustle_techA",
+          "our_first": true,
+          "outcome": "our_win",
+          "winner": 0,
+          "moves": 77,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v020_crustle_techA",
+          "our_first": false,
+          "outcome": "our_win",
+          "winner": 1,
+          "moves": 185,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v020_crustle_techA",
+          "our_first": true,
+          "outcome": "our_win",
+          "winner": 0,
+          "moves": 189,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v020_crustle_techA",
+          "our_first": false,
+          "outcome": "our_win",
+          "winner": 1,
+          "moves": 137,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v020_crustle_techA",
+          "our_first": true,
+          "outcome": "opp_win",
+          "winner": 1,
+          "moves": 57,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v020_crustle_techA",
+          "our_first": false,
+          "outcome": "our_win",
+          "winner": 1,
+          "moves": 194,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v020_crustle_techA",
+          "our_first": true,
+          "outcome": "our_win",
+          "winner": 0,
+          "moves": 176,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v020_crustle_techA",
+          "our_first": false,
+          "outcome": "our_win",
+          "winner": 1,
+          "moves": 154,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v020_crustle_techA",
+          "our_first": true,
+          "outcome": "our_win",
+          "winner": 0,
+          "moves": 172,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v020_crustle_techA",
+          "our_first": false,
+          "outcome": "our_win",
+          "winner": 1,
+          "moves": 120,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v020_crustle_techA",
+          "our_first": true,
+          "outcome": "opp_win",
+          "winner": 1,
+          "moves": 129,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v020_crustle_techA",
+          "our_first": false,
+          "outcome": "our_win",
+          "winner": 1,
+          "moves": 154,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v020_crustle_techA",
+          "our_first": true,
+          "outcome": "our_win",
+          "winner": 0,
+          "moves": 187,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v020_crustle_techA",
+          "our_first": false,
+          "outcome": "our_win",
+          "winner": 1,
+          "moves": 177,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v020_crustle_techA",
+          "our_first": true,
+          "outcome": "our_win",
+          "winner": 0,
+          "moves": 222,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v020_crustle_techA",
+          "our_first": false,
+          "outcome": "opp_win",
+          "winner": 0,
+          "moves": 38,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v020_crustle_techA",
+          "our_first": true,
+          "outcome": "our_win",
+          "winner": 0,
+          "moves": 15,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v020_crustle_techA",
+          "our_first": false,
+          "outcome": "our_win",
+          "winner": 1,
+          "moves": 163,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v020_crustle_techA",
+          "our_first": true,
+          "outcome": "our_win",
+          "winner": 0,
+          "moves": 150,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v020_crustle_techA",
+          "our_first": false,
+          "outcome": "opp_win",
+          "winner": 0,
+          "moves": 44,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v020_crustle_techA",
+          "our_first": true,
+          "outcome": "opp_win",
+          "winner": 1,
+          "moves": 103,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v020_crustle_techA",
+          "our_first": false,
+          "outcome": "our_win",
+          "winner": 1,
+          "moves": 148,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v020_crustle_techA",
+          "our_first": true,
+          "outcome": "opp_win",
+          "winner": 1,
+          "moves": 96,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v020_crustle_techA",
+          "our_first": false,
+          "outcome": "our_win",
+          "winner": 1,
+          "moves": 135,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v020_crustle_techA",
+          "our_first": true,
+          "outcome": "opp_win",
+          "winner": 1,
+          "moves": 31,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v020_crustle_techA",
+          "our_first": false,
+          "outcome": "opp_win",
+          "winner": 0,
+          "moves": 79,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v020_crustle_techA",
+          "our_first": true,
+          "outcome": "opp_win",
+          "winner": 1,
+          "moves": 183,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v020_crustle_techA",
+          "our_first": false,
+          "outcome": "our_win",
+          "winner": 1,
+          "moves": 207,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v020_crustle_techA",
+          "our_first": true,
+          "outcome": "our_win",
+          "winner": 0,
+          "moves": 146,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v020_crustle_techA",
+          "our_first": false,
+          "outcome": "opp_win",
+          "winner": 0,
+          "moves": 63,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v020_crustle_techA",
+          "our_first": true,
+          "outcome": "our_win",
+          "winner": 0,
+          "moves": 190,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v020_crustle_techA",
+          "our_first": false,
+          "outcome": "our_win",
+          "winner": 1,
+          "moves": 197,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v020_crustle_techA",
+          "our_first": true,
+          "outcome": "our_win",
+          "winner": 0,
+          "moves": 173,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v020_crustle_techA",
+          "our_first": false,
+          "outcome": "our_win",
+          "winner": 1,
+          "moves": 186,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v020_crustle_techA",
+          "our_first": true,
+          "outcome": "our_win",
+          "winner": 0,
+          "moves": 179,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v020_crustle_techA",
+          "our_first": false,
+          "outcome": "our_win",
+          "winner": 1,
+          "moves": 110,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v020_crustle_techA",
+          "our_first": true,
+          "outcome": "our_win",
+          "winner": 0,
+          "moves": 171,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v020_crustle_techA",
+          "our_first": false,
+          "outcome": "opp_win",
+          "winner": 0,
+          "moves": 148,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v020_crustle_techA",
+          "our_first": true,
+          "outcome": "our_win",
+          "winner": 0,
+          "moves": 111,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v020_crustle_techA",
+          "our_first": false,
+          "outcome": "our_win",
+          "winner": 1,
+          "moves": 129,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v020_crustle_techA",
+          "our_first": true,
+          "outcome": "our_win",
+          "winner": 0,
+          "moves": 158,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v020_crustle_techA",
+          "our_first": false,
+          "outcome": "our_win",
+          "winner": 1,
+          "moves": 246,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v020_crustle_techA",
+          "our_first": true,
+          "outcome": "our_win",
+          "winner": 0,
+          "moves": 76,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v020_crustle_techA",
+          "our_first": false,
+          "outcome": "our_win",
+          "winner": 1,
+          "moves": 184,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v020_crustle_techA",
+          "our_first": true,
+          "outcome": "our_win",
+          "winner": 0,
+          "moves": 134,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v020_crustle_techA",
+          "our_first": false,
+          "outcome": "our_win",
+          "winner": 1,
+          "moves": 146,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v020_crustle_techA",
+          "our_first": true,
+          "outcome": "opp_win",
+          "winner": 1,
+          "moves": 137,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v020_crustle_techA",
+          "our_first": false,
+          "outcome": "our_win",
+          "winner": 1,
+          "moves": 147,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v020_crustle_techA",
+          "our_first": true,
+          "outcome": "our_win",
+          "winner": 0,
+          "moves": 145,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v020_crustle_techA",
+          "our_first": true,
+          "outcome": "opp_win",
+          "winner": 1,
+          "moves": 33,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v020_crustle_techA",
+          "our_first": false,
+          "outcome": "our_win",
+          "winner": 1,
+          "moves": 175,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v020_crustle_techA",
+          "our_first": false,
+          "outcome": "our_win",
+          "winner": 1,
+          "moves": 206,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v020_crustle_techA",
+          "our_first": true,
+          "outcome": "our_win",
+          "winner": 0,
+          "moves": 174,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v020_crustle_techA",
+          "our_first": false,
+          "outcome": "our_win",
+          "winner": 1,
+          "moves": 182,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v020_crustle_techA",
+          "our_first": true,
+          "outcome": "our_win",
+          "winner": 0,
+          "moves": 130,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v020_crustle_techA",
+          "our_first": true,
+          "outcome": "our_win",
+          "winner": 0,
+          "moves": 115,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v020_crustle_techA",
+          "our_first": false,
+          "outcome": "our_win",
+          "winner": 1,
+          "moves": 254,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v020_crustle_techA",
+          "our_first": false,
+          "outcome": "our_win",
+          "winner": 1,
+          "moves": 41,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v020_crustle_techA",
+          "our_first": true,
+          "outcome": "opp_win",
+          "winner": 1,
+          "moves": 24,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v020_crustle_techA",
+          "our_first": false,
+          "outcome": "opp_win",
+          "winner": 0,
+          "moves": 123,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v020_crustle_techA",
+          "our_first": true,
+          "outcome": "our_win",
+          "winner": 0,
+          "moves": 151,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v020_crustle_techA",
+          "our_first": false,
+          "outcome": "our_win",
+          "winner": 1,
+          "moves": 106,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v020_crustle_techA",
+          "our_first": true,
+          "outcome": "our_win",
+          "winner": 0,
+          "moves": 126,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v020_crustle_techA",
+          "our_first": false,
+          "outcome": "our_win",
+          "winner": 1,
+          "moves": 198,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v020_crustle_techA",
+          "our_first": true,
+          "outcome": "our_win",
+          "winner": 0,
+          "moves": 163,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v020_crustle_techA",
+          "our_first": false,
+          "outcome": "our_win",
+          "winner": 1,
+          "moves": 192,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v020_crustle_techA",
+          "our_first": true,
+          "outcome": "our_win",
+          "winner": 0,
+          "moves": 162,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v020_crustle_techA",
+          "our_first": false,
+          "outcome": "our_win",
+          "winner": 1,
+          "moves": 175,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        }
+      ]
+    },
+    "v009a_crustle": {
+      "candidate": "v009a_crustle",
+      "games": [
+        {
+          "candidate": "v009a_crustle",
+          "our_first": true,
+          "outcome": "our_win",
+          "winner": 0,
+          "moves": 174,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v009a_crustle",
+          "our_first": false,
+          "outcome": "our_win",
+          "winner": 1,
+          "moves": 190,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v009a_crustle",
+          "our_first": true,
+          "outcome": "opp_win",
+          "winner": 1,
+          "moves": 147,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v009a_crustle",
+          "our_first": false,
+          "outcome": "our_win",
+          "winner": 1,
+          "moves": 130,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v009a_crustle",
+          "our_first": false,
+          "outcome": "opp_win",
+          "winner": 0,
+          "moves": 84,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v009a_crustle",
+          "our_first": true,
+          "outcome": "our_win",
+          "winner": 0,
+          "moves": 233,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v009a_crustle",
+          "our_first": true,
+          "outcome": "opp_win",
+          "winner": 1,
+          "moves": 70,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v009a_crustle",
+          "our_first": false,
+          "outcome": "opp_win",
+          "winner": 0,
+          "moves": 36,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v009a_crustle",
+          "our_first": true,
+          "outcome": "opp_win",
+          "winner": 1,
+          "moves": 75,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v009a_crustle",
+          "our_first": false,
+          "outcome": "our_win",
+          "winner": 1,
+          "moves": 246,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v009a_crustle",
+          "our_first": true,
+          "outcome": "opp_win",
+          "winner": 1,
+          "moves": 111,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v009a_crustle",
+          "our_first": false,
+          "outcome": "opp_win",
+          "winner": 0,
+          "moves": 78,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v009a_crustle",
+          "our_first": true,
+          "outcome": "our_win",
+          "winner": 0,
+          "moves": 115,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v009a_crustle",
+          "our_first": false,
+          "outcome": "our_win",
+          "winner": 1,
+          "moves": 164,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v009a_crustle",
+          "our_first": true,
+          "outcome": "our_win",
+          "winner": 0,
+          "moves": 208,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v009a_crustle",
+          "our_first": false,
+          "outcome": "our_win",
+          "winner": 1,
+          "moves": 146,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v009a_crustle",
+          "our_first": true,
+          "outcome": "our_win",
+          "winner": 0,
+          "moves": 201,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v009a_crustle",
+          "our_first": false,
+          "outcome": "our_win",
+          "winner": 1,
+          "moves": 180,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v009a_crustle",
+          "our_first": true,
+          "outcome": "our_win",
+          "winner": 0,
+          "moves": 178,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v009a_crustle",
+          "our_first": false,
+          "outcome": "our_win",
+          "winner": 1,
+          "moves": 184,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v009a_crustle",
+          "our_first": true,
+          "outcome": "opp_win",
+          "winner": 1,
+          "moves": 62,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v009a_crustle",
+          "our_first": false,
+          "outcome": "our_win",
+          "winner": 1,
+          "moves": 187,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v009a_crustle",
+          "our_first": true,
+          "outcome": "our_win",
+          "winner": 0,
+          "moves": 174,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v009a_crustle",
+          "our_first": false,
+          "outcome": "our_win",
+          "winner": 1,
+          "moves": 226,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v009a_crustle",
+          "our_first": true,
+          "outcome": "our_win",
+          "winner": 0,
+          "moves": 171,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v009a_crustle",
+          "our_first": false,
+          "outcome": "our_win",
+          "winner": 1,
+          "moves": 178,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v009a_crustle",
+          "our_first": true,
+          "outcome": "opp_win",
+          "winner": 1,
+          "moves": 64,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v009a_crustle",
+          "our_first": false,
+          "outcome": "our_win",
+          "winner": 1,
+          "moves": 187,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v009a_crustle",
+          "our_first": true,
+          "outcome": "opp_win",
+          "winner": 1,
+          "moves": 83,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v009a_crustle",
+          "our_first": true,
+          "outcome": "our_win",
+          "winner": 0,
+          "moves": 67,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v009a_crustle",
+          "our_first": false,
+          "outcome": "our_win",
+          "winner": 1,
+          "moves": 216,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v009a_crustle",
+          "our_first": false,
+          "outcome": "our_win",
+          "winner": 1,
+          "moves": 177,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v009a_crustle",
+          "our_first": true,
+          "outcome": "our_win",
+          "winner": 0,
+          "moves": 108,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v009a_crustle",
+          "our_first": false,
+          "outcome": "opp_win",
+          "winner": 0,
+          "moves": 147,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v009a_crustle",
+          "our_first": true,
+          "outcome": "our_win",
+          "winner": 0,
+          "moves": 70,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v009a_crustle",
+          "our_first": false,
+          "outcome": "our_win",
+          "winner": 1,
+          "moves": 177,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v009a_crustle",
+          "our_first": true,
+          "outcome": "our_win",
+          "winner": 0,
+          "moves": 210,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v009a_crustle",
+          "our_first": false,
+          "outcome": "our_win",
+          "winner": 1,
+          "moves": 109,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v009a_crustle",
+          "our_first": true,
+          "outcome": "our_win",
+          "winner": 0,
+          "moves": 135,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v009a_crustle",
+          "our_first": false,
+          "outcome": "opp_win",
+          "winner": 0,
+          "moves": 81,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v009a_crustle",
+          "our_first": false,
+          "outcome": "our_win",
+          "winner": 1,
+          "moves": 69,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v009a_crustle",
+          "our_first": true,
+          "outcome": "our_win",
+          "winner": 0,
+          "moves": 296,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v009a_crustle",
+          "our_first": true,
+          "outcome": "opp_win",
+          "winner": 1,
+          "moves": 43,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v009a_crustle",
+          "our_first": false,
+          "outcome": "opp_win",
+          "winner": 0,
+          "moves": 46,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v009a_crustle",
+          "our_first": true,
+          "outcome": "opp_win",
+          "winner": 1,
+          "moves": 161,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v009a_crustle",
+          "our_first": false,
+          "outcome": "our_win",
+          "winner": 1,
+          "moves": 183,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v009a_crustle",
+          "our_first": true,
+          "outcome": "our_win",
+          "winner": 0,
+          "moves": 165,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v009a_crustle",
+          "our_first": false,
+          "outcome": "opp_win",
+          "winner": 0,
+          "moves": 131,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v009a_crustle",
+          "our_first": true,
+          "outcome": "our_win",
+          "winner": 0,
+          "moves": 171,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v009a_crustle",
+          "our_first": false,
+          "outcome": "our_win",
+          "winner": 1,
+          "moves": 158,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v009a_crustle",
+          "our_first": true,
+          "outcome": "our_win",
+          "winner": 0,
+          "moves": 35,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v009a_crustle",
+          "our_first": false,
+          "outcome": "our_win",
+          "winner": 1,
+          "moves": 146,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v009a_crustle",
+          "our_first": true,
+          "outcome": "opp_win",
+          "winner": 1,
+          "moves": 25,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v009a_crustle",
+          "our_first": false,
+          "outcome": "opp_win",
+          "winner": 0,
+          "moves": 84,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v009a_crustle",
+          "our_first": true,
+          "outcome": "opp_win",
+          "winner": 1,
+          "moves": 63,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v009a_crustle",
+          "our_first": false,
+          "outcome": "opp_win",
+          "winner": 0,
+          "moves": 79,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v009a_crustle",
+          "our_first": true,
+          "outcome": "our_win",
+          "winner": 0,
+          "moves": 182,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v009a_crustle",
+          "our_first": false,
+          "outcome": "our_win",
+          "winner": 1,
+          "moves": 201,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v009a_crustle",
+          "our_first": true,
+          "outcome": "our_win",
+          "winner": 0,
+          "moves": 95,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v009a_crustle",
+          "our_first": false,
+          "outcome": "opp_win",
+          "winner": 0,
+          "moves": 54,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v009a_crustle",
+          "our_first": true,
+          "outcome": "our_win",
+          "winner": 0,
+          "moves": 207,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v009a_crustle",
+          "our_first": false,
+          "outcome": "our_win",
+          "winner": 1,
+          "moves": 97,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v009a_crustle",
+          "our_first": true,
+          "outcome": "opp_win",
+          "winner": 1,
+          "moves": 130,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v009a_crustle",
+          "our_first": false,
+          "outcome": "our_win",
+          "winner": 1,
+          "moves": 58,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v009a_crustle",
+          "our_first": true,
+          "outcome": "our_win",
+          "winner": 0,
+          "moves": 220,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v009a_crustle",
+          "our_first": false,
+          "outcome": "our_win",
+          "winner": 1,
+          "moves": 109,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v009a_crustle",
+          "our_first": true,
+          "outcome": "opp_win",
+          "winner": 1,
+          "moves": 40,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v009a_crustle",
+          "our_first": true,
+          "outcome": "our_win",
+          "winner": 0,
+          "moves": 17,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v009a_crustle",
+          "our_first": false,
+          "outcome": "our_win",
+          "winner": 1,
+          "moves": 174,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v009a_crustle",
+          "our_first": false,
+          "outcome": "our_win",
+          "winner": 1,
+          "moves": 177,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v009a_crustle",
+          "our_first": true,
+          "outcome": "our_win",
+          "winner": 0,
+          "moves": 150,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v009a_crustle",
+          "our_first": false,
+          "outcome": "our_win",
+          "winner": 1,
+          "moves": 135,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v009a_crustle",
+          "our_first": true,
+          "outcome": "our_win",
+          "winner": 0,
+          "moves": 99,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v009a_crustle",
+          "our_first": false,
+          "outcome": "our_win",
+          "winner": 1,
+          "moves": 98,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v009a_crustle",
+          "our_first": true,
+          "outcome": "our_win",
+          "winner": 0,
+          "moves": 173,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v009a_crustle",
+          "our_first": false,
+          "outcome": "our_win",
+          "winner": 1,
+          "moves": 74,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v009a_crustle",
+          "our_first": true,
+          "outcome": "our_win",
+          "winner": 0,
+          "moves": 190,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v009a_crustle",
+          "our_first": false,
+          "outcome": "our_win",
+          "winner": 1,
+          "moves": 130,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v009a_crustle",
+          "our_first": true,
+          "outcome": "our_win",
+          "winner": 0,
+          "moves": 190,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v009a_crustle",
+          "our_first": false,
+          "outcome": "our_win",
+          "winner": 1,
+          "moves": 140,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v009a_crustle",
+          "our_first": true,
+          "outcome": "opp_win",
+          "winner": 1,
+          "moves": 45,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v009a_crustle",
+          "our_first": false,
+          "outcome": "our_win",
+          "winner": 1,
+          "moves": 108,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v009a_crustle",
+          "our_first": true,
+          "outcome": "our_win",
+          "winner": 0,
+          "moves": 159,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v009a_crustle",
+          "our_first": false,
+          "outcome": "opp_win",
+          "winner": 0,
+          "moves": 139,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v009a_crustle",
+          "our_first": true,
+          "outcome": "our_win",
+          "winner": 0,
+          "moves": 173,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v009a_crustle",
+          "our_first": false,
+          "outcome": "our_win",
+          "winner": 1,
+          "moves": 146,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v009a_crustle",
+          "our_first": true,
+          "outcome": "our_win",
+          "winner": 0,
+          "moves": 75,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v009a_crustle",
+          "our_first": false,
+          "outcome": "our_win",
+          "winner": 1,
+          "moves": 121,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v009a_crustle",
+          "our_first": true,
+          "outcome": "opp_win",
+          "winner": 1,
+          "moves": 165,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v009a_crustle",
+          "our_first": false,
+          "outcome": "our_win",
+          "winner": 1,
+          "moves": 195,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v009a_crustle",
+          "our_first": true,
+          "outcome": "our_win",
+          "winner": 0,
+          "moves": 232,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v009a_crustle",
+          "our_first": false,
+          "outcome": "our_win",
+          "winner": 1,
+          "moves": 195,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v009a_crustle",
+          "our_first": true,
+          "outcome": "our_win",
+          "winner": 0,
+          "moves": 109,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v009a_crustle",
+          "our_first": false,
+          "outcome": "opp_win",
+          "winner": 0,
+          "moves": 49,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v009a_crustle",
+          "our_first": true,
+          "outcome": "our_win",
+          "winner": 0,
+          "moves": 200,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v009a_crustle",
+          "our_first": false,
+          "outcome": "our_win",
+          "winner": 1,
+          "moves": 177,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v009a_crustle",
+          "our_first": true,
+          "outcome": "our_win",
+          "winner": 0,
+          "moves": 190,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v009a_crustle",
+          "our_first": false,
+          "outcome": "our_win",
+          "winner": 1,
+          "moves": 142,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v009a_crustle",
+          "our_first": true,
+          "outcome": "opp_win",
+          "winner": 1,
+          "moves": 110,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v009a_crustle",
+          "our_first": false,
+          "outcome": "our_win",
+          "winner": 1,
+          "moves": 159,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v009a_crustle",
+          "our_first": true,
+          "outcome": "opp_win",
+          "winner": 1,
+          "moves": 63,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v009a_crustle",
+          "our_first": true,
+          "outcome": "opp_win",
+          "winner": 1,
+          "moves": 25,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v009a_crustle",
+          "our_first": false,
+          "outcome": "our_win",
+          "winner": 1,
+          "moves": 160,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v009a_crustle",
+          "our_first": false,
+          "outcome": "our_win",
+          "winner": 1,
+          "moves": 140,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v009a_crustle",
+          "our_first": true,
+          "outcome": "our_win",
+          "winner": 0,
+          "moves": 183,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v009a_crustle",
+          "our_first": false,
+          "outcome": "opp_win",
+          "winner": 0,
+          "moves": 79,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v009a_crustle",
+          "our_first": true,
+          "outcome": "our_win",
+          "winner": 0,
+          "moves": 168,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v009a_crustle",
+          "our_first": false,
+          "outcome": "our_win",
+          "winner": 1,
+          "moves": 139,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v009a_crustle",
+          "our_first": true,
+          "outcome": "opp_win",
+          "winner": 1,
+          "moves": 80,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v009a_crustle",
+          "our_first": false,
+          "outcome": "our_win",
+          "winner": 1,
+          "moves": 176,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v009a_crustle",
+          "our_first": true,
+          "outcome": "our_win",
+          "winner": 0,
+          "moves": 156,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v009a_crustle",
+          "our_first": false,
+          "outcome": "opp_win",
+          "winner": 0,
+          "moves": 62,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v009a_crustle",
+          "our_first": true,
+          "outcome": "our_win",
+          "winner": 0,
+          "moves": 214,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v009a_crustle",
+          "our_first": false,
+          "outcome": "our_win",
+          "winner": 1,
+          "moves": 63,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v009a_crustle",
+          "our_first": true,
+          "outcome": "opp_win",
+          "winner": 1,
+          "moves": 28,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v009a_crustle",
+          "our_first": false,
+          "outcome": "opp_win",
+          "winner": 0,
+          "moves": 110,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v009a_crustle",
+          "our_first": true,
+          "outcome": "opp_win",
+          "winner": 1,
+          "moves": 137,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v009a_crustle",
+          "our_first": false,
+          "outcome": "our_win",
+          "winner": 1,
+          "moves": 199,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v009a_crustle",
+          "our_first": true,
+          "outcome": "opp_win",
+          "winner": 1,
+          "moves": 138,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v009a_crustle",
+          "our_first": false,
+          "outcome": "opp_win",
+          "winner": 0,
+          "moves": 138,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v009a_crustle",
+          "our_first": true,
+          "outcome": "opp_win",
+          "winner": 1,
+          "moves": 128,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v009a_crustle",
+          "our_first": false,
+          "outcome": "opp_win",
+          "winner": 0,
+          "moves": 138,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v009a_crustle",
+          "our_first": true,
+          "outcome": "our_win",
+          "winner": 0,
+          "moves": 182,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v009a_crustle",
+          "our_first": false,
+          "outcome": "opp_win",
+          "winner": 0,
+          "moves": 95,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v009a_crustle",
+          "our_first": true,
+          "outcome": "opp_win",
+          "winner": 1,
+          "moves": 157,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v009a_crustle",
+          "our_first": false,
+          "outcome": "our_win",
+          "winner": 1,
+          "moves": 124,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v009a_crustle",
+          "our_first": true,
+          "outcome": "opp_win",
+          "winner": 1,
+          "moves": 35,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v009a_crustle",
+          "our_first": false,
+          "outcome": "opp_win",
+          "winner": 0,
+          "moves": 159,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v009a_crustle",
+          "our_first": true,
+          "outcome": "our_win",
+          "winner": 0,
+          "moves": 123,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v009a_crustle",
+          "our_first": false,
+          "outcome": "our_win",
+          "winner": 1,
+          "moves": 151,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v009a_crustle",
+          "our_first": true,
+          "outcome": "our_win",
+          "winner": 0,
+          "moves": 149,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v009a_crustle",
+          "our_first": false,
+          "outcome": "our_win",
+          "winner": 1,
+          "moves": 100,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v009a_crustle",
+          "our_first": true,
+          "outcome": "our_win",
+          "winner": 0,
+          "moves": 166,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v009a_crustle",
+          "our_first": false,
+          "outcome": "opp_win",
+          "winner": 0,
+          "moves": 43,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v009a_crustle",
+          "our_first": true,
+          "outcome": "opp_win",
+          "winner": 1,
+          "moves": 151,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v009a_crustle",
+          "our_first": false,
+          "outcome": "our_win",
+          "winner": 1,
+          "moves": 74,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v009a_crustle",
+          "our_first": true,
+          "outcome": "our_win",
+          "winner": 0,
+          "moves": 108,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v009a_crustle",
+          "our_first": false,
+          "outcome": "our_win",
+          "winner": 1,
+          "moves": 174,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v009a_crustle",
+          "our_first": true,
+          "outcome": "our_win",
+          "winner": 0,
+          "moves": 206,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v009a_crustle",
+          "our_first": false,
+          "outcome": "our_win",
+          "winner": 1,
+          "moves": 191,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v009a_crustle",
+          "our_first": true,
+          "outcome": "opp_win",
+          "winner": 1,
+          "moves": 334,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v009a_crustle",
+          "our_first": false,
+          "outcome": "our_win",
+          "winner": 1,
+          "moves": 176,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v009a_crustle",
+          "our_first": true,
+          "outcome": "our_win",
+          "winner": 0,
+          "moves": 189,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v009a_crustle",
+          "our_first": false,
+          "outcome": "our_win",
+          "winner": 1,
+          "moves": 37,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v009a_crustle",
+          "our_first": true,
+          "outcome": "our_win",
+          "winner": 0,
+          "moves": 19,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v009a_crustle",
+          "our_first": false,
+          "outcome": "our_win",
+          "winner": 1,
+          "moves": 156,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v009a_crustle",
+          "our_first": true,
+          "outcome": "our_win",
+          "winner": 0,
+          "moves": 151,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v009a_crustle",
+          "our_first": false,
+          "outcome": "our_win",
+          "winner": 1,
+          "moves": 148,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v009a_crustle",
+          "our_first": true,
+          "outcome": "our_win",
+          "winner": 0,
+          "moves": 64,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v009a_crustle",
+          "our_first": false,
+          "outcome": "our_win",
+          "winner": 1,
+          "moves": 120,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        }
+      ]
+    },
+    "v021_crustle_techB": {
+      "candidate": "v021_crustle_techB",
+      "games": [
+        {
+          "candidate": "v021_crustle_techB",
+          "our_first": true,
+          "outcome": "our_win",
+          "winner": 0,
+          "moves": 164,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v021_crustle_techB",
+          "our_first": false,
+          "outcome": "opp_win",
+          "winner": 0,
+          "moves": 111,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v021_crustle_techB",
+          "our_first": true,
+          "outcome": "opp_win",
+          "winner": 1,
+          "moves": 127,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v021_crustle_techB",
+          "our_first": false,
+          "outcome": "our_win",
+          "winner": 1,
+          "moves": 184,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v021_crustle_techB",
+          "our_first": true,
+          "outcome": "our_win",
+          "winner": 0,
+          "moves": 120,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v021_crustle_techB",
+          "our_first": false,
+          "outcome": "opp_win",
+          "winner": 0,
+          "moves": 58,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v021_crustle_techB",
+          "our_first": false,
+          "outcome": "our_win",
+          "winner": 1,
+          "moves": 34,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v021_crustle_techB",
+          "our_first": true,
+          "outcome": "our_win",
+          "winner": 0,
+          "moves": 225,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v021_crustle_techB",
+          "our_first": true,
+          "outcome": "opp_win",
+          "winner": 1,
+          "moves": 33,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v021_crustle_techB",
+          "our_first": false,
+          "outcome": "opp_win",
+          "winner": 0,
+          "moves": 94,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v021_crustle_techB",
+          "our_first": true,
+          "outcome": "our_win",
+          "winner": 0,
+          "moves": 181,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v021_crustle_techB",
+          "our_first": false,
+          "outcome": "opp_win",
+          "winner": 0,
+          "moves": 150,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v021_crustle_techB",
+          "our_first": true,
+          "outcome": "our_win",
+          "winner": 0,
+          "moves": 152,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v021_crustle_techB",
+          "our_first": false,
+          "outcome": "opp_win",
+          "winner": 0,
+          "moves": 165,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v021_crustle_techB",
+          "our_first": true,
+          "outcome": "our_win",
+          "winner": 0,
+          "moves": 204,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v021_crustle_techB",
+          "our_first": false,
+          "outcome": "opp_win",
+          "winner": 0,
+          "moves": 338,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v021_crustle_techB",
+          "our_first": true,
+          "outcome": "opp_win",
+          "winner": 1,
+          "moves": 146,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v021_crustle_techB",
+          "our_first": false,
+          "outcome": "our_win",
+          "winner": 1,
+          "moves": 159,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v021_crustle_techB",
+          "our_first": true,
+          "outcome": "our_win",
+          "winner": 0,
+          "moves": 179,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v021_crustle_techB",
+          "our_first": false,
+          "outcome": "our_win",
+          "winner": 1,
+          "moves": 177,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v021_crustle_techB",
+          "our_first": true,
+          "outcome": "our_win",
+          "winner": 0,
+          "moves": 160,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v021_crustle_techB",
+          "our_first": false,
+          "outcome": "our_win",
+          "winner": 1,
+          "moves": 87,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v021_crustle_techB",
+          "our_first": true,
+          "outcome": "opp_win",
+          "winner": 1,
+          "moves": 83,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v021_crustle_techB",
+          "our_first": true,
+          "outcome": "our_win",
+          "winner": 0,
+          "moves": 13,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v021_crustle_techB",
+          "our_first": false,
+          "outcome": "our_win",
+          "winner": 1,
+          "moves": 314,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v021_crustle_techB",
+          "our_first": false,
+          "outcome": "our_win",
+          "winner": 1,
+          "moves": 28,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v021_crustle_techB",
+          "our_first": true,
+          "outcome": "opp_win",
+          "winner": 1,
+          "moves": 64,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v021_crustle_techB",
+          "our_first": false,
+          "outcome": "our_win",
+          "winner": 1,
+          "moves": 100,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v021_crustle_techB",
+          "our_first": true,
+          "outcome": "opp_win",
+          "winner": 1,
+          "moves": 69,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v021_crustle_techB",
+          "our_first": false,
+          "outcome": "our_win",
+          "winner": 1,
+          "moves": 172,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v021_crustle_techB",
+          "our_first": true,
+          "outcome": "our_win",
+          "winner": 0,
+          "moves": 128,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v021_crustle_techB",
+          "our_first": false,
+          "outcome": "our_win",
+          "winner": 1,
+          "moves": 174,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v021_crustle_techB",
+          "our_first": true,
+          "outcome": "our_win",
+          "winner": 0,
+          "moves": 157,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v021_crustle_techB",
+          "our_first": false,
+          "outcome": "opp_win",
+          "winner": 0,
+          "moves": 88,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v021_crustle_techB",
+          "our_first": true,
+          "outcome": "our_win",
+          "winner": 0,
+          "moves": 187,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v021_crustle_techB",
+          "our_first": false,
+          "outcome": "our_win",
+          "winner": 1,
+          "moves": 92,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v021_crustle_techB",
+          "our_first": true,
+          "outcome": "our_win",
+          "winner": 0,
+          "moves": 101,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v021_crustle_techB",
+          "our_first": false,
+          "outcome": "our_win",
+          "winner": 1,
+          "moves": 18,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v021_crustle_techB",
+          "our_first": true,
+          "outcome": "opp_win",
+          "winner": 1,
+          "moves": 167,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v021_crustle_techB",
+          "our_first": false,
+          "outcome": "our_win",
+          "winner": 1,
+          "moves": 143,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v021_crustle_techB",
+          "our_first": true,
+          "outcome": "our_win",
+          "winner": 0,
+          "moves": 63,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v021_crustle_techB",
+          "our_first": false,
+          "outcome": "our_win",
+          "winner": 1,
+          "moves": 160,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v021_crustle_techB",
+          "our_first": true,
+          "outcome": "our_win",
+          "winner": 0,
+          "moves": 160,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v021_crustle_techB",
+          "our_first": false,
+          "outcome": "opp_win",
+          "winner": 0,
+          "moves": 85,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v021_crustle_techB",
+          "our_first": true,
+          "outcome": "our_win",
+          "winner": 0,
+          "moves": 18,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v021_crustle_techB",
+          "our_first": false,
+          "outcome": "our_win",
+          "winner": 1,
+          "moves": 177,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v021_crustle_techB",
+          "our_first": true,
+          "outcome": "our_win",
+          "winner": 0,
+          "moves": 154,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v021_crustle_techB",
+          "our_first": false,
+          "outcome": "our_win",
+          "winner": 1,
+          "moves": 161,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v021_crustle_techB",
+          "our_first": true,
+          "outcome": "opp_win",
+          "winner": 1,
+          "moves": 169,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v021_crustle_techB",
+          "our_first": false,
+          "outcome": "our_win",
+          "winner": 1,
+          "moves": 138,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v021_crustle_techB",
+          "our_first": true,
+          "outcome": "our_win",
+          "winner": 0,
+          "moves": 158,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v021_crustle_techB",
+          "our_first": false,
+          "outcome": "opp_win",
+          "winner": 0,
+          "moves": 77,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v021_crustle_techB",
+          "our_first": true,
+          "outcome": "our_win",
+          "winner": 0,
+          "moves": 181,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v021_crustle_techB",
+          "our_first": false,
+          "outcome": "our_win",
+          "winner": 1,
+          "moves": 184,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v021_crustle_techB",
+          "our_first": true,
+          "outcome": "opp_win",
+          "winner": 1,
+          "moves": 138,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v021_crustle_techB",
+          "our_first": false,
+          "outcome": "our_win",
+          "winner": 1,
+          "moves": 206,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v021_crustle_techB",
+          "our_first": true,
+          "outcome": "our_win",
+          "winner": 0,
+          "moves": 167,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v021_crustle_techB",
+          "our_first": false,
+          "outcome": "our_win",
+          "winner": 1,
+          "moves": 200,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v021_crustle_techB",
+          "our_first": true,
+          "outcome": "our_win",
+          "winner": 0,
+          "moves": 208,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v021_crustle_techB",
+          "our_first": false,
+          "outcome": "our_win",
+          "winner": 1,
+          "moves": 125,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v021_crustle_techB",
+          "our_first": true,
+          "outcome": "our_win",
+          "winner": 0,
+          "moves": 178,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v021_crustle_techB",
+          "our_first": true,
+          "outcome": "our_win",
+          "winner": 0,
+          "moves": 176,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v021_crustle_techB",
+          "our_first": false,
+          "outcome": "opp_win",
+          "winner": 0,
+          "moves": 326,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v021_crustle_techB",
+          "our_first": false,
+          "outcome": "our_win",
+          "winner": 1,
+          "moves": 178,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v021_crustle_techB",
+          "our_first": true,
+          "outcome": "our_win",
+          "winner": 0,
+          "moves": 210,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v021_crustle_techB",
+          "our_first": false,
+          "outcome": "opp_win",
+          "winner": 0,
+          "moves": 73,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v021_crustle_techB",
+          "our_first": true,
+          "outcome": "our_win",
+          "winner": 0,
+          "moves": 141,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v021_crustle_techB",
+          "our_first": false,
+          "outcome": "opp_win",
+          "winner": 0,
+          "moves": 64,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v021_crustle_techB",
+          "our_first": true,
+          "outcome": "our_win",
+          "winner": 0,
+          "moves": 173,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v021_crustle_techB",
+          "our_first": false,
+          "outcome": "our_win",
+          "winner": 1,
+          "moves": 200,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v021_crustle_techB",
+          "our_first": true,
+          "outcome": "our_win",
+          "winner": 0,
+          "moves": 130,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v021_crustle_techB",
+          "our_first": false,
+          "outcome": "our_win",
+          "winner": 1,
+          "moves": 163,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v021_crustle_techB",
+          "our_first": true,
+          "outcome": "our_win",
+          "winner": 0,
+          "moves": 11,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v021_crustle_techB",
+          "our_first": false,
+          "outcome": "opp_win",
+          "winner": 0,
+          "moves": 162,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v021_crustle_techB",
+          "our_first": true,
+          "outcome": "our_win",
+          "winner": 0,
+          "moves": 39,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v021_crustle_techB",
+          "our_first": false,
+          "outcome": "our_win",
+          "winner": 1,
+          "moves": 82,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v021_crustle_techB",
+          "our_first": true,
+          "outcome": "our_win",
+          "winner": 0,
+          "moves": 182,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v021_crustle_techB",
+          "our_first": false,
+          "outcome": "our_win",
+          "winner": 1,
+          "moves": 181,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v021_crustle_techB",
+          "our_first": true,
+          "outcome": "our_win",
+          "winner": 0,
+          "moves": 220,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v021_crustle_techB",
+          "our_first": false,
+          "outcome": "our_win",
+          "winner": 1,
+          "moves": 166,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v021_crustle_techB",
+          "our_first": true,
+          "outcome": "our_win",
+          "winner": 0,
+          "moves": 144,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v021_crustle_techB",
+          "our_first": false,
+          "outcome": "opp_win",
+          "winner": 0,
+          "moves": 158,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v021_crustle_techB",
+          "our_first": false,
+          "outcome": "opp_win",
+          "winner": 0,
+          "moves": 84,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v021_crustle_techB",
+          "our_first": true,
+          "outcome": "our_win",
+          "winner": 0,
+          "moves": 291,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v021_crustle_techB",
+          "our_first": true,
+          "outcome": "our_win",
+          "winner": 0,
+          "moves": 177,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v021_crustle_techB",
+          "our_first": false,
+          "outcome": "our_win",
+          "winner": 1,
+          "moves": 165,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v021_crustle_techB",
+          "our_first": true,
+          "outcome": "our_win",
+          "winner": 0,
+          "moves": 167,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v021_crustle_techB",
+          "our_first": false,
+          "outcome": "our_win",
+          "winner": 1,
+          "moves": 204,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v021_crustle_techB",
+          "our_first": true,
+          "outcome": "opp_win",
+          "winner": 1,
+          "moves": 282,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v021_crustle_techB",
+          "our_first": false,
+          "outcome": "our_win",
+          "winner": 1,
+          "moves": 180,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v021_crustle_techB",
+          "our_first": true,
+          "outcome": "opp_win",
+          "winner": 1,
+          "moves": 47,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v021_crustle_techB",
+          "our_first": false,
+          "outcome": "our_win",
+          "winner": 1,
+          "moves": 186,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v021_crustle_techB",
+          "our_first": true,
+          "outcome": "our_win",
+          "winner": 0,
+          "moves": 104,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v021_crustle_techB",
+          "our_first": false,
+          "outcome": "our_win",
+          "winner": 1,
+          "moves": 196,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v021_crustle_techB",
+          "our_first": true,
+          "outcome": "our_win",
+          "winner": 0,
+          "moves": 165,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v021_crustle_techB",
+          "our_first": false,
+          "outcome": "our_win",
+          "winner": 1,
+          "moves": 154,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v021_crustle_techB",
+          "our_first": true,
+          "outcome": "our_win",
+          "winner": 0,
+          "moves": 143,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v021_crustle_techB",
+          "our_first": false,
+          "outcome": "opp_win",
+          "winner": 0,
+          "moves": 139,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v021_crustle_techB",
+          "our_first": true,
+          "outcome": "opp_win",
+          "winner": 1,
+          "moves": 75,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v021_crustle_techB",
+          "our_first": false,
+          "outcome": "opp_win",
+          "winner": 0,
+          "moves": 51,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v021_crustle_techB",
+          "our_first": true,
+          "outcome": "our_win",
+          "winner": 0,
+          "moves": 162,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v021_crustle_techB",
+          "our_first": false,
+          "outcome": "our_win",
+          "winner": 1,
+          "moves": 189,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v021_crustle_techB",
+          "our_first": true,
+          "outcome": "our_win",
+          "winner": 0,
+          "moves": 142,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v021_crustle_techB",
+          "our_first": true,
+          "outcome": "opp_win",
+          "winner": 1,
+          "moves": 70,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v021_crustle_techB",
+          "our_first": false,
+          "outcome": "our_win",
+          "winner": 1,
+          "moves": 233,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v021_crustle_techB",
+          "our_first": false,
+          "outcome": "our_win",
+          "winner": 1,
+          "moves": 155,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v021_crustle_techB",
+          "our_first": true,
+          "outcome": "our_win",
+          "winner": 0,
+          "moves": 184,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v021_crustle_techB",
+          "our_first": false,
+          "outcome": "our_win",
+          "winner": 1,
+          "moves": 196,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v021_crustle_techB",
+          "our_first": true,
+          "outcome": "our_win",
+          "winner": 0,
+          "moves": 137,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v021_crustle_techB",
+          "our_first": false,
+          "outcome": "opp_win",
+          "winner": 0,
+          "moves": 31,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v021_crustle_techB",
+          "our_first": true,
+          "outcome": "our_win",
+          "winner": 0,
+          "moves": 213,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v021_crustle_techB",
+          "our_first": false,
+          "outcome": "opp_win",
+          "winner": 0,
+          "moves": 150,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v021_crustle_techB",
+          "our_first": true,
+          "outcome": "our_win",
+          "winner": 0,
+          "moves": 207,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v021_crustle_techB",
+          "our_first": false,
+          "outcome": "our_win",
+          "winner": 1,
+          "moves": 28,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v021_crustle_techB",
+          "our_first": true,
+          "outcome": "our_win",
+          "winner": 0,
+          "moves": 180,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v021_crustle_techB",
+          "our_first": false,
+          "outcome": "our_win",
+          "winner": 1,
+          "moves": 243,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v021_crustle_techB",
+          "our_first": true,
+          "outcome": "our_win",
+          "winner": 0,
+          "moves": 181,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v021_crustle_techB",
+          "our_first": false,
+          "outcome": "opp_win",
+          "winner": 0,
+          "moves": 78,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v021_crustle_techB",
+          "our_first": true,
+          "outcome": "our_win",
+          "winner": 0,
+          "moves": 144,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v021_crustle_techB",
+          "our_first": false,
+          "outcome": "opp_win",
+          "winner": 0,
+          "moves": 120,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v021_crustle_techB",
+          "our_first": true,
+          "outcome": "opp_win",
+          "winner": 1,
+          "moves": 121,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v021_crustle_techB",
+          "our_first": false,
+          "outcome": "our_win",
+          "winner": 1,
+          "moves": 140,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v021_crustle_techB",
+          "our_first": true,
+          "outcome": "opp_win",
+          "winner": 1,
+          "moves": 171,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v021_crustle_techB",
+          "our_first": false,
+          "outcome": "our_win",
+          "winner": 1,
+          "moves": 227,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v021_crustle_techB",
+          "our_first": true,
+          "outcome": "our_win",
+          "winner": 0,
+          "moves": 200,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v021_crustle_techB",
+          "our_first": false,
+          "outcome": "our_win",
+          "winner": 1,
+          "moves": 165,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v021_crustle_techB",
+          "our_first": true,
+          "outcome": "opp_win",
+          "winner": 1,
+          "moves": 134,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v021_crustle_techB",
+          "our_first": false,
+          "outcome": "our_win",
+          "winner": 1,
+          "moves": 132,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v021_crustle_techB",
+          "our_first": true,
+          "outcome": "opp_win",
+          "winner": 1,
+          "moves": 111,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v021_crustle_techB",
+          "our_first": false,
+          "outcome": "our_win",
+          "winner": 1,
+          "moves": 188,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v021_crustle_techB",
+          "our_first": true,
+          "outcome": "opp_win",
+          "winner": 1,
+          "moves": 128,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v021_crustle_techB",
+          "our_first": false,
+          "outcome": "opp_win",
+          "winner": 0,
+          "moves": 66,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v021_crustle_techB",
+          "our_first": true,
+          "outcome": "opp_win",
+          "winner": 1,
+          "moves": 169,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v021_crustle_techB",
+          "our_first": false,
+          "outcome": "opp_win",
+          "winner": 0,
+          "moves": 73,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v021_crustle_techB",
+          "our_first": true,
+          "outcome": "our_win",
+          "winner": 0,
+          "moves": 171,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v021_crustle_techB",
+          "our_first": false,
+          "outcome": "our_win",
+          "winner": 1,
+          "moves": 218,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v021_crustle_techB",
+          "our_first": true,
+          "outcome": "opp_win",
+          "winner": 1,
+          "moves": 77,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v021_crustle_techB",
+          "our_first": false,
+          "outcome": "our_win",
+          "winner": 1,
+          "moves": 172,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v021_crustle_techB",
+          "our_first": true,
+          "outcome": "our_win",
+          "winner": 0,
+          "moves": 230,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v021_crustle_techB",
+          "our_first": false,
+          "outcome": "opp_win",
+          "winner": 0,
+          "moves": 351,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v021_crustle_techB",
+          "our_first": true,
+          "outcome": "our_win",
+          "winner": 0,
+          "moves": 199,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v021_crustle_techB",
+          "our_first": false,
+          "outcome": "our_win",
+          "winner": 1,
+          "moves": 191,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v021_crustle_techB",
+          "our_first": true,
+          "outcome": "our_win",
+          "winner": 0,
+          "moves": 173,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v021_crustle_techB",
+          "our_first": false,
+          "outcome": "our_win",
+          "winner": 1,
+          "moves": 175,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v021_crustle_techB",
+          "our_first": true,
+          "outcome": "our_win",
+          "winner": 0,
+          "moves": 174,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v021_crustle_techB",
+          "our_first": false,
+          "outcome": "our_win",
+          "winner": 1,
+          "moves": 90,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v021_crustle_techB",
+          "our_first": true,
+          "outcome": "opp_win",
+          "winner": 1,
+          "moves": 175,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v021_crustle_techB",
+          "our_first": false,
+          "outcome": "our_win",
+          "winner": 1,
+          "moves": 19,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v021_crustle_techB",
+          "our_first": true,
+          "outcome": "opp_win",
+          "winner": 1,
+          "moves": 130,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v021_crustle_techB",
+          "our_first": false,
+          "outcome": "our_win",
+          "winner": 1,
+          "moves": 84,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        }
+      ]
+    }
+  }
+}

@@ -576,6 +576,30 @@ scratchpad `aidy_decklist_recon.py`.
 
 ## Status Log (append-only; newest on top)
 
+- **2026-07-12 (k)** — **★ DECK-TECH: v023_crustle_techD закрывает обе дыры, паритет по полю → кандидат на live-пробу.**
+  Deck-tech аудит (sonnet) + разбавленный вариант (оркестратор). Механика дыр: Alakazam Powerful Hand (743, dmg=0,
+  кладёт 2 counter/карту в руке) — **damage-counters обходят ЛЮБОЙ prevent-damage щит движка** (не только Rock Inn,
+  подтв. кодом v016), лечится ТОЛЬКО hand-disruption; Cubchoo = control (Crushing/Enhanced Hammer + Boss + Team
+  Rocket's Watchtower снимает Rock Inn симметрично). techA (агент: +Judge×3+Xerosic×3+Payapa×2, снял весь heal) —
+  Alakazam +0.11 но просадка FestivalLead/MegaVenusaur (survivorship trap: убрал Jumbo Ice Cream heal). **techD
+  (разбавленный: +Judge×3 +Xerosic×1, снял только Jumbo Ice Cream×2/Cook×1/Waitress×1, heal сохранён):** полный
+  no-regression 60g×19 дек — alakazam **+0.167** (0.35→0.52), cubchoo **+0.183** (0.63→0.82), обе дыры закрыты; 7
+  лёгких матчапов просели −0.04…−0.07 (heal-consistency переложена в дыры); **overall 0.9118→0.9106 = паритет**.
+  По ожидаемому рейтингу на СМЕЩЁННОМ поле (recon: Alakazam>1100, Starmie/Lucario топ) techD должен обгонять baseline
+  сильнее. v023 грузится Kaggle-стиль (exec без __file__) OK, 60 карт. Kill-риск лёгких матчапов на 60g может быть
+  шумом. Slot свободен (0/5 сегодня). Артефакты: `decks/tech/crustle_{A,B,C,D}.csv`, `submissions/v020-v023`,
+  `results/gates/field_full_report.json`. NEXT = решение о live-пробе (у пользователя). [[project-meta]] [[project-plan-v4]]
+- **2026-07-12 (j)** — **★ ДЕК-VIABILITY: Crustle = лучшая наша дека, проблема = 2 контр-архетипа.** Новый
+  `scripts/field_viability.py` (наш пилот+дека vs 19 top-cut мета-дек из recon, generic greedy-пилот, seat-swap):
+  2280 игр за 55с, 0 illegal/0 exceptions. **v009a_crustle WR=0.926** (Wilson[0.90,0.94], 672-54) — доминирует;
+  v018_grimmsnarl 0.71, v017_alakazam 0.65 (обе хуже держат поле). Crustle бьёт 17/19 архетипов на 0.90-1.00, НО
+  **проваливает два: alakazam_aidy 0.55 (22-18), cubchoo_mtn 0.60 (24-16)** — оба обходят «Mysterious Rock Inn»
+  (щит только vs ex-атак; Alakazam damage-counter placement + Cubchoo не-ex атаки проходят сквозь, как Iono). И это
+  против СЛАБОГО greedy-пилота — реальные IL-пилоты этих дек на ладдере дожимают → объясняет дрейф 930→733.
+  **ВЫВОД: deck-swap НЕ нужен (Crustle сильнейшая), вектор = закрыть Alakazam+Cubchoo matchup.** ОГОВОРКА:
+  greedy-пилот слабее IL → абсолютные WR завышены, но относительный скрин между нашими деками валиден. Артефакты:
+  `results/gates/field_viability_report.json`, `decks/meta/*.csv` (19 дек). NEXT = как чинить 2 матчапа (tech-карты
+  в деклист / matchup-specific пилот-правила / IL+PPO на этих матчапах). [[project-plan-v4]] [[project-meta]]
 - **2026-07-12 (i)** — **★ H3-4-re KILL_PIMC ОКОНЧАТЕЛЬНО (честный, не багованный).** Ре-гейт после sort-фикса,
   700 игр (9 PIMC-ячеек × 50g + 5 v009a-ячеек), 0 illegal/0 exceptions. **RED_FLAG снят** (PIMC vs random
   0.727→0.92 — sort-фикс подтвердился). НО mirror **0.34** (хуже prior'а), arm(b) FIELD-дельта **3/5 отрицательны**

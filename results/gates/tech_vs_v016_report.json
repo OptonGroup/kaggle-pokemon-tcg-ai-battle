@@ -1,0 +1,51 @@
+{
+  "opponent": "v016_alakazam",
+  "candidates": [
+    "v009a_crustle",
+    "v020_crustle_techA",
+    "v021_crustle_techB",
+    "v022_crustle_techC"
+  ],
+  "rows": {
+    "v009a_crustle": {
+      "n": 150,
+      "w": 103,
+      "l": 47,
+      "d": 0,
+      "bad": 0,
+      "wr": 0.6866666666666666,
+      "wilson_lo": 0.6085587615654109,
+      "wilson_hi": 0.7554520131535207
+    },
+    "v020_crustle_techA": {
+      "n": 150,
+      "w": 117,
+      "l": 33,
+      "d": 0,
+      "bad": 0,
+      "wr": 0.78,
+      "wilson_lo": 0.7071754568460243,
+      "wilson_hi": 0.8388407052323733
+    },
+    "v021_crustle_techB": {
+      "n": 150,
+      "w": 104,
+      "l": 46,
+      "d": 0,
+      "bad": 0,
+      "wr": 0.6933333333333334,
+      "wilson_lo": 0.61548006161501,
+      "wilson_hi": 0.761531097915312
+    },
+    "v022_crustle_techC": {
+      "n": 150,
+      "w": 114,
+      "l": 36,
+      "d": 0,
+      "bad": 0,
+      "wr": 0.76,
+      "wilson_lo": 0.6857071477257108,
+      "wilson_hi": 0.8213078599185155
+    }
+  }
+}
