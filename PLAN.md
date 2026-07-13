@@ -576,6 +576,16 @@ scratchpad `aidy_decklist_recon.py`.
 
 ## Status Log (append-only; newest on top)
 
+- **2026-07-13 (q)** — **★★ RL/ExIt ПРОГОН: PLATEAU (H2H 13→37→34% vs v009a), НО field 0.945 >> v009a 0.843 → LIVE-PROBE
+  ОДОБРЕН.** Полный ExIt (5 итераций, ~9мин, kiyotah scaffold AlphaZero-style): H2H vs v009a плато 32-38% (чемпион не
+  побит в Crustle-зеркале — v009a-IL специализирован), НО non-mirror здоровый (v018 100%, v017 ~50%, league 6
+  архетипов + KL-anchor без коллапса §S). **Field-тест (я догнал): RL iter2 vs 19 мета-дек = 0.945 ≈ frozen
+  card-embedding 0.946, ОБА >> v009a 0.843.** Гипотеза: v009a тонет live (μ733) т.к. мета анти-Crustle; универсальная
+  NN-модель может дать live μ выше — узнать ТОЛЬКО live-probe. **Юзер ОДОБРИЛ сабмит NN-модели.** Упаковка
+  `submissions/v024_cardemb_rl/` (RL iter2 model + kiyotah энкодеры + Crustle-дека, torch в eval есть, never-throw,
+  exec-без-__file__) + presubmit-гейт запущены. После проверки — competition submit (одобрен). Артефакты:
+  `scratchpad/gold/rl_full/`, `scripts/exit_full_run.py`. ИТОГ НОЧИ: BC-потолок подтверждён (card-embedding+RL плато),
+  но универсальная NN может обойти тонущий Crustle на сместившейся мете — live решит. [[project-gold-target]]
 - **2026-07-13 (p)** — **★★ CARD-EMBEDDING ВЕРДИКТ: PARITY, BC-потолок подтверждён (4-й раз). Ветка закрыта.** v2 обучен
   (val 52.9%→58.3%, переобучение снято через ×5 данных 54k + регуляризация). Конвертирован в играющего агента
   (`scripts/cardemb_agent.py`, kiyotah энкодеры + MyModel inference, 0 illegal/exceptions, 0.16мс/ход). **H2H vs наш
