@@ -453,6 +453,23 @@ def poke_pad_line_incomplete(obs):
     return lacking and none_in_hand
 
 
+def attacker_line_started(obs):
+    """True once at least one Marnie-line attacker (Impidimp/Morgrem/Grimmsnarl) is
+    already in play -- i.e. the critical *starting* attacker piece is secured, and
+    any further Impidimp/Morgrem pull from a search effect is an 'excess' 2nd+ copy,
+    not the make-or-break first one.
+
+    [v062 wave3 fix] Split out of the old shared `poke_pad_line_incomplete()` flag,
+    which conflated "attacker line missing" with "Munkidori missing" -- that flag
+    stayed True (triggering a 20000-priority re-fetch of Impidimp) purely because
+    Munkidori was absent, even with an Impidimp already on board. Confirmed in trace
+    `v009a_crustle_001.json` (out/v062_local_loss_forensic.md question 1): Poke Pad
+    grabbed a redundant 2nd Impidimp on turns 1 and 3 while the only actually missing
+    piece (Munkidori) sat unfetched until turn 15. This helper answers ONLY "is the
+    attacker line itself started", decoupled from Munkidori's state."""
+    return has_in_play(obs, IMPIDIMP) or has_in_play(obs, MORGREM) or has_in_play(obs, GRIMMSNARL)
+
+
 def poffin_would_help(obs):
     """False once the bench is full, or once we already have both 646 and 860
     developed with a wide bench (nothing useful left for Poffin to fetch)."""
@@ -970,14 +987,26 @@ def score_to_hand(obs, opt):
     effect_id = effect.id if effect else None
 
     if effect_id == POKE_PAD:  # non-Rule-Box Pokemon (648 never offered -- it's ex)
+        # [v062 wave3 fix] Munkidori must physically reach the bench by turn 1-2
+        # (expert norm; was medianing turn 5 -- out/v062_local_loss_forensic.md Q1).
+        # Individual per-card "is it already in play" checks now replace the old
+        # flat Morgrem/Munkidori priorities and the mismatched shared "line
+        # incomplete" flag on Impidimp (that flag used to fire off Munkidori's
+        # absence, not Impidimp's, causing redundant 2nd-copy Impidimp fetches).
         if cid == IMPIDIMP:
-            if poke_pad_line_incomplete(obs):
-                return 20000, "Poke Pad: Impidimp (line incomplete)"
-            return 1000, "Poke Pad: Impidimp (line ok)"
+            if not attacker_line_started(obs):
+                return 20000, "Poke Pad: Impidimp (starting attacker)"
+            # [v062 wave3 fix, round 2] excess copies still have real rebuild value
+            # (repeated Rare Candy -> Grimmsnarl ex after KOs -- v044/Archaludon
+            # forensic Q3 measured n_grimm_evolve=2.27/game) -- keep them mid-tier
+            # rather than bottom-of-barrel, just below Munkidori/Morgrem.
+            return 8000, "Poke Pad: Impidimp (excess copy, line started)"
+        if cid == MUNKIDORI:
+            if not has_in_play(obs, MUNKIDORI):
+                return 19000, "Poke Pad: Munkidori (not yet in play -- priority)"
+            return 16000, "Poke Pad: Munkidori (already in play)"
         if cid == MORGREM:
             return 18000, "Poke Pad: Morgrem"
-        if cid == MUNKIDORI:
-            return 16000, "Poke Pad: Munkidori"
         if cid in (FROSLASS, SNORUNT):
             return 9000, "Poke Pad: tech line"
         return 1000, "Poke Pad: generic"
@@ -1025,28 +1054,39 @@ def score_to_hand(obs, opt):
         return 1000, "Night Stretcher: generic"
 
     if effect_id == DAWN:  # one Basic + one Stage1 + one Stage2 (3 separate picks)
+        # [v062 wave3 fix] same dynamic-priority pattern as POKE_PAD above: Munkidori
+        # only needs to beat an *excess* 2nd+ Impidimp, not the starting one.
         if cid == GRIMMSNARL:
             return 20000, "Dawn: Grimmsnarl ex (Stage2)"
         if cid == MORGREM:
             return 17000, "Dawn: Morgrem (Stage1)"
         if cid == IMPIDIMP:
-            return 18000, "Dawn: Impidimp (Basic)"
+            if not attacker_line_started(obs):
+                return 18000, "Dawn: Impidimp (Basic, starting attacker)"
+            return 8000, "Dawn: Impidimp (Basic, excess copy)"
         if cid == FROSLASS:
             return 9000, "Dawn: Froslass (Stage1)"
         if cid == MUNKIDORI:
+            if not has_in_play(obs, MUNKIDORI):
+                return 15000, "Dawn: Munkidori (Basic, not yet in play -- priority)"
             return 12000, "Dawn: Munkidori (Basic)"
         if cid == SNORUNT:
             return 8000, "Dawn: Snorunt (Basic)"
         return 1000, "Dawn: generic"
 
     # Generic TO_HAND fallback (unlisted / unrecognized effect).
+    # [v062 wave3 fix] same dynamic-priority pattern as POKE_PAD/DAWN above.
     if cid == GRIMMSNARL:
         return 18000, "take Grimmsnarl ex"
     if cid == MORGREM:
         return 16000, "take Morgrem"
     if cid == IMPIDIMP:
-        return 15000, "take Impidimp"
+        if not attacker_line_started(obs):
+            return 15000, "take Impidimp (starting attacker)"
+        return 8000, "take Impidimp (excess copy)"
     if cid == MUNKIDORI:
+        if not has_in_play(obs, MUNKIDORI):
+            return 17000, "take Munkidori (not yet in play -- priority)"
         return 12000, "take Munkidori"
     return 1000, "generic take"
 
