@@ -1,0 +1,1341 @@
+"""
+v061_grimmsnarl_heuristic — DETERMINISTIC matchup-heuristic pilot for the jiatu.l (mu=1130)
+Marnie's Grimmsnarl ex / Munkidori toolbox deck. Track B fallback: forked from
+v060_grimmsnarl_jiatu (a LightGBM BC-ranker over this same deck), the ranker (step 5) is
+REPLACED by a v034/v036-style greedy deterministic scorer (scoring_grimmsnarl.choose_options,
+argmax of score_option over the option list). Motivation: our best LIVE agents (v034 mu=865.7 /
+v036 mu=827.3) are deterministic matchup-heuristics, NOT RL/BC; v060's ranker plateaued
+(bimodal — Alakazam 0.70-0.81, tanks 0.04-0.19; offline top-1 only 0.541). This ports that
+proven method onto the jiatu.l deck. See DESIGN.md for the full scoring spec and the Phase-1
+guard edits.
+
+Architecture split (two representations of the SAME engine dict):
+  - GUARDS (below) run on the raw obs_dict with integer constants — ported verbatim from
+    v060 (with 3 edits, see DESIGN.md Phase-1): they cover the OOD/forced contexts a legible
+    scorer can't rank (Adrena-Brain sequence, forced promotion/switch, lethal-KO,
+    energy-attach, Adrena-Brain trigger). They run FIRST.
+  - SCORER (scoring_grimmsnarl) runs on the typed obs = to_observation_class(obs_dict) with
+    cg.api enums — reached only when no guard fires. Option index i is identical in both.
+
+Deck (jiatu.l, 60): Grimmsnarl ex 648 / Morgrem 647 / Impidimp 646 (only real attackers) +
+Munkidori 112 (Adrena-Brain engine) + Snorunt 860 / Froslass 104 (Freezing-Shroud engine) +
+Poffin/Poké Pad/Lillie/Petrel/Rare Candy/Night Stretcher/Unfair Stamp/Boss/Dawn/Xerosic/
+Pokégear + Spikemuth Gym + 10× Basic {D}. The LightGBM model, features_grimmsnarl_v2, pandas
+and the bundled EN_Card_Data.csv are all DROPPED — three fewer live-failure surfaces.
+
+Architecture:
+  - Load IL ranker (il_grimmsnarl_v2.txt) at import time.
+  - Deck: Grimmsnarl ex toolbox (60 cards, legal; see deck.csv — jiatu.l's exact list).
+  - On deck-selection step (obs.select is None): return the 60-card deck.
+  - On all other steps:
+      1. ACTIVE-PROMOTION GUARD (runs BEFORE the IL, added 2026-07-04):
+         Whenever the select context is TO_ACTIVE (4) or SWITCH (3) — i.e. we
+         must choose a bench Pokemon to become the new Active (forced promotion
+         after a KO, or a voluntary switch) — deterministically pick the best
+         bench Pokemon instead of asking the IL ranker. DIAGNOSIS: the ranker
+         was trained ONLY on MAIN-context (ctx==0) decisions from the human
+         replay data, so this context is completely out-of-distribution. Traced
+         evidence (6 games vs v001_random, 37 forced-promotion decisions):
+         the ranker NEVER once promoted the healthy benched Grimmsnarl ex
+         (id 648, 320 HP) when it was available — it consistently promoted
+         fragile support Pokemon instead (Dunsparce 305, Impidimp/Morgrem
+         pre-evolutions, Munkidori 112), leaving the active slot occupied by
+         a mon that can't threaten lethal, or repeatedly re-KO'd. This
+         directly explains the 15/15 vs-random loss pattern (empty active /
+         weak active at end-state while a healthy Grimmsnarl sat on bench).
+         Guard priority: Grimmsnarl ex (648, HP>0) > Morgrem (647)/Morpeko
+         (649)/Froslass (104, v2 addition — "Frost Smash" 60 dmg) real
+         attackers > any other unlisted mon > known fragile/support mons
+         (Dunsparce 305, Dudunsparce 66, Impidimp 646, Munkidori 112 — no
+         real attack). Tie-break: highest HP.
+      2. HARD LETHAL-KO GUARD (anti-whiff, runs BEFORE the IL):
+         If an ATTACK option's listed damage >= opp active remaining HP, take it
+         immediately. Grimmsnarl ex's "Shadow Bullet" (cost {D}{D}) does 180
+         damage to the opponent's Active (+30 to a Benched Pokemon, no weakness/
+         resistance on bench damage) — its only attack. This guard mirrors the
+         v016_alakazam lesson: BC of a Pokemon-line deck can whiff a clean kill
+         the ranker was uncertain about; a cheap deterministic KO check never hurts.
+      3. ENERGY-ATTACH GUARD (runs AFTER the lethal-KO guard, BEFORE the IL,
+         added 2026-07-04): Traced evidence (scratchpad/trace_v018_vs_crustle.py,
+         10 games vs v007_crustle) found Grimmsnarl ex 648 reaches Active with
+         full HP by turn 6-9 but sits at ZERO energy the ENTIRE game -> never
+         attacks (attacked in only 2/10 games, turns 36/50). Shadow Bullet
+         costs {D}{D}; the IL ranker mis-prioritizes the ATTACH-{D}-to-active
+         option against competing MAIN options (draw/supporter/bench-evolve),
+         so the active attacker never gets its attack-cost energy. Same
+         "ranker mis-ranks an under-represented option class" failure mode as
+         the promotion guard above. Fix: if my active is Grimmsnarl ex 648
+         and it has < 2 {D} energy attached, and an ATTACH option exists that
+         puts a Basic {D} Energy (id 7) onto the ACTIVE Pokemon, take it
+         immediately (bypass the ranker). Don't over-attach: if active
+         already has >= 2 {D} (enough for Shadow Bullet), skip this guard and
+         let the ranker / other guards proceed (e.g. so it can attack or set
+         up bench).
+      3.5 ANTI-CRUSTLE MUNKIDORI ADRENA-BRAIN SNIPE GUARD (added 2026-07-04):
+         DIAGNOSIS: vs v007/v009a Crustle, Shadow Bullet's 180 dmg does NOT
+         OHKO Crustle's ~270 HP attackers -> Grimmsnarl trades instead of
+         cleanly KOing. Munkidori's (112) [Ability] Adrena-Brain ("move up to
+         3 damage counters from 1 of your Pokemon to 1 of your opponent's
+         Pokemon", requires a {D} energy on Munkidori) can convert an
+         otherwise-nonlethal turn into a KO: it moves 30 dmg FROM a damaged
+         ally (e.g. the active Grimmsnarl, which accumulates damage from
+         Crustle's counterattacks) ONTO the opponent's active. Verified via
+         data/EN_Card_Data.csv (card 112: "...move up to 3 damage counters
+         from 1 of your Pokemon to 1 of your opponent's Pokemon" -> confirmed
+         it moves TO the opponent, so the snipe guard is valid) and via a
+         replay scan of kazuki0123's own Adrena-Brain usages (5 real examples
+         in data/episodes/all_teams/episode-83558495-replay.json), which
+         confirmed the exact 3-step engine sequence for this ability:
+           step 1 (this guard): ctx=MAIN, choose the OPT_ABILITY(=10) option
+             whose (area,index) resolves to Munkidori (112).
+           step 2: ctx=REMOVE_DAMAGE_COUNTER(=16), OPT_CARD options for which
+             of MY Pokemon to take damage counters FROM.
+           step 3: ctx=REMOVE_DAMAGE_COUNTER_COUNT(=40), OPT_NUMBER(=0)
+             options for HOW MANY counters (0..3) to move.
+           step 4: ctx=DAMAGE_COUNTER(=13), OPT_CARD options for which
+             opponent Pokemon to place the counters ON (the snipe target).
+         Fires ONLY when it converts to a guaranteed KO this turn (never
+         "wastes" the once-per-turn ability): (a) opp active HP <= available
+         snipe damage (direct kill), or (b) opp active HP is in the band
+         (180, 180+available_snipe] AND my active Grimmsnarl already has its
+         {D}{D} Shadow Bullet cost ready, so the ability's damage plus this
+         turn's Shadow Bullet combine to KO (the existing hard-lethal-KO
+         guard then fires the attack on the very next MAIN decision once the
+         opponent's HP has dropped). A tiny state machine (`_adrena_state`)
+         carries the guard through steps 2-4 since they are forced
+         continuations of this guard's own step-1 choice, not independent
+         MAIN decisions the IL ranker should see (same "OOD context" failure
+         class as the promotion guard).
+         SKIPPED: a companion "retreat to preserve energy investment" guard
+         was evaluated (CSV: Grimmsnarl ex 648 retreat cost = 2) and NOT
+         added. Reason: the existing energy-attach guard (item 3) caps
+         Grimmsnarl's {D} energy at exactly 2 (never over-attaches), and
+         retreating pays its cost by discarding attached energy 1-for-1 -- so
+         retreating would always discard 100% of the "investment" being
+         "preserved", making the guard's own premise vacuous. The only real
+         benefit left (denying the opponent a prize) requires guessing
+         whether Grimmsnarl is "about to be KO'd", which is unobservable
+         (opponent hand/attack choice is hidden) -- any HP-threshold trigger
+         would be a speculative heuristic that risks forfeiting a turn's
+         attack (the promoted bench mon usually has no energy to swing) for
+         uncertain payoff. Given the instruction to keep guards narrow and
+         not risk the random/Alakazam wins, this guard was skipped.
+      3.6 ANTI-TANK GUARD PAIR vs Crustle/Archaludon (added 2026-07-21):
+         DIAGNOSIS (results/gates/v060_diag_gate.json, 2026-07-21): v060 gates
+         0.70-0.81 WR vs Alakazam (v016/v017) but only 0.037-0.063 vs the
+         Crustle wall (v009a) and Archaludon ex beatdown (v044/v049) -- a
+         mechanical hole, not noise. Mined it directly: filtered
+         data/il_grimmsnarl_v2/pairs.jsonl for the 103 WINNING jiatu.l games
+         where the opponent's board (active or bench, any point in the game)
+         showed a Crustle-line Pokemon (344/345), decoded every chosen MAIN
+         option via cg_native's all_attack() attackId table (see
+         scripts/ -- attack table dumped to confirm attackId->name/damage,
+         since ATTACK options carry an opaque attackId, not a name). Result:
+         across those 103 wins, Munkidori's [Ability] Adrena-Brain fired 1142
+         times vs Shadow Bullet's 321 -- roughly 3.5x more often, ~11x/game.
+         MECHANISM: Mysterious Rock Inn ("[Ability] ... Prevent all damage
+         done to this Pokemon by attacks from your opponent's Pokemon ex")
+         blocks Shadow Bullet (Grimmsnarl ex IS a Pokemon ex) when Crustle
+         (345) is the opponent's Active -- engine-confirmed independently
+         2026-07-21 for a different ex attacker vs this same Ability (see
+         project_lopunny_pierce_engine_confirmed memory note). But
+         Adrena-Brain is an ABILITY effect ("move ... damage counters"), NOT
+         an attack -- it is not blocked by Rock Inn regardless of which
+         Pokemon has it or is ex. It also HEALS the source Pokemon by the
+         same amount it damages the opponent's target (a strict-upside,
+         zero-cost, once-per-turn transfer) -- so a skilled human fires it
+         essentially every turn it is available, win or not, not just on
+         guaranteed kills. The existing item-3.5 trigger guard only fires on
+         a guaranteed-KO-this-turn (far too narrow vs a wall deck this needs
+         ~11 turns of grinding to bring down). Two fixes, both gated on a
+         board-only tank detector (_opp_has_tank, IDs 344/345/169/190 -- no
+         behavior change for any other matchup, so the Alakazam/random win
+         rates are structurally untouched):
+           (a) _ko_guard bug fix: it was treating Shadow Bullet's listed 180
+               damage as always-lethal-eligible, including vs an active
+               Crustle (345) where Rock Inn makes the real damage 0 -- a
+               guaranteed guard misfire (declares "lethal", takes the
+               attack, deals nothing). Now zeroed out specifically for
+               Grimmsnarl ex (648) attacking an active Crustle (345).
+           (b) _adrena_trigger_guard broadened: in addition to the existing
+               guaranteed-KO branches (still used for non-tank matchups,
+               e.g. Alakazam, completely unchanged), added an opportunistic
+               branch that fires Adrena-Brain whenever `_opp_has_tank(...)`
+               is true and there is any damage to siphon (available_snipe >
+               0), regardless of lethality -- matching the mined 11x/game
+               cadence. Also fixed the same Shadow-Bullet-vs-Crustle-active
+               zeroing inside the guard's own KO-combo branch (item 3.5's
+               "shadow_bullet_dmg" component), so it no longer assumes a
+               blocked attack contributes real damage to a combo kill.
+         REJECTED: a Boss's Orders bench-snipe-target guard (explicitly
+         asked for in the anti-tank task). Mined it too (78 resolved
+         Boss's-Orders plays across the same 103+6 tank-matchup episodes):
+         target HP was full or near-full 83% of the time on average (median
+         97%) -- i.e. jiatu.l overwhelmingly used it to drag in a *fresh*
+         threat (deny setup tempo / force a bad trade), not to snipe an
+         already-damaged bench mon for a cheap KO. That is exactly the kind
+         of context (MAIN-context Supporter play + its CARD target select)
+         the IL ranker already sees plenty of in training (unlike the
+         forced-promotion / attack / ability contexts the other guards
+         cover) -- and the signal is diluted by non-Crustle high-HP ex
+         attackers ("mystery" card 756) present in real ladder decks that
+         splash Crustle as a tech, not our synthetic pure-wall v009a/v044/
+         v049 gate opponents. Overriding a well-trained ranker on a
+         contaminated, already-in-distribution signal risks doing more harm
+         than good, so this was left to the ranker (same judgment call
+         pattern as the retreat-guard SKIP two paragraphs above).
+      4. Deterministic scorer: to_observation_class(obs_dict) -> scoring_grimmsnarl.
+         choose_options -> greedy argmax of score_option over the option list.
+      5. Trivial fallback (never throws): first minCount indices.
+
+Kaggle loads main.py via exec() WITHOUT __file__ -> guarded _DIR resolution.
+
+v062 [форензик] edits on top of v061 (each tagged "[форензик v062]" at its own definition;
+see scoring_grimmsnarl.py's module docstring for the scorer-side items 1/2/4/5/6):
+  1. reset_game_state() bug fix (scoring_grimmsnarl.py) -- was called here but never defined
+     there, so it was a silent no-op and scorer state leaked across games in one process.
+  2. _detect_matchup_raw (this file) + detect_matchup (scoring_grimmsnarl.py): sticky
+     board-scan matchup detection (crustle/archaludon/lucario/tr_mewtwo/abomasnow/mirror/
+     alakazam/generic), ported from v049_bench_sticky_guard's board+sticky layer (no
+     torch/belief-net). Gates item 3 below.
+  3. _munkidori_energy_guard (NEW, this file, step 4 in the chain below): force the turn's
+     {D} energy attach onto a 0-energy Munkidori in grind/tank matchups, so Adrena-Brain
+     can actually switch on instead of losing every energy attach to the energy-attach
+     guard's greedy claim on Grimmsnarl ex. See that function's own docstring for the full
+     diagnosis (3/4 live Crustle losses had Adrena-Brain firing 0 times).
+
+v062 [майнинг v062] wave-2 edits on top of the forensic pass above, from mining 2711 pure
+jiatu.l/bono expert games (docs/gold/v062_expert_playbook_lines.md; full aggregates in
+data/il_grimmsnarl_v2/expert_playbook.json). Each is tagged "[майнинг v062]" at its own
+definition:
+  1. _munkidori_energy_guard: the matchup gate is REMOVED (was
+     `_MUNKIDORI_ENERGY_GATE_MATCHUPS == {crustle,archaludon,lucario,tr_mewtwo,abomasnow}`).
+     Playbook lines 14-19: the expert sends the game's FIRST energy to Munkidori in EVERY
+     matchup bucket (48-80% of ordinal-1 attaches, median turn 1-2 everywhere -- alakazam/
+     mirror/generic included, not just grind matchups), and Munkidori gets *an* energy at
+     all in 90-100% of games in every bucket. Lines 55-57/169-177: the single starkest
+     won/lost Adrena-Brain-activation-volume gap in the whole dataset is actually vs
+     Alakazam (4.21W vs 2.15L activations/game, ~2x) -- exactly the matchup the wave-1 gate
+     excluded. The guard now fires in every matchup; its own 0-energy self-limit (only
+     matches a Munkidori with 0 {D} already attached) is the only remaining restriction.
+  2. _adrena_sequence_guard's "await_target" step (ctx CTX_DAMAGE_COUNTER): the
+     opportunistic ("value") trigger branch now routes to the opponent's BENCH by default
+     instead of the active. Playbook lines 58-61 (Alakazam: Adrena-Brain targets are
+     65.4%/79.5% opponent-bench in won/lost games) and lines 124-149 (Archaludon
+     reconstruction: damage is routed onto the opponent's not-yet-evolved backup Duraludon
+     copies sitting on bench -- "kill the reinforcement before it evolves") both point the
+     same direction across matchups. The guaranteed-KO ("kill") and KO-combo ("combo")
+     trigger branches are UNCHANGED -- still target the active, since that target was
+     already fixed when the guard chose to fire on those paths. A new module-level
+     `_adrena_intent` global (set by `_adrena_trigger_guard`, consumed by
+     `_adrena_sequence_guard`, reset alongside `_adrena_state`) carries which branch
+     initiated the current combo through steps 2-4.
+  3. Boss's Orders matchup-specific target-priority tables (BOSS_TARGET_PRIORITY,
+     `_boss_tier_bonus`) live in scoring_grimmsnarl.py -- see that module's docstring item 3.
+  4. score_retreat (scoring_grimmsnarl.py) is UNCHANGED by this pass -- verified against
+     playbook lines 20-24 (median HP% at retreat == 100.0 in every one of the 8 matchup x
+     outcome buckets): the wave-1 tempo-scheduled Munkidori retreat (promote a real
+     attacker off the bench, not an HP-triggered flee) already matches expert play. No
+     speculative HP-threshold retreat guard was added, per the mined evidence against it.
+"""
+from __future__ import annotations
+
+import os
+import sys
+
+# ── Path bootstrap ────────────────────────────────────────────────────────────
+# Kaggle exec() does NOT set __file__. Resolution order:
+#   1. /kaggle_simulations/agent  (Kaggle runtime)
+#   2. __file__-based dir          (local / importlib)
+#   3. os.getcwd()                 (last resort)
+_KAGGLE_AGENT_DIR = "/kaggle_simulations/agent"
+if os.path.isdir(_KAGGLE_AGENT_DIR):
+    _DIR = _KAGGLE_AGENT_DIR
+else:
+    try:
+        _DIR = os.path.dirname(os.path.abspath(__file__))
+    except NameError:
+        _DIR = os.getcwd()
+if _DIR not in sys.path:
+    sys.path.insert(0, _DIR)
+
+# v061: the LightGBM ranker (v060 step 5) is replaced by a deterministic v034/v036-style
+# greedy scorer (scoring_grimmsnarl.choose_options). The guards below still operate on the
+# raw obs_dict (integer constants); the scorer operates on the typed obs from
+# to_observation_class. Both come from the same engine dict, so option index i is identical
+# in both representations.
+from cg.api import to_observation_class, all_card_data, all_attack
+
+try:
+    import scoring_grimmsnarl as _scorer
+    _scorer_ok = True
+except Exception as _scorer_err:  # pragma: no cover - defensive
+    _scorer = None
+    _scorer_ok = False
+    print(f"[v061] WARNING: scoring_grimmsnarl import failed: {_scorer_err}", file=sys.stderr)
+
+# ── Instrumentation counters ─────────────────────────────────────────────────
+_n_model_decisions: int = 0
+_n_ko_guard: int = 0
+_n_promo_guard: int = 0
+_n_energy_guard: int = 0
+_n_munkidori_energy_guard: int = 0  # [форензик v062] item 3: energy forced onto a 0-{D} Munkidori
+_n_adrena_trigger: int = 0   # number of times the Adrena-Brain snipe was initiated (step 1)
+_n_adrena_steps: int = 0     # number of forced-continuation steps handled (steps 2-4)
+_n_adrena_tank_opportunistic: int = 0  # of the above, how many via the item-3.6 non-lethal tank branch
+_n_ko_guard_crustle_blocked: int = 0   # times the item-3.6(a) Rock-Inn zeroing suppressed a false "lethal"
+_n_trivial_fallback: int = 0
+_exception_count: int = 0
+
+# Debug logging to stderr (Kaggle captures per-move stdout/stderr in agent
+# logs). Only used for the new item-3.6 anti-tank branches -- kept quiet
+# elsewhere to avoid spamming every decision.
+_DEBUG_LOG = True
+
+
+def _dbg(msg: str) -> None:
+    if _DEBUG_LOG:
+        try:
+            print(f"[dbg] {msg}", file=sys.stderr, flush=True)
+        except Exception:
+            pass
+
+# ── Constants ────────────────────────────────────────────────────────────────
+OPT_NUMBER = 0
+OPT_CARD = 3
+OPT_ATTACH = 8
+OPT_ABILITY = 10
+OPT_ATTACK = 13
+
+# SelectContext values relevant to the guards (mirrors cg/api.py)
+CTX_MAIN = 0        # Main selection (PLAY, ATTACH, EVOLVE, ABILITY, RETREAT, ATTACK, END, ...).
+CTX_SWITCH = 3      # Select the Pokemon to swap with the one in your Active Spot.
+CTX_TO_ACTIVE = 4   # Select the Pokemon to put into your Active Spot (forced promotion).
+CTX_DAMAGE_COUNTER = 13              # Select the Pokemon to PLACE damage counters ON (snipe target).
+CTX_REMOVE_DAMAGE_COUNTER = 16       # Select the Pokemon to remove damage counters FROM (snipe source).
+CTX_REMOVE_DAMAGE_COUNTER_COUNT = 40 # Select HOW MANY damage counters to remove/move (0..3).
+
+# AreaType values relevant to the energy-attach / Adrena-Brain guards (mirrors cg/api.py)
+AREA_HAND = 2
+AREA_ACTIVE = 4
+AREA_BENCH = 5
+
+# Card IDs (Marnie's Grimmsnarl ex toolbox)
+GRIMMSNARL_ID = 648      # Stage 2, 320 HP, "Shadow Bullet" 180 dmg — the win-con attacker.
+MORGREM_ID = 647         # Stage 1, 100 HP, "Corkscrew Punch" 60 dmg — real (if weaker) attacker.
+MORPEKO_ID = 649         # Basic, 70 HP, "Spiky Wheel" scales with {D} energy — real attacker.
+MUNKIDORI_ID = 112       # Basic, 110 HP, [Ability] Adrena-Brain — damage-counter snipe (needs {D}).
+FROSLASS_ID = 104        # Stage 1, 90 HP. "Frost Smash" costs {W} -> UNCASTABLE (0 {W} in deck);
+                         # Froslass is a PASSIVE engine piece (Freezing Shroud auto-feeds
+                         # Adrena-Brain each Checkup), NOT an attacker (v061 fix vs v060 misclass).
+SNORUNT_ID = 860         # Basic, 70 HP. "Chilly" costs {W} -> UNCASTABLE; only value = evolve to Froslass.
+BASIC_D_ENERGY_ID = 7    # Basic {D} (Darkness) Energy — Shadow Bullet costs {D}{D}.
+
+# ── Anti-tank IDs (added 2026-07-21, see module docstring item 3.6) ─────────
+# Crustle line: [Ability] Mysterious Rock Inn -- "Prevent all damage done to
+# this Pokemon by attacks from your opponent's Pokemon {ex}." Grimmsnarl ex's
+# only attack (Shadow Bullet) IS a Pokemon-ex attack -> 0 damage to an active
+# Crustle (engine-confirmed 2026-07-21, see project_lopunny_pierce_engine_
+# confirmed memory note -- verified for a different ex attacker vs this same
+# Ability, applies identically to Shadow Bullet). Dwebble (pre-evolution) has
+# no such Ability -- only card 345 (evolved Crustle) blocks ex-attack damage.
+CRUSTLE_ID = 345
+DWEBBLE_ID = 344         # Crustle's pre-evolution -- NOT ability-protected.
+DURALUDON_ID = 169
+ARCHALUDON_ID = 190      # Archaludon ex -- no damage-prevention Ability; Shadow Bullet hits normally.
+TANK_LINE_IDS = frozenset({CRUSTLE_ID, DWEBBLE_ID, DURALUDON_ID, ARCHALUDON_ID})
+
+# ── Matchup-line IDs for _detect_matchup_raw (added v062, item 2) ────────────
+# Same priority-ordered line set as scoring_grimmsnarl.py's typed-obs detect_matchup
+# (kept in sync deliberately -- two representations of the same engine dict, see module
+# docstring's "Architecture split"). Grind/tank matchups the item-3 Munkidori energy
+# guard gates on.
+CRUSTLE_LINE_IDS = frozenset({CRUSTLE_ID, DWEBBLE_ID})          # 345, 344
+ARCHALUDON_LINE_IDS = frozenset({DURALUDON_ID, ARCHALUDON_ID})  # 169, 190
+LUCARIO_LINE_IDS = frozenset({677, 678})
+TR_MEWTWO_LINE_IDS = frozenset({431})
+ABOMASNOW_LINE_IDS = frozenset({722, 723})
+MIRROR_LINE_IDS = frozenset({646, 647, 648})  # opponent board showing our own Marnie IDs
+ALAKAZAM_LINE_IDS = frozenset({741, 742, 743})
+_MATCHUP_PRIORITY_RAW = (
+    (CRUSTLE_LINE_IDS, "crustle"),
+    (ARCHALUDON_LINE_IDS, "archaludon"),
+    (LUCARIO_LINE_IDS, "lucario"),
+    (TR_MEWTWO_LINE_IDS, "tr_mewtwo"),
+    (ABOMASNOW_LINE_IDS, "abomasnow"),
+    (MIRROR_LINE_IDS, "mirror"),
+    (ALAKAZAM_LINE_IDS, "alakazam"),
+)
+# [майнинг v062] REMOVED: `_MUNKIDORI_ENERGY_GATE_MATCHUPS`, the wave-1 gate that limited
+# the item-3 Munkidori energy guard to {crustle, archaludon, lucario, tr_mewtwo, abomasnow}.
+# docs/gold/v062_expert_playbook_lines.md lines 14-19 (mined from 2711 jiatu.l/bono expert
+# games): the game's FIRST energy goes to Munkidori in EVERY matchup bucket (48-80% of
+# ordinal-1 attaches, median turn 1-2 everywhere, alakazam/mirror/generic included -- not
+# just the grind matchups this gate assumed), and the strongest win/loss correlate in the
+# whole dataset (Adrena-Brain activation volume, lines 55-57) is actually STARKEST vs
+# Alakazam (4.21W vs 2.15L/game) -- precisely the matchup this gate excluded. See module
+# docstring's wave-2 item 1 for the full citation.
+
+_raw_last_matchup: str | None = None  # sticky global, reset in agent() on new-game boundary
+
+
+def _detect_matchup_raw(obs_dict: dict) -> str:
+    """Raw-dict extension of _opp_has_tank (above): same board-scan-of-IDs approach, widened
+    to the full priority-ordered line set (crustle > archaludon > lucario > tr_mewtwo >
+    abomasnow > mirror > alakazam > generic) and made STICKY across a single game -- once the
+    board confidently shows a line, keep that label even on turns where the identifying
+    Pokemon isn't currently visible (KO'd, or simply not re-scanned this turn), since the
+    opponent's deck archetype is fixed for the whole game. Mirrors scoring_grimmsnarl.py's
+    typed-obs detect_matchup/its sticky pattern (ported from v049_bench_sticky_guard) --
+    kept as a SEPARATE raw-dict implementation here (not shared code) since main.py's guards
+    intentionally never import from the typed-obs scorer module (see module docstring
+    "Architecture split": guards run on the raw dict, before to_observation_class is even
+    called for this decision). Never-throw: any failure falls back to the last sticky value,
+    or "generic" if none yet.
+    """
+    global _raw_last_matchup
+    try:
+        cur = obs_dict.get("current") or {}
+        me = int(cur.get("yourIndex") or 0)
+        players = cur.get("players") or [{}, {}]
+        while len(players) < 2:
+            players = players + [{}]
+        opp_pl = players[1 - me]
+        ids = set()
+        for area in ("active", "bench"):
+            for pk in (opp_pl.get(area) or []):
+                if isinstance(pk, dict):
+                    ids.add(int(pk.get("id") or 0))
+        label = None
+        for line_ids, name in _MATCHUP_PRIORITY_RAW:
+            if ids & line_ids:
+                label = name
+                break
+        if label is not None:
+            _raw_last_matchup = label
+            return label
+        return _raw_last_matchup or "generic"
+    except Exception:
+        return _raw_last_matchup or "generic"
+
+# Adrena-Brain snipe sequence state (module-level; the sub-decisions at steps
+# 2-4 are forced continuations of this guard's own step-1 choice, not
+# independent MAIN decisions — see module docstring item 3.5).
+_adrena_state: str | None = None  # None | "await_from" | "await_count" | "await_target"
+# [майнинг v062] item 2 -- which _adrena_trigger_guard branch initiated the pending combo:
+# "kill" (direct-KO branch a) | "combo" (Shadow-Bullet-combo branch b) | "value" (opportunistic
+# branch c). Consumed by _adrena_sequence_guard's "await_target" step to decide active
+# (kill/combo, unchanged from wave 1) vs opponent-bench (value, new in wave 2) targeting.
+# Reset to None everywhere `_adrena_state` is reset to None.
+_adrena_intent: str | None = None
+# [майнинг v062] item 2 -- damage-counter count (0-3) chosen in the "await_count" step,
+# needed by "await_target" to know how much HP (count*10) a bench candidate transfer can
+# finish off. Only meaningful while _adrena_state in ("await_target",); stale otherwise.
+_adrena_move_count: int = 0
+# Known fragile/support mons with no meaningful attack (deprioritize as promotion target
+# whenever a real attacker is available on bench).
+FRAGILE_SUPPORT_IDS = {
+    305,   # Dunsparce — 0-dmg switch utility (not in deck; kept as a defensive generic)
+    66,    # Dudunsparce — draw-then-shuffle-self utility (not in deck)
+    646,   # Marnie's Impidimp — Filch draw / 10-dmg Corkscrew (Grimmsnarl pre-evo, setup only)
+    112,   # Munkidori — ability-only (Adrena-Brain); Mind Bend costs {P} -> UNCASTABLE. Worst active.
+    860,   # Snorunt — attack UNCASTABLE ({W}); bench fodder that evolves into Froslass.
+}
+
+
+def _find_file(name: str) -> str:
+    candidates = [
+        os.path.join(_DIR, name),
+        name,
+        os.path.join("/kaggle_simulations/agent", name),
+    ]
+    for p in candidates:
+        if os.path.exists(p):
+            return p
+    return os.path.join(_DIR, name)
+
+
+# ── Load deck ────────────────────────────────────────────────────────────────
+_deck_path = _find_file("deck.csv")
+with open(_deck_path, "r") as _f:
+    _csv = [line.strip() for line in _f if line.strip()]
+my_deck: list[int] = [int(x) for x in _csv[:60]]
+assert len(my_deck) == 60, f"deck.csv has {len(my_deck)} cards (expected 60)"
+
+# ── Card DB + damage table (for the lethal-KO guard) ─────────────────────────
+# v061 Phase-1 guard edit (c): the lethal-KO guard used to read attack damage from a
+# pandas/EN_Card_Data.csv table. Now built straight from the engine via cg.api:
+# all_card_data() gives CardData.attacks (a list of attackId ints, ABILITIES ALREADY
+# EXCLUDED — those live on CardData.skills), and all_attack() maps attackId -> Attack with
+# a .damage field. So _DAMAGE_TABLE[cardId] = [damage per attack, in CardData.attacks
+# order], which matches the engine's ATTACK-option ordering the guard indexes by rank.
+# Drops three live-failure surfaces (lightgbm, features module, pandas + bundled CSV).
+try:
+    CARD_DB = {c.cardId: c for c in all_card_data()}
+    ALL_ATTACKS = {a.attackId: a for a in all_attack()}
+
+    _DAMAGE_TABLE: dict[int, list[int]] = {}
+    for _cid, _cd in CARD_DB.items():
+        _dmgs = []
+        for _aid in (getattr(_cd, "attacks", None) or []):
+            _atk = ALL_ATTACKS.get(_aid)
+            _dmgs.append(int(getattr(_atk, "damage", 0) or 0) if _atk else 0)
+        _DAMAGE_TABLE[int(_cid)] = _dmgs
+    _damage_table_ok = True
+except Exception as _dmg_err:
+    CARD_DB = {}
+    ALL_ATTACKS = {}
+    _DAMAGE_TABLE = {}
+    _damage_table_ok = False
+    print(f"[v061] WARNING: damage table load failed: {_dmg_err}", file=sys.stderr)
+
+
+# ── Active-promotion guard ───────────────────────────────────────────────────
+def _promo_priority(pk_id: int, hp: int) -> tuple[int, int]:
+    """(tier, hp) sort key — higher tier wins, hp is the tie-break within a tier.
+
+    v061 Phase-1 guard edit (a): the deck's real attackers are ONLY Grimmsnarl ex (648,
+    Shadow Bullet 180) and Morgrem (647, Corkscrew {D}{D} 60). Froslass (104) was
+    mis-tiered as a "real attacker" in v060, but Frost Smash costs {W} and there are 0 {W}
+    energies in the deck -> it can never attack. It is instead a TANKY UTILITY promotion
+    target (90 HP, survives a hit, and its Freezing Shroud keeps feeding Adrena-Brain even
+    while Active): strictly better than the fragile/ability-only mons, but below anything
+    that can actually threaten damage. Morpeko (649) is not in this deck -> dropped.
+    Tiers: 4 Grimmsnarl ex > 3 Morgrem (real attacker) > 2 unlisted > 1 Froslass (tanky
+    utility) > 0 fragile/support (Impidimp/Munkidori/Snorunt/…).
+    """
+    if pk_id == GRIMMSNARL_ID and hp > 0:
+        return (4, hp)
+    if pk_id == MORGREM_ID and hp > 0:
+        return (3, hp)
+    if pk_id in FRAGILE_SUPPORT_IDS:
+        return (0, hp)
+    if pk_id == FROSLASS_ID and hp > 0:
+        return (1, hp)
+    # Unlisted mon (a tech card we don't model) — better than known-fragile, worse than a
+    # real attacker; ranked above Froslass since an unknown mon might actually threaten.
+    return (2, hp)
+
+
+def _promotion_guard(obs_dict: dict) -> list[int] | None:
+    """Forced-promotion / switch guard (ctx TO_ACTIVE / SWITCH).
+
+    Bypasses the IL ranker entirely for this context (OOD — ranker trained
+    only on MAIN-context decisions; see module docstring for trace evidence).
+    Deterministically picks the best available bench Pokemon:
+    Grimmsnarl ex (healthy) > other real attacker > unlisted mon > fragile/support.
+    Returns None if the option list doesn't look like the expected bench-CARD
+    shape (falls through to IL / trivial fallback — never-throw preserved).
+    """
+    try:
+        sel = obs_dict.get("select") or {}
+        ctx = int(sel.get("context") or -1)
+        if ctx not in (CTX_SWITCH, CTX_TO_ACTIVE):
+            return None
+        opts = sel.get("option") or []
+        if not opts:
+            return None
+        cur = obs_dict.get("current") or {}
+        me = int(cur.get("yourIndex") or 0)
+        players = cur.get("players") or [{}, {}]
+        while len(players) < 2:
+            players = players + [{}]
+        my_bench = players[me].get("bench") or []
+
+        best_i = -1
+        best_key = (-1, -1)
+        for i, o in enumerate(opts):
+            if int(o.get("type") or -1) != OPT_CARD:
+                continue
+            if int(o.get("area") if o.get("area") is not None else -1) != 5:  # AreaType.BENCH
+                continue
+            opt_player = o.get("playerIndex")
+            if opt_player is not None and int(opt_player) != me:
+                continue
+            idx = int(o.get("index") or -1)
+            if not (0 <= idx < len(my_bench)):
+                continue
+            pk = my_bench[idx]
+            if not isinstance(pk, dict):
+                continue
+            pk_id = int(pk.get("id") or 0)
+            hp = int(pk.get("hp") or 0)
+            key = _promo_priority(pk_id, hp)
+            if key > best_key:
+                best_key, best_i = key, i
+        if best_i >= 0:
+            return [best_i]
+        return None
+    except Exception:
+        return None
+
+
+# ── Anti-tank board detector (item 3.6) ──────────────────────────────────────
+def _opp_has_tank(obs_dict: dict) -> bool:
+    """True iff the opponent's board (active or bench, right now) shows any
+    Crustle-line (344/345) or Archaludon-line (169/190) Pokemon. Board-only,
+    deliberately not stateful/sticky (matches how the other guards read
+    obs_dict fresh each call) -- see module docstring item 3.6.
+    """
+    try:
+        cur = obs_dict.get("current") or {}
+        me = int(cur.get("yourIndex") or 0)
+        players = cur.get("players") or [{}, {}]
+        while len(players) < 2:
+            players = players + [{}]
+        opp_pl = players[1 - me]
+        for area in ("active", "bench"):
+            for pk in (opp_pl.get(area) or []):
+                if isinstance(pk, dict) and int(pk.get("id") or 0) in TANK_LINE_IDS:
+                    return True
+        return False
+    except Exception:
+        return False
+
+
+# ── Prize / weakness helpers (for the game-winning lethal check) ─────────────
+def _prize_value(card_id: int) -> int:
+    cd = CARD_DB.get(card_id)
+    if cd is not None and getattr(cd, "megaEx", False):
+        return 3
+    if cd is not None and getattr(cd, "ex", False):
+        return 2
+    return 1
+
+
+def _weak_to_dark(card_id: int) -> bool:
+    """True iff the card's Weakness type is Darkness (== BASIC_D_ENERGY_ID, 7) — our only
+    real attacks (Shadow Bullet / Corkscrew) are Dark-type, so weakness doubles their damage."""
+    cd = CARD_DB.get(card_id)
+    w = getattr(cd, "weakness", None) if cd else None
+    if w is None:
+        return False
+    try:
+        return int(getattr(w, "value", w) or 0) == BASIC_D_ENERGY_ID
+    except Exception:
+        return False
+
+
+# ── Lethal-KO guard ──────────────────────────────────────────────────────────
+def _ko_guard(obs_dict: dict) -> list[int] | None:
+    """Take a lethal ATTACK immediately — but ONLY when the KO WINS THE GAME.
+
+    v061 change (legibility probe 2026-07-21): v060 fired the lethal attack the instant any
+    ATTACK option's listed damage >= opp active HP. But attacking ENDS the turn, and the
+    expert develops the board first (Adrena-Brain / attach energy / play basics) and attacks
+    LAST — the low-HP target isn't going anywhere, so the KO still lands this turn after all
+    the free setup. The deterministic scorer already sequences attacks last (ATTACK scores
+    below development), so it takes non-winning lethals on its own, correctly ordered. This
+    guard therefore only FRONT-RUNS the scorer for a GAME-WINNING lethal (the KO takes our
+    last needed prize) — never fumbled, taken immediately, matching the expert. Damage is
+    weakness-adjusted (Dark-type attacks double vs Dark-weak targets).
+
+    Item 3.6(a) (kept): Grimmsnarl ex (648) vs an active Crustle (345) — Mysterious Rock Inn
+    prevents ALL ex-attack damage, so Shadow Bullet's listed 180 is zeroed (no false lethal).
+    """
+    global _n_ko_guard_crustle_blocked
+    if not _damage_table_ok:
+        return None
+    try:
+        sel = obs_dict.get("select") or {}
+        opts = sel.get("option") or []
+        if not opts:
+            return None
+        cur = obs_dict.get("current") or {}
+        me = int(cur.get("yourIndex") or 0)
+        players = cur.get("players") or [{}, {}]
+        while len(players) < 2:
+            players = players + [{}]
+        my_pl = players[me]
+        opp_pl = players[1 - me]
+        my_active = (my_pl.get("active") or [None])[0]
+        opp_active = (opp_pl.get("active") or [None])[0]
+        if my_active is None or opp_active is None:
+            return None
+        my_active_id = int(my_active.get("id") or 0)
+        opp_active_id = int(opp_active.get("id") or 0)
+        opp_hp = int(opp_active.get("hp") or 0)
+        if opp_hp <= 0:
+            return None
+        rock_inn_blocks_ex = my_active_id == GRIMMSNARL_ID and opp_active_id == CRUSTLE_ID
+        damages = _DAMAGE_TABLE.get(my_active_id) or []
+        if not damages:
+            return None
+        # Game-winning check: does KO'ing the opp Active take our last needed prize(s)?
+        my_prize_remaining = len(my_pl.get("prize") or [])
+        opp_prize_value = _prize_value(opp_active_id)
+        game_winning = my_prize_remaining > 0 and opp_prize_value >= my_prize_remaining
+        opp_weak_dark = _weak_to_dark(opp_active_id)
+
+        best_lethal_i = None
+        attack_rank = 0
+        for i, opt in enumerate(opts):
+            if int(opt.get("type") or 0) != OPT_ATTACK:
+                continue
+            dmg = damages[attack_rank] if attack_rank < len(damages) else (damages[-1] if damages else 0)
+            attack_rank += 1
+            if rock_inn_blocks_ex:
+                if dmg > 0:
+                    _n_ko_guard_crustle_blocked += 1
+                    _dbg(f"ko_guard: Rock Inn blocks Shadow Bullet vs active Crustle "
+                         f"(listed {dmg} dmg -> 0), suppressing false-lethal (opp_hp={opp_hp})")
+                dmg = 0  # Mysterious Rock Inn: 0 real damage from Grimmsnarl ex's attack to an active Crustle.
+            eff = dmg * 2 if (dmg > 0 and opp_weak_dark) else dmg
+            if eff > 0 and eff >= opp_hp:
+                best_lethal_i = i
+                break
+        if best_lethal_i is None:
+            return None
+        # Only front-run the scorer for a GAME-WINNING lethal. A non-winning KO is sequenced
+        # last by the scorer (attacking ends the turn; the low-HP target survives our setup
+        # and still dies this turn). Firing every listed lethal immediately mis-sequences vs
+        # the expert (legibility probe 2026-07-21: forced_lethal top-1 0.20 -> develop-first).
+        if game_winning:
+            return [best_lethal_i]
+        return None
+    except Exception:
+        return None
+
+
+# ── Energy-attach guard ──────────────────────────────────────────────────────
+def _energy_guard(obs_dict: dict) -> list[int] | None:
+    """MAIN-context guard: force-attach {D} energy onto an active Grimmsnarl ex
+    that still lacks its {D}{D} Shadow Bullet attack cost.
+
+    DIAGNOSIS (2026-07-04, scratchpad/trace_v018_vs_crustle.py, 10 games vs
+    v007_crustle): Grimmsnarl ex 648 reaches Active with full HP by turn 6-9
+    but sits at ZERO energy the ENTIRE game -> never attacks (attacked in
+    only 2/10 games, turns 36/50). The IL ranker (trained only on human
+    MAIN-context decisions) mis-prioritizes the ATTACH-{D}-to-active option
+    against competing MAIN options (draw/supporter/bench-evolve), so the
+    active attacker never gets energized. Same failure class as the
+    promotion guard above (ranker mis-ranks a option-type it under-weights).
+
+    Condition: ctx == MAIN, my active is Grimmsnarl ex (648) with < 2 {D}
+    energy already attached, AND an ATTACH option exists in the option list
+    that puts a Basic {D} Energy (card id 7) from hand onto the ACTIVE
+    Pokemon. Returns that option's index immediately (bypasses the ranker).
+
+    Don't over-attach: if the active already has >= 2 {D} energy (enough for
+    Shadow Bullet), return None so the ranker / other guards proceed
+    normally (e.g. so it can attack this turn, or set up the bench instead).
+
+    Returns None if the condition doesn't hold or no qualifying option is
+    found (falls through to the IL ranker / trivial fallback — never-throw
+    preserved).
+    """
+    try:
+        sel = obs_dict.get("select") or {}
+        ctx = int(sel.get("context") if sel.get("context") is not None else -1)
+        if ctx != CTX_MAIN:
+            return None
+        opts = sel.get("option") or []
+        if not opts:
+            return None
+        cur = obs_dict.get("current") or {}
+        me = int(cur.get("yourIndex") or 0)
+        players = cur.get("players") or [{}, {}]
+        while len(players) < 2:
+            players = players + [{}]
+        my_pl = players[me]
+        my_active = (my_pl.get("active") or [None])[0]
+        if not my_active:
+            return None
+        if int(my_active.get("id") or 0) != GRIMMSNARL_ID:
+            return None
+
+        dark_energy_on_active = sum(
+            1 for e in (my_active.get("energies") or []) if int(e) == BASIC_D_ENERGY_ID
+        )
+        if dark_energy_on_active >= 2:
+            return None  # already has Shadow Bullet's {D}{D} cost -- don't over-attach
+
+        my_hand = my_pl.get("hand") or []
+        for i, o in enumerate(opts):
+            if int(o.get("type") or -1) != OPT_ATTACH:
+                continue
+            area = int(o.get("area") if o.get("area") is not None else -1)
+            idx = int(o.get("index") if o.get("index") is not None else -1)
+            if area != AREA_HAND or not (0 <= idx < len(my_hand)):
+                continue
+            card = my_hand[idx]
+            if not isinstance(card, dict) or int(card.get("id") or 0) != BASIC_D_ENERGY_ID:
+                continue
+            in_area = int(o.get("inPlayArea") if o.get("inPlayArea") is not None else -1)
+            if in_area != AREA_ACTIVE:
+                continue
+            return [i]
+        return None
+    except Exception:
+        return None
+
+
+# ── Munkidori energy guard (item 3, [форензик v062] + [майнинг v062] item 1) ────────────
+def _munkidori_energy_guard(obs_dict: dict) -> list[int] | None:
+    """[форензик v062] item 3, gate REMOVED by [майнинг v062] item 1 -- MAIN-context guard:
+    force-attach a Basic {D} Energy from hand onto a 0-energy Munkidori (112), active OR
+    bench, in ANY matchup (see "Gate" paragraph below -- was restricted to grind/tank
+    matchups in the wave-1 forensic pass, now universal per the mined evidence). Runs
+    BETWEEN _adrena_trigger_guard and _energy_guard in the agent() chain, so Munkidori gets
+    first claim on the turn's one manual energy attach.
+
+    DIAGNOSIS: forensic review of v061's live losses vs Crustle (memory note
+    project_v061_v050_full_forensic_20260721 -- top offender was Crustle, 4 losses) found
+    Munkidori's Adrena-Brain firing ZERO times in 3 of those 4 games, despite the module
+    docstring's own mined evidence (item 3.6) that an expert reference fires it ~11x/game.
+    Mechanism: Adrena-Brain requires "any {D} energy" attached to Munkidori just to turn
+    the Ability ON at all -- but _energy_guard (below, item 4 in the chain) greedily grabs
+    ANY {D}-attach option the instant our active Grimmsnarl ex is under 2 energy, which is
+    true for most of the early-mid game. If Munkidori and an under-energized Grimmsnarl are
+    both in play, the single per-turn manual energy attach always goes to Grimmsnarl, and a
+    0-energy Munkidori can never activate Adrena-Brain -- exactly the "ranker/guard
+    mis-prioritizes an under-represented option class" failure pattern the other guards in
+    this file were written to fix (see module docstring items 3/3.5/3.6), just one guard
+    away from being caught: _adrena_trigger_guard already tries to FIRE the ability every
+    turn it's available, but was never wired to the ENERGY that switches it on in the first
+    place.
+
+    Gate: [майнинг v062] item 1 -- REMOVED (was `_detect_matchup_raw(obs_dict) in {crustle,
+    archaludon, lucario, tr_mewtwo, abomasnow}`, excluding alakazam/mirror/generic).
+    docs/gold/v062_expert_playbook_lines.md lines 14-19: the expert reference sends the
+    game's FIRST energy to Munkidori in EVERY matchup bucket (48-80% of ordinal-1 attaches,
+    median turn 1-2 everywhere), not just grind matchups. Lines 55-57: the single starkest
+    won/lost Adrena-Brain-volume gap in the whole mined dataset is vs Alakazam specifically
+    (mean 4.21 activations/game won vs 2.15 lost, ~2x) -- exactly the matchup the old gate
+    excluded. This guard now fires in every matchup; `_detect_matchup_raw` is still called
+    at the call site purely for the [dbg] log tag (see agent()'s step-4 call), not to gate.
+
+    Self-limit: only matches a Munkidori with 0 {D} energy attached (checked live off the
+    obs_dict, per-location) -- the instant it has >=1, this guard stops matching that
+    Munkidori (Adrena-Brain only needs ONE {D} to switch on; a 2nd is just parking, same
+    judgment call as attach_target_score in scoring_grimmsnarl.py). Reuses _energy_guard's
+    own option-shape convention (OPT_ATTACH, area==AREA_HAND, hand card id==Basic {D}
+    Energy, inPlayArea identifies the destination) rather than inventing a new one.
+
+    Returns None (falls through to _energy_guard / the scorer / trivial fallback --
+    never-throw preserved) if no 0-energy Munkidori is in play, or no qualifying ATTACH
+    option targets one.
+    """
+    try:
+        sel = obs_dict.get("select") or {}
+        ctx = int(sel.get("context") if sel.get("context") is not None else -1)
+        if ctx != CTX_MAIN:
+            return None
+        opts = sel.get("option") or []
+        if not opts:
+            return None
+        cur = obs_dict.get("current") or {}
+        me = int(cur.get("yourIndex") or 0)
+        players = cur.get("players") or [{}, {}]
+        while len(players) < 2:
+            players = players + [{}]
+        my_pl = players[me]
+
+        # Locate every 0-energy Munkidori currently in play (active + bench).
+        zero_energy_active = False
+        zero_energy_bench_idx = set()
+        my_active = (my_pl.get("active") or [None])[0]
+        if isinstance(my_active, dict) and int(my_active.get("id") or 0) == MUNKIDORI_ID:
+            if len(my_active.get("energies") or []) == 0:
+                zero_energy_active = True
+        for idx, pk in enumerate(my_pl.get("bench") or []):
+            if isinstance(pk, dict) and int(pk.get("id") or 0) == MUNKIDORI_ID:
+                if len(pk.get("energies") or []) == 0:
+                    zero_energy_bench_idx.add(idx)
+        if not zero_energy_active and not zero_energy_bench_idx:
+            return None
+
+        my_hand = my_pl.get("hand") or []
+        for i, o in enumerate(opts):
+            if int(o.get("type") or -1) != OPT_ATTACH:
+                continue
+            area = int(o.get("area") if o.get("area") is not None else -1)
+            idx = int(o.get("index") if o.get("index") is not None else -1)
+            if area != AREA_HAND or not (0 <= idx < len(my_hand)):
+                continue
+            card = my_hand[idx]
+            if not isinstance(card, dict) or int(card.get("id") or 0) != BASIC_D_ENERGY_ID:
+                continue
+            in_area = int(o.get("inPlayArea") if o.get("inPlayArea") is not None else -1)
+            if in_area == AREA_ACTIVE and zero_energy_active:
+                return [i]
+            if in_area == AREA_BENCH:
+                in_idx = int(o.get("inPlayIndex") if o.get("inPlayIndex") is not None else -1)
+                if in_idx in zero_energy_bench_idx:
+                    return [i]
+        return None
+    except Exception:
+        return None
+
+
+# ── Adrena-Brain snipe guard (Munkidori 112) ─────────────────────────────────
+def _resolve_pokemon(player_dict: dict, area: int, idx: int) -> dict | None:
+    """Resolve a Pokemon dict from (area, index) — same convention used by
+    features_grimmsnarl_v2._get_pokemon_from_obs. area: 4=ACTIVE, 5=BENCH."""
+    if area == AREA_ACTIVE:
+        active = player_dict.get("active") or []
+        return active[0] if active else None
+    if area == AREA_BENCH:
+        bench = player_dict.get("bench") or []
+        return bench[idx] if 0 <= idx < len(bench) else None
+    return None
+
+
+def _damage_on(pk: dict | None) -> int:
+    """Damage counters worth of HP missing (maxHp - hp), floored at 0."""
+    if not isinstance(pk, dict):
+        return 0
+    hp = int(pk.get("hp") or 0)
+    maxhp = int(pk.get("maxHp") or hp)
+    return max(0, maxhp - hp)
+
+
+def _adrena_trigger_guard(obs_dict: dict) -> list[int] | None:
+    """MAIN-context: decide whether to INITIATE the Adrena-Brain snipe combo.
+
+    Fires in three cases:
+      (a) opp active HP <= available snipe damage (direct kill), or
+      (b) opp active HP in (shadow_bullet_dmg, shadow_bullet_dmg +
+          available_snipe] AND my active Grimmsnarl ex already has its
+          {D}{D} Shadow Bullet cost ready (so the hard-lethal-KO guard
+          finishes the KO with the attack on the very next MAIN decision,
+          once this snipe lands) -- shadow_bullet_dmg is zeroed when the
+          target is a Rock-Inn'd active Crustle (item 3.6(a), same fix as
+          _ko_guard: that attack does 0 real damage there, so it can't be
+          part of a combo kill), or
+      (c) item 3.6(b), added 2026-07-21: `_opp_has_tank(obs_dict)` is true
+          (opponent board shows Crustle/Archaludon-line, IDs 344/345/169/
+          190) and there is ANY damage to siphon (available_snipe > 0) --
+          fire opportunistically even without a kill this turn. Mined
+          evidence (module docstring item 3.6): jiatu.l's 103 winning games
+          vs Crustle-line opponents fired Adrena-Brain ~11x/game, 3.5x more
+          than Shadow Bullet -- a wall deck needs sustained per-turn
+          grinding, not a one-shot lethal check, and the ability is a
+          strict-upside heal-them-damage-you transfer that never carries
+          over unused, so there is no reason to hold it back. This branch
+          never fires outside a detected tank matchup (Alakazam/random
+          behavior is byte-for-byte the old lethal-only logic).
+    Available snipe damage = 10 * min(3, max damage-counters on any one of
+    my Pokemon) — Adrena-Brain moves "up to 3" counters (30 dmg) from ONE
+    of my Pokemon. Sets _adrena_state="await_from" and returns the
+    OPT_ABILITY option index on success. See module docstring items 3.5/3.6.
+
+    [майнинг v062] item 2: also sets `_adrena_intent` to one of "kill" (branch a), "combo"
+    (branch b), or "value" (branch c) -- consumed by _adrena_sequence_guard's "await_target"
+    step to decide whether the final snipe target stays the active (kill/combo, unchanged)
+    or moves to the opponent's bench (value, new -- see that guard's own docstring and
+    docs/gold/v062_expert_playbook_lines.md lines 58-61/124-149).
+    """
+    global _adrena_state, _adrena_intent, _n_adrena_tank_opportunistic
+    try:
+        sel = obs_dict.get("select") or {}
+        ctx = int(sel.get("context") if sel.get("context") is not None else -1)
+        if ctx != CTX_MAIN:
+            return None
+        opts = sel.get("option") or []
+        if not opts:
+            return None
+        cur = obs_dict.get("current") or {}
+        me = int(cur.get("yourIndex") or 0)
+        players = cur.get("players") or [{}, {}]
+        while len(players) < 2:
+            players = players + [{}]
+        my_pl = players[me]
+        opp_pl = players[1 - me]
+        opp_active = (opp_pl.get("active") or [None])[0]
+        if not opp_active:
+            return None
+        opp_active_id = int(opp_active.get("id") or 0)
+        opp_hp = int(opp_active.get("hp") or 0)
+        if opp_hp <= 0:
+            return None
+
+        ability_idx = None
+        for i, o in enumerate(opts):
+            if int(o.get("type") or -1) != OPT_ABILITY:
+                continue
+            area = int(o.get("area") if o.get("area") is not None else -1)
+            idx = int(o.get("index") if o.get("index") is not None else -1)
+            src = _resolve_pokemon(my_pl, area, idx)
+            if src and int(src.get("id") or 0) == MUNKIDORI_ID:
+                ability_idx = i
+                break
+        if ability_idx is None:
+            return None
+
+        my_active = (my_pl.get("active") or [None])[0]
+        candidates = ([my_active] if my_active else []) + list(my_pl.get("bench") or [])
+        max_counters = 0
+        for pk in candidates:
+            max_counters = max(max_counters, min(3, _damage_on(pk) // 10))
+        if max_counters <= 0:
+            return None  # nothing to snipe with -- don't waste the once-per-turn ability
+        available_snipe = max_counters * 10
+
+        if opp_hp <= available_snipe:
+            _adrena_state = "await_from"
+            _adrena_intent = "kill"  # [майнинг v062] item 2 -- direct kill, target stays active
+            return [ability_idx]
+
+        if my_active and int(my_active.get("id") or 0) == GRIMMSNARL_ID:
+            dark_energy = sum(
+                1 for e in (my_active.get("energies") or []) if int(e) == BASIC_D_ENERGY_ID
+            )
+            if dark_energy >= 2:
+                shadow_bullet_dmg = (_DAMAGE_TABLE.get(GRIMMSNARL_ID) or [180])[0] if _damage_table_ok else 180
+                if opp_active_id == CRUSTLE_ID:
+                    shadow_bullet_dmg = 0  # item 3.6(a): Rock Inn blocks Shadow Bullet vs active Crustle.
+                if shadow_bullet_dmg > 0 and opp_hp > shadow_bullet_dmg and opp_hp <= shadow_bullet_dmg + available_snipe:
+                    _adrena_state = "await_from"
+                    _adrena_intent = "combo"  # [майнинг v062] item 2 -- KO combo, target stays active
+                    return [ability_idx]
+
+        # v061 Phase-1 guard edit (b): fire Adrena-Brain OPPORTUNISTICALLY IN EVERY MATCHUP
+        # whenever there is damage to siphon (available_snipe > 0 is already guaranteed above —
+        # we returned None if max_counters <= 0). v060 gated this on _opp_has_tank (Crustle/
+        # Archaludon only); the gate is removed here. Rationale: Froslass's Freezing Shroud puts
+        # a damage counter on every ability-mon (both sides, Froslass exempt) each Pokémon
+        # Checkup, so there is a free counter to move almost every turn regardless of opponent.
+        # The transfer HEALS our source Pokémon and DAMAGES the opponent's Active — a strict-
+        # upside, zero-card-cost, once-per-turn effect that never carries over unused. Widening
+        # it to all matchups only gains tempo (Alakazam/random included); it can never hurt.
+        _adrena_state = "await_from"
+        _adrena_intent = "value"  # [майнинг v062] item 2 -- opportunistic, target routes to bench
+        _n_adrena_tank_opportunistic += 1
+        _dbg(f"adrena opportunistic fire #{_n_adrena_tank_opportunistic}: "
+             f"opp_active_id={opp_active_id} opp_hp={opp_hp} available_snipe={available_snipe} "
+             f"tank={_opp_has_tank(obs_dict)}")
+        return [ability_idx]
+    except Exception:
+        return None
+
+
+def _adrena_sequence_guard(obs_dict: dict) -> list[int] | None:
+    """Forced-continuation guard for steps 2-4 of an already-initiated
+    Adrena-Brain snipe (see _adrena_trigger_guard). Must run BEFORE every
+    other guard/ranker while `_adrena_state` is set, since these contexts
+    (REMOVE_DAMAGE_COUNTER / _COUNT / DAMAGE_COUNTER) are OOD for the IL
+    ranker and not what the promotion/KO/energy guards look for anyway.
+    Resets `_adrena_state` (and `_adrena_intent`) to None on completion,
+    desync, or any failure (never-throw preserved; a reset just lets the
+    normal chain run for this decision instead of guessing).
+
+    [майнинг v062] item 2 -- the final "await_target" step (ctx CTX_DAMAGE_COUNTER, where
+    the counters actually land) now branches on `_adrena_intent`:
+      - "kill" / "combo" (set by _adrena_trigger_guard branches a/b): UNCHANGED from wave 1
+        -- target stays the opponent's ACTIVE, since that target was already fixed when the
+        guard decided to fire (a guaranteed KO or KO-combo this turn).
+      - "value" (branch c, opportunistic): target routes to the opponent's BENCH by default.
+        docs/gold/v062_expert_playbook_lines.md lines 58-61 (vs Alakazam: Adrena-Brain
+        targets are opponent-bench 65.4%/79.5% of the time in won/lost games) and lines
+        124-149 (Archaludon reconstruction: damage routed onto not-yet-evolved backup
+        Duraludon copies on the bench -- "kill the reinforcement before it evolves") both
+        point the same direction. Priority among bench candidates: (1) a target this
+        transfer KOs outright (remaining HP <= counters-moved*10, i.e. `_adrena_move_count`
+        from the "await_count" step), preferring the LOWEST remaining HP among those
+        (an evolving pre-evo/basic is typically the lowest-HP body on a bench anyway, so
+        this already captures "prefer evolving basics" without a hardcoded card-id list);
+        (2) else the single weakest (lowest remaining HP) bench mon; (3) fallback to active
+        only if the engine offers no bench CARD options at all for the opponent this step.
+    """
+    global _adrena_state, _adrena_intent, _adrena_move_count, _n_adrena_steps
+    if _adrena_state is None:
+        return None
+    try:
+        sel = obs_dict.get("select") or {}
+        ctx = int(sel.get("context") if sel.get("context") is not None else -1)
+        opts = sel.get("option") or []
+        if not opts:
+            _adrena_state = None
+            _adrena_intent = None
+            return None
+        cur = obs_dict.get("current") or {}
+        me = int(cur.get("yourIndex") or 0)
+        players = cur.get("players") or [{}, {}]
+        while len(players) < 2:
+            players = players + [{}]
+        my_pl = players[me]
+        opp_pl = players[1 - me]
+
+        if _adrena_state == "await_from" and ctx == CTX_REMOVE_DAMAGE_COUNTER:
+            best_i, best_dmg = None, -1
+            for i, o in enumerate(opts):
+                if int(o.get("type") or -1) != OPT_CARD:
+                    continue
+                pidx = o.get("playerIndex")
+                if pidx is not None and int(pidx) != me:
+                    continue
+                area = int(o.get("area") if o.get("area") is not None else -1)
+                idx = int(o.get("index") if o.get("index") is not None else -1)
+                dmg = _damage_on(_resolve_pokemon(my_pl, area, idx))
+                if dmg > best_dmg:
+                    best_dmg, best_i = dmg, i
+            _adrena_state = "await_count" if best_i is not None else None
+            if best_i is None:
+                _adrena_intent = None
+                return None
+            _n_adrena_steps += 1
+            return [best_i]
+
+        if _adrena_state == "await_count" and ctx == CTX_REMOVE_DAMAGE_COUNTER_COUNT:
+            best_i, best_n = None, -1
+            for i, o in enumerate(opts):
+                # NOTE: OPT_NUMBER == 0, so the usual "x or -1" idiom is unsafe
+                # here (0 is falsy) -- use an explicit None check instead.
+                if int(o.get("type") if o.get("type") is not None else -1) != OPT_NUMBER:
+                    continue
+                n = int(o.get("number") if o.get("number") is not None else -1)
+                if n > best_n:
+                    best_n, best_i = n, i
+            _adrena_state = "await_target" if best_i is not None else None
+            if best_i is None:
+                _adrena_intent = None
+                return None
+            # [майнинг v062] item 2: remember how many counters we're moving (0-3) -- the
+            # "await_target" step needs this*10 to know how much HP a bench candidate dies to.
+            _adrena_move_count = max(0, best_n)
+            _n_adrena_steps += 1
+            return [best_i]
+
+        if _adrena_state == "await_target" and ctx == CTX_DAMAGE_COUNTER:
+            opp_idx = 1 - me
+            best_i = None
+            if _adrena_intent in ("kill", "combo"):
+                # [майнинг v062] item 2: unchanged from wave 1 -- these branches already
+                # committed to a guaranteed KO/combo on the active this turn.
+                for i, o in enumerate(opts):
+                    if int(o.get("type") or -1) != OPT_CARD:
+                        continue
+                    if int(o.get("playerIndex") if o.get("playerIndex") is not None else -1) != opp_idx:
+                        continue
+                    area = int(o.get("area") if o.get("area") is not None else -1)
+                    if area == AREA_ACTIVE:
+                        best_i = i
+                        break
+            else:
+                # [майнинг v062] item 2: "value" (opportunistic) branch -- route to bench.
+                moved_hp = _adrena_move_count * 10
+                bench_candidates = []  # (remaining_hp, option_index)
+                active_i = None
+                for i, o in enumerate(opts):
+                    if int(o.get("type") or -1) != OPT_CARD:
+                        continue
+                    if int(o.get("playerIndex") if o.get("playerIndex") is not None else -1) != opp_idx:
+                        continue
+                    area = int(o.get("area") if o.get("area") is not None else -1)
+                    if area == AREA_ACTIVE:
+                        if active_i is None:
+                            active_i = i
+                        continue
+                    if area != AREA_BENCH:
+                        continue
+                    idx = int(o.get("index") if o.get("index") is not None else -1)
+                    pk = _resolve_pokemon(opp_pl, area, idx)
+                    if not isinstance(pk, dict):
+                        continue
+                    bench_candidates.append((int(pk.get("hp") or 0), i))
+                if bench_candidates:
+                    killable = [c for c in bench_candidates if c[0] <= moved_hp]
+                    pool = killable if killable else bench_candidates
+                    pool.sort(key=lambda c: c[0])
+                    best_i = pool[0][1]
+                    _dbg(f"adrena target (value): bench i={best_i} hp={pool[0][0]} "
+                         f"moved_hp={moved_hp} killable={bool(killable)} n_candidates={len(bench_candidates)}")
+                elif active_i is not None:
+                    best_i = active_i
+                    _dbg("adrena target (value): no bench CARD options offered, fell back to active")
+            if best_i is None:
+                for i, o in enumerate(opts):
+                    if int(o.get("type") or -1) == OPT_CARD and int(
+                        o.get("playerIndex") if o.get("playerIndex") is not None else -1
+                    ) == opp_idx:
+                        best_i = i
+                        break
+            _adrena_state = None
+            _adrena_intent = None
+            if best_i is not None:
+                _n_adrena_steps += 1
+                return [best_i]
+            return None
+
+        # Any other context while a snipe is pending is an unexpected desync
+        # (e.g. an unforeseen intervening decision) -- reset and let the
+        # normal guard chain / ranker handle this decision safely.
+        _adrena_state = None
+        _adrena_intent = None
+        return None
+    except Exception:
+        _adrena_state = None
+        _adrena_intent = None
+        return None
+
+
+# ── Deterministic scorer bridge (replaces v060's LightGBM step 5) ─────────────
+def _score_decide(obs_dict: dict) -> list[int]:
+    """Bridge the raw-dict guard world to the typed-obs scorer.
+
+    Converts obs_dict -> typed obs via to_observation_class and defers to
+    scoring_grimmsnarl.choose_options, which greedily argmax's the deterministic
+    score_option over the option list (v034/v036 method). Raises if the scorer is
+    unavailable (agent() then falls through to the trivial fallback — never-throw
+    preserved). Returns [] for a legitimately-optional decline (minCount 0, no positive
+    option), which agent() passes through unchanged.
+    """
+    if not _scorer_ok or _scorer is None:
+        raise RuntimeError("scorer unavailable")
+    obs = to_observation_class(obs_dict)
+    if not obs.select or not obs.select.option:
+        return []
+    # Opponent-attack log tracking (defensive: only if the scorer ports it — some Boss
+    # heuristics read the opponent's last attack).
+    _upd = getattr(_scorer, "_update_opp_attack_tracking", None)
+    if _upd is not None:
+        try:
+            _upd(obs)
+        except Exception:
+            pass
+    return _scorer.choose_options(obs)
+
+
+# ── Public agent ─────────────────────────────────────────────────────────────
+def agent(obs_dict: dict) -> list[int]:
+    """Never-throw public entry point.
+
+    Priority:
+      0. Adrena-Brain sequence guard (forced continuation of an already-
+         initiated Munkidori snipe -> steps 2-4, see item 3.5 in the module
+         docstring). Runs first: these contexts are irrelevant to every
+         other guard/ranker anyway, so checking first is a pure no-op when
+         no snipe is pending (_adrena_state is None).
+      1. Active-promotion guard (forced promotion / switch -> best bench mon).
+      2. Lethal-KO guard (any attack that KOs the opponent's active -> take it;
+         item 3.6(a) zeroes out Shadow Bullet vs a Rock-Inn'd active Crustle).
+      3. Adrena-Brain trigger guard (initiate the Munkidori snipe when it
+         converts to a guaranteed KO this turn, direct or combined with this
+         turn's Shadow Bullet -- OR, v061 guard edit (b), opportunistically in
+         ANY matchup whenever there's any damage to siphon, since Freezing
+         Shroud feeds a free counter almost every turn).
+      4. Munkidori energy guard ([форензик v062] item 3, NEW): in grind/tank
+         matchups (crustle/archaludon/lucario/tr_mewtwo/abomasnow), force the
+         turn's {D} energy attach onto a 0-energy Munkidori instead of letting
+         step 5 (energy-attach guard) always claim it for Grimmsnarl ex --
+         Adrena-Brain needs at least 1 {D} just to switch on, and the mined
+         expert reference fires it ~11x/game (module docstring item 3.6) but
+         v061 fired it 0 times in most live Crustle losses. See
+         _munkidori_energy_guard's own docstring for the full diagnosis.
+      5. Energy-attach guard (active Grimmsnarl ex needs {D}{D} -> attach it).
+      6. Deterministic heuristic scorer (scoring_grimmsnarl.choose_options).
+      7. Trivial fallback (first minCount indices).
+    """
+    global _n_model_decisions, _n_ko_guard, _n_promo_guard, _n_energy_guard
+    global _n_adrena_trigger, _n_adrena_steps, _n_trivial_fallback, _exception_count
+    global _n_adrena_tank_opportunistic, _n_ko_guard_crustle_blocked
+    global _n_munkidori_energy_guard
+
+    sel = obs_dict.get("select") if obs_dict else None
+    if sel is None:
+        # New game: reset per-game guard/scorer state.
+        global _adrena_state, _adrena_intent, _adrena_move_count, _raw_last_matchup
+        _adrena_state = None
+        _adrena_intent = None  # [майнинг v062] item 2
+        _adrena_move_count = 0  # [майнинг v062] item 2
+        _raw_last_matchup = None  # [форензик v062] item 2: reset the raw-dict sticky matchup too
+        _reset = getattr(_scorer, "reset_game_state", None) if _scorer_ok else None
+        if _reset is not None:
+            try:
+                _reset()
+            except Exception:
+                pass
+        return my_deck
+
+    n_options = len((sel.get("option") or []))
+    min_count = int(sel.get("minCount") or 1)
+    max_count = int(sel.get("maxCount") or 1)
+
+    if n_options == 0:
+        _n_trivial_fallback += 1
+        return []
+
+    # 0. Adrena-Brain sequence guard (forced continuation, no-op if not pending)
+    try:
+        seq = _adrena_sequence_guard(obs_dict)
+        if seq is not None and all(0 <= i < n_options for i in seq):
+            _dbg(f"guard=adrena_seq pick={seq} (ctx={int(sel.get('context') or -1)})")
+            return seq
+    except Exception:
+        pass
+
+    # 1. Active-promotion guard
+    try:
+        promo = _promotion_guard(obs_dict)
+        if promo is not None and all(0 <= i < n_options for i in promo):
+            _n_promo_guard += 1
+            _dbg(f"guard=promotion pick={promo} (ctx={int(sel.get('context') or -1)})")
+            return promo
+    except Exception:
+        pass
+
+    # 2. Lethal-KO guard
+    try:
+        guard = _ko_guard(obs_dict)
+        if guard is not None and all(0 <= i < n_options for i in guard):
+            _n_ko_guard += 1
+            _dbg(f"guard=ko_lethal_gamewinning pick={guard}")
+            return guard
+    except Exception:
+        pass
+
+    # 3. Adrena-Brain trigger guard (initiate the Munkidori snipe combo)
+    try:
+        adrena = _adrena_trigger_guard(obs_dict)
+        if adrena is not None and all(0 <= i < n_options for i in adrena):
+            _n_adrena_trigger += 1
+            _dbg(f"guard=adrena_trigger pick={adrena}")
+            return adrena
+    except Exception:
+        pass
+
+    # 4. Munkidori energy guard ([форензик v062] item 3)
+    try:
+        munk = _munkidori_energy_guard(obs_dict)
+        if munk is not None and all(0 <= i < n_options for i in munk):
+            _n_munkidori_energy_guard += 1
+            _dbg(f"guard=munkidori_energy pick={munk} matchup={_detect_matchup_raw(obs_dict)}")
+            return munk
+    except Exception:
+        pass
+
+    # 5. Energy-attach guard
+    try:
+        energy = _energy_guard(obs_dict)
+        if energy is not None and all(0 <= i < n_options for i in energy):
+            _n_energy_guard += 1
+            _dbg(f"guard=energy_attach pick={energy}")
+            return energy
+    except Exception:
+        pass
+
+    # 6. Deterministic heuristic scorer
+    try:
+        result = _score_decide(obs_dict)
+        if (result is not None
+                and all(0 <= i < n_options for i in result)
+                and min_count <= len(result) <= max_count
+                and len(set(result)) == len(result)):
+            _n_model_decisions += 1
+            return result
+    except Exception as exc:
+        _exception_count += 1
+        if _exception_count <= 3:
+            print(
+                f"[v061] scorer exception #{_exception_count}: {exc}  "
+                f"(scored={_n_model_decisions} ko={_n_ko_guard} "
+                f"fallback={_n_trivial_fallback})",
+                file=sys.stderr,
+            )
+
+    # 7. Trivial fallback — always legal
+    _n_trivial_fallback += 1
+    k = max(1, min_count)
+    k = min(k, max_count, n_options)
+    return list(range(k))
