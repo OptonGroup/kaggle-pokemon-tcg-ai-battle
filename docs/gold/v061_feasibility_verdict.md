@@ -96,7 +96,23 @@ gate/live is the arbiter (confirmed ≥4× in project history), and the gate is 
 ## Live-safety (mandatory pre-submit, exec-smoke, scripts/v061_exec_smoke.py)
 Ran in Docker linux/amd64 (pokemon-tcg-sim:latest), agent exec()-loaded WITHOUT `__file__` from
 /kaggle_simulations/agent: **PASS** — scorer_ok=True, damage_table_ok=True, 0 exceptions over 6
-games, scorer path exercised (scored=423, trivial_fallback=4, internal_exc=0).
+games, scorer path exercised (scored=423, trivial_fallback=4, internal_exc=0). Re-verified PASS
+with per-decision logging on.
+
+## Per-decision move logging (ALWAYS-ON — standing practice for every agent)
+Every move emits a compact stderr line so a downloaded Kaggle game log
+(`episode-{id}-agent-{n}.json`) explains WHY each move was made — Kaggle captures per-move
+stdout/stderr (verified live on v047). This is now a standing rule for every submission we build,
+not a v061-only feature (see memory feedback_always_agent_decision_logging):
+- scorer: `[dec] t{turn} ctx{context} n{n_opts} -> #{i} '{reason}' s={score} | 2nd #{j} '{reason2}'
+  s={s2} pick=[…]` — the winning option, its reason+score, AND the runner-up (the decision margin).
+- each guard fire: `[dbg] guard={name} pick=[i]`.
+- behind `DECISION_LOG` / `_DEBUG_LOG` (toggle off only if the 600s/episode budget is threatened);
+  all logging is never-throw. Confirmed printing under exec() without `__file__` on linux/amd64.
+Example real move: `[dec] t3 ctx0 -> #2 'bench Snorunt (enables Froslass)' s=14000 | 2nd #0
+'evolve into Morgrem (Bench)' s=12000`. Rationale: the local gate does not predict live (≥4×
+confirmed) — the only way to dissect a live loss by substance is to read what the agent actually
+saw and why it chose each move.
 
 ## Corrections to project memory (verified against the engine)
 - **Munkidori 112 in FRAGILE_SUPPORT_IDS is CORRECT, not a bug** (memory had flagged it): Mind Bend
