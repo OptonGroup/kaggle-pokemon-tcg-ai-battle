@@ -26,6 +26,34 @@ Wilson-significantly better on 4 of 5 measured opponents, parity on the 5th.
 **v061 vs v060 direct mirror (same deck, method-vs-method): 0.822** (246W/53L/1D, CI [0.774,0.861]),
 results/gates/v061_vs_v060_mirror.json. 0 agent exceptions in every run.
 
+### Full 14-opponent pool (cg_native, N=300 each, results/gates/v061_full_pool_gate.json)
+0 agent/opponent exceptions across all 4200 games. **Bimodal profile persists** — dominant vs
+Alakazam / mirror / megaKanga-Crustle, weak vs the pure Archaludon-beatdown + Rock-Inn-Crustle
+cohort (the deck's known mechanical wall). Overall WR 0.409 is depressed by a pool that is 8/14
+tank/beatdown decks; our live band (800–899) is Alakazam-heavy, where v061 is 0.90–0.97.
+
+| opponent | archetype | v061 WR | CI95 |
+|---|---|---|---|
+| v016_alakazam | Alakazam | **0.970** | [0.94,0.98] |
+| v017_alakazam_heur | Alakazam | **0.903** | [0.86,0.93] |
+| v018_grimmsnarl | Grimmsnarl-ish | **0.837** | [0.79,0.87] |
+| v060_grimmsnarl_jiatu | BC-ranker (same deck) | **0.817** | [0.77,0.86] |
+| v039_crustle_megakanga | Crustle+MegaKanga | **0.707** | [0.65,0.76] |
+| v046_final | Archaludon | 0.227 | [0.18,0.28] |
+| v007_crustle | Crustle | 0.202 | [0.16,0.25] |
+| v024_cardemb_rl | NN card-embed | 0.197 | [0.16,0.25] |
+| v044_archaludon_abomasnow | Archaludon | 0.197 | [0.16,0.25] |
+| v049_bench_sticky_guard | Archaludon | 0.183 | [0.14,0.23] |
+| v034_romanrozen_clone | Archaludon-det | 0.157 | [0.12,0.20] |
+| v036_archaludon_patched | Archaludon-det | 0.147 | [0.11,0.19] |
+| v009a_crustle | Crustle | 0.133 | [0.10,0.18] |
+| v033_plan_d_ppo | NN PPO | 0.053 | [0.03,0.08] |
+
+vs the Archaludon cohort v061 sits ~0.15–0.23 vs v060's 0.06–0.07 (2–3× better — tank floor
+raised as intended), but the wall is not closed (Archaludon 300HP vs Shadow Bullet 180 + 30/turn
+siphon; Crustle Rock Inn blocks Shadow Bullet entirely). This is the pre-declared limit of the
+deck, not the method. The PPO agent v033 (0.053) is the single worst matchup.
+
 Checkpoint-2 criterion ("Wilson-significant win on the tank cohort while preserving Alakazam
 0.70–0.81") is **met and exceeded** — Alakazam went to 0.94–0.95, tanks tripled.
 

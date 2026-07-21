@@ -946,6 +946,7 @@ def agent(obs_dict: dict) -> list[int]:
     try:
         seq = _adrena_sequence_guard(obs_dict)
         if seq is not None and all(0 <= i < n_options for i in seq):
+            _dbg(f"guard=adrena_seq pick={seq} (ctx={int(sel.get('context') or -1)})")
             return seq
     except Exception:
         pass
@@ -955,6 +956,7 @@ def agent(obs_dict: dict) -> list[int]:
         promo = _promotion_guard(obs_dict)
         if promo is not None and all(0 <= i < n_options for i in promo):
             _n_promo_guard += 1
+            _dbg(f"guard=promotion pick={promo} (ctx={int(sel.get('context') or -1)})")
             return promo
     except Exception:
         pass
@@ -964,6 +966,7 @@ def agent(obs_dict: dict) -> list[int]:
         guard = _ko_guard(obs_dict)
         if guard is not None and all(0 <= i < n_options for i in guard):
             _n_ko_guard += 1
+            _dbg(f"guard=ko_lethal_gamewinning pick={guard}")
             return guard
     except Exception:
         pass
@@ -973,6 +976,7 @@ def agent(obs_dict: dict) -> list[int]:
         adrena = _adrena_trigger_guard(obs_dict)
         if adrena is not None and all(0 <= i < n_options for i in adrena):
             _n_adrena_trigger += 1
+            _dbg(f"guard=adrena_trigger pick={adrena}")
             return adrena
     except Exception:
         pass
@@ -982,6 +986,7 @@ def agent(obs_dict: dict) -> list[int]:
         energy = _energy_guard(obs_dict)
         if energy is not None and all(0 <= i < n_options for i in energy):
             _n_energy_guard += 1
+            _dbg(f"guard=energy_attach pick={energy}")
             return energy
     except Exception:
         pass

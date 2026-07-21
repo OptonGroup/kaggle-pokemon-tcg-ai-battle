@@ -24,6 +24,8 @@ in the raw-damage range (~-100..200) so choose_options naturally develops the bo
 before it commits to ending the turn.
 """
 
+import sys as _sys
+
 from cg.api import (
     AreaType,
     LogType,
@@ -939,6 +941,23 @@ def score_option(obs, opt):
     return apply_overrides(obs, opt, score, reason)
 
 
+# ── Per-decision trace logging (for post-hoc "why this move" analysis) ────────
+# Kaggle captures per-move stdout/stderr in the downloadable agent logs
+# (episode-{id}-agent-{n}.json) — verified live for v047. Each scorer decision emits
+# ONE compact line to stderr with the winning option's reason+score and the runner-up
+# (the decision margin), so a downloaded game can be replayed move-by-move. Never throws;
+# toggle DECISION_LOG=False to silence (e.g. if a future run hits the 600s/episode budget).
+DECISION_LOG = True
+
+
+def _dlog(msg):
+    if DECISION_LOG:
+        try:
+            print(f"[dec] {msg}", file=_sys.stderr, flush=True)
+        except Exception:
+            pass
+
+
 def choose_options(obs):
     scored = []
     for i, opt in enumerate(obs.select.option):
@@ -960,5 +979,18 @@ def choose_options(obs):
 
     if len(selected) < obs.select.minCount:
         selected = [i for _, i, _ in scored[:obs.select.minCount]]
+
+    # trace: winning pick + runner-up (decision margin), with turn/context for replay
+    if DECISION_LOG:
+        try:
+            ctx = int(obs.select.context) if obs.select.context is not None else -1
+            turn = getattr(obs.current, "turn", "?")
+            top = scored[0] if scored else (0, -1, "none")
+            second = scored[1] if len(scored) > 1 else None
+            sec = f" | 2nd #{second[1]} '{second[2]}' s={second[0]}" if second else ""
+            _dlog(f"t{turn} ctx{ctx} n{len(scored)} -> #{top[1]} '{top[2]}' s={top[0]}{sec} "
+                  f"pick={selected}")
+        except Exception:
+            pass
 
     return selected
