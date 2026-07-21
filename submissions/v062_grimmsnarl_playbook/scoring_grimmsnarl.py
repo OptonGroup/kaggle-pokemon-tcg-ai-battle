@@ -1193,6 +1193,16 @@ def _dlog(msg):
             pass
 
 
+def _dlog_alt(msg):
+    # [форензик v062] item: full-option-dump companion line to [dec], tagged
+    # "[alt]" so a downloaded Kaggle log can grep either independently.
+    if DECISION_LOG:
+        try:
+            print(f"[alt] {msg}", file=_sys.stderr, flush=True)
+        except Exception:
+            pass
+
+
 def choose_options(obs):
     scored = []
     for i, opt in enumerate(obs.select.option):
@@ -1226,6 +1236,21 @@ def choose_options(obs):
             sec = f" | 2nd #{second[1]} '{second[2]}' s={second[0]}" if second else ""
             _dlog(f"t{turn} m={matchup} ctx{ctx} n{len(scored)} -> #{top[1]} '{top[2]}' s={top[0]}{sec} "
                   f"pick={selected}")
+        except Exception:
+            pass
+
+    # trace: full dump of every scored option, sorted by score desc, so a
+    # downloaded live log can answer "why NOT option X" (not just the runner-up).
+    # Skipped when there's nothing to compare against (single-option decisions).
+    if DECISION_LOG and len(scored) > 1:
+        try:
+            ctx = int(obs.select.context) if obs.select.context is not None else -1
+            turn = getattr(obs.current, "turn", "?")
+            parts = []
+            for score, i, reason in scored:  # already sorted score-desc above
+                r = reason if len(reason) <= 40 else reason[:40]
+                parts.append(f"#{i} s={score} '{r}'")
+            _dlog_alt(f"t{turn} ctx{ctx}: " + "; ".join(parts))
         except Exception:
             pass
 

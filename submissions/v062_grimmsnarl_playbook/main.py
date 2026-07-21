@@ -300,6 +300,36 @@ def _dbg(msg: str) -> None:
         except Exception:
             pass
 
+
+def _galt_summary(opts) -> str:
+    """Compact 'what was on the table' dump of a raw select.option list, for
+    the [galt] guard-alternatives trace. Reads only the raw dict fields
+    (type/cardId) per the Option dataclass in cg/api.py -- cheap, no
+    to_observation_class needed.
+    """
+    parts = []
+    for i, o in enumerate(opts):
+        if not isinstance(o, dict):
+            continue
+        t = o.get("type")
+        t_s = str(int(t)) if t is not None else "?"
+        cid = o.get("cardId")
+        c_s = str(int(cid)) if cid is not None else "None"
+        parts.append(f"#{i} t{t_s} c{c_s}")
+    return "; ".join(parts)
+
+
+def _dbg_alt(name: str, opts) -> None:
+    # [форензик v062] companion to _dbg: when a guard forces a decision, dump
+    # the raw options it chose among (index/type/cardId) so a downloaded
+    # Kaggle log shows what the guard passed over, not just what it picked.
+    if _DEBUG_LOG:
+        try:
+            print(f"[galt] guard={name} opts: {_galt_summary(opts)}", file=sys.stderr, flush=True)
+        except Exception:
+            pass
+
+
 # ── Constants ────────────────────────────────────────────────────────────────
 OPT_NUMBER = 0
 OPT_CARD = 3
@@ -1261,6 +1291,7 @@ def agent(obs_dict: dict) -> list[int]:
         seq = _adrena_sequence_guard(obs_dict)
         if seq is not None and all(0 <= i < n_options for i in seq):
             _dbg(f"guard=adrena_seq pick={seq} (ctx={int(sel.get('context') or -1)})")
+            _dbg_alt("adrena_seq", sel.get("option") or [])
             return seq
     except Exception:
         pass
@@ -1271,6 +1302,7 @@ def agent(obs_dict: dict) -> list[int]:
         if promo is not None and all(0 <= i < n_options for i in promo):
             _n_promo_guard += 1
             _dbg(f"guard=promotion pick={promo} (ctx={int(sel.get('context') or -1)})")
+            _dbg_alt("promotion", sel.get("option") or [])
             return promo
     except Exception:
         pass
@@ -1281,6 +1313,7 @@ def agent(obs_dict: dict) -> list[int]:
         if guard is not None and all(0 <= i < n_options for i in guard):
             _n_ko_guard += 1
             _dbg(f"guard=ko_lethal_gamewinning pick={guard}")
+            _dbg_alt("ko_lethal_gamewinning", sel.get("option") or [])
             return guard
     except Exception:
         pass
@@ -1291,6 +1324,7 @@ def agent(obs_dict: dict) -> list[int]:
         if adrena is not None and all(0 <= i < n_options for i in adrena):
             _n_adrena_trigger += 1
             _dbg(f"guard=adrena_trigger pick={adrena}")
+            _dbg_alt("adrena_trigger", sel.get("option") or [])
             return adrena
     except Exception:
         pass
@@ -1301,6 +1335,7 @@ def agent(obs_dict: dict) -> list[int]:
         if munk is not None and all(0 <= i < n_options for i in munk):
             _n_munkidori_energy_guard += 1
             _dbg(f"guard=munkidori_energy pick={munk} matchup={_detect_matchup_raw(obs_dict)}")
+            _dbg_alt("munkidori_energy", sel.get("option") or [])
             return munk
     except Exception:
         pass
@@ -1311,6 +1346,7 @@ def agent(obs_dict: dict) -> list[int]:
         if energy is not None and all(0 <= i < n_options for i in energy):
             _n_energy_guard += 1
             _dbg(f"guard=energy_attach pick={energy}")
+            _dbg_alt("energy_attach", sel.get("option") or [])
             return energy
     except Exception:
         pass
