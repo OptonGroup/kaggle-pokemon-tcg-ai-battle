@@ -1,0 +1,52 @@
+{
+  "tag": null,
+  "agent": {
+    "ckpt": null,
+    "agent_dir": "v061_grimmsnarl_heuristic",
+    "deck": "/Users/max/kaggle-pokemon-tcg-ai-battle/submissions/v061_grimmsnarl_heuristic/deck.csv",
+    "label": "submission:v061_grimmsnarl_heuristic"
+  },
+  "agent_ckpt_exceptions": null,
+  "opponents": {
+    "v017": {
+      "opponent": "v017",
+      "opponent_dir": "v017_alakazam_heur",
+      "n_games": 20,
+      "wins": 19,
+      "losses": 1,
+      "draws": 0,
+      "win_rate": 0.95,
+      "wilson95_lo": 0.7638641064874331,
+      "wilson95_hi": 0.9911187805671268,
+      "decisive_win_rate": 0.95,
+      "decisive_n": 20,
+      "avg_game_length": 118.35,
+      "min_game_length": 26,
+      "max_game_length": 224,
+      "exc_agent": 0,
+      "exc_opp": 0,
+      "elapsed_s": 0.6516069170320407
+    },
+    "v009a": {
+      "opponent": "v009a",
+      "opponent_dir": "v009a_crustle",
+      "n_games": 20,
+      "wins": 2,
+      "losses": 18,
+      "draws": 0,
+      "win_rate": 0.1,
+      "wilson95_lo": 0.027865893984153206,
+      "wilson95_hi": 0.30103820641179335,
+      "decisive_win_rate": 0.1,
+      "decisive_n": 20,
+      "avg_game_length": 147.65,
+      "min_game_length": 48,
+      "max_game_length": 255,
+      "exc_agent": 0,
+      "exc_opp": 0,
+      "elapsed_s": 0.7210285000037402
+    }
+  },
+  "overall_win_rate": 0.525,
+  "generated": "2026-07-21 10:38:06"
+}

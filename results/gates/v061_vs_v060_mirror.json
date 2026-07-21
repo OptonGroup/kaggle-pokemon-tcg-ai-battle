@@ -1,0 +1,33 @@
+{
+  "tag": null,
+  "agent": {
+    "ckpt": null,
+    "agent_dir": "v061_grimmsnarl_heuristic",
+    "deck": "/Users/max/kaggle-pokemon-tcg-ai-battle/submissions/v061_grimmsnarl_heuristic/deck.csv",
+    "label": "submission:v061_grimmsnarl_heuristic"
+  },
+  "agent_ckpt_exceptions": null,
+  "opponents": {
+    "v060_grimmsnarl_jiatu": {
+      "opponent": "v060_grimmsnarl_jiatu",
+      "opponent_dir": "v060_grimmsnarl_jiatu",
+      "n_games": 300,
+      "wins": 246,
+      "losses": 53,
+      "draws": 1,
+      "win_rate": 0.8216666666666667,
+      "wilson95_lo": 0.7743655774431729,
+      "wilson95_hi": 0.8608338159249506,
+      "decisive_win_rate": 0.822742474916388,
+      "decisive_n": 299,
+      "avg_game_length": 168.61666666666667,
+      "min_game_length": 36,
+      "max_game_length": 294,
+      "exc_agent": 0,
+      "exc_opp": 0,
+      "elapsed_s": 10.396564207971096
+    }
+  },
+  "overall_win_rate": 0.82,
+  "generated": "2026-07-21 10:40:04"
+}
