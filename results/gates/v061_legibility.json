@@ -1,0 +1,230 @@
+{
+  "pairs_scanned": 89483,
+  "evaluated": 89483,
+  "main_top1": 0.49867242815493545,
+  "main_top1_n": 38416,
+  "v060_bc_ranker_main_top1_baseline": 0.541,
+  "buckets": {
+    "adrena_target": {
+      "n": 16630,
+      "top1": 0.6980156343956705,
+      "func": 0.9980757666867107,
+      "exact": 0.6980156343956705,
+      "top1_count": 11608,
+      "func_count": 16598,
+      "exact_count": 11608
+    },
+    "item_search": {
+      "n": 13146,
+      "top1": 0.5413814087935493,
+      "func": 1.0,
+      "exact": 0.535371976266545,
+      "top1_count": 7117,
+      "func_count": 13146,
+      "exact_count": 7038
+    },
+    "adrena_trigger": {
+      "n": 13062,
+      "top1": 0.40652273771244835,
+      "func": 0.42482008880722705,
+      "exact": 0.40652273771244835,
+      "top1_count": 5310,
+      "func_count": 5549,
+      "exact_count": 5310
+    },
+    "punkup_placement": {
+      "n": 7300,
+      "top1": 0.7601369863013698,
+      "func": 1.0,
+      "exact": 0.6298630136986302,
+      "top1_count": 5549,
+      "func_count": 7300,
+      "exact_count": 4598
+    },
+    "item_play": {
+      "n": 5909,
+      "top1": 0.6611947876121171,
+      "func": 0.6620409544762227,
+      "exact": 0.6611947876121171,
+      "top1_count": 3907,
+      "func_count": 3912,
+      "exact_count": 3907
+    },
+    "evolve_timing": {
+      "n": 3854,
+      "top1": 0.7358588479501816,
+      "func": 0.7856772184743124,
+      "exact": 0.7358588479501816,
+      "top1_count": 2836,
+      "func_count": 3028,
+      "exact_count": 2836
+    },
+    "promotion": {
+      "n": 3618,
+      "top1": 0.5690989496959646,
+      "func": 1.0,
+      "exact": 0.4596462133775567,
+      "top1_count": 2059,
+      "func_count": 3618,
+      "exact_count": 1663
+    },
+    "damage_splash": {
+      "n": 3450,
+      "top1": 0.6878260869565217,
+      "func": 1.0,
+      "exact": 0.6878260869565217,
+      "top1_count": 2373,
+      "func_count": 3450,
+      "exact_count": 2373
+    },
+    "pokemon_play": {
+      "n": 3345,
+      "top1": 0.5958146487294469,
+      "func": 0.5967115097159941,
+      "exact": 0.5958146487294469,
+      "top1_count": 1993,
+      "func_count": 1996,
+      "exact_count": 1993
+    },
+    "attack_choice": {
+      "n": 3342,
+      "top1": 0.4964093357271095,
+      "func": 0.4964093357271095,
+      "exact": 0.4964093357271095,
+      "top1_count": 1659,
+      "func_count": 1659,
+      "exact_count": 1659
+    },
+    "energy_attach": {
+      "n": 3261,
+      "top1": 0.36859858938975776,
+      "func": 0.4832873351732597,
+      "exact": 0.36859858938975776,
+      "top1_count": 1202,
+      "func_count": 1576,
+      "exact_count": 1202
+    },
+    "supporter_choice": {
+      "n": 2885,
+      "top1": 0.43674176776429807,
+      "func": 0.4370883882149047,
+      "exact": 0.43674176776429807,
+      "top1_count": 1260,
+      "func_count": 1261,
+      "exact_count": 1260
+    },
+    "activate": {
+      "n": 2120,
+      "top1": 0.9415094339622642,
+      "func": 0.9415094339622642,
+      "exact": 0.9415094339622642,
+      "top1_count": 1996,
+      "func_count": 1996,
+      "exact_count": 1996
+    },
+    "end_turn": {
+      "n": 2016,
+      "top1": 0.7197420634920635,
+      "func": 0.7197420634920635,
+      "exact": 0.7197420634920635,
+      "top1_count": 1451,
+      "func_count": 1451,
+      "exact_count": 1451
+    },
+    "setup": {
+      "n": 1176,
+      "top1": 0.8511904761904762,
+      "func": 1.0,
+      "exact": 0.8299319727891157,
+      "top1_count": 1001,
+      "func_count": 1176,
+      "exact_count": 976
+    },
+    "forced_lethal_attack": {
+      "n": 1020,
+      "top1": 0.43333333333333335,
+      "func": 0.43333333333333335,
+      "exact": 0.43333333333333335,
+      "top1_count": 442,
+      "func_count": 442,
+      "exact_count": 442
+    },
+    "discard_energy": {
+      "n": 842,
+      "top1": 0.982185273159145,
+      "func": 1.0,
+      "exact": 0.982185273159145,
+      "top1_count": 827,
+      "func_count": 842,
+      "exact_count": 827
+    },
+    "retreat": {
+      "n": 653,
+      "top1": 0.0,
+      "func": 0.0,
+      "exact": 0.0,
+      "top1_count": 0,
+      "func_count": 0,
+      "exact_count": 0
+    },
+    "skill_order": {
+      "n": 589,
+      "top1": 1.0,
+      "func": 1.0,
+      "exact": 1.0,
+      "top1_count": 589,
+      "func_count": 589,
+      "exact_count": 589
+    },
+    "boss_target": {
+      "n": 423,
+      "top1": 0.5768321513002365,
+      "func": 1.0,
+      "exact": 0.5768321513002365,
+      "top1_count": 244,
+      "func_count": 423,
+      "exact_count": 244
+    },
+    "discard": {
+      "n": 415,
+      "top1": 0.7301204819277108,
+      "func": 1.0,
+      "exact": 0.09879518072289156,
+      "top1_count": 303,
+      "func_count": 415,
+      "exact_count": 41
+    },
+    "draw_count": {
+      "n": 219,
+      "top1": 1.0,
+      "func": 1.0,
+      "exact": 1.0,
+      "top1_count": 219,
+      "func_count": 219,
+      "exact_count": 219
+    },
+    "switch_energy": {
+      "n": 208,
+      "top1": 0.7740384615384616,
+      "func": 1.0,
+      "exact": 0.7740384615384616,
+      "top1_count": 161,
+      "func_count": 208,
+      "exact_count": 161
+    }
+  },
+  "guard_attribution": {
+    "scorer": 58630,
+    "promotion": 2452,
+    "adrena_trigger": 10652,
+    "adrena_sequence": 16630,
+    "energy_guard": 99,
+    "ko_guard": 1020
+  },
+  "checkpoint1": {
+    "main_top1": 0.49867242815493545,
+    "main_top1_pass": false,
+    "solved_buckets_min_func": 0.42482008880722705,
+    "solved_buckets_pass": false
+  }
+}

@@ -1,0 +1,127 @@
+# v061 feasibility verdict — deterministic pilot for the jiatu.l Grimmsnarl/Munkidori deck
+
+**Date:** 2026-07-21 · **Branch:** worktree-v061-grimmsnarl-heuristic · **NOT submitted** (project rule: upload only on explicit user "ок"; v050 is in the live window).
+
+## Question
+Track B (the μ1130 jiatu.l Grimmsnarl/Munkidori deck) hit a BC-ranker ceiling: v060's LightGBM
+ranker was bimodal (Alakazam 0.70–0.81, tanks 0.04–0.19; offline top-1 0.541). Our best LIVE
+agents (v034 μ865.7 / v036 μ827.3) are deterministic matchup-heuristics, not RL/BC. **Can that
+v034/v036 method be ported onto this deck?**
+
+## Verdict: **FEASIBLE — strongly positive.**
+The deterministic pilot (guards on raw obs_dict, v036-style greedy `score_option → choose_options`
+on typed obs, LightGBM removed) **beats v060 head-to-head 0.822** on the same deck and is
+Wilson-significantly better on 4 of 5 measured opponents, parity on the 5th.
+
+## Local gate (cg_native, N=300 seat-balanced, results/gates/v061_core_gate.json)
+
+| opponent | v061 | v060 baseline | Δ | note |
+|---|---|---|---|---|
+| v017 Alakazam | **0.937** [0.903,0.959] | 0.700 | **+0.237** | our best matchup, hugely improved |
+| v016 Alakazam | **0.947** [0.915,0.967] | 0.800 | **+0.147** | |
+| v044 Archaludon ex | **0.193** [0.153,0.242] | 0.064 | **+0.129** | tank cohort ~3× (plan goal) |
+| v049 bench-sticky | **0.190** [0.150,0.238] | 0.066 | **+0.124** | tank cohort ~3× |
+| v009a Crustle | 0.168 [0.130,0.215] | 0.189 | −0.021 | CI overlap = parity (Rock-Inn wall = deck's mechanical limit) |
+
+**v061 vs v060 direct mirror (same deck, method-vs-method): 0.822** (246W/53L/1D, CI [0.774,0.861]),
+results/gates/v061_vs_v060_mirror.json. 0 agent exceptions in every run.
+
+### Full 14-opponent pool (cg_native, N=300 each, results/gates/v061_full_pool_gate.json)
+0 agent/opponent exceptions across all 4200 games. **Bimodal profile persists** — dominant vs
+Alakazam / mirror / megaKanga-Crustle, weak vs the pure Archaludon-beatdown + Rock-Inn-Crustle
+cohort (the deck's known mechanical wall). Overall WR 0.409 is depressed by a pool that is 8/14
+tank/beatdown decks; our live band (800–899) is Alakazam-heavy, where v061 is 0.90–0.97.
+
+| opponent | archetype | v061 WR | CI95 |
+|---|---|---|---|
+| v016_alakazam | Alakazam | **0.970** | [0.94,0.98] |
+| v017_alakazam_heur | Alakazam | **0.903** | [0.86,0.93] |
+| v018_grimmsnarl | Grimmsnarl-ish | **0.837** | [0.79,0.87] |
+| v060_grimmsnarl_jiatu | BC-ranker (same deck) | **0.817** | [0.77,0.86] |
+| v039_crustle_megakanga | Crustle+MegaKanga | **0.707** | [0.65,0.76] |
+| v046_final | Archaludon | 0.227 | [0.18,0.28] |
+| v007_crustle | Crustle | 0.202 | [0.16,0.25] |
+| v024_cardemb_rl | NN card-embed | 0.197 | [0.16,0.25] |
+| v044_archaludon_abomasnow | Archaludon | 0.197 | [0.16,0.25] |
+| v049_bench_sticky_guard | Archaludon | 0.183 | [0.14,0.23] |
+| v034_romanrozen_clone | Archaludon-det | 0.157 | [0.12,0.20] |
+| v036_archaludon_patched | Archaludon-det | 0.147 | [0.11,0.19] |
+| v009a_crustle | Crustle | 0.133 | [0.10,0.18] |
+| v033_plan_d_ppo | NN PPO | 0.053 | [0.03,0.08] |
+
+vs the Archaludon cohort v061 sits ~0.15–0.23 vs v060's 0.06–0.07 (2–3× better — tank floor
+raised as intended), but the wall is not closed (Archaludon 300HP vs Shadow Bullet 180 + 30/turn
+siphon; Crustle Rock Inn blocks Shadow Bullet entirely). This is the pre-declared limit of the
+deck, not the method. The PPO agent v033 (0.053) is the single worst matchup.
+
+Checkpoint-2 criterion ("Wilson-significant win on the tank cohort while preserving Alakazam
+0.70–0.81") is **met and exceeded** — Alakazam went to 0.94–0.95, tanks tripled.
+
+## Offline legibility (89,483 expert-won decisions, results/gates/v061_legibility.json)
+
+- **MAIN-only top-1 = 0.499** (BC ranker baseline 0.541). Below the checkpoint-1 ≥0.55 line on
+  the strict index metric — **but the gate proved this DID NOT translate to worse play** (the
+  opposite: +0.24 vs the same Alakazam opponent). The offline shortfall was traced, not waved away:
+  - Dominant bucket **adrena_trigger (14.6% of decisions, func 0.42)**: measured directly — when a
+    Munkidori Adrena-Brain ability is available, the expert fires it in ~50% of *sub-decisions*
+    **at any opponent HP** (no board threshold separates fire/no-fire; fire-rate ≈0.43–0.62 flat,
+    0.72 vs tanks). Adrena-Brain is *once-per-turn*: the expert fires it once per turn but at a
+    variable point within the turn; our guard fires it at the first opportunity. On **isolated
+    pairs** (which can't see the ability was already spent that turn) this reads as "over-firing,"
+    but in a real game both fire it once per turn — a per-decision-metric artifact of a
+    once-per-turn ability, aggregate-equivalent. The gate confirms it costs nothing.
+  - `energy_attach` / `attack_choice`: within-turn action *ordering* (we develop-then-attack, the
+    expert interleaves) — same multiset of actions per turn, identical outcome.
+  - ~6/60 cards differ from the expert's exact list (e.g. Handheld Fan 1161) → unmatchable noise.
+- Guard-mechanical contexts reproduce cleanly: activate 0.94, skill_order 1.00, draw_count 1.00,
+  discard_energy 0.98, setup func 1.00, damage_splash 0.81.
+
+**Interpretation:** strict per-decision top-1 systematically *under*-reports a deterministic
+priority-scorer's fidelity (it can't model once-per-turn timing or within-turn ordering). The
+gate/live is the arbiter (confirmed ≥4× in project history), and the gate is decisive.
+
+## What was built / fixed (see submissions/v061_grimmsnarl_heuristic/DESIGN.md)
+- Skeleton ported from v036; LightGBM/features/pandas/EN_Card_Data.csv **removed** (3 fewer
+  live-failure surfaces; bundle has no numpy/pandas/lightgbm).
+- Guard edits: (a) Froslass 104 re-tiered to "tanky utility" (Frost Smash {W} is uncastable — 0 {W}
+  in deck; v060 mis-tiered it as an attacker); (b) Adrena-Brain opportunistic trigger widened to
+  every matchup (correct direction — expert fires it broadly, not only vs tanks); (c) `_ko_guard`
+  moved off pandas/CSV onto cg.api `CARD_DB`/`ALL_ATTACKS`.
+- **Legibility-driven fixes** (revisit-before-gate loop): `_ko_guard` now only front-runs the
+  scorer for a **game-winning** lethal (a non-winning KO is sequenced last by the scorer, matching
+  the expert's develop-first/attack-last — lifted forced_lethal from 0.20); `attach_target_score`
+  now keeps every attach **strictly positive** (energy on board > energy stranded in hand — spend
+  the drop every turn, never END-over-attach).
+
+## Live-safety (mandatory pre-submit, exec-smoke, scripts/v061_exec_smoke.py)
+Ran in Docker linux/amd64 (pokemon-tcg-sim:latest), agent exec()-loaded WITHOUT `__file__` from
+/kaggle_simulations/agent: **PASS** — scorer_ok=True, damage_table_ok=True, 0 exceptions over 6
+games, scorer path exercised (scored=423, trivial_fallback=4, internal_exc=0). Re-verified PASS
+with per-decision logging on.
+
+## Per-decision move logging (ALWAYS-ON — standing practice for every agent)
+Every move emits a compact stderr line so a downloaded Kaggle game log
+(`episode-{id}-agent-{n}.json`) explains WHY each move was made — Kaggle captures per-move
+stdout/stderr (verified live on v047). This is now a standing rule for every submission we build,
+not a v061-only feature (see memory feedback_always_agent_decision_logging):
+- scorer: `[dec] t{turn} ctx{context} n{n_opts} -> #{i} '{reason}' s={score} | 2nd #{j} '{reason2}'
+  s={s2} pick=[…]` — the winning option, its reason+score, AND the runner-up (the decision margin).
+- each guard fire: `[dbg] guard={name} pick=[i]`.
+- behind `DECISION_LOG` / `_DEBUG_LOG` (toggle off only if the 600s/episode budget is threatened);
+  all logging is never-throw. Confirmed printing under exec() without `__file__` on linux/amd64.
+Example real move: `[dec] t3 ctx0 -> #2 'bench Snorunt (enables Froslass)' s=14000 | 2nd #0
+'evolve into Morgrem (Bench)' s=12000`. Rationale: the local gate does not predict live (≥4×
+confirmed) — the only way to dissect a live loss by substance is to read what the agent actually
+saw and why it chose each move.
+
+## Corrections to project memory (verified against the engine)
+- **Munkidori 112 in FRAGILE_SUPPORT_IDS is CORRECT, not a bug** (memory had flagged it): Mind Bend
+  costs {P}, deck runs 0 {P} → uncastable. Only 648/647/646 can attack.
+- **Froslass 104 was genuinely mis-tiered in v060** (as an attacker): Frost Smash costs {W}, 0 {W}
+  in deck. Froslass is a pure passive engine (Freezing Shroud feeds Adrena-Brain each Checkup).
+
+## Recommendation
+Feasibility is proven locally. Next step is a **user decision**: the local gate is only a
+regression filter — live is the sole arbiter (v012 precedent: 0.70 local gate → live 499). v061 is
+a candidate worth a live probe when a slot opens, but v050 is currently in the live window and the
+project rule forbids uploading without explicit "ок". No submission was made.
