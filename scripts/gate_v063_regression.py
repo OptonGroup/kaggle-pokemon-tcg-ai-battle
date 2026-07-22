@@ -484,6 +484,14 @@ CORE_PAIRS = [
     dict(key="v044", opp_dir=resolve_dir(MAIN_REPO + "/submissions/v044_archaludon_abomasnow"), baseline="v044"),
     dict(key="v049", opp_dir=resolve_dir(MAIN_REPO + "/submissions/v049_bench_sticky_guard"), baseline="v049"),
     dict(key="v062_h2h", opp_dir=V062_DIR, baseline=None),
+    # Внешние публичные агенты с Kaggle (скачаны и разведаны 2026-07-22, см.
+    # memory project_kaggle_recon_20260722_external_agents) — реальная экспертная
+    # логика на архетипах, которых не было живым оппонентом в пуле (Lucario) или
+    # где наша модель неполная (Alakazam без disruption-кита).
+    dict(key="ext_prvsiyan_alak_v8", opp_dir=resolve_dir("submissions/external_prvsiyan_alakazam_v8"), baseline=None),
+    dict(key="ext_prvsiyan_alak_v9", opp_dir=resolve_dir("submissions/external_prvsiyan_alakazam_v9"), baseline=None),
+    dict(key="ext_maulikgajera_lucario", opp_dir=resolve_dir("submissions/external_maulikgajera_lucario"), baseline=None),
+    dict(key="ext_nursrijan_lucario", opp_dir=resolve_dir("submissions/external_nursrijan_lucario"), baseline=None),
 ]
 
 PROXY_DECKS = ["MegaLucario_live", "TRMewtwo_live", "Abomasnow_live"]
