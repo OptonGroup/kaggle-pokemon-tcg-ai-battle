@@ -576,6 +576,17 @@ scratchpad `aidy_decklist_recon.py`.
 
 ## Status Log (append-only; newest on top)
 
+- **2026-07-22 (r)** — **★★★ ФОРЕНЗИК ВСЕХ 86 LIVE-ИГР v062 → v063_forensic86 ПОСТРОЕН И ГЕЙТ PASS.** По одному
+  sonnet-субагенту на эпизод (workflow, схема-форсированный вывод) + ручная кросс-валидация. Найден и воспроизведён
+  **критический баг**: `_promotion_guard` терял bench-слот 0 (`int(o.get("index") or -1)`, Python-фолси 0) — здоровый
+  Grimmsnarl ex в слоте 0 был невидим, в актив шёл Munkidori (~5 live-игр). Ещё: промо-приоритет игнорировал энергию;
+  поиск тащил мёртвые копии ex (bench-depletion лузы); нет защитного свопа на матчпойнте; застрявший небоевой актив;
+  зависания на повторном select; deck-out в стенах. v063 = 8 правок (P0 фиксы + защитный своп + loop-breaker +
+  deck-out guard). **Гейт N=300: 0 регрессий, v017 0.92→0.98 (z=3.6), v044 0.20→0.29, v049 0.22→0.37 (z=4.0),
+  h2h vs v062 0.683, прокси-Lucario +13пп (z=4.9) — главная live-дыра. Exec-smoke linux/amd64 PASS.** Отчёт:
+  `out/v062_full_download/ANALYSIS_V062_86EPS.md`. Новый скилл `/replay-analyzer` + постоянные скрипты
+  (`scripts/replay_digest.py`, `extract_agent_logs.py`, `download_episodes.py`). НЕ засабмичен (ждёт «ок»).
+
 - **2026-07-13 (q)** — **★★ RL/ExIt ПРОГОН: PLATEAU (H2H 13→37→34% vs v009a), НО field 0.945 >> v009a 0.843 → LIVE-PROBE
   ОДОБРЕН.** Полный ExIt (5 итераций, ~9мин, kiyotah scaffold AlphaZero-style): H2H vs v009a плато 32-38% (чемпион не
   побит в Crustle-зеркале — v009a-IL специализирован), НО non-mirror здоровый (v018 100%, v017 ~50%, league 6
