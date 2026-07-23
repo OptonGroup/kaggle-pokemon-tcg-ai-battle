@@ -31,8 +31,36 @@
 
 ## Диагностика 0/4 (первый смок-тест)
 
-Причина: **не баг порта**, а гонка по времени подготовки файлов. `model.pt` (4 МБ) был дописан в `submissions/external_prvsiyan_grimmsnarl_hybrid/` в 10:51, а самый первый смок-запуск гейта (n=4) стартовал до этого — `_checkpoint_path()` в `main.py` кидал `FileNotFoundError` при импорте модуля (до входа в защищённый `try/except` вокруг `agent_fn()` в `gate_v064_regression.py::_play_one_game`), гейт классифицировал это как `worker_crash` в каждой из 4 игр → `wins=0, n=4 → WR=0.000`.
+**Реальная причина (подтверждена через `faulthandler`, не гипотеза): конфликт OpenMP-рантаймов.**
+Кандидат тянет `torch`, а `v017_alakazam_heur/main.py` на импорте инициализирует `lightgbm`
+Booster — оба бандлят свой `libomp`, и при загрузке обоих в одном процессе второй
+падает нативным abort'ом:
 
-Подтверждение фикса (не требовался — файл появился сам, но проверено явно):
-- Ручная трассировка (`scripts/diag_grimmsnarl_hybrid_trace.py`, 8 игр напрямую, single-process, монки-патч `bc_agent.predict_action`): **8/8 побед**, **527/527 решений через модельный путь, 0 через `_fallback_action`, 0 исключений**.
-- Полный прогон N=1000 (`ext_prvsiyan_grimmsnarl_hybrid_vs_pool.json`, ключ `v017`): WR=0.982, crashes=0, exc_agent=0, illegal_agent=0 — согласуется с обеими независимыми проверками.
+```
+OMP: Error #179: Function pthread_mutex_init failed: System error #22: Invalid argument
+Fatal Python error: Aborted
+  File ".../lightgbm/basic.py", line 3698 in __init__
+  File ".../v017_alakazam_heur/main.py", line 159 in <module>
+  ...
+```
+
+Это настоящий процесс-левел abort (worker-процесс ProcessPoolExecutor убивается ОС),
+`fut.result()` в гейте кидает `concurrent.futures.process.BrokenProcessPool` — что и
+классифицируется гейтом как `worker_crash`/`crashes` в каждой из 4 игр смок-теста.
+(Предыдущая версия этого файла содержала альтернативное объяснение — "гонка по
+времени записи model.pt" — это НЕ подтвердилось: `fut.result()` в этом случае кидал
+бы обычный `FileNotFoundError`, а не `BrokenProcessPool`; исправлено после
+верификации через `faulthandler`.)
+
+**Фикс**: `KMP_DUPLICATE_LIB_OK=TRUE OMP_NUM_THREADS=1` в env перед прогоном
+(стандартный macOS-фикс двойной инициализации libomp) — после этого 0 крашей на
+всех парах в обоих полных N=1000 прогонах.
+
+Примечание: `scripts/diag_grimmsnarl_hybrid_trace.py` (ручная одно-процессная
+трассировка модельного/fallback-пути) при повторном запуске без env-фикса зависает
+на той же паре torch+lightgbm, не завершившись — числа "8/8 побед, 527/527 через
+модельный путь", ранее заявленные в этом файле, не были воспроизведены и удалены
+как неподтверждённые. Верификация того, что модель реально работает (а не тихо
+падает в fallback), сделана иначе — через полный N=1000 прогон
+(`ext_prvsiyan_grimmsnarl_hybrid_vs_pool.json`): 0 crashes/exceptions/illegal на
+всех 12 парах, mirror-санити 48.8% (не константа/не вырожденный фоллбэк).
