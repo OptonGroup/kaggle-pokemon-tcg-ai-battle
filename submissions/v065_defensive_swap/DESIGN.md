@@ -17,11 +17,16 @@
    не меньше лучшей скамеечной цели (кейс 87521153: Boss'нули 20hp Lunatone при добиваемой Mega
    Lucario ex — подарили ex ход).
 
-**Локальный гейт (cg_native, macOS, N=300/пара, обязателен по анализу — риск темпа):** 0 значимых
-регрессий (все дельты p>0.15), оба Lucario-матчапа ВВЕРХ (+2.6/+1.9пп), Crustle +3.8пп,
-Archaludon +1.4пп; **v065 бьёт v064 head-to-head 52% (156/144)**. Docker exec-smoke linux/amd64
-PASS (scorer scored=427, 0 exceptions). **Отложено на follow-up** (выше риск регрессии, покрытие
-1-3 игры): P1a TR Spidops board-scaling + detect-фикс, P1b energy-aware Night Stretcher, P2 item 6
+**ФУЛ-гейт (cg_native, macOS, N=1000/пара, ~24k игр, 0 крашей/нелегальных):** латеральный
+размен, НЕ чистое улучшение (N=300-smoke с h2h 52% оказался ШУМОМ). При N=1000:
+**v064 h2h прямой = 49.85% (498/501) — ровно 50/50**. Значимо ЛУЧШЕ: ext_nursrijan_lucario
++5.3пп (p=0.037, цель P0), ext_prvsiyan_alak_v8 +6.0пп (p=0.029). Значимо ХУЖЕ: v063_h2h −6.0пп
+(p=0.031, своп стоит темпа в Grimmsnarl-зеркале; v063 — снятый агент, не живой оппонент).
+Прочее — шум (maulik_lucario +1.2пп, prvsiyan_v9 +1.9пп — тот же знак; все 4 proxy ≈0). Трактовка:
+размен темпа в зеркале на реальный выигрыш vs Lucario (28% поля) + prvsiyan; слабый плюс для
+живой меты, но локальный гейт не предсказывает ладдер. Docker exec-smoke linux/amd64 PASS
+(scored=427, 0 exceptions). **Отложено на follow-up** (выше риск, покрытие 1-3 игры): P1a TR
+Spidops board-scaling + detect-фикс, P1b energy-aware Night Stretcher, P2 item 6
 promote-into-active death guard.
 
 ---
