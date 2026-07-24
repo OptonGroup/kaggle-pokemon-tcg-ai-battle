@@ -7,7 +7,38 @@
 Competition: https://www.kaggle.com/competitions/pokemon-tcg-ai-battle
 Sim deadline: **2026-08-16** → ~2 weeks extra games → final ~2026-09-01.
 
-## Current standing (2026-07-11) — plan v4 (HYBRID PIMC, user-confirmed)
+## Current standing (2026-07-16) — plan v5 (SILVER-FIRST, user-confirmed) — ⚠ SUPERSEDED 2026-07-18 by §J (v039 RECON-DRIVEN); tracked-2 обновлён 07-17 (v038/v037)
+
+- **Цель переформулирована 2026-07-16 (AskUserQuestion): серебро — база, золото — апсайд.** ⚠ ПОРОГИ ИСПРАВЛЕНЫ
+  по полному лидерборду (5118 команд, 07-16, recon sonnet-агентом; прежние цифры в этом абзаце были неточны и путали
+  bronze/silver): **gold rank11 μ1132.4** (top-20 rank20 μ1087.4), **silver rank103 μ993.2**, **bronze rank256 μ923.4**,
+  медиана (rank2560) μ658.4; мы rank2605 μ654.3. Наш исторический пик **v007_crustle (submission 53783594) = live 930.7
+  = УРОВЕНЬ БРОНЗЫ, НЕ СЕРЕБРА** (до серебра 993.2 не хватает +62.5μ; прежняя «+5.4 выше серебра» — ошибка метки).
+  Рамка цели — реалистичный floor = бронза (вернуть пик ~930 свежим топ-10 Crustle-пилотом), stretch = серебро (клон
+  топ-10 пилота μ1100+ с хорошим BC-capture), far upside = золото (План D RL). Полный план — **§I**.
+- **Мы сейчас (обновлено 2026-07-17):** tracked-2 = {`v038_plan_d_ppo_poolfix` (submission 54791599, залит 07-17,
+  PENDING — diverse self-play pool, WR vs alakazam 0.41→0.66 на честном гейте), `v037_plan_d_ppo_hidden`
+  (submission 54789080, залит 07-17, μ674.2, hidden-obs PPO)}. Предыдущие v030/v007_resub/v033_resub/v034/v035/v036
+  вытеснены из tracked-2 серией сабмитов 07-16..07-17. Наш исторический пик v007_crustle = live 930.7 = бронза.
+- **Почему пик не держится:** мета ротировалась анти-Crustle (§F1 recon 07-03: Grimmsnarl/Munkidori/Cubchoo/Starmie/
+  Alakazam доминируют) — `field_viability.py` (07-12j) показал Crustle проваливает Alakazam (0.55) и Cubchoo (0.60):
+  Alakazam Powerful Hand кладёт damage counters мимо prevent-shield Mysterious Rock Inn (независимо подтверждено на
+  форуме, тред 726485 «[Solved]»). Deck-tech фикс уже построен и гейтился (`v023_crustle_techD`, submission 54590285:
+  Alakazam 0.35→0.52, Cubchoo 0.63→0.82, overall паритет 0.9106 vs 0.9118) — **live-вердикт не получен**, пробу
+  оборвали на 53 играх ради переключения на v024 NN-эксперимент. ⚠ ОБНОВЛЕНО 2026-07-18: B3a (Alakazam-патч) закрыт
+  4-й раз подряд (v012/v017/v036×3/v033) — v023-techD «открытый хвост» более не актуален. Новый угол B3a = hand-disruption
+  (Unfair Stamp 1080 + Xerosic 1197, +23.9пп локально vs Alakazam из recon 2026-07-18) — см. §J1, НЕ §I Путь 0.
+- **★★ Новый актив 2026-07-16: официальный ежедневный датасет топ-эпизодов организатора**
+  (`kaggle/pokemon-tcg-ai-battle-episodes-{date}`, форум 709160, отбор по среднему рейтингу участников, медиана
+  μ1125.9 на 07-15) — снимает 429-блокер плана клонирования (`project_clone_majkel_next.md` в памяти). Форум
+  717697 «RL journey»: независимый участник дошёл до серебра чистым self-play PPO за ~1 день на одной GPU +
+  рекомендует BC-претрейн политики на сильных демонстрациях перед RL (1/100 компьюта) — усиливает План D (§I Путь 2).
+- **Все прежние закрытые пути (§H3-4-re KILL PIMC, BC-потолок 930-1000, deck-tech соло-паритет и т.д.) остаются
+  закрытыми** — §H архивируется ниже, детали не переоткрываются без нового аргумента (см. таблицу «Отвергнутые пути»).
+
+---
+
+## Archive — Current standing (2026-07-11) — plan v4 (HYBRID PIMC, superseded by v5)
 
 - **VECTOR A confirmed by user 2026-07-11 (AskUserQuestion):** аудит реплеев (off-by-one) + retrain prior →
   анкерный оценочный пул → PIMC v2 с раздельными rollout-политиками → live-probe → опционально ExIt-lite /
@@ -74,7 +105,12 @@ Sim deadline: **2026-08-16** → ~2 weeks extra games → final ~2026-09-01.
 4. Append a dated entry to the **Status Log** (bottom). Update checkboxes. Update `results/submissions.csv`.
 5. If you discover a fact worth keeping across sessions, write it to memory (see CLAUDE.md memory rules).
 
-**NEXT ACTION:** **PIMC ЗАКРЫТ ОКОНЧАТЕЛЬНО (§H3-4-re KILL, честный, 700 игр). Новый вектор: (1) дек-viability — наши деки vs расширенное мета-поле (16 top-cut дек из recon), решить какая дека жива в текущей мете; (2) на выжившую деку — улучшение политики, начиная с дешёвого ExIt-lite (каркас `src/exit/exit_loop.py` готов, F3-3 smoke не прогонялся) перед дорогим PPO (+65 ELO, recon). Развилка по вектору — у пользователя.**
+**NEXT ACTION (2026-07-18, plan v039, см. §J):** Текущий актуальный план = **§J (RECON-DRIVEN)** на основе 6 Kaggle-ноутбуков
+2026-07-18. §I (plan v5) и §H (PIMC) архивированы. **Фокус:** ждать live-вердикт `v038_plan_d_ppo_poolfix` (submission 54791599,
+PENDING, ≥150-250 игр) → §J0 интерпретация по бендам (myso: Alakazam 38-45% топа, Marnie Grimmsnarl топ-2, Archaludon 0% в 1100+)
+→ §J5 выбор ветки: **J1** hand-disruption vs Alakazam (Unfair Stamp 1080 + Xerosic 1197, +23.9пп локально) / **J2** PPO-улучшения
+поверх v038 / **J3** replay-mining 4 архетип-кандидатов. Plan D (PPO на abiolatti) дал 3 залитых сабмита (v033_resub/v037/v038);
+B2 god-mode гипотеза ОПРОВЕРГНУТА 07-17.
 §H1 закрыт (NOT_SHIFTED — IL-данные чисты, retrain не нужен). §H2 закрыт: пул+калибровка построены
 (6300 игр, ~50 игр/с), но LOO Spearman 0.714 < 0.8 ⇒ predicted-μ = ранжировщик кандидатов, НЕ прогноз live;
 финальный арбитр — live-probe. §H0-1 (git-коммит копилки) всё ещё ждёт команды человека.
@@ -320,7 +356,7 @@ scratchpad `aidy_decklist_recon.py`.
       the other direction)**, vs Crustle 1-0 (n=1, noise). Not a hard counter to the field, but a real hole
       vs Cubchoo.
 
-## H — PLAN v4: HYBRID PIMC (PRIMARY path since 2026-07-11, user-confirmed)
+## H — PLAN v4: HYBRID PIMC (CLOSED 2026-07-16: §H3-4-re KILL PIMC honest on 700 games → superseded by §I)
 
 > **Why:** потолок BC ≈800–930 подтверждён трижды (наш 930-пик; kazuki-клон 453 при эксперте 1083;
 > PokéForge-клон ~802 = их лучший результат при провале всех собственных архитектур — форум 724187). Топ-100 = 989
@@ -459,7 +495,7 @@ scratchpad `aidy_decklist_recon.py`.
 | Путь | Доказательство провала |
 |---|---|
 | BC на комбо/лок деках (Iono, Alakazam, Cubchoo) | live 336–507; гейт 43%; Cubchoo выигрывает дек-аутом — BC структурно мимо |
-| Клон новой топ-деки как обход потолка BC | v018 453–484 при эксперте kazuki 1083 (~40% силы); PokéForge-клон 802 = их потолок |
+| Клон новой топ-деки как обход потолка BC | v018 453–484 при эксперте kazuki 1083 (~40% силы); PokéForge-клон 802 = их потолок; **v032b Crustle+MegaKangaskhan клон (2026-07-16): H2H 0.40 vs v009a при val_top1 0.487 — Kangaskhan-aware фичи не пробили BC-потолок на setup-деке** |
 | Наращивание ОБЪЁМА IL-данных | v008: 3× данных → mirror 0.394, регресс |
 | Каунтер-гейт vs свой чемпион как критерий сабмита | v012: 0.70 локально → 499.2 live |
 | Ручные патчи поверх сильной политики без поиска | PokéForge: 0 измеримого прироста; наши v012→v013 (38%) |
@@ -469,6 +505,718 @@ scratchpad `aidy_decklist_recon.py`.
 | IS-MCTS как первая реализация | детерминизацию всё равно требует API движка; merge деревьев между процессами дорог (лит-рекон 07-11) |
 | Ре-сабмит как «сохранение» рейтинга | рейтинг не наследуется (форум 714189); v007-resub карабкался 600→733 заново |
 | Микротюнинг деклиста под замороженный пилот | Phase-3 гаунтлет: все recount-варианты статистически неотличимы от базы |
+
+## I — PLAN v5: SILVER-FIRST (ARCHIVED 2026-07-18 — superseded by §J v039 RECON-DRIVEN; был PRIMARY path 2026-07-16, user-confirmed)
+
+> Цель: **серебро (μ993.2, rank103/5118) — база; золото (μ1132.4, rank11) — апсайд**, если path 2 выстрелит.
+> ⚠ ПОРОГИ ИСПРАВЛЕНЫ (полный лидерборд 07-16): μ923.4 = **BRONZE** (rank256), НЕ серебро; до серебра +62.5μ.
+> Якорь: наш исторический пик v007_crustle = live 930.7 (submission 53783594) = **уровень БРОНЗЫ, НЕ серебро**.
+> Полное обоснование, цитаты форума/памяти — см. чат-сессию 2026-07-16 (эта секция — её итог).
+
+### I0 — Гигиена (низкая стоимость, вести параллельно со всем остальным)
+
+- [~] **I0-1** Досмотреть `v030_time_budget` (submission 54752121) до 150-250 игр (было 47 на 07-16 ~13:40 UTC,
+      темп ~125 игр/день) → keep/rollback по числу игр, не по часам ([[project-rating-noise]]).
+      **ОТМЕНЕНО 2026-07-17 — v030 вытеснен из tracked-2 серией сабмитов v033_resub→v034→v035→v036→v037→v038.**
+- [~] **I0-2** Довершить live-вердикт `v023_crustle_techD` (submission 54590285) — гейтился Alakazam +0.167,
+      Cubchoo +0.183, overall паритет 0.9106/0.9118; live-проба оборвана на 53 играх. Нужен новый сабмит
+      (слот + «ок» пользователя) ИЛИ дождаться естественного окна tracked-2.
+      **ОТМЕНЕНО 2026-07-18 — B3a закрыт 4-й раз подряд, v023-techD неактуален; новый угол B3a = §J1 hand-disruption.**
+- [ ] **I0-3** Sanity-check: подтвердить, что наш пайплайн (IL/MCTS) действительно предпочитает первый ход при
+      выборе first/second (форум 723591: first WR 55.2% vs second 44.8%, +10 очков). Нулевая стоимость, не
+      гарантированный выигрыш — просто проверка, что не отдаём бесплатные +10 очков.
+
+### I1 — Клон через официальный датасет топ-эпизодов (дни, ожидаемый потолок ~900-1000)
+
+- [ ] **I1-1** Добавить `kaggle/pokemon-tcg-ai-battle-episodes-{07-14..07-16}` как input-датасет в Kaggle-ноутбук
+      (НЕ тянуть 21GB/день локально). Манифест дней — `kaggle/pokemon-tcg-ai-battle-episodes-index`.
+- [ ] **I1-2** Найти игры текущего живого топа (Majkel1337 μ1285.5, Oshbocker, Luca, THIRD PTCG Club, Taichicchi,
+      懒惰的金枪鱼, Rmy, kashiwashira, junlee789, bono — свежие имена из лидерборда 07-16, НЕ протухшие архетипы
+      recon 07-03/07-15) grep'ом по именам агентов внутри JSON — без единого точечного REST-запроса, без 429.
+- [x] **I1-3** Выбрать ОДИН ещё живой архетип, вытащить deck+пилот, строить IL-клон на тысячах партий (не 300).
+      **Строго фильтровать по архетипу** — не повторять ошибку v008 (3× данных без фильтра = регресс,
+      [[project-il-data-quality]]). Помнить [[project-bc-combo-failure]]: комбо/сетап-деки (Alakazam-класс)
+      проваливают BC хуже, чем midrange aggro.
+      ✅ **CLOSED 2026-07-16 (s) — КЛОН-ПУТЬ ЗАКРЫТ, BC-потолок подтверждён 5-й раз.** Архетип = Crustle+MegaKangaskhan ex
+      (топ-10 пилот 懒惰的金枪鱼/__Taichicchi__, 726 эпизодов из официального датасета 07-14/07-15, deck-signature {345,756}+winner).
+      3 итерации фичей: v1 (features_v009a Crustle-спец) val_top1 0.436 / H2H 0.24; v2 (больше capacity) 0.447; **v3
+      (features_clone Kangaskhan-aware, FEATURE_DIM=75: is_kangaskhan, retreat_to_kangaskhan, is_hand_trimmer, is_heal_card,
+      is_heros_cape, is_stadium, is_boss_orders, has_kangaskhan_on_bench, my_active_is_kangaskhan, …) val_top1 0.487
+      (стена 0.45 пробита, +4пп), best_iter=83, train≈val (переобучения НЕТ — потолок = сигнал фичей).** Гейт anchored_pool
+      (600 игр, 0 exc): **H2H vs v009a WR 0.40 [0.348,0.458] — ЗНАЧИМО хуже чемпиона** (улучшение 0.24→0.40, но не parity);
+      vs v001_random 0.80 (RED-FLAG passed). Importances: type_ABILITY 18%, g_turn_norm 14%, **card_is_switch 4.6% (#4 —
+      единственная НОВАЯ дек-фича в топ-15)**; Kangaskhan/hand-trimmer/heal/cape/stadium/boss identity **не вошли в топ-15**
+      — слишком разрежены в 726 эпизодах, ранжер учится на общих сигналах (ABILITY/turn/energy), а не на distintive
+      trainer-decisions. Это ровно BC-потолок на setup-деке (2 эволюции + Mega + disruption): [[project-bc-combo-failure]].
+      **Вердикт: даже parity = бронза (930.7), не серебро (+62μ). Клон-путь закрыт; v032b НЕ сабмитится.** Фичи/модель
+      (features_clone.py, il_crustle_clone_v3.txt) оставлены как потенциальный BC-warmstart для Плана D (§I2-1). Артефакты:
+      `src/il/features_clone.py`, `models/il_crustle_clone_v3.txt`, `submissions/v032b_crustle_clone/`,
+      `results/gates/v032b_gate_state.json`. Урок в памяти [[project-clone-kangaskhan-bc-ceiling]].
+- [ ] **I1-4** Гейт vs текущий baseline (Docker-образ уже с `torch`, см. docker/Dockerfile) → live-probe при «ок».
+      *(I1-3 закрыт без кандидата на live — I1-4 неактуален для этого архетипа; переоткроется если появится новый BC-friendly архетип.)*
+
+### I2 — План D: PPO на abiolatti + BC-warmstart (уже идёт, средний риск, единственный путь к золоту)
+
+Статус на 07-18: D0 (валидация engine vs cabt) PASS, D1 (порт PPO-инфры) COMPLETED, **D2 (self-play GPU) COMPLETED** —
+3 PPO-сабмита залито: `v033_plan_d_ppo` (54779509, 07-17, ре-сабмит 5M-чекпойнта), `v037_plan_d_ppo_hidden` (54789080,
+07-17, hidden-obs, μ674.2), `v038_plan_d_ppo_poolfix` (54791599, 07-17, diverse self-play pool, WR vs alakazam 0.41→0.66
+на честном гейте, PENDING). B2 god-mode гипотеза ОПРОВЕРГНУТА 07-17 (hidden-obs WR 0.645 ХУЖЕ старого god-mode 0.792 на
+честном гейте; RUN B рецепт закрыл разрыв на внутреннем движке, но НЕ на решающем cabt). tracked-2 = {v038 PENDING, v037 μ674.2}.
+Подробности — [[project-plan-d-medal]], [[project-v038-poolfix-gate-success]], [[project-b2-godmode-hypothesis-falsified]].
+
+- [ ] **I2-1** Встроить BC-претрейн политики на официальном датасете эпизодов (§I1) перед/во время PPO —
+      прямая рекомендация форума (тред 717697: «1/100 компьюта на валидацию + резко ускоряет RL»). Снижает риск
+      повторить недообучение v1/v2 на малом числе шагов.
+- [ ] **I2-2** Продолжать D2 self-play, чекпойнты каждые 1M шагов, следить за WR vs random по мере роста шагов.
+- [ ] **I2-3** D3 — инференс через `torch` в `main.py` (live-safe, MCTS на cabt в инференсе, НЕ custom engine) —
+      после того как D2 покажет уверенный прогресс.
+
+**Внешнее подтверждение важности этого пути:** форум-тред 717697 — независимый участник, чистый self-play PPO без
+знания игры, дошёл до серебра за «4 часа тренировки → топ-30%, ещё тренировки → серебро» на одной GPU (~45 игр/сек).
+Это не только путь к золоту при большом риске — это самостоятельная ставка на серебро с уже частично оплаченной
+инфраструктурой (GPU арендован, engine провалидирован).
+
+### I3 — Скейлинг v030 MCTS (низкий приоритет, дешёвое продолжение) — ⚠ ARCHIVED 2026-07-17: v030 вытеснен из tracked-2
+
+- [ ] **I3-1** Search помогает слабым базам (+11pp, [[project-search-vs-rl-ceiling]]) — база v030 (ExIt+GBDT-value)
+      относительно слабая → есть небольшой потенциал докрутки search_count/opponent-model, но не в фокусе.
+
+### I4 — Сравнение и заморозка
+
+- [ ] **I4-1** 08-01..08-08: сравнить кандидатов (I0/I1/I2/I3) по живому μ (150-250 игр каждый), выбрать 2 лучших.
+- [ ] **I4-2** 08-09..08-11: зафиксировать tracked-2, никаких новых экспериментов (гвардрейл freeze, ниже).
+- [ ] **I4-3 Risk floor:** если к ~08-05 ничего не обгоняет baseline — в tracked-2 остаётся лучший из уже
+      живо-проверенных (v007/v009a/v023techD) — стабильность важнее непроверенной попытки перед заморозкой.
+
+---
+
+## J — ПЛАН v039: RECON-DRIVEN (после v038 live-вердикта; источники — 6 Kaggle-ноутбуков 2026-07-18)
+
+> **Контекст:** v038 (PPO diverse self-play pool, submission 54791599) уже залит и PENDING — править нельзя,
+> только перезаливать новым сабмитом (съест слот + вытеснит v037 из tracked-2). Поэтому все находки ниже —
+> материал для **следующей** версии (v039), строится ПОСЛЕ live-вердикта v038 (≥150-250 игр). Источники:
+> `myso1987/leaderboard-deck-meta-by-score-band`, `ygkojima/ptcg-strategy-report-v2`, `naoto714` ×2 (Kangaskhan),
+> `premaananda108/daily-meta-deck-win-rate-analysis`, `beicicc/ptcg-public-experiment-snapshot-jul17`.
+> Сводка находок в памяти: [[reference-kaggle-notebooks-recon-2026-07-18]].
+
+### J0 — Интерпретация v038 live-вердикта (gating, бесплатно)
+- [ ] **J0-1** Когда v038 наберёт ≥150 игр — смотреть WR **по рейтинговым бендам**, не общий (ygkojima:
+      Alakazam vs Kangaskhan = 61% в band ≥1100, но 28.7% в 800-1099 — смешивание бендов скрывает разворот).
+      Если v038 тонет именно в верхнем диапазоне — это состав оппонентов, не баг агента.
+- [ ] **J0-2** Не паниковать на малом n: σ_aa = 41.9pt на идентичных сабмитах (ygkojima, наше
+      [[project-rating-noise]]). μ670-720 на 50 играх = шум, ждать 150-250.
+
+### J1 — B3a-фикс Alakazam: hand-disruption (новый угол, СРЕДНИЙ приоритет)
+> Alakazam = монополист топа: 24% (600-699) → 38% (900-999) → 45% (1000-1099) → 43% (1100+) (myso1987).
+> В нашем диапазоне — каждый 3-й оппонент. v038 уже дал WR vs Alakazam 0.41→0.66 на честном гейте —
+> но B3a-дыра (Alakazam закрыт 4 раза подряд без патча: v012/v017/v036×3/v033) может стоить верхнего диапазона.
+- [ ] **J1-1** Override/deck-tech: **Unfair Stamp (1080) + Xerosic's Machinations (1197)** — hand-disruption
+      вместо танк-Hero's Cape. Логика: `Powerful Hand` = +2 dmg/карта в руке оппонента → отбирать руку,
+      не наращивать HP. У naoto714 локально +23.9пп vs Alakazam (23.4%→47.3%). ⚠ ПРЕДОСТЕРЕЖЕНИЕ: его локальный
+      гейт vs одного Alakazam-прокси может переоценивать; наш retreat-патч 3/3 A/B не дал улучшения на
+      v017_alakazam_heur ([[project-v036-forensic-findings]]). → проверять ТОЛЬКО с live-форензиком 1-го матча,
+      не доверять локальному гейту vs Alakazam.
+- [ ] **J1-2** Альтернатива: Koraidon Shred (1 копия, игнорирует эффекты на active) — у naoto714 1-7 live,
+      слабо. Низкий приоритет.
+
+### J2 — PPO-улучшения для следующего retrain (ВЫСОКИЙ, дёшево)
+- [ ] **J2-1** **Нелинейная prize-diff→WR кривая** в value-head / reward shaping (ygkojima, N=70,303):
+      плато после +3 (80.5%→81.8%), асимметрия ниже 0. Заменить линейный prize-diff на измеренную кривую
+      в leaf eval PIMC и в reward PPO. Прямо касается нашего потолка.
+- [ ] **J2-2** **Marnie Grimmsnarl** — топ-2 архетип (14-15% в 1100+, растёт с рейтингом), НЕ был на радаре
+      (myso1987). Проверить, входит ли Marnie в diverse-pool v038; если нет — добавить в пул v039.
+- [ ] **J2-3** **Mega Abomasnow ex** — 774 игры, WR 43.4%, крупный кластер поля (premaananda108). Добавить
+      в archetyp-пул retrain и в forensic-чек.
+- [ ] **J2-4** **BC-баги D01/D03** (ygkojima): D01 turn-index rescaling (train 0-N, inference 5× scale →
+      early-game misrecognition); D03 own-bench composition absent → placement не выучивается. Проверить
+      в наших BC/IL пайплайнах (`src/il/features_*.py`).
+
+### J3 — Replay-mining: 4 новых архетип-кандидата (СРЕДНИЙ, при следующем цикле разведки)
+- [ ] **J3-1** Tien Search-Alakazam hardened (beicicc s132, 955.6, "prior 1034.6") — search+learned value,
+      отличается от нашего tientrum reverse-engineer. Кандидат №1 на реплей-майн.
+- [ ] **J3-2** LLCC Crustle AttackFix (s107, 964.3) — Crustle-вариант выше нашего пика 930.7; "AttackFix"
+      может быть фикс нашего retreat/attack бага.
+- [ ] **J3-3** Pilkwang Archaludon metal-tempo (s052, 1030.6) и Tomato Archaludon anti-Starmie (s045, 964.1,
+      стабильный 855-948) — два archaludon-листа отличных от нашего v036 (831.9 live).
+- [ ] **J3-4** ⚠ Все кандидаты в зоне 955-1030 с большой дисперсией (rating noise, beicicc: идентичный пакет
+      → 473/1027/822/591/835/662/473). Не спешить — наш пик уже в бронзе.
+
+### J4 — Инструментарий (низкая стоимость, reuse)
+- [ ] **J4-1** `deck hash = md5(sorted(deck_ids))[:8]` (premaananda108) — компактный ключ архетипа для
+      агрегации эпизодов между днями; добавить в `scripts/` deck-scan.
+- [ ] **J4-2** Lethal solver как отдельный модуль (ygkojima EXP-030: 22.8% attack-decisions recoverable
+      правильным lethal-solver'ом). У нас PIMC/ExIt, но явный арифметический lethal-предиктор может быть
+      дешёвым усилением. Низкий приоритет.
+
+### J5 — Решение по v039 (после J0)
+- [ ] **J5-1** Если v038 live удержит WR vs Alakazam ≥0.55 и общий μ ≥800 → v039 = J2 (PPO-улучшения:
+      нелинейная prize-кривая + Marnie/Abomasnow в пул) как эволюция v038.
+- [ ] **J5-2** Если v038 live провалится именно vs Alakazam → v039 = J1 (hand-disruption deck-swap версия)
+      как отдельный сабмит с live-форензиком.
+- [ ] **J5-3** Если v038 live ≈ паритет/шум → J3 (реплей-майн Tien Search-Alakazam / LLCC Crustle AttackFix)
+      как источник нового BC-warmstart для Плана D.
+
+### J-fix — ПРИНЯТЫЕ ПРАВКИ v039 (2026-07-18, user-approved; БЕЗ сабмита, только файлы)
+
+> Решение юзера 2026-07-18: для self-колоды принять рекомендацию #1 (Crustle+MegaKangaskhan эталон);
+> для PPO pool принять правки #4,#5,#6,#7. Подробно + 60-карточные дек-листы —
+> [[project-v039-deck-and-pool-recommendations]]. Контекст: наша self-дека v038 сломана (8 покемонов /
+> 31 энергия / 21 trainer; live-симптомы: mulligan'ы, deck-out от навешивания по 10 энергий); все топ-250
+> имеют 7-15 энергий. Живой топ-Crustle = 13P/13E/34T. PPO pool v038 НЕ содержал живого топ-Crustle вообще.
+
+**Сделанные файловые правки (артефакты готовы, PPO retrain НЕ запущен — ждёт GPU + «ок»):**
+
+- [x] **J-fix-1 (self-дека, рекомендация #1)** — `submissions/v039_crustle_megakanga/` создана как копия
+      v038 (main.py + cabt_conv.py + nn_plan_d.py + cg/ + ppo_d2runDfull_final_s5013504.pth), `deck.csv`
+      ЗАМЕНЕН на Crustle+MegaKangaskhan эталон (rank 3, 7 команд топ-250): 13P/13E/34T, ядро
+      Dwebble×4+Crustle×4+**Mega Kangaskhan ex(756)×4**+Shaymin(343)×1, энергии 1 базовая {G}+12 специальных
+      (Mist 11×4 / Spiky 14×4 / Grow Grass 18×4). main.py НЕ тронут (тот же чекпойнт → это deck-swap
+      эксперимент: пилот, обученный на старой сломанной деке, играет новую деку без retrain).
+- [x] **J-fix-2 (deck-файлы эталонов)** — `decks/v039_pool/` создана, 4 файла по 60 карт:
+      `crustle_megakangaskhan.csv` (=self, 13P/13E/34T), `alakazam_A.csv` (19P/7E/34T, вариант A 18 команд),
+      `grimmsnarl_live.csv` (18P/10E/32T, живой топ-эталон), `mewtwo.csv` (15P/13E/32T, Team Rocket's Mewtwo ex).
+- [x] **J-fix-3 (POOL_REGISTRY, правки #4-7)** — `scratchpad/gold/plan_d/d1_train/train_ppo_v2.py`
+      POOL_REGISTRY обновлён (старый блок сохранён как комментарий `# POOL_REGISTRY v038 (PRE-v039)`):
+      - self → `decks/v039_pool/crustle_megakangaskhan.csv`, вес **0.30** (НОВАЯ self-дека, 31-энергия убрана)
+      - alakazam → `decks/v039_pool/alakazam_A.csv`, вес **0.30** (было 0.20; живой эталон A вместо v017)
+      - grimmsnarl → `decks/v039_pool/grimmsnarl_live.csv`, вес **0.12** (было 0.125; живой эталон вместо v018)
+      - **crustle_mirror → `decks/v039_pool/crustle_megakangaskhan.csv`, вес 0.12** (НОВЫЙ opponent — жилого
+        топ-Crustle в pool не было; 11% топа)
+      - **mewtwo → `decks/v039_pool/mewtwo.csv`, вес 0.06** (НОВЫЙ opponent)
+      - archaludon → `submissions/v036_archaludon_patched/deck.csv`, вес **0.05** (было 0.125; 3% топа, 0% в 1100+)
+      - lucario → `submissions/v035_makthanithin/deck.csv`, вес **0.05** (было 0.125; исчезает в 1000+)
+      - **impidimp УБРАН** (дублирует grimmsnarl-семью)
+      - Сумма = 0.30(self)+0.30+0.12+0.12+0.06+0.05+0.05 = 1.00.
+      - ⚠ **ФОРМАТ**: `POOL_REGISTRY` — это `dict[str,str]` (имя→путь к deck.csv), **веса в нём НЕ хранятся**.
+        Веса передаются через CLI-флаг `--opp-decks` при запуске обучения. Субагент обновил пути в dict
+        (чтобы `crustle_mirror`/`mewtwo` стали резолвимыми метками) + пример в help-тексте/docstring на
+        v039-веса. Сам по себе обновлённый POOL_REGISTRY pool НЕ активирует — только делает метки валидными.
+
+**NEXT для другого агента (по порядку):**
+
+- [x] **J-fix-N1 (бесплатно, без GPU)** Локальный гейт deck-swap: `submissions/v039_crustle_megakanga/`
+      (новая дека + старый чекпойнт v038) vs {v007,v009a,v033,v036}, N=300, honest gate (cg_native, non-god-mode,
+      seed=20260716). Скрипт `scripts/gate_expanded.py`. **ВЕРДИКТ 2026-07-18: deck-swap БЕЗ retrain = КОЛЛАПС.**
+      WR v039 vs v009a = **0.153** [0.117,0.199] (v038 baseline 0.700 → Δ −55пп); vs v007 0.160 (v038 0.660 → Δ−50пп);
+      vs v033 0.093 (v038 0.430 → Δ−34пп); vs v036 0.200 (v038 0.200 → Δ~0). 0 exceptions, nn_decisions ~22K/300игр
+      = ~73 хода/игру → пилот ИГРАЕТ длинные партии, но проигрывает (не mulligan-автопроигрыш). Дека структурно
+      валидна (Dwebble×4 базовые для старта) — коллапс = deck-policy entanglement: NN пилота v038 обучена на
+      card-ID старой деки (1212/1235/31×энергия), при свопе на 756/1087/1122/1197/1225/1227 её выходы неадекватны.
+      WR vs v009a 0.153 ≪ порога 0.55 → **deck-swap без retrain НЕ ценен, fine-tune (J-fix-N2) ОБЯЗАТЕЛЕН.**
+      Файлы: results/gates/{v038_vs_v007_crustle,v039_vs_v007_crustle,v039_vs_v009a_crustle,v039_vs_v033_plan_d_ppo,
+      v039_vs_v036_archaludon_patched}.json. Память: [[project-v039-deckswap-no-retrain-collapse]].
+- [x] **J-fix-N2 (GPU, одобрено юзером 2026-07-18)** PPO fine-tune с чекпойнта v038 на НОВОМ pool
+      (J-fix-3) + НОВОЙ self-деке (J-fix-1). 3M шагов (увеличено с 1-2M — юзер разрешил, радикальный deck-swap
+      требует больше шагов; kl-anchor-decay 3M). vast.ai RTX 5090, ~110s, ~29000 steps/s. Чекпойнт
+      `ppo_v039ft_final_s3014656.pth`. Pool_wr в обучении росли (alakazam 0.26→0.78, entropy 0.117→0.187,
+      mean_ret +0.59→+0.376, p0_term_wr 0.45→0.73) — НО локальный гейт провален (см. J-fix-N3).
+- [x] **J-fix-N3** Локальный гейт v039_ft (new-ckpt+new-deck) vs 4 оппонентам + факторный 2×2.
+      **ВЕРДИКТ 2026-07-18: fine-tune = CATASTROPHIC FORGETTING.** Гейт vs v009a
+      = 0.423 [0.369,0.480] (v038 0.700 → Δ−27.7пп); vs v007 0.428 (Δ−23.2пп); vs v033 0.230 (Δ−20.0пп);
+      vs v036 0.350 (Δ+15.0пп единственный плюс). 0 exceptions. Факторный 2×2 (WR vs v009a): old-ckpt+old-deck
+      = 0.700 (v038 baseline); old-ckpt+new-deck = 0.153 (no-retrain); new-ckpt+new-deck = 0.423 (ft);
+      **new-ckpt+old-deck = 0.418** (ЭКСПЕРИМЕНТ, submissions/v039_ft_olddeck/). new-ckpt+old ≈ new-ckpt+new
+      (CI перекрываются) → возврат старой декы НЕ восстановил v038 → **виновато ОБУЧЕНИЕ/POOL, не дека**
+      (catastrophic forgetting). Глубинная причина: pool v039 рассогласован с гейт-полем (pool-alakazam
+      alakazam_A+mirror/random ≠ v009a Crustle IL ≠ v033 Alakazam PPO); pool_wr 0.78 в обучении не переносится
+      на гейт 0.42. Политика переучилась на лёгких pool-оппонентах (mirror 42% + mewtwo/lucario/archaludon
+      0.76-1.0). Файлы: results/gates/v039ft_vs_*.json + v039ft_olddeck_vs_*.json, results/gates/v039_finetune.log.
+      Память: [[project-v039-finetune-forgetting-2x2]].
+      **САБМИТ live-probe 2026-07-18 (юзер одобрил):** v039_ft → submission **54793514** PENDING. Live-safety
+      smoke PASS. tracked-2 стало {v039_ft PENDING, v038 μ685.1}; v037 вытеснен. ★ v038 live μ обновился до
+      685.1 (середняк, ниже пика 930.7) — подтверждает generalization gap (локальный 0.70 не→live-прорыв),
+      что и обосновывает live-probe v039_ft несмотря на локальный регресс. Ждать 150-250 live-партий.
+      Память: [[project-v039ft-shipped-v038-live-685]].
+- [ ] **J-fix-N4 (опционально, после v039 live)** Если deck-swap (J-fix-N1) дал плюс, а fine-tune (J-fix-N2)
+      дал дополнительный плюс — сложить: v040 = fine-tuned пилот + обновлённый pool + hand-disruption
+      override против Alakazam (§J1-1, Unfair Stamp 1080 + Xerosic 1197) как отдельный эксперимент.
+- [ ] **J-fix-N5 (v042_energy_fix, ждёт GPU)** После провала v039_ft/v040_fresh/v041_extpool (все хуже v038
+      0.700 vs v009a: 0.423/0.348/0.303) — юзер одобрил комбинированный фикс вместо очередного fresh-start:
+      (a) НОВЫЙ Phi-терм `--shaping-w-energy` в `train_ppo_v2.py::extract_mover_potential` — штрафует потерю
+      энергии на активном покемоне (retreat/KO-замена на E0), напрямую бьёт failure modes 1+2 без спец-детекции
+      CG_OPTION_RETREAT/TO_ACTIVE; (b) НАЙДЕН баг KL-anchor: v039_ft анкорился к СТАРОМУ BC-warmstart (не к
+      v038!), т.к. `--warmstart-policy` указывал на `warmstart_policy_hidden_full.pth`, а v038 грузился через
+      `--resume-ckpt` — ref_model снимается ДО resume-ckpt (код train_ppo_v2.py:~830-850, комментарий "so the
+      anchor stays to the ORIGINAL warmstart"). Это правдоподобно объясняет catastrophic forgetting лучше, чем
+      прежняя гипотеза "pool рассогласован с гейт-полем". Фикс: `--warmstart-policy` теперь указывает НАПРЯМУЮ
+      на v038 чекпойнт (`submissions/v038_plan_d_ppo_poolfix/ppo_d2runDfull_final_s5013504.pth`), БЕЗ
+      `--resume-ckpt` — тогда ref_model = v038 корректно; (c) opp-pool веса сдвинуты в сторону реальных
+      оппонентов: v009a 0.22, v007 0.10, v033 0.18, v036 0.10, v034 0.05, v035 0.05 (сумма 0.70, было 0.27),
+      self 0.20, random 0.10 (было 0.73) — дека НЕ трогается (тот же `decks/v039_pool/crustle_megakangaskhan.csv`,
+      соответствует подтверждённому top-250 профилю P≈13/E≈13); (d) шаги подняты 5M→10M (юзер разрешил больше
+      шагов, если v041 недоучился — но диагноз v041 показал ПЛОСКИЙ pool_wr весь прогон, не восходящий тренд,
+      так что 10M — это буфер на случай другой динамики с новым pool/shaping, не гарантия). KL-anchor coef
+      поднят 0.005→0.02 (decay до floor 0.003 за 6M шагов), exclude-types="12" (RETREAT) сохранён, чтобы новый
+      energy-Phi term мог менять retreat-поведение не борясь с анкером. Скрипт готов:
+      `scratchpad/gold/plan_d/d1_train/server_train_v042_energy_fix.sh`. Требует свежий GPU-бокс (vast.ai,
+      старый мёртв) с синком submissions/{v009a_crustle,v007_crustle,v033_plan_d_ppo,v034_romanrozen_clone,
+      v035_makthanithin,v036_archaludon_patched,v038_plan_d_ppo_poolfix}/, decks/v039_pool/,
+      warmstart_policy_hidden_full.pth больше НЕ нужен (заменён на v038 ckpt). Ждёт GPU + запуска юзером.
+      **РЕЗУЛЬТАТ 2026-07-18/19 (свежий GPU-бокс vast.ai, инфра пересобрана с нуля — ptcg_engine из исходников
+      с локальными патчами, cg/-движок и данные/веса дозалиты, pandas/lightgbm доустановлены):** 10.03M шагов,
+      ~7000-8000 шагов/с, 0 exc/ill у всех 6 внешних оппонентов весь прогон. Локальный гейт (eval_vs_pool.py,
+      N=150 детерминированных, та же методология что v038-v041): **v007 0.533, v009a 0.503 (цель ≥0.50
+      ДОСТИГНУТА), v033 0.267, v036 0.367** — лучший результат из ВСЕХ попыток на новой деке (v039_ft/v040/v041
+      все были 0.30-0.43 на v009a), v007/v009a вернулись к уровню старого v038-бейзлайна (0.660/0.700) НА
+      НОВОЙ деке (снимающей deck-out риск). v033 (Alakazam-style PPO) остаётся структурной дырой (B3a),
+      energy-shaping её не чинит — другой паттерн. Training-time pool_wr вышел на плато к iter~240/306, гонять
+      дальше сейчас смысла не было (не тренд, шум) — юзер разрешил продолжать ЕСЛИ тренд растущий, но не стали,
+      т.к. плато. Чекпойнт: `scratchpad/gold/plan_d/d1_train/ckpts_v042_energy_fix/ppo_v042ef_final_s10027008.pth`,
+      гейт `results/gates/v042_energy_fix_vs_pool.json`. НЕ засабмичено (ждёт решения юзера — сабмитить/фикшить
+      v033 отдельно/что-то ещё).
+- [x] **J-fix-N6 (v043_alakazam_mirror_fix) ЗАЛИТ 2026-07-18.** Уточнение: "v033" в гейте — это НЕ Alakazam,
+      а наш собственный PPO-Crustle-зеркальный чекпойнт (терминологическая путаница в предыдущем отчёте
+      исправлена). Настоящий Alakazam (карта 743, Powerful Hand OHKO) добавлен в pool через
+      `v017_alakazam_heur` (наш эвристический клон) вес 0.16; v033 вес поднят 0.18→0.28. Дека: 1x Hero's Cape
+      → 1x Unfair Stamp (1080, hand-disruption после KO). **Найден баг:** первая версия с 2x Unfair Stamp
+      тренировалась 10M шагов "чисто" на ptcg_engine (0 exc), но карта ACE-SPEC max-1-копия — честный
+      cg_native-гейт мгновенно топил все игры (draw, 0 ходов) БЕЗ учёта в exc-счётчиках; обучение полностью
+      перезапущено с легальной 1x-версией. Память: [[project-ptcg-engine-deck-legality-gap]]. Результат N=150:
+      v017(Alakazam)=**0.673 фикс**, v009a=0.490, v007=0.433, v033=**0.240 не сдвинулся** (был 0.267 у v042
+      несмотря на удвоенный вес пула — вероятно не pool-weight-рычаг), v036=0.323. v007/v036 просели vs v042
+      (funding cost). Смешанный локальный результат, юзер решил залить: submission **54808614 PENDING**.
+      tracked-2 стало {v043_alakazam_mirror_fix PENDING, v041_extpool μ514.5} — v039_ft (μ625.5) вытеснен.
+      Память: [[project-v042-energy-fix-gate-success]].
+
+- [x] **J-fix-N7 (v044_archaludon_abomasnow) ЗАЛИТ 2026-07-18.** Submission **54808955 PENDING**. tracked-2
+      стало {v044_archaludon_abomasnow PENDING, v043_alakazam_mirror_fix 637.1} — v041_extpool (514.5)
+      вытеснен. Юзер дал 1 час полной свободы изучить
+      v034/v036 (лучшие живые результаты 865.7/827.3) и предложить улучшение. Находка: v034/v036 —
+      детерминированная matchup-aware эвристика (НЕ RL), уже имеет sophisticated ПРЕДИКТИВНУЮ Alakazam-модель
+      (`_estimate_alakazam`), принципиально лучше нашего reactive-retreat подхода. Попробовал Hero's Cape→
+      Unfair Stamp своп (перенос идеи из v043) — ЛОКАЛЬНО похоже на регресс на v009a/v007/v033, но найден
+      шумовой пол гейта ~±8пп на N=150 (5 повторных прогонов ОДНОГО чекпойнта дали разброс 0.760-0.840) —
+      отклонён из осторожности (Alakazam уже на потолке 93%+, размен невыгоден независимо от точных чисел).
+      Взамен: чисто АДДИТИВНЫЙ патч — Mega Abomasnow ex matchup detection (карты 722/723, официальный
+      starter-kit конкурса, крупный field-кластер, ранее падал в generic=220). 0 exc/ill, presubmit PASS.
+      Память: [[project-v034-v036-study-and-v044]]. Юзер подтвердил («Ок») — залито.
+- [x] **J-fix-N8 (v045_archaludon_judge_fix) ГОТОВ, НЕ засабмичен.** Юзер сообщил о 3 живых проигрышах подряд
+      топ-100 Alakazam-пилотам (Julian rank71, Bulba-Zero rank80, Aikimi rank107) на v044, попросил разобрать
+      реплеи. Скачано через `kaggle competitions episodes/replay` (CLI list/download РАБОТАЕТ несмотря на
+      сломанный KGAT для submit). **Находка:** игры кончались на ходу 4-9 при нашем полном HP — рука
+      оппонента росла **12→21→23 карты за 2-3 хода** (Powerful Hand ~20 dmg/карту = 460+ урона, безусловный
+      снос). В 2 из 3 проигрышей у нас на руке лежал **Judge (1213, уже в деке)** несколько ходов подряд, пока
+      рука оппонента росла на глазах — но card_id==1213 НЕ ИМЕЛ scoring-логики вообще (падал в generic 1000).
+      **Фикс:** Judge получает приоритет 19000 (выше Boss/Lillie/Explorer) при `matchup==alakazam` и
+      `opp_hand>=8` — используя уже существующую `_estimate_alakazam` модель. Без изменения деки. Локальный
+      гейт N=150: v017(Alakazam-прокси) 0.933→0.953(v044)→**0.987**(v045), v009a/v007/v033 не просели (0.853/
+      0.803/0.813). 0 exceptions, presubmit PASS. Это принципиально ДРУГОЙ механизм чем закрытый 4 раза
+      reactive-retreat (hand-disruption через уже имеющуюся карту, не позиционирование). Память:
+      [[project-v045-judge-alakazam-forensic]]. НЕ сабмитить без явного «ок» юзера (v044 уже в tracked-2,
+      v045 вытеснит v043 или займёт второй слот).
+- [x] **J-fix-N9 (v045, доп. Dipplin-фикс) ГОТОВ.** Юзер прислал ссылку на живой проигрыш v044 против Dipplin
+      ("практически ваншотает") — episode 86703807. Скачан и разобран: дека оппонента = Dipplin/Swirlix/
+      Festival Grounds + **Brave Bangle x4** (+30 dmg vs {ex}). Атака "Do the Wave" = **20×бенч АТАКУЮЩЕГО**
+      (не наш!), бенч оппонента был полон (5) весь матч → 100 база +30 Bangle = 130/удар, ×2 через Festival
+      Lead (атака дважды, и снова если первая нокаутит) = 260 — снесло Archaludon ex с 200/400 HP за один ход.
+      Старый `opp_max_damage()` для "dipplin" был статичной оценкой (200/400), не учитывал ни реальный бенч,
+      ни Brave Bangle. **Фикс:** новая `_estimate_dipplin(obs)` — `20 * len(opp_bench_pokemon(obs))` +30 если
+      наш активный ex и виден Brave Bangle, ×2 если Festival Grounds в игре — та же архитектура что
+      `_estimate_alakazam`. Юнит-тест на синтетическом obs подтвердил (110,220) корректно. Построен тестовый
+      фикстур `submissions/_dipplin_test_opp/` (дека из реплея + generic-greedy пилот, НЕ копия реального
+      игрока) — 0 exceptions в regression-прогоне, полный пул (v017/v018/v009a/v036) тоже без регрессий.
+      Память: [[project-v045-dipplin-forensic]].
+- [x] **J-fix-N10 (v045) ЗАЛИТ 2026-07-18.** Свежий единый прогон v036/v044/v045 против одного пула
+      (v017/v018_grimmsnarl/v035_makthanithin/v009a/v007/v033, N=150 каждый) показал все три версии
+      статистически неразличимы (разброс 2-8пп, шумовой пол) — локальный гейт не может подтвердить/
+      опровергнуть Judge/Dipplin-патчи (ни один оппонент не воспроизводит live-механизм), только "ничего не
+      сломал" (0 exceptions везде). Юзер подтвердил («Отправляй последнюю версию») — залито. Submission
+      **54810464 PENDING**. tracked-2 стало {v045_archaludon_judge_fix PENDING, v044_archaludon_abomasnow
+      899.8} — v043_alakazam_mirror_fix (506.9) вытеснен.
+
+**Не делать (гвардрейлы):**
+- НЕ сабмитить v039 без явного «ок» юзера ([[feedback-language-and-submit]]).
+- НЕ запускать PPO retrain без подтверждения (GPU-прогон + «ок»).
+- НЕ менять main.py v039 (чекпойнт v038 намеренно оставлен — deck-swap эксперимент; смена чекпойнта
+  только после J-fix-N2).
+- Критерий «дека сломана» (31 энергия) — объективный; но «своп deck.csv в одиночку = 20:19»
+  ([[project-deck-policy-entanglement]]) — поэтому J-fix-N1 может показать малую дельту, и это НЕ повод
+  отказываться от fine-tune (J-fix-N2).
+
+---
+
+## K — PLAN: Alakazam counter (started 2026-07-19, после первых 2 live-проигрышей v046_final)
+
+**Триггер.** v046_final (submissionId 54815255, залит 2026-07-18 20:01) — первые 4 публичные партии:
+2 победы, **2 поражения, обе от Alakazam** (higaki ep86751133, daiki_H ep86751593). Разобрано вручную
+через `kaggle competitions replay <id>` (открыт для любых эпизодов, см. [[project_episode_mining]]).
+
+**Подтверждённый механизм (арифметика сходится, не гипотеза):** Alakazam attack "Powerful Hand" кладёт
+**прямые damage counters = 2 × (карт в руке атакующего)** — это НЕ "damage" в смысле effective_damage()
+(обходит Full Metal Lab/resistance/HP-стены). higaki: 23 карты → 460 урона (наш Archaludon ex 300 HP).
+daiki_H: 21 карта → 420 урона (даже усиленный до 400 HP Hero's Cape'ом Archaludon ex не пережил).
+Это тот же механизм, что и в [[project_v033_alakazam_mechanism_closed]] (Powerful Hand OHKO), где
+**reactive-retreat закрыт 4 раза подряд (v012/v017/v036×3/v033)** — новую правку по этому направлению
+(вариации retreat/threshold) не делать, нужен принципиально другой рычаг.
+
+**★Новая находка (уточняет [[project_v045_judge_alakazam_forensic]]):** Judge (v046 x2 копии, скорингtriggers
+на `opp_hand>=8` при matchup==alakazam, main.py `score_play()` ~строка 851) **пришёл в руку рано в ОБЕИХ
+проигранных партиях** (higaki: ход 2-3; daiki_H: ход 2, 4) и **ни разу не был разыгран** — исчез из руки
+в тот же ход (в сброс) без единого триггера эффекта, порог `opp_hand>=8` ещё не был достигнут (рука
+оппонента на тех ходах = 4-5 карт). Вторая копия за всю партию так и не была замечена в руке ни разу ни
+в одной из двух партий. Подробности: [[project_v046_judge_wasted_early_finding]].
+
+**Форум-рекон 2026-07-19 (`kaggle competitions topics list/show`, прямой доступ, PATH нужен `.venv/bin`
+впереди системного, скрипт из kaggle-skill плагина сконструирован под другую версию CLI — работает
+голый `kaggle competitions topics show <id>`):**
+- **Топик 716207** (Sanjay20052) — Cornerstone Mask Ogerpon ex (Ability-иммунитет) новый нативный контр
+  Archaludon в поле. Не про Alakazam, для общей осведомлённости о мете, действий не требует сейчас.
+- **★Топик 712811** (Articuno0144, баг-репорт, 0 ответов от организатора) — **Unfair Stamp на движке
+  работает НЕ как написано на карте**: добирает карты ДО 5/2 без предварительного возврата руки в
+  колоду ("both players draw cards until they have 5/2 cards... hand is not returned to the deck")
+  → карта "стала очень слабой". Это прямо бьёт по идее naoto714 (см. ниже) — ПЕРЕД тем как доверять
+  любой WR-цифре с Unfair Stamp, надо перепроверить поведение на НАШЕМ движке (может отличаться —
+  движок мог быть пропатчен с 06-23, или у автора то же самое было и его +23.9пп уже это учитывает).
+- **★★★Топик 713608** (david valor, 25 голосов, детальный технический пост-мортем) — не про Alakazam
+  напрямую (это у них СВОЯ дека Starmie против Lucario), но методология прямо применима к нам:
+  - **"Forensic loss-analysis trap" (§3.5):** они прочитали 40 проигранных партий, LLM нашёл 3
+    убедительных фикса, заимплементили, **paired A/B дал −7.6пп регресс** (p=0.003) — "выборочная
+    слепота": чтение только поражений скрывает игры, выигранные тем же самым паттерном поведения.
+    **Мы сейчас в точности в этой ситуации** (прочитали 2 живые партии, нашли механизм, готовы
+    патчить) — НЕ шипить код-фикс без честного paired A/B, N≥400.
+  - **Eval-дисциплина (§4):** "77% на 200 играх стало 67% на 400" — ревалидировать любой перспективный
+    результат на N≥400 прежде чем доверять. Hill-climbing ниже шумового пола — реальная ловушка
+    (округляли 0.786→0.921 по 0.5пп шагам, честная цифра была 0.88, не 0.92).
+  - **Комментарий Chrismaghuhn в топике 721338** ("How do you teach an agent when to use Boss's
+    Orders/Ultra Ball"): "for a search-based agent you usually don't teach the triggers at all — you
+    let the search evaluate the card as one branch and price it by outcome." Это ровно то "принципиально
+    другое" направление, которое требует [[project_v033_alakazam_mechanism_closed]] взамен очередной
+    heuristic-вариации — у нас уже есть PIMC v2 (`src/pilot/pimc_v2.py`), не проверяли его именно на
+    выборе supporter-карты (Judge/Boss/Explorer/Lillie) конкретно в Alakazam-матчапе.
+
+### K1 — Проверить движок: реально ли Unfair Stamp сломан у нас (дёшево, сначала)
+Изолированный скрипт на cg_native: разыграть Unfair Stamp, сравнить размер руки до/после с ожиданием
+по тексту карты (обе руки → 5/2 БЕЗ возврата старой руки в колоду = баг; С возвратом = работает).
+Если баг подтверждён — Unfair Stamp/Xerosic откладываются, не тратить сабмит-слот на мёртвую карту.
+
+### K2 — Починить конкретный баг «Judge тратится впустую» (узкий, низкий риск)
+Найти точный код-путь, который выбирает Judge как «топливо» для Ultra Ball/другого cost-эффекта
+(или иной сброс), пока matchup==alakazam и Judge ещё не разыгран — защитить карту от такого сброса
+явным правилом. Это не смена порога, а защита уже принятого решения «эту карту решили придержать»
+от случайной потери. Гейтить локально (N≥400 vs v017_alakazam_heur + реальные Alakazam-оппоненты
+пула) до рассмотрения сабмита.
+
+### K3 — Пересмотреть сам триггер `opp_hand>=8`
+Честный paired A/B (N≥400): «играть Judge на первой же возможности при подтверждённом matchup==alakazam»
+(без ожидания порога) против текущего порога. Обоснование: Judge — ресурс «используй или потеряешь»,
+и ожидание уже дважды стоило нам карты целиком. Не полагаться на интуицию — измерить обе версии.
+
+### K4 — Deck-slot эксперимент с hand-disruption (Unfair Stamp/Xerosic), ТОЛЬКО если K1 подтвердит рабочесть
+Если карта реально работает на нашем движке: повторить ту же 4-way абляцию, что уже использовалась для
+Hero's Cape/Judge решения (deck-only/logic-only/combo/baseline, N=200-400/ячейка) — НЕ слепой своп.
+Hero's Cape резать НЕЛЬЗЯ (уже доказано: −8.9…−10.5пп vs Crustle, см. [[project_v046_final_gated_not_shipped]]).
+Кандидаты на срез тоньше некуда (Full Metal Lab уже урезан под 2-ю Judge) — нужен реальный анализ слотов
+колоды, не гадание.
+
+### K5 (больше ставка, опционально, в конце очереди) — PIMC-driven supporter-выбор
+Проверить, обгоняет ли неглубокий PIMC/search-driven выбор между Judge/Boss/Explorer/Lillie (оценка
+веткой по исходу rollout) наш hand-tuned priority-порядок — это и есть «принципиально другой механизм»
+по формулировке [[project_v033_alakazam_mechanism_closed]]. Наивысшая неопределённость и стоимость —
+делать последним, только если K2/K3 не закрывают разрыв.
+
+**Eval-дисциплина по всем пунктам (напрямую из david valor §4, соблюдать строго):**
+N≥400 на сравнение, ревалидировать любой перспективный N=200 результат; Wilson CI, не точечная оценка;
+**не шипить код-фикс по прочтению нескольких проигранных реплеев без честного paired A/B** — форензик
+реплеев даёт ГИПОТЕЗЫ, разрешение на код-чендж даёт только гейт (или live-probe, если известно что
+локальный гейт — слабый прокси именно для Alakazam, см. generalization gap
+[[project_v033_archetype_diversity_confirmed]]).
+
+**Не делать:** новые вариации reactive-retreat (закрыто 4 раза); слепой своп Hero's Cape (доказанный
+регресс vs Crustle); доверять WR-цифрам с Unfair Stamp до K1.
+
+### K1 РЕЗУЛЬТАТ (2026-07-19): Unfair Stamp НЕ бажен, но НЕСОВМЕСТИМ с Hero's Cape (оба ACE SPEC)
+Проверено эмпирически на `src/cg_native` (macOS native engine, `battle_start` с двумя ACE SPEC в одной
+колоде) — **errorPlayer=0, errorType=4** (та же ошибка легальности, что и у "Hero's Cape >1 копия"),
+т.е. движок реально применяет диковый лимит "1 ACE SPEC суммарно на колоду", а не только "1 копия
+каждой карты". Наша колода уже содержит Hero's Cape (ACE SPEC) → Unfair Stamp физически нельзя
+добавить БЕЗ среза Hero's Cape целиком, а срез Hero's Cape уже доказанно даёт −8.9…−10.5пп vs Crustle.
+Отдельно проверен исходник движка (`data/engine/ptcg_src/CardImpl.h:3289`) — реализация Unfair Stamp
+корректна (shuffle-then-draw-5/2, ровно по тексту карты), баг из топика 712811 (06-23) на текущей
+сборке не воспроизводится (либо был починен позже, либо специфичен другой версии).
+**★Найдена лучшая альтернатива при чтении того же исходника:** **Xerosic's Machinations (1197,
+Supporter, CardImpl.h:3940)** — "opponent discards to 3 cards", условие `opp_hand>=4` (значительно
+раньше нашего текущего Judge-порога 8), **НЕ ACE SPEC** (не конфликтует с Hero's Cape), бьёт только
+руку ОППОНЕНТА (не трогает нашу). Ирония: именно эту карту сыграл ПРОТИВ нас higaki в ep86751133 (см.
+K2). Также найден **Hand Trimmer (1087, Item, не ACE SPEC)** — оба игрока сбрасывают до 5, не требует
+supporter-слота. Оба — сильные кандидаты для K4 вместо Unfair Stamp; статус K4 не начат.
+
+### K2 РЕЗУЛЬТАТ (2026-07-19): фикс реализован и прогейчен, НЕ засабмичен
+Разобрав episode 86751133 глубже (сигнал: переход состава руки + `supporterPlayed`, не только `logs`
+— **более раннее заявление "Judge вообще не был сыгран в обеих партиях" ОШИБОЧНО**, см. исправление в
+[[project_v046_judge_wasted_early_finding]]): на ходу 3 higaki сыграл против нас Xerosic's Machinations
+(1197), заставив сбросить руку [190×3, 1185, 8, 1213] до 3 карт. `score_discard()` в
+`submissions/v046_final/main.py` не имел спец-обработки ни для JUDGE (падал в generic 1000), ни лимита
+копий для ARCHALUDON_EX (флэт `-5000 keep` на КАЖДУЮ из 3 копий в руке) — агент сохранил все 3
+избыточные копии Archaludon ex и сбросил Judge/Explorer's Guidance/Metal Energy. В daiki_H (86751593)
+Judge наоборот сработал штатно (opp hand 10→4 на ходу 4), просто одного сброса не хватило — рука
+отросла обратно до 21 карты за 13 ходов, вторая копия Judge за игру не пришла — это отдельный, уже
+известный предел ("one copy isn't enough"), не тот же баг.
+
+**Правка** (`submissions/v046_judgefix/`, копия v046_final с 2 узкими изменениями в `score_discard()`):
+(1) JUDGE получает `-4000 keep` при matchup==alakazam, работает при ЛЮБОМ forced-discard контексте, не
+только Ultra Ball; (2) ARCHALUDON_EX "keep"-бонус капается по числу копий в руке (`-5000` только 1-й
+копии, `-1500` любой 2+й) — 3 идентичные копии одной эволюционной ступени в руке не нужны одновременно.
+`v046_final` НЕ тронут (восстановлен в исходное состояние — эта директория совпадает с уже залитым
+submissionId 54815255, живой сабмит не трогаем).
+
+**Локальный гейт** (`scripts/v046_judgefix_gate.py`, native engine, N=200×3 оппонента, seed 20260719):
+v017_alakazam_heur delta=+0.000 (98.0% оба — прокси не воспроизводит именно этот механизм), v009a_crustle
+delta=−2.1пп (p=0.545, шум), v018_grimmsnarl delta=−1.5пп (p=0.398, шум). **Crustle — исторически хрупкий
+матчап (Hero's Cape-регресс), поэтому по дисциплине david valor (§4, "revalidate at N≥400") перепрогнан
+отдельно на N=400 (seed 20260720): delta развернулся в +1.0пп (p=0.703)** — подтверждает, что −2.1пп на
+N=200 был чистым шумом ровно как предупреждал форум-пост. **Вывод: 0 регрессий за пределами шума на всех
+трёх проверенных матчапах.** Локальный гейт не может подтвердить УЛУЧШЕНИЕ (v017-прокси не реплицирует
+Xerosic-механизм из живой партии) — как и раньше для Judge/Dipplin-патчей, только "ничего не сломал".
+
+**Статус (ИСПРАВЛЕНО): ЗАСАБМИЧЕН 2026-07-19 05:04, submissionId 54822473** — текст выше был написан до
+сабмита и устарел. v046_judgefix живёт в tracked-2 вместе с v044_resub; live-результат см. §L ниже.
+
+---
+
+## L — FORENSIC: полный разбор 129 live-игр v044_resub/v046_judgefix → кандидаты v048 (2026-07-20)
+
+> **Контекст:** v044_resub (N=68, WR 66.2%) и v046_judgefix (N=61, WR 50.8%) — оба сейчас в tracked-2.
+> Прошлый матчап-разбор (session-memory, N=56/63) оставлял ~40% игр в бакете "generic/other" —
+> слишком грубо для выводов. Полный форензик всех 129 игр (не выборка, и явно не только поражения —
+> см. david valor "forensic loss-analysis trap", топик 713608) — методология, таблицы и разбор
+> кейсов: **[docs/gold/v047_v048_forensic.md](docs/gold/v047_v048_forensic.md)**. Пайплайн:
+> `scripts/forensic_v044_v046_full.py` → `data/episodes/v044_v046_forensic.csv` (129 строк) →
+> `scripts/analyze_v044_v046_forensic.py` → `data/episodes/v044_v046_forensic_summary.md` (полные
+> W-vs-L кросс-таблицы). Каждая находка обязательно сверена между победами и поражениями, иначе не
+> считается сигналом.
+
+**Ключевые находки** (детали и таблицы — в docs/gold-файле):
+- Расширение архетип-сигнатур двумя новыми кластерами (archaludon_mirror N=19, dragapult N=14 —
+  крупнее половины уже существующих в `detect_matchup()`) сократило "other" с 37% до 12% игр. **Ни
+  одной из этих веток нет в живом `detect_matchup()`** — 26% живого поля (33/129) сейчас получает
+  вообще никакой matchup-специфичной логики, не по причине сложности матчапа, а по причине пробела
+  в покрытии.
+- С исправленной разбивкой регрессия v046_judgefix оказалась ШИРЕ, чем считалось: не только
+  generic/lucario (известно раньше), но и archaludon_mirror (66.7%→42.9%) и dragapult (100%→50%) —
+  указывает на причину уровня ДЕКИ (влияет на все матчапы одинаково), а не логики конкретного матчапа.
+- `bench_thin_frac` — валидированный (не шум) W-vs-L сигнал в обоих агентах, и v046 систематически
+  тоньше v044 в ОБЕИХ группах (W и L) — ещё один довод в пользу deck-level причины (Full Metal
+  Lab→2-я Judge срез), не code-фикса.
+- Boss's Orders play-rate у v046 в поражениях (16.7%) вдвое ниже, чем в его же победах (38.7%) и чем
+  у v044 в любой группе (33-39%) — согласуется с гипотезой "меньше ресурсов" от среза FML.
+- Задержка распознавания матчапа (`detect_lag_turn`) НЕ отличает победы от поражений ни у одного
+  агента — механизм, который чинит v047_deckbelief (persistence detect_matchup), не показывает
+  видимого WR-сигнала в этих данных (не отменяет v047 гейт-результаты, просто не переоценивать этот
+  рычаг конкретно для разрыва v044→v046).
+
+### ★★★ N=1000 ПЕРЕГЕЙТ (2026-07-20) — v047_deckbelief ПЕРЕСМОТРЕН, это РЕГРЕССИЯ vs v044, не паритет
+
+`scripts/deckbelief_gate_v047.py --games 1000 --h2h-games 1000 --opponents v007_crustle,v009a_crustle,
+v017_alakazam_heur,v018_grimmsnarl,v024_cardemb_rl,v033_plan_d_ppo,v034_romanrozen_clone,
+v036_archaludon_patched,v039_ft,v046_judgefix` (21000 игр, 0 exceptions/aborts, 464s,
+`results/gates/v047_full_pool_gate_1000.log`). Прошлый гейт (N=200-300, тот же script с 3-опп пулом)
+показал паритет (h2h WR=0.470 [0.414,0.527]) и "0 регрессий" — на N=1000 картина другая:
+
+- **Прямое зеркало v047 vs v044: WR=0.447 [0.416, 0.478]** — верхняя граница ДИ ниже 0.5, статистически
+  значимо ХУЖЕ v044, не паритет.
+- **3 из 10 оппонентов пула — статзначимая регрессия** (p<0.05): v036_archaludon_patched −5.1пп
+  (p=0.022), v039_ft −4.8пп (p=0.028), **v046_judgefix −4.8пп (p=0.032)**.
+- Ещё 3 отрицательные, но не значимые: v009a_crustle −0.5пп, v024_cardemb_rl −1.1пп,
+  v034_romanrozen_clone −3.0пп. Итого **6 из 10 delta отрицательные**, ни одна из 4 положительных
+  дельт не значима даже близко (ближайшая v017_alakazam_heur p=0.058).
+
+Ровно тот паттерн, о котором предупреждает david valor (§4 outcome, "77% на 200 играх стало 67% на
+400") — прежний вывод "0 регрессий, паритет" был статистически недостаточно обеспечен (N=200-300 на
+3-опп пуле), реальная картина на N=1000×10 — чистая регрессия. **L1 ниже (база v048 = v047_deckbelief)
+недействителен как написан** — строить v048 на v047 сейчас значит наследовать эту регрессию.
+Причина регрессии НЕ исследована (кандидаты: belief-net численные ветки ошибочно триггерятся на
+матчапах вне тренированных прототипов, либо persistent-детекция иногда переопределяет ВЕРНОЕ
+board-only "generic"-чтение неверным belief-guess) — до объяснения причины не пытаться чинить вслепую.
+
+**Приоритизированные кандидаты для v048** (каждый требует отдельного honest paired A/B, N≥400 —
+форензик даёт гипотезу, не разрешение на код-чендж, дисциплина §K сохраняется):
+
+### L0 (НОВЫЙ, теперь приоритет №1) — Диагностировать причину N=1000-регрессии v047 vs v044
+До любого дальнейшего использования v047_deckbelief как базы: собрать trace/detail (belief-net
+guess vs board-only guess vs правда архетипа) конкретно на v036/v039_ft/v046_judgefix матчапах —
+это единственные 3 с доказанной регрессией, там и искать механизм. Если причина в persistent-детекции
+(переопределяет верный board-only guess неверным) — рассмотреть более консервативный merge (belief-net
+только когда board-only вернул "generic", никогда не переопределяет уверенный board-сигнал). Это
+предшествует L1, не отменяет его — L1 остаётся правильной идеей (изолировать code-diff от deck-diff),
+но применительно к ИСПРАВЛЕННОЙ версии v047, не к текущей.
+
+### L1 (ОТЛОЖЕН до L0) — База v048 = v047_deckbelief + узкий порт score_discard() из v046_judgefix, БЕЗ среза FML
+Порт ТОЛЬКО code-diff (JUDGE `-4000 keep` protection + Archaludon ex per-copy cap), deck.csv остаётся
+как у v047 (= v044, БЕЗ 2-й Judge / без среза Full Metal Lab). Гипотеза: crustle-фикс (14.3%→55-62%)
+переживёт порт, а generic/lucario/mirror/dragapult-регрессия — нет, т.к. она из deck-уровня. Нужен
+4-way ablation-гейт (deck-only/logic-only/combo/baseline, N≥400/ячейка, новый
+`scripts/v048_judgefix_port_gate.py`) — самый высокий приоритет, самая сильная поддержка данными.
+
+### L2 — Добавить archaludon_mirror/dragapult ветки в detect_matchup()
+`{169,190,666}`/`{119,120,121}`. Дёшево, механически идентично уже существующим 8 веткам, закрывает
+26%-дыру в покрытии. Собственный узкий гейт, низкий риск.
+
+### L3 (эксплораторно, НЕ прямой порт) — Митигация тонкой скамейки
+Корреляция с поражением подтверждена (2.6-3.2× на `bench_thin_frac==1.0`), но ручное чтение показало
+неоднородный механизм (симптом отставания в размене в одном кейсе, вероятно движковый edge-case в
+другом — см. docs/gold-файл) — слепое правило "держи bench≥2" не гарантированно безопасно. Переоценить
+ПОСЛЕ гейта L1 — регрессия может исчезнуть сама, если гипотеза deck-уровня подтвердится.
+
+### L4 (низкий приоритет, не цель v048) — Аномалия "зависшей" короткой игры
+episode 86933558: 69 шагов, ход застрял на 4, повторяющиеся почти идентичные select-запросы, обрыв без
+резолюции. Похоже на движковый/replay-export edge case, не на баг агента — точечно перепроверить на
+нескольких похожих коротких (<80 шагов) поражениях, не приоритет.
+
+**Не делать повторно** (уже закрыто предыдущими прогонами, этот форензик не даёт новых оснований):
+K4 hand-disruption для нашей колоды (офиц. датасет N=2416: −16.1/−10.4пп), K5 PIMC-supporter (N=400
+отрицательно на всех 3 матчапах), reactive-retreat (закрыт 4×), срез Hero's Cape (доказанный регресс
+vs Crustle). Находка про Xerosic оппонента ПРОТИВ нас (v044: 34.8% в поражениях vs 15.6% в победах) —
+зеркальный аргумент: защищать свои ресурсы (Judge-protection, уже в v046), не добавлять disruption
+
+### ★★★★★ ИТОГ ночной сессии 2026-07-20/21: L0 диагностирован, L2 реализован, L1 4-way гейт ПРОЙДЕН, кандидат v048 собран (НЕ засабмичен)
+
+**v047_deckbelief ЗАСАБМИЧЕН 2026-07-20** (юзер явно одобрил после того как узнал о N=1000-регрессии —
+осознанное решение, "всё равно 44 версия больше не проверяется на кагле"; tracked-2 теперь
+{v047_deckbelief, ...}). Диагностика ниже велась параллельно/после, локально, без дальнейших сабмитов.
+
+**L0** (`scripts/deckbelief_l0_diagnose.py`, N=200×3 доказанно-регрессировавших оппонента):
+уточнил гипотезу из §L0 выше — persistent-детекция НЕ переопределяет верный board-only guess (board
+безусловно побеждает в коде), реальный механизм у́же: против archaludon_mirror-оппонентов
+(v036/v046_judgefix, оба реально archaludon_mirror по деке) board-скан не покрывает LINE {169,190,666}
+→ belief-net вступает почти всегда и в ~44% игр ошибочно навешивает "crustle" (потребляемый downstream:
+opp_max_damage=120, apply_overrides Crustle-ветка) вместо нейтрального "generic". НО: частота
+симметрична между победами/поражениями (43.5% win/44.4% loss у v036) — по форензик-дисциплине НЕ
+доказанный причинно-следственный сигнал сам по себе. Для v039_ft (true=crustle, тоже один из 3
+значимо-регрессировавших) misclassification почти не срабатывает (1.6%/0%) — отдельный
+`scripts/deckbelief_l0_v039_dig.py` (N=300) проверил и альтернативную гипотезу (persisted stale
+"crustle"-лейбл вместо live board-generic) — тоже симметрично (15.3% win/16.9% loss) — причина
+регрессии v039_ft осталась недиагностированной, но при этом решено не чинить вслепую, а положиться на
+L1-гейт (ниже он оказался чист и для v039_ft).
+
+**L2** (реализован в `submissions/v048_base/main.py`): добавлены `ARCHALUDON_MIRROR_LINE={169,190,666}`
+и `DRAGAPULT_LINE={119,120,121}` в `_detect_matchup_board_only()` — чисто структурная правка (board
+теперь ловит эти архетипы напрямую, belief-net для них почти перестаёт вызываться). Числовые ветки
+(`opp_max_damage` и т.п.) НЕ добавлены — сверка по `data/EN_Card_Data.csv` показала, что реальный урон
+Archaludon ex Metal Defender (220) и Dragapult ex Phantom Dive (200) уже близок к существующему
+безветочному дефолту (220), инвестировать в неподтверждённую точную цифру признано лишним. Проверка на
+N=200×2: ACTIONABLE-wrong rate у belief-net упал с ~44% до ~4-10%.
+
+**L1** (`scripts/v048_judgefix_port_gate.py`, N=400/ячейка, полный 10-опп пул + h2h vs v044, 21600 игр,
+0 aborted/exceptions): 4-way ablation на базе L2-исправленного v048_base —
+
+| Вариант | deck.csv | score_discard() | Регрессия vs v044 (10-опп пул) | h2h vs v044 |
+|---|---|---|---|---|
+| `v048_baseline` | v044 | v044 | НЕТ (0/10) | 0.482 |
+| `v048_deck_only` | v046_judgefix (FML→2×Judge) | v044 | НЕТ (0/10) | 0.480 |
+| `v048_logic_only` (буквальная рекомендация L1 выше) | v044 | +Judge-protect+Archaludon-cap | **ЕСТЬ** (v024_cardemb_rl −4.0пп p=0.027) | 0.468 |
+| `v048_combo` (= полный диф v046_judgefix НА L2-базе) | v046_judgefix | +Judge-protect+Archaludon-cap | НЕТ (0/10) | 0.480 |
+
+Главный вывод: **сам L2-фикс (покрытие archaludon_mirror/dragapult) уже устраняет N=1000-регрессию
+v047** — `v048_baseline` (просто v047+L2, без единого дальнейшего изменения) чист на всём пуле, включая
+ровно те 3 оппонента (v036/v039_ft/v046_judgefix), что были значимо хуже у голого v047. Это меняет
+интерпретацию §L1 выше: буквальный "logic-only без deck-среза" (то, что предполагалось самым безопасным)
+оказался ЕДИНСТВЕННЫМ вариантом с обнаруженной регрессией, а `v048_combo` (полный диф v046_judgefix,
+включая deck-срез, но воспроизведённый НА исправленной L2-базе) — чист И даёт лучший (хоть и не строго
+значимый, p=0.09) тренд по v009a_crustle (+4.0пп) среди всех 4 вариантов, а archaludon_mirror/dragapult
+дельты у него неотрицательны (v036 +2.7пп, v046_judgefix +2.3пп) — то есть deck-срез сам по себе
+оказался безопасен именно на L2-исправленной базе, живая широкая регрессия v046_judgefix была
+специфична для его ИСХОДНОГО plain board-only detect_matchup(), не для среза как такового.
+
+**Кандидат**: `submissions/v048_deckbelief_judgefix/` = копия `v048_combo`. Honest exec-smoke
+(Docker `pokemon-tcg-sim-torch`, реальный linux x86_64 движок, `exec()` без `__file__` — тот же класс
+проверки что ловил 3 живых бага у v047) — PASS, 0 exceptions, belief_model_loaded=True,
+matchup=archaludon_mirror корректно распознан в реальном прогоне. **ЗАСАБМИЧЕН 2026-07-20** (юзер явно
+одобрил "засылай" после обзора плана/результатов гейта) — tracked-2 стало
+{v048_deckbelief_judgefix, v047_deckbelief}. Live-μ TBD, ждать 150-250 партий.
+
+Рабочие директории `submissions/v048_base|baseline|deck_only|logic_only|combo/` оставлены как есть —
+провенанс ablation-таблицы выше, не мусор.
+своей стороны.
+
+---
+
+## M — PLAN v6: BAND-GAUNTLET → v072_mirror_gauntlet (2026-07-24, ⏳ PENDING USER APPROVAL)
+
+> **Цель юзера: μ1050+ (верх серебра — золото).** Пороги 07-24 (5619 команд): бронза 851 (top-562),
+> серебро 920 (top-281), золото 1088 (top-21). Мы: место 1583, μ758.
+> **Доказательная база:** `docs/gold/top_ladder_recon_20260724.md` (1273 игры топ-5 за 07-23) +
+> live-вердикт v070+P0 (107 игр, память `project_v070_p0_live_verdict_20260724`) +
+> band-математика (myso1987 07-22 × наши live-профили).
+
+### Ключевые факты, на которых стоит план
+
+1. **4 из 5 топ-команд (μ1123-1192) играют НАШ jiatu.l-лист Grimmsnarl** (±2 тех-карты). Дека закрыта.
+2. **Все топ-5 — детерминированные эвристики/сошедшиеся BC, НЕ search.** Топ-1 выигрывает всего 56%.
+   Рейтинг = равновесие WR vs свой бэнд; для 1050 нужно ~52-55% на бэндах 900-1100.
+3. **Наш блокер — болото 700-899**, не потолок наверху: Lucario 26% поля на 700-799 (наш WR 29%),
+   Archaludon 29% на 800-899 (наш WR 21%). Ожидаемый WR v070+P0 на этих бэндах 44%. Наверху эти
+   архетипы почти вымерли; зеркало Grimmsnarl = 40-48% игр топ-бэнда, Alakazam = 20-28%.
+4. **BC-приор больше не тянет:** v070-гибрид = уровень автора (750); точечные override поверх BC
+   не двигают WR (P0: 4 срабатывания на 107 игр). Поднимает только качество плейбука.
+
+### M0 — База и рамки
+
+- **База пилота:** `v065_defensive_swap` (последний heuristic-чемпион линии: v064 БАГ-фиксы + P0 своп
+  «копия переживает OHKO» + P2 Boss-guard). Дека v064/jiatu.l — **без изменений** (миграция теха — §M5, отдельно).
+- **Имя версии:** `v072_mirror_gauntlet` (v071 занят локально-отрицательным router-экспериментом).
+- Per-decision stderr-логи обязательны (feedback_always_agent_decision_logging), exec-smoke под
+  linux/amd64 exec() без `__file__` обязателен.
+
+### M1 — Зеркальный плейбук (5 механик топов; зеркало = 40-48% игр наверху, у нас live 45%)
+
+- [ ] M1a **ex-ротация ПЕРЕД атакой** (расширение v065-свопа): активная Grimmsnarl ex повреждена
+      (HP < порога размена) И на скамейке здоровая заряженная копия → ротация ДО атаки, не только
+      под смертельный OHKO на матчпойнте. У Luca 150 таких свопов/день, 71% — в зеркалах.
+- [ ] M1b **Adrena-Brain каждый доступный ход** — проверить v062-логику на пропуски; целевая метрика
+      ≥4-5 активаций/игру (экспертный уровень 4.2-5.2). Chip решает sudden-death в зеркале.
+- [ ] M1c **Splash-double-prize**: таргетинг с учётом +30 splash Shadow Bullet — предпочитать
+      состояния «у оппа бенчер ≤30hp» (двойной приз); симметрично — лечить/убирать СВОИХ бенчеров ≤30hp.
+- [ ] M1d **Boss-таблица зеркала**: чужой Munkidori / слабый не-ex бэклайнер (в v062 уже есть —
+      верифицировать live-срабатывание по логам).
+- [ ] M1e **Rare Candy темп**: кэнди→ex первым же ходом, когда доступно (проверить приоритеты).
+
+### M2 — Lucario recovery (болото 700-799: 26% поля)
+
+- [ ] Diff v063→v064 lucario-веток: v063 live 60% vs Lucario, v064 сломал до 39% (размен со Starmie-фиксом).
+      Форензик 17 lucario-поражений v064 (реплеи в `out/v064_full_download/`) → восстановить v063-поведение,
+      сохранив Starmie-фикс (78%).
+- Acceptance: vs nursrijan + maulikgajera Lucario ≥55% (N≥1000 суммарно), Starmie-прокси без регресса.
+
+### M3 — Anti-Archaludon экспертный рецепт (болото 800-899: 29% поля)
+
+- [ ] Ранний фокус Duraludon ДО эволюции (Boss + splash + Adrena-роутинг в резервные Duraludon);
+      не придерживать Shadow Bullet из-за встречного урона; M1a покрывает ротацию танков.
+      Рецепт из `data/il_grimmsnarl_v2/archaludon_recon/` (реконструкции экспертных побед).
+- Acceptance: vs v036/v044-класс ≥40% (реалистично: стена реальна, 25%→40% и есть цель).
+
+### M4 — Xerosic-тайминг vs Alakazam (верх: Alakazam 37-39% бэндов 900-1099)
+
+- [ ] Играть Xerosic's Machinations в окно ПЕРЕД ожидаемым Powerful Hand (opp_hand ≥ 8 и наш ход
+      перед их атакой), как Majkel1337 (#4). Проверить текущий триггер, убрать раннее сжигание.
+- Acceptance: vs prvsiyan Alakazam v8/v9 без регресса, в идеале +3-5пп (у нас live уже 67% на низком бэнде).
+
+### M5 — (опция, ПОСЛЕ v072-вердикта) Тех A/B: +2 Handheld Fan
+
+- Зеркальный контр-тех топ-1: 75% зеркала vs 56% без него; цена — просадка vs Alakazam/Crustle.
+  Отдельным сабмит-слотом, только после live-вердикта v072 и только с явного «ок».
+
+### M6 — Гейт (новый: по бэндам, не «среднее по больнице»)
+
+- [ ] `scripts/gate_band_weighted.py`: три бэнд-микса из myso1987 07-22 —
+      700-799 {lucario .26, archaludon .18, alakazam .17, dragapult .12, rest},
+      800-899 {archaludon .29, alakazam .27, lucario .07, crustle .05, mirror .05, rest},
+      900-1099 {alakazam .38, mirror .23, crustle .09, archaludon .09, lucario .07, rest};
+      оппоненты из имеющихся: nursrijan/maulikgajera (lucario), v036/v044 (archaludon),
+      prvsiyan v8/v9 + v016/v017 (alakazam), v062/v063/v070-гибрид (mirror), v009a/tusk_crustle (crustle).
+- **Acceptance (все обязательны):** (1) взвешенный WR ≥52% на КАЖДОМ из трёх бэнд-миксов;
+      (2) зеркальный h2h ≥55% vs v070-гибрид И vs v063; (3) 0 значимых регрессий vs v065 по полному
+      CORE_PAIRS-пулу N=1000; (4) 0 исключений; (5) Docker exec-smoke PASS.
+- [ ] Фулл-прогон N=1000 (конфиг `project_full_gate_pool_config`) + M1b-метрика Adrena/игру в логах.
+
+### M7 — Сабмит и оценка
+
+- [ ] Двойной идентичный сабмит v072 (поручение юзера 2026-07-24, после его апрува плана и PASS §M6)
+      → tracked-2 = {v072A, v072B}, вытесняет обе копии v070+P0.
+- [ ] Live-оценка по `latest-matchup-wr` через 12-24ч (50-70 игр = грубая оценка), полный вердикт 150+ игр.
+- Fallback: если v072 live < v070-уровня (~750) после 150 игр — ресаб v044 (страховка бронзы, 891 > порога 851)
+  отдельным решением юзера.
+
+---
 
 ## S — SEARCH PIVOT: PIMC on Crustle (CLOSED 2026-07-05: S4a≈0.50, S4b −0.40/−0.15 → superseded by §H)
 
@@ -576,6 +1324,19 @@ scratchpad `aidy_decklist_recon.py`.
 
 ## Status Log (append-only; newest on top)
 
+- **2026-07-24** — **★★★ РАЗВЕДКА ТОП-ЛЕСТНИЦЫ + LIVE-ВЕРДИКТ v070+P0 + ПЛАН §M (ждёт апрува юзера).**
+  (1) v070+P0 live 107 игр: WR 48.6%, обе tracked-копии 705/758 (идентичные файлы, разница=шум); P0 ex_retreat
+  сработал 4/107 (3 из 3 archaludon-побед — механика верна, охват ничтожен); archaludon 21%, lucario 29%; автор
+  пилота prvsiyan сам на 737 → потолок гибрида ≈750, BC-потолок 900 подтверждён. (2) Разбор всех 1273 игр топ-команд
+  за 07-23 (workflow, 6 sonnet-агентов): 4/5 топов играют НАШ jiatu.l-лист; все — детерминированные эвристики/BC,
+  не search; топ-1 WR всего 56%; зеркало Grimmsnarl = 40-48% игр топ-бэнда, решается 5 механиками (ex-ротация до
+  атаки / Adrena каждый ход / splash-double-prize / Rare Candy темп / Boss→чужой Munkidori); Handheld Fan x2 =
+  зеркальный контр-тех топ-1 (75% vs 56%). (3) Band-математика: наш блокер = болото 700-899 (Lucario+Archaludon),
+  эксперт той же деки держит 53-56% во всех бэндах. Пороги 07-24: бронза 851/серебро 920/золото 1088. Полный отчёт
+  `docs/gold/top_ladder_recon_20260724.md`; памяти project_top5_ladder_recon_20260724 + project_v070_p0_live_verdict_20260724.
+  **План §M (v072_mirror_gauntlet): база v065 + M1 зеркальный плейбук + M2 Lucario recovery (v063-ветки) +
+  M3 anti-Archaludon + M4 Xerosic-тайминг + M6 band-weighted гейт → двойной сабмит после PASS. ⏳ ЖДЁТ АПРУВА.**
+
 - **2026-07-22 (r)** — **★★★ ФОРЕНЗИК ВСЕХ 86 LIVE-ИГР v062 → v063_forensic86 ПОСТРОЕН И ГЕЙТ PASS.** По одному
   sonnet-субагенту на эпизод (workflow, схема-форсированный вывод) + ручная кросс-валидация. Найден и воспроизведён
   **критический баг**: `_promotion_guard` терял bench-слот 0 (`int(o.get("index") or -1)`, Python-фолси 0) — здоровый
@@ -587,6 +1348,141 @@ scratchpad `aidy_decklist_recon.py`.
   `out/v062_full_download/ANALYSIS_V062_86EPS.md`. Новый скилл `/replay-analyzer` + постоянные скрипты
   (`scripts/replay_digest.py`, `extract_agent_logs.py`, `download_episodes.py`). НЕ засабмичен (ждёт «ок»).
 
+- **2026-07-19 (b)** — **§K1+K2 выполнены.** K1: Unfair Stamp НЕ бажен (исходник движка сверен), но
+  **ACE SPEC конфликт с Hero's Cape** (движок отклоняет колоду, errorType=4, эмпирически проверено на
+  cg_native) — блокирует прямое добавление; взамен найдены Xerosic's Machinations (1197, не ACE SPEC,
+  opp_hand>=4 порог, бьёт только руку оппонента) и Hand Trimmer (1087, Item, не ACE SPEC) как кандидаты
+  для K4. K2: **исправлена ошибка в собственном раннем разборе** (higaki: Judge не "потерян по невезению",
+  а сброшен нашей же логикой в ответ на opponent's Xerosic's Machinations — score_discard() не защищал
+  JUDGE и не капал дубликаты ARCHALUDON_EX; daiki_H: Judge сработал штатно, просто одного сброса мало).
+  Правка в `submissions/v046_judgefix/` (v046_final не тронут). Гейт N=200×3 + revalidate Crustle N=400
+  (david valor eval-дисциплина: N=200 delta −2.1пп оказался шумом, на N=400 стал +1.0пп) — **0 регрессий**.
+  Готово к сабмиту, ждёт «ок». Память: [[project_v046_judge_wasted_early_finding]] (исправлена),
+  [[reference_forum_recon_2026_07_19_alakazam]].
+
+- **2026-07-19 (a)** — **v046_final первые live-партии: 2/2 поражения = Alakazam Powerful Hand OHKO
+  (460/420 урона сквозь 300-400 HP), Judge в обеих партиях пришёл рано (ход 2-4) но не разыгран.**
+  Разбор двух реплеев (higaki ep86751133, daiki_H ep86751593) + форум-рекон (топики 712811 Unfair
+  Stamp bug-report, 713608 david valor postmortem — forensic-trap warning + eval-дисциплина, 721338
+  search-vs-heuristic комментарий). Записан **§K PLAN: Alakazam counter** (5 шагов K1-K5, приоритет
+  на узкий баг-фикс "Judge тратится впустую" прежде смены порогов/колоды, PIMC-подход в конце очереди).
+  НЕ начато выполнение — план записан, ждёт следующей сессии/подтверждения юзера на конкретные шаги.
+  Память: [[project_v046_judge_wasted_early_finding]].
+
+- **2026-07-18 (z)** — **★ РЕШЕНИЕ ЮЗЕРА: откат, ждать live v039_ft + v038.** После провала варианта C (v040 локально
+  0.35, forensic исправил 1 из 3 failure modes) юзер выбрал путь C (не путать с вариантом C выше): ничего не
+  запускать, дождаться live-вердиктов v039_ft (54793514 PENDING) и v038 (μ685.1, ещё копит игры). Это бесплатная
+  решающая информация: если v039_ft live < v038 685 — новая дека тупик и на live; если > — направление новая дека+pool
+  имеет смысл, тогда reward shaping (штраф за retreat с energized / KO-замена на E0) или pool с реальными IL/PPO
+  политиками. GPU не трогать, на Kaggle не сабмитить. Ждать 150-250 live-партий (~1-2 дня). Артефакты v039_ft/v040
+  сохранены локально для возобновления. Память: [[project-v040-fresh-failed]], [[project-v040-forensic-3modes]].
+
+- **2026-07-18 (y)** — **★★ ВАРИАНТ C (fresh-start v040) ПРОВАЛ + forensic 3 failure modes.** Юзер выбрал вариант C
+  (fresh-start 5M на новой деке + гибридный pool self 0.30/v009a 0.20/alakazam 0.20/grimmsnarl 0.12/archaludon 0.10/v033 0.08).
+  5M шагов на vast.ai (212с), чекпойнт ppo_v040fresh_final_s5013504.pth. Локальный гейт: vs v009a=**0.348** (v038 0.700,
+  v039_ft 0.423), vs v033=**0.157** (B3a регресс), vs v007=0.323, vs v036=0.367. Слабее v038 и v039_ft на 3/4 матчапов.
+  К сабмиту НЕ годится. Ключевая находка: training pool_wr (v033 0.11→0.50, alakazam 0.16→0.48) НЕ→gate WR — pool использует
+  деки v009a/v033, но mirror/random политики (train_ppo_v2.py поддерживает только mirror/random), а не реальные IL/PPO пилоты.
+  Gate-vs-training gap сохраняется. **Forensic v040 mirror (3 игры, юзер требовал проверить проблемы v039):** из 3 failure modes
+  v039 исправлен ТОЛЬКО mode 3 (MegaKanga charging, max uncharged 2 vs 3); mode 1 (retreat с energized) ТАК ЖЕ (rate 0.30≈0.33);
+  mode 2 (KO-замена на E0) ХУЖЕ (0 good из 5, v039 2/3). Root cause: mirror/random pool не учит ценить энергии + нет reward-сигнала.
+  Память: [[project-v040-fresh-failed]], [[project-v040-forensic-3modes]]. Рычаги: reward shaping (штраф за retreat с energized /
+  KO-замена на E0) / pool с реальными IL/PPO политиками / откат к v038 / MCTS.
+
+- **2026-07-18 (x)** — **★★★ v039_ft САБМИТ live-probe 54793514 + v038 live μ=685.1.** Юзер одобрил live-probe
+  несмотря на локальный регресс (0.42 vs v009a): «давай сначала сабмит на кагл, потом вариант C». Обоснование —
+  generalization gap (v038 локально 0.70, но live 685.1 = середняк, не прорыв → локальный гейт плохой прокси).
+  tracked-2: {v039_ft PENDING, v038 μ685.1}; v037 вытеснен. 4 сабмита осталось. Ждать 150-250 live-партий.
+  NEXT: вариант C (fresh-start 5-10M на новой деке + правка pool ближе к гейт-полю), GPU vast.ai. Память:
+  [[project-v039ft-shipped-v038-live-685]].
+
+- **2026-07-18 (w)** — **★★★★ J-fix-N2+N3 ВЫПОЛНЕНЫ: fine-tune 3M = CATASTROPHIC FORGETTING, к сабмиту НЕ годится.**
+  PPO fine-tune с чекпойнта v038 на новом pool v039 + новой self-деке, 3M шагов на vast.ai RTX 5090 (~110s).
+  Pool_wr в обучении росли (alakazam 0.26→0.78, entropy 0.117→0.187, mean_ret +0.59→+0.376) — НО локальный гейт
+  vs реальным сабмишенам провален: v039_ft vs v009a = **0.423** [0.369,0.480] (v038 0.700 → Δ−27.7пп); vs v007 0.428;
+  vs v033 0.230; vs v036 0.350. 0 exceptions. **Факторный 2×2 (WR vs v009a):** old-ckpt+old-deck=0.700 (v038),
+  old-ckpt+new-deck=0.153 (no-retrain), new-ckpt+new-deck=0.423 (ft), **new-ckpt+old-deck=0.418** (эксперимент).
+  new-ckpt+old ≈ new-ckpt+new (CI перекрываются) → возврат старой декы НЕ восстановил v038 → **виновато обучение/pool,
+  не дека (catastrophic forgetting)**. Причина: pool v039 рассогласован с гейт-полем (pool-alakazam≠v009a/v033);
+  политика переучилась на лёгких pool-оппонентах. К сабмиту НЕ годится — ухудшил бы tracked-2 (v038 уже PENDING).
+  Рычаги: KL-anchor к old-ckpt / pool ближе к гейт-полю / fresh-start; либо откат ждать live v038. Память:
+  [[project-v039-finetune-forgetting-2x2]].
+
+- **2026-07-18 (v)** — **★★★ J-fix-N1 ВЫПОЛНЕН: deck-swap БЕЗ retrain = КОЛЛАПС.** Локальный гейт
+  `scripts/gate_expanded.py` (cg_native, non-god-mode, N=300, seed=20260716): v039 (новая дека Crustle+MegaKanga,
+  старый чекпойнт v038) vs v009a WR **0.153** [0.117,0.199] (v038 baseline 0.700 → Δ−55пп); vs v007 0.160 (Δ−50пп);
+  vs v033 0.093 (Δ−34пп); vs v036 0.200 (Δ~0). 0 exceptions, ~73 хода/игру → пилот играет но проигрывает (deck-policy
+  entanglement: NN обучена на card-ID старой деки, своп 31→13 энергий + смена ядра карт → неадекватные выходы).
+  Вердикт: WR vs v009a 0.153 ≪ 0.55 → deck-swap без retrain НЕ ценен, **fine-tune J-fix-N2 ОБЯЗАТЕЛЕН (GPU, ждёт «ок»)**.
+  Файлы: results/gates/v039_vs_*.json. Память: [[project-v039-deckswap-no-retrain-collapse]].
+
+- **2026-07-18 (u)** — **★★ v039 ДЕКА+POOL ПРАВКИ ПРИНЯТЫ юзером, файловые правки внесены (§J-fix).**
+  Юзер выбрал: для self-колоды — рекомендация #1 (Crustle+MegaKangaskhan эталон top250 rank 3, 13P/13E/34T,
+  снимает сломанный баланс 31 энергия); для PPO pool — правки #4 (добавить crustle_mirror 0.12), #5 (alakazam
+  0.20→0.30, обновить до живого эталона A), #6 (grimmsnarl обновить + добавить mewtwo 0.06), #7 (перевесить:
+  archaludon/lucario 0.125→0.05, impidimp убран). Контекст: наша self-дека v038 = 8 покемонов/31 энергия/21
+  trainer — аномалия (все топ-250 имеют 7-15 энергий); live-симптомы юзера — mulligan'ы из-за нехватки покемонов,
+  deck-out от навешивания по 10 энергий. PPO pool v038 НЕ содержал живого топ-Crustle вообще (11% топа) —
+  главный пробел. Артефакты: `submissions/v039_crustle_megakanga/` (копия v038 + новый deck.csv, тот же чекпойнт
+  = deck-swap эксперимент), `decks/v039_pool/{crustle_megakangaskhan,alakazam_A,grimmsnarl_live,mewtwo}.csv`,
+  `scratchpad/gold/plan_d/d1_train/train_ppo_v2.py` POOL_REGISTRY обновлён (старый блок сохранён как комментарий).
+  PPO retrain НЕ запущен (ждёт GPU + «ок»). NEXT для другого агента: J-fix-N1 локальный гейт deck-swap vs v009a
+  (бесплатно) → J-fix-N2 PPO fine-tune на новом pool+self (GPU, «ок») → J-fix-N3 packaging+live-probe («ок»).
+  Память: [[project-v039-deck-and-pool-recommendations]]. План: §J-fix.
+- **2026-07-18 (t)** — **★ RECON 6 Kaggle-ноутбуков → ПЛАН v039 (§J) записан.** Разобраны: myso1987
+  (meta по рейтинговым бендам), ygkojima/ptcg-strategy-report-v2 (N=70K game states), naoto714 ×2
+  (Mega Kangaskhan ex turn-two speed), premaananda108 (daily meta win-rate), beicicc (public experiment
+  snapshot). Ключевые находки: (1) **Alakazam — монополист топа** 38-45% в 900-1100+ (myso) — подтверждает
+  приоритет B3a; (2) **Marnie Grimmsnarl — топ-2** 14-15% в 1100+, НЕ был на радаре; (3) **Mega Lucario
+  исчезает в 1000+** (ноуб-стомпер 500-700), **Archaludon 0% в 1100+** — объясняет потолок v036 μ831;
+  (4) **hand-disruption (Unfair Stamp 1080 + Xerosic 1197) против Alakazam** — новый угол для B3a (naoto714
+  локально +23.9пп), но локальный гейт vs Alakazam врёт → проверять только live-форензиком; (5) **нелинейная
+  prize-diff→WR кривая с плато +3** (ygkojima) — дешёвый фикс для leaf eval/reward shaping; (6) **band-specific
+  matchup inversion** (Alakazam vs Kangaskhan 61% band≥1100 vs 28.7% band 800-1099) — объясняет часть
+  gate-vs-live gap, гейт надо читать по бендам; (7) BC-баги D01/D03 (turn-index rescaling, own-bench absent) —
+  проверить в наших пайплайнах; (8) 4 архетип-кандидата для replay-mining (Tien Search-Alakazam 955.6, LLCC
+  Crustle AttackFix 964.3, Pilkwang Archaludon 1030.6, Tomato anti-Starmie 964.1). v038 уже залит (PENDING),
+  править нельзя → всё в §J для v039 ПОСЛЕ live-вердикта v038. Память:
+  [[reference-kaggle-notebooks-recon-2026-07-18]], [[project-v039-recon-driven]].
+- **2026-07-16 (s)** — **★ I1-3 КЛОН-ПУТЬ ЗАКРЫТ: BC-потолок подтверждён 5-й раз.** Клон топ-10 Crustle+MegaKangaskhan ex
+  (懒惰的金枪鱼/__Taichicchi__) — 3 итерации фичей на 726 эпизодах официального датасета (07-14/07-15, deck-signature
+  {345,756}+winner). v1 features_v009a (Crustle-спец) val_top1 0.436 / H2H 0.24 → v2 (capacity) 0.447 → **v3 features_clone
+  (Kangaskhan-aware, FEATURE_DIM 61→75: is_kangaskhan, retreat_to_kangaskhan, is_hand_trimmer, is_heal_card, is_heros_cape,
+  is_stadium, is_boss_orders, is_search_card, is_switch, has_kangaskhan_on_bench, my_active_is_kangaskhan, has_hand_trimmer_in_hand,
+  n_kangaskhan_in_hand, …) val_top1 0.487 (стена 0.45 пробита +4пп), best_iter=83, train≈val → переобучения НЕТ, потолок = сигнал
+  фичей.** Гейт anchored_pool 600 игр 0 exc: **H2H vs v009a WR 0.40 [0.348,0.458] — ЗНАЧИМО хуже чемпиона** (0.24→0.40, но не
+  parity); vs v001_random 0.80 (RED-FLAG passed). Importances: type_ABILITY 18%, g_turn_norm 14%, card_target_energy_count 7%,
+  **card_is_switch 4.6% (#4 — единственная НОВАЯ дек-фича в топ-15)**; Kangaskhan/hand-trimmer/heal/cape/stadium/boss identity
+  НЕ вошли в топ-15 — разрежены в 726 эпизодах, ранжер учится на общих сигналах, не на distintive trainer-decisions. Это ровно
+  BC-потолок на setup-деке (2 эволюции + Mega + disruption). **Вердикт юзера: закрыть клон-путь, зафиксировать урок; v032b НЕ
+  сабмитится.** Даже parity = бронза (930.7), не серебро (+62μ). Фичи/модель оставлены как BC-warmstart для Плана D (§I2-1).
+  Артефакты: `src/il/features_clone.py`, `models/il_crustle_clone_v3.txt`, `submissions/v032b_crustle_clone/`,
+  `results/gates/v032b_gate_state.json`. Урок [[project-clone-kangaskhan-bc-ceiling]]. **NEXT: §I — I0-1 (досмотреть v030 до
+  150-250 игр, пассивно) + §I2 План D (PPO+BC-warmstart на GPU, D2 in_progress) — единственный оставшийся путь к серебру/золоту.**
+- **2026-07-16 (r)** — **★★ PLAN v5 (SILVER-FIRST) СОГЛАСОВАН пользователем.** Цель переформулирована: серебро
+  (μ925.3, top-256/5115) — база, золото (μ1093.3, top-20) — апсайд. ⚠ ИСПРАВЛЕНО 07-16 вечером (полный лидерборд 5118):
+  **μ925.3 = БРОНЗА (rank256), НЕ серебро**; корректные пороги — серебро μ993.2 (rank103), бронза μ923.4 (rank256),
+  золото μ1132.4 (rank11), top-20 μ1087.4 (rank20). Наш пик 930.7 = бронза, до серебра +62.5μ. См. актуальные пороги
+  в шапке §I и reference_leaderboard_2026_07_16. Полный план — **§I** (ныне архив; актуальный — **§J**). Разведка:
+  свежий лидерборд (5115 команд), прямое чтение форума (`kaggle competitions topic-messages`, БЕЗ тяжёлого
+  deep-research воркфлоу — тот второй раз упал на инфраструктурном лимите сессии, session-limit 12:20 MSK, решили
+  не ждать/не гонять повторно, юзер попросил экономить агентов при высоком % использования — записано в
+  `feedback_usage_awareness.md`). Находки: **★★официальный ежедневный датасет топ-эпизодов** организатора
+  (`kaggle/pokemon-tcg-ai-battle-episodes-{date}`, форум 709160, медиана μ1125.9 на 07-15) — снимает 429-блокер
+  клонирования ([[project-clone-majkel-next]] обновлён); форум 717697 «RL journey» — независимый self-play PPO
+  дошёл до серебра за день на 1 GPU + рекомендация BC-warmstart перед RL (усиливает План D); форум 712621 —
+  диапазон мэтчмейкинга узкий вокруг своего рейтинга (наш field-гейт vs топ-19 дек не отражает ранних живых
+  оппонентов); форум 726690 — темп игр 6-10× зависит от рейтинга/неопределённости (наши v030/v007_resub мерены на
+  ~68-125 игр/день, ближе к baseline 48/день, чем к оптимистичным цифрам из старой памяти). Детали —
+  [[reference-official-episode-dataset]], [[reference-forum-recon-2026-07-16]]. **Пробел в логе 07-13..07-16
+  (v024_cardemb_rl → v030_time_budget) не был записан построчно в реальном времени — см. `results/submissions.csv`
+  как источник истины по числам; кратко: v024 card-embedding+RL live paritet (~640), v026-v027 ExIt+GBDT-value
+  первые NN-агенты с реальным MCTS но первые 2 (v026/v027) молча работали как greedy-fallback (numpy/import баги,
+  см. [[project-kaggle-live-safety]]), v028 нашёл и поправил import-баг но словил НОВЫЙ numpy ABI баг на
+  GBDT-джойблибе, v029 фикс = pure-numpy linear value (AUC 0.68) — первый реальный MCTS live, v030 = + фикс модели
+  оппонента (было `[1072]*N` заглушка, [[project-opponent-placeholder-bug]]) + тайм-бюджет 1.0с/ход — сильнейший
+  локальный гейт за проект (WR 0.7475 [0.683,0.803], N=200), live-вердикт ещё не готов (47 игр на 07-16).** Старый
+  вектор §H (PIMC/дек-viability/ExIt-lite) остаётся ЗАКРЫТ — §I его не отменяет, а идёт другим путём.
 - **2026-07-13 (q)** — **★★ RL/ExIt ПРОГОН: PLATEAU (H2H 13→37→34% vs v009a), НО field 0.945 >> v009a 0.843 → LIVE-PROBE
   ОДОБРЕН.** Полный ExIt (5 итераций, ~9мин, kiyotah scaffold AlphaZero-style): H2H vs v009a плато 32-38% (чемпион не
   побит в Crustle-зеркале — v009a-IL специализирован), НО non-mirror здоровый (v018 100%, v017 ~50%, league 6
