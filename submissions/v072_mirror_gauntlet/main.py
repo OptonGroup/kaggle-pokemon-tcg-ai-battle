@@ -705,11 +705,14 @@ def _promotion_guard(obs_dict: dict) -> list[int] | None:
                     and _opp_threat_vs(opp_active_id, pk_id, opp_hand) >= hp):
                 d_en = sum(1 for e in (pk.get("energies") or [])
                            if int(e or 0) == BASIC_D_ENERGY_ID)
-                base = 180 if pk_id == GRIMMSNARL_ID else (60 if pk_id == MORGREM_ID else 0)
-                dmg = base * (2 if _weak_to_dark(opp_active_id) else 1)
-                opp_hp_now = int(opp_active.get("hp") or 0) if isinstance(opp_active, dict) else 0
-                ex_lethal_now = d_en >= 2 and 0 < opp_hp_now <= dmg
-                if not ex_lethal_now:
+                # [v072 gate-1 fix] Only an UNREADY doomed ex yields to fodder. The first
+                # version demoted CHARGED doomed exes too -- the promoted fodder Impidimp
+                # is a MARNIE_LINE "attacker", so score_retreat's unstick branch never
+                # rotates it out: it sat Active spamming 10-dmg Filch while the charged
+                # Grimmsnarl rotted benched (gate N=1000: ext_nursrijan_lucario 30.8%->
+                # 25.1%, p=0.0045). A charged ex swings 180 before dying -- promote it
+                # (v065 behavior); an empty ex dies having done nothing -- fodder first.
+                if d_en < 2:
                     dies_free = 1
             key = (0 if hands_game else 1, 1 - dies_free) + _promo_priority(pk)
             cand_log.append((i, pk_id, key))

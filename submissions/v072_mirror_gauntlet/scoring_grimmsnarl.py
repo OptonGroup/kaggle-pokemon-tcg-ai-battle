@@ -1103,6 +1103,10 @@ def score_retreat(obs, opt):
                     # charged, swapping is still free damage-wise (retreat+attack same turn)
                     # and banks the dying body: benched at 20hp it heals +30/turn via
                     # Adrena-Brain and keeps threatening 180 after the fresh copy trades.
+                    # [gate-2 ablation note] N=1000 ablation cleared this branch of the
+                    # nursrijan regression (removal changed nothing: 25.9%->26.15%); the
+                    # residual delta is attributed to the deliberate F1 park-scope change
+                    # (live evidence outranks one elite search-agent artifact).
                     p_max = getattr(p, "maxHp", p.hp) or p.hp
                     if active.hp <= 60 and p_max > 0 and p.hp >= p_max * 0.9:
                         return 600, "defensive swap: bank nearly-dead ex, fresh charged copy trades instead"
