@@ -31,27 +31,14 @@ RESULT_REASON = {1: "opponent took all prizes / 0 prize cards left",
                  3: "no Pokemon in Active Spot (bench depleted)",
                  4: "card effect"}
 
-ARCHETYPE_RULES = [
-    ("Alakazam",            ["Alakazam"]),
-    ("Lucario",             ["Mega Lucario ex"]),
-    ("Archaludon",          ["Archaludon ex"]),
-    ("Dragapult",           ["Dragapult ex"]),
-    ("Grimmsnarl",          ["Marnie's Grimmsnarl ex"]),
-    ("Crustle",             ["Crustle"]),
-    ("TR_Mewtwo",           ["Team Rocket's Mewtwo ex"]),
-    ("Cynthia_Garchomp",    ["Cynthia's Garchomp ex"]),
-    ("Iono_Bellibolt",      ["Iono's Bellibolt ex"]),
-    ("Starmie",             ["Mega Starmie ex"]),
-    ("Abomasnow",           ["Mega Abomasnow ex"]),
-    ("Ceruledge",           ["Ceruledge ex"]),
-    ("Palafin",             ["Palafin ex"]),
-    ("Lopunny_Flygon",      ["Mega Lopunny ex", "Flygon ex"]),
-    ("Ogerpon",             ["Teal Mask Ogerpon ex", "Cornerstone Mask Ogerpon ex"]),
-    ("Fezandipiti_multibox", ["Fezandipiti ex"]),
-    ("Hop_Trevenant",       ["Hop's Trevenant", "Hop's Cramorant", "Hop's Phantump"]),
-    ("Dunsparce",           ["Dunsparce", "Dudunsparce", "Hop's Snorlax"]),
-    ("Dipplin_box",         ["Dipplin", "Applin", "Thwackey"]),
-]
+sys.path.insert(0, os.path.join(REPO, "scripts"))
+from classify_opponent_archetype import classify           # noqa: E402
+from cluster_archetypes import cluster_and_name, load_card_meta   # noqa: E402
+
+# Archetype naming lives in classify_opponent_archetype.py — the same table the
+# WR report uses — so a matchup can't be called "Lucario" in a digest and
+# "lucario" in the summary, and a newly-added archetype lands in both at once.
+_CARD_META = None
 
 
 def load_cards():
@@ -72,14 +59,23 @@ def load_cards():
 
 
 def deck_archetype(deck_ids, names):
-    deck_names = " | ".join(sorted({names.get(c, str(c)) for c in deck_ids}))
-    # normalize typographic apostrophes
-    norm = deck_names.replace("’", "'")
-    for label, markers in ARCHETYPE_RULES:
-        for m in markers:
-            if m.replace("’", "'") in norm:
-                return label
-    return "unknown"
+    """Shared label first; anything the table doesn't know gets named from the
+    card data by clustering rather than falling into an opaque "unknown" — a
+    deck nobody wrote a rule for is exactly the one worth seeing in forensics.
+
+    Clustering a single deck degenerates to "the line it runs the most copies
+    of, walked up its evolution chain", which is the right answer here.
+    """
+    global _CARD_META
+    label = classify(set(deck_ids), [names.get(c, str(c)) for c in deck_ids])
+    if label:
+        return label
+    try:
+        if _CARD_META is None:
+            _CARD_META = load_card_meta()
+        return "auto:" + cluster_and_name([list(deck_ids)], _CARD_META)[0]
+    except Exception:
+        return "unknown"
 
 
 def render(replay_path, our_index, names, moves, header_extra=""):
@@ -125,17 +121,40 @@ def render(replay_path, our_index, names, moves, header_extra=""):
     out.append("")
 
     last_turn_printed = -1
-    ko_pending_hp0 = {}   # serial -> name, for pokemon that hit 0 hp
 
-    for i, pair in enumerate(steps):
-        entry = pair[our_index] if our_index < len(pair) else None
-        if not entry:
-            continue
-        obs = entry.get("observation") or {}
-        logs = obs.get("logs") or []
-        cur = obs.get("current")
+    def emit_snapshot(i, cur):
+        nonlocal last_turn_printed
+        if not (cur and cur.get("players")):
+            return
+        turn = cur.get("turn", -1)
+        if turn is None or turn <= last_turn_printed:
+            return
+        last_turn_printed = turn
+        lines = []
+        for tag, pi in (("US ", our_index), ("OPP", opp_index)):
+            p = cur["players"][pi]
+            act = p.get("active") or []
+            if act and act[0]:
+                a = act[0]
+                acts = f"{nm(a['id'])} {a['hp']}/{a['maxHp']}hp E{len(a.get('energies', []))}"
+            else:
+                acts = "none"
+            bench = ", ".join(f"{nm(b['id'])} {b['hp']}hp" for b in p.get("bench", []))
+            prz = len([x for x in (p.get("prize") or [])])
+            lines.append(f"    {tag}: prz_left={prz} active=[{acts}] bench=[{bench}] "
+                         f"hand={p.get('handCount')} deck={p.get('deckCount')}")
+        out.append(f"[s{i:03d}] == board @turn {turn} ==")
+        out.extend(lines)
 
+    def emit_logs(i, logs, skip_keys=None):
+        # obs.logs is refreshed only when the engine prompts the agent; INACTIVE
+        # steps re-serve the same stale window, so callers pass fresh windows only
         for lg in logs:
+            if not isinstance(lg, dict):
+                continue
+            if skip_keys is not None and lg.get("type") not in (2, 3, 22, 23) \
+                    and json.dumps(lg, sort_keys=True) in skip_keys:
+                continue
             t = lg.get("type")
             pi = lg.get("playerIndex", -1)
             if t == 2:
@@ -198,27 +217,53 @@ def render(replay_path, our_index, names, moves, header_extra=""):
                 out.append(f"[s{i:03d}] **** RESULT: {who} — reason: "
                            f"{RESULT_REASON.get(lg.get('reason'), lg.get('reason'))} ****")
 
-        # board snapshot when turn number advances
-        if cur and cur.get("players"):
-            turn = cur.get("turn", -1)
-            if turn is not None and turn > last_turn_printed:
-                last_turn_printed = turn
-                lines = []
-                for tag, pi in (("US ", our_index), ("OPP", opp_index)):
-                    p = cur["players"][pi]
-                    act = p.get("active") or []
-                    if act and act[0]:
-                        a = act[0]
-                        acts = f"{nm(a['id'])} {a['hp']}/{a['maxHp']}hp E{len(a.get('energies', []))}"
-                    else:
-                        acts = "none"
-                    bench = ", ".join(f"{nm(b['id'])} {b['hp']}hp" for b in p.get("bench", []))
-                    prz = len([x for x in (p.get("prize") or [])])
-                    lines.append(f"    {tag}: prz_left={prz} active=[{acts}] bench=[{bench}] "
-                                 f"hand={p.get('handCount')} deck={p.get('deckCount')}")
-                out.append(f"[s{i:03d}] == board @turn {turn} ==")
-                out.extend(lines)
+    # main pass: only FRESH windows of OUR observation (ACTIVE = we are being
+    # prompted right now; a DONE window counts if it differs from the previous one)
+    our_windows = []
+    prev_logs = None
+    last_our_prompt = -1
+    for i, pair in enumerate(steps):
+        entry = pair[our_index] if our_index < len(pair) else None
+        if not isinstance(entry, dict):
+            continue
+        obs = entry.get("observation") or {}
+        logs = obs.get("logs") or []
+        status = entry.get("status")
+        if status == "ACTIVE":
+            last_our_prompt = i
+        elif not (status == "DONE" and logs != prev_logs):
+            continue
+        prev_logs = logs
+        our_windows.append((i, logs))
+        emit_logs(i, logs)
+        emit_snapshot(i, obs.get("current"))
 
+    # tail pass: a game that ends during OPP's turn never reaches our observation —
+    # recover those events from the opponent's fresh windows after our last prompt
+    seen = set()
+    for _, logs in our_windows[-6:]:
+        for lg in logs:
+            if isinstance(lg, dict):
+                seen.add(json.dumps(lg, sort_keys=True))
+    tail_start = len(out)
+    prev_opp = None
+    for i in range(last_our_prompt + 1, len(steps)):
+        pair = steps[i]
+        entry = pair[opp_index] if opp_index < len(pair) else None
+        if not isinstance(entry, dict) or entry.get("status") not in ("ACTIVE", "DONE"):
+            continue
+        obs = entry.get("observation") or {}
+        logs = obs.get("logs") or []
+        if logs == prev_opp:
+            continue
+        prev_opp = logs
+        emit_logs(i, logs, skip_keys=seen)
+        emit_snapshot(i, obs.get("current"))
+    if len(out) > tail_start:
+        out.insert(tail_start, "== ENDGAME после нашего последнего решения "
+                               "(восстановлено из наблюдений соперника) ==")
+
+    out.append(f"**** FINAL: {res} for us ****")
     return "\n".join(out) + "\n"
 
 

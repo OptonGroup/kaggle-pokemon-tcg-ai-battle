@@ -4,7 +4,8 @@ deck contents in the replay JSON (initial deck of the non-our player index) —
 NOT from our own agent's in-game belief/detect_matchup (that can be wrong).
 
 Usage:
-    .venv/bin/python scripts/classify_opponent_archetype.py <out_dir> [--cluster-unknown] [--audit]
+    .venv/bin/python scripts/classify_opponent_archetype.py <out_dir> \
+        [--cluster-unknown] [--audit] [--by-cluster]
     # <out_dir> must contain replays/{episode_id}.json and index.csv
     # (produced by scripts/download_episodes.py)
     #
@@ -15,6 +16,17 @@ Usage:
     #   cross-tab — this is how you check whether the hand-written table below
     #   still matches what the field actually plays (a cluster split across two
     #   labels, or two clusters under one label, means the table has gone stale).
+    # --by-cluster: cluster every opponent deck and print the W/L table keyed by
+    #   CLUSTER instead of by hand-written label. This is what you want whenever
+    #   the audit shows one label covering several clusters: the label's WR is an
+    #   average over decks that play differently (e.g. "crustle" has covered both
+    #   the real Dwebble/Crustle wall and the Great Tusk library-out deck), and
+    #   only the per-cluster split tells you which of them you actually lose to.
+    #   Implied by --audit.
+
+classify() is also the single archetype source of truth for the forensic
+pipeline — scripts/replay_digest.py imports it, so a matchup is named the same
+way in the WR report and in the per-game digests. Add new archetypes HERE only.
 
 Writes <out_dir>/archetype_index.csv and prints a W/L-by-archetype summary,
 plus a W/L-by-opponent-rating-band summary (100-wide bands 0-100..1200-1300,
@@ -50,12 +62,14 @@ ARCHETYPE_IDS = {
 }
 
 # Name-keyword fallback for archetypes not covered by id sets above.
+# ORDER MATTERS — dict insertion order is the match order, so a broad/generic
+# keyword must sit below every specific one it would otherwise swallow.
 NAME_KEYWORDS = {
     "starmie": ["Starmie"],
-    "hop_trevenant": ["Trevenant", "Zacian"],
+    "hop_trevenant": ["Trevenant", "Zacian", "Hop's Cramorant", "Hop's Phantump"],
     "ogerpon": ["Ogerpon"],
     "slowking": ["Slowking"],
-    "dipplin": ["Dipplin", "Hydrapple"],
+    "dipplin": ["Dipplin", "Hydrapple", "Applin"],
     "bellibolt": ["Bellibolt", "Iono"],
     "zoroark": ["Zoroark"],
     "garchomp": ["Garchomp", "Cynthia"],
@@ -65,6 +79,13 @@ NAME_KEYWORDS = {
     "miraidon": ["Miraidon"],
     "gardevoir": ["Gardevoir"],
     "pidgeot": ["Pidgeot"],
+    "ceruledge": ["Ceruledge"],
+    "palafin": ["Palafin"],
+    "lopunny_flygon": ["Mega Lopunny ex", "Flygon ex"],
+    "dunsparce": ["Dunsparce", "Dudunsparce", "Hop's Snorlax"],
+    # Generic tech card, only ever a last resort — see the id-table note above.
+    # Must stay LAST so it never outranks a real archetype's own line.
+    "fezandipiti_multibox": ["Fezandipiti ex"],
 }
 
 
@@ -85,13 +106,19 @@ def find_initial_players(replay):
 
 
 def classify(deck_ids, deck_names):
+    """Archetype label for one 60-card list, or None if nothing matches.
+
+    Card names arrive with typographic apostrophes ("Hop’s Snorlax") while the
+    keyword tables are written with straight ones, so both sides are normalised
+    before matching — otherwise every possessive-named line silently misses.
+    """
     for arche, ids in ARCHETYPE_IDS.items():
-        if deck_ids & ids:
+        if set(deck_ids) & ids:
             return arche
-    joined = " ".join(deck_names)
+    joined = " ".join(deck_names).replace("’", "'")
     for arche, kws in NAME_KEYWORDS.items():
         for kw in kws:
-            if kw in joined:
+            if kw.replace("’", "'") in joined:
                 return arche
     return None
 
@@ -132,6 +159,7 @@ def main():
     args = sys.argv[1:]
     do_cluster = "--cluster-unknown" in args
     do_audit = "--audit" in args
+    do_by_cluster = "--by-cluster" in args or do_audit
     positional = [a for a in args if not a.startswith("--")]
     out_dir = Path(positional[0])
     replay_dir = out_dir / "replays"
@@ -170,9 +198,9 @@ def main():
         print("No episodes in index.csv")
         return
 
-    if do_cluster or do_audit:
+    if do_cluster or do_by_cluster:
         meta = load_card_meta()
-        target = (sorted(opp_decks) if do_audit
+        target = (sorted(opp_decks) if do_by_cluster
                   else [i for i in sorted(opp_decks) if results[i]["archetype"] == "UNKNOWN"])
         labels = cluster_and_name([opp_decks[i] for i in target], meta)
         for i, lab in zip(target, labels):
@@ -210,16 +238,22 @@ def main():
     print(f"Ladder games: {len(ladder)}  W={len(wins)} L={len(losses)}"
           f"  WR={100*len(wins)/len(ladder):.1f}%" if ladder else "No ladder games yet")
 
-    def print_arche_table(rows_w, rows_l):
-        by_arche = Counter(r["archetype"] for r in rows_w + rows_l)
+    def print_arche_table(rows_w, rows_l, key="archetype"):
+        by_arche = Counter(r.get(key) or "?" for r in rows_w + rows_l)
         for arche in sorted(by_arche, key=lambda a: -by_arche[a]):
-            aw = sum(1 for r in rows_w if r["archetype"] == arche)
-            al = sum(1 for r in rows_l if r["archetype"] == arche)
+            aw = sum(1 for r in rows_w if (r.get(key) or "?") == arche)
+            al = sum(1 for r in rows_l if (r.get(key) or "?") == arche)
             total = aw + al
             print(f"  {arche}: {aw}W-{al}L  ({100*aw/total:.0f}%)" if total else f"  {arche}: 0")
 
     print("\n=== COMBINED WR by archetype (W-L, WR%) ===")
     print_arche_table(wins, losses)
+
+    if do_by_cluster:
+        # The label table above averages over every deck sharing a label; this one
+        # splits by what the decks actually ARE. Where the two disagree, trust this.
+        print("\n=== COMBINED WR by cosine cluster (W-L, WR%) ===")
+        print_arche_table(wins, losses, key="cluster")
 
     sub_ids = sorted({r["submission_id"] for r in ladder})
     if len(sub_ids) > 1:
@@ -269,8 +303,9 @@ def main():
     for r in results:
         res = "W" if float(r["our_reward"]) > 0 else ("L" if float(r["our_reward"]) < 0 else "?")
         tag = "(self-val)" if not r.get("opp_team_name") else r["opp_team_name"]
+        clust = f" cluster=[{r['cluster']}]" if r.get("cluster") else ""
         print(f"  ep{r['episode_id']} copy{r['copy']} {res} opp={tag} "
-              f"arche={r['archetype']} cards=[{r['opp_key_cards']}]")
+              f"arche={r['archetype']}{clust} cards=[{r['opp_key_cards']}]")
 
 
 if __name__ == "__main__":
