@@ -4,9 +4,17 @@ deck contents in the replay JSON (initial deck of the non-our player index) —
 NOT from our own agent's in-game belief/detect_matchup (that can be wrong).
 
 Usage:
-    .venv/bin/python scripts/classify_opponent_archetype.py <out_dir>
+    .venv/bin/python scripts/classify_opponent_archetype.py <out_dir> [--cluster-unknown] [--audit]
     # <out_dir> must contain replays/{episode_id}.json and index.csv
     # (produced by scripts/download_episodes.py)
+    #
+    # --cluster-unknown: decks the key-card table doesn't recognise are grouped by
+    #   cosine similarity and named from the card data (auto:<Pokemon>) instead of
+    #   all collapsing into a single opaque "UNKNOWN" bucket.
+    # --audit: also cluster EVERY opponent deck and print a cluster-vs-label
+    #   cross-tab — this is how you check whether the hand-written table below
+    #   still matches what the field actually plays (a cluster split across two
+    #   labels, or two clusters under one label, means the table has gone stale).
 
 Writes <out_dir>/archetype_index.csv and prints a W/L-by-archetype summary,
 plus a W/L-by-opponent-rating-band summary (100-wide bands 0-100..1200-1300,
@@ -19,6 +27,10 @@ import subprocess
 import sys
 from collections import Counter
 from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+
+from cluster_archetypes import cluster_and_name, load_card_meta
 
 # Key-card id sets for archetypes seen so far in this skill-band's meta.
 # Extend this dict when a new archetype shows up as UNKNOWN with unfamiliar key cards
@@ -117,11 +129,16 @@ def rating_band(score):
 def main():
     import json
 
-    out_dir = Path(sys.argv[1])
+    args = sys.argv[1:]
+    do_cluster = "--cluster-unknown" in args
+    do_audit = "--audit" in args
+    positional = [a for a in args if not a.startswith("--")]
+    out_dir = Path(positional[0])
     replay_dir = out_dir / "replays"
     index_csv = out_dir / "index.csv"
     rows = list(csv.DictReader(open(index_csv)))
     results = []
+    opp_decks = {}   # index into results -> that opponent's 60 card IDs
     for row in rows:
         ep_id = row["episode_id"]
         our_index = int(row["our_index"])
@@ -142,6 +159,7 @@ def main():
         arche = classify(deck_ids, deck_names)
         name_counts = Counter(deck_names)
         top_names = ", ".join(f"{n}x{c}" for n, c in name_counts.most_common(6))
+        opp_decks[len(results)] = [c["id"] for c in opp_deck]
         results.append({
             **row,
             "archetype": arche or "UNKNOWN",
@@ -151,6 +169,30 @@ def main():
     if not results:
         print("No episodes in index.csv")
         return
+
+    if do_cluster or do_audit:
+        meta = load_card_meta()
+        target = (sorted(opp_decks) if do_audit
+                  else [i for i in sorted(opp_decks) if results[i]["archetype"] == "UNKNOWN"])
+        labels = cluster_and_name([opp_decks[i] for i in target], meta)
+        for i, lab in zip(target, labels):
+            results[i]["cluster"] = lab
+            if do_cluster and results[i]["archetype"] == "UNKNOWN":
+                results[i]["archetype"] = f"auto:{lab}"
+        for r in results:
+            r.setdefault("cluster", "")
+
+    if do_audit:
+        print("=== AUDIT: cosine clusters vs hand-written labels ===")
+        print("(a cluster spread over several labels, or one label covering several "
+              "clusters, is where the key-card table has drifted from the field)\n")
+        by_cluster = {}
+        for i in sorted(opp_decks):
+            by_cluster.setdefault(results[i]["cluster"], []).append(results[i]["archetype"])
+        for clust, labs in sorted(by_cluster.items(), key=lambda kv: -len(kv[1])):
+            spread = ", ".join(f"{lab} x{n}" for lab, n in Counter(labs).most_common())
+            print(f"  {len(labs):3d} decks  cluster={clust:<28} -> {spread}")
+        print()
 
     out_csv = out_dir / "archetype_index.csv"
     fieldnames = list(results[0].keys())

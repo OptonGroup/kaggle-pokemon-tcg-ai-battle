@@ -18,6 +18,7 @@ harvest_all_teams.py — Пилотный харвест эпизодов все
     --sleep SECS      Пауза между API-вызовами (по умолчанию: 0.5)
 """
 
+import csv
 import subprocess
 import sys
 import os
@@ -70,12 +71,13 @@ def get_leaderboard(min_score: float = 900.0, max_teams: int = 20) -> list[dict]
             elif line.startswith("teamId") or "," in line:
                 data_lines.append(line)
 
-        # Parse CSV rows (skip header)
-        for line in data_lines:
-            if line.startswith("teamId"):
-                continue
-            parts = line.split(",")
-            if len(parts) < 4:
+        # Parse CSV rows (skip header). Use a real CSV reader, not line.split(","):
+        # team names are quoted and some contain commas ("Jhu, Jhe-Yi", "Pikachu, I
+        # choose you!"), which shifts every later field so float(parts[3]) raises and
+        # the team is dropped without a word. Measured: 2 teams silently lost per
+        # 1200 rows of the live leaderboard, one of them inside our own score band.
+        for parts in csv.reader(data_lines):
+            if not parts or parts[0].strip() == "teamId" or len(parts) < 4:
                 continue
             try:
                 team_id = int(parts[0].strip())
