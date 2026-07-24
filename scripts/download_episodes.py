@@ -14,7 +14,7 @@ Produces under <out_dir>:
     replays/{episode_id}.json                     full replays
     agent_logs_raw/{episode_id}-agent-{idx}.json  raw per-step stdout/stderr of OUR agent
     index.csv                                     episode_id, copy, our_index, our_reward,
-                                                  opp team/submission, timestamps
+                                                  opp team/submission/team_id, timestamps
 
 Follow with:
     python3 scripts/extract_agent_logs.py <out_dir>       # decision-trace .txt
@@ -76,6 +76,7 @@ def process_episode(client, copy_label, sub_id, ep, replay_dir, rawlog_dir):
         "our_reward": our_agent.reward,
         "opp_team_name": opp_agent.team_name if opp_agent else None,
         "opp_submission_id": opp_agent.submission_id if opp_agent else None,
+        "opp_team_id": opp_agent.team_id if opp_agent else None,
         "create_time": str(ep.create_time),
         "end_time": str(ep.end_time),
     }

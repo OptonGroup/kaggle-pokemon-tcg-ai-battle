@@ -8,9 +8,14 @@ Usage:
     # <out_dir> must contain replays/{episode_id}.json and index.csv
     # (produced by scripts/download_episodes.py)
 
-Writes <out_dir>/archetype_index.csv and prints a W/L-by-archetype summary.
+Writes <out_dir>/archetype_index.csv and prints a W/L-by-archetype summary,
+plus a W/L-by-opponent-rating-band summary (100-wide bands 0-100..1200-1300,
+bands with 0 games omitted). Rating bands need opp_team_id in index.csv
+(added by download_episodes.py) joined against a public-leaderboard CSV
+snapshot — auto-downloaded into <out_dir> if none is present there yet.
 """
 import csv
+import subprocess
 import sys
 from collections import Counter
 from pathlib import Path
@@ -77,6 +82,36 @@ def classify(deck_ids, deck_names):
             if kw in joined:
                 return arche
     return None
+
+
+def load_leaderboard_scores(out_dir):
+    """Return {team_id: score} from the freshest *leaderboard*.csv in out_dir,
+    downloading one via the Kaggle CLI if none is present yet."""
+    files = sorted(out_dir.glob("*leaderboard*.csv"))
+    if not files:
+        subprocess.run(
+            ["kaggle", "competitions", "leaderboard", "pokemon-tcg-ai-battle",
+             "-d", "-p", str(out_dir)],
+            check=False, capture_output=True,
+        )
+        files = sorted(out_dir.glob("*leaderboard*.csv"))
+    if not files:
+        return {}
+    path = max(files, key=lambda p: p.stat().st_mtime)
+    scores = {}
+    with open(path, encoding="utf-8-sig") as f:
+        for row in csv.DictReader(f):
+            try:
+                scores[int(row["TeamId"])] = float(row["Score"])
+            except (KeyError, ValueError):
+                continue
+    return scores
+
+
+def rating_band(score):
+    lo = int(score // 100) * 100
+    lo = max(0, min(lo, 1200))
+    return f"{lo}-{lo + 100}"
 
 
 def main():
@@ -153,6 +188,40 @@ def main():
             print(f"\n=== submission_id={sid} (copy {','.join(copy_labels)}): "
                   f"{len(sub_w)}W-{len(sub_l)}L ===")
             print_arche_table(sub_w, sub_l)
+
+    scores = load_leaderboard_scores(out_dir)
+    if not scores:
+        print("\n=== WR by opponent rating band: SKIPPED (no leaderboard CSV, could not download) ===")
+    else:
+        for r in ladder:
+            tid = r.get("opp_team_id")
+            r["opp_rating"] = scores.get(int(tid)) if tid else None
+        rated_ids = {r["episode_id"] for r in ladder if r.get("opp_rating") is not None}
+        missing = len(ladder) - len(rated_ids)
+
+        def print_band_table(rows_w, rows_l):
+            by_band = Counter(rating_band(r["opp_rating"]) for r in rows_w + rows_l)
+            for band in sorted(by_band, key=lambda b: int(b.split("-")[0])):
+                bw = sum(1 for r in rows_w if rating_band(r["opp_rating"]) == band)
+                bl = sum(1 for r in rows_l if rating_band(r["opp_rating"]) == band)
+                total = bw + bl
+                if total:
+                    print(f"  {band}: {bw}W-{bl}L  ({100*bw/total:.0f}%)")
+
+        rated_w = [r for r in wins if r["episode_id"] in rated_ids]
+        rated_l = [r for r in losses if r["episode_id"] in rated_ids]
+        print(f"\n=== COMBINED WR by opponent rating band (100-wide, W-L, WR%) "
+              f"[{missing}/{len(ladder)} opponents not on current leaderboard snapshot, excluded] ===")
+        print_band_table(rated_w, rated_l)
+
+        if len(sub_ids) > 1:
+            for sid in sub_ids:
+                copy_labels = sorted({r["copy"] for r in ladder if r["submission_id"] == sid})
+                sub_w = [r for r in rated_w if r["submission_id"] == sid]
+                sub_l = [r for r in rated_l if r["submission_id"] == sid]
+                print(f"\n=== submission_id={sid} (copy {','.join(copy_labels)}) "
+                      f"rating bands: {len(sub_w)}W-{len(sub_l)}L ===")
+                print_band_table(sub_w, sub_l)
 
     print("\n=== Per-episode detail ===")
     for r in results:
