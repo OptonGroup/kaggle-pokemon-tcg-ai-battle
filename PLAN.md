@@ -1218,6 +1218,36 @@ matchup=archaludon_mirror корректно распознан в реальн�
 
 ---
 
+## N — PLAN v073: Rock-Inn zero-damage blindspot (Crustle) (2026-07-24, ⏳ ЗАПЛАНИРОВАНО, не реализовано)
+
+> **Источник:** форензик 17 проигранных live-игр v072_mirror_gauntlet (lucario/crustle/archaludon/
+> starmie), workflow wf_ecd8f7d0-412 + перепроверка на уровне исходного кода. Полный отчёт:
+> `out/v072_wr_check/ANALYSIS_V072_LOSSES_LUCARIO_CRUSTLE_ARCHALUDON_STARMIE.md`.
+
+**Находка (4 из 6 проигранных Crustle-игр: 87852993, 87851393, 87839149, 87845558):** два места
+кода, защищающие 2-призовое тело Grimmsnarl ex (п.2 defensive-swap и п.6 жертвенная дисциплина
+промоушена из v072 §M), слепы к Rock Inn — оба считают, что заряженная ex «успевает ударить
+180 перед смертью», хотя против активного Crustle (345) Shadow Bullet даёт 0 реального урона.
+`ko_guard` эту зануляющую проверку уже делает правильно — эти два места её не переиспользуют.
+
+- [ ] **Баг A** `_promotion_guard` (`main.py:697-712`, флаг `dies_free`): добавить Rock-Inn
+      зануление в условие «заряженная ex не уступает фодеру» — при активном Crustle заряженность
+      не должна спасать 2-призовое тело от жертвенного ранжирования.
+- [ ] **Баг B** `score_retreat` defensive-swap, `our_lethal` (`scoring_grimmsnarl.py:1093-1097`):
+      `boss_attacker_damage()` возвращает сырые 180 без учёта Rock Inn → `our_lethal` ложно = True
+      против Crustle (150hp база, `180≥150` почти всегда), весь блок защитного свопа пропускается.
+      Применить то же зануление, что в `ko_guard` (`my_active_id==GRIMMSNARL and opp_active_id==CRUSTLE_ID → 0`).
+- Скоуп: только матчап crustle (detect_matchup), обе правки затрагивают исключительно ветки,
+  уже гейтящиеся на заряженную Grimmsnarl ex vs активный Crustle — риск регрессий в других
+  матчапах минимален.
+- Acceptance: узкий регрессионный гейт (crustle-only пул, N≥500) — 0 регрессий vs v072 на
+  остальных матчапах, устранение живого паттерна «своя заряженная ex промоутится/остаётся в
+  active под Rock-Inn OHKO без реальной атаки в ответ» на разобранных эпизодах.
+- Lucario/Archaludon/Starmie — **не входят в §N**: форензик подтвердил чистые структурные стены
+  без code-level находок (см. отчёт), точечный фикс им не поможет.
+
+---
+
 ## S — SEARCH PIVOT: PIMC on Crustle (CLOSED 2026-07-05: S4a≈0.50, S4b −0.40/−0.15 → superseded by §H)
 
 > **Why:** BC/IL is capped ~930 and decayed to 760; top-1 = 1223. Imitation can't exceed the expert. The engine's
