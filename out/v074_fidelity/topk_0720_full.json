@@ -1,0 +1,541 @@
+{
+  "totals": {
+    "episodes_scanned": 567,
+    "episodes_kept": 572,
+    "episodes_impure": 0,
+    "decisions": 48044,
+    "match": 28177,
+    "agent_exceptions": 0
+  },
+  "overall_match_rate": 0.5865,
+  "headline_categories": {
+    "other": {
+      "n_decisions": 29898,
+      "exact_match_rate": 0.5507,
+      "semantic_match_rate": 0.5916,
+      "n_resolvable": 21703,
+      "chance_floor_mean": 0.3399,
+      "lift": 0.2108,
+      "fallback_share": 0.0027
+    },
+    "energy": {
+      "n_decisions": 2019,
+      "exact_match_rate": 0.5438,
+      "semantic_match_rate": 0.6119,
+      "n_resolvable": 2015,
+      "chance_floor_mean": 0.1205,
+      "lift": 0.4234,
+      "fallback_share": 0.0
+    },
+    "adrena-target": {
+      "n_decisions": 11560,
+      "exact_match_rate": 0.6943,
+      "semantic_match_rate": 0.864,
+      "n_resolvable": 9471,
+      "chance_floor_mean": 0.3127,
+      "lift": 0.3816,
+      "fallback_share": 0.0
+    },
+    "attack": {
+      "n_decisions": 2143,
+      "exact_match_rate": 0.5408,
+      "semantic_match_rate": 0.5434,
+      "n_resolvable": 2133,
+      "chance_floor_mean": 0.2601,
+      "lift": 0.2808,
+      "fallback_share": 0.0
+    },
+    "retreat/positioning": {
+      "n_decisions": 2219,
+      "exact_match_rate": 0.5953,
+      "semantic_match_rate": 0.6028,
+      "n_resolvable": 2218,
+      "chance_floor_mean": 0.2915,
+      "lift": 0.3038,
+      "fallback_share": 0.0
+    },
+    "boss-target": {
+      "n_decisions": 205,
+      "exact_match_rate": 0.5317,
+      "semantic_match_rate": 0.6146,
+      "n_resolvable": 205,
+      "chance_floor_mean": 0.3347,
+      "lift": 0.197,
+      "fallback_share": 0.0
+    }
+  },
+  "granular_categories": {
+    "play-support": {
+      "headline": "other",
+      "n_decisions": 8976,
+      "exact_match_rate": 0.4354,
+      "semantic_match_rate": 0.4365,
+      "n_resolvable": 8967,
+      "chance_floor_mean": 0.182,
+      "lift": 0.2534,
+      "n_single_select": 8976,
+      "mean_n_options": 7.06,
+      "fallback_share": 0.0,
+      "path_distribution": {
+        "scorer": 6216,
+        "adrena_trigger": 1702,
+        "munkidori_energy": 1040,
+        "energy_attach": 12,
+        "ko_lethal": 6
+      }
+    },
+    "ctx:TO_HAND": {
+      "headline": "other",
+      "n_decisions": 7007,
+      "exact_match_rate": 0.5078,
+      "semantic_match_rate": 0.5197,
+      "n_resolvable": 633,
+      "chance_floor_mean": 0.3106,
+      "lift": 0.1971,
+      "n_single_select": 6667,
+      "mean_n_options": 6.17,
+      "fallback_share": 0.0,
+      "path_distribution": {
+        "scorer": 7007
+      }
+    },
+    "ability(adrena-trigger)": {
+      "headline": "adrena-target",
+      "n_decisions": 4503,
+      "exact_match_rate": 0.5408,
+      "semantic_match_rate": 0.9818,
+      "n_resolvable": 2414,
+      "chance_floor_mean": 0.1722,
+      "lift": 0.3686,
+      "n_single_select": 4503,
+      "mean_n_options": 7.57,
+      "fallback_share": 0.0,
+      "path_distribution": {
+        "adrena_trigger": 2938,
+        "scorer": 1283,
+        "munkidori_energy": 236,
+        "ko_lethal": 44,
+        "energy_attach": 2
+      }
+    },
+    "ctx:ATTACH_FROM": {
+      "headline": "other",
+      "n_decisions": 3046,
+      "exact_match_rate": 0.758,
+      "semantic_match_rate": 0.7748,
+      "n_resolvable": 3046,
+      "chance_floor_mean": 0.4796,
+      "lift": 0.2784,
+      "n_single_select": 3046,
+      "mean_n_options": 2.37,
+      "fallback_share": 0.0,
+      "path_distribution": {
+        "scorer": 3046
+      }
+    },
+    "adrena-source(remove-own)": {
+      "headline": "adrena-target",
+      "n_decisions": 2414,
+      "exact_match_rate": 0.8227,
+      "semantic_match_rate": 0.8484,
+      "n_resolvable": 2414,
+      "chance_floor_mean": 0.574,
+      "lift": 0.2487,
+      "n_single_select": 2414,
+      "mean_n_options": 2.26,
+      "fallback_share": 0.0,
+      "path_distribution": {
+        "adrena_seq": 2370,
+        "scorer": 44
+      }
+    },
+    "adrena-target(place-on-opp)": {
+      "headline": "adrena-target",
+      "n_decisions": 2414,
+      "exact_match_rate": 0.5936,
+      "semantic_match_rate": 0.6599,
+      "n_resolvable": 2414,
+      "chance_floor_mean": 0.2589,
+      "lift": 0.3347,
+      "n_single_select": 2414,
+      "mean_n_options": 4.62,
+      "fallback_share": 0.0,
+      "path_distribution": {
+        "adrena_seq": 2185,
+        "scorer": 229
+      }
+    },
+    "adrena-count": {
+      "headline": "adrena-target",
+      "n_decisions": 2229,
+      "exact_match_rate": 0.9744,
+      "semantic_match_rate": 0.9744,
+      "n_resolvable": 2229,
+      "chance_floor_mean": 0.3721,
+      "lift": 0.6023,
+      "n_single_select": 2229,
+      "mean_n_options": 2.77,
+      "fallback_share": 0.0,
+      "path_distribution": {
+        "adrena_seq": 2185,
+        "scorer": 44
+      }
+    },
+    "evolve": {
+      "headline": "other",
+      "n_decisions": 2198,
+      "exact_match_rate": 0.4177,
+      "semantic_match_rate": 0.4531,
+      "n_resolvable": 2198,
+      "chance_floor_mean": 0.1597,
+      "lift": 0.2579,
+      "n_single_select": 2198,
+      "mean_n_options": 8.12,
+      "fallback_share": 0.0,
+      "path_distribution": {
+        "scorer": 1415,
+        "adrena_trigger": 521,
+        "munkidori_energy": 257,
+        "ko_lethal": 3,
+        "energy_attach": 2
+      }
+    },
+    "attack": {
+      "headline": "attack",
+      "n_decisions": 2143,
+      "exact_match_rate": 0.5408,
+      "semantic_match_rate": 0.5434,
+      "n_resolvable": 2133,
+      "chance_floor_mean": 0.2601,
+      "lift": 0.2808,
+      "n_single_select": 2143,
+      "mean_n_options": 5.0,
+      "fallback_share": 0.0,
+      "path_distribution": {
+        "scorer": 1904,
+        "ko_lethal": 202,
+        "adrena_trigger": 29,
+        "munkidori_energy": 8
+      }
+    },
+    "energy-attach": {
+      "headline": "energy",
+      "n_decisions": 2019,
+      "exact_match_rate": 0.5438,
+      "semantic_match_rate": 0.6119,
+      "n_resolvable": 2015,
+      "chance_floor_mean": 0.1205,
+      "lift": 0.4234,
+      "n_single_select": 2019,
+      "mean_n_options": 9.82,
+      "fallback_share": 0.0,
+      "path_distribution": {
+        "munkidori_energy": 1141,
+        "scorer": 558,
+        "adrena_trigger": 299,
+        "energy_attach": 16,
+        "ko_lethal": 5
+      }
+    },
+    "ctx:DAMAGE": {
+      "headline": "other",
+      "n_decisions": 1901,
+      "exact_match_rate": 0.6002,
+      "semantic_match_rate": 0.6191,
+      "n_resolvable": 1901,
+      "chance_floor_mean": 0.3124,
+      "lift": 0.2878,
+      "n_single_select": 1901,
+      "mean_n_options": 3.81,
+      "fallback_share": 0.0,
+      "path_distribution": {
+        "scorer": 1901
+      }
+    },
+    "promotion/switch(own)": {
+      "headline": "retreat/positioning",
+      "n_decisions": 1765,
+      "exact_match_rate": 0.6289,
+      "semantic_match_rate": 0.638,
+      "n_resolvable": 1765,
+      "chance_floor_mean": 0.2942,
+      "lift": 0.3347,
+      "n_single_select": 1765,
+      "mean_n_options": 3.93,
+      "fallback_share": 0.0,
+      "path_distribution": {
+        "promotion": 1765
+      }
+    },
+    "end-turn": {
+      "headline": "other",
+      "n_decisions": 1368,
+      "exact_match_rate": 0.5958,
+      "semantic_match_rate": 0.5993,
+      "n_resolvable": 1360,
+      "chance_floor_mean": 0.6996,
+      "lift": -0.1038,
+      "n_single_select": 1368,
+      "mean_n_options": 2.03,
+      "fallback_share": 0.0,
+      "path_distribution": {
+        "scorer": 1356,
+        "energy_attach": 6,
+        "munkidori_energy": 3,
+        "adrena_trigger": 3
+      }
+    },
+    "ctx:ACTIVATE": {
+      "headline": "other",
+      "n_decisions": 1233,
+      "exact_match_rate": 0.9781,
+      "semantic_match_rate": 0.9781,
+      "n_resolvable": 1233,
+      "chance_floor_mean": 0.5,
+      "lift": 0.4781,
+      "n_single_select": 1233,
+      "mean_n_options": 2.0,
+      "fallback_share": 0.0,
+      "path_distribution": {
+        "scorer": 1233
+      }
+    },
+    "ctx:ATTACH_TO": {
+      "headline": "other",
+      "n_decisions": 1141,
+      "exact_match_rate": 0.2743,
+      "semantic_match_rate": null,
+      "n_resolvable": 0,
+      "chance_floor_mean": 1.0,
+      "lift": -0.7257,
+      "n_single_select": 341,
+      "mean_n_options": 4.94,
+      "fallback_share": 0.0,
+      "path_distribution": {
+        "scorer": 1141
+      }
+    },
+    "ctx:TO_BENCH": {
+      "headline": "other",
+      "n_decisions": 661,
+      "exact_match_rate": 0.4372,
+      "semantic_match_rate": null,
+      "n_resolvable": 0,
+      "chance_floor_mean": 0.8328,
+      "lift": -0.3956,
+      "n_single_select": 226,
+      "mean_n_options": 3.15,
+      "fallback_share": 0.0,
+      "path_distribution": {
+        "scorer": 661
+      }
+    },
+    "ctx:SETUP_ACTIVE": {
+      "headline": "other",
+      "n_decisions": 572,
+      "exact_match_rate": 0.7902,
+      "semantic_match_rate": 0.792,
+      "n_resolvable": 572,
+      "chance_floor_mean": 0.7379,
+      "lift": 0.0523,
+      "n_single_select": 572,
+      "mean_n_options": 1.62,
+      "fallback_share": 0.0,
+      "path_distribution": {
+        "scorer": 572
+      }
+    },
+    "ctx:EVOLVE": {
+      "headline": "other",
+      "n_decisions": 567,
+      "exact_match_rate": 0.9771,
+      "semantic_match_rate": 1.0,
+      "n_resolvable": 567,
+      "chance_floor_mean": 0.6271,
+      "lift": 0.35,
+      "n_single_select": 567,
+      "mean_n_options": 2.14,
+      "fallback_share": 0.0,
+      "path_distribution": {
+        "scorer": 567
+      }
+    },
+    "ctx:DISCARD_ENERGY": {
+      "headline": "other",
+      "n_decisions": 505,
+      "exact_match_rate": 0.9881,
+      "semantic_match_rate": 1.0,
+      "n_resolvable": 505,
+      "chance_floor_mean": 0.8814,
+      "lift": 0.1067,
+      "n_single_select": 505,
+      "mean_n_options": 1.3,
+      "fallback_share": 0.0,
+      "path_distribution": {
+        "scorer": 505
+      }
+    },
+    "retreat": {
+      "headline": "retreat/positioning",
+      "n_decisions": 454,
+      "exact_match_rate": 0.4648,
+      "semantic_match_rate": 0.4658,
+      "n_resolvable": 453,
+      "chance_floor_mean": 0.2812,
+      "lift": 0.1836,
+      "n_single_select": 454,
+      "mean_n_options": 5.0,
+      "fallback_share": 0.0,
+      "path_distribution": {
+        "scorer": 387,
+        "adrena_trigger": 66,
+        "munkidori_energy": 1
+      }
+    },
+    "ctx:DISCARD": {
+      "headline": "other",
+      "n_decisions": 227,
+      "exact_match_rate": 0.1322,
+      "semantic_match_rate": 0.1322,
+      "n_resolvable": 227,
+      "chance_floor_mean": 0.0933,
+      "lift": 0.0389,
+      "n_single_select": 48,
+      "mean_n_options": 6.06,
+      "fallback_share": 0.0,
+      "path_distribution": {
+        "scorer": 227
+      }
+    },
+    "boss/gust-target(opp)": {
+      "headline": "boss-target",
+      "n_decisions": 205,
+      "exact_match_rate": 0.5317,
+      "semantic_match_rate": 0.6146,
+      "n_resolvable": 205,
+      "chance_floor_mean": 0.3347,
+      "lift": 0.197,
+      "n_single_select": 205,
+      "mean_n_options": 3.68,
+      "fallback_share": 0.0,
+      "path_distribution": {
+        "scorer": 205
+      }
+    },
+    "ctx:SKILL_ORDER": {
+      "headline": "other",
+      "n_decisions": 187,
+      "exact_match_rate": 1.0,
+      "semantic_match_rate": 1.0,
+      "n_resolvable": 187,
+      "chance_floor_mean": 1.0,
+      "lift": 0.0,
+      "n_single_select": 0,
+      "mean_n_options": 2.0,
+      "fallback_share": 0.0,
+      "path_distribution": {
+        "scorer": 187
+      }
+    },
+    "ctx:DRAW_COUNT": {
+      "headline": "other",
+      "n_decisions": 131,
+      "exact_match_rate": 1.0,
+      "semantic_match_rate": 1.0,
+      "n_resolvable": 131,
+      "chance_floor_mean": 0.4592,
+      "lift": 0.5408,
+      "n_single_select": 131,
+      "mean_n_options": 2.3,
+      "fallback_share": 0.0,
+      "path_distribution": {
+        "scorer": 131
+      }
+    },
+    "ctx:SWITCH_ENERGY": {
+      "headline": "other",
+      "n_decisions": 94,
+      "exact_match_rate": 0.8191,
+      "semantic_match_rate": 1.0,
+      "n_resolvable": 94,
+      "chance_floor_mean": 0.5277,
+      "lift": 0.2915,
+      "n_single_select": 94,
+      "mean_n_options": 2.27,
+      "fallback_share": 0.0,
+      "path_distribution": {
+        "scorer": 94
+      }
+    },
+    "ctx:SETUP_BENCH": {
+      "headline": "other",
+      "n_decisions": 81,
+      "exact_match_rate": 0.9259,
+      "semantic_match_rate": 0.9259,
+      "n_resolvable": 81,
+      "chance_floor_mean": 1.0,
+      "lift": -0.0741,
+      "n_single_select": 78,
+      "mean_n_options": 1.19,
+      "fallback_share": 1.0,
+      "path_distribution": {
+        "trivial_fallback": 81
+      }
+    },
+    "ctx:EVOLVES_TO": {
+      "headline": "other",
+      "n_decisions": 2,
+      "exact_match_rate": 0.5,
+      "semantic_match_rate": null,
+      "n_resolvable": 0,
+      "chance_floor_mean": 0.6667,
+      "lift": -0.1667,
+      "n_single_select": 2,
+      "mean_n_options": 2.0,
+      "fallback_share": 0.0,
+      "path_distribution": {
+        "scorer": 2
+      }
+    },
+    "ctx:EVOLVES_FROM": {
+      "headline": "other",
+      "n_decisions": 1,
+      "exact_match_rate": 1.0,
+      "semantic_match_rate": 1.0,
+      "n_resolvable": 1,
+      "chance_floor_mean": 1.0,
+      "lift": 0.0,
+      "n_single_select": 1,
+      "mean_n_options": 1.0,
+      "fallback_share": 0.0,
+      "path_distribution": {
+        "scorer": 1
+      }
+    }
+  },
+  "by_expert_name": {
+    "bono": {
+      "n": 15656,
+      "match_rate": 0.6242
+    },
+    "jiatu.l": {
+      "n": 32388,
+      "match_rate": 0.5682
+    }
+  },
+  "by_expert_won": {
+    "lost": {
+      "n": 20587,
+      "match_rate": 0.5703
+    },
+    "won": {
+      "n": 27457,
+      "match_rate": 0.5986
+    }
+  },
+  "wall_sec": 56.5,
+  "candidate": "v074_fullmetal",
+  "days": [
+    "2026-07-20"
+  ]
+}
