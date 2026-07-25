@@ -495,6 +495,9 @@ CORE_PAIRS = [
     dict(key="ext_prvsiyan_alak_v9", opp_dir=resolve_dir("submissions/external_prvsiyan_alakazam_v9"), baseline=None),
     dict(key="ext_maulikgajera_lucario", opp_dir=resolve_dir("submissions/external_maulikgajera_lucario"), baseline=None),
     dict(key="ext_nursrijan_lucario", opp_dir=resolve_dir("submissions/external_nursrijan_lucario"), baseline=None),
+    # [запрос юзера 2026-07-23] прямой конкурент нашей архетип-ниши — prvsiyan
+    # Grimmsnarl replay-hybrid (attention-BC на 125 публичных реплеях).
+    dict(key="ext_prvsiyan_grimmsnarl_hybrid", opp_dir=resolve_dir("submissions/external_prvsiyan_grimmsnarl_hybrid"), baseline=None),
     # [запрос юзера 2026-07-22] head-to-head против v036_archaludon_patched (справочный, baseline=None)
     dict(key="v036_h2h", opp_dir=MAIN_REPO + "/submissions/v036_archaludon_patched", baseline=None),
 ]

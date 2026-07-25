@@ -18,6 +18,7 @@ CANDIDATE_DIR = g.resolve_dir("submissions/external_prvsiyan_grimmsnarl_hybrid")
 
 PAIRS = list(g.CORE_PAIRS) + [
     dict(key="v064_h2h", opp_dir=g.resolve_dir("submissions/v064_starmie_scaling"), baseline=None),
+    dict(key="v065_h2h", opp_dir=g.resolve_dir("submissions/v065_defensive_swap"), baseline=None),
 ]
 
 

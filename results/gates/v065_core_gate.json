@@ -3,7 +3,7 @@
   "agent": {
     "ckpt": null,
     "agent_dir": "v065_defensive_swap",
-    "deck": "/Users/max/kaggle-pokemon-tcg-ai-battle/.claude/worktrees/v065-defensive-swap/submissions/v065_defensive_swap/deck.csv",
+    "deck": "/Users/max/kaggle-pokemon-tcg-ai-battle/.claude/worktrees/grimmsnarl-hybrid-vs-v065/submissions/v065_defensive_swap/deck.csv",
     "label": "submission:v065_defensive_swap"
   },
   "agent_ckpt_exceptions": null,
@@ -283,8 +283,31 @@
       "timeouts": 0,
       "crashes": 0,
       "elapsed_s": 25.347875118255615
+    },
+    "ext_prvsiyan_grimmsnarl_hybrid": {
+      "opponent": "ext_prvsiyan_grimmsnarl_hybrid",
+      "opponent_dir": "sub:/Users/max/kaggle-pokemon-tcg-ai-battle/.claude/worktrees/grimmsnarl-hybrid-vs-v065/submissions/external_prvsiyan_grimmsnarl_hybrid",
+      "n_games": 1000,
+      "wins": 416,
+      "losses": 580,
+      "draws": 4,
+      "win_rate": 0.418,
+      "wilson95_lo": 0.38780002102026195,
+      "wilson95_hi": 0.44882759034790615,
+      "decisive_win_rate": 0.41767068273092367,
+      "decisive_n": 996,
+      "avg_game_length": 167.068,
+      "min_game_length": 32,
+      "max_game_length": 267,
+      "exc_agent": 0,
+      "exc_opp": 0,
+      "illegal_agent": 0,
+      "illegal_opp": 0,
+      "timeouts": 0,
+      "crashes": 0,
+      "elapsed_s": 22.926492929458618
     }
   },
-  "overall_win_rate": 0.454875,
-  "generated": "2026-07-23 10:52:46"
+  "overall_win_rate": 0.45203846153846156,
+  "generated": "2026-07-23 11:45:01"
 }

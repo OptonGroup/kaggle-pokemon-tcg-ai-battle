@@ -303,6 +303,29 @@
       "timeouts": 0,
       "crashes": 0,
       "elapsed_s": 48.88605284690857
+    },
+    "v065_h2h": {
+      "opponent": "v065_h2h",
+      "opponent_dir": "sub:/Users/max/kaggle-pokemon-tcg-ai-battle/.claude/worktrees/grimmsnarl-hybrid-vs-v065/submissions/v065_defensive_swap",
+      "n_games": 1000,
+      "wins": 612,
+      "losses": 386,
+      "draws": 2,
+      "win_rate": 0.613,
+      "wilson95_lo": 0.582433759131263,
+      "wilson95_hi": 0.6427013617882128,
+      "decisive_win_rate": 0.6132264529058116,
+      "decisive_n": 998,
+      "avg_game_length": 165.807,
+      "min_game_length": 29,
+      "max_game_length": 299,
+      "exc_agent": 0,
+      "exc_opp": 0,
+      "illegal_agent": 0,
+      "illegal_opp": 0,
+      "timeouts": 0,
+      "crashes": 0,
+      "elapsed_s": 23.510572910308838
     }
   }
 }
