@@ -1,0 +1,801 @@
+{
+  "candidate": "v074_fullmetal",
+  "day": "2026-07-20",
+  "expert_attacked_MAIN_decisions": {
+    "pilot_agreed_attacked": 1159,
+    "divergences_scored": 947,
+    "divergences_guard_or_unscored": 37
+  },
+  "of_scored_divergences": {
+    "intends_attack_later": 810,
+    "intends_attack_pct": 0.8553,
+    "real_miss": 137,
+    "real_miss_pct": 0.1447
+  },
+  "attack_score_median": {
+    "intends_attack": 180,
+    "real_miss": -5000
+  },
+  "samples": [
+    {
+      "episodeId": "5247be6c-83ce-11f1-ba67-0242ac130204",
+      "turn": 12,
+      "won": false,
+      "attack_idx": 6,
+      "attack_score": 360,
+      "end_score": 0,
+      "our": [
+        0
+      ],
+      "our_score": 20000,
+      "class": "intends_attack"
+    },
+    {
+      "episodeId": "56178e50-83ce-11f1-929f-0242ac130203",
+      "turn": 5,
+      "won": true,
+      "attack_idx": 2,
+      "attack_score": 180,
+      "end_score": 0,
+      "our": [
+        0
+      ],
+      "our_score": 20000,
+      "class": "intends_attack"
+    },
+    {
+      "episodeId": "56178e50-83ce-11f1-929f-0242ac130203",
+      "turn": 9,
+      "won": true,
+      "attack_idx": 2,
+      "attack_score": 180,
+      "end_score": 0,
+      "our": [
+        0
+      ],
+      "our_score": 6000,
+      "class": "intends_attack"
+    },
+    {
+      "episodeId": "e9e2413e-83ce-11f1-b317-0242ac130203",
+      "turn": 3,
+      "won": true,
+      "attack_idx": 3,
+      "attack_score": 180,
+      "end_score": 0,
+      "our": [
+        2
+      ],
+      "our_score": 5200,
+      "class": "intends_attack"
+    },
+    {
+      "episodeId": "e9e2413e-83ce-11f1-b317-0242ac130203",
+      "turn": 5,
+      "won": true,
+      "attack_idx": 6,
+      "attack_score": 180,
+      "end_score": 0,
+      "our": [
+        0
+      ],
+      "our_score": 18000,
+      "class": "intends_attack"
+    },
+    {
+      "episodeId": "e9e2413e-83ce-11f1-b317-0242ac130203",
+      "turn": 7,
+      "won": true,
+      "attack_idx": 7,
+      "attack_score": 180,
+      "end_score": 0,
+      "our": [
+        6
+      ],
+      "our_score": 6000,
+      "class": "intends_attack"
+    },
+    {
+      "episodeId": "e9e2413e-83ce-11f1-b317-0242ac130203",
+      "turn": 9,
+      "won": true,
+      "attack_idx": 1,
+      "attack_score": 180,
+      "end_score": 0,
+      "our": [
+        0
+      ],
+      "our_score": 20000,
+      "class": "intends_attack"
+    },
+    {
+      "episodeId": "7053e970-83cf-11f1-a1f1-0242ac130203",
+      "turn": 8,
+      "won": true,
+      "attack_idx": 3,
+      "attack_score": 180,
+      "end_score": 0,
+      "our": [
+        1
+      ],
+      "our_score": 20000,
+      "class": "intends_attack"
+    },
+    {
+      "episodeId": "7053e970-83cf-11f1-a1f1-0242ac130203",
+      "turn": 10,
+      "won": true,
+      "attack_idx": 16,
+      "attack_score": 360,
+      "end_score": 0,
+      "our": [
+        3
+      ],
+      "our_score": 21000,
+      "class": "intends_attack"
+    },
+    {
+      "episodeId": "6695e6ea-83cf-11f1-ad46-0242ac130204",
+      "turn": 4,
+      "won": true,
+      "attack_idx": 1,
+      "attack_score": -100,
+      "end_score": 0,
+      "our": [
+        0
+      ],
+      "our_score": 100,
+      "class": "real_miss"
+    },
+    {
+      "episodeId": "6695e6ea-83cf-11f1-ad46-0242ac130204",
+      "turn": 8,
+      "won": true,
+      "attack_idx": 6,
+      "attack_score": 360,
+      "end_score": 0,
+      "our": [
+        5
+      ],
+      "our_score": 12000,
+      "class": "intends_attack"
+    },
+    {
+      "episodeId": "6695e6ea-83cf-11f1-ad46-0242ac130204",
+      "turn": 12,
+      "won": true,
+      "attack_idx": 1,
+      "attack_score": 360,
+      "end_score": 0,
+      "our": [
+        0
+      ],
+      "our_score": 6000,
+      "class": "intends_attack"
+    },
+    {
+      "episodeId": "fe69ff06-83cf-11f1-9a3a-0242ac130202",
+      "turn": 4,
+      "won": true,
+      "attack_idx": 1,
+      "attack_score": 360,
+      "end_score": 0,
+      "our": [
+        0
+      ],
+      "our_score": 18000,
+      "class": "intends_attack"
+    },
+    {
+      "episodeId": "ffb375ae-83cf-11f1-93ad-0242ac130203",
+      "turn": 7,
+      "won": true,
+      "attack_idx": 6,
+      "attack_score": 360,
+      "end_score": 0,
+      "our": [
+        0
+      ],
+      "our_score": 20000,
+      "class": "intends_attack"
+    },
+    {
+      "episodeId": "8e76248a-83d0-11f1-b1c3-0242ac130202",
+      "turn": 7,
+      "won": false,
+      "attack_idx": 5,
+      "attack_score": 180,
+      "end_score": 0,
+      "our": [
+        3
+      ],
+      "our_score": 5200,
+      "class": "intends_attack"
+    },
+    {
+      "episodeId": "8e7904ac-83d0-11f1-b090-0242ac130204",
+      "turn": 6,
+      "won": true,
+      "attack_idx": 2,
+      "attack_score": 180,
+      "end_score": 0,
+      "our": [
+        0
+      ],
+      "our_score": 12000,
+      "class": "intends_attack"
+    },
+    {
+      "episodeId": "8e7904ac-83d0-11f1-b090-0242ac130204",
+      "turn": 8,
+      "won": true,
+      "attack_idx": 1,
+      "attack_score": -100,
+      "end_score": 0,
+      "our": [
+        0
+      ],
+      "our_score": 100,
+      "class": "real_miss"
+    },
+    {
+      "episodeId": "8e7904ac-83d0-11f1-b090-0242ac130204",
+      "turn": 12,
+      "won": true,
+      "attack_idx": 3,
+      "attack_score": 360,
+      "end_score": 0,
+      "our": [
+        0
+      ],
+      "our_score": 12000,
+      "class": "intends_attack"
+    },
+    {
+      "episodeId": "8a1d403a-83d0-11f1-8074-0242ac130203",
+      "turn": 12,
+      "won": false,
+      "attack_idx": 3,
+      "attack_score": 360,
+      "end_score": 0,
+      "our": [
+        0
+      ],
+      "our_score": 2800,
+      "class": "intends_attack"
+    },
+    {
+      "episodeId": "a88ffdcc-83d1-11f1-a9ae-0242ac130203",
+      "turn": 5,
+      "won": false,
+      "attack_idx": 1,
+      "attack_score": 360,
+      "end_score": 0,
+      "our": [
+        0
+      ],
+      "our_score": 20000,
+      "class": "intends_attack"
+    },
+    {
+      "episodeId": "a88ffdcc-83d1-11f1-a9ae-0242ac130203",
+      "turn": 7,
+      "won": false,
+      "attack_idx": 1,
+      "attack_score": 360,
+      "end_score": 0,
+      "our": [
+        0
+      ],
+      "our_score": 20000,
+      "class": "intends_attack"
+    },
+    {
+      "episodeId": "a88ffdcc-83d1-11f1-a9ae-0242ac130203",
+      "turn": 9,
+      "won": false,
+      "attack_idx": 0,
+      "attack_score": 360,
+      "end_score": 0,
+      "our": [
+        1
+      ],
+      "our_score": 7000,
+      "class": "intends_attack"
+    },
+    {
+      "episodeId": "aca7f978-83d1-11f1-9364-0242ac130202",
+      "turn": 5,
+      "won": true,
+      "attack_idx": 1,
+      "attack_score": 360,
+      "end_score": 0,
+      "our": [
+        0
+      ],
+      "our_score": 20000,
+      "class": "intends_attack"
+    },
+    {
+      "episodeId": "aca7f978-83d1-11f1-9364-0242ac130202",
+      "turn": 7,
+      "won": true,
+      "attack_idx": 1,
+      "attack_score": 360,
+      "end_score": 0,
+      "our": [
+        0
+      ],
+      "our_score": 20000,
+      "class": "intends_attack"
+    },
+    {
+      "episodeId": "aca7f978-83d1-11f1-9364-0242ac130202",
+      "turn": 9,
+      "won": true,
+      "attack_idx": 1,
+      "attack_score": 360,
+      "end_score": 0,
+      "our": [
+        0
+      ],
+      "our_score": 20000,
+      "class": "intends_attack"
+    },
+    {
+      "episodeId": "a99a613a-83d1-11f1-9da7-0242ac130203",
+      "turn": 4,
+      "won": false,
+      "attack_idx": 7,
+      "attack_score": 180,
+      "end_score": 0,
+      "our": [
+        0
+      ],
+      "our_score": 2800,
+      "class": "intends_attack"
+    },
+    {
+      "episodeId": "a99a613a-83d1-11f1-9da7-0242ac130203",
+      "turn": 6,
+      "won": false,
+      "attack_idx": 1,
+      "attack_score": 180,
+      "end_score": 0,
+      "our": [
+        0
+      ],
+      "our_score": 18000,
+      "class": "intends_attack"
+    },
+    {
+      "episodeId": "addc074e-83d1-11f1-8535-0242ac130203",
+      "turn": 7,
+      "won": true,
+      "attack_idx": 1,
+      "attack_score": -5000,
+      "end_score": 0,
+      "our": [
+        3
+      ],
+      "our_score": 0,
+      "class": "real_miss"
+    },
+    {
+      "episodeId": "4cfa441c-83d2-11f1-941b-0242ac130203",
+      "turn": 3,
+      "won": true,
+      "attack_idx": 12,
+      "attack_score": 360,
+      "end_score": 0,
+      "our": [
+        0
+      ],
+      "our_score": 2800,
+      "class": "intends_attack"
+    },
+    {
+      "episodeId": "4cfa441c-83d2-11f1-941b-0242ac130203",
+      "turn": 7,
+      "won": true,
+      "attack_idx": 1,
+      "attack_score": 180,
+      "end_score": 0,
+      "our": [
+        0
+      ],
+      "our_score": 20000,
+      "class": "intends_attack"
+    },
+    {
+      "episodeId": "4cfa441c-83d2-11f1-941b-0242ac130203",
+      "turn": 9,
+      "won": true,
+      "attack_idx": 9,
+      "attack_score": 360,
+      "end_score": 0,
+      "our": [
+        0
+      ],
+      "our_score": 20000,
+      "class": "intends_attack"
+    },
+    {
+      "episodeId": "ceb57b20-83d2-11f1-adf1-0242ac130202",
+      "turn": 7,
+      "won": true,
+      "attack_idx": 1,
+      "attack_score": 180,
+      "end_score": 0,
+      "our": [
+        0
+      ],
+      "our_score": 21000,
+      "class": "intends_attack"
+    },
+    {
+      "episodeId": "ceb57b20-83d2-11f1-adf1-0242ac130202",
+      "turn": 9,
+      "won": true,
+      "attack_idx": 3,
+      "attack_score": 360,
+      "end_score": 0,
+      "our": [
+        0
+      ],
+      "our_score": 20000,
+      "class": "intends_attack"
+    },
+    {
+      "episodeId": "c5b7ca0a-83d2-11f1-a2b5-0242ac130202",
+      "turn": 6,
+      "won": false,
+      "attack_idx": 4,
+      "attack_score": 180,
+      "end_score": 0,
+      "our": [
+        0
+      ],
+      "our_score": 2800,
+      "class": "intends_attack"
+    },
+    {
+      "episodeId": "c5b7ca0a-83d2-11f1-a2b5-0242ac130202",
+      "turn": 10,
+      "won": false,
+      "attack_idx": 1,
+      "attack_score": 180,
+      "end_score": 0,
+      "our": [
+        0
+      ],
+      "our_score": 4000,
+      "class": "intends_attack"
+    },
+    {
+      "episodeId": "e84c178c-83d3-11f1-a1f0-0242ac130203",
+      "turn": 7,
+      "won": true,
+      "attack_idx": 3,
+      "attack_score": 180,
+      "end_score": 0,
+      "our": [
+        1
+      ],
+      "our_score": 20000,
+      "class": "intends_attack"
+    },
+    {
+      "episodeId": "e84c178c-83d3-11f1-a1f0-0242ac130203",
+      "turn": 9,
+      "won": true,
+      "attack_idx": 3,
+      "attack_score": 180,
+      "end_score": 0,
+      "our": [
+        0
+      ],
+      "our_score": 20000,
+      "class": "intends_attack"
+    },
+    {
+      "episodeId": "e84c178c-83d3-11f1-a1f0-0242ac130203",
+      "turn": 11,
+      "won": true,
+      "attack_idx": 1,
+      "attack_score": 180,
+      "end_score": 0,
+      "our": [
+        0
+      ],
+      "our_score": 20000,
+      "class": "intends_attack"
+    },
+    {
+      "episodeId": "e84c178c-83d3-11f1-a1f0-0242ac130203",
+      "turn": 13,
+      "won": true,
+      "attack_idx": 1,
+      "attack_score": 180,
+      "end_score": 0,
+      "our": [
+        0
+      ],
+      "our_score": 18000,
+      "class": "intends_attack"
+    },
+    {
+      "episodeId": "74e0e0a6-83d4-11f1-ad18-0242ac130203",
+      "turn": 7,
+      "won": false,
+      "attack_idx": 1,
+      "attack_score": 120,
+      "end_score": 0,
+      "our": [
+        0
+      ],
+      "our_score": 30000,
+      "class": "intends_attack"
+    },
+    {
+      "episodeId": "7c9dc3f4-83d4-11f1-a88d-0242ac130204",
+      "turn": 6,
+      "won": false,
+      "attack_idx": 0,
+      "attack_score": -5000,
+      "end_score": 0,
+      "our": [
+        2
+      ],
+      "our_score": 0,
+      "class": "real_miss"
+    },
+    {
+      "episodeId": "06f36f2c-83d5-11f1-a1b6-0242ac130204",
+      "turn": 10,
+      "won": true,
+      "attack_idx": 5,
+      "attack_score": 180,
+      "end_score": 0,
+      "our": [
+        2
+      ],
+      "our_score": 12000,
+      "class": "intends_attack"
+    },
+    {
+      "episodeId": "0c292b3a-83d5-11f1-baed-0242ac130203",
+      "turn": 10,
+      "won": true,
+      "attack_idx": 1,
+      "attack_score": 360,
+      "end_score": 0,
+      "our": [
+        0
+      ],
+      "our_score": 18000,
+      "class": "intends_attack"
+    },
+    {
+      "episodeId": "0c292b3a-83d5-11f1-baed-0242ac130203",
+      "turn": 14,
+      "won": true,
+      "attack_idx": 0,
+      "attack_score": 360,
+      "end_score": 0,
+      "our": [
+        1
+      ],
+      "our_score": 7000,
+      "class": "intends_attack"
+    },
+    {
+      "episodeId": "07a1b438-83d5-11f1-baf2-0242ac130204",
+      "turn": 9,
+      "won": false,
+      "attack_idx": 1,
+      "attack_score": -100,
+      "end_score": 0,
+      "our": [
+        0
+      ],
+      "our_score": 100,
+      "class": "real_miss"
+    },
+    {
+      "episodeId": "07a1b438-83d5-11f1-baf2-0242ac130204",
+      "turn": 11,
+      "won": false,
+      "attack_idx": 1,
+      "attack_score": -100,
+      "end_score": 0,
+      "our": [
+        0
+      ],
+      "our_score": 100,
+      "class": "real_miss"
+    },
+    {
+      "episodeId": "028bb304-83d5-11f1-990a-0242ac130203",
+      "turn": 6,
+      "won": false,
+      "attack_idx": 1,
+      "attack_score": 180,
+      "end_score": 0,
+      "our": [
+        0
+      ],
+      "our_score": 3100,
+      "class": "intends_attack"
+    },
+    {
+      "episodeId": "028bb304-83d5-11f1-990a-0242ac130203",
+      "turn": 8,
+      "won": false,
+      "attack_idx": 2,
+      "attack_score": 360,
+      "end_score": 0,
+      "our": [
+        1
+      ],
+      "our_score": 2000,
+      "class": "intends_attack"
+    },
+    {
+      "episodeId": "99575a86-83d5-11f1-8f89-0242ac130204",
+      "turn": 8,
+      "won": true,
+      "attack_idx": 1,
+      "attack_score": 180,
+      "end_score": 0,
+      "our": [
+        0
+      ],
+      "our_score": 21000,
+      "class": "intends_attack"
+    },
+    {
+      "episodeId": "8e5250f0-83d5-11f1-b260-0242ac130203",
+      "turn": 2,
+      "won": true,
+      "attack_idx": 1,
+      "attack_score": -100,
+      "end_score": 0,
+      "our": [
+        0
+      ],
+      "our_score": 100,
+      "class": "real_miss"
+    },
+    {
+      "episodeId": "8e5250f0-83d5-11f1-b260-0242ac130203",
+      "turn": 4,
+      "won": true,
+      "attack_idx": 1,
+      "attack_score": -100,
+      "end_score": 0,
+      "our": [
+        0
+      ],
+      "our_score": 100,
+      "class": "real_miss"
+    },
+    {
+      "episodeId": "8e5250f0-83d5-11f1-b260-0242ac130203",
+      "turn": 6,
+      "won": true,
+      "attack_idx": 1,
+      "attack_score": -100,
+      "end_score": 0,
+      "our": [
+        0
+      ],
+      "our_score": 100,
+      "class": "real_miss"
+    },
+    {
+      "episodeId": "8e5250f0-83d5-11f1-b260-0242ac130203",
+      "turn": 8,
+      "won": true,
+      "attack_idx": 1,
+      "attack_score": -100,
+      "end_score": 0,
+      "our": [
+        0
+      ],
+      "our_score": 100,
+      "class": "real_miss"
+    },
+    {
+      "episodeId": "8e5250f0-83d5-11f1-b260-0242ac130203",
+      "turn": 14,
+      "won": true,
+      "attack_idx": 3,
+      "attack_score": 360,
+      "end_score": 0,
+      "our": [
+        0
+      ],
+      "our_score": 12000,
+      "class": "intends_attack"
+    },
+    {
+      "episodeId": "98250a6e-83d5-11f1-bbd2-0242ac130204",
+      "turn": 7,
+      "won": false,
+      "attack_idx": 1,
+      "attack_score": 360,
+      "end_score": 0,
+      "our": [
+        0
+      ],
+      "our_score": 9000,
+      "class": "intends_attack"
+    },
+    {
+      "episodeId": "90940336-83d5-11f1-b365-0242ac130204",
+      "turn": 7,
+      "won": false,
+      "attack_idx": 1,
+      "attack_score": 180,
+      "end_score": 0,
+      "our": [
+        0
+      ],
+      "our_score": 6000,
+      "class": "intends_attack"
+    },
+    {
+      "episodeId": "1cf85eb2-83d6-11f1-9a61-0242ac130203",
+      "turn": 6,
+      "won": true,
+      "attack_idx": 2,
+      "attack_score": 180,
+      "end_score": 0,
+      "our": [
+        3
+      ],
+      "our_score": 600,
+      "class": "intends_attack"
+    },
+    {
+      "episodeId": "ad540e48-83d6-11f1-bd21-0242ac130202",
+      "turn": 4,
+      "won": false,
+      "attack_idx": 1,
+      "attack_score": 180,
+      "end_score": 0,
+      "our": [
+        0
+      ],
+      "our_score": 6000,
+      "class": "intends_attack"
+    },
+    {
+      "episodeId": "ad540e48-83d6-11f1-bd21-0242ac130202",
+      "turn": 10,
+      "won": false,
+      "attack_idx": 2,
+      "attack_score": 180,
+      "end_score": 0,
+      "our": [
+        0
+      ],
+      "our_score": 18000,
+      "class": "intends_attack"
+    },
+    {
+      "episodeId": "aedac8ec-83d6-11f1-b0a7-0242ac130203",
+      "turn": 5,
+      "won": true,
+      "attack_idx": 1,
+      "attack_score": 180,
+      "end_score": 0,
+      "our": [
+        0
+      ],
+      "our_score": 20000,
+      "class": "intends_attack"
+    }
+  ]
+}
