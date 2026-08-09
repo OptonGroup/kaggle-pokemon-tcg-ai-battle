@@ -58,6 +58,7 @@ from __future__ import annotations
 
 import argparse
 import contextlib
+import csv
 import importlib.util
 import io
 import json
@@ -104,6 +105,48 @@ def true_decks_from_data(data: dict) -> dict:
         if len(action) == 60 and all(isinstance(x, int) for x in action):
             decks[pi] = action
     return decks
+
+# ── Opponent-archetype dimension ─────────────────────────────────────────────
+# WHY: an overall agreement number cannot tell "we play the whole game differently"
+# from "we only misplay against Crustle". The expert's opponent is the missing axis:
+# their true 60-card list is already in the replay (steps[1][1-pi].action), so one
+# classify() call per game buys a headline x opp_archetype cross-tab for free.
+# Caveat carried over from the ladder work: the "crustle" label conflates several
+# Dwebble/Crustle shells -- treat that cell as a family, not one deck.
+_CARD_NAMES: dict | None = None
+_CLASSIFY = None
+
+
+def _card_names() -> dict:
+    global _CARD_NAMES
+    if _CARD_NAMES is None:
+        m = {}
+        with open(MAIN_REPO / "data" / "EN_Card_Data.csv", newline="", encoding="utf-8") as f:
+            for r in csv.DictReader(f):
+                try:
+                    m.setdefault(int(r["Card ID"]), r["Card Name"])
+                except Exception:
+                    pass
+        _CARD_NAMES = m
+    return _CARD_NAMES
+
+
+def opp_archetype(deck_ids) -> str:
+    """Archetype label of the expert's OPPONENT for one game, 'UNKNOWN' if the deck is
+    missing from the replay or matches no known shell."""
+    global _CLASSIFY
+    if not deck_ids:
+        return "UNKNOWN"
+    if _CLASSIFY is None:
+        sys.path.insert(0, str(MAIN_REPO / "scripts"))
+        from classify_opponent_archetype import classify as _c  # noqa: E402
+        _CLASSIFY = _c
+    names = _card_names()
+    try:
+        return _CLASSIFY(deck_ids, [names.get(c, "") for c in deck_ids]) or "UNKNOWN"
+    except Exception:
+        return "UNKNOWN"
+
 
 # ── OptionType / SelectContext int constants (mirror submissions/*/main.py) ───
 OPT_NUMBER, OPT_YES, OPT_CARD = 0, 1, 3
@@ -345,6 +388,214 @@ def answer_sig(obs: dict, indices):
     return tuple(sorted(parts)), resolvable
 
 
+# ── H2 diagnostic (see task): "multiset of card_id chosen" — NOT the acceptance metric ──────
+# WHY a separate resolver, not a reuse of _resolve_ref above: _resolve_ref's card_at() reads
+# players[pi][ZONE[area]] for area==1 (deck) -- but players[pi] has NO 'deck' key (only
+# deckCount; own/opp deck+prize are face-down by TCG rules), so area==1 options NEVER resolve
+# through _resolve_ref (0 of the ~60% of c7/TO_HAND decisions that are area==1 -- see the low
+# n_resolvable on "ctx:TO_HAND" in headline/granular semantic_match_rate above). That is the
+# "TO_HAND слеп" trap from MEMORY feedback_fidelity_instrument_traps -- known and NOT fixed
+# here in _resolve_ref/answer_sig (task: this is diagnostic, not a fix to the acceptance
+# instrument). featurize_corpus_2b.py separately discovered (08-09) that area==1 is NOT
+# actually fog-of-war for a player's OWN deck-search: the engine puts the full candidate list
+# in obs['select']['deck'] and opt['index'] indexes INTO THAT list (see its
+# `_card_at_sel_deck`/`resolve_opt_card_id` + docstring "ГЛАВНАЯ ПРАВКА 08-09"). This resolver
+# is a direct port of that logic, used ONLY for the H2 multiset diagnostic below.
+_H2_AREA_LOOKING = 12
+
+
+def _resolve_card_id_full(obs: dict, opt: dict):
+    """Port of featurize_corpus_2b.py::resolve_opt_card_id -> one card_id for `opt`, or None
+    if the option is not about a specific card (ATTACK/RETREAT/END/NUMBER/YES/NO/unknown)."""
+    if not isinstance(opt, dict):
+        return None
+    cur = obs.get("current") or {}
+    sel = obs.get("select") or {}
+    me = int(cur.get("yourIndex") or 0)
+    players = cur.get("players") or []
+
+    def at(pi, area, idx):
+        if area in ZONE and isinstance(idx, int) and isinstance(pi, int) and 0 <= pi < len(players):
+            zone = players[pi].get(ZONE[area]) or []
+            if 0 <= idx < len(zone):
+                c = zone[idx]
+                cid = c.get("id") if isinstance(c, dict) else None
+                return int(cid) if cid is not None else None
+        return None
+
+    if opt.get("area") == 1:
+        sel_deck = sel.get("deck")
+        idx = opt.get("index")
+        if isinstance(sel_deck, list) and isinstance(idx, int) and 0 <= idx < len(sel_deck):
+            c = sel_deck[idx]
+            if isinstance(c, dict) and c.get("id") is not None:
+                return int(c["id"])
+    if opt.get("cardId") is not None:
+        try:
+            return int(opt["cardId"])
+        except (TypeError, ValueError):
+            return None
+    t = opt.get("type")
+    if t == OPT_PLAY:
+        return at(me, AREA_HAND, opt.get("index"))
+    if t == OPT_ATTACH:
+        return at(me, opt.get("inPlayArea"), opt.get("inPlayIndex"))
+    if t == OPT_EVOLVE:
+        return at(me, opt.get("area", AREA_HAND), opt.get("index"))
+    if t == OPT_ABILITY:
+        return at(me, opt.get("area"), opt.get("index"))
+    if t == OPT_CARD:
+        area = opt.get("area")
+        if area == _H2_AREA_LOOKING:
+            looking = cur.get("looking")
+            idx = opt.get("index")
+            if isinstance(looking, list) and isinstance(idx, int) and 0 <= idx < len(looking):
+                c = looking[idx]
+                cid = c.get("id") if isinstance(c, dict) else None
+                return int(cid) if cid is not None else None
+            return None
+        pi = opt.get("playerIndex")
+        pi = int(pi) if isinstance(pi, int) else me
+        return at(pi, area, opt.get("index"))
+    return None
+
+
+def multiset_card_signature(obs: dict, indices):
+    """(Counter(card_id, ...), resolvable) for a set of chosen option indices -- resolvable is
+    True only if EVERY chosen option resolves to a concrete card id via
+    _resolve_card_id_full (decisions whose options are not card-referring at all, e.g. a pure
+    ATTACK/RETREAT/END choice, are naturally unresolvable here and excluded -- the multiset-of-
+    cards question is not meaningful for them)."""
+    opts = (obs.get("select") or {}).get("option") or []
+    ids = []
+    resolvable = True
+    for i in (indices or []):
+        if not (isinstance(i, int) and 0 <= i < len(opts)):
+            resolvable = False
+            continue
+        cid = _resolve_card_id_full(obs, opts[i])
+        if cid is None:
+            resolvable = False
+        else:
+            ids.append(cid)
+    return Counter(ids), resolvable
+
+
+def board_state(obs: dict) -> dict:
+    """Compact board snapshot for one decision, written to --rows-out so Phase-2 rule
+    conditions ("expert holds the Poffin while the bench is still open") can be derived
+    from the rows alone, without re-running the 8-minute scan. Own deck/prize contents
+    are NOT in a fog-of-war obs, so only counts are recorded."""
+    try:
+        cur = obs.get("current") or {}
+        me = int(cur.get("yourIndex") or 0)
+        pls = cur.get("players") or []
+        if me >= len(pls):
+            return {}
+        mine, opp = pls[me], pls[1 - me] if len(pls) > 1 else {}
+
+        def mon(p):
+            a = (p.get("active") or [])
+            return a[0] if a else None
+
+        def m_id(m):
+            return int(m["id"]) if isinstance(m, dict) and m.get("id") is not None else None
+
+        def m_dmg(m):
+            # The engine reports current hp + maxHp; there is no `damage` field.
+            if not isinstance(m, dict):
+                return None
+            hp, mx = m.get("hp"), m.get("maxHp")
+            return (int(mx) - int(hp)) if hp is not None and mx is not None else None
+
+        def m_en(m):
+            return len(m.get("energies") or []) if isinstance(m, dict) else None
+
+        ma, oa = mon(mine), mon(opp)
+        return {
+            "hand": len(mine.get("hand") or []),
+            "bench": len(mine.get("bench") or []),
+            "bench_max": mine.get("benchMax"),
+            "opp_bench": len(opp.get("bench") or []),
+            "prize": len(mine.get("prize") or []),
+            "opp_prize": len(opp.get("prize") or []),
+            "discard": len(mine.get("discard") or []),
+            "deck_count": mine.get("deckCount"),
+            "active": m_id(ma), "active_dmg": m_dmg(ma), "active_energy": m_en(ma),
+            "active_hp": (ma.get("hp") if isinstance(ma, dict) else None),
+            "opp_active": m_id(oa), "opp_active_dmg": m_dmg(oa), "opp_active_energy": m_en(oa),
+            "opp_active_hp": (oa.get("hp") if isinstance(oa, dict) else None),
+            # Per-turn flags that gate whether an action is even still available.
+            "supporter_played": cur.get("supporterPlayed"),
+            "stadium_played": cur.get("stadiumPlayed"),
+            "retreated": cur.get("retreated"),
+            "stadium": cur.get("stadium"),
+            "turn_actions": cur.get("turnActionCount"),
+        }
+    except Exception:
+        return {}
+
+
+def available_options(obs: dict) -> dict:
+    """What the expert COULD have done at this decision, written to --rows-out.
+
+    Without this a rule condition cannot be calibrated: "we play Poffin on a bench of 4"
+    is only evidence if we also know how often the expert HELD a legal Poffin on a bench
+    of 4. Recorded only for MAIN, where the whole turn's action menu is on offer:
+      play  — card ids of hand cards playable right now
+      types — the option types present (attack / retreat / end-turn / evolve / ...)
+    """
+    sel = obs.get("select") or {}
+    ctx = sel.get("context")
+    if ctx in (CTX_DAMAGE_COUNTER, CTX_REMOVE_DAMAGE_COUNTER):
+        # Adrena-Brain snipe: record every offered body with the features a placement rule
+        # could key on (id / current hp / max hp / area / side), so the rule can be FITTED
+        # to the expert's actual choices offline instead of guessed and re-run.
+        cur = obs.get("current") or {}
+        me = int(cur.get("yourIndex") or 0)
+        pls = cur.get("players") or []
+        cands = []
+        for i, opt in enumerate(sel.get("option") or []):
+            if not isinstance(opt, dict) or opt.get("type") != OPT_CARD:
+                continue
+            pi = opt.get("playerIndex")
+            pi = int(pi) if pi is not None else me
+            area, idx = opt.get("area"), opt.get("index")
+            pk = None
+            if 0 <= pi < len(pls) and area in ZONE and isinstance(idx, int):
+                zone = pls[pi].get(ZONE[area]) or []
+                if 0 <= idx < len(zone) and isinstance(zone[idx], dict):
+                    pk = zone[idx]
+            if pk is None:
+                continue
+            cands.append({"i": i, "id": pk.get("id"), "hp": pk.get("hp"),
+                          "maxHp": pk.get("maxHp"), "area": area, "own": pi == me,
+                          "energies": len(pk.get("energies") or [])})
+        return {"snipe": cands}
+    if ctx != CTX_MAIN:
+        return {}
+    plays, types = set(), set()
+    for opt in (sel.get("option") or []):
+        if not isinstance(opt, dict):
+            continue
+        t = opt.get("type")
+        types.add(t)
+        if t == OPT_PLAY:
+            cid = _resolve_hand_card_id(obs, opt)
+            if cid is None:
+                cur = obs.get("current") or {}
+                me = int(cur.get("yourIndex") or 0)
+                pls = cur.get("players") or []
+                idx = opt.get("index")
+                if me < len(pls) and isinstance(idx, int):
+                    hand = pls[me].get("hand") or []
+                    if 0 <= idx < len(hand) and isinstance(hand[idx], dict):
+                        cid = hand[idx].get("id")
+            if cid is not None:
+                plays.add(int(cid))
+    return {"play": sorted(plays), "types": sorted(t for t in types if t is not None)}
+
+
 def _chance_floor(n_options: int, k: int, min_c: int, max_c: int):
     """Probability a uniform-random LEGAL answer equals the expert's exact set.
     Well-defined only when the decision requires exactly k distinct picks
@@ -358,7 +609,7 @@ def _chance_floor(n_options: int, k: int, min_c: int, max_c: int):
 
 
 def evaluate(pilot, dumps: list, targets: set, ref_decks: dict, min_overlap: int,
-             rows_out) -> dict:
+             rows_out, min_cell_n: int = 20) -> dict:
     stats = defaultdict(lambda: {
         "n": 0, "match": 0, "floor_sum": 0.0, "floor_n": 0,
         "paths": Counter(), "n_single": 0, "nopt_sum": 0,
@@ -366,10 +617,21 @@ def evaluate(pilot, dumps: list, targets: set, ref_decks: dict, min_overlap: int
     })
     by_name = defaultdict(lambda: {"n": 0, "match": 0})
     by_won = defaultdict(lambda: {"n": 0, "match": 0})
+    # headline x opp_archetype cross-tab, plus per-archetype totals and game counts.
+    cross = defaultdict(lambda: {"n": 0, "match": 0, "sem_res": 0, "sem_match": 0})
+    by_opp = defaultdict(lambda: {"n": 0, "match": 0, "games": 0, "wins": 0})
     totals = {"episodes_scanned": 0, "episodes_kept": 0, "episodes_impure": 0,
               "decisions": 0, "match": 0, "agent_exceptions": 0}
+    # ── H2 diagnostic (see task): multiset-of-card_id match, "overall" + "c7" (sel.context==7,
+    # the SelectContext BC's route_group maps to group "c7" -- TO_HAND / deck-search "look at N
+    # cards, take k"). See multiset_card_signature docstring for what this measures and why.
+    multiset_stats = {"overall": {"n": 0, "n_resolvable": 0, "match": 0,
+                                   "index_miss_resolvable": 0, "index_miss_multiset_match": 0},
+                       "c7": {"n": 0, "n_resolvable": 0, "match": 0,
+                              "index_miss_resolvable": 0, "index_miss_multiset_match": 0}}
 
-    def record(cat, matched, floor, path, n_options, k, name, won, sem_matched, resolvable):
+    def record(cat, matched, floor, path, n_options, k, name, won, sem_matched, resolvable,
+               opp_arch):
         s = stats[cat]
         s["n"] += 1
         s["match"] += int(matched)
@@ -387,8 +649,29 @@ def evaluate(pilot, dumps: list, targets: set, ref_decks: dict, min_overlap: int
         by_name[name]["match"] += int(matched)
         by_won[won]["n"] += 1
         by_won[won]["match"] += int(matched)
+        c = cross[(HEADLINE.get(cat, "other"), opp_arch)]
+        c["n"] += 1
+        c["match"] += int(matched)
+        if resolvable:
+            c["sem_res"] += 1
+            c["sem_match"] += int(sem_matched)
+        by_opp[opp_arch]["n"] += 1
+        by_opp[opp_arch]["match"] += int(matched)
         totals["decisions"] += 1
         totals["match"] += int(matched)
+
+    def record_multiset(is_c7: bool, ms_resolvable: bool, ms_matched: bool, index_matched: bool):
+        buckets = [multiset_stats["overall"]] + ([multiset_stats["c7"]] if is_c7 else [])
+        for b in buckets:
+            b["n"] += 1
+            if ms_resolvable:
+                b["n_resolvable"] += 1
+                b["match"] += int(ms_matched)
+                # among decisions the INDEX metric calls a miss, how many are actually the
+                # same multiset of cards (a duplicate-copy permutation, not a real disagreement)
+                if not index_matched:
+                    b["index_miss_resolvable"] += 1
+                    b["index_miss_multiset_match"] += int(ms_matched)
 
     for fp in dumps:
         try:
@@ -432,12 +715,18 @@ def evaluate(pilot, dumps: list, targets: set, ref_decks: dict, min_overlap: int
         for pi in expert_idxs:
             totals["episodes_kept"] += 1
             name = names[pi]
+            # One classification per game — the opponent's true submitted list.
+            opp_arch = opp_archetype(true_decks.get(1 - pi))
             # Reset pilot per-game state exactly as live (select=None boundary).
             try:
                 pilot.agent({"select": None})
             except Exception:
                 pass
             ep_pairs = [p for p in pairs if p["player_index"] == pi]
+            by_opp[opp_arch]["games"] += 1
+            if pi < len(rewards) and len(rewards) == 2 and rewards[pi] is not None:
+                other = rewards[1 - pi]
+                by_opp[opp_arch]["wins"] += int(other is not None and rewards[pi] > other)
             for p in ep_pairs:
                 obs = p["obs_dict"]
                 sel = obs.get("select") or {}
@@ -467,10 +756,19 @@ def evaluate(pilot, dumps: list, targets: set, ref_decks: dict, min_overlap: int
                 our_sig, our_res = answer_sig(obs, our if our is not None else [])
                 resolvable = bool(exp_res and our_res)
                 sem_matched = (our is not None and exp_sig == our_sig)
-                record(cat, matched, floor, path, n_options, k, name, won, sem_matched, resolvable)
+                record(cat, matched, floor, path, n_options, k, name, won, sem_matched,
+                       resolvable, opp_arch)
+                # H2 diagnostic (see task) — separate resolver/comparison, does NOT feed the
+                # exact/semantic acceptance numbers above.
+                exp_ms, exp_ms_res = multiset_card_signature(obs, expert)
+                our_ms, our_ms_res = multiset_card_signature(obs, our if our is not None else [])
+                ms_resolvable = bool(exp_ms_res and our_ms_res)
+                ms_matched = bool(ms_resolvable and exp_ms == our_ms)
+                record_multiset(sel.get("context") == 7, ms_resolvable, ms_matched, matched)
                 if rows_out is not None:
                     rows_out.write(json.dumps({
                         "episodeId": p.get("episodeId"), "name": name, "won": won,
+                        "opp_archetype": opp_arch,
                         "turn": (obs.get("current") or {}).get("turn"),
                         "category": cat, "headline": HEADLINE.get(cat, "other"),
                         "ctx": sel.get("context"), "n_options": n_options, "k": k,
@@ -478,12 +776,15 @@ def evaluate(pilot, dumps: list, targets: set, ref_decks: dict, min_overlap: int
                         "matched": bool(matched), "sem_matched": bool(sem_matched),
                         "resolvable": resolvable, "floor": floor, "path": path,
                         "exp_ref": list(exp_sig), "our_ref": list(our_sig),
+                        "state": board_state(obs),
+                        "avail": available_options(obs),
                     }) + "\n")
 
-    return _finalize(stats, by_name, by_won, totals)
+    return _finalize(stats, by_name, by_won, totals, cross, by_opp, min_cell_n, multiset_stats)
 
 
-def _finalize(stats, by_name, by_won, totals) -> dict:
+def _finalize(stats, by_name, by_won, totals, cross=None, by_opp=None, min_cell_n=20,
+              multiset_stats=None) -> dict:
     cats = {}
     for cat, s in stats.items():
         n = s["n"]
@@ -532,15 +833,90 @@ def _finalize(stats, by_name, by_won, totals) -> dict:
             "fallback_share": round(h["fallback"] / n, 4) if n else None,
         }
 
+    # headline x opp_archetype cross-tab. Cells below min_cell_n are kept in the JSON
+    # (so the n-sum audit below closes) but flagged; the printed table hides them.
+    cross_out = {}
+    if cross:
+        for (hname, arch), c in cross.items():
+            n = c["n"]
+            cross_out[f"{hname}|{arch}"] = {
+                "headline": hname, "opp_archetype": arch, "n_decisions": n,
+                "exact_match_rate": round(c["match"] / n, 4) if n else None,
+                "semantic_match_rate": round(c["sem_match"] / c["sem_res"], 4) if c["sem_res"] else None,
+                "n_resolvable": c["sem_res"],
+                "below_min_n": n < min_cell_n,
+            }
+    opp_out = {}
+    if by_opp:
+        for arch, o in by_opp.items():
+            opp_out[arch] = {
+                "n_decisions": o["n"], "n_games": o["games"],
+                "expert_wr": round(o["wins"] / o["games"], 4) if o["games"] else None,
+                "exact_match_rate": round(o["match"] / o["n"], 4) if o["n"] else None,
+                "decision_share": round(o["n"] / totals["decisions"], 4) if totals["decisions"] else None,
+            }
+        # Audit invariant: the cross-tab must partition every scored decision.
+        totals["cross_n_sum"] = sum(o["n"] for o in by_opp.values())
+        totals["cross_partition_ok"] = (totals["cross_n_sum"] == totals["decisions"])
+        totals["unknown_opp_share"] = (
+            round(by_opp.get("UNKNOWN", {}).get("n", 0) / totals["decisions"], 4)
+            if totals["decisions"] else None)
+
+    multiset_out = None
+    if multiset_stats is not None:
+        multiset_out = {
+            "note": ("ДИАГНОСТИКА (H2), НЕ приёмка -- индексная (overall_match_rate) и "
+                     "семантическая (headline/granular semantic_match_rate) метрики выше "
+                     "остаются главными и не меняются этим блоком. Мера здесь: "
+                     "Counter(card_id по выбранным опциям) наш == Counter(card_id по "
+                     "выбранным опциям) эксперта -- совпадение по МУЛЬТИМНОЖЕСТВУ карт, а не "
+                     "по индексу опции; резолвер (multiset_card_signature/"
+                     "_resolve_card_id_full) ПОРТИРУЕТ featurize_corpus_2b.py::"
+                     "resolve_opt_card_id (читает obs['select']['deck'] для area=1) -- шире, "
+                     "чем _resolve_ref/answer_sig выше, которые area=1 НЕ резолвят "
+                     "(известная 'TO_HAND слеп'-дыра, см. MEMORY "
+                     "feedback_fidelity_instrument_traps) -- поэтому n_resolvable здесь и "
+                     "semantic n_resolvable НЕ совпадают, это ожидаемо, не баг. 'c7' = "
+                     "решения с sel.context==7 (TO_HAND/deck-поиск, то же, что BC route_group "
+                     "маппит на группу 'c7')."),
+            "overall": {
+                "n_decisions": multiset_stats["overall"]["n"],
+                "n_resolvable": multiset_stats["overall"]["n_resolvable"],
+                "multiset_match_rate": (
+                    round(multiset_stats["overall"]["match"] / multiset_stats["overall"]["n_resolvable"], 4)
+                    if multiset_stats["overall"]["n_resolvable"] else None),
+                "index_miss_resolvable": multiset_stats["overall"]["index_miss_resolvable"],
+                "index_miss_share_actually_multiset_match": (
+                    round(multiset_stats["overall"]["index_miss_multiset_match"]
+                          / multiset_stats["overall"]["index_miss_resolvable"], 4)
+                    if multiset_stats["overall"]["index_miss_resolvable"] else None),
+            },
+            "c7": {
+                "n_decisions": multiset_stats["c7"]["n"],
+                "n_resolvable": multiset_stats["c7"]["n_resolvable"],
+                "multiset_match_rate": (
+                    round(multiset_stats["c7"]["match"] / multiset_stats["c7"]["n_resolvable"], 4)
+                    if multiset_stats["c7"]["n_resolvable"] else None),
+                "index_miss_resolvable": multiset_stats["c7"]["index_miss_resolvable"],
+                "index_miss_share_actually_multiset_match": (
+                    round(multiset_stats["c7"]["index_miss_multiset_match"]
+                          / multiset_stats["c7"]["index_miss_resolvable"], 4)
+                    if multiset_stats["c7"]["index_miss_resolvable"] else None),
+            },
+        }
+
     return {
         "totals": totals,
         "overall_match_rate": round(totals["match"] / totals["decisions"], 4) if totals["decisions"] else None,
+        "by_opp_archetype": dict(sorted(opp_out.items(), key=lambda kv: -kv[1]["n_decisions"])),
+        "headline_by_opp_archetype": dict(sorted(cross_out.items(), key=lambda kv: -kv[1]["n_decisions"])),
         "headline_categories": headline,
         "granular_categories": dict(sorted(cats.items(), key=lambda kv: -kv[1]["n_decisions"])),
         "by_expert_name": {k: {"n": v["n"], "match_rate": round(v["match"] / v["n"], 4) if v["n"] else None}
                            for k, v in by_name.items()},
         "by_expert_won": {("won" if k else "lost"): {"n": v["n"], "match_rate": round(v["match"] / v["n"], 4) if v["n"] else None}
                           for k, v in by_won.items()},
+        "multiset_diagnostic": multiset_out,
     }
 
 
@@ -565,8 +941,35 @@ def _print_table(report: dict) -> None:
         sm = "" if d["semantic_match_rate"] is None else f"{d['semantic_match_rate']:.3f}"
         print(f"{c:<28} {d['n_decisions']:>7} {d['exact_match_rate']:>6.3f} {sm:>6} "
               f"{d['n_resolvable']:>6} {fl:>6} {lf:>7} {(d['fallback_share'] or 0)*100:>4.1f}")
+    opp = report.get("by_opp_archetype") or {}
+    if opp:
+        print(f"\n{'OPP ARCHETYPE':<24} {'games':>6} {'expWR':>6} {'n':>7} {'share':>6} {'idx':>6}")
+        for a, d in opp.items():
+            wr = "" if d["expert_wr"] is None else f"{d['expert_wr']:.3f}"
+            print(f"{a:<24} {d['n_games']:>6} {wr:>6} {d['n_decisions']:>7} "
+                  f"{(d['decision_share'] or 0)*100:>5.1f}% {d['exact_match_rate']:>6.3f}")
+        print(f"  partition_ok={t.get('cross_partition_ok')} "
+              f"unknown_share={t.get('unknown_opp_share')}")
+    cross = report.get("headline_by_opp_archetype") or {}
+    if cross:
+        print(f"\n{'HEADLINE x OPP':<40} {'n':>7} {'idx':>6} {'sem':>6}")
+        for key, d in cross.items():
+            if d["below_min_n"]:
+                continue
+            sm = "" if d["semantic_match_rate"] is None else f"{d['semantic_match_rate']:.3f}"
+            print(f"{key:<40} {d['n_decisions']:>7} {d['exact_match_rate']:>6.3f} {sm:>6}")
+        hidden = sum(1 for d in cross.values() if d["below_min_n"])
+        if hidden:
+            print(f"  ({hidden} ячеек скрыто: n < min-n)")
     print("\nby expert:", report["by_expert_name"])
     print("by won/lost:", report["by_expert_won"])
+    ms = report.get("multiset_diagnostic")
+    if ms:
+        print(f"\nH2 diagnostic (multiset-of-card_id, NOT the acceptance number): "
+              f"overall={ms['overall']['multiset_match_rate']} "
+              f"(n={ms['overall']['n_decisions']}, resolvable={ms['overall']['n_resolvable']}) "
+              f"c7={ms['c7']['multiset_match_rate']} "
+              f"(n={ms['c7']['n_decisions']}, resolvable={ms['c7']['n_resolvable']})")
 
 
 def main() -> int:
@@ -580,6 +983,8 @@ def main() -> int:
     ap.add_argument("--limit", type=int, default=0, help="0 = all dumps; else cap dumps scanned (smoke)")
     ap.add_argument("--out", default=str(WORKTREE / "out" / "v074_fidelity" / "topk_0720.json"))
     ap.add_argument("--rows-out", default=None, help="optional JSONL of per-decision rows for audit")
+    ap.add_argument("--min-n", type=int, default=20,
+                    help="min decisions per headline x opp_archetype cell to print")
     args = ap.parse_args()
 
     ref_decks = json.loads(Path(args.ref_decks).read_text())
@@ -615,7 +1020,7 @@ def main() -> int:
     rows_f = open(args.rows_out, "w") if args.rows_out else None
 
     t0 = time.perf_counter()
-    report = evaluate(pilot, dumps, targets, ref_decks, args.min_overlap, rows_f)
+    report = evaluate(pilot, dumps, targets, ref_decks, args.min_overlap, rows_f, args.min_n)
     report["wall_sec"] = round(time.perf_counter() - t0, 1)
     report["candidate"] = args.candidate
     report["days"] = args.days

@@ -37,6 +37,7 @@ snapshot — auto-downloaded into <out_dir> if none is present there yet.
 import csv
 import subprocess
 import sys
+import zipfile
 from collections import Counter
 from pathlib import Path
 
@@ -48,7 +49,8 @@ from cluster_archetypes import cluster_and_name, load_card_meta
 # Extend this dict when a new archetype shows up as UNKNOWN with unfamiliar key cards
 # (check opp_key_cards in the printed detail / archetype_index.csv).
 ARCHETYPE_IDS = {
-    "crustle": {344, 345, 756},          # Dwebble/Crustle + Mega Kangaskhan ex
+    "crustle": {344, 345, 532, 533},      # Dwebble/Crustle (DRI + BLK prints)
+    "mega_kangaskhan": {756},              # Mega Kangaskhan ex
     "archaludon": {169, 190},
     "lucario": {677, 678},
     "tr_mewtwo": {431, 401},
@@ -59,6 +61,12 @@ ARCHETYPE_IDS = {
                                            # exclusive to Alakazam; caused false positives.
     "dragapult": {119, 120, 121},          # Dreepy/Drakloak/Dragapult ex
     "mirror_grimmsnarl": {646, 647, 648},
+    "ogerpon_teal": {95, 96, 349},         # Teal Mask Ogerpon (+ex, + DRI reprint)
+    "ogerpon_hearthflame": {99, 358},      # Hearthflame Mask Ogerpon (ex + DRI reprint)
+    "ogerpon_wellspring": {108, 370},      # Wellspring Mask Ogerpon (ex + DRI reprint)
+    "ogerpon_cornerstone": {117, 386},     # Cornerstone Mask Ogerpon (ex + DRI reprint)
+    "lopunny": {849},                      # Mega Lopunny ex
+    "garchomp": {379, 380, 381},           # Cynthia's Gible/Gabite/Garchomp ex
 }
 
 # Name-keyword fallback for archetypes not covered by id sets above.
@@ -67,12 +75,10 @@ ARCHETYPE_IDS = {
 NAME_KEYWORDS = {
     "starmie": ["Starmie"],
     "hop_trevenant": ["Trevenant", "Zacian", "Hop's Cramorant", "Hop's Phantump"],
-    "ogerpon": ["Ogerpon"],
     "slowking": ["Slowking"],
     "dipplin": ["Dipplin", "Hydrapple", "Applin"],
     "bellibolt": ["Bellibolt", "Iono"],
     "zoroark": ["Zoroark"],
-    "garchomp": ["Garchomp", "Cynthia"],
     "gholdengo": ["Gholdengo"],
     "charizard": ["Charizard"],
     "raging_bolt": ["Raging Bolt"],
@@ -81,7 +87,6 @@ NAME_KEYWORDS = {
     "pidgeot": ["Pidgeot"],
     "ceruledge": ["Ceruledge"],
     "palafin": ["Palafin"],
-    "lopunny_flygon": ["Mega Lopunny ex", "Flygon ex"],
     "dunsparce": ["Dunsparce", "Dudunsparce", "Hop's Snorlax"],
     # Generic tech card, only ever a last resort — see the id-table note above.
     # Must stay LAST so it never outranks a real archetype's own line.
@@ -133,6 +138,9 @@ def load_leaderboard_scores(out_dir):
              "-d", "-p", str(out_dir)],
             check=False, capture_output=True,
         )
+        for zpath in out_dir.glob("*.zip"):
+            with zipfile.ZipFile(zpath) as zf:
+                zf.extractall(out_dir)
         files = sorted(out_dir.glob("*leaderboard*.csv"))
     if not files:
         return {}
@@ -279,10 +287,14 @@ def main():
             by_band = Counter(rating_band(r["opp_rating"]) for r in rows_w + rows_l)
             for band in sorted(by_band, key=lambda b: int(b.split("-")[0])):
                 bw = sum(1 for r in rows_w if rating_band(r["opp_rating"]) == band)
-                bl = sum(1 for r in rows_l if rating_band(r["opp_rating"]) == band)
+                bl_rows = [r for r in rows_l if rating_band(r["opp_rating"]) == band]
+                bl = len(bl_rows)
                 total = bw + bl
                 if total:
-                    print(f"  {band}: {bw}W-{bl}L  ({100*bw/total:.0f}%)")
+                    lost_to = Counter(r["archetype"] for r in bl_rows)
+                    lost_str = ", ".join(f"{k} x{v}" for k, v in lost_to.most_common())
+                    suffix = f"  | lost to: {lost_str}" if lost_str else ""
+                    print(f"  {band}: {bw}W-{bl}L  ({100*bw/total:.0f}%){suffix}")
 
         rated_w = [r for r in wins if r["episode_id"] in rated_ids]
         rated_l = [r for r in losses if r["episode_id"] in rated_ids]

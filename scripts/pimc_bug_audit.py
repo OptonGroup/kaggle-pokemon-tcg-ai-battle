@@ -102,8 +102,8 @@ def _is_legal(choice, sel):
         return isinstance(choice, list) and len(choice) == 60
     opts = sel.get("option") or []
     n = len(opts)
-    min_c = int(sel.get("minCount") or 1)
-    max_c = int(sel.get("maxCount") or 1)
+    min_c = int(sel.get("minCount") if sel.get("minCount") is not None else 1)
+    max_c = int(sel.get("maxCount") if sel.get("maxCount") is not None else 1)
     return (isinstance(choice, list)
             and all(isinstance(i, int) and 0 <= i < n for i in choice)
             and min_c <= len(choice) <= max_c

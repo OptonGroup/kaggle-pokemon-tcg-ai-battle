@@ -149,7 +149,17 @@ def run_epoch(model, samples, batch_size, device, optimizer=None, value_weight=0
             policy_masked = policy_out.masked_fill(~mask_t, -1e9)
             loss_policy = F.cross_entropy(policy_masked, label_t)
 
-            target_v = torch.ones_like(value_out)
+            # Value head target: per-sample backward-discounted game outcome
+            # (built by scripts/build_card_embedding_data.py; field
+            # "value_target"). Falls back to 1.0 for old datasets that don't
+            # carry the field — matching the pre-fix constant-1.0 behavior so
+            # this stays load-compatible with already-built .pt files.
+            # value_out is shape (batch, 1); build a matching (batch, 1) tensor.
+            target_v = torch.tensor(
+                [[float(s.get("value_target", 1.0))] for s in batch],
+                dtype=value_out.dtype,
+                device=device,
+            ).view_as(value_out)
             loss_value = F.huber_loss(value_out, target_v, delta=0.2)
 
             loss = loss_policy + value_weight * loss_value
@@ -278,6 +288,74 @@ def main():
     torch.save(model.state_dict(), args.out_dir / "model_final.pth")
     torch.save(model.encoder_bag.weight.detach().cpu(), args.out_dir / "card_embeddings.pt")
 
+    # ---- AUC GATE: value-head ROC-AUC vs linear-probe on held-out replays ----
+    # Runs scripts/value_probe.compute_aucs with the JUST-TRAINED model's value
+    # head. Fails the gate (printed PASS/FAIL) if value_head_auc < bar. Does NOT
+    # crash training if replays aren't available locally (e.g. on a Kaggle GPU
+    # kernel with no data/episodes/); logs a warning instead.
+    value_head_auc = None
+    linear_probe_auc = None
+    auc_gate = {"available": False}
+    AUC_BAR = 0.67
+    try:
+        sys.path.insert(0, str(HERE))
+        import value_probe as vp  # noqa: E402
+        # Deck for the encoder input: prefer v024's Crustle deck.csv (the model
+        # is trained on many winner-side decks, so any fixed 60-card list works
+        # for a deck-invariant value probe); fall back to any submission deck.
+        deck = None
+        for cand in [
+            HERE.parent / "submissions" / "v024_cardemb_rl" / "deck.csv",
+        ]:
+            if cand.exists():
+                deck = [int(x) for x in cand.read_text().splitlines() if x.strip()][:60]
+                break
+        if deck is None:
+            import glob as _glob  # noqa: E402
+            for p in sorted(_glob.glob(str(HERE.parent / "submissions" / "*" / "deck.csv"))):
+                deck = [int(x) for x in Path(p).read_text().splitlines() if x.strip()][:60]
+                break
+        # The gate must evaluate the checkpoint we actually ship, i.e.
+        # model_best.pth (saved at argmax val accuracy), NOT the model's
+        # end-of-training state (model_final) which may have regressed. Reload
+        # the saved best state_dict into a fresh CPU-eval instance.
+        best_path = args.out_dir / "model_best.pth"
+        if best_path.exists():
+            probe_model = cc.MyModel(
+                args.d_model, args.num_heads, args.d_ff, args.enc_layers, args.dec_layers,
+                dropout=args.dropout, emb_dropout=args.emb_dropout,
+            ).to("cpu")
+            probe_model.load_state_dict(
+                torch.load(best_path, map_location="cpu", weights_only=True)
+            )
+            probe_model.eval()
+            print(f"[auc-gate] evaluating saved model_best.pth (not model_final)")
+        else:
+            probe_model = model.cpu().eval()
+        auc_gate = vp.compute_aucs(
+            model=probe_model, deck=deck,
+            replay_paths=None, max_games=600, seed=0, verbose=True,
+        )
+        value_head_auc = auc_gate.get("value_head_auc")
+        linear_probe_auc = auc_gate.get("linear_probe_auc")
+    except Exception as e:  # noqa: BLE001 — gate must never crash training
+        print(f"WARNING: AUC gate could not run ({type(e).__name__}: {e}); skipping.")
+        auc_gate = {"available": False, "error": f"{type(e).__name__}: {e}"}
+
+    if auc_gate.get("available") and value_head_auc is not None:
+        verdict = "PASS" if value_head_auc >= AUC_BAR else "FAIL"
+        print(f"\n=== AUC GATE (bar={AUC_BAR}) ===")
+        print(f"  value_head_auc   = {value_head_auc:.4f}")
+        print(f"  linear_probe_auc = {linear_probe_auc:.4f}")
+        print(f"  -> {verdict} (value_head_auc {'>=' if verdict=='PASS' else '<'} {AUC_BAR})")
+    elif auc_gate.get("available"):
+        print(f"\n=== AUC GATE (bar={AUC_BAR}) ===")
+        print(f"  value_head_auc = N/A (not enough evaluated states); linear_probe_auc={linear_probe_auc}")
+        print("  -> SKIP (insufficient value-head evals)")
+    else:
+        print(f"\n=== AUC GATE (bar={AUC_BAR}) ===")
+        print("  -> SKIP (no held-out replays available locally; re-run probe on a machine with data/episodes/)")
+
     metrics = {
         "n_train": len(train_samples),
         "n_val": len(val_samples),
@@ -286,6 +364,10 @@ def main():
         "best_val_accuracy": best_val_acc,
         "final_val_accuracy": history[-1]["val"]["accuracy"] if history else None,
         "final_train_accuracy": history[-1]["train"]["accuracy"] if history else None,
+        "value_head_auc": value_head_auc,
+        "linear_probe_auc": linear_probe_auc,
+        "value_head_auc_bar": AUC_BAR,
+        "auc_gate": auc_gate,
         "history": history,
         "args": vars(args) | {"data_dir": str(args.data_dir), "out_dir": str(args.out_dir), "device": str(device)},
     }

@@ -81,6 +81,15 @@ OUT_DIR = REPO / "data" / "il" / "cardemb"
 _SKIP_CONTEXTS = {41, 42}  # IS_FIRST, MULLIGAN
 MAX_OPTIONS = 48  # observed max on a 10-replay sanity sample was 31; headroom above that
 
+# Backward-discounted value-labeling decay (matches kiyotah/GO-NO-GO step2a
+# LAMBDA=0.9; see scratchpad/gold/rl_govono/rl_full_lib.py:59). For BC we have
+# no per-step intermediate value estimate, so we use the simpler outcome-
+# discount form: for an episode with outcome o in {+1,-1} and N samples in
+# ascending step order, target_v_k = o * LAMBDA**(N-1-k). The LAST decision
+# (k=N-1) gets target = o; earlier decisions decay geometrically toward 0,
+# reflecting that the game outcome is less certain the further from the end.
+VALUE_LAMBDA = 0.9
+
 
 def own_deck_approx(replay: dict, player_index: int) -> list[int]:
     """Approximate a player's decklist as distinct-by-serial cards seen across
@@ -127,8 +136,32 @@ def own_deck_approx(replay: dict, player_index: int) -> list[int]:
     return list(seen.values())
 
 
-def build_samples_for_record(replay: dict, record: dict, archetype_id_map: dict) -> tuple[list[dict], Counter, Counter]:
-    """Return (samples, context_counter, error_counter) for one (episode, winner) record."""
+def _derive_outcome(replay: dict, player_index: int) -> float | None:
+    """Return the game outcome o in {+1.0, -1.0} for `player_index`, or None
+    if it can't be derived from the replay (no rewards / index out of range /
+    draw). replay["rewards"][i] is +1 for a win and -1 for a loss for player i."""
+    rewards = replay.get("rewards") or []
+    if player_index < 0 or player_index >= len(rewards):
+        return None
+    r = rewards[player_index]
+    if r is None:
+        return None
+    if r > 0:
+        return 1.0
+    if r < 0:
+        return -1.0
+    return None  # r == 0 -> draw / incomplete
+
+
+def build_samples_for_record(replay: dict, record: dict, archetype_id_map: dict) -> tuple[list[dict], Counter, Counter, Counter]:
+    """Return (samples, context_counter, error_counter, value_counter) for one
+    (episode, winner) record.
+
+    Each sample gets an added "value_target" field: the backward-discounted
+    game outcome (o * LAMBDA**(N-1-k) over the episode's N samples in ascending
+    step order, last step -> o). If the outcome can't be derived, falls back to
+    +1.0 (the old constant-target behavior) and counts it in value_counter.
+    """
     player_index = record["player_index"]
     your_deck = own_deck_approx(replay, player_index)
     archetype_id = archetype_id_map.get(record["archetype"], archetype_id_map.get("unknown", 10))
@@ -137,6 +170,7 @@ def build_samples_for_record(replay: dict, record: dict, archetype_id_map: dict)
     samples: list[dict] = []
     ctx_counter: Counter = Counter()
     err_counter: Counter = Counter()
+    value_counter: Counter = Counter()
 
     n_steps = len(steps)
     for i in range(n_steps - 1):
@@ -202,7 +236,25 @@ def build_samples_for_record(replay: dict, record: dict, archetype_id_map: dict)
             }
         )
 
-    return samples, ctx_counter, err_counter
+    # --- value targets: backward-discounted outcome over the episode's samples ---
+    # `samples` is in ascending step order (i loops 0..n_steps-2), so position
+    # from end within this list = distance to game end. Last sample (k=N-1) ->
+    # target = o; earlier samples decay toward 0 by VALUE_LAMBDA per step back.
+    outcome = _derive_outcome(replay, player_index)
+    n = len(samples)
+    if outcome is not None and n > 0:
+        for k, s in enumerate(samples):
+            s["value_target"] = float(outcome * (VALUE_LAMBDA ** (n - 1 - k)))
+        value_counter["outcome_derived"] += n
+    else:
+        # Backward-compat fallback: old behavior was a constant +1.0 target
+        # (set in the trainer). Keep that so consumers on datasets where the
+        # outcome couldn't be derived still get a usable (if uninformative) field.
+        for s in samples:
+            s["value_target"] = 1.0
+        value_counter["outcome_fallback"] += n
+
+    return samples, ctx_counter, err_counter, value_counter
 
 
 def main():
@@ -226,6 +278,7 @@ def main():
     val_samples: list[dict] = []
     all_ctx: Counter = Counter()
     all_err: Counter = Counter()
+    all_value: Counter = Counter()
     n_episodes_ok = 0
     n_episodes_missing = 0
 
@@ -238,9 +291,10 @@ def main():
         with open(replay_path) as f:
             replay = json.load(f)
 
-        samples, ctx_counter, err_counter = build_samples_for_record(replay, record, archetype_id_map)
+        samples, ctx_counter, err_counter, value_counter = build_samples_for_record(replay, record, archetype_id_map)
         all_ctx.update(ctx_counter)
         all_err.update(err_counter)
+        all_value.update(value_counter)
         n_episodes_ok += 1
 
         if record["is_val"]:
@@ -262,6 +316,15 @@ def main():
         print(f"Encoder/decoder errors (sample skipped, non-fatal): {sum(all_err.values())} total")
         for k, v in all_err.most_common(10):
             print(f"    {v:5d}  {k}")
+    if all_value.get("outcome_fallback", 0):
+        print(
+            f"WARNING: value_target fallback (+1.0) used for "
+            f"{all_value['outcome_fallback']} samples (outcome could not be derived)"
+        )
+    print(
+        f"  value_target: {all_value.get('outcome_derived', 0)} derived, "
+        f"{all_value.get('outcome_fallback', 0)} fallback"
+    )
 
     args.out_dir.mkdir(parents=True, exist_ok=True)
     torch.save(train_samples, args.out_dir / "train.pt")
@@ -292,6 +355,8 @@ def main():
         "random_baseline_acc_train": _random_baseline(train_samples),
         "random_baseline_acc_val": _random_baseline(val_samples),
         "context_counts": {str(k): v for k, v in all_ctx.most_common()},
+        "value_target_counts": {str(k): v for k, v in all_value.most_common()},
+        "value_lambda": VALUE_LAMBDA,
         "max_options_cap": MAX_OPTIONS,
         "model_constants": {
             "card_count": cc.CARD_COUNT,

@@ -182,8 +182,8 @@ def _fallback_agent(obs_dict: dict) -> list[int]:
     if sel_type == _ST_COUNT:
         best = max(range(n), key=lambda i: (_opt_get(opts[i], "number", 0) or 0))
         return [best]
-    min_c = int(sel.get("minCount") or 1)
-    max_c = int(sel.get("maxCount") or 1)
+    min_c = int(sel.get("minCount") if sel.get("minCount") is not None else 1)
+    max_c = int(sel.get("maxCount") if sel.get("maxCount") is not None else 1)
     context = sel.get("context")
     if context == _SC_MAIN:
         atk_idxs = [i for i in range(n) if _opt_get(opts[i], "type") == _OT_ATTACK]
@@ -221,7 +221,7 @@ def agent(obs_dict: dict) -> list[int]:
         _n_fallback_decisions += 1
         return []
 
-    max_count = int(sel.get("maxCount") or 1)
+    max_count = int(sel.get("maxCount") if sel.get("maxCount") is not None else 1)
     context = sel.get("context")
 
     model_eligible = (

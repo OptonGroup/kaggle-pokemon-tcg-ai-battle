@@ -88,8 +88,8 @@ def _random_agent(obs_dict: dict) -> list[int]:
     n = len(opts)
     if n == 0:
         return []
-    max_c = int(sel.get("maxCount") or 1)
-    min_c = int(sel.get("minCount") or 1)
+    max_c = int(sel.get("maxCount") if sel.get("maxCount") is not None else 1)
+    min_c = int(sel.get("minCount") if sel.get("minCount") is not None else 1)
     k = random.randint(min_c, max_c) if max_c > min_c else max_c
     k = min(k, n)
     return random.sample(range(n), k)
