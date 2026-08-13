@@ -1025,11 +1025,35 @@ def decision_base_features(obs: dict) -> dict:
     feats.update(hbd_feats)
     feats.update(opp_board_features(theirs))
 
+    # (н) БЛОК 6 (v085, диагноз-Б §5) — доли исчерпания колоды/призов + сжатый turn. Порт
+    # featurize_corpus_2b.py::decision_base_features (тот же блок там, дословно).
+    _own_total = (own["deck_count"] + own["discard_n"] + own["hand_count"]
+                  if SENTINEL not in (own["deck_count"], own["discard_n"], own["hand_count"])
+                  else None)
+    feats["own_deck_frac"] = (own["deck_count"] / _own_total
+                               if _own_total not in (None, 0) else SENTINEL)
+    _opp_total = (opp_b["deck_count"] + opp_b["discard_n"] + opp_b["hand_count"]
+                  if SENTINEL not in (opp_b["deck_count"], opp_b["discard_n"], opp_b["hand_count"])
+                  else None)
+    feats["opp_deck_frac"] = (opp_b["deck_count"] / _opp_total
+                               if _opp_total not in (None, 0) else SENTINEL)
+    feats["prize_frac_left"] = own["n_prize_left"] / 6.0
+    feats["opp_prize_frac_left"] = opp_b["n_prize_left"] / 6.0
+    feats["turn_capped"] = float(min(int(turn), 20)) if isinstance(turn, int) else SENTINEL
+
     feats["_me"] = me
     feats["_players"] = players
     feats["_looking"] = cur.get("looking")
     feats["_sel_deck"] = sel.get("deck")
     feats["_opp_active_hp"] = opp_b["active_hp"]
+    # (о) БЛОК 7 (v085, диагноз-Б §1) — attack_id последней СВОЕЙ атаки этим ходом, из
+    # obs['logs']. Порт featurize_corpus_2b.py::decision_base_features (тот же блок там).
+    _last_atk_id = None
+    for _t_ev, _cid_ev, _aid_ev in reversed(_extract_turn_log_events(obs)):
+        if _t_ev == OPT_ATTACK:
+            _last_atk_id = _aid_ev
+            break
+    feats["_last_own_attack_id"] = _last_atk_id
     return feats
 
 
@@ -1120,6 +1144,44 @@ def option_features(base: dict, opt: dict, opt_idx: int, n_options: int) -> dict
     else:
         feats["opt_card_hand_remaining_n"] = SENTINEL
         feats["opt_card_discard_n"] = SENTINEL
+
+    # (о) БЛОК 7 (v085, диагноз-Б §3/§5) — состояние ЦЕЛИ card-type опций. Порт
+    # featurize_corpus_2b.py::option_features (тот же блок там, дословно; ATTACK_DAMAGE здесь
+    # модульная константа, там был параметр attack_dmg).
+    _target_pidx_resolved = pidx if isinstance(pidx, int) else me
+    feats["opt_target_is_self"] = 1.0 if _target_pidx_resolved == me else 0.0
+    if is_attach:
+        card_target_mon = target_mon
+    elif t == OPT_CARD:
+        card_target_mon = mon_at(players, _target_pidx_resolved, area, idx)
+    else:
+        card_target_mon = None
+    if card_target_mon is not None:
+        _thp_raw = card_target_mon.get("hp")
+        _tmx_raw = card_target_mon.get("maxHp")
+        _thp = float(_thp_raw) if isinstance(_thp_raw, (int, float)) else None
+        _tmx = float(_tmx_raw) if isinstance(_tmx_raw, (int, float)) else None
+        feats["opt_target_hp"] = _thp if _thp is not None else SENTINEL
+        feats["opt_target_hp_frac"] = (
+            _thp / _tmx if (_thp is not None and _tmx not in (None, 0)) else SENTINEL)
+        feats["opt_target_energy_n"] = float(len(card_target_mon.get("energies") or []))
+        feats["opt_target_tools_n"] = float(len(card_target_mon.get("tools") or []))
+        _last_atk_id = base.get("_last_own_attack_id")
+        _last_atk_dmg = (ATTACK_DAMAGE.get(int(_last_atk_id), SENTINEL)
+                          if _last_atk_id is not None else SENTINEL)
+        if _last_atk_dmg != SENTINEL and _thp is not None:
+            feats["opt_target_dmg_kills"] = 1.0 if _last_atk_dmg >= _thp else 0.0
+            feats["opt_target_dmg_minus_hp"] = _last_atk_dmg - _thp
+        else:
+            feats["opt_target_dmg_kills"] = 0.0
+            feats["opt_target_dmg_minus_hp"] = SENTINEL
+    else:
+        feats["opt_target_hp"] = SENTINEL
+        feats["opt_target_hp_frac"] = SENTINEL
+        feats["opt_target_energy_n"] = SENTINEL
+        feats["opt_target_tools_n"] = SENTINEL
+        feats["opt_target_dmg_kills"] = 0.0
+        feats["opt_target_dmg_minus_hp"] = SENTINEL
     return feats
 
 

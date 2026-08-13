@@ -739,6 +739,16 @@ FEATURE_ORDER: list = (
     # (м) БЛОК 5 (H3, 08-09 итерация 4) — "способность уже использовалась в этом ходу",
     # честный прокси (не точный признак), см. turn_history_step докстринг про ограничения.
     + ["own_munkidori_ability_used_this_turn"]
+    # (н) БЛОК 6 (v085, диагноз-Б §5) — "глубина доски" как насыщающиеся ДОЛИ, а не сырые
+    # счётчики: turn/deck_count почти не встречаются в обучении на turn>=20 (<1% строк) и
+    # плохо обобщаются экстраполяцией; доли исчерпания колоды/призов насыщаются к 0/1
+    # независимо от абсолютного номера хода (см. диагноз-Б §4).
+    + ["own_deck_frac", "opp_deck_frac", "prize_frac_left", "opp_prize_frac_left", "turn_capped"]
+    # (о) БЛОК 7 (v085, диагноз-Б §3/§5) — состояние ЦЕЛИ card-type опций (unified ctx=3/13/15
+    # "выбери покемона на столе" — see диагноз-Б: is_attach-gate у mon_at() раньше слепил
+    # модель к HP/энергии цели ВО ВСЕХ t==OPT_CARD контекстах, не только ATTACH).
+    + ["opt_target_is_self", "opt_target_hp", "opt_target_hp_frac", "opt_target_energy_n",
+       "opt_target_tools_n", "opt_target_dmg_kills", "opt_target_dmg_minus_hp"]
 )
 assert len(FEATURE_ORDER) == len(set(FEATURE_ORDER)), "дубликат имени фичи в FEATURE_ORDER"
 
@@ -965,12 +975,39 @@ def decision_base_features(obs: dict, attack_ready_cost: dict, card_attack_costs
     feats.update(hbd_feats)
     feats.update(opp_board_features(theirs))
 
+    # (н) БЛОК 6 (v085, диагноз-Б §5) — доли исчерпания колоды/призов + сжатый turn. Считаем
+    # только когда все три сырых счётчика реально известны (deck_count/discard_n/hand_count
+    # почти никогда не SENTINEL — видимые счётчики, не fog-of-war-контент — но защищаемся).
+    _own_total = (own["deck_count"] + own["discard_n"] + own["hand_count"]
+                  if SENTINEL not in (own["deck_count"], own["discard_n"], own["hand_count"])
+                  else None)
+    feats["own_deck_frac"] = (own["deck_count"] / _own_total
+                               if _own_total not in (None, 0) else SENTINEL)
+    _opp_total = (opp_b["deck_count"] + opp_b["discard_n"] + opp_b["hand_count"]
+                  if SENTINEL not in (opp_b["deck_count"], opp_b["discard_n"], opp_b["hand_count"])
+                  else None)
+    feats["opp_deck_frac"] = (opp_b["deck_count"] / _opp_total
+                               if _opp_total not in (None, 0) else SENTINEL)
+    feats["prize_frac_left"] = own["n_prize_left"] / 6.0
+    feats["opp_prize_frac_left"] = opp_b["n_prize_left"] / 6.0
+    feats["turn_capped"] = float(min(int(turn), 20)) if isinstance(turn, int) else SENTINEL
+
     # добавочные поля, нужные option_features но не входящие в X напрямую
     feats["_me"] = me
     feats["_players"] = players
     feats["_looking"] = cur.get("looking")
     feats["_sel_deck"] = sel.get("deck")
     feats["_opp_active_hp"] = opp_b["active_hp"]
+    # (о) БЛОК 7 (v085, диагноз-Б §1) — attack_id последней СВОЕЙ атаки этим ходом, из
+    # obs['logs'] (уже "с последнего select", см. модуль-докстринг про _extract_turn_log_events)
+    # — не персистентный 3-капед буфер turn_history_step (тот теряет событие после 3+ доп.
+    # under-подрешений между атакой и sel.context=15, см. диагноз-Б §1 про 100%/0% эмпирику).
+    _last_atk_id = None
+    for _t_ev, _cid_ev, _aid_ev in reversed(_extract_turn_log_events(obs)):
+        if _t_ev == OPT_ATTACK:
+            _last_atk_id = _aid_ev
+            break
+    feats["_last_own_attack_id"] = _last_atk_id
     return feats
 
 
@@ -1069,6 +1106,47 @@ def option_features(base: dict, opt: dict, opt_idx: int, n_options: int, attack_
     else:
         feats["opt_card_hand_remaining_n"] = SENTINEL
         feats["opt_card_discard_n"] = SENTINEL
+
+    # (о) БЛОК 7 (v085, диагноз-Б §3/§5) — состояние ЦЕЛИ card-type опций: расширяем резолв
+    # с t==OPT_ATTACH (уже был выше, target_mon на СВОЕЙ стороне) до ЛЮБОГО t==OPT_CARD опции
+    # (ctx=3 SWITCH/ctx=15 DAMAGE/ctx=13 и т.д. — цель может быть на ЧУЖОЙ стороне, playerIndex
+    # опции задаёт это явно). ★ ДИАГНОЗ-Б: раньше mon_at() вызывался ТОЛЬКО при is_attach, из-
+    # за чего HP/энергия/killability цели никогда не попадали в X ни для одного t==OPT_CARD
+    # решения (3.60% всех option-строк корпуса) — модель видела только species one-hot цели.
+    _target_pidx_resolved = pidx if isinstance(pidx, int) else me
+    feats["opt_target_is_self"] = 1.0 if _target_pidx_resolved == me else 0.0
+    if is_attach:
+        card_target_mon = target_mon  # уже посчитан выше (своя сторона, ipa/ipi)
+    elif t == OPT_CARD:
+        card_target_mon = mon_at(players, _target_pidx_resolved, area, idx)
+    else:
+        card_target_mon = None
+    if card_target_mon is not None:
+        _thp_raw = card_target_mon.get("hp")
+        _tmx_raw = card_target_mon.get("maxHp")
+        _thp = float(_thp_raw) if isinstance(_thp_raw, (int, float)) else None
+        _tmx = float(_tmx_raw) if isinstance(_tmx_raw, (int, float)) else None
+        feats["opt_target_hp"] = _thp if _thp is not None else SENTINEL
+        feats["opt_target_hp_frac"] = (
+            _thp / _tmx if (_thp is not None and _tmx not in (None, 0)) else SENTINEL)
+        feats["opt_target_energy_n"] = float(len(card_target_mon.get("energies") or []))
+        feats["opt_target_tools_n"] = float(len(card_target_mon.get("tools") or []))
+        _last_atk_id = base.get("_last_own_attack_id")
+        _last_atk_dmg = (attack_dmg.get(int(_last_atk_id), SENTINEL)
+                          if _last_atk_id is not None else SENTINEL)
+        if _last_atk_dmg != SENTINEL and _thp is not None:
+            feats["opt_target_dmg_kills"] = 1.0 if _last_atk_dmg >= _thp else 0.0
+            feats["opt_target_dmg_minus_hp"] = _last_atk_dmg - _thp
+        else:
+            feats["opt_target_dmg_kills"] = 0.0
+            feats["opt_target_dmg_minus_hp"] = SENTINEL
+    else:
+        feats["opt_target_hp"] = SENTINEL
+        feats["opt_target_hp_frac"] = SENTINEL
+        feats["opt_target_energy_n"] = SENTINEL
+        feats["opt_target_tools_n"] = SENTINEL
+        feats["opt_target_dmg_kills"] = 0.0
+        feats["opt_target_dmg_minus_hp"] = SENTINEL
 
     unresolved_reason = None
     if t in CARD_RESOLVABLE_TYPES and card_id is None:
