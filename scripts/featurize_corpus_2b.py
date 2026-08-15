@@ -479,6 +479,86 @@ def mon_threat(card_id, energies: list, card_attack_costs: dict) -> tuple:
     return float(min_cost), ready, (float(max_dmg) if max_dmg is not None else 0.0)
 
 
+# ── БЛОК 8 (v089, копание зеркальных рычагов 08-15) — "готовность замены" ────────────────
+# ПРОБЛЕМА (out/mirror_levers_20260815/SYNTHESIS.md): решение "ретритнуть или атаковать"
+# принимается на MAIN-опции retreat (t=OPT_RETREAT), которая НЕ несёт цели — цель резолвится
+# отдельным следующим SWITCH-решением. Поэтому фичи БЛОКА 7 (opt_target_*) на этом решении
+# все SENTINEL: они считаются только для is_attach/OPT_CARD опций. В итоге на MAIN модель
+# видит про бенч ровно две вещи: own_bench_cnt_<id> (СКОЛЬКО копий) и bench_energy_sum
+# (сумма энергий ПО ВСЕМУ бенчу — не отличает энергию на Grimmsnarl от энергии на Munkidori).
+# Оба сигнала, на которых висит экспертное решение, модели не видны.
+# ЗАМЕР (A3, 15025 состояний-возможностей корпуса, зеркало): эксперты свопают повреждённую
+# активную копию на здоровую в 13.4% возможностей, НО с заряженной бенч-копией — 15.2%,
+# с незаряженной — 0.8% (×19). То есть "заряжена ли замена" и есть главный разделитель.
+# ЗАМЕР (A2, холдаут 442k): на подклассе "своп повреждённого активного 648" top-1 базы 0.366
+# против 0.579 у прочего retreat; вес 1.6 поднял до 0.500 и упёрся — чаще ретритить модель
+# научилась, отличать ПРАВИЛЬНЫЙ момент ей нечем.
+# КОНВЕНЦИИ: "лучшая замена" = бенч-мон с ТЕМ ЖЕ card id, что активный (ровно механика
+# ротации копий ex как общего пула HP), максимум по hp, тай-брейк — больше энергий.
+# Вид-агностично по построению (сравнение с active_id), 648 нигде не захардкожен.
+# attack_ready/max_damage — через mon_threat (type-aware, БЛОК 4), НЕ через
+# attack_ready_cost (тот — D-only-упрощение, см. его докстринг).
+# Натуральный 0 vs SENTINEL: если подходящей копии на бенче НЕТ, hp/energy — SENTINEL
+# ("значения не существует", как opp_active_* при пустом активе), а счётчик и бинарные
+# флаги — 0.0 (та же конвенция, что счётчики БЛОКА 3).
+def bench_replacement_features(mine: dict, own_active_id, own_active_hp, own_active_maxhp,
+                               card_attack_costs: dict) -> dict:
+    """★ БЛОК 8 (v089). -> фичи "есть ли на бенче боеспособная замена того же вида".
+    `own_active_id`/`own_active_hp`/`own_active_maxhp` — из board() (могут быть None/SENTINEL).
+    Смотрит ТОЛЬКО на свою сторону; fog-of-war не нарушает (свой бенч виден целиком)."""
+    bench = [m for m in (mine.get("bench") or []) if isinstance(m, dict)]
+    same = []
+    if own_active_id is not None:
+        for m in bench:
+            mid = m.get("id")
+            if mid is not None and int(mid) == int(own_active_id):
+                hp = m.get("hp")
+                if isinstance(hp, (int, float)):
+                    same.append((float(hp), float(len(m.get("energies") or [])), m))
+
+    out = {"own_bench_same_id_n": float(len(same))}
+    if not same:
+        out.update({
+            "own_bench_best_same_hp": SENTINEL,
+            "own_bench_best_same_hp_frac": SENTINEL,
+            "own_bench_best_same_hp_minus_active": SENTINEL,
+            "own_bench_best_same_energy_n": SENTINEL,
+            "own_bench_best_same_attack_ready": 0.0,
+            "own_bench_best_same_max_damage": SENTINEL,
+            "own_bench_healthier_same_exists": 0.0,
+            "own_bench_charged_healthier_same_exists": 0.0,
+        })
+        return out
+
+    # максимум по hp, тай-брейк — больше прикреплённых энергий (из двух одинаково здоровых
+    # копий эксперт меняется на заряженную: она сможет атаковать сразу после свопа).
+    best_hp, best_en, best_mon = max(same, key=lambda t: (t[0], t[1]))
+    _min_cost, _ready, _max_dmg = mon_threat(
+        own_active_id, list(best_mon.get("energies") or []), card_attack_costs)
+
+    a_hp = own_active_hp if own_active_hp != SENTINEL else None
+    healthier = 1.0 if (a_hp is not None and best_hp > a_hp) else 0.0
+
+    out.update({
+        "own_bench_best_same_hp": best_hp,
+        "own_bench_best_same_hp_frac": (
+            best_hp / own_active_maxhp
+            if (own_active_maxhp not in (None, SENTINEL, 0)) else SENTINEL),
+        # "сколько HP выигрываем свопом" — прямая величина "пула HP" из механики топ-5.
+        "own_bench_best_same_hp_minus_active": (
+            best_hp - a_hp if a_hp is not None else SENTINEL),
+        "own_bench_best_same_energy_n": best_en,
+        "own_bench_best_same_attack_ready": _ready,
+        "own_bench_best_same_max_damage": _max_dmg,
+        "own_bench_healthier_same_exists": healthier,
+        # ★ главный разделитель по замеру A3 (15.2% vs 0.8%): замена не просто здоровее,
+        # а ещё и способна атаковать сразу — иначе своп дарит оппоненту темп.
+        "own_bench_charged_healthier_same_exists": (
+            1.0 if (healthier == 1.0 and _ready == 1.0) else 0.0),
+    })
+    return out
+
+
 # ── БЛОК 2 (история хода): события извлекаются ИСКЛЮЧИТЕЛЬНО из obs['logs'] ("Events that
 # have occurred since the last selection", cg.api.Observation.logs) — НЕ из
 # decisions.jsonl['action']/y. Это намеренно: build_features() в live НЕ имеет доступа к
@@ -749,6 +829,14 @@ FEATURE_ORDER: list = (
     # модель к HP/энергии цели ВО ВСЕХ t==OPT_CARD контекстах, не только ATTACH).
     + ["opt_target_is_self", "opt_target_hp", "opt_target_hp_frac", "opt_target_energy_n",
        "opt_target_tools_n", "opt_target_dmg_kills", "opt_target_dmg_minus_hp"]
+    # (п) БЛОК 8 (v089, копание зеркальных рычагов 08-15) — "готовность замены" на бенче:
+    # закрывает слепоту MAIN-решения retreat к состоянию копии, в которую можно отступить
+    # (opt_target_* там все SENTINEL — цель резолвится следующим SWITCH-решением).
+    # См. докстринг bench_replacement_features и out/mirror_levers_20260815/SYNTHESIS.md.
+    + ["own_bench_same_id_n", "own_bench_best_same_hp", "own_bench_best_same_hp_frac",
+       "own_bench_best_same_hp_minus_active", "own_bench_best_same_energy_n",
+       "own_bench_best_same_attack_ready", "own_bench_best_same_max_damage",
+       "own_bench_healthier_same_exists", "own_bench_charged_healthier_same_exists"]
 )
 assert len(FEATURE_ORDER) == len(set(FEATURE_ORDER)), "дубликат имени фичи в FEATURE_ORDER"
 
@@ -946,6 +1034,10 @@ def decision_base_features(obs: dict, attack_ready_cost: dict, card_attack_costs
         1.0 if (own["active_id"] is not None and opp_b["active_id"] is not None
                 and own["active_hp"] != SENTINEL and _opp_max_dmg_to_own > 0
                 and _opp_max_dmg_to_own >= own["active_hp"]) else 0.0)
+
+    # (п) БЛОК 8 (v089) — "готовность замены" на бенче (см. bench_replacement_features).
+    feats.update(bench_replacement_features(
+        mine, own["active_id"], own["active_hp"], own["active_maxhp"], card_attack_costs))
 
     _own_min_cost2, _own_ready2, _own_max_dmg_to_opp = mon_threat(
         own["active_id"], own_energies, card_attack_costs)
@@ -1242,6 +1334,9 @@ def main() -> int:
     ap.add_argument("--split", default=str(WORKTREE / "out" / "corpus_2b" / "split" / "split.json"))
     ap.add_argument("--out-dir", default=str(WORKTREE / "out" / "corpus_2b" / "features"))
     ap.add_argument("--limit", type=int, default=0, help="0 = все эпизоды; иначе — только первые N эпизодов (смоук)")
+    ap.add_argument("--offset", type=int, default=0,
+                    help="пропустить первые N ЭПИЗОДОВ (шардовая фичеризация: --offset K "
+                         "--limit M даёт эпизоды [K, K+M); решения эпизода не рвутся)")
     args = ap.parse_args()
 
     t0 = time.perf_counter()
@@ -1268,19 +1363,34 @@ def main() -> int:
 
     # decisions.jsonl подряд сгруппирован по episode_id (проверено заранее) — читаем стримингом.
     decs_path = Path(args.decisions)
+    # --offset/--limit режут ПО ЭПИЗОДАМ в порядке их появления в decisions.jsonl (файл
+    # сгруппирован по episode_id). Нужны для шардовой фичеризации: полный корпус 2B
+    # (1.04M решений -> ~5.6M option-строк x 293 фичи) не помещается в память Docker-VM
+    # (7.75 ГиБ, OOM/137 на ~700-м эпизоде), поэтому гоняется чанками по N эпизодов
+    # с последующей склейкой. Решения одного эпизода НИКОГДА не рвутся между чанками —
+    # это инвариант: decision_uid и группировка по решению должны остаться целыми.
     episodes_order = []
     by_ep = defaultdict(list)
     cur_ep = None
+    seen_eps = 0            # сколько РАЗНЫХ эпизодов встретилось в файле (включая пропущенные)
+    take_current = False    # берём ли решения текущего эпизода
+    skip_n = max(0, int(getattr(args, "offset", 0) or 0))
     with open(decs_path, "r") as f:
         for line in f:
             d = json.loads(line)
             ep = d["episode_id"]
             if ep != cur_ep:
-                if args.limit and len(episodes_order) >= args.limit:
-                    break
-                episodes_order.append(ep)
                 cur_ep = ep
-            by_ep[ep].append(d)
+                seen_eps += 1
+                in_window = seen_eps > skip_n
+                room_left = (not args.limit) or len(episodes_order) < args.limit
+                if in_window and not room_left:
+                    break  # окно закрыто — дальше читать нечего
+                take_current = in_window and room_left
+                if take_current:
+                    episodes_order.append(ep)
+            if take_current:
+                by_ep[ep].append(d)
 
     print(f"[featurize] эпизодов к обработке: {len(episodes_order)} "
           f"(limit={args.limit or 'ALL'})", file=sys.stderr)

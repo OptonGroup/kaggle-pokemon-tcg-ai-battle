@@ -1002,6 +1002,49 @@ def decision_base_features(obs: dict) -> dict:
                 and own["active_hp"] != SENTINEL and _opp_max_dmg_to_own > 0
                 and _opp_max_dmg_to_own >= own["active_hp"]) else 0.0)
 
+    # (п) БЛОК 8 (v089) — "готовность замены" на бенче. Порт
+    # featurize_corpus_2b.py::bench_replacement_features (дословно; CARD_ATTACK_COSTS вшиты,
+    # поэтому mon_threat здесь без параметра card_attack_costs — единственное допустимое
+    # расхождение, ровно как у БЛОКА 4 выше). Проверяется тестом эквивалентности (a).
+    _bench_same = []
+    if own["active_id"] is not None:
+        for _m in (mine.get("bench") or []):
+            if not isinstance(_m, dict):
+                continue
+            _mid = _m.get("id")
+            if _mid is not None and int(_mid) == int(own["active_id"]):
+                _mhp = _m.get("hp")
+                if isinstance(_mhp, (int, float)):
+                    _bench_same.append((float(_mhp), float(len(_m.get("energies") or [])), _m))
+    feats["own_bench_same_id_n"] = float(len(_bench_same))
+    if not _bench_same:
+        feats["own_bench_best_same_hp"] = SENTINEL
+        feats["own_bench_best_same_hp_frac"] = SENTINEL
+        feats["own_bench_best_same_hp_minus_active"] = SENTINEL
+        feats["own_bench_best_same_energy_n"] = SENTINEL
+        feats["own_bench_best_same_attack_ready"] = 0.0
+        feats["own_bench_best_same_max_damage"] = SENTINEL
+        feats["own_bench_healthier_same_exists"] = 0.0
+        feats["own_bench_charged_healthier_same_exists"] = 0.0
+    else:
+        _best_hp, _best_en, _best_mon = max(_bench_same, key=lambda t: (t[0], t[1]))
+        _b_min_cost, _b_ready, _b_max_dmg = mon_threat(
+            own["active_id"], list(_best_mon.get("energies") or []))
+        _a_hp = own["active_hp"] if own["active_hp"] != SENTINEL else None
+        _healthier = 1.0 if (_a_hp is not None and _best_hp > _a_hp) else 0.0
+        feats["own_bench_best_same_hp"] = _best_hp
+        feats["own_bench_best_same_hp_frac"] = (
+            _best_hp / own["active_maxhp"]
+            if own["active_maxhp"] not in (None, SENTINEL, 0) else SENTINEL)
+        feats["own_bench_best_same_hp_minus_active"] = (
+            _best_hp - _a_hp if _a_hp is not None else SENTINEL)
+        feats["own_bench_best_same_energy_n"] = _best_en
+        feats["own_bench_best_same_attack_ready"] = _b_ready
+        feats["own_bench_best_same_max_damage"] = _b_max_dmg
+        feats["own_bench_healthier_same_exists"] = _healthier
+        feats["own_bench_charged_healthier_same_exists"] = (
+            1.0 if (_healthier == 1.0 and _b_ready == 1.0) else 0.0)
+
     _own_min_cost2, _own_ready2, _own_max_dmg_to_opp = mon_threat(own["active_id"], own_energies)
     feats["own_kills_opp_active_this_turn"] = (
         1.0 if (opp_b["active_id"] is not None and opp_b["active_hp"] != SENTINEL
@@ -1367,7 +1410,12 @@ def run_equivalence_test(features_dir: Path, obs_dir: Path, boosters: dict,
         uids_g = [u for u, gg in chosen.items() if gg == g]
         if not uids_g:
             continue
-        df = pd.read_parquet(features_dir / f"{g}.parquet")
+        # ★ v089: фильтр НА УРОВНЕ ЧТЕНИЯ (predicate pushdown). Раньше грузился весь parquet
+        # группы: у main это 3.36M строк x 293 фичи (~4 ГБ), и вместе с уже импортированным
+        # модулем модели (13.7 МБ исходника, пик компиляции CPython ~155 МБ/МБ) процесс
+        # получал OOM/137 в Docker-VM. Нужны строки ~155 решений — читаем только их.
+        df = pd.read_parquet(features_dir / f"{g}.parquet",
+                             filters=[("decision_uid", "in", set(uids_g))])
         sub = df[df["decision_uid"].isin(uids_g)].sort_values(["decision_uid", "option_idx"])
         for uid, rows in sub.groupby("decision_uid"):
             parquet_rows[uid] = rows
@@ -1497,7 +1545,10 @@ def eval_top1_pure_python(features_dir: Path, group: str, trees: list, feature_o
     (упрощённая копия без баланса/категорий), скорится predict_with_trees (чистый Python,
     те же деревья, что пойдут в артефакт) — используется и для 'до', и 'после' прунинга,
     чтобы разница была ЧЕСТНО приписана числу деревьев, а не разнице lightgbm/pure-python."""
-    df = pd.read_parquet(features_dir / f"{group}.parquet")
+    # ★ v089: split=="test" отдаётся predicate pushdown'у — полный main.parquet (~4 ГБ в
+    # памяти) не нужен, test-доля от него порядка процента (см. комментарий про OOM выше).
+    df = pd.read_parquet(features_dir / f"{group}.parquet",
+                         filters=[("split", "==", "test")])
     df = df[df["split"] == "test"].sort_values(["decision_uid", "option_idx"])
     X = df[feature_order].to_numpy(dtype=np.float64)
     scores = [predict_with_trees(trees, row) for row in X]
