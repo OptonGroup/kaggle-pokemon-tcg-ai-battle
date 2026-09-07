@@ -1,0 +1,44 @@
+{
+  "tag": "v073_m881002_core_gate",
+  "agent": {
+    "ckpt": null,
+    "agent_dir": "v073_rockinn_damage",
+    "deck": "/Users/max/kaggle-pokemon-tcg-ai-battle/submissions/v073_rockinn_damage/deck.csv",
+    "label": "submission:v073_rockinn_damage"
+  },
+  "agent_ckpt_exceptions": null,
+  "excluded_pairs": [
+    {
+      "key": "v070_h2h",
+      "opp_dir": "/Users/max/kaggle-pokemon-tcg-ai-battle/.claude/worktrees/v070-grimmsnarl-hybrid/submissions/v070_grimmsnarl_hybrid",
+      "reason": "dir not found: /Users/max/kaggle-pokemon-tcg-ai-battle/.claude/worktrees/v070-grimmsnarl-hybrid/submissions/v070_grimmsnarl_hybrid"
+    }
+  ],
+  "opponents": {
+    "ext_masamikobayashi_archaludon": {
+      "opponent": "ext_masamikobayashi_archaludon",
+      "opponent_dir": "sub:/Users/max/kaggle-pokemon-tcg-ai-battle/submissions/external_masamikobayashi_archaludon",
+      "n_games": 1000,
+      "wins": 330,
+      "losses": 670,
+      "draws": 0,
+      "win_rate": 0.33,
+      "wilson95_lo": 0.3015550314798513,
+      "wilson95_hi": 0.3597461140395216,
+      "decisive_win_rate": 0.33,
+      "decisive_n": 1000,
+      "avg_game_length": 138.926,
+      "min_game_length": 23,
+      "max_game_length": 254,
+      "exc_agent": 0,
+      "exc_opp": 0,
+      "illegal_agent": 0,
+      "illegal_opp": 0,
+      "timeouts": 0,
+      "crashes": 0,
+      "elapsed_s": 17.730058908462524
+    }
+  },
+  "overall_win_rate": 0.33,
+  "generated": "2026-07-25 01:20:53"
+}

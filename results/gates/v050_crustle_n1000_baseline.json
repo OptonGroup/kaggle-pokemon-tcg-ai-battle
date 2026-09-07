@@ -1,0 +1,52 @@
+{
+  "tag": "v050_crustle_n1000_baseline",
+  "agent": {
+    "ckpt": null,
+    "agent_dir": "v050_p0p1",
+    "deck": "/Users/max/kaggle-pokemon-tcg-ai-battle/submissions/v050_p0p1/deck.csv",
+    "label": "submission:v050_p0p1"
+  },
+  "agent_ckpt_exceptions": null,
+  "opponents": {
+    "v007_crustle": {
+      "opponent": "v007_crustle",
+      "opponent_dir": "v007_crustle",
+      "n_games": 1000,
+      "wins": 786,
+      "losses": 211,
+      "draws": 3,
+      "win_rate": 0.7875,
+      "wilson95_lo": 0.7610695855728391,
+      "wilson95_hi": 0.8117299477399864,
+      "decisive_win_rate": 0.7883650952858575,
+      "decisive_n": 997,
+      "avg_game_length": 72.01,
+      "min_game_length": 11,
+      "max_game_length": 178,
+      "exc_agent": 0,
+      "exc_opp": 0,
+      "elapsed_s": 15.557762791984715
+    },
+    "v009a_crustle": {
+      "opponent": "v009a_crustle",
+      "opponent_dir": "v009a_crustle",
+      "n_games": 1000,
+      "wins": 834,
+      "losses": 164,
+      "draws": 2,
+      "win_rate": 0.835,
+      "wilson95_lo": 0.8107202824572156,
+      "wilson95_hi": 0.8567156954899028,
+      "decisive_win_rate": 0.8356713426853707,
+      "decisive_n": 998,
+      "avg_game_length": 70.165,
+      "min_game_length": 13,
+      "max_game_length": 194,
+      "exc_agent": 0,
+      "exc_opp": 0,
+      "elapsed_s": 14.153625417035073
+    }
+  },
+  "overall_win_rate": 0.81,
+  "generated": "2026-07-21 01:54:57"
+}

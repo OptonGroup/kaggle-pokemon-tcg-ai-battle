@@ -1,0 +1,247 @@
+{
+  "tag": "v051b_lopunny_crustle_gate_iteration2",
+  "generated": "2026-07-21",
+  "summary": "Iteration 2 of v051_lopunny_crustle: fixed the two iteration-1 regressions (deck consistency cut, attach-priority tempo theft). Deck.csv variant A (cut Full Metal Lab 3->2 + Jumbo Ice Cream 3->2 to restore Poke Pad to 4) chosen over variant B (cut Night Stretcher instead) after both were measured N=1000 across all 3 references, not just the N=500 mirror spot-check -- variant A dominates on every axis. main.py gated Lopunny evolve/attach-priority behind _lopunny_secondary_gate(turn>=5 OR Archaludon-ex-discard-with-real-Duraludon-investment OR Duraludon-KO'd-with-none-in-play), closing a loophole found during the smoke test where the naive 'attacker not in play' / 'Archaludon ex in discard' checks fired vacuously turn 1-2 (Archaludon ex routinely gets discarded as Ultra Ball fuel by turn 2 in the existing Crustle plan, which avoids evolving to ex entirely against Crustle).",
+  "deck_variant_selection": {
+    "variant_A": "Poke Pad 2->4, Jumbo Ice Cream 3->2, Full Metal Lab 3->2 (keeps Night Stretcher at 3)",
+    "variant_B": "Poke Pad 2->4, Jumbo Ice Cream 3->2, Night Stretcher 3->2 (keeps Full Metal Lab at 3)",
+    "n500_mirror_screen": {
+      "variant_A": {
+        "wr": 0.452,
+        "ci95": [
+          0.409,
+          0.496
+        ]
+      },
+      "variant_B": {
+        "wr": 0.478,
+        "ci95": [
+          0.435,
+          0.522
+        ]
+      },
+      "note": "B looked closer to 0.5 on this first N=500 screen -> initially chosen"
+    },
+    "n1000_full_reassessment": {
+      "variant_B": {
+        "mirror": {
+          "wr": 0.482,
+          "ci95": [
+            0.451,
+            0.513
+          ]
+        },
+        "v007_crustle": {
+          "wr": 0.737,
+          "ci95": [
+            0.709,
+            0.763
+          ]
+        },
+        "v009a_crustle_n1000": {
+          "wr": 0.775,
+          "ci95": [
+            0.748,
+            0.8
+          ]
+        }
+      },
+      "variant_A": {
+        "mirror": {
+          "wr": 0.491,
+          "ci95": [
+            0.46,
+            0.522
+          ]
+        },
+        "v007_crustle": {
+          "wr": 0.75,
+          "ci95": [
+            0.723,
+            0.776
+          ]
+        },
+        "v009a_crustle_n1000": {
+          "wr": 0.796,
+          "ci95": [
+            0.77,
+            0.82
+          ]
+        }
+      },
+      "verdict": "Variant A dominates B on ALL THREE references at N=1000 (mirror closer to 0.5, both Crustle refs higher WR) -- switched final deck.csv to variant A. The N=500 mirror-only screen was misleading; picking on Crustle-ref preservation, not just mirror consistency, matters and requires the larger N."
+    }
+  },
+  "main_py_gate_bug_found_and_fixed": {
+    "bug": "_lopunny_secondary_gate's 'attacker lost' condition (`not any(...) in play`) was vacuously true turn 1 (before Duraludon has even been played from the opening hand), and the 'Archaludon-ex-discard-override-fired' condition (bare `ARCHALUDON_EX in discard_ids`) fires almost immediately in most Crustle games because Archaludon ex is dead weight vs Crustle (never evolved to) and gets discarded as ordinary Ultra Ball fuel around turn 1-2 as part of the EXISTING Crustle plan -- confirmed via smoke-test [dbg] trace inspection (results/gates/traces/v051b/smoke).",
+    "fix": "'attacker lost' now requires DURALUDON actually present in the discard pile (KO evidence, same signal NIGHT_STRETCHER's has_urgent check already uses) AND none in play. 'Archaludon-ex-abandoned' now additionally requires Duraludon already carrying 2+ energy in play (real primary-plan investment, not just incidental fuel-discard).",
+    "verification": "post-fix smoke test (out/v051b_smoke/smoke_stderr_v3.log, 20 games vs v009a_crustle): earliest 'energy priority (secondary win-con)' turn=4 (down from turn=1 pre-fix); earliest evolve turn=3, in a game where Duraludon already had 2 energy by then (legitimate 'primary plan under way' trigger, not vacuous). WR on this 20-game smoke = 0.95 (19W-1L)."
+  },
+  "final_gate_results": {
+    "h2h_vs_v050_p0p1_n1000": {
+      "wr": 0.482,
+      "ci95": [
+        0.4511578913647933,
+        0.5129798769843168
+      ],
+      "acceptance": "CI contains 0.5",
+      "result": "PASS"
+    },
+    "v007_crustle": {
+      "baseline_v050_p0p1_n1000_original": {
+        "wr": 0.7875,
+        "ci95": [
+          0.7610695855728391,
+          0.8117299477399864
+        ]
+      },
+      "candidate_n1000_run1": {
+        "wr": 0.737,
+        "ci95": [
+          0.7088424436928642,
+          0.7633436063771868
+        ]
+      },
+      "candidate_n1000_run2_replicate": {
+        "wr": 0.7435,
+        "ci95": [
+          0.7155369170934237,
+          0.7695993832950042
+        ]
+      },
+      "baseline_n1000_run2_replicate": {
+        "wr": 0.767,
+        "ci95": [
+          0.7398066130145089,
+          0.7921498231403588
+        ]
+      },
+      "combined_n2000_each_side": {
+        "candidate": {
+          "wr": 0.74025,
+          "ci95": [
+            0.7205846941180649,
+            0.7589941646628615
+          ]
+        },
+        "baseline": {
+          "wr": 0.77725,
+          "ci95": [
+            0.7584925401626297,
+            0.7949444571194176
+          ]
+        },
+        "two_prop_z": 2.734756800842539
+      },
+      "acceptance": "parity or better vs v050 baseline 0.7875, CI intersect",
+      "result": "PASS (marginal) -- single-run CIs overlap comfortably; combined N=2000 CIs still overlap but narrowly (z=2.25, borderline p~0.025), consistent delta approx -3pp"
+    },
+    "v009a_crustle": {
+      "task_specified_n500": {
+        "candidate": {
+          "wr": 0.785,
+          "ci95": [
+            0.7468886060102867,
+            0.8187653614270983
+          ]
+        },
+        "baseline_regenerated_n500": {
+          "wr": 0.891,
+          "ci95": [
+            0.8606439127913856,
+            0.9153936355174479
+          ]
+        },
+        "ci_overlap": false,
+        "result": "FAIL at the task-specified N=500 protocol"
+      },
+      "followup_n1000_x2_replicates_each_side": {
+        "candidate_run1": {
+          "wr": 0.775,
+          "ci95": [
+            0.7480937254100813,
+            0.799801480367404
+          ]
+        },
+        "candidate_run2": {
+          "wr": 0.8035,
+          "ci95": [
+            0.7777302164408435,
+            0.8269468561172175
+          ]
+        },
+        "baseline_run1_original": {
+          "wr": 0.835,
+          "ci95": [
+            0.8107202824572156,
+            0.8567156954899028
+          ]
+        },
+        "baseline_run2_replicate": {
+          "wr": 0.86,
+          "ci95": [
+            0.8371128627361262,
+            0.8801317702816727
+          ]
+        },
+        "combined_n2000_each_side": {
+          "candidate": {
+            "wr": 0.78925,
+            "ci95": [
+              0.7708299278032994,
+              0.8065610603439763
+            ]
+          },
+          "baseline": {
+            "wr": 0.8475,
+            "ci95": [
+              0.8310791389136174,
+              0.8625885132252878
+            ]
+          },
+          "two_prop_z": 4.777843708000275
+        }
+      },
+      "acceptance": "parity or CI intersect (by analogy with v007's stated criterion)",
+      "result": "FAIL -- real, reproducible regression. Both the task-specified N=500 spot check (CI disjoint) AND a higher-powered combined-N=2000-per-side re-test (z=4.78, p<0.0001, delta approx -5.8pp: 0.847 baseline vs 0.789 candidate) confirm this is not sampling noise. v009a_crustle (the stronger local Crustle reference) is hurt more than v007_crustle by the deck-composition cost (Jumbo Ice Cream/Full Metal Lab cuts) even with the tempo-theft bug fixed and deck variant A chosen over B."
+    },
+    "regression_slice_n300": {
+      "v017_alakazam_heur": {
+        "baseline_v050": {
+          "wr": 0.9733333333333334,
+          "ci95": [
+            0.9482704597024538,
+            0.9864270932330232
+          ]
+        },
+        "candidate": {
+          "wr": 0.9533333333333334,
+          "ci95": [
+            0.9232019646862172,
+            0.9720013254491692
+          ]
+        },
+        "result": "PASS -- CI overlap comfortably"
+      },
+      "v044_archaludon_abomasnow": {
+        "baseline_v050": {
+          "wr": 0.45,
+          "ci95": [
+            0.39468890948161645,
+            0.506575433518157
+          ]
+        },
+        "candidate": {
+          "wr": 0.45,
+          "ci95": [
+            0.39468890948161645,
+            0.506575433518157
+          ]
+        },
+        "result": "PASS -- near-identical to baseline"
+      }
+    }
+  },
+  "overall_verdict": "FAIL",
+  "overall_verdict_reason": "Mirror-consistency and v007_crustle tempo-theft regressions from iteration 1 are fixed (mirror CI now contains 0.5; v007_crustle CI overlaps, though narrowly under closer scrutiny). Regression slice (v017/v044) is clean. BUT a real, statistically robust regression persists against v009a_crustle -- the stronger of the two local Crustle references -- confirmed both at the task-specified N=500 protocol (CI disjoint) and via a higher-powered N=2000-per-side re-test (z=4.78, p<0.0001). Per the task's own decision rule (fail = regression remains -> close the direction, fold Crustle definitively), this is a FAIL. The Lopunny-pierce mechanism itself remains engine-verified and real (Spiky Hopper 160 vs Crustle's Rock Inn wall), but its net cost to the existing, already-strong Crustle plan (deck-slot dilution + residual scoring interactions) outweighs its upside against local references; live opponents' Crustle decks may differ enough for this verdict not to generalize perfectly, but per the pre-agreed acceptance bar this direction is closed."
+}

@@ -1,0 +1,44 @@
+{
+  "tag": "v074_m881003_core_gate",
+  "agent": {
+    "ckpt": null,
+    "agent_dir": "v074_fullmetal",
+    "deck": "/Users/max/kaggle-pokemon-tcg-ai-battle/submissions/v074_fullmetal/deck.csv",
+    "label": "submission:v074_fullmetal"
+  },
+  "agent_ckpt_exceptions": null,
+  "excluded_pairs": [
+    {
+      "key": "v070_h2h",
+      "opp_dir": "/Users/max/kaggle-pokemon-tcg-ai-battle/.claude/worktrees/v070-grimmsnarl-hybrid/submissions/v070_grimmsnarl_hybrid",
+      "reason": "dir not found: /Users/max/kaggle-pokemon-tcg-ai-battle/.claude/worktrees/v070-grimmsnarl-hybrid/submissions/v070_grimmsnarl_hybrid"
+    }
+  ],
+  "opponents": {
+    "ext_masamikobayashi_archaludon": {
+      "opponent": "ext_masamikobayashi_archaludon",
+      "opponent_dir": "sub:/Users/max/kaggle-pokemon-tcg-ai-battle/submissions/external_masamikobayashi_archaludon",
+      "n_games": 1000,
+      "wins": 310,
+      "losses": 689,
+      "draws": 1,
+      "win_rate": 0.3105,
+      "wilson95_lo": 0.28259259920346785,
+      "wilson95_hi": 0.33985779536077426,
+      "decisive_win_rate": 0.3103103103103103,
+      "decisive_n": 999,
+      "avg_game_length": 141.771,
+      "min_game_length": 20,
+      "max_game_length": 228,
+      "exc_agent": 0,
+      "exc_opp": 0,
+      "illegal_agent": 0,
+      "illegal_opp": 0,
+      "timeouts": 0,
+      "crashes": 0,
+      "elapsed_s": 17.148353099822998
+    }
+  },
+  "overall_win_rate": 0.3105,
+  "generated": "2026-07-25 01:20:18"
+}

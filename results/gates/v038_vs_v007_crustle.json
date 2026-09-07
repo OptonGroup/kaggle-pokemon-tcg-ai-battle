@@ -1,0 +1,31 @@
+{
+  "records": [
+    {
+      "tag": "v038_vs_v007_crustle",
+      "opponent": "v007_crustle",
+      "opp_deck_override": null,
+      "n_games": 300,
+      "wins": 197,
+      "losses": 101,
+      "draws": 2,
+      "WR": 0.66,
+      "wilson95_lo": 0.6046734114246599,
+      "wilson95_hi": 0.7112806909760647,
+      "decisive_WR": 0.6610738255033557,
+      "decisive_n": 298,
+      "avg_moves": 64.42333333333333,
+      "min_moves": 20,
+      "max_moves": 151,
+      "exc_v033": 0,
+      "exc_opp": 0,
+      "elapsed_s": 12.078393083065748,
+      "v033_nn_decisions": 9746,
+      "v033_fallback_decisions": 0,
+      "v033_trivial_fallback": 0,
+      "v033_exceptions": 0,
+      "verdict": "PASS",
+      "threshold": 0.65
+    }
+  ],
+  "updated": "2026-07-18 01:07:49"
+}

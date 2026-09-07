@@ -1,0 +1,31 @@
+{
+  "records": [
+    {
+      "tag": "v040fresh_vs_v009a_crustle",
+      "opponent": "v009a_crustle",
+      "opp_deck_override": null,
+      "n_games": 300,
+      "wins": 103,
+      "losses": 194,
+      "draws": 3,
+      "WR": 0.34833333333333333,
+      "wilson95_lo": 0.29664401181543776,
+      "wilson95_hi": 0.40385782861720876,
+      "decisive_WR": 0.3468013468013468,
+      "decisive_n": 297,
+      "avg_moves": 111.17,
+      "min_moves": 26,
+      "max_moves": 172,
+      "exc_v033": 0,
+      "exc_opp": 0,
+      "elapsed_s": 25.05933349998668,
+      "v033_nn_decisions": 20929,
+      "v033_fallback_decisions": 0,
+      "v033_trivial_fallback": 0,
+      "v033_exceptions": 0,
+      "verdict": "FAIL",
+      "threshold": 0.65
+    }
+  ],
+  "updated": "2026-07-18 01:58:46"
+}

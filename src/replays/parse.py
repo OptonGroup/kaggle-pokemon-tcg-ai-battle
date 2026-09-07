@@ -250,6 +250,126 @@ def revealed_cards(path: str | os.PathLike) -> dict[int, Counter]:
     return revealed
 
 
+def _opp_card_id_serial_pairs(obs: dict, opp_idx: int) -> list[tuple[int, int]]:
+    """(id, serial) pairs for every card belonging to the OPPONENT that is visible
+    in this single observation: active/bench Pokemon + their energyCards/tools,
+    discard pile, and stadium (if played by the opponent).
+
+    Unlike _extract_card_ids_from_obs, this also reads "tools" and "stadium" (not
+    covered there) and returns (id, serial) instead of a flat id list, so callers
+    can dedup by physical card instance rather than by step-appearance.
+    """
+    cur = obs.get("current")
+    if not cur:
+        return []
+    players = cur.get("players", [])
+    if opp_idx >= len(players):
+        return []
+    opp = players[opp_idx]
+    pairs = []
+    for slot in (opp.get("active") or []) + (opp.get("bench") or []):
+        if not isinstance(slot, dict):
+            continue
+        if "id" in slot and "serial" in slot:
+            pairs.append((slot["id"], slot["serial"]))
+        for zone in ("energyCards", "tools"):
+            for c in (slot.get(zone) or []):
+                if isinstance(c, dict) and "id" in c and "serial" in c:
+                    pairs.append((c["id"], c["serial"]))
+    for c in (opp.get("discard") or []):
+        if isinstance(c, dict) and "id" in c and "serial" in c:
+            pairs.append((c["id"], c["serial"]))
+    for c in (cur.get("stadium") or []):
+        if isinstance(c, dict) and c.get("playerIndex") == opp_idx and "id" in c and "serial" in c:
+            pairs.append((c["id"], c["serial"]))
+    return pairs
+
+
+def opponent_reveal_progression(
+    path: str | os.PathLike,
+    milestones: tuple[int, ...] = (1, 2, 4, 8, 12, 20),
+) -> list[dict]:
+    """Load `path` and delegate to opponent_reveal_progression_from_data (see there
+    for the full contract). Kept as the convenient single-file entry point."""
+    with open(path) as f:
+        data = json.load(f)
+    return opponent_reveal_progression_from_data(data, milestones)
+
+
+def true_decks_from_data(data: dict) -> dict[int, list[int]]:
+    """
+    Extract the submitted 60-card deck for each player from an already-loaded
+    replay dict. The deck is the 60-card action in steps[1][player].action —
+    same ground truth used by src/eval/topdeck_recon.py::extract_deck_from_replay
+    and src/eval/crustle_list_recon.py::extract_deck_from_replay (kept here too,
+    operating on pre-loaded data to avoid re-reading multi-MB replay files a
+    second time when a caller also needs opponent_reveal_progression_from_data).
+    Returns {player_idx: [card_id, ...]} (list of 60 ids), only for players
+    whose steps[1] action is actually a 60-card list.
+    """
+    steps = data.get("steps", [])
+    if len(steps) < 2:
+        return {}
+    step1 = steps[1]
+    decks = {}
+    for pi in range(min(2, len(step1))):
+        action = step1[pi].get("action", [])
+        if len(action) == 60 and all(isinstance(x, int) for x in action):
+            decks[pi] = action
+    return decks
+
+
+def opponent_reveal_progression_from_data(
+    data: dict,
+    milestones: tuple[int, ...] = (1, 2, 4, 8, 12, 20),
+) -> list[dict]:
+    """
+    For each player's perspective, walk the game in order and snapshot the
+    OPPONENT's revealed card counts at each milestone (total revealed *physical
+    copies*, deduped by (card_id, serial) — NOT step-appearances, so a Pokemon
+    sitting on the bench for 50 steps still counts once).
+
+    Returns a list of records, one per (player_index, milestone) actually reached
+    in this game: {"player_index": int, "milestone": int, "revealed": {card_id: count}}.
+    A game that reveals fewer than milestones[0] opponent cards yields no records
+    for that player.
+
+    Takes an already-parsed replay dict (see opponent_reveal_progression for the
+    load-from-path convenience wrapper) so callers needing both this and
+    true_decks_from_data only pay the json.load() cost once per file.
+    """
+    steps = data.get("steps", [])
+    n_players = len(data.get("info", {}).get("Agents", [])) or 2
+
+    records = []
+    for player_idx in range(n_players):
+        opp_idx = 1 - player_idx
+        seen_serials: set[tuple[int, int]] = set()
+        counts: Counter = Counter()
+        next_milestone_i = 0
+        for step in steps:
+            if next_milestone_i >= len(milestones):
+                break
+            if player_idx >= len(step):
+                continue
+            obs = step[player_idx].get("observation", {})
+            for cid, serial in _opp_card_id_serial_pairs(obs, opp_idx):
+                key = (cid, serial)
+                if key in seen_serials:
+                    continue
+                seen_serials.add(key)
+                counts[cid] += 1
+            total = sum(counts.values())
+            while next_milestone_i < len(milestones) and total >= milestones[next_milestone_i]:
+                records.append({
+                    "player_index": player_idx,
+                    "milestone": milestones[next_milestone_i],
+                    "revealed": dict(counts),
+                })
+                next_milestone_i += 1
+    return records
+
+
 def walk_replays(dirs: list[str | os.PathLike]) -> list[Path]:
     """Return all *-replay.json files found recursively under the given directories."""
     paths = []

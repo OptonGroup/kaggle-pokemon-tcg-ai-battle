@@ -1,0 +1,31 @@
+{
+  "records": [
+    {
+      "tag": "v039ft_olddeck_vs_v009a_crustle",
+      "opponent": "v009a_crustle",
+      "opp_deck_override": null,
+      "n_games": 300,
+      "wins": 121,
+      "losses": 170,
+      "draws": 9,
+      "WR": 0.41833333333333333,
+      "wilson95_lo": 0.3638897681552404,
+      "wilson95_hi": 0.4748419920777231,
+      "decisive_WR": 0.41580756013745707,
+      "decisive_n": 291,
+      "avg_moves": 54.63666666666666,
+      "min_moves": 20,
+      "max_moves": 101,
+      "exc_v033": 0,
+      "exc_opp": 0,
+      "elapsed_s": 10.189409791957587,
+      "v033_nn_decisions": 7993,
+      "v033_fallback_decisions": 0,
+      "v033_trivial_fallback": 0,
+      "v033_exceptions": 0,
+      "verdict": "FAIL",
+      "threshold": 0.65
+    }
+  ],
+  "updated": "2026-07-18 01:37:50"
+}

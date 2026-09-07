@@ -1,0 +1,251 @@
+{
+  "tag": "v072_paired_band_summary",
+  "candidate": "v072_mirror_gauntlet",
+  "baseline_source": "/Users/max/kaggle-pokemon-tcg-ai-battle/results/gates/v072_core_gate.json",
+  "excluded_pairs": [],
+  "archetype_wr": {
+    "alakazam": 0.6972499999999999,
+    "archaludon": 0.3035,
+    "crustle": 0.41225,
+    "dragapult": 0.5,
+    "lucario": 0.26825,
+    "mirror": 0.4626666666666666,
+    "rest": 0.5,
+    "starmie": 0.884
+  },
+  "archetype_degraded": {
+    "alakazam": false,
+    "archaludon": false,
+    "crustle": false,
+    "dragapult": false,
+    "lucario": false,
+    "mirror": false,
+    "rest": false,
+    "starmie": false
+  },
+  "bands": {
+    "band_700_799": {
+      "mix": {
+        "lucario": 0.2625,
+        "archaludon": 0.1775,
+        "alakazam": 0.17,
+        "dragapult": 0.115,
+        "starmie": 0.0588,
+        "rest": 0.2162
+      },
+      "weighted_wr": 0.46039857500000003,
+      "degraded_components": [],
+      "passed": false
+    },
+    "band_800_899": {
+      "mix": {
+        "archaludon": 0.2903,
+        "alakazam": 0.2716,
+        "lucario": 0.0719,
+        "crustle": 0.0479,
+        "mirror": 0.0519,
+        "rest": 0.3664
+      },
+      "weighted_wr": 0.5237255,
+      "degraded_components": [],
+      "passed": true
+    },
+    "band_900_1099": {
+      "mix": {
+        "alakazam": 0.38,
+        "mirror": 0.23,
+        "crustle": 0.09,
+        "archaludon": 0.09,
+        "lucario": 0.07,
+        "starmie": 0.026,
+        "rest": 0.114
+      },
+      "weighted_wr": 0.5345473333333333,
+      "degraded_components": [],
+      "passed": true
+    }
+  },
+  "regressions": [
+    {
+      "key": "v017",
+      "has_baseline": true,
+      "candidate_wr": 0.973,
+      "candidate_n": 1000,
+      "baseline_wr": 0.984,
+      "baseline_n": 1000,
+      "ztest_z": -1.6958133207933521,
+      "ztest_p_value": 0.08992123898008621,
+      "is_regression": false
+    },
+    {
+      "key": "v016",
+      "has_baseline": true,
+      "candidate_wr": 0.982,
+      "candidate_n": 1000,
+      "baseline_wr": 0.981,
+      "baseline_n": 1000,
+      "ztest_z": 0.16594110816042865,
+      "ztest_p_value": 0.8682032963149886,
+      "is_regression": false
+    },
+    {
+      "key": "v009a",
+      "has_baseline": true,
+      "candidate_wr": 0.2385,
+      "candidate_n": 1000,
+      "baseline_wr": 0.22,
+      "baseline_n": 1000,
+      "ztest_z": 0.9841137316575598,
+      "ztest_p_value": 0.3250595960115849,
+      "is_regression": false
+    },
+    {
+      "key": "v044",
+      "has_baseline": true,
+      "candidate_wr": 0.323,
+      "candidate_n": 1000,
+      "baseline_wr": 0.3,
+      "baseline_n": 1000,
+      "ztest_z": 1.1105339513799528,
+      "ztest_p_value": 0.26676900630243566,
+      "is_regression": false
+    },
+    {
+      "key": "v049",
+      "has_baseline": true,
+      "candidate_wr": 0.342,
+      "candidate_n": 1000,
+      "baseline_wr": 0.344,
+      "baseline_n": 1000,
+      "ztest_z": -0.09420745098201302,
+      "ztest_p_value": 0.924944366072549,
+      "is_regression": false
+    },
+    {
+      "key": "v065_h2h",
+      "has_baseline": true,
+      "candidate_wr": 0.4975,
+      "candidate_n": 1000,
+      "baseline_wr": 0.5045,
+      "baseline_n": 1000,
+      "ztest_z": -0.31305014295088035,
+      "ztest_p_value": 0.7542425667230501,
+      "is_regression": false
+    },
+    {
+      "key": "v072_h2h",
+      "has_baseline": false
+    },
+    {
+      "key": "v063_h2h",
+      "has_baseline": true,
+      "candidate_wr": 0.4875,
+      "candidate_n": 1000,
+      "baseline_wr": 0.5045,
+      "baseline_n": 1000,
+      "ztest_z": -0.7602874419373483,
+      "ztest_p_value": 0.44708278671673396,
+      "is_regression": false
+    },
+    {
+      "key": "v070_h2h",
+      "has_baseline": true,
+      "candidate_wr": 0.404,
+      "candidate_n": 1000,
+      "baseline_wr": 0.4255,
+      "baseline_n": 1000,
+      "ztest_z": -0.975797168451404,
+      "ztest_p_value": 0.32916498822750845,
+      "is_regression": false
+    },
+    {
+      "key": "ext_prvsiyan_alak_v8",
+      "has_baseline": true,
+      "candidate_wr": 0.417,
+      "candidate_n": 1000,
+      "baseline_wr": 0.4215,
+      "baseline_n": 1000,
+      "ztest_z": -0.2039230748767294,
+      "ztest_p_value": 0.8384136128054251,
+      "is_regression": false
+    },
+    {
+      "key": "ext_prvsiyan_alak_v9",
+      "has_baseline": true,
+      "candidate_wr": 0.417,
+      "candidate_n": 1000,
+      "baseline_wr": 0.4085,
+      "baseline_n": 1000,
+      "ztest_z": 0.38605472673443403,
+      "ztest_p_value": 0.6994561384005846,
+      "is_regression": false
+    },
+    {
+      "key": "ext_maulikgajera_lucario",
+      "has_baseline": true,
+      "candidate_wr": 0.2695,
+      "candidate_n": 1000,
+      "baseline_wr": 0.266,
+      "baseline_n": 1000,
+      "ztest_z": 0.17674967202195602,
+      "ztest_p_value": 0.859705022423661,
+      "is_regression": false
+    },
+    {
+      "key": "ext_nursrijan_lucario",
+      "has_baseline": true,
+      "candidate_wr": 0.267,
+      "candidate_n": 1000,
+      "baseline_wr": 0.2615,
+      "baseline_n": 1000,
+      "ztest_z": 0.2789170468516428,
+      "ztest_p_value": 0.7803084859911621,
+      "is_regression": false
+    },
+    {
+      "key": "v036_h2h",
+      "has_baseline": true,
+      "candidate_wr": 0.284,
+      "candidate_n": 1000,
+      "baseline_wr": 0.293,
+      "baseline_n": 1000,
+      "ztest_z": -0.4441883364961573,
+      "ztest_p_value": 0.656906424129325,
+      "is_regression": false
+    },
+    {
+      "key": "ext_tusk_crustle",
+      "has_baseline": true,
+      "candidate_wr": 0.586,
+      "candidate_n": 1000,
+      "baseline_wr": 0.6385,
+      "baseline_n": 1000,
+      "ztest_z": -2.4093728125165494,
+      "ztest_p_value": 0.015979964861381587,
+      "is_regression": true
+    }
+  ],
+  "acceptance": {
+    "band_wr_pass": {
+      "band_700_799": false,
+      "band_800_899": true,
+      "band_900_1099": true
+    },
+    "band_wr_pass_all": false,
+    "mirror_pass": false,
+    "mirror_v063_h2h_wr": 0.4875,
+    "mirror_v070_h2h_wr": 0.404,
+    "incumbent_pass": true,
+    "incumbent_v072_h2h_wr": 0.4965,
+    "incumbent_v072_h2h_lo": 0.4655831832422301,
+    "no_regressions_pass": false,
+    "n_significant_regressions": 1,
+    "regression_keys": [
+      "ext_tusk_crustle"
+    ],
+    "no_crashes_pass": true,
+    "crash_total": 0,
+    "overall_pass": false
+  },
+  "generated": "2026-07-24 22:53:16"
+}

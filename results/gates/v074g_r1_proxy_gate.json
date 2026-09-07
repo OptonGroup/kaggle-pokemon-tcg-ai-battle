@@ -1,0 +1,37 @@
+{
+  "tag": "v074g_r1_proxy_gate",
+  "candidates": {
+    "v074g_r1": "/Users/max/kaggle-pokemon-tcg-ai-battle/.claude/worktrees/v074-live-forensic/submissions/v074g_pppfix"
+  },
+  "proxy_decks": [
+    "Starmie_live"
+  ],
+  "proxies": {
+    "Starmie_live": {
+      "v074g_r1": {
+        "opponent": "v074g_r1_vs_Starmie_live",
+        "opponent_dir": "meta:Starmie_live",
+        "n_games": 1000,
+        "wins": 880,
+        "losses": 120,
+        "draws": 0,
+        "win_rate": 0.88,
+        "wilson95_lo": 0.8583905000527202,
+        "wilson95_hi": 0.8987010570216231,
+        "decisive_win_rate": 0.88,
+        "decisive_n": 1000,
+        "avg_game_length": 84.993,
+        "min_game_length": 15,
+        "max_game_length": 167,
+        "exc_agent": 0,
+        "exc_opp": 0,
+        "illegal_agent": 0,
+        "illegal_opp": 0,
+        "timeouts": 0,
+        "crashes": 0,
+        "elapsed_s": 10.387533187866211
+      }
+    }
+  },
+  "generated": "2026-07-25 08:38:25"
+}

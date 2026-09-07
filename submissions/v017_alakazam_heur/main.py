@@ -332,19 +332,24 @@ def _heuristic(obs_dict: dict, opts: list, sel: dict) -> list[int] | None:
                     return [i]
         # No Alakazam to promote — fall through to IL tiebreak.
 
-    # ── Rule 7 follow-up: Boss's Orders gust target — highest-HP non-Cubchoo ─
-    if ctx in (CTX_TO_ACTIVE, CTX_SWITCH) and opp_active_id == CUBCHOO_ID:
-        # (handled above if Alakazam; here we are choosing an OPPONENT gust target)
-        # We want to gust a non-506 opponent pokemon. Options are CARD with opp bench.
-        best_i, best_hp = -1, -1
+    # ── Rule 7 follow-up: Boss's Orders gust target ──────────────────────────
+    # Generalized 2026-07-17: was Cubchoo-only (a real live pilot Bosses in ANY
+    # matchup, not just vs the Cubchoo lock). Priority: (a) a target Powerful Hand
+    # can KO this turn (dmg = 20 * hand_count, computed BEFORE the gust — Boss is
+    # played first, so hand_count already reflects post-Boss-discard hand size);
+    # (b) else the old Cubchoo-avoid+highest-HP heuristic, generalized to "avoid
+    # re-gusting the opponent's own active" and prefer the highest-HP bench target
+    # (denies the most developed threat / hardest to re-KO later).
+    if ctx in (CTX_TO_ACTIVE, CTX_SWITCH):
+        gust_targets = []  # (option_index, playerIndex, pokemon_id, hp)
         for i, o in enumerate(opts):
             if _safe_int(o.get("type")) != OPT_CARD:
                 continue
             pidx = _safe_int(o.get("playerIndex"), me)
-            area = _safe_int(o.get("area"))
-            idx = _safe_int(o.get("index"))
             if pidx == me:
                 continue  # own pokemon — not a gust target
+            area = _safe_int(o.get("area"))
+            idx = _safe_int(o.get("index"))
             pl = (cur.get("players") or [{}, {}])[pidx] if pidx < len(cur.get("players") or []) else opp
             pk = None
             if area == 5:
@@ -355,14 +360,23 @@ def _heuristic(obs_dict: dict, opts: list, sel: dict) -> list[int] | None:
                 act = pl.get("active") or []
                 pk = act[0] if act else None
             pid = _pk_id(pk)
-            if pid == 0 or pid == CUBCHOO_ID:
+            if pid == 0:
                 continue
-            hp = _safe_int((pk or {}).get("hp"))
-            if hp > best_hp:
-                best_hp, best_i = hp, i
-        if best_i >= 0:
+            gust_targets.append((i, pid, _safe_int((pk or {}).get("hp"))))
+        if gust_targets:
+            dmg = POWERFUL_HAND_DMG_PER_CARD * hand_count
+            koable = [t for t in gust_targets if 0 < t[2] <= dmg]
+            if koable:
+                # Cheapest KO first (lowest HP among koable) -- no reason to spend
+                # the gust on a bulkier target when a smaller one is just as dead.
+                koable.sort(key=lambda t: t[2])
+                _rule_fires[7] += 1
+                return [koable[0][0]]
+            non_cubchoo = [t for t in gust_targets if t[1] != CUBCHOO_ID]
+            pool = non_cubchoo if non_cubchoo else gust_targets
+            pool.sort(key=lambda t: -t[2])
             _rule_fires[7] += 1
-            return [best_i]
+            return [pool[0][0]]
 
     # ── MAIN-context rules (2-8) ─────────────────────────────────────────────
     if ctx != CTX_MAIN:
@@ -487,7 +501,10 @@ def _heuristic(obs_dict: dict, opts: list, sel: dict) -> list[int] | None:
                 _rule_fires[6] += 1
                 return [ramp_candidates[0][1]]
 
-    # ── Rule 7: Cubchoo-lock pivot (Boss's Orders to gust a non-Cubchoo) ─────
+    # ── Rule 7: Boss's Orders — Cubchoo-lock pivot, OR general Powerful Hand
+    # reach-extension. Generalized 2026-07-17: a real live pilot Bosses in any
+    # matchup where it wins a KO Rule 2 (active-only lethal check) can't see
+    # because the opponent's Active isn't the killable one -- some bench mon is.
     if opp_active_id == CUBCHOO_ID:
         for i in play_opts:
             o = opts[i]
@@ -495,6 +512,21 @@ def _heuristic(obs_dict: dict, opts: list, sel: dict) -> list[int] | None:
             if cid == BOSS_ID:
                 _rule_fires[7] += 1
                 return [i]  # follow-up target prompt handled above / by IL
+    elif alakazam_active and _pk_has_psychic(my_active) and hand_count > 0:
+        # Boss itself leaves the hand before Powerful Hand resolves this turn.
+        dmg_after_boss = POWERFUL_HAND_DMG_PER_CARD * (hand_count - 1)
+        opp_bench = opp.get("bench") or []
+        has_bench_ko = any(
+            0 < _safe_int((b or {}).get("hp")) <= dmg_after_boss
+            for b in opp_bench if isinstance(b, dict)
+        )
+        if has_bench_ko:
+            for i in play_opts:
+                o = opts[i]
+                cid = _hand_card_id(hand_list, _safe_int(o.get("index")))
+                if cid == BOSS_ID:
+                    _rule_fires[7] += 1
+                    return [i]  # follow-up target prompt handled above
 
     # ── Rule 8: Attack fallback ──────────────────────────────────────────────
     if attack_opts:

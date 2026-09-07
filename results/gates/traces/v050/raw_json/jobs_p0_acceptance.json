@@ -1,0 +1,56 @@
+[
+  {
+    "tag": "p0acc_v050_p0_vs_v017",
+    "kind": "pool",
+    "agent": "v050_p0",
+    "opponent": "v017",
+    "n_games": 250,
+    "seed_base": 950000,
+    "debug": true
+  },
+  {
+    "tag": "p0acc_v050_p0p1_vs_v017",
+    "kind": "pool",
+    "agent": "v050_p0p1",
+    "opponent": "v017",
+    "n_games": 250,
+    "seed_base": 952000,
+    "debug": true
+  },
+  {
+    "tag": "p0acc_v050_p0_vs_v016",
+    "kind": "pool",
+    "agent": "v050_p0",
+    "opponent": "v016",
+    "n_games": 250,
+    "seed_base": 954000,
+    "debug": true
+  },
+  {
+    "tag": "p0acc_v050_p0p1_vs_v016",
+    "kind": "pool",
+    "agent": "v050_p0p1",
+    "opponent": "v016",
+    "n_games": 250,
+    "seed_base": 956000,
+    "debug": true
+  },
+  {
+    "tag": "p0acc_v050_p0_vs_v033",
+    "kind": "pool",
+    "agent": "v050_p0",
+    "opponent": "v033",
+    "n_games": 250,
+    "seed_base": 958000,
+    "debug": true
+  },
+  {
+    "tag": "p0acc_v050_p0p1_vs_v033",
+    "kind": "pool",
+    "agent": "v050_p0p1",
+    "opponent": "v033",
+    "n_games": 250,
+    "seed_base": 960000,
+    "debug": true
+  }
+]

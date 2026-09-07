@@ -1,0 +1,31 @@
+{
+  "records": [
+    {
+      "tag": "v039_vs_v036_archaludon_patched",
+      "opponent": "v036_archaludon_patched",
+      "opp_deck_override": null,
+      "n_games": 300,
+      "wins": 60,
+      "losses": 240,
+      "draws": 0,
+      "WR": 0.2,
+      "wilson95_lo": 0.15865617190196185,
+      "wilson95_hi": 0.24892988609667954,
+      "decisive_WR": 0.2,
+      "decisive_n": 300,
+      "avg_moves": 130.10333333333332,
+      "min_moves": 14,
+      "max_moves": 189,
+      "exc_v033": 0,
+      "exc_opp": 0,
+      "elapsed_s": 27.795485083013773,
+      "v033_nn_decisions": 21371,
+      "v033_fallback_decisions": 0,
+      "v033_trivial_fallback": 0,
+      "v033_exceptions": 0,
+      "verdict": "FAIL",
+      "threshold": 0.65
+    }
+  ],
+  "updated": "2026-07-18 01:09:44"
+}

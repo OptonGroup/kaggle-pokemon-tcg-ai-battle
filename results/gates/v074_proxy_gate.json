@@ -1,0 +1,37 @@
+{
+  "tag": "v074_proxy_gate",
+  "candidates": {
+    "v074": "/Users/max/kaggle-pokemon-tcg-ai-battle/submissions/v074_fullmetal"
+  },
+  "proxy_decks": [
+    "Starmie_live"
+  ],
+  "proxies": {
+    "Starmie_live": {
+      "v074": {
+        "opponent": "v074_vs_Starmie_live",
+        "opponent_dir": "meta:Starmie_live",
+        "n_games": 1000,
+        "wins": 860,
+        "losses": 140,
+        "draws": 0,
+        "win_rate": 0.86,
+        "wilson95_lo": 0.8371128627361262,
+        "wilson95_hi": 0.8801317702816727,
+        "decisive_win_rate": 0.86,
+        "decisive_n": 1000,
+        "avg_game_length": 85.985,
+        "min_game_length": 16,
+        "max_game_length": 190,
+        "exc_agent": 0,
+        "exc_opp": 0,
+        "illegal_agent": 0,
+        "illegal_opp": 0,
+        "timeouts": 0,
+        "crashes": 0,
+        "elapsed_s": 7.592244863510132
+      }
+    }
+  },
+  "generated": "2026-07-24 23:59:57"
+}

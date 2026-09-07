@@ -1,0 +1,44 @@
+{
+  "val_groups_by_player": {
+    "jiatu.l": 2923,
+    "bono": 2669
+  },
+  "results": {
+    "joint": {
+      "top1_overall": 0.5409513590844063,
+      "n_overall": 5592,
+      "top1_by_player": {
+        "jiatu.l": 0.5429353404036948,
+        "bono": 0.5387785687523416
+      },
+      "n_by_player": {
+        "jiatu.l": 2923,
+        "bono": 2669
+      }
+    },
+    "jiatuonly": {
+      "top1_overall": 0.5430972818311874,
+      "n_overall": 5592,
+      "top1_by_player": {
+        "jiatu.l": 0.667807047553883,
+        "bono": 0.4065192956163357
+      },
+      "n_by_player": {
+        "jiatu.l": 2923,
+        "bono": 2669
+      }
+    },
+    "bonoonly": {
+      "top1_overall": 0.5264663805436338,
+      "n_overall": 5592,
+      "top1_by_player": {
+        "jiatu.l": 0.47109134450906603,
+        "bono": 0.5871112776320719
+      },
+      "n_by_player": {
+        "jiatu.l": 2923,
+        "bono": 2669
+      }
+    }
+  }
+}

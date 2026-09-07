@@ -256,6 +256,37 @@ CUBCHOO_DECK: list[int] = (
 assert len(CUBCHOO_DECK) == 60, f"CUBCHOO_DECK must be 60 cards, got {len(CUBCHOO_DECK)}"
 
 
+# Archaludon-ex/Duraludon/Cinderace/Relicanth metal-tempo (2026-07-16) — реальный
+# реконструированный дек архетипа, ранее покрытого CRUSTLE_DECK_APPROX-плейсхолдером
+# (см. TODO у META_PRIORS/_deck_for_archetype ниже, теперь закрыт). Загружается
+# лениво из submissions/v036_archaludon_patched/deck.csv (тот же 60-card лист,
+# что и submissions/v034_romanrozen_clone/deck.csv) и кэшируется на модуль —
+# см. _load_archaludon_deck().
+_ARCHALUDON_DECK_CACHE: list[int] | None = None
+
+
+def _load_archaludon_deck() -> list[int]:
+    """Читает submissions/v036_archaludon_patched/deck.csv (одна строка = один
+    card ID) и кэширует результат на модуль (одно чтение с диска на процесс).
+    Возвращает КОПИЮ кэша — вызывающий код (_deck_for_archetype) может
+    свободно мутировать возвращённый список."""
+    global _ARCHALUDON_DECK_CACHE
+    if _ARCHALUDON_DECK_CACHE is None:
+        deck_csv_path = os.path.join(
+            _REPO, "submissions", "v036_archaludon_patched", "deck.csv"
+        )
+        ids: list[int] = []
+        with open(deck_csv_path) as f:
+            for line in f:
+                line = line.strip()
+                if line:
+                    ids.append(int(line))
+        if len(ids) != 60:
+            raise ValueError(f"ARCHALUDON deck.csv must be 60 cards, got {len(ids)}: {deck_csv_path}")
+        _ARCHALUDON_DECK_CACHE = ids
+    return list(_ARCHALUDON_DECK_CACHE)
+
+
 # ---------------------------------------------------------------------------
 # Card IDs известных архетипов (для детектора)
 # ---------------------------------------------------------------------------
@@ -282,16 +313,16 @@ _ARCHETYPE_SIGNATURES: dict[str, set[int]] = {
 
 # ---------------------------------------------------------------------------
 # Мета-приоры (S2, 2026-07-05) — реальные доли топ-100 текущей меты.
-# Archaludon-metal (~22% поля) НЕ реконструирован (нет данных для 60-card листа) —
-# TODO(S2+): реконструировать Archaludon decklist из реплеев, как это было сделано
-# для Alakazam/Grimmsnarl/Cubchoo (см. PLAN.md §F1-3..F1-5). До тех пор его доля
-# (и остаток поля "generic": Lucario/random/нишевые архетипы) сэмплируется как
-# CRUSTLE_DECK_APPROX — нейтральный midrange-плейсхолдер, а НЕ фейковая дека.
+# Archaludon-metal (~22% поля) реконструирован 2026-07-16 (Archaludon-ex/Duraludon/
+# Cinderace/Relicanth metal-tempo, см. _load_archaludon_deck() выше) — больше НЕ
+# плейсхолдер. Остаток поля "generic" (Lucario/random/нишевые архетипы) по-прежнему
+# сэмплируется как CRUSTLE_DECK_APPROX — нейтральный midrange-плейсхолдер, а НЕ
+# фейковая дека (это намеренный catch-all fallback, не баг).
 # ---------------------------------------------------------------------------
 
 META_PRIORS: dict[str, float] = {
     "alakazam":   0.33,
-    "archaludon": 0.22,  # TODO: нет реконструированного дека -> плейсхолдер CRUSTLE_DECK_APPROX
+    "archaludon": 0.22,  # v036_archaludon_patched/deck.csv (реконструирован 2026-07-16)
     "cubchoo":    0.07,
     "grimmsnarl": 0.07,
     "crustle":    0.05,
@@ -303,8 +334,10 @@ assert abs(sum(META_PRIORS.values()) - 1.0) < 1e-9, "META_PRIORS должны с
 def _deck_for_archetype(name: str | None) -> list[int]:
     """Дек-константа по имени архетипа.
 
-    "archaludon", "generic", None и любой неопознанный ключ -> нейтральный
-    плейсхолдер CRUSTLE_DECK_APPROX (см. TODO у META_PRIORS выше).
+    "archaludon" -> реальный реконструированный дек (submissions/v036_archaludon_patched/
+    deck.csv, см. _load_archaludon_deck()). "generic", None и любой неопознанный
+    ключ -> нейтральный плейсхолдер CRUSTLE_DECK_APPROX (намеренный catch-all,
+    см. комментарий у META_PRIORS выше).
     """
     if name == "alakazam":
         return list(ALAKAZAM_DECK)
@@ -316,6 +349,8 @@ def _deck_for_archetype(name: str | None) -> list[int]:
         return list(CRUSTLE_DECK_APPROX)
     if name == "iono":
         return list(IONO_DECK)
+    if name == "archaludon":
+        return _load_archaludon_deck()
     return list(CRUSTLE_DECK_APPROX)
 
 
@@ -364,13 +399,17 @@ def sample_meta_deck(rng: random.Random | None = None) -> list[int]:
 # только что подставил в ИМЕННО ЭТОТ rollout, см. PIMCAgentV2._opp_archetype_ref
 # и _make_dual_policy_rollout).
 #
-# Ключевой нюанс: "archaludon" и "generic" в META_PRIORS/_deck_for_archetype
-# ПОКА не имеют собственного реконструированного дека (TODO там же) — им
-# подставляется CRUSTLE_DECK_APPROX как нейтральный плейсхолдер. Раз ДЕКА,
-# которую реально играет мир, физически совпадает с Crustle, то и
-# rollout-политика оппонента для этих архетипов = v009a (тот пилот, что
-# умеет играть именно эту деку) — а НЕ generic-эвристика, которая была бы
+# Ключевой нюанс: "generic" в META_PRIORS/_deck_for_archetype ПОКА не имеет
+# собственного реконструированного дека — ему подставляется CRUSTLE_DECK_APPROX
+# как нейтральный плейсхолдер (намеренный catch-all, см. комментарий у
+# META_PRIORS). Раз ДЕКА, которую реально играет мир, физически совпадает с
+# Crustle, то и rollout-политика оппонента для "generic" = v009a (тот пилот,
+# что умеет играть именно эту деку) — а НЕ generic-эвристика, которая была бы
 # "по имени архетипа", а не "по деке" (см. формулировку задачи H3-1).
+# "archaludon" (2026-07-16) теперь имеет СОБСТВЕННЫЙ реконструированный дек
+# (_load_archaludon_deck(), submissions/v036_archaludon_patched/deck.csv) И
+# собственный скриптовый пилот (v036_archaludon_patched/main.py) — используется
+# и для дека, и для rollout-политики, как Alakazam/Grimmsnarl/Crustle.
 # Cubchoo/Iono имеют СОБСТВЕННЫЕ реконструированные деки, но НЕТ скриптового
 # пилота под них -> generic greedy-attack fallback (единственный вариант,
 # который не требует деки-специфичной логики).
@@ -380,11 +419,11 @@ _ARCHETYPE_TO_ROLLOUT_POLICY: dict[str | None, str] = {
     "alakazam":   "alakazam",
     "grimmsnarl": "grimmsnarl",
     "crustle":    "crustle",
-    "archaludon": "crustle",   # деку подставляет CRUSTLE_DECK_APPROX (плейсхолдер)
-    "generic":    "crustle",   # деку подставляет CRUSTLE_DECK_APPROX (плейсхолдер)
-    "cubchoo":    "greedy",    # своя дека (CUBCHOO_DECK), но нет скриптового пилота
-    "iono":       "greedy",    # своя дека (IONO_DECK), но нет скриптового пилота
-    None:         "greedy",    # архетип мира не определён (не должно случаться в auto/meta)
+    "archaludon": "archaludon",  # v036_archaludon_patched (реальный дек + пилот, 2026-07-16)
+    "generic":    "crustle",     # деку подставляет CRUSTLE_DECK_APPROX (плейсхолдер)
+    "cubchoo":    "greedy",      # своя дека (CUBCHOO_DECK), но нет скриптового пилота
+    "iono":       "greedy",      # своя дека (IONO_DECK), но нет скриптового пилота
+    None:         "greedy",      # архетип мира не определён (не должно случаться в auto/meta)
 }
 
 # submissions/<dir>/main.py для каждого скриптового rollout-пилота оппонента.
@@ -392,14 +431,15 @@ _FIELD_PILOT_SUBDIRS: dict[str, str] = {
     "alakazam":   "v017_alakazam_heur",
     "grimmsnarl": "v018_grimmsnarl",
     "crustle":    "v009a_crustle",
+    "archaludon": "v036_archaludon_patched",
 }
 
 
 def _rollout_policy_key_for_archetype(name: str | None) -> str:
     """Архетип сэмплированного мира -> ключ rollout-политики оппонента
-    ("alakazam" | "grimmsnarl" | "crustle" | "greedy"), см. блок-комментарий
-    выше. Неизвестные/будущие имена архетипов падают в "greedy" (безопасный
-    дефолт), а не кидают исключение."""
+    ("alakazam" | "grimmsnarl" | "crustle" | "archaludon" | "greedy"), см.
+    блок-комментарий выше. Неизвестные/будущие имена архетипов падают в
+    "greedy" (безопасный дефолт), а не кидают исключение."""
     return _ARCHETYPE_TO_ROLLOUT_POLICY.get(name, "greedy")
 
 
@@ -469,13 +509,29 @@ def _reset_stateful_globals(mod, policy_key: str) -> None:
       МИРОМ, где v018 используется как rollout-политика оппонента (дёшево —
       один set атрибута, вызывается из _make_dual_policy_rollout).
 
+    v036_archaludon_patched (2026-07-16): `_opp_last_attack_id: int | None` +
+      `_cur_turn_logs: list` — РЕАЛЬНОЕ decision-affecting состояние (не
+      диагностика): _opp_last_attack_id читается в choose_options() (сравнение
+      с MEGA_BRAVE) и влияет на выбор хода; оба атрибута обнуляются модулем
+      САМИ только на sel is None (первый вызов новой партии — deck-select),
+      которого rollout НИКОГДА не порождает (rollout стартует из middle-game
+      obs). Без явного сброса состояние из мира N просочилось бы в мир N+1
+      (тот же класс бага, что и _adrena_state у v018) -> явно обнуляем оба
+      ПЕРЕД КАЖДЫМ МИРОМ, где v036 используется как rollout-политика оппонента.
+
     Перезагрузка МОДУЛЯ целиком на каждый мир была бы безопаснее "по
-    построению", но недопустимо дорого: все три модуля грузят LightGBM
-    Booster с диска при exec_module (десятки ms) — при сотнях миров/решение
-    это убило бы бюджет партии. Reset одного атрибута — O(1).
+    построению", но недопустимо дорого: все модули грузят LightGBM Booster
+    (или, для v036, чистый эвристический код, но остальные — Booster) с диска
+    при exec_module (десятки ms) — при сотнях миров/решение это убило бы
+    бюджет партии. Reset нескольких атрибутов — O(1).
     """
     if policy_key == "grimmsnarl" and hasattr(mod, "_adrena_state"):
         mod._adrena_state = None
+    if policy_key == "archaludon":
+        if hasattr(mod, "_opp_last_attack_id"):
+            mod._opp_last_attack_id = None
+        if hasattr(mod, "_cur_turn_logs"):
+            mod._cur_turn_logs.clear()
 
 
 # ---------------------------------------------------------------------------
@@ -1200,8 +1256,8 @@ class PIMCAgent:
             return False
         if sel.get("context") != _SELECT_CONTEXT_MAIN:
             return False
-        min_c = int(sel.get("minCount") or 1)
-        max_c = int(sel.get("maxCount") or 1)
+        min_c = int(sel.get("minCount") if sel.get("minCount") is not None else 1)
+        max_c = int(sel.get("maxCount") if sel.get("maxCount") is not None else 1)
         if min_c == 0 and max_c == 0:
             return False
         return True
@@ -1349,8 +1405,8 @@ class PIMCAgent:
         call_start = time.time()
 
         n_options = len(sel.get("option") or [])
-        min_count = int(sel.get("minCount") or 1)
-        max_count = int(sel.get("maxCount") or 1)
+        min_count = int(sel.get("minCount") if sel.get("minCount") is not None else 1)
+        max_count = int(sel.get("maxCount") if sel.get("maxCount") is not None else 1)
 
         if n_options == 0:
             self._bank_spent += time.time() - call_start

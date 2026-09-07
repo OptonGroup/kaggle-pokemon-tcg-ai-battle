@@ -1,0 +1,33 @@
+{
+  "tag": "v051b_h2h_v050_n1000",
+  "agent": {
+    "ckpt": null,
+    "agent_dir": "v051_lopunny_crustle",
+    "deck": "/Users/max/kaggle-pokemon-tcg-ai-battle/submissions/v051_lopunny_crustle/deck.csv",
+    "label": "submission:v051_lopunny_crustle"
+  },
+  "agent_ckpt_exceptions": null,
+  "opponents": {
+    "v050_p0p1": {
+      "opponent": "v050_p0p1",
+      "opponent_dir": "v050_p0p1",
+      "n_games": 1000,
+      "wins": 482,
+      "losses": 518,
+      "draws": 0,
+      "win_rate": 0.482,
+      "wilson95_lo": 0.4511578913647933,
+      "wilson95_hi": 0.5129798769843168,
+      "decisive_win_rate": 0.482,
+      "decisive_n": 1000,
+      "avg_game_length": 113.297,
+      "min_game_length": 22,
+      "max_game_length": 183,
+      "exc_agent": 0,
+      "exc_opp": 0,
+      "elapsed_s": 26.582376457983628
+    }
+  },
+  "overall_win_rate": 0.482,
+  "generated": "2026-07-21 02:10:29"
+}

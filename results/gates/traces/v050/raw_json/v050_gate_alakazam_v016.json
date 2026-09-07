@@ -1,0 +1,63 @@
+{
+  "summary": {
+    "alakazam2_v049_vs_v016": {
+      "job": {
+        "tag": "alakazam2_v049_vs_v016",
+        "kind": "pool",
+        "agent": "v049",
+        "opponent": "v016",
+        "n_games": 1000,
+        "seed_base": 760000
+      },
+      "n": 1000,
+      "wins": 949,
+      "losses": 51,
+      "draws": 0,
+      "aborted": 0,
+      "win_rate": 0.949,
+      "wilson95_lo": 0.9335641957120492,
+      "wilson95_hi": 0.9609992493573721,
+      "avg_moves": 121.809
+    },
+    "alakazam2_v050_p0_vs_v016": {
+      "job": {
+        "tag": "alakazam2_v050_p0_vs_v016",
+        "kind": "pool",
+        "agent": "v050_p0",
+        "opponent": "v016",
+        "n_games": 1000,
+        "seed_base": 760000
+      },
+      "n": 1000,
+      "wins": 957,
+      "losses": 43,
+      "draws": 0,
+      "aborted": 0,
+      "win_rate": 0.957,
+      "wilson95_lo": 0.9425806957803401,
+      "wilson95_hi": 0.9679215189116991,
+      "avg_moves": 121.997
+    },
+    "alakazam2_v050_p0p1_vs_v016": {
+      "job": {
+        "tag": "alakazam2_v050_p0p1_vs_v016",
+        "kind": "pool",
+        "agent": "v050_p0p1",
+        "opponent": "v016",
+        "n_games": 1000,
+        "seed_base": 760000
+      },
+      "n": 1000,
+      "wins": 955,
+      "losses": 45,
+      "draws": 0,
+      "aborted": 0,
+      "win_rate": 0.955,
+      "wilson95_lo": 0.940316857129231,
+      "wilson95_hi": 0.9662006651571536,
+      "avg_moves": 119.354
+    }
+  },
+  "elapsed_s": 20.226591110229492,
+  "n_tasks": 3000
+}

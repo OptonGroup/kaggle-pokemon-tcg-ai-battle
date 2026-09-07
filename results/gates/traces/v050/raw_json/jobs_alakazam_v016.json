@@ -1,0 +1,26 @@
+[
+  {
+    "tag": "alakazam2_v049_vs_v016",
+    "kind": "pool",
+    "agent": "v049",
+    "opponent": "v016",
+    "n_games": 1000,
+    "seed_base": 760000
+  },
+  {
+    "tag": "alakazam2_v050_p0_vs_v016",
+    "kind": "pool",
+    "agent": "v050_p0",
+    "opponent": "v016",
+    "n_games": 1000,
+    "seed_base": 760000
+  },
+  {
+    "tag": "alakazam2_v050_p0p1_vs_v016",
+    "kind": "pool",
+    "agent": "v050_p0p1",
+    "opponent": "v016",
+    "n_games": 1000,
+    "seed_base": 760000
+  }
+]

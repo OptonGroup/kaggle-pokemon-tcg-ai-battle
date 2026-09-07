@@ -1,0 +1,116 @@
+{
+  "tag": "v074_m881005_band_summary",
+  "candidate": "v074_fullmetal",
+  "baseline_source": "/Users/max/kaggle-pokemon-tcg-ai-battle/results/gates/v073_core_gate.json",
+  "excluded_pairs": [
+    {
+      "key": "v070_h2h",
+      "opp_dir": "/Users/max/kaggle-pokemon-tcg-ai-battle/.claude/worktrees/v070-grimmsnarl-hybrid/submissions/v070_grimmsnarl_hybrid",
+      "reason": "dir not found: /Users/max/kaggle-pokemon-tcg-ai-battle/.claude/worktrees/v070-grimmsnarl-hybrid/submissions/v070_grimmsnarl_hybrid"
+    }
+  ],
+  "archetype_wr": {
+    "alakazam": 0.5,
+    "archaludon": 0.3385,
+    "crustle": 0.5,
+    "dragapult": 0.5,
+    "lucario": 0.5,
+    "mirror": 0.5,
+    "rest": 0.5,
+    "starmie": 0.5
+  },
+  "archetype_degraded": {
+    "alakazam": true,
+    "archaludon": false,
+    "crustle": true,
+    "dragapult": false,
+    "lucario": true,
+    "mirror": true,
+    "rest": false,
+    "starmie": true
+  },
+  "bands": {
+    "band_700_799": {
+      "mix": {
+        "lucario": 0.2625,
+        "archaludon": 0.1775,
+        "alakazam": 0.17,
+        "dragapult": 0.115,
+        "starmie": 0.0588,
+        "rest": 0.2162
+      },
+      "weighted_wr": 0.47133375,
+      "degraded_components": [
+        "lucario",
+        "alakazam",
+        "starmie"
+      ],
+      "passed": false
+    },
+    "band_800_899": {
+      "mix": {
+        "archaludon": 0.2903,
+        "alakazam": 0.2716,
+        "lucario": 0.0719,
+        "crustle": 0.0479,
+        "mirror": 0.0519,
+        "rest": 0.3664
+      },
+      "weighted_wr": 0.5031165500000001,
+      "degraded_components": [
+        "alakazam",
+        "lucario",
+        "crustle",
+        "mirror"
+      ],
+      "passed": false
+    },
+    "band_900_1099": {
+      "mix": {
+        "alakazam": 0.38,
+        "mirror": 0.23,
+        "crustle": 0.09,
+        "archaludon": 0.09,
+        "lucario": 0.07,
+        "starmie": 0.026,
+        "rest": 0.114
+      },
+      "weighted_wr": 0.485465,
+      "degraded_components": [
+        "alakazam",
+        "mirror",
+        "crustle",
+        "lucario",
+        "starmie"
+      ],
+      "passed": false
+    }
+  },
+  "regressions": [
+    {
+      "key": "ext_masamikobayashi_archaludon",
+      "has_baseline": false
+    }
+  ],
+  "acceptance": {
+    "band_wr_pass": {
+      "band_700_799": false,
+      "band_800_899": false,
+      "band_900_1099": false
+    },
+    "band_wr_pass_all": false,
+    "mirror_pass": false,
+    "mirror_v063_h2h_wr": null,
+    "mirror_v070_h2h_wr": null,
+    "incumbent_pass": false,
+    "incumbent_v072_h2h_wr": null,
+    "incumbent_v072_h2h_lo": null,
+    "no_regressions_pass": true,
+    "n_significant_regressions": 0,
+    "regression_keys": [],
+    "no_crashes_pass": true,
+    "crash_total": 0,
+    "overall_pass": false
+  },
+  "generated": "2026-07-25 01:20:35"
+}

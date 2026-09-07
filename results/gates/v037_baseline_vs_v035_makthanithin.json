@@ -1,0 +1,31 @@
+{
+  "records": [
+    {
+      "tag": "v037_baseline_vs_v035_makthanithin",
+      "opponent": "v035_makthanithin",
+      "opp_deck_override": null,
+      "n_games": 150,
+      "wins": 55,
+      "losses": 95,
+      "draws": 0,
+      "WR": 0.36666666666666664,
+      "wilson95_lo": 0.293773196710732,
+      "wilson95_hi": 0.4462191070614596,
+      "decisive_WR": 0.36666666666666664,
+      "decisive_n": 150,
+      "avg_moves": 84.58,
+      "min_moves": 26,
+      "max_moves": 143,
+      "exc_v033": 0,
+      "exc_opp": 0,
+      "elapsed_s": 3.753457124927081,
+      "v033_nn_decisions": 3863,
+      "v033_fallback_decisions": 0,
+      "v033_trivial_fallback": 0,
+      "v033_exceptions": 0,
+      "verdict": "FAIL",
+      "threshold": 0.65
+    }
+  ],
+  "updated": "2026-07-17 21:39:42"
+}

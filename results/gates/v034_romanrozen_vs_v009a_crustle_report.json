@@ -1,0 +1,23 @@
+{
+  "opponent": "v009a_crustle",
+  "candidates": [
+    "v034_romanrozen_clone"
+  ],
+  "rows": {
+    "v034_romanrozen_clone": {
+      "n": 100,
+      "w": 41,
+      "l": 5,
+      "d": 0,
+      "bad": 54,
+      "wr": 0.8913043478260869,
+      "wilson_lo": 0.7696189698736853,
+      "wilson_hi": 0.9526692391725731,
+      "n_exceptions": 0,
+      "n_illegal": 54,
+      "n_aborted": 0,
+      "median_moves": 42.5,
+      "mean_moves": 41.23
+    }
+  }
+}

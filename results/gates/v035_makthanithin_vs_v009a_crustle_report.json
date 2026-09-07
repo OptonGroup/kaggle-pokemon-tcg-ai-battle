@@ -1,0 +1,23 @@
+{
+  "opponent": "v009a_crustle",
+  "candidates": [
+    "v035_makthanithin"
+  ],
+  "rows": {
+    "v035_makthanithin": {
+      "n": 100,
+      "w": 59,
+      "l": 41,
+      "d": 0,
+      "bad": 0,
+      "wr": 0.59,
+      "wilson_lo": 0.4920125056109662,
+      "wilson_hi": 0.6813284290433533,
+      "n_exceptions": 0,
+      "n_illegal": 0,
+      "n_aborted": 0,
+      "median_moves": 81.5,
+      "mean_moves": 82.3
+    }
+  }
+}

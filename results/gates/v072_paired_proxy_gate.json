@@ -1,0 +1,37 @@
+{
+  "tag": "v072_paired_proxy_gate",
+  "candidates": {
+    "v072_paired": "/Users/max/kaggle-pokemon-tcg-ai-battle/submissions/v072_mirror_gauntlet"
+  },
+  "proxy_decks": [
+    "Starmie_live"
+  ],
+  "proxies": {
+    "Starmie_live": {
+      "v072_paired": {
+        "opponent": "v072_paired_vs_Starmie_live",
+        "opponent_dir": "meta:Starmie_live",
+        "n_games": 1000,
+        "wins": 884,
+        "losses": 116,
+        "draws": 0,
+        "win_rate": 0.884,
+        "wilson95_lo": 0.862666307122199,
+        "wilson95_hi": 0.9023946347634532,
+        "decisive_win_rate": 0.884,
+        "decisive_n": 1000,
+        "avg_game_length": 84.201,
+        "min_game_length": 19,
+        "max_game_length": 206,
+        "exc_agent": 0,
+        "exc_opp": 0,
+        "illegal_agent": 0,
+        "illegal_opp": 0,
+        "timeouts": 0,
+        "crashes": 0,
+        "elapsed_s": 8.272782802581787
+      }
+    }
+  },
+  "generated": "2026-07-24 22:53:16"
+}

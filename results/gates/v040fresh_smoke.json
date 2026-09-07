@@ -1,0 +1,31 @@
+{
+  "records": [
+    {
+      "tag": "v040fresh_smoke_v009a",
+      "opponent": "v009a_crustle",
+      "opp_deck_override": null,
+      "n_games": 20,
+      "wins": 6,
+      "losses": 14,
+      "draws": 0,
+      "WR": 0.3,
+      "wilson95_lo": 0.14547527396899385,
+      "wilson95_hi": 0.5189767762289793,
+      "decisive_WR": 0.3,
+      "decisive_n": 20,
+      "avg_moves": 119.75,
+      "min_moves": 36,
+      "max_moves": 160,
+      "exc_v033": 0,
+      "exc_opp": 0,
+      "elapsed_s": 2.369301875005476,
+      "v033_nn_decisions": 1512,
+      "v033_fallback_decisions": 0,
+      "v033_trivial_fallback": 0,
+      "v033_exceptions": 0,
+      "verdict": "FAIL",
+      "threshold": 0.65
+    }
+  ],
+  "updated": "2026-07-18 01:57:46"
+}

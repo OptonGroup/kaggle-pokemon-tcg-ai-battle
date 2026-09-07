@@ -1,0 +1,71 @@
+{
+  "tag": "v051_pool_n1000",
+  "agent": {
+    "ckpt": null,
+    "agent_dir": "v051_lopunny_crustle",
+    "deck": "/Users/max/kaggle-pokemon-tcg-ai-battle/submissions/v051_lopunny_crustle/deck.csv",
+    "label": "submission:v051_lopunny_crustle"
+  },
+  "agent_ckpt_exceptions": null,
+  "opponents": {
+    "v007_crustle": {
+      "opponent": "v007_crustle",
+      "opponent_dir": "v007_crustle",
+      "n_games": 1000,
+      "wins": 712,
+      "losses": 285,
+      "draws": 3,
+      "win_rate": 0.7135,
+      "wilson95_lo": 0.684701649864191,
+      "wilson95_hi": 0.7406642644394202,
+      "decisive_win_rate": 0.7141424272818455,
+      "decisive_n": 997,
+      "avg_game_length": 77.216,
+      "min_game_length": 10,
+      "max_game_length": 202,
+      "exc_agent": 0,
+      "exc_opp": 0,
+      "elapsed_s": 15.936725666979328
+    },
+    "v009a_crustle": {
+      "opponent": "v009a_crustle",
+      "opponent_dir": "v009a_crustle",
+      "n_games": 1000,
+      "wins": 809,
+      "losses": 190,
+      "draws": 1,
+      "win_rate": 0.8095,
+      "wilson95_lo": 0.7839938163752309,
+      "wilson95_hi": 0.8326373333997934,
+      "decisive_win_rate": 0.8098098098098098,
+      "decisive_n": 999,
+      "avg_game_length": 72.385,
+      "min_game_length": 10,
+      "max_game_length": 164,
+      "exc_agent": 0,
+      "exc_opp": 0,
+      "elapsed_s": 14.902045459020883
+    },
+    "v050_p0p1": {
+      "opponent": "v050_p0p1",
+      "opponent_dir": "v050_p0p1",
+      "n_games": 1000,
+      "wins": 451,
+      "losses": 549,
+      "draws": 0,
+      "win_rate": 0.451,
+      "wilson95_lo": 0.420404869897352,
+      "wilson95_hi": 0.4819701661641144,
+      "decisive_win_rate": 0.451,
+      "decisive_n": 1000,
+      "avg_game_length": 110.63,
+      "min_game_length": 21,
+      "max_game_length": 198,
+      "exc_agent": 0,
+      "exc_opp": 0,
+      "elapsed_s": 23.97113429196179
+    }
+  },
+  "overall_win_rate": 0.6573333333333333,
+  "generated": "2026-07-21 01:54:29"
+}

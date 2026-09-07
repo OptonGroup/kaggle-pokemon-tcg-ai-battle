@@ -1,0 +1,214 @@
+{
+  "tag": "smoke_phase3_band_summary",
+  "candidate": "v074_fullmetal",
+  "baseline_source": "/Users/max/kaggle-pokemon-tcg-ai-battle/results/gates/v073_core_gate.json",
+  "excluded_pairs": [],
+  "archetype_wr": {
+    "alakazam": 0.7,
+    "archaludon": 0.5,
+    "crustle": 0.7,
+    "dipplin": 0.5,
+    "dragapult": 1.0,
+    "garchomp": 1.0,
+    "lopunny": 0.9,
+    "lucario": 0.4,
+    "mega_kangaskhan": 0.5,
+    "mirror_grimmsnarl": 0.5,
+    "ogerpon_cornerstone": 0.5,
+    "ogerpon_teal": 0.5,
+    "starmie": 0.8,
+    "tr_mewtwo": 0.5
+  },
+  "archetype_degraded": {
+    "alakazam": false,
+    "archaludon": true,
+    "crustle": false,
+    "dipplin": true,
+    "dragapult": false,
+    "garchomp": false,
+    "lopunny": false,
+    "lucario": false,
+    "mega_kangaskhan": true,
+    "mirror_grimmsnarl": true,
+    "ogerpon_cornerstone": true,
+    "ogerpon_teal": false,
+    "starmie": false,
+    "tr_mewtwo": true
+  },
+  "bands": {
+    "band_500_599": {
+      "mix": {
+        "mirror_grimmsnarl": 1.0
+      },
+      "weighted_wr": 0.5,
+      "degraded_components": [
+        "mirror_grimmsnarl"
+      ],
+      "passed": false
+    },
+    "band_600_699": {
+      "mix": {
+        "mirror_grimmsnarl": 0.011,
+        "dipplin": 0.908,
+        "alakazam": 0.057,
+        "ogerpon_teal": 0.011,
+        "archaludon": 0.011
+      },
+      "weighted_wr": 0.5104,
+      "degraded_components": [
+        "mirror_grimmsnarl",
+        "dipplin",
+        "archaludon"
+      ],
+      "passed": false
+    },
+    "band_700_799": {
+      "mix": {
+        "mirror_grimmsnarl": 0.447,
+        "tr_mewtwo": 0.383,
+        "alakazam": 0.021,
+        "starmie": 0.149
+      },
+      "weighted_wr": 0.5489,
+      "degraded_components": [
+        "mirror_grimmsnarl",
+        "tr_mewtwo"
+      ],
+      "passed": true
+    },
+    "band_800_899": {
+      "mix": {
+        "mirror_grimmsnarl": 0.359,
+        "crustle": 0.554,
+        "alakazam": 0.082,
+        "archaludon": 0.005
+      },
+      "weighted_wr": 0.6272,
+      "degraded_components": [
+        "mirror_grimmsnarl",
+        "archaludon"
+      ],
+      "passed": true
+    },
+    "band_900_999": {
+      "mix": {
+        "mirror_grimmsnarl": 0.587,
+        "dipplin": 0.026,
+        "crustle": 0.084,
+        "tr_mewtwo": 0.053,
+        "alakazam": 0.187,
+        "starmie": 0.004,
+        "mega_kangaskhan": 0.001,
+        "garchomp": 0.028,
+        "dragapult": 0.007,
+        "ogerpon_teal": 0.01,
+        "lucario": 0.005,
+        "ogerpon_cornerstone": 0.007
+      },
+      "weighted_wr": 0.5719,
+      "degraded_components": [
+        "mirror_grimmsnarl",
+        "dipplin",
+        "tr_mewtwo",
+        "mega_kangaskhan",
+        "ogerpon_cornerstone"
+      ],
+      "passed": true
+    },
+    "band_1000_1099": {
+      "mix": {
+        "mirror_grimmsnarl": 0.631,
+        "dipplin": 0.054,
+        "crustle": 0.067,
+        "tr_mewtwo": 0.038,
+        "alakazam": 0.099,
+        "garchomp": 0.015,
+        "dragapult": 0.044,
+        "lopunny": 0.026,
+        "ogerpon_teal": 0.026,
+        "ogerpon_cornerstone": 0.0
+      },
+      "weighted_wr": 0.5731,
+      "degraded_components": [
+        "mirror_grimmsnarl",
+        "dipplin",
+        "tr_mewtwo",
+        "ogerpon_cornerstone"
+      ],
+      "passed": true
+    },
+    "band_1100_plus": {
+      "mix": {
+        "mirror_grimmsnarl": 0.636,
+        "dipplin": 0.008,
+        "crustle": 0.095,
+        "tr_mewtwo": 0.076,
+        "alakazam": 0.037,
+        "mega_kangaskhan": 0.075,
+        "garchomp": 0.049,
+        "dragapult": 0.01,
+        "lopunny": 0.013,
+        "ogerpon_teal": 0.003
+      },
+      "weighted_wr": 0.5620999999999999,
+      "degraded_components": [
+        "mirror_grimmsnarl",
+        "dipplin",
+        "tr_mewtwo",
+        "mega_kangaskhan"
+      ],
+      "passed": true
+    }
+  },
+  "regressions": [
+    {
+      "key": "scout_deeper_h2h",
+      "has_baseline": false
+    },
+    {
+      "key": "v009a_crustle",
+      "has_baseline": false
+    },
+    {
+      "key": "v044_archaludon",
+      "has_baseline": false
+    },
+    {
+      "key": "ext_maulikgajera_lucario",
+      "has_baseline": false
+    },
+    {
+      "key": "ext_prvsiyan_alak_v9",
+      "has_baseline": false
+    },
+    {
+      "key": "ext_tusk_crustle",
+      "has_baseline": false
+    }
+  ],
+  "acceptance": {
+    "band_wr_pass": {
+      "band_500_599": false,
+      "band_600_699": false,
+      "band_700_799": true,
+      "band_800_899": true,
+      "band_900_999": true,
+      "band_1000_1099": true,
+      "band_1100_plus": true
+    },
+    "band_wr_pass_all": true,
+    "mirror_pass": false,
+    "mirror_v063_h2h_wr": null,
+    "mirror_v070_h2h_wr": null,
+    "incumbent_pass": false,
+    "incumbent_v072_h2h_wr": null,
+    "incumbent_v072_h2h_lo": null,
+    "no_regressions_pass": true,
+    "n_significant_regressions": 0,
+    "regression_keys": [],
+    "no_crashes_pass": true,
+    "crash_total": 0,
+    "overall_pass": false
+  },
+  "generated": "2026-08-02 12:17:21"
+}

@@ -1,0 +1,7701 @@
+[
+  {
+    "game": 0,
+    "agent_is_left": true,
+    "outcome": -1.0,
+    "decisions": [
+      {
+        "step": 0,
+        "ctx": 41,
+        "sel_type": 9,
+        "opt_type": 2,
+        "chosen_target": null,
+        "my": {
+          "active": null,
+          "bench": [],
+          "poisoned": false,
+          "burned": false,
+          "asleep": false,
+          "paralyzed": false,
+          "confused": false
+        }
+      },
+      {
+        "step": 1,
+        "ctx": 42,
+        "sel_type": 9,
+        "opt_type": 2,
+        "chosen_target": null,
+        "my": {
+          "active": null,
+          "bench": [],
+          "poisoned": false,
+          "burned": false,
+          "asleep": false,
+          "paralyzed": false,
+          "confused": false
+        }
+      },
+      {
+        "step": 3,
+        "ctx": 1,
+        "sel_type": 1,
+        "opt_type": 3,
+        "chosen_target": null,
+        "my": {
+          "active": null,
+          "bench": [],
+          "poisoned": false,
+          "burned": false,
+          "asleep": false,
+          "paralyzed": false,
+          "confused": false
+        }
+      },
+      {
+        "step": 10,
+        "ctx": 0,
+        "sel_type": 0,
+        "opt_type": 8,
+        "chosen_target": null,
+        "my": {
+          "active": {
+            "id": 666,
+            "serial": 24,
+            "hp": 160,
+            "maxHp": 160,
+            "n_energy": 0
+          },
+          "bench": [],
+          "poisoned": false,
+          "burned": false,
+          "asleep": false,
+          "paralyzed": false,
+          "confused": false
+        }
+      },
+      {
+        "step": 11,
+        "ctx": 0,
+        "sel_type": 0,
+        "opt_type": 7,
+        "chosen_target": null,
+        "my": {
+          "active": {
+            "id": 666,
+            "serial": 24,
+            "hp": 160,
+            "maxHp": 160,
+            "n_energy": 1
+          },
+          "bench": [],
+          "poisoned": false,
+          "burned": false,
+          "asleep": false,
+          "paralyzed": false,
+          "confused": false
+        }
+      },
+      {
+        "step": 12,
+        "ctx": 0,
+        "sel_type": 0,
+        "opt_type": 7,
+        "chosen_target": null,
+        "my": {
+          "active": {
+            "id": 666,
+            "serial": 24,
+            "hp": 160,
+            "maxHp": 160,
+            "n_energy": 1
+          },
+          "bench": [],
+          "poisoned": false,
+          "burned": false,
+          "asleep": false,
+          "paralyzed": false,
+          "confused": false
+        }
+      },
+      {
+        "step": 13,
+        "ctx": 7,
+        "sel_type": 1,
+        "opt_type": 3,
+        "chosen_target": null,
+        "my": {
+          "active": {
+            "id": 666,
+            "serial": 24,
+            "hp": 160,
+            "maxHp": 160,
+            "n_energy": 1
+          },
+          "bench": [],
+          "poisoned": false,
+          "burned": false,
+          "asleep": false,
+          "paralyzed": false,
+          "confused": false
+        }
+      },
+      {
+        "step": 14,
+        "ctx": 0,
+        "sel_type": 0,
+        "opt_type": 7,
+        "chosen_target": null,
+        "my": {
+          "active": {
+            "id": 666,
+            "serial": 24,
+            "hp": 160,
+            "maxHp": 160,
+            "n_energy": 1
+          },
+          "bench": [],
+          "poisoned": false,
+          "burned": false,
+          "asleep": false,
+          "paralyzed": false,
+          "confused": false
+        }
+      },
+      {
+        "step": 15,
+        "ctx": 0,
+        "sel_type": 0,
+        "opt_type": 13,
+        "chosen_target": null,
+        "my": {
+          "active": {
+            "id": 666,
+            "serial": 24,
+            "hp": 160,
+            "maxHp": 160,
+            "n_energy": 1
+          },
+          "bench": [
+            {
+              "id": 169,
+              "serial": 17,
+              "hp": 130,
+              "maxHp": 130,
+              "n_energy": 0
+            }
+          ],
+          "poisoned": false,
+          "burned": false,
+          "asleep": false,
+          "paralyzed": false,
+          "confused": false
+        }
+      },
+      {
+        "step": 16,
+        "ctx": 22,
+        "sel_type": 1,
+        "opt_type": 3,
+        "chosen_target": null,
+        "my": {
+          "active": {
+            "id": 666,
+            "serial": 24,
+            "hp": 160,
+            "maxHp": 160,
+            "n_energy": 1
+          },
+          "bench": [
+            {
+              "id": 169,
+              "serial": 17,
+              "hp": 130,
+              "maxHp": 130,
+              "n_energy": 0
+            }
+          ],
+          "poisoned": false,
+          "burned": false,
+          "asleep": false,
+          "paralyzed": false,
+          "confused": false
+        }
+      },
+      {
+        "step": 17,
+        "ctx": 21,
+        "sel_type": 1,
+        "opt_type": 3,
+        "chosen_target": {
+          "id": 169,
+          "serial": 17,
+          "hp": 130,
+          "maxHp": 130,
+          "n_energy": 0
+        },
+        "my": {
+          "active": {
+            "id": 666,
+            "serial": 24,
+            "hp": 160,
+            "maxHp": 160,
+            "n_energy": 1
+          },
+          "bench": [
+            {
+              "id": 169,
+              "serial": 17,
+              "hp": 130,
+              "maxHp": 130,
+              "n_energy": 0
+            }
+          ],
+          "poisoned": false,
+          "burned": false,
+          "asleep": false,
+          "paralyzed": false,
+          "confused": false
+        }
+      },
+      {
+        "step": 18,
+        "ctx": 21,
+        "sel_type": 1,
+        "opt_type": 3,
+        "chosen_target": {
+          "id": 169,
+          "serial": 17,
+          "hp": 130,
+          "maxHp": 130,
+          "n_energy": 1
+        },
+        "my": {
+          "active": {
+            "id": 666,
+            "serial": 24,
+            "hp": 160,
+            "maxHp": 160,
+            "n_energy": 1
+          },
+          "bench": [
+            {
+              "id": 169,
+              "serial": 17,
+              "hp": 130,
+              "maxHp": 130,
+              "n_energy": 1
+            }
+          ],
+          "poisoned": false,
+          "burned": false,
+          "asleep": false,
+          "paralyzed": false,
+          "confused": false
+        }
+      },
+      {
+        "step": 19,
+        "ctx": 21,
+        "sel_type": 1,
+        "opt_type": 3,
+        "chosen_target": {
+          "id": 169,
+          "serial": 17,
+          "hp": 130,
+          "maxHp": 130,
+          "n_energy": 2
+        },
+        "my": {
+          "active": {
+            "id": 666,
+            "serial": 24,
+            "hp": 160,
+            "maxHp": 160,
+            "n_energy": 1
+          },
+          "bench": [
+            {
+              "id": 169,
+              "serial": 17,
+              "hp": 130,
+              "maxHp": 130,
+              "n_energy": 2
+            }
+          ],
+          "poisoned": false,
+          "burned": false,
+          "asleep": false,
+          "paralyzed": false,
+          "confused": false
+        }
+      },
+      {
+        "step": 28,
+        "ctx": 0,
+        "sel_type": 0,
+        "opt_type": 12,
+        "chosen_target": null,
+        "my": {
+          "active": {
+            "id": 666,
+            "serial": 24,
+            "hp": 130,
+            "maxHp": 160,
+            "n_energy": 1
+          },
+          "bench": [
+            {
+              "id": 169,
+              "serial": 17,
+              "hp": 130,
+              "maxHp": 130,
+              "n_energy": 3
+            }
+          ],
+          "poisoned": false,
+          "burned": false,
+          "asleep": false,
+          "paralyzed": false,
+          "confused": false
+        }
+      },
+      {
+        "step": 29,
+        "ctx": 3,
+        "sel_type": 1,
+        "opt_type": 3,
+        "chosen_target": {
+          "id": 169,
+          "serial": 17,
+          "hp": 130,
+          "maxHp": 130,
+          "n_energy": 3
+        },
+        "my": {
+          "active": {
+            "id": 666,
+            "serial": 24,
+            "hp": 130,
+            "maxHp": 160,
+            "n_energy": 1
+          },
+          "bench": [
+            {
+              "id": 169,
+              "serial": 17,
+              "hp": 130,
+              "maxHp": 130,
+              "n_energy": 3
+            }
+          ],
+          "poisoned": false,
+          "burned": false,
+          "asleep": false,
+          "paralyzed": false,
+          "confused": false
+        }
+      },
+      {
+        "step": 30,
+        "ctx": 0,
+        "sel_type": 0,
+        "opt_type": 13,
+        "chosen_target": null,
+        "my": {
+          "active": {
+            "id": 169,
+            "serial": 17,
+            "hp": 130,
+            "maxHp": 130,
+            "n_energy": 3
+          },
+          "bench": [
+            {
+              "id": 666,
+              "serial": 24,
+              "hp": 130,
+              "maxHp": 160,
+              "n_energy": 1
+            }
+          ],
+          "poisoned": false,
+          "burned": false,
+          "asleep": false,
+          "paralyzed": false,
+          "confused": false
+        }
+      },
+      {
+        "step": 32,
+        "ctx": 0,
+        "sel_type": 0,
+        "opt_type": 13,
+        "chosen_target": null,
+        "my": {
+          "active": {
+            "id": 169,
+            "serial": 17,
+            "hp": 130,
+            "maxHp": 130,
+            "n_energy": 3
+          },
+          "bench": [
+            {
+              "id": 666,
+              "serial": 24,
+              "hp": 130,
+              "maxHp": 160,
+              "n_energy": 1
+            }
+          ],
+          "poisoned": false,
+          "burned": false,
+          "asleep": false,
+          "paralyzed": false,
+          "confused": false
+        }
+      },
+      {
+        "step": 33,
+        "ctx": 7,
+        "sel_type": 1,
+        "opt_type": 3,
+        "chosen_target": null,
+        "my": {
+          "active": {
+            "id": 169,
+            "serial": 17,
+            "hp": 130,
+            "maxHp": 130,
+            "n_energy": 3
+          },
+          "bench": [
+            {
+              "id": 666,
+              "serial": 24,
+              "hp": 130,
+              "maxHp": 160,
+              "n_energy": 1
+            }
+          ],
+          "poisoned": false,
+          "burned": false,
+          "asleep": false,
+          "paralyzed": false,
+          "confused": false
+        }
+      },
+      {
+        "step": 47,
+        "ctx": 4,
+        "sel_type": 1,
+        "opt_type": 3,
+        "chosen_target": {
+          "id": 666,
+          "serial": 24,
+          "hp": 130,
+          "maxHp": 160,
+          "n_energy": 1
+        },
+        "my": {
+          "active": null,
+          "bench": [
+            {
+              "id": 666,
+              "serial": 24,
+              "hp": 130,
+              "maxHp": 160,
+              "n_energy": 1
+            }
+          ],
+          "poisoned": false,
+          "burned": false,
+          "asleep": false,
+          "paralyzed": false,
+          "confused": false
+        }
+      },
+      {
+        "step": 48,
+        "ctx": 0,
+        "sel_type": 0,
+        "opt_type": 7,
+        "chosen_target": null,
+        "my": {
+          "active": {
+            "id": 666,
+            "serial": 24,
+            "hp": 130,
+            "maxHp": 160,
+            "n_energy": 1
+          },
+          "bench": [],
+          "poisoned": false,
+          "burned": false,
+          "asleep": false,
+          "paralyzed": false,
+          "confused": false
+        }
+      },
+      {
+        "step": 49,
+        "ctx": 0,
+        "sel_type": 0,
+        "opt_type": 7,
+        "chosen_target": null,
+        "my": {
+          "active": {
+            "id": 666,
+            "serial": 24,
+            "hp": 130,
+            "maxHp": 160,
+            "n_energy": 1
+          },
+          "bench": [
+            {
+              "id": 169,
+              "serial": 15,
+              "hp": 130,
+              "maxHp": 130,
+              "n_energy": 0
+            }
+          ],
+          "poisoned": false,
+          "burned": false,
+          "asleep": false,
+          "paralyzed": false,
+          "confused": false
+        }
+      },
+      {
+        "step": 50,
+        "ctx": 7,
+        "sel_type": 1,
+        "opt_type": 3,
+        "chosen_target": null,
+        "my": {
+          "active": {
+            "id": 666,
+            "serial": 24,
+            "hp": 130,
+            "maxHp": 160,
+            "n_energy": 1
+          },
+          "bench": [
+            {
+              "id": 169,
+              "serial": 15,
+              "hp": 130,
+              "maxHp": 130,
+              "n_energy": 0
+            }
+          ],
+          "poisoned": false,
+          "burned": false,
+          "asleep": false,
+          "paralyzed": false,
+          "confused": false
+        }
+      },
+      {
+        "step": 51,
+        "ctx": 0,
+        "sel_type": 0,
+        "opt_type": 7,
+        "chosen_target": null,
+        "my": {
+          "active": {
+            "id": 666,
+            "serial": 24,
+            "hp": 130,
+            "maxHp": 160,
+            "n_energy": 1
+          },
+          "bench": [
+            {
+              "id": 169,
+              "serial": 15,
+              "hp": 130,
+              "maxHp": 130,
+              "n_energy": 0
+            }
+          ],
+          "poisoned": false,
+          "burned": false,
+          "asleep": false,
+          "paralyzed": false,
+          "confused": false
+        }
+      },
+      {
+        "step": 52,
+        "ctx": 0,
+        "sel_type": 0,
+        "opt_type": 8,
+        "chosen_target": null,
+        "my": {
+          "active": {
+            "id": 666,
+            "serial": 24,
+            "hp": 130,
+            "maxHp": 160,
+            "n_energy": 1
+          },
+          "bench": [
+            {
+              "id": 169,
+              "serial": 15,
+              "hp": 130,
+              "maxHp": 130,
+              "n_energy": 0
+            },
+            {
+              "id": 169,
+              "serial": 17,
+              "hp": 130,
+              "maxHp": 130,
+              "n_energy": 0
+            }
+          ],
+          "poisoned": false,
+          "burned": false,
+          "asleep": false,
+          "paralyzed": false,
+          "confused": false
+        }
+      },
+      {
+        "step": 53,
+        "ctx": 0,
+        "sel_type": 0,
+        "opt_type": 13,
+        "chosen_target": null,
+        "my": {
+          "active": {
+            "id": 666,
+            "serial": 24,
+            "hp": 130,
+            "maxHp": 160,
+            "n_energy": 1
+          },
+          "bench": [
+            {
+              "id": 169,
+              "serial": 15,
+              "hp": 130,
+              "maxHp": 130,
+              "n_energy": 1
+            },
+            {
+              "id": 169,
+              "serial": 17,
+              "hp": 130,
+              "maxHp": 130,
+              "n_energy": 0
+            }
+          ],
+          "poisoned": false,
+          "burned": false,
+          "asleep": false,
+          "paralyzed": false,
+          "confused": false
+        }
+      },
+      {
+        "step": 54,
+        "ctx": 22,
+        "sel_type": 1,
+        "opt_type": 3,
+        "chosen_target": null,
+        "my": {
+          "active": {
+            "id": 666,
+            "serial": 24,
+            "hp": 130,
+            "maxHp": 160,
+            "n_energy": 1
+          },
+          "bench": [
+            {
+              "id": 169,
+              "serial": 15,
+              "hp": 130,
+              "maxHp": 130,
+              "n_energy": 1
+            },
+            {
+              "id": 169,
+              "serial": 17,
+              "hp": 130,
+              "maxHp": 130,
+              "n_energy": 0
+            }
+          ],
+          "poisoned": false,
+          "burned": false,
+          "asleep": false,
+          "paralyzed": false,
+          "confused": false
+        }
+      },
+      {
+        "step": 55,
+        "ctx": 21,
+        "sel_type": 1,
+        "opt_type": 3,
+        "chosen_target": {
+          "id": 169,
+          "serial": 15,
+          "hp": 130,
+          "maxHp": 130,
+          "n_energy": 1
+        },
+        "my": {
+          "active": {
+            "id": 666,
+            "serial": 24,
+            "hp": 130,
+            "maxHp": 160,
+            "n_energy": 1
+          },
+          "bench": [
+            {
+              "id": 169,
+              "serial": 15,
+              "hp": 130,
+              "maxHp": 130,
+              "n_energy": 1
+            },
+            {
+              "id": 169,
+              "serial": 17,
+              "hp": 130,
+              "maxHp": 130,
+              "n_energy": 0
+            }
+          ],
+          "poisoned": false,
+          "burned": false,
+          "asleep": false,
+          "paralyzed": false,
+          "confused": false
+        }
+      },
+      {
+        "step": 56,
+        "ctx": 21,
+        "sel_type": 1,
+        "opt_type": 3,
+        "chosen_target": {
+          "id": 169,
+          "serial": 15,
+          "hp": 130,
+          "maxHp": 130,
+          "n_energy": 2
+        },
+        "my": {
+          "active": {
+            "id": 666,
+            "serial": 24,
+            "hp": 130,
+            "maxHp": 160,
+            "n_energy": 1
+          },
+          "bench": [
+            {
+              "id": 169,
+              "serial": 15,
+              "hp": 130,
+              "maxHp": 130,
+              "n_energy": 2
+            },
+            {
+              "id": 169,
+              "serial": 17,
+              "hp": 130,
+              "maxHp": 130,
+              "n_energy": 0
+            }
+          ],
+          "poisoned": false,
+          "burned": false,
+          "asleep": false,
+          "paralyzed": false,
+          "confused": false
+        }
+      },
+      {
+        "step": 57,
+        "ctx": 21,
+        "sel_type": 1,
+        "opt_type": 3,
+        "chosen_target": {
+          "id": 169,
+          "serial": 17,
+          "hp": 130,
+          "maxHp": 130,
+          "n_energy": 0
+        },
+        "my": {
+          "active": {
+            "id": 666,
+            "serial": 24,
+            "hp": 130,
+            "maxHp": 160,
+            "n_energy": 1
+          },
+          "bench": [
+            {
+              "id": 169,
+              "serial": 15,
+              "hp": 130,
+              "maxHp": 130,
+              "n_energy": 3
+            },
+            {
+              "id": 169,
+              "serial": 17,
+              "hp": 130,
+              "maxHp": 130,
+              "n_energy": 0
+            }
+          ],
+          "poisoned": false,
+          "burned": false,
+          "asleep": false,
+          "paralyzed": false,
+          "confused": false
+        }
+      },
+      {
+        "step": 72,
+        "ctx": 4,
+        "sel_type": 1,
+        "opt_type": 3,
+        "chosen_target": {
+          "id": 169,
+          "serial": 15,
+          "hp": 130,
+          "maxHp": 130,
+          "n_energy": 3
+        },
+        "my": {
+          "active": null,
+          "bench": [
+            {
+              "id": 169,
+              "serial": 15,
+              "hp": 130,
+              "maxHp": 130,
+              "n_energy": 3
+            },
+            {
+              "id": 169,
+              "serial": 17,
+              "hp": 130,
+              "maxHp": 130,
+              "n_energy": 1
+            }
+          ],
+          "poisoned": false,
+          "burned": false,
+          "asleep": false,
+          "paralyzed": false,
+          "confused": false
+        }
+      },
+      {
+        "step": 73,
+        "ctx": 0,
+        "sel_type": 0,
+        "opt_type": 13,
+        "chosen_target": null,
+        "my": {
+          "active": {
+            "id": 169,
+            "serial": 15,
+            "hp": 130,
+            "maxHp": 130,
+            "n_energy": 3
+          },
+          "bench": [
+            {
+              "id": 169,
+              "serial": 17,
+              "hp": 130,
+              "maxHp": 130,
+              "n_energy": 1
+            }
+          ],
+          "poisoned": false,
+          "burned": false,
+          "asleep": false,
+          "paralyzed": false,
+          "confused": false
+        }
+      },
+      {
+        "step": 78,
+        "ctx": 4,
+        "sel_type": 1,
+        "opt_type": 3,
+        "chosen_target": {
+          "id": 169,
+          "serial": 17,
+          "hp": 130,
+          "maxHp": 130,
+          "n_energy": 1
+        },
+        "my": {
+          "active": null,
+          "bench": [
+            {
+              "id": 169,
+              "serial": 17,
+              "hp": 130,
+              "maxHp": 130,
+              "n_energy": 1
+            }
+          ],
+          "poisoned": false,
+          "burned": false,
+          "asleep": false,
+          "paralyzed": false,
+          "confused": false
+        }
+      },
+      {
+        "step": 79,
+        "ctx": 0,
+        "sel_type": 0,
+        "opt_type": 7,
+        "chosen_target": null,
+        "my": {
+          "active": {
+            "id": 169,
+            "serial": 17,
+            "hp": 130,
+            "maxHp": 130,
+            "n_energy": 1
+          },
+          "bench": [],
+          "poisoned": false,
+          "burned": false,
+          "asleep": false,
+          "paralyzed": false,
+          "confused": false
+        }
+      },
+      {
+        "step": 80,
+        "ctx": 8,
+        "sel_type": 1,
+        "opt_type": 3,
+        "chosen_target": null,
+        "my": {
+          "active": {
+            "id": 169,
+            "serial": 17,
+            "hp": 130,
+            "maxHp": 130,
+            "n_energy": 1
+          },
+          "bench": [],
+          "poisoned": false,
+          "burned": false,
+          "asleep": false,
+          "paralyzed": false,
+          "confused": false
+        }
+      },
+      {
+        "step": 81,
+        "ctx": 7,
+        "sel_type": 1,
+        "opt_type": 3,
+        "chosen_target": null,
+        "my": {
+          "active": {
+            "id": 169,
+            "serial": 17,
+            "hp": 130,
+            "maxHp": 130,
+            "n_energy": 1
+          },
+          "bench": [],
+          "poisoned": false,
+          "burned": false,
+          "asleep": false,
+          "paralyzed": false,
+          "confused": false
+        }
+      },
+      {
+        "step": 82,
+        "ctx": 0,
+        "sel_type": 0,
+        "opt_type": 7,
+        "chosen_target": null,
+        "my": {
+          "active": {
+            "id": 169,
+            "serial": 17,
+            "hp": 130,
+            "maxHp": 130,
+            "n_energy": 1
+          },
+          "bench": [],
+          "poisoned": false,
+          "burned": false,
+          "asleep": false,
+          "paralyzed": false,
+          "confused": false
+        }
+      },
+      {
+        "step": 83,
+        "ctx": 0,
+        "sel_type": 0,
+        "opt_type": 13,
+        "chosen_target": null,
+        "my": {
+          "active": {
+            "id": 169,
+            "serial": 17,
+            "hp": 130,
+            "maxHp": 130,
+            "n_energy": 1
+          },
+          "bench": [
+            {
+              "id": 169,
+              "serial": 14,
+              "hp": 130,
+              "maxHp": 130,
+              "n_energy": 0
+            }
+          ],
+          "poisoned": false,
+          "burned": false,
+          "asleep": false,
+          "paralyzed": false,
+          "confused": false
+        }
+      },
+      {
+        "step": 89,
+        "ctx": 4,
+        "sel_type": 1,
+        "opt_type": 3,
+        "chosen_target": {
+          "id": 169,
+          "serial": 14,
+          "hp": 130,
+          "maxHp": 130,
+          "n_energy": 0
+        },
+        "my": {
+          "active": null,
+          "bench": [
+            {
+              "id": 169,
+              "serial": 14,
+              "hp": 130,
+              "maxHp": 130,
+              "n_energy": 0
+            }
+          ],
+          "poisoned": false,
+          "burned": false,
+          "asleep": false,
+          "paralyzed": false,
+          "confused": false
+        }
+      },
+      {
+        "step": 90,
+        "ctx": 0,
+        "sel_type": 0,
+        "opt_type": 8,
+        "chosen_target": null,
+        "my": {
+          "active": {
+            "id": 169,
+            "serial": 14,
+            "hp": 130,
+            "maxHp": 130,
+            "n_energy": 0
+          },
+          "bench": [],
+          "poisoned": false,
+          "burned": false,
+          "asleep": false,
+          "paralyzed": false,
+          "confused": false
+        }
+      },
+      {
+        "step": 91,
+        "ctx": 0,
+        "sel_type": 0,
+        "opt_type": 13,
+        "chosen_target": null,
+        "my": {
+          "active": {
+            "id": 169,
+            "serial": 14,
+            "hp": 130,
+            "maxHp": 130,
+            "n_energy": 1
+          },
+          "bench": [],
+          "poisoned": false,
+          "burned": false,
+          "asleep": false,
+          "paralyzed": false,
+          "confused": false
+        }
+      }
+    ]
+  },
+  {
+    "game": 1,
+    "agent_is_left": false,
+    "outcome": -1.0,
+    "decisions": [
+      {
+        "step": 2,
+        "ctx": 1,
+        "sel_type": 1,
+        "opt_type": 3,
+        "chosen_target": null,
+        "my": {
+          "active": null,
+          "bench": [],
+          "poisoned": false,
+          "burned": false,
+          "asleep": false,
+          "paralyzed": false,
+          "confused": false
+        }
+      },
+      {
+        "step": 4,
+        "ctx": 2,
+        "sel_type": 1,
+        "opt_type": 3,
+        "chosen_target": null,
+        "my": {
+          "active": null,
+          "bench": [],
+          "poisoned": false,
+          "burned": false,
+          "asleep": false,
+          "paralyzed": false,
+          "confused": false
+        }
+      },
+      {
+        "step": 6,
+        "ctx": 0,
+        "sel_type": 0,
+        "opt_type": 7,
+        "chosen_target": null,
+        "my": {
+          "active": {
+            "id": 169,
+            "serial": 77,
+            "hp": 130,
+            "maxHp": 130,
+            "n_energy": 0
+          },
+          "bench": [
+            {
+              "id": 169,
+              "serial": 76,
+              "hp": 130,
+              "maxHp": 130,
+              "n_energy": 0
+            }
+          ],
+          "poisoned": false,
+          "burned": false,
+          "asleep": false,
+          "paralyzed": false,
+          "confused": false
+        }
+      },
+      {
+        "step": 7,
+        "ctx": 7,
+        "sel_type": 1,
+        "opt_type": 3,
+        "chosen_target": null,
+        "my": {
+          "active": {
+            "id": 169,
+            "serial": 77,
+            "hp": 130,
+            "maxHp": 130,
+            "n_energy": 0
+          },
+          "bench": [
+            {
+              "id": 169,
+              "serial": 76,
+              "hp": 130,
+              "maxHp": 130,
+              "n_energy": 0
+            }
+          ],
+          "poisoned": false,
+          "burned": false,
+          "asleep": false,
+          "paralyzed": false,
+          "confused": false
+        }
+      },
+      {
+        "step": 8,
+        "ctx": 0,
+        "sel_type": 0,
+        "opt_type": 8,
+        "chosen_target": null,
+        "my": {
+          "active": {
+            "id": 169,
+            "serial": 77,
+            "hp": 130,
+            "maxHp": 130,
+            "n_energy": 0
+          },
+          "bench": [
+            {
+              "id": 169,
+              "serial": 76,
+              "hp": 130,
+              "maxHp": 130,
+              "n_energy": 0
+            }
+          ],
+          "poisoned": false,
+          "burned": false,
+          "asleep": false,
+          "paralyzed": false,
+          "confused": false
+        }
+      },
+      {
+        "step": 9,
+        "ctx": 0,
+        "sel_type": 0,
+        "opt_type": 14,
+        "chosen_target": null,
+        "my": {
+          "active": {
+            "id": 169,
+            "serial": 77,
+            "hp": 130,
+            "maxHp": 130,
+            "n_energy": 1
+          },
+          "bench": [
+            {
+              "id": 169,
+              "serial": 76,
+              "hp": 130,
+              "maxHp": 130,
+              "n_energy": 0
+            }
+          ],
+          "poisoned": false,
+          "burned": false,
+          "asleep": false,
+          "paralyzed": false,
+          "confused": false
+        }
+      },
+      {
+        "step": 30,
+        "ctx": 0,
+        "sel_type": 0,
+        "opt_type": 7,
+        "chosen_target": null,
+        "my": {
+          "active": {
+            "id": 169,
+            "serial": 77,
+            "hp": 60,
+            "maxHp": 130,
+            "n_energy": 1
+          },
+          "bench": [
+            {
+              "id": 169,
+              "serial": 76,
+              "hp": 130,
+              "maxHp": 130,
+              "n_energy": 0
+            }
+          ],
+          "poisoned": false,
+          "burned": false,
+          "asleep": false,
+          "paralyzed": false,
+          "confused": false
+        }
+      },
+      {
+        "step": 31,
+        "ctx": 7,
+        "sel_type": 1,
+        "opt_type": 3,
+        "chosen_target": null,
+        "my": {
+          "active": {
+            "id": 169,
+            "serial": 77,
+            "hp": 60,
+            "maxHp": 130,
+            "n_energy": 1
+          },
+          "bench": [
+            {
+              "id": 169,
+              "serial": 76,
+              "hp": 130,
+              "maxHp": 130,
+              "n_energy": 0
+            }
+          ],
+          "poisoned": false,
+          "burned": false,
+          "asleep": false,
+          "paralyzed": false,
+          "confused": false
+        }
+      },
+      {
+        "step": 32,
+        "ctx": 0,
+        "sel_type": 0,
+        "opt_type": 7,
+        "chosen_target": null,
+        "my": {
+          "active": {
+            "id": 169,
+            "serial": 77,
+            "hp": 60,
+            "maxHp": 130,
+            "n_energy": 1
+          },
+          "bench": [
+            {
+              "id": 169,
+              "serial": 76,
+              "hp": 130,
+              "maxHp": 130,
+              "n_energy": 0
+            }
+          ],
+          "poisoned": false,
+          "burned": false,
+          "asleep": false,
+          "paralyzed": false,
+          "confused": false
+        }
+      },
+      {
+        "step": 33,
+        "ctx": 0,
+        "sel_type": 0,
+        "opt_type": 13,
+        "chosen_target": null,
+        "my": {
+          "active": {
+            "id": 169,
+            "serial": 77,
+            "hp": 60,
+            "maxHp": 130,
+            "n_energy": 1
+          },
+          "bench": [
+            {
+              "id": 169,
+              "serial": 76,
+              "hp": 130,
+              "maxHp": 130,
+              "n_energy": 0
+            },
+            {
+              "id": 57,
+              "serial": 119,
+              "hp": 100,
+              "maxHp": 100,
+              "n_energy": 0
+            }
+          ],
+          "poisoned": false,
+          "burned": false,
+          "asleep": false,
+          "paralyzed": false,
+          "confused": false
+        }
+      },
+      {
+        "step": 45,
+        "ctx": 4,
+        "sel_type": 1,
+        "opt_type": 3,
+        "chosen_target": {
+          "id": 169,
+          "serial": 76,
+          "hp": 130,
+          "maxHp": 130,
+          "n_energy": 0
+        },
+        "my": {
+          "active": null,
+          "bench": [
+            {
+              "id": 169,
+              "serial": 76,
+              "hp": 130,
+              "maxHp": 130,
+              "n_energy": 0
+            },
+            {
+              "id": 57,
+              "serial": 119,
+              "hp": 100,
+              "maxHp": 100,
+              "n_energy": 0
+            }
+          ],
+          "poisoned": false,
+          "burned": false,
+          "asleep": false,
+          "paralyzed": false,
+          "confused": false
+        }
+      },
+      {
+        "step": 46,
+        "ctx": 0,
+        "sel_type": 0,
+        "opt_type": 9,
+        "chosen_target": null,
+        "my": {
+          "active": {
+            "id": 169,
+            "serial": 76,
+            "hp": 130,
+            "maxHp": 130,
+            "n_energy": 0
+          },
+          "bench": [
+            {
+              "id": 57,
+              "serial": 119,
+              "hp": 100,
+              "maxHp": 100,
+              "n_energy": 0
+            }
+          ],
+          "poisoned": false,
+          "burned": false,
+          "asleep": false,
+          "paralyzed": false,
+          "confused": false
+        }
+      },
+      {
+        "step": 47,
+        "ctx": 43,
+        "sel_type": 9,
+        "opt_type": 1,
+        "chosen_target": null,
+        "my": {
+          "active": {
+            "id": 190,
+            "serial": 80,
+            "hp": 300,
+            "maxHp": 300,
+            "n_energy": 0
+          },
+          "bench": [
+            {
+              "id": 57,
+              "serial": 119,
+              "hp": 100,
+              "maxHp": 100,
+              "n_energy": 0
+            }
+          ],
+          "poisoned": false,
+          "burned": false,
+          "asleep": false,
+          "paralyzed": false,
+          "confused": false
+        }
+      },
+      {
+        "step": 48,
+        "ctx": 22,
+        "sel_type": 1,
+        "opt_type": 3,
+        "chosen_target": null,
+        "my": {
+          "active": {
+            "id": 190,
+            "serial": 80,
+            "hp": 300,
+            "maxHp": 300,
+            "n_energy": 0
+          },
+          "bench": [
+            {
+              "id": 57,
+              "serial": 119,
+              "hp": 100,
+              "maxHp": 100,
+              "n_energy": 0
+            }
+          ],
+          "poisoned": false,
+          "burned": false,
+          "asleep": false,
+          "paralyzed": false,
+          "confused": false
+        }
+      },
+      {
+        "step": 49,
+        "ctx": 21,
+        "sel_type": 1,
+        "opt_type": 3,
+        "chosen_target": {
+          "id": 190,
+          "serial": 80,
+          "hp": 300,
+          "maxHp": 300,
+          "n_energy": 0
+        },
+        "my": {
+          "active": {
+            "id": 190,
+            "serial": 80,
+            "hp": 300,
+            "maxHp": 300,
+            "n_energy": 0
+          },
+          "bench": [
+            {
+              "id": 57,
+              "serial": 119,
+              "hp": 100,
+              "maxHp": 100,
+              "n_energy": 0
+            }
+          ],
+          "poisoned": false,
+          "burned": false,
+          "asleep": false,
+          "paralyzed": false,
+          "confused": false
+        }
+      },
+      {
+        "step": 50,
+        "ctx": 0,
+        "sel_type": 0,
+        "opt_type": 13,
+        "chosen_target": null,
+        "my": {
+          "active": {
+            "id": 190,
+            "serial": 80,
+            "hp": 300,
+            "maxHp": 300,
+            "n_energy": 1
+          },
+          "bench": [
+            {
+              "id": 57,
+              "serial": 119,
+              "hp": 100,
+              "maxHp": 100,
+              "n_energy": 0
+            }
+          ],
+          "poisoned": false,
+          "burned": false,
+          "asleep": false,
+          "paralyzed": false,
+          "confused": false
+        }
+      },
+      {
+        "step": 56,
+        "ctx": 0,
+        "sel_type": 0,
+        "opt_type": 8,
+        "chosen_target": null,
+        "my": {
+          "active": {
+            "id": 190,
+            "serial": 80,
+            "hp": 110,
+            "maxHp": 300,
+            "n_energy": 1
+          },
+          "bench": [
+            {
+              "id": 57,
+              "serial": 119,
+              "hp": 100,
+              "maxHp": 100,
+              "n_energy": 0
+            }
+          ],
+          "poisoned": false,
+          "burned": false,
+          "asleep": false,
+          "paralyzed": false,
+          "confused": false
+        }
+      },
+      {
+        "step": 57,
+        "ctx": 0,
+        "sel_type": 0,
+        "opt_type": 13,
+        "chosen_target": null,
+        "my": {
+          "active": {
+            "id": 190,
+            "serial": 80,
+            "hp": 110,
+            "maxHp": 300,
+            "n_energy": 2
+          },
+          "bench": [
+            {
+              "id": 57,
+              "serial": 119,
+              "hp": 100,
+              "maxHp": 100,
+              "n_energy": 0
+            }
+          ],
+          "poisoned": false,
+          "burned": false,
+          "asleep": false,
+          "paralyzed": false,
+          "confused": false
+        }
+      },
+      {
+        "step": 70,
+        "ctx": 4,
+        "sel_type": 1,
+        "opt_type": 3,
+        "chosen_target": {
+          "id": 57,
+          "serial": 119,
+          "hp": 100,
+          "maxHp": 100,
+          "n_energy": 0
+        },
+        "my": {
+          "active": null,
+          "bench": [
+            {
+              "id": 57,
+              "serial": 119,
+              "hp": 100,
+              "maxHp": 100,
+              "n_energy": 0
+            }
+          ],
+          "poisoned": false,
+          "burned": false,
+          "asleep": false,
+          "paralyzed": false,
+          "confused": false
+        }
+      },
+      {
+        "step": 71,
+        "ctx": 0,
+        "sel_type": 0,
+        "opt_type": 14,
+        "chosen_target": null,
+        "my": {
+          "active": {
+            "id": 57,
+            "serial": 119,
+            "hp": 100,
+            "maxHp": 100,
+            "n_energy": 0
+          },
+          "bench": [],
+          "poisoned": false,
+          "burned": false,
+          "asleep": false,
+          "paralyzed": false,
+          "confused": false
+        }
+      }
+    ]
+  },
+  {
+    "game": 2,
+    "agent_is_left": true,
+    "outcome": -1.0,
+    "decisions": [
+      {
+        "step": 0,
+        "ctx": 41,
+        "sel_type": 9,
+        "opt_type": 2,
+        "chosen_target": null,
+        "my": {
+          "active": null,
+          "bench": [],
+          "poisoned": false,
+          "burned": false,
+          "asleep": false,
+          "paralyzed": false,
+          "confused": false
+        }
+      },
+      {
+        "step": 1,
+        "ctx": 42,
+        "sel_type": 9,
+        "opt_type": 2,
+        "chosen_target": null,
+        "my": {
+          "active": null,
+          "bench": [],
+          "poisoned": false,
+          "burned": false,
+          "asleep": false,
+          "paralyzed": false,
+          "confused": false
+        }
+      },
+      {
+        "step": 3,
+        "ctx": 1,
+        "sel_type": 1,
+        "opt_type": 3,
+        "chosen_target": null,
+        "my": {
+          "active": null,
+          "bench": [],
+          "poisoned": false,
+          "burned": false,
+          "asleep": false,
+          "paralyzed": false,
+          "confused": false
+        }
+      },
+      {
+        "step": 6,
+        "ctx": 0,
+        "sel_type": 0,
+        "opt_type": 8,
+        "chosen_target": null,
+        "my": {
+          "active": {
+            "id": 666,
+            "serial": 23,
+            "hp": 160,
+            "maxHp": 160,
+            "n_energy": 0
+          },
+          "bench": [],
+          "poisoned": false,
+          "burned": false,
+          "asleep": false,
+          "paralyzed": false,
+          "confused": false
+        }
+      },
+      {
+        "step": 7,
+        "ctx": 0,
+        "sel_type": 0,
+        "opt_type": 7,
+        "chosen_target": null,
+        "my": {
+          "active": {
+            "id": 666,
+            "serial": 23,
+            "hp": 160,
+            "maxHp": 160,
+            "n_energy": 1
+          },
+          "bench": [],
+          "poisoned": false,
+          "burned": false,
+          "asleep": false,
+          "paralyzed": false,
+          "confused": false
+        }
+      },
+      {
+        "step": 8,
+        "ctx": 7,
+        "sel_type": 1,
+        "opt_type": 3,
+        "chosen_target": null,
+        "my": {
+          "active": {
+            "id": 666,
+            "serial": 23,
+            "hp": 160,
+            "maxHp": 160,
+            "n_energy": 1
+          },
+          "bench": [],
+          "poisoned": false,
+          "burned": false,
+          "asleep": false,
+          "paralyzed": false,
+          "confused": false
+        }
+      },
+      {
+        "step": 9,
+        "ctx": 0,
+        "sel_type": 0,
+        "opt_type": 7,
+        "chosen_target": null,
+        "my": {
+          "active": {
+            "id": 666,
+            "serial": 23,
+            "hp": 160,
+            "maxHp": 160,
+            "n_energy": 1
+          },
+          "bench": [],
+          "poisoned": false,
+          "burned": false,
+          "asleep": false,
+          "paralyzed": false,
+          "confused": false
+        }
+      },
+      {
+        "step": 10,
+        "ctx": 7,
+        "sel_type": 1,
+        "opt_type": 3,
+        "chosen_target": null,
+        "my": {
+          "active": {
+            "id": 666,
+            "serial": 23,
+            "hp": 160,
+            "maxHp": 160,
+            "n_energy": 1
+          },
+          "bench": [],
+          "poisoned": false,
+          "burned": false,
+          "asleep": false,
+          "paralyzed": false,
+          "confused": false
+        }
+      },
+      {
+        "step": 11,
+        "ctx": 0,
+        "sel_type": 0,
+        "opt_type": 7,
+        "chosen_target": null,
+        "my": {
+          "active": {
+            "id": 666,
+            "serial": 23,
+            "hp": 160,
+            "maxHp": 160,
+            "n_energy": 1
+          },
+          "bench": [],
+          "poisoned": false,
+          "burned": false,
+          "asleep": false,
+          "paralyzed": false,
+          "confused": false
+        }
+      },
+      {
+        "step": 12,
+        "ctx": 0,
+        "sel_type": 0,
+        "opt_type": 7,
+        "chosen_target": null,
+        "my": {
+          "active": {
+            "id": 666,
+            "serial": 23,
+            "hp": 160,
+            "maxHp": 160,
+            "n_energy": 1
+          },
+          "bench": [
+            {
+              "id": 169,
+              "serial": 14,
+              "hp": 130,
+              "maxHp": 130,
+              "n_energy": 0
+            }
+          ],
+          "poisoned": false,
+          "burned": false,
+          "asleep": false,
+          "paralyzed": false,
+          "confused": false
+        }
+      },
+      {
+        "step": 13,
+        "ctx": 0,
+        "sel_type": 0,
+        "opt_type": 13,
+        "chosen_target": null,
+        "my": {
+          "active": {
+            "id": 666,
+            "serial": 23,
+            "hp": 160,
+            "maxHp": 160,
+            "n_energy": 1
+          },
+          "bench": [
+            {
+              "id": 169,
+              "serial": 14,
+              "hp": 130,
+              "maxHp": 130,
+              "n_energy": 0
+            },
+            {
+              "id": 169,
+              "serial": 15,
+              "hp": 130,
+              "maxHp": 130,
+              "n_energy": 0
+            }
+          ],
+          "poisoned": false,
+          "burned": false,
+          "asleep": false,
+          "paralyzed": false,
+          "confused": false
+        }
+      },
+      {
+        "step": 14,
+        "ctx": 22,
+        "sel_type": 1,
+        "opt_type": 3,
+        "chosen_target": null,
+        "my": {
+          "active": {
+            "id": 666,
+            "serial": 23,
+            "hp": 160,
+            "maxHp": 160,
+            "n_energy": 1
+          },
+          "bench": [
+            {
+              "id": 169,
+              "serial": 14,
+              "hp": 130,
+              "maxHp": 130,
+              "n_energy": 0
+            },
+            {
+              "id": 169,
+              "serial": 15,
+              "hp": 130,
+              "maxHp": 130,
+              "n_energy": 0
+            }
+          ],
+          "poisoned": false,
+          "burned": false,
+          "asleep": false,
+          "paralyzed": false,
+          "confused": false
+        }
+      },
+      {
+        "step": 15,
+        "ctx": 21,
+        "sel_type": 1,
+        "opt_type": 3,
+        "chosen_target": {
+          "id": 169,
+          "serial": 14,
+          "hp": 130,
+          "maxHp": 130,
+          "n_energy": 0
+        },
+        "my": {
+          "active": {
+            "id": 666,
+            "serial": 23,
+            "hp": 160,
+            "maxHp": 160,
+            "n_energy": 1
+          },
+          "bench": [
+            {
+              "id": 169,
+              "serial": 14,
+              "hp": 130,
+              "maxHp": 130,
+              "n_energy": 0
+            },
+            {
+              "id": 169,
+              "serial": 15,
+              "hp": 130,
+              "maxHp": 130,
+              "n_energy": 0
+            }
+          ],
+          "poisoned": false,
+          "burned": false,
+          "asleep": false,
+          "paralyzed": false,
+          "confused": false
+        }
+      },
+      {
+        "step": 16,
+        "ctx": 21,
+        "sel_type": 1,
+        "opt_type": 3,
+        "chosen_target": {
+          "id": 169,
+          "serial": 14,
+          "hp": 130,
+          "maxHp": 130,
+          "n_energy": 1
+        },
+        "my": {
+          "active": {
+            "id": 666,
+            "serial": 23,
+            "hp": 160,
+            "maxHp": 160,
+            "n_energy": 1
+          },
+          "bench": [
+            {
+              "id": 169,
+              "serial": 14,
+              "hp": 130,
+              "maxHp": 130,
+              "n_energy": 1
+            },
+            {
+              "id": 169,
+              "serial": 15,
+              "hp": 130,
+              "maxHp": 130,
+              "n_energy": 0
+            }
+          ],
+          "poisoned": false,
+          "burned": false,
+          "asleep": false,
+          "paralyzed": false,
+          "confused": false
+        }
+      },
+      {
+        "step": 17,
+        "ctx": 21,
+        "sel_type": 1,
+        "opt_type": 3,
+        "chosen_target": {
+          "id": 169,
+          "serial": 14,
+          "hp": 130,
+          "maxHp": 130,
+          "n_energy": 2
+        },
+        "my": {
+          "active": {
+            "id": 666,
+            "serial": 23,
+            "hp": 160,
+            "maxHp": 160,
+            "n_energy": 1
+          },
+          "bench": [
+            {
+              "id": 169,
+              "serial": 14,
+              "hp": 130,
+              "maxHp": 130,
+              "n_energy": 2
+            },
+            {
+              "id": 169,
+              "serial": 15,
+              "hp": 130,
+              "maxHp": 130,
+              "n_energy": 0
+            }
+          ],
+          "poisoned": false,
+          "burned": false,
+          "asleep": false,
+          "paralyzed": false,
+          "confused": false
+        }
+      },
+      {
+        "step": 24,
+        "ctx": 0,
+        "sel_type": 0,
+        "opt_type": 12,
+        "chosen_target": null,
+        "my": {
+          "active": {
+            "id": 666,
+            "serial": 23,
+            "hp": 130,
+            "maxHp": 160,
+            "n_energy": 1
+          },
+          "bench": [
+            {
+              "id": 169,
+              "serial": 14,
+              "hp": 130,
+              "maxHp": 130,
+              "n_energy": 3
+            },
+            {
+              "id": 169,
+              "serial": 15,
+              "hp": 130,
+              "maxHp": 130,
+              "n_energy": 0
+            }
+          ],
+          "poisoned": false,
+          "burned": false,
+          "asleep": false,
+          "paralyzed": false,
+          "confused": false
+        }
+      },
+      {
+        "step": 25,
+        "ctx": 3,
+        "sel_type": 1,
+        "opt_type": 3,
+        "chosen_target": {
+          "id": 169,
+          "serial": 14,
+          "hp": 130,
+          "maxHp": 130,
+          "n_energy": 3
+        },
+        "my": {
+          "active": {
+            "id": 666,
+            "serial": 23,
+            "hp": 130,
+            "maxHp": 160,
+            "n_energy": 1
+          },
+          "bench": [
+            {
+              "id": 169,
+              "serial": 14,
+              "hp": 130,
+              "maxHp": 130,
+              "n_energy": 3
+            },
+            {
+              "id": 169,
+              "serial": 15,
+              "hp": 130,
+              "maxHp": 130,
+              "n_energy": 0
+            }
+          ],
+          "poisoned": false,
+          "burned": false,
+          "asleep": false,
+          "paralyzed": false,
+          "confused": false
+        }
+      },
+      {
+        "step": 26,
+        "ctx": 0,
+        "sel_type": 0,
+        "opt_type": 8,
+        "chosen_target": null,
+        "my": {
+          "active": {
+            "id": 169,
+            "serial": 14,
+            "hp": 130,
+            "maxHp": 130,
+            "n_energy": 3
+          },
+          "bench": [
+            {
+              "id": 666,
+              "serial": 23,
+              "hp": 130,
+              "maxHp": 160,
+              "n_energy": 1
+            },
+            {
+              "id": 169,
+              "serial": 15,
+              "hp": 130,
+              "maxHp": 130,
+              "n_energy": 0
+            }
+          ],
+          "poisoned": false,
+          "burned": false,
+          "asleep": false,
+          "paralyzed": false,
+          "confused": false
+        }
+      },
+      {
+        "step": 27,
+        "ctx": 0,
+        "sel_type": 0,
+        "opt_type": 13,
+        "chosen_target": null,
+        "my": {
+          "active": {
+            "id": 169,
+            "serial": 14,
+            "hp": 130,
+            "maxHp": 130,
+            "n_energy": 3
+          },
+          "bench": [
+            {
+              "id": 666,
+              "serial": 23,
+              "hp": 130,
+              "maxHp": 160,
+              "n_energy": 1
+            },
+            {
+              "id": 169,
+              "serial": 15,
+              "hp": 130,
+              "maxHp": 130,
+              "n_energy": 1
+            }
+          ],
+          "poisoned": false,
+          "burned": false,
+          "asleep": false,
+          "paralyzed": false,
+          "confused": false
+        }
+      },
+      {
+        "step": 31,
+        "ctx": 0,
+        "sel_type": 0,
+        "opt_type": 7,
+        "chosen_target": null,
+        "my": {
+          "active": {
+            "id": 169,
+            "serial": 14,
+            "hp": 130,
+            "maxHp": 130,
+            "n_energy": 3
+          },
+          "bench": [
+            {
+              "id": 666,
+              "serial": 23,
+              "hp": 130,
+              "maxHp": 160,
+              "n_energy": 1
+            },
+            {
+              "id": 169,
+              "serial": 15,
+              "hp": 130,
+              "maxHp": 130,
+              "n_energy": 1
+            }
+          ],
+          "poisoned": false,
+          "burned": false,
+          "asleep": false,
+          "paralyzed": false,
+          "confused": false
+        }
+      },
+      {
+        "step": 32,
+        "ctx": 0,
+        "sel_type": 0,
+        "opt_type": 8,
+        "chosen_target": null,
+        "my": {
+          "active": {
+            "id": 169,
+            "serial": 14,
+            "hp": 130,
+            "maxHp": 130,
+            "n_energy": 3
+          },
+          "bench": [
+            {
+              "id": 666,
+              "serial": 23,
+              "hp": 130,
+              "maxHp": 160,
+              "n_energy": 1
+            },
+            {
+              "id": 169,
+              "serial": 15,
+              "hp": 130,
+              "maxHp": 130,
+              "n_energy": 1
+            },
+            {
+              "id": 169,
+              "serial": 17,
+              "hp": 130,
+              "maxHp": 130,
+              "n_energy": 0
+            }
+          ],
+          "poisoned": false,
+          "burned": false,
+          "asleep": false,
+          "paralyzed": false,
+          "confused": false
+        }
+      },
+      {
+        "step": 33,
+        "ctx": 0,
+        "sel_type": 0,
+        "opt_type": 13,
+        "chosen_target": null,
+        "my": {
+          "active": {
+            "id": 169,
+            "serial": 14,
+            "hp": 130,
+            "maxHp": 130,
+            "n_energy": 3
+          },
+          "bench": [
+            {
+              "id": 666,
+              "serial": 23,
+              "hp": 130,
+              "maxHp": 160,
+              "n_energy": 1
+            },
+            {
+              "id": 169,
+              "serial": 15,
+              "hp": 130,
+              "maxHp": 130,
+              "n_energy": 2
+            },
+            {
+              "id": 169,
+              "serial": 17,
+              "hp": 130,
+              "maxHp": 130,
+              "n_energy": 0
+            }
+          ],
+          "poisoned": false,
+          "burned": false,
+          "asleep": false,
+          "paralyzed": false,
+          "confused": false
+        }
+      },
+      {
+        "step": 46,
+        "ctx": 4,
+        "sel_type": 1,
+        "opt_type": 3,
+        "chosen_target": {
+          "id": 666,
+          "serial": 23,
+          "hp": 130,
+          "maxHp": 160,
+          "n_energy": 1
+        },
+        "my": {
+          "active": null,
+          "bench": [
+            {
+              "id": 666,
+              "serial": 23,
+              "hp": 130,
+              "maxHp": 160,
+              "n_energy": 1
+            },
+            {
+              "id": 169,
+              "serial": 15,
+              "hp": 130,
+              "maxHp": 130,
+              "n_energy": 2
+            },
+            {
+              "id": 169,
+              "serial": 17,
+              "hp": 130,
+              "maxHp": 130,
+              "n_energy": 0
+            }
+          ],
+          "poisoned": false,
+          "burned": false,
+          "asleep": false,
+          "paralyzed": false,
+          "confused": false
+        }
+      },
+      {
+        "step": 47,
+        "ctx": 0,
+        "sel_type": 0,
+        "opt_type": 7,
+        "chosen_target": null,
+        "my": {
+          "active": {
+            "id": 666,
+            "serial": 23,
+            "hp": 130,
+            "maxHp": 160,
+            "n_energy": 1
+          },
+          "bench": [
+            {
+              "id": 169,
+              "serial": 15,
+              "hp": 130,
+              "maxHp": 130,
+              "n_energy": 2
+            },
+            {
+              "id": 169,
+              "serial": 17,
+              "hp": 130,
+              "maxHp": 130,
+              "n_energy": 0
+            }
+          ],
+          "poisoned": false,
+          "burned": false,
+          "asleep": false,
+          "paralyzed": false,
+          "confused": false
+        }
+      },
+      {
+        "step": 48,
+        "ctx": 0,
+        "sel_type": 0,
+        "opt_type": 7,
+        "chosen_target": null,
+        "my": {
+          "active": {
+            "id": 666,
+            "serial": 23,
+            "hp": 130,
+            "maxHp": 160,
+            "n_energy": 1
+          },
+          "bench": [
+            {
+              "id": 169,
+              "serial": 15,
+              "hp": 130,
+              "maxHp": 130,
+              "n_energy": 2
+            },
+            {
+              "id": 169,
+              "serial": 17,
+              "hp": 130,
+              "maxHp": 130,
+              "n_energy": 0
+            }
+          ],
+          "poisoned": false,
+          "burned": false,
+          "asleep": false,
+          "paralyzed": false,
+          "confused": false
+        }
+      },
+      {
+        "step": 49,
+        "ctx": 0,
+        "sel_type": 0,
+        "opt_type": 7,
+        "chosen_target": null,
+        "my": {
+          "active": {
+            "id": 666,
+            "serial": 23,
+            "hp": 130,
+            "maxHp": 160,
+            "n_energy": 1
+          },
+          "bench": [
+            {
+              "id": 169,
+              "serial": 15,
+              "hp": 130,
+              "maxHp": 130,
+              "n_energy": 2
+            },
+            {
+              "id": 169,
+              "serial": 17,
+              "hp": 130,
+              "maxHp": 130,
+              "n_energy": 0
+            }
+          ],
+          "poisoned": false,
+          "burned": false,
+          "asleep": false,
+          "paralyzed": false,
+          "confused": false
+        }
+      },
+      {
+        "step": 50,
+        "ctx": 0,
+        "sel_type": 0,
+        "opt_type": 7,
+        "chosen_target": null,
+        "my": {
+          "active": {
+            "id": 666,
+            "serial": 23,
+            "hp": 130,
+            "maxHp": 160,
+            "n_energy": 1
+          },
+          "bench": [
+            {
+              "id": 169,
+              "serial": 15,
+              "hp": 130,
+              "maxHp": 130,
+              "n_energy": 2
+            },
+            {
+              "id": 169,
+              "serial": 17,
+              "hp": 130,
+              "maxHp": 130,
+              "n_energy": 0
+            },
+            {
+              "id": 169,
+              "serial": 16,
+              "hp": 130,
+              "maxHp": 130,
+              "n_energy": 0
+            }
+          ],
+          "poisoned": false,
+          "burned": false,
+          "asleep": false,
+          "paralyzed": false,
+          "confused": false
+        }
+      },
+      {
+        "step": 51,
+        "ctx": 0,
+        "sel_type": 0,
+        "opt_type": 13,
+        "chosen_target": null,
+        "my": {
+          "active": {
+            "id": 666,
+            "serial": 23,
+            "hp": 130,
+            "maxHp": 160,
+            "n_energy": 1
+          },
+          "bench": [
+            {
+              "id": 169,
+              "serial": 15,
+              "hp": 130,
+              "maxHp": 130,
+              "n_energy": 2
+            },
+            {
+              "id": 169,
+              "serial": 17,
+              "hp": 130,
+              "maxHp": 130,
+              "n_energy": 0
+            },
+            {
+              "id": 169,
+              "serial": 16,
+              "hp": 130,
+              "maxHp": 130,
+              "n_energy": 0
+            },
+            {
+              "id": 57,
+              "serial": 59,
+              "hp": 100,
+              "maxHp": 100,
+              "n_energy": 0
+            }
+          ],
+          "poisoned": false,
+          "burned": false,
+          "asleep": false,
+          "paralyzed": false,
+          "confused": false
+        }
+      },
+      {
+        "step": 52,
+        "ctx": 22,
+        "sel_type": 1,
+        "opt_type": 3,
+        "chosen_target": null,
+        "my": {
+          "active": {
+            "id": 666,
+            "serial": 23,
+            "hp": 130,
+            "maxHp": 160,
+            "n_energy": 1
+          },
+          "bench": [
+            {
+              "id": 169,
+              "serial": 15,
+              "hp": 130,
+              "maxHp": 130,
+              "n_energy": 2
+            },
+            {
+              "id": 169,
+              "serial": 17,
+              "hp": 130,
+              "maxHp": 130,
+              "n_energy": 0
+            },
+            {
+              "id": 169,
+              "serial": 16,
+              "hp": 130,
+              "maxHp": 130,
+              "n_energy": 0
+            },
+            {
+              "id": 57,
+              "serial": 59,
+              "hp": 100,
+              "maxHp": 100,
+              "n_energy": 0
+            }
+          ],
+          "poisoned": false,
+          "burned": false,
+          "asleep": false,
+          "paralyzed": false,
+          "confused": false
+        }
+      },
+      {
+        "step": 53,
+        "ctx": 21,
+        "sel_type": 1,
+        "opt_type": 3,
+        "chosen_target": {
+          "id": 169,
+          "serial": 15,
+          "hp": 130,
+          "maxHp": 130,
+          "n_energy": 2
+        },
+        "my": {
+          "active": {
+            "id": 666,
+            "serial": 23,
+            "hp": 130,
+            "maxHp": 160,
+            "n_energy": 1
+          },
+          "bench": [
+            {
+              "id": 169,
+              "serial": 15,
+              "hp": 130,
+              "maxHp": 130,
+              "n_energy": 2
+            },
+            {
+              "id": 169,
+              "serial": 17,
+              "hp": 130,
+              "maxHp": 130,
+              "n_energy": 0
+            },
+            {
+              "id": 169,
+              "serial": 16,
+              "hp": 130,
+              "maxHp": 130,
+              "n_energy": 0
+            },
+            {
+              "id": 57,
+              "serial": 59,
+              "hp": 100,
+              "maxHp": 100,
+              "n_energy": 0
+            }
+          ],
+          "poisoned": false,
+          "burned": false,
+          "asleep": false,
+          "paralyzed": false,
+          "confused": false
+        }
+      },
+      {
+        "step": 54,
+        "ctx": 21,
+        "sel_type": 1,
+        "opt_type": 3,
+        "chosen_target": {
+          "id": 169,
+          "serial": 17,
+          "hp": 130,
+          "maxHp": 130,
+          "n_energy": 0
+        },
+        "my": {
+          "active": {
+            "id": 666,
+            "serial": 23,
+            "hp": 130,
+            "maxHp": 160,
+            "n_energy": 1
+          },
+          "bench": [
+            {
+              "id": 169,
+              "serial": 15,
+              "hp": 130,
+              "maxHp": 130,
+              "n_energy": 3
+            },
+            {
+              "id": 169,
+              "serial": 17,
+              "hp": 130,
+              "maxHp": 130,
+              "n_energy": 0
+            },
+            {
+              "id": 169,
+              "serial": 16,
+              "hp": 130,
+              "maxHp": 130,
+              "n_energy": 0
+            },
+            {
+              "id": 57,
+              "serial": 59,
+              "hp": 100,
+              "maxHp": 100,
+              "n_energy": 0
+            }
+          ],
+          "poisoned": false,
+          "burned": false,
+          "asleep": false,
+          "paralyzed": false,
+          "confused": false
+        }
+      },
+      {
+        "step": 55,
+        "ctx": 21,
+        "sel_type": 1,
+        "opt_type": 3,
+        "chosen_target": {
+          "id": 169,
+          "serial": 17,
+          "hp": 130,
+          "maxHp": 130,
+          "n_energy": 1
+        },
+        "my": {
+          "active": {
+            "id": 666,
+            "serial": 23,
+            "hp": 130,
+            "maxHp": 160,
+            "n_energy": 1
+          },
+          "bench": [
+            {
+              "id": 169,
+              "serial": 15,
+              "hp": 130,
+              "maxHp": 130,
+              "n_energy": 3
+            },
+            {
+              "id": 169,
+              "serial": 17,
+              "hp": 130,
+              "maxHp": 130,
+              "n_energy": 1
+            },
+            {
+              "id": 169,
+              "serial": 16,
+              "hp": 130,
+              "maxHp": 130,
+              "n_energy": 0
+            },
+            {
+              "id": 57,
+              "serial": 59,
+              "hp": 100,
+              "maxHp": 100,
+              "n_energy": 0
+            }
+          ],
+          "poisoned": false,
+          "burned": false,
+          "asleep": false,
+          "paralyzed": false,
+          "confused": false
+        }
+      },
+      {
+        "step": 64,
+        "ctx": 4,
+        "sel_type": 1,
+        "opt_type": 3,
+        "chosen_target": {
+          "id": 169,
+          "serial": 15,
+          "hp": 130,
+          "maxHp": 130,
+          "n_energy": 3
+        },
+        "my": {
+          "active": null,
+          "bench": [
+            {
+              "id": 169,
+              "serial": 15,
+              "hp": 130,
+              "maxHp": 130,
+              "n_energy": 3
+            },
+            {
+              "id": 169,
+              "serial": 17,
+              "hp": 130,
+              "maxHp": 130,
+              "n_energy": 2
+            },
+            {
+              "id": 169,
+              "serial": 16,
+              "hp": 130,
+              "maxHp": 130,
+              "n_energy": 0
+            },
+            {
+              "id": 57,
+              "serial": 59,
+              "hp": 100,
+              "maxHp": 100,
+              "n_energy": 0
+            }
+          ],
+          "poisoned": false,
+          "burned": false,
+          "asleep": false,
+          "paralyzed": false,
+          "confused": false
+        }
+      },
+      {
+        "step": 65,
+        "ctx": 0,
+        "sel_type": 0,
+        "opt_type": 7,
+        "chosen_target": null,
+        "my": {
+          "active": {
+            "id": 169,
+            "serial": 15,
+            "hp": 130,
+            "maxHp": 130,
+            "n_energy": 3
+          },
+          "bench": [
+            {
+              "id": 169,
+              "serial": 17,
+              "hp": 130,
+              "maxHp": 130,
+              "n_energy": 2
+            },
+            {
+              "id": 169,
+              "serial": 16,
+              "hp": 130,
+              "maxHp": 130,
+              "n_energy": 0
+            },
+            {
+              "id": 57,
+              "serial": 59,
+              "hp": 100,
+              "maxHp": 100,
+              "n_energy": 0
+            }
+          ],
+          "poisoned": false,
+          "burned": false,
+          "asleep": false,
+          "paralyzed": false,
+          "confused": false
+        }
+      },
+      {
+        "step": 66,
+        "ctx": 7,
+        "sel_type": 1,
+        "opt_type": 3,
+        "chosen_target": null,
+        "my": {
+          "active": {
+            "id": 169,
+            "serial": 15,
+            "hp": 130,
+            "maxHp": 130,
+            "n_energy": 3
+          },
+          "bench": [
+            {
+              "id": 169,
+              "serial": 17,
+              "hp": 130,
+              "maxHp": 130,
+              "n_energy": 2
+            },
+            {
+              "id": 169,
+              "serial": 16,
+              "hp": 130,
+              "maxHp": 130,
+              "n_energy": 0
+            },
+            {
+              "id": 57,
+              "serial": 59,
+              "hp": 100,
+              "maxHp": 100,
+              "n_energy": 0
+            }
+          ],
+          "poisoned": false,
+          "burned": false,
+          "asleep": false,
+          "paralyzed": false,
+          "confused": false
+        }
+      },
+      {
+        "step": 67,
+        "ctx": 0,
+        "sel_type": 0,
+        "opt_type": 13,
+        "chosen_target": null,
+        "my": {
+          "active": {
+            "id": 169,
+            "serial": 15,
+            "hp": 130,
+            "maxHp": 130,
+            "n_energy": 3
+          },
+          "bench": [
+            {
+              "id": 169,
+              "serial": 17,
+              "hp": 130,
+              "maxHp": 130,
+              "n_energy": 2
+            },
+            {
+              "id": 169,
+              "serial": 16,
+              "hp": 130,
+              "maxHp": 130,
+              "n_energy": 0
+            },
+            {
+              "id": 57,
+              "serial": 59,
+              "hp": 100,
+              "maxHp": 100,
+              "n_energy": 0
+            }
+          ],
+          "poisoned": false,
+          "burned": false,
+          "asleep": false,
+          "paralyzed": false,
+          "confused": false
+        }
+      },
+      {
+        "step": 71,
+        "ctx": 4,
+        "sel_type": 1,
+        "opt_type": 3,
+        "chosen_target": {
+          "id": 169,
+          "serial": 17,
+          "hp": 130,
+          "maxHp": 130,
+          "n_energy": 2
+        },
+        "my": {
+          "active": null,
+          "bench": [
+            {
+              "id": 169,
+              "serial": 17,
+              "hp": 130,
+              "maxHp": 130,
+              "n_energy": 2
+            },
+            {
+              "id": 169,
+              "serial": 16,
+              "hp": 130,
+              "maxHp": 130,
+              "n_energy": 0
+            },
+            {
+              "id": 57,
+              "serial": 59,
+              "hp": 100,
+              "maxHp": 100,
+              "n_energy": 0
+            }
+          ],
+          "poisoned": false,
+          "burned": false,
+          "asleep": false,
+          "paralyzed": false,
+          "confused": false
+        }
+      },
+      {
+        "step": 72,
+        "ctx": 0,
+        "sel_type": 0,
+        "opt_type": 7,
+        "chosen_target": null,
+        "my": {
+          "active": {
+            "id": 169,
+            "serial": 17,
+            "hp": 130,
+            "maxHp": 130,
+            "n_energy": 2
+          },
+          "bench": [
+            {
+              "id": 169,
+              "serial": 16,
+              "hp": 130,
+              "maxHp": 130,
+              "n_energy": 0
+            },
+            {
+              "id": 57,
+              "serial": 59,
+              "hp": 100,
+              "maxHp": 100,
+              "n_energy": 0
+            }
+          ],
+          "poisoned": false,
+          "burned": false,
+          "asleep": false,
+          "paralyzed": false,
+          "confused": false
+        }
+      },
+      {
+        "step": 73,
+        "ctx": 7,
+        "sel_type": 1,
+        "opt_type": 3,
+        "chosen_target": null,
+        "my": {
+          "active": {
+            "id": 169,
+            "serial": 17,
+            "hp": 130,
+            "maxHp": 130,
+            "n_energy": 2
+          },
+          "bench": [
+            {
+              "id": 169,
+              "serial": 16,
+              "hp": 130,
+              "maxHp": 130,
+              "n_energy": 0
+            },
+            {
+              "id": 57,
+              "serial": 59,
+              "hp": 100,
+              "maxHp": 100,
+              "n_energy": 0
+            }
+          ],
+          "poisoned": false,
+          "burned": false,
+          "asleep": false,
+          "paralyzed": false,
+          "confused": false
+        }
+      },
+      {
+        "step": 74,
+        "ctx": 0,
+        "sel_type": 0,
+        "opt_type": 8,
+        "chosen_target": null,
+        "my": {
+          "active": {
+            "id": 169,
+            "serial": 17,
+            "hp": 130,
+            "maxHp": 130,
+            "n_energy": 2
+          },
+          "bench": [
+            {
+              "id": 169,
+              "serial": 16,
+              "hp": 130,
+              "maxHp": 130,
+              "n_energy": 0
+            },
+            {
+              "id": 57,
+              "serial": 59,
+              "hp": 100,
+              "maxHp": 100,
+              "n_energy": 0
+            }
+          ],
+          "poisoned": false,
+          "burned": false,
+          "asleep": false,
+          "paralyzed": false,
+          "confused": false
+        }
+      },
+      {
+        "step": 75,
+        "ctx": 0,
+        "sel_type": 0,
+        "opt_type": 13,
+        "chosen_target": null,
+        "my": {
+          "active": {
+            "id": 169,
+            "serial": 17,
+            "hp": 230,
+            "maxHp": 230,
+            "n_energy": 2
+          },
+          "bench": [
+            {
+              "id": 169,
+              "serial": 16,
+              "hp": 130,
+              "maxHp": 130,
+              "n_energy": 0
+            },
+            {
+              "id": 57,
+              "serial": 59,
+              "hp": 100,
+              "maxHp": 100,
+              "n_energy": 0
+            }
+          ],
+          "poisoned": false,
+          "burned": false,
+          "asleep": false,
+          "paralyzed": false,
+          "confused": false
+        }
+      },
+      {
+        "step": 87,
+        "ctx": 4,
+        "sel_type": 1,
+        "opt_type": 3,
+        "chosen_target": {
+          "id": 169,
+          "serial": 16,
+          "hp": 130,
+          "maxHp": 130,
+          "n_energy": 0
+        },
+        "my": {
+          "active": null,
+          "bench": [
+            {
+              "id": 169,
+              "serial": 16,
+              "hp": 130,
+              "maxHp": 130,
+              "n_energy": 0
+            },
+            {
+              "id": 57,
+              "serial": 59,
+              "hp": 100,
+              "maxHp": 100,
+              "n_energy": 0
+            }
+          ],
+          "poisoned": false,
+          "burned": false,
+          "asleep": false,
+          "paralyzed": false,
+          "confused": false
+        }
+      },
+      {
+        "step": 88,
+        "ctx": 0,
+        "sel_type": 0,
+        "opt_type": 7,
+        "chosen_target": null,
+        "my": {
+          "active": {
+            "id": 169,
+            "serial": 16,
+            "hp": 130,
+            "maxHp": 130,
+            "n_energy": 0
+          },
+          "bench": [
+            {
+              "id": 57,
+              "serial": 59,
+              "hp": 100,
+              "maxHp": 100,
+              "n_energy": 0
+            }
+          ],
+          "poisoned": false,
+          "burned": false,
+          "asleep": false,
+          "paralyzed": false,
+          "confused": false
+        }
+      },
+      {
+        "step": 89,
+        "ctx": 7,
+        "sel_type": 1,
+        "opt_type": 3,
+        "chosen_target": null,
+        "my": {
+          "active": {
+            "id": 169,
+            "serial": 16,
+            "hp": 130,
+            "maxHp": 130,
+            "n_energy": 0
+          },
+          "bench": [
+            {
+              "id": 57,
+              "serial": 59,
+              "hp": 100,
+              "maxHp": 100,
+              "n_energy": 0
+            }
+          ],
+          "poisoned": false,
+          "burned": false,
+          "asleep": false,
+          "paralyzed": false,
+          "confused": false
+        }
+      },
+      {
+        "step": 90,
+        "ctx": 0,
+        "sel_type": 0,
+        "opt_type": 9,
+        "chosen_target": null,
+        "my": {
+          "active": {
+            "id": 169,
+            "serial": 16,
+            "hp": 130,
+            "maxHp": 130,
+            "n_energy": 0
+          },
+          "bench": [
+            {
+              "id": 57,
+              "serial": 59,
+              "hp": 100,
+              "maxHp": 100,
+              "n_energy": 0
+            }
+          ],
+          "poisoned": false,
+          "burned": false,
+          "asleep": false,
+          "paralyzed": false,
+          "confused": false
+        }
+      },
+      {
+        "step": 91,
+        "ctx": 43,
+        "sel_type": 9,
+        "opt_type": 1,
+        "chosen_target": null,
+        "my": {
+          "active": {
+            "id": 190,
+            "serial": 18,
+            "hp": 300,
+            "maxHp": 300,
+            "n_energy": 0
+          },
+          "bench": [
+            {
+              "id": 57,
+              "serial": 59,
+              "hp": 100,
+              "maxHp": 100,
+              "n_energy": 0
+            }
+          ],
+          "poisoned": false,
+          "burned": false,
+          "asleep": false,
+          "paralyzed": false,
+          "confused": false
+        }
+      },
+      {
+        "step": 92,
+        "ctx": 22,
+        "sel_type": 1,
+        "opt_type": 3,
+        "chosen_target": null,
+        "my": {
+          "active": {
+            "id": 190,
+            "serial": 18,
+            "hp": 300,
+            "maxHp": 300,
+            "n_energy": 0
+          },
+          "bench": [
+            {
+              "id": 57,
+              "serial": 59,
+              "hp": 100,
+              "maxHp": 100,
+              "n_energy": 0
+            }
+          ],
+          "poisoned": false,
+          "burned": false,
+          "asleep": false,
+          "paralyzed": false,
+          "confused": false
+        }
+      },
+      {
+        "step": 93,
+        "ctx": 21,
+        "sel_type": 1,
+        "opt_type": 3,
+        "chosen_target": {
+          "id": 190,
+          "serial": 18,
+          "hp": 300,
+          "maxHp": 300,
+          "n_energy": 0
+        },
+        "my": {
+          "active": {
+            "id": 190,
+            "serial": 18,
+            "hp": 300,
+            "maxHp": 300,
+            "n_energy": 0
+          },
+          "bench": [
+            {
+              "id": 57,
+              "serial": 59,
+              "hp": 100,
+              "maxHp": 100,
+              "n_energy": 0
+            }
+          ],
+          "poisoned": false,
+          "burned": false,
+          "asleep": false,
+          "paralyzed": false,
+          "confused": false
+        }
+      },
+      {
+        "step": 94,
+        "ctx": 21,
+        "sel_type": 1,
+        "opt_type": 3,
+        "chosen_target": {
+          "id": 190,
+          "serial": 18,
+          "hp": 300,
+          "maxHp": 300,
+          "n_energy": 1
+        },
+        "my": {
+          "active": {
+            "id": 190,
+            "serial": 18,
+            "hp": 300,
+            "maxHp": 300,
+            "n_energy": 1
+          },
+          "bench": [
+            {
+              "id": 57,
+              "serial": 59,
+              "hp": 100,
+              "maxHp": 100,
+              "n_energy": 0
+            }
+          ],
+          "poisoned": false,
+          "burned": false,
+          "asleep": false,
+          "paralyzed": false,
+          "confused": false
+        }
+      },
+      {
+        "step": 95,
+        "ctx": 0,
+        "sel_type": 0,
+        "opt_type": 13,
+        "chosen_target": null,
+        "my": {
+          "active": {
+            "id": 190,
+            "serial": 18,
+            "hp": 300,
+            "maxHp": 300,
+            "n_energy": 2
+          },
+          "bench": [
+            {
+              "id": 57,
+              "serial": 59,
+              "hp": 100,
+              "maxHp": 100,
+              "n_energy": 0
+            }
+          ],
+          "poisoned": false,
+          "burned": false,
+          "asleep": false,
+          "paralyzed": false,
+          "confused": false
+        }
+      },
+      {
+        "step": 103,
+        "ctx": 4,
+        "sel_type": 1,
+        "opt_type": 3,
+        "chosen_target": {
+          "id": 190,
+          "serial": 18,
+          "hp": 300,
+          "maxHp": 300,
+          "n_energy": 2
+        },
+        "my": {
+          "active": null,
+          "bench": [
+            {
+              "id": 190,
+              "serial": 18,
+              "hp": 300,
+              "maxHp": 300,
+              "n_energy": 2
+            }
+          ],
+          "poisoned": false,
+          "burned": false,
+          "asleep": false,
+          "paralyzed": false,
+          "confused": false
+        }
+      },
+      {
+        "step": 104,
+        "ctx": 0,
+        "sel_type": 0,
+        "opt_type": 7,
+        "chosen_target": null,
+        "my": {
+          "active": {
+            "id": 190,
+            "serial": 18,
+            "hp": 300,
+            "maxHp": 300,
+            "n_energy": 2
+          },
+          "bench": [],
+          "poisoned": false,
+          "burned": false,
+          "asleep": false,
+          "paralyzed": false,
+          "confused": false
+        }
+      },
+      {
+        "step": 105,
+        "ctx": 8,
+        "sel_type": 1,
+        "opt_type": 3,
+        "chosen_target": null,
+        "my": {
+          "active": {
+            "id": 190,
+            "serial": 18,
+            "hp": 300,
+            "maxHp": 300,
+            "n_energy": 2
+          },
+          "bench": [],
+          "poisoned": false,
+          "burned": false,
+          "asleep": false,
+          "paralyzed": false,
+          "confused": false
+        }
+      },
+      {
+        "step": 106,
+        "ctx": 0,
+        "sel_type": 0,
+        "opt_type": 7,
+        "chosen_target": null,
+        "my": {
+          "active": {
+            "id": 190,
+            "serial": 18,
+            "hp": 300,
+            "maxHp": 300,
+            "n_energy": 2
+          },
+          "bench": [],
+          "poisoned": false,
+          "burned": false,
+          "asleep": false,
+          "paralyzed": false,
+          "confused": false
+        }
+      },
+      {
+        "step": 107,
+        "ctx": 0,
+        "sel_type": 0,
+        "opt_type": 14,
+        "chosen_target": null,
+        "my": {
+          "active": {
+            "id": 190,
+            "serial": 18,
+            "hp": 300,
+            "maxHp": 300,
+            "n_energy": 2
+          },
+          "bench": [],
+          "poisoned": false,
+          "burned": false,
+          "asleep": false,
+          "paralyzed": false,
+          "confused": false
+        }
+      },
+      {
+        "step": 110,
+        "ctx": 0,
+        "sel_type": 0,
+        "opt_type": 7,
+        "chosen_target": null,
+        "my": {
+          "active": {
+            "id": 190,
+            "serial": 18,
+            "hp": 40,
+            "maxHp": 300,
+            "n_energy": 2
+          },
+          "bench": [],
+          "poisoned": false,
+          "burned": false,
+          "asleep": false,
+          "paralyzed": false,
+          "confused": false
+        }
+      },
+      {
+        "step": 111,
+        "ctx": 0,
+        "sel_type": 0,
+        "opt_type": 7,
+        "chosen_target": null,
+        "my": {
+          "active": {
+            "id": 190,
+            "serial": 18,
+            "hp": 40,
+            "maxHp": 300,
+            "n_energy": 2
+          },
+          "bench": [],
+          "poisoned": false,
+          "burned": false,
+          "asleep": false,
+          "paralyzed": false,
+          "confused": false
+        }
+      },
+      {
+        "step": 112,
+        "ctx": 8,
+        "sel_type": 1,
+        "opt_type": 3,
+        "chosen_target": null,
+        "my": {
+          "active": {
+            "id": 190,
+            "serial": 18,
+            "hp": 40,
+            "maxHp": 300,
+            "n_energy": 2
+          },
+          "bench": [],
+          "poisoned": false,
+          "burned": false,
+          "asleep": false,
+          "paralyzed": false,
+          "confused": false
+        }
+      },
+      {
+        "step": 113,
+        "ctx": 0,
+        "sel_type": 0,
+        "opt_type": 14,
+        "chosen_target": null,
+        "my": {
+          "active": {
+            "id": 190,
+            "serial": 18,
+            "hp": 40,
+            "maxHp": 300,
+            "n_energy": 2
+          },
+          "bench": [],
+          "poisoned": false,
+          "burned": false,
+          "asleep": false,
+          "paralyzed": false,
+          "confused": false
+        }
+      }
+    ]
+  },
+  {
+    "game": 3,
+    "agent_is_left": false,
+    "outcome": -1.0,
+    "decisions": [
+      {
+        "step": 2,
+        "ctx": 1,
+        "sel_type": 1,
+        "opt_type": 3,
+        "chosen_target": null,
+        "my": {
+          "active": null,
+          "bench": [],
+          "poisoned": false,
+          "burned": false,
+          "asleep": false,
+          "paralyzed": false,
+          "confused": false
+        }
+      },
+      {
+        "step": 4,
+        "ctx": 2,
+        "sel_type": 1,
+        "opt_type": 3,
+        "chosen_target": null,
+        "my": {
+          "active": null,
+          "bench": [],
+          "poisoned": false,
+          "burned": false,
+          "asleep": false,
+          "paralyzed": false,
+          "confused": false
+        }
+      },
+      {
+        "step": 5,
+        "ctx": 0,
+        "sel_type": 0,
+        "opt_type": 7,
+        "chosen_target": null,
+        "my": {
+          "active": {
+            "id": 169,
+            "serial": 74,
+            "hp": 130,
+            "maxHp": 130,
+            "n_energy": 0
+          },
+          "bench": [
+            {
+              "id": 169,
+              "serial": 77,
+              "hp": 130,
+              "maxHp": 130,
+              "n_energy": 0
+            },
+            {
+              "id": 57,
+              "serial": 119,
+              "hp": 100,
+              "maxHp": 100,
+              "n_energy": 0
+            }
+          ],
+          "poisoned": false,
+          "burned": false,
+          "asleep": false,
+          "paralyzed": false,
+          "confused": false
+        }
+      },
+      {
+        "step": 6,
+        "ctx": 8,
+        "sel_type": 1,
+        "opt_type": 3,
+        "chosen_target": null,
+        "my": {
+          "active": {
+            "id": 169,
+            "serial": 74,
+            "hp": 130,
+            "maxHp": 130,
+            "n_energy": 0
+          },
+          "bench": [
+            {
+              "id": 169,
+              "serial": 77,
+              "hp": 130,
+              "maxHp": 130,
+              "n_energy": 0
+            },
+            {
+              "id": 57,
+              "serial": 119,
+              "hp": 100,
+              "maxHp": 100,
+              "n_energy": 0
+            }
+          ],
+          "poisoned": false,
+          "burned": false,
+          "asleep": false,
+          "paralyzed": false,
+          "confused": false
+        }
+      },
+      {
+        "step": 7,
+        "ctx": 7,
+        "sel_type": 1,
+        "opt_type": 3,
+        "chosen_target": null,
+        "my": {
+          "active": {
+            "id": 169,
+            "serial": 74,
+            "hp": 130,
+            "maxHp": 130,
+            "n_energy": 0
+          },
+          "bench": [
+            {
+              "id": 169,
+              "serial": 77,
+              "hp": 130,
+              "maxHp": 130,
+              "n_energy": 0
+            },
+            {
+              "id": 57,
+              "serial": 119,
+              "hp": 100,
+              "maxHp": 100,
+              "n_energy": 0
+            }
+          ],
+          "poisoned": false,
+          "burned": false,
+          "asleep": false,
+          "paralyzed": false,
+          "confused": false
+        }
+      },
+      {
+        "step": 8,
+        "ctx": 0,
+        "sel_type": 0,
+        "opt_type": 14,
+        "chosen_target": null,
+        "my": {
+          "active": {
+            "id": 169,
+            "serial": 74,
+            "hp": 130,
+            "maxHp": 130,
+            "n_energy": 0
+          },
+          "bench": [
+            {
+              "id": 169,
+              "serial": 77,
+              "hp": 130,
+              "maxHp": 130,
+              "n_energy": 0
+            },
+            {
+              "id": 57,
+              "serial": 119,
+              "hp": 100,
+              "maxHp": 100,
+              "n_energy": 0
+            }
+          ],
+          "poisoned": false,
+          "burned": false,
+          "asleep": false,
+          "paralyzed": false,
+          "confused": false
+        }
+      },
+      {
+        "step": 21,
+        "ctx": 0,
+        "sel_type": 0,
+        "opt_type": 9,
+        "chosen_target": null,
+        "my": {
+          "active": {
+            "id": 169,
+            "serial": 74,
+            "hp": 30,
+            "maxHp": 130,
+            "n_energy": 0
+          },
+          "bench": [
+            {
+              "id": 169,
+              "serial": 77,
+              "hp": 130,
+              "maxHp": 130,
+              "n_energy": 0
+            },
+            {
+              "id": 57,
+              "serial": 119,
+              "hp": 100,
+              "maxHp": 100,
+              "n_energy": 0
+            }
+          ],
+          "poisoned": false,
+          "burned": false,
+          "asleep": false,
+          "paralyzed": false,
+          "confused": false
+        }
+      },
+      {
+        "step": 22,
+        "ctx": 43,
+        "sel_type": 9,
+        "opt_type": 1,
+        "chosen_target": null,
+        "my": {
+          "active": {
+            "id": 190,
+            "serial": 81,
+            "hp": 200,
+            "maxHp": 300,
+            "n_energy": 0
+          },
+          "bench": [
+            {
+              "id": 169,
+              "serial": 77,
+              "hp": 130,
+              "maxHp": 130,
+              "n_energy": 0
+            },
+            {
+              "id": 57,
+              "serial": 119,
+              "hp": 100,
+              "maxHp": 100,
+              "n_energy": 0
+            }
+          ],
+          "poisoned": false,
+          "burned": false,
+          "asleep": false,
+          "paralyzed": false,
+          "confused": false
+        }
+      },
+      {
+        "step": 23,
+        "ctx": 22,
+        "sel_type": 1,
+        "opt_type": 3,
+        "chosen_target": null,
+        "my": {
+          "active": {
+            "id": 190,
+            "serial": 81,
+            "hp": 200,
+            "maxHp": 300,
+            "n_energy": 0
+          },
+          "bench": [
+            {
+              "id": 169,
+              "serial": 77,
+              "hp": 130,
+              "maxHp": 130,
+              "n_energy": 0
+            },
+            {
+              "id": 57,
+              "serial": 119,
+              "hp": 100,
+              "maxHp": 100,
+              "n_energy": 0
+            }
+          ],
+          "poisoned": false,
+          "burned": false,
+          "asleep": false,
+          "paralyzed": false,
+          "confused": false
+        }
+      },
+      {
+        "step": 24,
+        "ctx": 21,
+        "sel_type": 1,
+        "opt_type": 3,
+        "chosen_target": {
+          "id": 190,
+          "serial": 81,
+          "hp": 200,
+          "maxHp": 300,
+          "n_energy": 0
+        },
+        "my": {
+          "active": {
+            "id": 190,
+            "serial": 81,
+            "hp": 200,
+            "maxHp": 300,
+            "n_energy": 0
+          },
+          "bench": [
+            {
+              "id": 169,
+              "serial": 77,
+              "hp": 130,
+              "maxHp": 130,
+              "n_energy": 0
+            },
+            {
+              "id": 57,
+              "serial": 119,
+              "hp": 100,
+              "maxHp": 100,
+              "n_energy": 0
+            }
+          ],
+          "poisoned": false,
+          "burned": false,
+          "asleep": false,
+          "paralyzed": false,
+          "confused": false
+        }
+      },
+      {
+        "step": 25,
+        "ctx": 21,
+        "sel_type": 1,
+        "opt_type": 3,
+        "chosen_target": {
+          "id": 190,
+          "serial": 81,
+          "hp": 200,
+          "maxHp": 300,
+          "n_energy": 1
+        },
+        "my": {
+          "active": {
+            "id": 190,
+            "serial": 81,
+            "hp": 200,
+            "maxHp": 300,
+            "n_energy": 1
+          },
+          "bench": [
+            {
+              "id": 169,
+              "serial": 77,
+              "hp": 130,
+              "maxHp": 130,
+              "n_energy": 0
+            },
+            {
+              "id": 57,
+              "serial": 119,
+              "hp": 100,
+              "maxHp": 100,
+              "n_energy": 0
+            }
+          ],
+          "poisoned": false,
+          "burned": false,
+          "asleep": false,
+          "paralyzed": false,
+          "confused": false
+        }
+      },
+      {
+        "step": 26,
+        "ctx": 0,
+        "sel_type": 0,
+        "opt_type": 7,
+        "chosen_target": null,
+        "my": {
+          "active": {
+            "id": 190,
+            "serial": 81,
+            "hp": 200,
+            "maxHp": 300,
+            "n_energy": 2
+          },
+          "bench": [
+            {
+              "id": 169,
+              "serial": 77,
+              "hp": 130,
+              "maxHp": 130,
+              "n_energy": 0
+            },
+            {
+              "id": 57,
+              "serial": 119,
+              "hp": 100,
+              "maxHp": 100,
+              "n_energy": 0
+            }
+          ],
+          "poisoned": false,
+          "burned": false,
+          "asleep": false,
+          "paralyzed": false,
+          "confused": false
+        }
+      },
+      {
+        "step": 27,
+        "ctx": 0,
+        "sel_type": 0,
+        "opt_type": 7,
+        "chosen_target": null,
+        "my": {
+          "active": {
+            "id": 190,
+            "serial": 81,
+            "hp": 200,
+            "maxHp": 300,
+            "n_energy": 2
+          },
+          "bench": [
+            {
+              "id": 169,
+              "serial": 77,
+              "hp": 130,
+              "maxHp": 130,
+              "n_energy": 0
+            },
+            {
+              "id": 57,
+              "serial": 119,
+              "hp": 100,
+              "maxHp": 100,
+              "n_energy": 0
+            }
+          ],
+          "poisoned": false,
+          "burned": false,
+          "asleep": false,
+          "paralyzed": false,
+          "confused": false
+        }
+      },
+      {
+        "step": 28,
+        "ctx": 7,
+        "sel_type": 1,
+        "opt_type": 3,
+        "chosen_target": null,
+        "my": {
+          "active": {
+            "id": 190,
+            "serial": 81,
+            "hp": 200,
+            "maxHp": 300,
+            "n_energy": 2
+          },
+          "bench": [
+            {
+              "id": 169,
+              "serial": 77,
+              "hp": 130,
+              "maxHp": 130,
+              "n_energy": 0
+            },
+            {
+              "id": 57,
+              "serial": 119,
+              "hp": 100,
+              "maxHp": 100,
+              "n_energy": 0
+            }
+          ],
+          "poisoned": false,
+          "burned": false,
+          "asleep": false,
+          "paralyzed": false,
+          "confused": false
+        }
+      },
+      {
+        "step": 29,
+        "ctx": 0,
+        "sel_type": 0,
+        "opt_type": 7,
+        "chosen_target": null,
+        "my": {
+          "active": {
+            "id": 190,
+            "serial": 81,
+            "hp": 200,
+            "maxHp": 300,
+            "n_energy": 2
+          },
+          "bench": [
+            {
+              "id": 169,
+              "serial": 77,
+              "hp": 130,
+              "maxHp": 130,
+              "n_energy": 0
+            },
+            {
+              "id": 57,
+              "serial": 119,
+              "hp": 100,
+              "maxHp": 100,
+              "n_energy": 0
+            }
+          ],
+          "poisoned": false,
+          "burned": false,
+          "asleep": false,
+          "paralyzed": false,
+          "confused": false
+        }
+      },
+      {
+        "step": 30,
+        "ctx": 7,
+        "sel_type": 1,
+        "opt_type": 3,
+        "chosen_target": null,
+        "my": {
+          "active": {
+            "id": 190,
+            "serial": 81,
+            "hp": 200,
+            "maxHp": 300,
+            "n_energy": 2
+          },
+          "bench": [
+            {
+              "id": 169,
+              "serial": 77,
+              "hp": 130,
+              "maxHp": 130,
+              "n_energy": 0
+            },
+            {
+              "id": 57,
+              "serial": 119,
+              "hp": 100,
+              "maxHp": 100,
+              "n_energy": 0
+            }
+          ],
+          "poisoned": false,
+          "burned": false,
+          "asleep": false,
+          "paralyzed": false,
+          "confused": false
+        }
+      },
+      {
+        "step": 31,
+        "ctx": 0,
+        "sel_type": 0,
+        "opt_type": 7,
+        "chosen_target": null,
+        "my": {
+          "active": {
+            "id": 190,
+            "serial": 81,
+            "hp": 200,
+            "maxHp": 300,
+            "n_energy": 2
+          },
+          "bench": [
+            {
+              "id": 169,
+              "serial": 77,
+              "hp": 130,
+              "maxHp": 130,
+              "n_energy": 0
+            },
+            {
+              "id": 57,
+              "serial": 119,
+              "hp": 100,
+              "maxHp": 100,
+              "n_energy": 0
+            }
+          ],
+          "poisoned": false,
+          "burned": false,
+          "asleep": false,
+          "paralyzed": false,
+          "confused": false
+        }
+      },
+      {
+        "step": 32,
+        "ctx": 0,
+        "sel_type": 0,
+        "opt_type": 7,
+        "chosen_target": null,
+        "my": {
+          "active": {
+            "id": 190,
+            "serial": 81,
+            "hp": 200,
+            "maxHp": 300,
+            "n_energy": 2
+          },
+          "bench": [
+            {
+              "id": 169,
+              "serial": 77,
+              "hp": 130,
+              "maxHp": 130,
+              "n_energy": 0
+            },
+            {
+              "id": 57,
+              "serial": 119,
+              "hp": 100,
+              "maxHp": 100,
+              "n_energy": 0
+            },
+            {
+              "id": 169,
+              "serial": 75,
+              "hp": 130,
+              "maxHp": 130,
+              "n_energy": 0
+            }
+          ],
+          "poisoned": false,
+          "burned": false,
+          "asleep": false,
+          "paralyzed": false,
+          "confused": false
+        }
+      },
+      {
+        "step": 33,
+        "ctx": 0,
+        "sel_type": 0,
+        "opt_type": 13,
+        "chosen_target": null,
+        "my": {
+          "active": {
+            "id": 190,
+            "serial": 81,
+            "hp": 200,
+            "maxHp": 300,
+            "n_energy": 2
+          },
+          "bench": [
+            {
+              "id": 169,
+              "serial": 77,
+              "hp": 130,
+              "maxHp": 130,
+              "n_energy": 0
+            },
+            {
+              "id": 57,
+              "serial": 119,
+              "hp": 100,
+              "maxHp": 100,
+              "n_energy": 0
+            },
+            {
+              "id": 169,
+              "serial": 75,
+              "hp": 130,
+              "maxHp": 130,
+              "n_energy": 0
+            },
+            {
+              "id": 169,
+              "serial": 76,
+              "hp": 130,
+              "maxHp": 130,
+              "n_energy": 0
+            }
+          ],
+          "poisoned": false,
+          "burned": false,
+          "asleep": false,
+          "paralyzed": false,
+          "confused": false
+        }
+      },
+      {
+        "step": 40,
+        "ctx": 4,
+        "sel_type": 1,
+        "opt_type": 3,
+        "chosen_target": {
+          "id": 169,
+          "serial": 77,
+          "hp": 130,
+          "maxHp": 130,
+          "n_energy": 0
+        },
+        "my": {
+          "active": null,
+          "bench": [
+            {
+              "id": 169,
+              "serial": 77,
+              "hp": 130,
+              "maxHp": 130,
+              "n_energy": 0
+            },
+            {
+              "id": 57,
+              "serial": 119,
+              "hp": 100,
+              "maxHp": 100,
+              "n_energy": 0
+            },
+            {
+              "id": 169,
+              "serial": 75,
+              "hp": 130,
+              "maxHp": 130,
+              "n_energy": 0
+            },
+            {
+              "id": 169,
+              "serial": 76,
+              "hp": 130,
+              "maxHp": 130,
+              "n_energy": 0
+            }
+          ],
+          "poisoned": false,
+          "burned": false,
+          "asleep": false,
+          "paralyzed": false,
+          "confused": false
+        }
+      },
+      {
+        "step": 41,
+        "ctx": 0,
+        "sel_type": 0,
+        "opt_type": 9,
+        "chosen_target": null,
+        "my": {
+          "active": {
+            "id": 169,
+            "serial": 77,
+            "hp": 130,
+            "maxHp": 130,
+            "n_energy": 0
+          },
+          "bench": [
+            {
+              "id": 57,
+              "serial": 119,
+              "hp": 100,
+              "maxHp": 100,
+              "n_energy": 0
+            },
+            {
+              "id": 169,
+              "serial": 75,
+              "hp": 130,
+              "maxHp": 130,
+              "n_energy": 0
+            },
+            {
+              "id": 169,
+              "serial": 76,
+              "hp": 130,
+              "maxHp": 130,
+              "n_energy": 0
+            }
+          ],
+          "poisoned": false,
+          "burned": false,
+          "asleep": false,
+          "paralyzed": false,
+          "confused": false
+        }
+      },
+      {
+        "step": 42,
+        "ctx": 43,
+        "sel_type": 9,
+        "opt_type": 1,
+        "chosen_target": null,
+        "my": {
+          "active": {
+            "id": 190,
+            "serial": 80,
+            "hp": 300,
+            "maxHp": 300,
+            "n_energy": 0
+          },
+          "bench": [
+            {
+              "id": 57,
+              "serial": 119,
+              "hp": 100,
+              "maxHp": 100,
+              "n_energy": 0
+            },
+            {
+              "id": 169,
+              "serial": 75,
+              "hp": 130,
+              "maxHp": 130,
+              "n_energy": 0
+            },
+            {
+              "id": 169,
+              "serial": 76,
+              "hp": 130,
+              "maxHp": 130,
+              "n_energy": 0
+            }
+          ],
+          "poisoned": false,
+          "burned": false,
+          "asleep": false,
+          "paralyzed": false,
+          "confused": false
+        }
+      },
+      {
+        "step": 43,
+        "ctx": 22,
+        "sel_type": 1,
+        "opt_type": 3,
+        "chosen_target": null,
+        "my": {
+          "active": {
+            "id": 190,
+            "serial": 80,
+            "hp": 300,
+            "maxHp": 300,
+            "n_energy": 0
+          },
+          "bench": [
+            {
+              "id": 57,
+              "serial": 119,
+              "hp": 100,
+              "maxHp": 100,
+              "n_energy": 0
+            },
+            {
+              "id": 169,
+              "serial": 75,
+              "hp": 130,
+              "maxHp": 130,
+              "n_energy": 0
+            },
+            {
+              "id": 169,
+              "serial": 76,
+              "hp": 130,
+              "maxHp": 130,
+              "n_energy": 0
+            }
+          ],
+          "poisoned": false,
+          "burned": false,
+          "asleep": false,
+          "paralyzed": false,
+          "confused": false
+        }
+      },
+      {
+        "step": 44,
+        "ctx": 21,
+        "sel_type": 1,
+        "opt_type": 3,
+        "chosen_target": {
+          "id": 190,
+          "serial": 80,
+          "hp": 300,
+          "maxHp": 300,
+          "n_energy": 0
+        },
+        "my": {
+          "active": {
+            "id": 190,
+            "serial": 80,
+            "hp": 300,
+            "maxHp": 300,
+            "n_energy": 0
+          },
+          "bench": [
+            {
+              "id": 57,
+              "serial": 119,
+              "hp": 100,
+              "maxHp": 100,
+              "n_energy": 0
+            },
+            {
+              "id": 169,
+              "serial": 75,
+              "hp": 130,
+              "maxHp": 130,
+              "n_energy": 0
+            },
+            {
+              "id": 169,
+              "serial": 76,
+              "hp": 130,
+              "maxHp": 130,
+              "n_energy": 0
+            }
+          ],
+          "poisoned": false,
+          "burned": false,
+          "asleep": false,
+          "paralyzed": false,
+          "confused": false
+        }
+      },
+      {
+        "step": 45,
+        "ctx": 21,
+        "sel_type": 1,
+        "opt_type": 3,
+        "chosen_target": {
+          "id": 190,
+          "serial": 80,
+          "hp": 300,
+          "maxHp": 300,
+          "n_energy": 1
+        },
+        "my": {
+          "active": {
+            "id": 190,
+            "serial": 80,
+            "hp": 300,
+            "maxHp": 300,
+            "n_energy": 1
+          },
+          "bench": [
+            {
+              "id": 57,
+              "serial": 119,
+              "hp": 100,
+              "maxHp": 100,
+              "n_energy": 0
+            },
+            {
+              "id": 169,
+              "serial": 75,
+              "hp": 130,
+              "maxHp": 130,
+              "n_energy": 0
+            },
+            {
+              "id": 169,
+              "serial": 76,
+              "hp": 130,
+              "maxHp": 130,
+              "n_energy": 0
+            }
+          ],
+          "poisoned": false,
+          "burned": false,
+          "asleep": false,
+          "paralyzed": false,
+          "confused": false
+        }
+      },
+      {
+        "step": 46,
+        "ctx": 0,
+        "sel_type": 0,
+        "opt_type": 7,
+        "chosen_target": null,
+        "my": {
+          "active": {
+            "id": 190,
+            "serial": 80,
+            "hp": 300,
+            "maxHp": 300,
+            "n_energy": 2
+          },
+          "bench": [
+            {
+              "id": 57,
+              "serial": 119,
+              "hp": 100,
+              "maxHp": 100,
+              "n_energy": 0
+            },
+            {
+              "id": 169,
+              "serial": 75,
+              "hp": 130,
+              "maxHp": 130,
+              "n_energy": 0
+            },
+            {
+              "id": 169,
+              "serial": 76,
+              "hp": 130,
+              "maxHp": 130,
+              "n_energy": 0
+            }
+          ],
+          "poisoned": false,
+          "burned": false,
+          "asleep": false,
+          "paralyzed": false,
+          "confused": false
+        }
+      },
+      {
+        "step": 47,
+        "ctx": 7,
+        "sel_type": 1,
+        "opt_type": 3,
+        "chosen_target": null,
+        "my": {
+          "active": {
+            "id": 190,
+            "serial": 80,
+            "hp": 300,
+            "maxHp": 300,
+            "n_energy": 2
+          },
+          "bench": [
+            {
+              "id": 57,
+              "serial": 119,
+              "hp": 100,
+              "maxHp": 100,
+              "n_energy": 0
+            },
+            {
+              "id": 169,
+              "serial": 75,
+              "hp": 130,
+              "maxHp": 130,
+              "n_energy": 0
+            },
+            {
+              "id": 169,
+              "serial": 76,
+              "hp": 130,
+              "maxHp": 130,
+              "n_energy": 0
+            }
+          ],
+          "poisoned": false,
+          "burned": false,
+          "asleep": false,
+          "paralyzed": false,
+          "confused": false
+        }
+      },
+      {
+        "step": 48,
+        "ctx": 0,
+        "sel_type": 0,
+        "opt_type": 7,
+        "chosen_target": null,
+        "my": {
+          "active": {
+            "id": 190,
+            "serial": 80,
+            "hp": 300,
+            "maxHp": 300,
+            "n_energy": 2
+          },
+          "bench": [
+            {
+              "id": 57,
+              "serial": 119,
+              "hp": 100,
+              "maxHp": 100,
+              "n_energy": 0
+            },
+            {
+              "id": 169,
+              "serial": 75,
+              "hp": 130,
+              "maxHp": 130,
+              "n_energy": 0
+            },
+            {
+              "id": 169,
+              "serial": 76,
+              "hp": 130,
+              "maxHp": 130,
+              "n_energy": 0
+            }
+          ],
+          "poisoned": false,
+          "burned": false,
+          "asleep": false,
+          "paralyzed": false,
+          "confused": false
+        }
+      },
+      {
+        "step": 49,
+        "ctx": 8,
+        "sel_type": 1,
+        "opt_type": 3,
+        "chosen_target": null,
+        "my": {
+          "active": {
+            "id": 190,
+            "serial": 80,
+            "hp": 300,
+            "maxHp": 300,
+            "n_energy": 2
+          },
+          "bench": [
+            {
+              "id": 57,
+              "serial": 119,
+              "hp": 100,
+              "maxHp": 100,
+              "n_energy": 0
+            },
+            {
+              "id": 169,
+              "serial": 75,
+              "hp": 130,
+              "maxHp": 130,
+              "n_energy": 0
+            },
+            {
+              "id": 169,
+              "serial": 76,
+              "hp": 130,
+              "maxHp": 130,
+              "n_energy": 0
+            }
+          ],
+          "poisoned": false,
+          "burned": false,
+          "asleep": false,
+          "paralyzed": false,
+          "confused": false
+        }
+      },
+      {
+        "step": 50,
+        "ctx": 7,
+        "sel_type": 1,
+        "opt_type": 3,
+        "chosen_target": null,
+        "my": {
+          "active": {
+            "id": 190,
+            "serial": 80,
+            "hp": 300,
+            "maxHp": 300,
+            "n_energy": 2
+          },
+          "bench": [
+            {
+              "id": 57,
+              "serial": 119,
+              "hp": 100,
+              "maxHp": 100,
+              "n_energy": 0
+            },
+            {
+              "id": 169,
+              "serial": 75,
+              "hp": 130,
+              "maxHp": 130,
+              "n_energy": 0
+            },
+            {
+              "id": 169,
+              "serial": 76,
+              "hp": 130,
+              "maxHp": 130,
+              "n_energy": 0
+            }
+          ],
+          "poisoned": false,
+          "burned": false,
+          "asleep": false,
+          "paralyzed": false,
+          "confused": false
+        }
+      },
+      {
+        "step": 51,
+        "ctx": 0,
+        "sel_type": 0,
+        "opt_type": 13,
+        "chosen_target": null,
+        "my": {
+          "active": {
+            "id": 190,
+            "serial": 80,
+            "hp": 300,
+            "maxHp": 300,
+            "n_energy": 2
+          },
+          "bench": [
+            {
+              "id": 57,
+              "serial": 119,
+              "hp": 100,
+              "maxHp": 100,
+              "n_energy": 0
+            },
+            {
+              "id": 169,
+              "serial": 75,
+              "hp": 130,
+              "maxHp": 130,
+              "n_energy": 0
+            },
+            {
+              "id": 169,
+              "serial": 76,
+              "hp": 130,
+              "maxHp": 130,
+              "n_energy": 0
+            }
+          ],
+          "poisoned": false,
+          "burned": false,
+          "asleep": false,
+          "paralyzed": false,
+          "confused": false
+        }
+      },
+      {
+        "step": 58,
+        "ctx": 4,
+        "sel_type": 1,
+        "opt_type": 3,
+        "chosen_target": {
+          "id": 190,
+          "serial": 80,
+          "hp": 300,
+          "maxHp": 300,
+          "n_energy": 2
+        },
+        "my": {
+          "active": null,
+          "bench": [
+            {
+              "id": 190,
+              "serial": 80,
+              "hp": 300,
+              "maxHp": 300,
+              "n_energy": 2
+            },
+            {
+              "id": 169,
+              "serial": 75,
+              "hp": 130,
+              "maxHp": 130,
+              "n_energy": 0
+            },
+            {
+              "id": 169,
+              "serial": 76,
+              "hp": 130,
+              "maxHp": 130,
+              "n_energy": 0
+            }
+          ],
+          "poisoned": false,
+          "burned": false,
+          "asleep": false,
+          "paralyzed": false,
+          "confused": false
+        }
+      },
+      {
+        "step": 59,
+        "ctx": 0,
+        "sel_type": 0,
+        "opt_type": 8,
+        "chosen_target": null,
+        "my": {
+          "active": {
+            "id": 190,
+            "serial": 80,
+            "hp": 300,
+            "maxHp": 300,
+            "n_energy": 2
+          },
+          "bench": [
+            {
+              "id": 169,
+              "serial": 75,
+              "hp": 130,
+              "maxHp": 130,
+              "n_energy": 0
+            },
+            {
+              "id": 169,
+              "serial": 76,
+              "hp": 130,
+              "maxHp": 130,
+              "n_energy": 0
+            }
+          ],
+          "poisoned": false,
+          "burned": false,
+          "asleep": false,
+          "paralyzed": false,
+          "confused": false
+        }
+      },
+      {
+        "step": 60,
+        "ctx": 0,
+        "sel_type": 0,
+        "opt_type": 7,
+        "chosen_target": null,
+        "my": {
+          "active": {
+            "id": 190,
+            "serial": 80,
+            "hp": 300,
+            "maxHp": 300,
+            "n_energy": 3
+          },
+          "bench": [
+            {
+              "id": 169,
+              "serial": 75,
+              "hp": 130,
+              "maxHp": 130,
+              "n_energy": 0
+            },
+            {
+              "id": 169,
+              "serial": 76,
+              "hp": 130,
+              "maxHp": 130,
+              "n_energy": 0
+            }
+          ],
+          "poisoned": false,
+          "burned": false,
+          "asleep": false,
+          "paralyzed": false,
+          "confused": false
+        }
+      },
+      {
+        "step": 61,
+        "ctx": 3,
+        "sel_type": 1,
+        "opt_type": 3,
+        "chosen_target": {
+          "id": 666,
+          "serial": 26,
+          "hp": 130,
+          "maxHp": 160,
+          "n_energy": 1
+        },
+        "my": {
+          "active": {
+            "id": 190,
+            "serial": 80,
+            "hp": 300,
+            "maxHp": 300,
+            "n_energy": 3
+          },
+          "bench": [
+            {
+              "id": 169,
+              "serial": 75,
+              "hp": 130,
+              "maxHp": 130,
+              "n_energy": 0
+            },
+            {
+              "id": 169,
+              "serial": 76,
+              "hp": 130,
+              "maxHp": 130,
+              "n_energy": 0
+            }
+          ],
+          "poisoned": false,
+          "burned": false,
+          "asleep": false,
+          "paralyzed": false,
+          "confused": false
+        }
+      },
+      {
+        "step": 62,
+        "ctx": 0,
+        "sel_type": 0,
+        "opt_type": 13,
+        "chosen_target": null,
+        "my": {
+          "active": {
+            "id": 190,
+            "serial": 80,
+            "hp": 300,
+            "maxHp": 300,
+            "n_energy": 3
+          },
+          "bench": [
+            {
+              "id": 169,
+              "serial": 75,
+              "hp": 130,
+              "maxHp": 130,
+              "n_energy": 0
+            },
+            {
+              "id": 169,
+              "serial": 76,
+              "hp": 130,
+              "maxHp": 130,
+              "n_energy": 0
+            }
+          ],
+          "poisoned": false,
+          "burned": false,
+          "asleep": false,
+          "paralyzed": false,
+          "confused": false
+        }
+      },
+      {
+        "step": 63,
+        "ctx": 7,
+        "sel_type": 1,
+        "opt_type": 3,
+        "chosen_target": null,
+        "my": {
+          "active": {
+            "id": 190,
+            "serial": 80,
+            "hp": 300,
+            "maxHp": 300,
+            "n_energy": 3
+          },
+          "bench": [
+            {
+              "id": 169,
+              "serial": 75,
+              "hp": 130,
+              "maxHp": 130,
+              "n_energy": 0
+            },
+            {
+              "id": 169,
+              "serial": 76,
+              "hp": 130,
+              "maxHp": 130,
+              "n_energy": 0
+            }
+          ],
+          "poisoned": false,
+          "burned": false,
+          "asleep": false,
+          "paralyzed": false,
+          "confused": false
+        }
+      },
+      {
+        "step": 72,
+        "ctx": 0,
+        "sel_type": 0,
+        "opt_type": 7,
+        "chosen_target": null,
+        "my": {
+          "active": {
+            "id": 190,
+            "serial": 80,
+            "hp": 110,
+            "maxHp": 300,
+            "n_energy": 3
+          },
+          "bench": [
+            {
+              "id": 169,
+              "serial": 75,
+              "hp": 130,
+              "maxHp": 130,
+              "n_energy": 0
+            },
+            {
+              "id": 169,
+              "serial": 76,
+              "hp": 130,
+              "maxHp": 130,
+              "n_energy": 0
+            }
+          ],
+          "poisoned": false,
+          "burned": false,
+          "asleep": false,
+          "paralyzed": false,
+          "confused": false
+        }
+      },
+      {
+        "step": 73,
+        "ctx": 7,
+        "sel_type": 1,
+        "opt_type": 3,
+        "chosen_target": null,
+        "my": {
+          "active": {
+            "id": 190,
+            "serial": 80,
+            "hp": 110,
+            "maxHp": 300,
+            "n_energy": 3
+          },
+          "bench": [
+            {
+              "id": 169,
+              "serial": 75,
+              "hp": 130,
+              "maxHp": 130,
+              "n_energy": 0
+            },
+            {
+              "id": 169,
+              "serial": 76,
+              "hp": 130,
+              "maxHp": 130,
+              "n_energy": 0
+            }
+          ],
+          "poisoned": false,
+          "burned": false,
+          "asleep": false,
+          "paralyzed": false,
+          "confused": false
+        }
+      },
+      {
+        "step": 74,
+        "ctx": 0,
+        "sel_type": 0,
+        "opt_type": 9,
+        "chosen_target": null,
+        "my": {
+          "active": {
+            "id": 190,
+            "serial": 80,
+            "hp": 110,
+            "maxHp": 300,
+            "n_energy": 3
+          },
+          "bench": [
+            {
+              "id": 169,
+              "serial": 75,
+              "hp": 130,
+              "maxHp": 130,
+              "n_energy": 0
+            },
+            {
+              "id": 169,
+              "serial": 76,
+              "hp": 130,
+              "maxHp": 130,
+              "n_energy": 0
+            }
+          ],
+          "poisoned": false,
+          "burned": false,
+          "asleep": false,
+          "paralyzed": false,
+          "confused": false
+        }
+      },
+      {
+        "step": 75,
+        "ctx": 43,
+        "sel_type": 9,
+        "opt_type": 1,
+        "chosen_target": null,
+        "my": {
+          "active": {
+            "id": 190,
+            "serial": 80,
+            "hp": 110,
+            "maxHp": 300,
+            "n_energy": 3
+          },
+          "bench": [
+            {
+              "id": 190,
+              "serial": 81,
+              "hp": 300,
+              "maxHp": 300,
+              "n_energy": 0
+            },
+            {
+              "id": 169,
+              "serial": 76,
+              "hp": 130,
+              "maxHp": 130,
+              "n_energy": 0
+            }
+          ],
+          "poisoned": false,
+          "burned": false,
+          "asleep": false,
+          "paralyzed": false,
+          "confused": false
+        }
+      },
+      {
+        "step": 76,
+        "ctx": 22,
+        "sel_type": 1,
+        "opt_type": 3,
+        "chosen_target": null,
+        "my": {
+          "active": {
+            "id": 190,
+            "serial": 80,
+            "hp": 110,
+            "maxHp": 300,
+            "n_energy": 3
+          },
+          "bench": [
+            {
+              "id": 190,
+              "serial": 81,
+              "hp": 300,
+              "maxHp": 300,
+              "n_energy": 0
+            },
+            {
+              "id": 169,
+              "serial": 76,
+              "hp": 130,
+              "maxHp": 130,
+              "n_energy": 0
+            }
+          ],
+          "poisoned": false,
+          "burned": false,
+          "asleep": false,
+          "paralyzed": false,
+          "confused": false
+        }
+      },
+      {
+        "step": 77,
+        "ctx": 21,
+        "sel_type": 1,
+        "opt_type": 3,
+        "chosen_target": {
+          "id": 190,
+          "serial": 81,
+          "hp": 300,
+          "maxHp": 300,
+          "n_energy": 0
+        },
+        "my": {
+          "active": {
+            "id": 190,
+            "serial": 80,
+            "hp": 110,
+            "maxHp": 300,
+            "n_energy": 3
+          },
+          "bench": [
+            {
+              "id": 190,
+              "serial": 81,
+              "hp": 300,
+              "maxHp": 300,
+              "n_energy": 0
+            },
+            {
+              "id": 169,
+              "serial": 76,
+              "hp": 130,
+              "maxHp": 130,
+              "n_energy": 0
+            }
+          ],
+          "poisoned": false,
+          "burned": false,
+          "asleep": false,
+          "paralyzed": false,
+          "confused": false
+        }
+      },
+      {
+        "step": 78,
+        "ctx": 21,
+        "sel_type": 1,
+        "opt_type": 3,
+        "chosen_target": {
+          "id": 190,
+          "serial": 81,
+          "hp": 300,
+          "maxHp": 300,
+          "n_energy": 1
+        },
+        "my": {
+          "active": {
+            "id": 190,
+            "serial": 80,
+            "hp": 110,
+            "maxHp": 300,
+            "n_energy": 3
+          },
+          "bench": [
+            {
+              "id": 190,
+              "serial": 81,
+              "hp": 300,
+              "maxHp": 300,
+              "n_energy": 1
+            },
+            {
+              "id": 169,
+              "serial": 76,
+              "hp": 130,
+              "maxHp": 130,
+              "n_energy": 0
+            }
+          ],
+          "poisoned": false,
+          "burned": false,
+          "asleep": false,
+          "paralyzed": false,
+          "confused": false
+        }
+      },
+      {
+        "step": 79,
+        "ctx": 0,
+        "sel_type": 0,
+        "opt_type": 13,
+        "chosen_target": null,
+        "my": {
+          "active": {
+            "id": 190,
+            "serial": 80,
+            "hp": 110,
+            "maxHp": 300,
+            "n_energy": 3
+          },
+          "bench": [
+            {
+              "id": 190,
+              "serial": 81,
+              "hp": 300,
+              "maxHp": 300,
+              "n_energy": 2
+            },
+            {
+              "id": 169,
+              "serial": 76,
+              "hp": 130,
+              "maxHp": 130,
+              "n_energy": 0
+            }
+          ],
+          "poisoned": false,
+          "burned": false,
+          "asleep": false,
+          "paralyzed": false,
+          "confused": false
+        }
+      },
+      {
+        "step": 85,
+        "ctx": 4,
+        "sel_type": 1,
+        "opt_type": 3,
+        "chosen_target": {
+          "id": 190,
+          "serial": 81,
+          "hp": 300,
+          "maxHp": 300,
+          "n_energy": 2
+        },
+        "my": {
+          "active": null,
+          "bench": [
+            {
+              "id": 190,
+              "serial": 81,
+              "hp": 300,
+              "maxHp": 300,
+              "n_energy": 2
+            },
+            {
+              "id": 169,
+              "serial": 76,
+              "hp": 130,
+              "maxHp": 130,
+              "n_energy": 0
+            }
+          ],
+          "poisoned": false,
+          "burned": false,
+          "asleep": false,
+          "paralyzed": false,
+          "confused": false
+        }
+      },
+      {
+        "step": 86,
+        "ctx": 0,
+        "sel_type": 0,
+        "opt_type": 7,
+        "chosen_target": null,
+        "my": {
+          "active": {
+            "id": 190,
+            "serial": 81,
+            "hp": 300,
+            "maxHp": 300,
+            "n_energy": 2
+          },
+          "bench": [
+            {
+              "id": 169,
+              "serial": 76,
+              "hp": 130,
+              "maxHp": 130,
+              "n_energy": 0
+            }
+          ],
+          "poisoned": false,
+          "burned": false,
+          "asleep": false,
+          "paralyzed": false,
+          "confused": false
+        }
+      },
+      {
+        "step": 87,
+        "ctx": 7,
+        "sel_type": 1,
+        "opt_type": 3,
+        "chosen_target": null,
+        "my": {
+          "active": {
+            "id": 190,
+            "serial": 81,
+            "hp": 300,
+            "maxHp": 300,
+            "n_energy": 2
+          },
+          "bench": [
+            {
+              "id": 169,
+              "serial": 76,
+              "hp": 130,
+              "maxHp": 130,
+              "n_energy": 0
+            }
+          ],
+          "poisoned": false,
+          "burned": false,
+          "asleep": false,
+          "paralyzed": false,
+          "confused": false
+        }
+      },
+      {
+        "step": 88,
+        "ctx": 0,
+        "sel_type": 0,
+        "opt_type": 9,
+        "chosen_target": null,
+        "my": {
+          "active": {
+            "id": 190,
+            "serial": 81,
+            "hp": 300,
+            "maxHp": 300,
+            "n_energy": 2
+          },
+          "bench": [
+            {
+              "id": 169,
+              "serial": 76,
+              "hp": 130,
+              "maxHp": 130,
+              "n_energy": 0
+            }
+          ],
+          "poisoned": false,
+          "burned": false,
+          "asleep": false,
+          "paralyzed": false,
+          "confused": false
+        }
+      },
+      {
+        "step": 89,
+        "ctx": 43,
+        "sel_type": 9,
+        "opt_type": 1,
+        "chosen_target": null,
+        "my": {
+          "active": {
+            "id": 190,
+            "serial": 81,
+            "hp": 300,
+            "maxHp": 300,
+            "n_energy": 2
+          },
+          "bench": [
+            {
+              "id": 190,
+              "serial": 78,
+              "hp": 300,
+              "maxHp": 300,
+              "n_energy": 0
+            }
+          ],
+          "poisoned": false,
+          "burned": false,
+          "asleep": false,
+          "paralyzed": false,
+          "confused": false
+        }
+      },
+      {
+        "step": 90,
+        "ctx": 22,
+        "sel_type": 1,
+        "opt_type": 3,
+        "chosen_target": null,
+        "my": {
+          "active": {
+            "id": 190,
+            "serial": 81,
+            "hp": 300,
+            "maxHp": 300,
+            "n_energy": 2
+          },
+          "bench": [
+            {
+              "id": 190,
+              "serial": 78,
+              "hp": 300,
+              "maxHp": 300,
+              "n_energy": 0
+            }
+          ],
+          "poisoned": false,
+          "burned": false,
+          "asleep": false,
+          "paralyzed": false,
+          "confused": false
+        }
+      },
+      {
+        "step": 91,
+        "ctx": 21,
+        "sel_type": 1,
+        "opt_type": 3,
+        "chosen_target": {
+          "id": 190,
+          "serial": 81,
+          "hp": 300,
+          "maxHp": 300,
+          "n_energy": 2
+        },
+        "my": {
+          "active": {
+            "id": 190,
+            "serial": 81,
+            "hp": 300,
+            "maxHp": 300,
+            "n_energy": 2
+          },
+          "bench": [
+            {
+              "id": 190,
+              "serial": 78,
+              "hp": 300,
+              "maxHp": 300,
+              "n_energy": 0
+            }
+          ],
+          "poisoned": false,
+          "burned": false,
+          "asleep": false,
+          "paralyzed": false,
+          "confused": false
+        }
+      },
+      {
+        "step": 92,
+        "ctx": 21,
+        "sel_type": 1,
+        "opt_type": 3,
+        "chosen_target": {
+          "id": 190,
+          "serial": 78,
+          "hp": 300,
+          "maxHp": 300,
+          "n_energy": 0
+        },
+        "my": {
+          "active": {
+            "id": 190,
+            "serial": 81,
+            "hp": 300,
+            "maxHp": 300,
+            "n_energy": 3
+          },
+          "bench": [
+            {
+              "id": 190,
+              "serial": 78,
+              "hp": 300,
+              "maxHp": 300,
+              "n_energy": 0
+            }
+          ],
+          "poisoned": false,
+          "burned": false,
+          "asleep": false,
+          "paralyzed": false,
+          "confused": false
+        }
+      },
+      {
+        "step": 93,
+        "ctx": 0,
+        "sel_type": 0,
+        "opt_type": 7,
+        "chosen_target": null,
+        "my": {
+          "active": {
+            "id": 190,
+            "serial": 81,
+            "hp": 300,
+            "maxHp": 300,
+            "n_energy": 3
+          },
+          "bench": [
+            {
+              "id": 190,
+              "serial": 78,
+              "hp": 300,
+              "maxHp": 300,
+              "n_energy": 1
+            }
+          ],
+          "poisoned": false,
+          "burned": false,
+          "asleep": false,
+          "paralyzed": false,
+          "confused": false
+        }
+      },
+      {
+        "step": 94,
+        "ctx": 7,
+        "sel_type": 1,
+        "opt_type": 3,
+        "chosen_target": null,
+        "my": {
+          "active": {
+            "id": 190,
+            "serial": 81,
+            "hp": 300,
+            "maxHp": 300,
+            "n_energy": 3
+          },
+          "bench": [
+            {
+              "id": 190,
+              "serial": 78,
+              "hp": 300,
+              "maxHp": 300,
+              "n_energy": 1
+            }
+          ],
+          "poisoned": false,
+          "burned": false,
+          "asleep": false,
+          "paralyzed": false,
+          "confused": false
+        }
+      },
+      {
+        "step": 95,
+        "ctx": 0,
+        "sel_type": 0,
+        "opt_type": 7,
+        "chosen_target": null,
+        "my": {
+          "active": {
+            "id": 190,
+            "serial": 81,
+            "hp": 300,
+            "maxHp": 300,
+            "n_energy": 3
+          },
+          "bench": [
+            {
+              "id": 190,
+              "serial": 78,
+              "hp": 300,
+              "maxHp": 300,
+              "n_energy": 1
+            }
+          ],
+          "poisoned": false,
+          "burned": false,
+          "asleep": false,
+          "paralyzed": false,
+          "confused": false
+        }
+      },
+      {
+        "step": 96,
+        "ctx": 7,
+        "sel_type": 1,
+        "opt_type": null,
+        "chosen_target": null,
+        "my": {
+          "active": {
+            "id": 190,
+            "serial": 81,
+            "hp": 300,
+            "maxHp": 300,
+            "n_energy": 3
+          },
+          "bench": [
+            {
+              "id": 190,
+              "serial": 78,
+              "hp": 300,
+              "maxHp": 300,
+              "n_energy": 1
+            }
+          ],
+          "poisoned": false,
+          "burned": false,
+          "asleep": false,
+          "paralyzed": false,
+          "confused": false
+        }
+      },
+      {
+        "step": 97,
+        "ctx": 0,
+        "sel_type": 0,
+        "opt_type": 13,
+        "chosen_target": null,
+        "my": {
+          "active": {
+            "id": 190,
+            "serial": 81,
+            "hp": 300,
+            "maxHp": 300,
+            "n_energy": 3
+          },
+          "bench": [
+            {
+              "id": 190,
+              "serial": 78,
+              "hp": 300,
+              "maxHp": 300,
+              "n_energy": 1
+            }
+          ],
+          "poisoned": false,
+          "burned": false,
+          "asleep": false,
+          "paralyzed": false,
+          "confused": false
+        }
+      },
+      {
+        "step": 98,
+        "ctx": 7,
+        "sel_type": 1,
+        "opt_type": 3,
+        "chosen_target": null,
+        "my": {
+          "active": {
+            "id": 190,
+            "serial": 81,
+            "hp": 300,
+            "maxHp": 300,
+            "n_energy": 3
+          },
+          "bench": [
+            {
+              "id": 190,
+              "serial": 78,
+              "hp": 300,
+              "maxHp": 300,
+              "n_energy": 1
+            }
+          ],
+          "poisoned": false,
+          "burned": false,
+          "asleep": false,
+          "paralyzed": false,
+          "confused": false
+        }
+      },
+      {
+        "step": 112,
+        "ctx": 0,
+        "sel_type": 0,
+        "opt_type": 8,
+        "chosen_target": null,
+        "my": {
+          "active": {
+            "id": 190,
+            "serial": 81,
+            "hp": 250,
+            "maxHp": 300,
+            "n_energy": 3
+          },
+          "bench": [
+            {
+              "id": 190,
+              "serial": 78,
+              "hp": 300,
+              "maxHp": 300,
+              "n_energy": 1
+            }
+          ],
+          "poisoned": false,
+          "burned": false,
+          "asleep": false,
+          "paralyzed": false,
+          "confused": false
+        }
+      },
+      {
+        "step": 113,
+        "ctx": 0,
+        "sel_type": 0,
+        "opt_type": 8,
+        "chosen_target": null,
+        "my": {
+          "active": {
+            "id": 190,
+            "serial": 81,
+            "hp": 250,
+            "maxHp": 300,
+            "n_energy": 3
+          },
+          "bench": [
+            {
+              "id": 190,
+              "serial": 78,
+              "hp": 300,
+              "maxHp": 300,
+              "n_energy": 2
+            }
+          ],
+          "poisoned": false,
+          "burned": false,
+          "asleep": false,
+          "paralyzed": false,
+          "confused": false
+        }
+      },
+      {
+        "step": 114,
+        "ctx": 0,
+        "sel_type": 0,
+        "opt_type": 7,
+        "chosen_target": null,
+        "my": {
+          "active": {
+            "id": 190,
+            "serial": 81,
+            "hp": 350,
+            "maxHp": 400,
+            "n_energy": 3
+          },
+          "bench": [
+            {
+              "id": 190,
+              "serial": 78,
+              "hp": 300,
+              "maxHp": 300,
+              "n_energy": 2
+            }
+          ],
+          "poisoned": false,
+          "burned": false,
+          "asleep": false,
+          "paralyzed": false,
+          "confused": false
+        }
+      },
+      {
+        "step": 115,
+        "ctx": 0,
+        "sel_type": 0,
+        "opt_type": 13,
+        "chosen_target": null,
+        "my": {
+          "active": {
+            "id": 190,
+            "serial": 81,
+            "hp": 350,
+            "maxHp": 400,
+            "n_energy": 3
+          },
+          "bench": [
+            {
+              "id": 190,
+              "serial": 78,
+              "hp": 300,
+              "maxHp": 300,
+              "n_energy": 2
+            }
+          ],
+          "poisoned": false,
+          "burned": false,
+          "asleep": false,
+          "paralyzed": false,
+          "confused": false
+        }
+      },
+      {
+        "step": 116,
+        "ctx": 7,
+        "sel_type": 1,
+        "opt_type": 3,
+        "chosen_target": null,
+        "my": {
+          "active": {
+            "id": 190,
+            "serial": 81,
+            "hp": 350,
+            "maxHp": 400,
+            "n_energy": 3
+          },
+          "bench": [
+            {
+              "id": 190,
+              "serial": 78,
+              "hp": 300,
+              "maxHp": 300,
+              "n_energy": 2
+            }
+          ],
+          "poisoned": false,
+          "burned": false,
+          "asleep": false,
+          "paralyzed": false,
+          "confused": false
+        }
+      },
+      {
+        "step": 128,
+        "ctx": 0,
+        "sel_type": 0,
+        "opt_type": 7,
+        "chosen_target": null,
+        "my": {
+          "active": {
+            "id": 190,
+            "serial": 81,
+            "hp": 160,
+            "maxHp": 400,
+            "n_energy": 3
+          },
+          "bench": [
+            {
+              "id": 190,
+              "serial": 78,
+              "hp": 300,
+              "maxHp": 300,
+              "n_energy": 2
+            }
+          ],
+          "poisoned": false,
+          "burned": false,
+          "asleep": false,
+          "paralyzed": false,
+          "confused": false
+        }
+      },
+      {
+        "step": 129,
+        "ctx": 7,
+        "sel_type": 1,
+        "opt_type": 3,
+        "chosen_target": null,
+        "my": {
+          "active": {
+            "id": 190,
+            "serial": 81,
+            "hp": 160,
+            "maxHp": 400,
+            "n_energy": 3
+          },
+          "bench": [
+            {
+              "id": 190,
+              "serial": 78,
+              "hp": 300,
+              "maxHp": 300,
+              "n_energy": 2
+            }
+          ],
+          "poisoned": false,
+          "burned": false,
+          "asleep": false,
+          "paralyzed": false,
+          "confused": false
+        }
+      },
+      {
+        "step": 130,
+        "ctx": 0,
+        "sel_type": 0,
+        "opt_type": 8,
+        "chosen_target": null,
+        "my": {
+          "active": {
+            "id": 190,
+            "serial": 81,
+            "hp": 160,
+            "maxHp": 400,
+            "n_energy": 3
+          },
+          "bench": [
+            {
+              "id": 190,
+              "serial": 78,
+              "hp": 300,
+              "maxHp": 300,
+              "n_energy": 2
+            }
+          ],
+          "poisoned": false,
+          "burned": false,
+          "asleep": false,
+          "paralyzed": false,
+          "confused": false
+        }
+      },
+      {
+        "step": 131,
+        "ctx": 0,
+        "sel_type": 0,
+        "opt_type": 7,
+        "chosen_target": null,
+        "my": {
+          "active": {
+            "id": 190,
+            "serial": 81,
+            "hp": 160,
+            "maxHp": 400,
+            "n_energy": 3
+          },
+          "bench": [
+            {
+              "id": 190,
+              "serial": 78,
+              "hp": 300,
+              "maxHp": 300,
+              "n_energy": 3
+            }
+          ],
+          "poisoned": false,
+          "burned": false,
+          "asleep": false,
+          "paralyzed": false,
+          "confused": false
+        }
+      },
+      {
+        "step": 132,
+        "ctx": 7,
+        "sel_type": 1,
+        "opt_type": 3,
+        "chosen_target": null,
+        "my": {
+          "active": {
+            "id": 190,
+            "serial": 81,
+            "hp": 160,
+            "maxHp": 400,
+            "n_energy": 3
+          },
+          "bench": [
+            {
+              "id": 190,
+              "serial": 78,
+              "hp": 300,
+              "maxHp": 300,
+              "n_energy": 3
+            }
+          ],
+          "poisoned": false,
+          "burned": false,
+          "asleep": false,
+          "paralyzed": false,
+          "confused": false
+        }
+      },
+      {
+        "step": 133,
+        "ctx": 0,
+        "sel_type": 0,
+        "opt_type": 13,
+        "chosen_target": null,
+        "my": {
+          "active": {
+            "id": 190,
+            "serial": 81,
+            "hp": 160,
+            "maxHp": 400,
+            "n_energy": 3
+          },
+          "bench": [
+            {
+              "id": 190,
+              "serial": 78,
+              "hp": 300,
+              "maxHp": 300,
+              "n_energy": 3
+            }
+          ],
+          "poisoned": false,
+          "burned": false,
+          "asleep": false,
+          "paralyzed": false,
+          "confused": false
+        }
+      }
+    ]
+  },
+  {
+    "game": 4,
+    "agent_is_left": true,
+    "outcome": -1.0,
+    "decisions": [
+      {
+        "step": 0,
+        "ctx": 41,
+        "sel_type": 9,
+        "opt_type": 2,
+        "chosen_target": null,
+        "my": {
+          "active": null,
+          "bench": [],
+          "poisoned": false,
+          "burned": false,
+          "asleep": false,
+          "paralyzed": false,
+          "confused": false
+        }
+      },
+      {
+        "step": 1,
+        "ctx": 1,
+        "sel_type": 1,
+        "opt_type": 3,
+        "chosen_target": null,
+        "my": {
+          "active": null,
+          "bench": [],
+          "poisoned": false,
+          "burned": false,
+          "asleep": false,
+          "paralyzed": false,
+          "confused": false
+        }
+      },
+      {
+        "step": 3,
+        "ctx": 38,
+        "sel_type": 8,
+        "opt_type": 0,
+        "chosen_target": null,
+        "my": {
+          "active": null,
+          "bench": [],
+          "poisoned": false,
+          "burned": false,
+          "asleep": false,
+          "paralyzed": false,
+          "confused": false
+        }
+      },
+      {
+        "step": 11,
+        "ctx": 0,
+        "sel_type": 0,
+        "opt_type": 7,
+        "chosen_target": null,
+        "my": {
+          "active": {
+            "id": 848,
+            "serial": 60,
+            "hp": 70,
+            "maxHp": 70,
+            "n_energy": 0
+          },
+          "bench": [],
+          "poisoned": false,
+          "burned": false,
+          "asleep": false,
+          "paralyzed": false,
+          "confused": false
+        }
+      },
+      {
+        "step": 12,
+        "ctx": 8,
+        "sel_type": 1,
+        "opt_type": 3,
+        "chosen_target": null,
+        "my": {
+          "active": {
+            "id": 848,
+            "serial": 60,
+            "hp": 70,
+            "maxHp": 70,
+            "n_energy": 0
+          },
+          "bench": [],
+          "poisoned": false,
+          "burned": false,
+          "asleep": false,
+          "paralyzed": false,
+          "confused": false
+        }
+      },
+      {
+        "step": 13,
+        "ctx": 7,
+        "sel_type": 1,
+        "opt_type": 3,
+        "chosen_target": null,
+        "my": {
+          "active": {
+            "id": 848,
+            "serial": 60,
+            "hp": 70,
+            "maxHp": 70,
+            "n_energy": 0
+          },
+          "bench": [],
+          "poisoned": false,
+          "burned": false,
+          "asleep": false,
+          "paralyzed": false,
+          "confused": false
+        }
+      },
+      {
+        "step": 14,
+        "ctx": 0,
+        "sel_type": 0,
+        "opt_type": 7,
+        "chosen_target": null,
+        "my": {
+          "active": {
+            "id": 848,
+            "serial": 60,
+            "hp": 70,
+            "maxHp": 70,
+            "n_energy": 0
+          },
+          "bench": [],
+          "poisoned": false,
+          "burned": false,
+          "asleep": false,
+          "paralyzed": false,
+          "confused": false
+        }
+      },
+      {
+        "step": 15,
+        "ctx": 0,
+        "sel_type": 0,
+        "opt_type": 7,
+        "chosen_target": null,
+        "my": {
+          "active": {
+            "id": 848,
+            "serial": 60,
+            "hp": 70,
+            "maxHp": 70,
+            "n_energy": 0
+          },
+          "bench": [
+            {
+              "id": 169,
+              "serial": 16,
+              "hp": 130,
+              "maxHp": 130,
+              "n_energy": 0
+            }
+          ],
+          "poisoned": false,
+          "burned": false,
+          "asleep": false,
+          "paralyzed": false,
+          "confused": false
+        }
+      },
+      {
+        "step": 16,
+        "ctx": 0,
+        "sel_type": 0,
+        "opt_type": 8,
+        "chosen_target": null,
+        "my": {
+          "active": {
+            "id": 848,
+            "serial": 60,
+            "hp": 70,
+            "maxHp": 70,
+            "n_energy": 0
+          },
+          "bench": [
+            {
+              "id": 169,
+              "serial": 16,
+              "hp": 130,
+              "maxHp": 130,
+              "n_energy": 0
+            }
+          ],
+          "poisoned": false,
+          "burned": false,
+          "asleep": false,
+          "paralyzed": false,
+          "confused": false
+        }
+      },
+      {
+        "step": 17,
+        "ctx": 0,
+        "sel_type": 0,
+        "opt_type": 14,
+        "chosen_target": null,
+        "my": {
+          "active": {
+            "id": 848,
+            "serial": 60,
+            "hp": 70,
+            "maxHp": 70,
+            "n_energy": 0
+          },
+          "bench": [
+            {
+              "id": 169,
+              "serial": 16,
+              "hp": 130,
+              "maxHp": 130,
+              "n_energy": 1
+            }
+          ],
+          "poisoned": false,
+          "burned": false,
+          "asleep": false,
+          "paralyzed": false,
+          "confused": false
+        }
+      },
+      {
+        "step": 27,
+        "ctx": 0,
+        "sel_type": 0,
+        "opt_type": 8,
+        "chosen_target": null,
+        "my": {
+          "active": {
+            "id": 848,
+            "serial": 60,
+            "hp": 20,
+            "maxHp": 70,
+            "n_energy": 0
+          },
+          "bench": [
+            {
+              "id": 169,
+              "serial": 16,
+              "hp": 130,
+              "maxHp": 130,
+              "n_energy": 1
+            }
+          ],
+          "poisoned": false,
+          "burned": false,
+          "asleep": false,
+          "paralyzed": false,
+          "confused": false
+        }
+      },
+      {
+        "step": 28,
+        "ctx": 0,
+        "sel_type": 0,
+        "opt_type": 14,
+        "chosen_target": null,
+        "my": {
+          "active": {
+            "id": 848,
+            "serial": 60,
+            "hp": 20,
+            "maxHp": 70,
+            "n_energy": 0
+          },
+          "bench": [
+            {
+              "id": 169,
+              "serial": 16,
+              "hp": 130,
+              "maxHp": 130,
+              "n_energy": 2
+            }
+          ],
+          "poisoned": false,
+          "burned": false,
+          "asleep": false,
+          "paralyzed": false,
+          "confused": false
+        }
+      },
+      {
+        "step": 41,
+        "ctx": 4,
+        "sel_type": 1,
+        "opt_type": 3,
+        "chosen_target": {
+          "id": 169,
+          "serial": 16,
+          "hp": 130,
+          "maxHp": 130,
+          "n_energy": 2
+        },
+        "my": {
+          "active": null,
+          "bench": [
+            {
+              "id": 169,
+              "serial": 16,
+              "hp": 130,
+              "maxHp": 130,
+              "n_energy": 2
+            }
+          ],
+          "poisoned": false,
+          "burned": false,
+          "asleep": false,
+          "paralyzed": false,
+          "confused": false
+        }
+      },
+      {
+        "step": 42,
+        "ctx": 0,
+        "sel_type": 0,
+        "opt_type": 7,
+        "chosen_target": null,
+        "my": {
+          "active": {
+            "id": 169,
+            "serial": 16,
+            "hp": 130,
+            "maxHp": 130,
+            "n_energy": 2
+          },
+          "bench": [],
+          "poisoned": false,
+          "burned": false,
+          "asleep": false,
+          "paralyzed": false,
+          "confused": false
+        }
+      },
+      {
+        "step": 43,
+        "ctx": 8,
+        "sel_type": 1,
+        "opt_type": 3,
+        "chosen_target": null,
+        "my": {
+          "active": {
+            "id": 169,
+            "serial": 16,
+            "hp": 130,
+            "maxHp": 130,
+            "n_energy": 2
+          },
+          "bench": [],
+          "poisoned": false,
+          "burned": false,
+          "asleep": false,
+          "paralyzed": false,
+          "confused": false
+        }
+      },
+      {
+        "step": 44,
+        "ctx": 7,
+        "sel_type": 1,
+        "opt_type": 3,
+        "chosen_target": null,
+        "my": {
+          "active": {
+            "id": 169,
+            "serial": 16,
+            "hp": 130,
+            "maxHp": 130,
+            "n_energy": 2
+          },
+          "bench": [],
+          "poisoned": false,
+          "burned": false,
+          "asleep": false,
+          "paralyzed": false,
+          "confused": false
+        }
+      },
+      {
+        "step": 45,
+        "ctx": 0,
+        "sel_type": 0,
+        "opt_type": 7,
+        "chosen_target": null,
+        "my": {
+          "active": {
+            "id": 169,
+            "serial": 16,
+            "hp": 130,
+            "maxHp": 130,
+            "n_energy": 2
+          },
+          "bench": [],
+          "poisoned": false,
+          "burned": false,
+          "asleep": false,
+          "paralyzed": false,
+          "confused": false
+        }
+      },
+      {
+        "step": 46,
+        "ctx": 0,
+        "sel_type": 0,
+        "opt_type": 7,
+        "chosen_target": null,
+        "my": {
+          "active": {
+            "id": 169,
+            "serial": 16,
+            "hp": 130,
+            "maxHp": 130,
+            "n_energy": 2
+          },
+          "bench": [
+            {
+              "id": 169,
+              "serial": 17,
+              "hp": 130,
+              "maxHp": 130,
+              "n_energy": 0
+            }
+          ],
+          "poisoned": false,
+          "burned": false,
+          "asleep": false,
+          "paralyzed": false,
+          "confused": false
+        }
+      },
+      {
+        "step": 47,
+        "ctx": 7,
+        "sel_type": 1,
+        "opt_type": 3,
+        "chosen_target": null,
+        "my": {
+          "active": {
+            "id": 169,
+            "serial": 16,
+            "hp": 130,
+            "maxHp": 130,
+            "n_energy": 2
+          },
+          "bench": [
+            {
+              "id": 169,
+              "serial": 17,
+              "hp": 130,
+              "maxHp": 130,
+              "n_energy": 0
+            }
+          ],
+          "poisoned": false,
+          "burned": false,
+          "asleep": false,
+          "paralyzed": false,
+          "confused": false
+        }
+      },
+      {
+        "step": 48,
+        "ctx": 0,
+        "sel_type": 0,
+        "opt_type": 8,
+        "chosen_target": null,
+        "my": {
+          "active": {
+            "id": 169,
+            "serial": 16,
+            "hp": 130,
+            "maxHp": 130,
+            "n_energy": 2
+          },
+          "bench": [
+            {
+              "id": 169,
+              "serial": 17,
+              "hp": 130,
+              "maxHp": 130,
+              "n_energy": 0
+            }
+          ],
+          "poisoned": false,
+          "burned": false,
+          "asleep": false,
+          "paralyzed": false,
+          "confused": false
+        }
+      },
+      {
+        "step": 49,
+        "ctx": 0,
+        "sel_type": 0,
+        "opt_type": 13,
+        "chosen_target": null,
+        "my": {
+          "active": {
+            "id": 169,
+            "serial": 16,
+            "hp": 130,
+            "maxHp": 130,
+            "n_energy": 3
+          },
+          "bench": [
+            {
+              "id": 169,
+              "serial": 17,
+              "hp": 130,
+              "maxHp": 130,
+              "n_energy": 0
+            }
+          ],
+          "poisoned": false,
+          "burned": false,
+          "asleep": false,
+          "paralyzed": false,
+          "confused": false
+        }
+      },
+      {
+        "step": 59,
+        "ctx": 4,
+        "sel_type": 1,
+        "opt_type": 3,
+        "chosen_target": {
+          "id": 169,
+          "serial": 17,
+          "hp": 130,
+          "maxHp": 130,
+          "n_energy": 0
+        },
+        "my": {
+          "active": null,
+          "bench": [
+            {
+              "id": 169,
+              "serial": 17,
+              "hp": 130,
+              "maxHp": 130,
+              "n_energy": 0
+            }
+          ],
+          "poisoned": false,
+          "burned": false,
+          "asleep": false,
+          "paralyzed": false,
+          "confused": false
+        }
+      },
+      {
+        "step": 60,
+        "ctx": 0,
+        "sel_type": 0,
+        "opt_type": 7,
+        "chosen_target": null,
+        "my": {
+          "active": {
+            "id": 169,
+            "serial": 17,
+            "hp": 130,
+            "maxHp": 130,
+            "n_energy": 0
+          },
+          "bench": [],
+          "poisoned": false,
+          "burned": false,
+          "asleep": false,
+          "paralyzed": false,
+          "confused": false
+        }
+      },
+      {
+        "step": 61,
+        "ctx": 0,
+        "sel_type": 0,
+        "opt_type": 14,
+        "chosen_target": null,
+        "my": {
+          "active": {
+            "id": 169,
+            "serial": 17,
+            "hp": 130,
+            "maxHp": 130,
+            "n_energy": 0
+          },
+          "bench": [
+            {
+              "id": 169,
+              "serial": 14,
+              "hp": 130,
+              "maxHp": 130,
+              "n_energy": 0
+            }
+          ],
+          "poisoned": false,
+          "burned": false,
+          "asleep": false,
+          "paralyzed": false,
+          "confused": false
+        }
+      },
+      {
+        "step": 70,
+        "ctx": 4,
+        "sel_type": 1,
+        "opt_type": 3,
+        "chosen_target": {
+          "id": 169,
+          "serial": 14,
+          "hp": 130,
+          "maxHp": 130,
+          "n_energy": 0
+        },
+        "my": {
+          "active": null,
+          "bench": [
+            {
+              "id": 169,
+              "serial": 14,
+              "hp": 130,
+              "maxHp": 130,
+              "n_energy": 0
+            }
+          ],
+          "poisoned": false,
+          "burned": false,
+          "asleep": false,
+          "paralyzed": false,
+          "confused": false
+        }
+      },
+      {
+        "step": 71,
+        "ctx": 0,
+        "sel_type": 0,
+        "opt_type": 7,
+        "chosen_target": null,
+        "my": {
+          "active": {
+            "id": 169,
+            "serial": 14,
+            "hp": 130,
+            "maxHp": 130,
+            "n_energy": 0
+          },
+          "bench": [],
+          "poisoned": false,
+          "burned": false,
+          "asleep": false,
+          "paralyzed": false,
+          "confused": false
+        }
+      },
+      {
+        "step": 72,
+        "ctx": 0,
+        "sel_type": 0,
+        "opt_type": 9,
+        "chosen_target": null,
+        "my": {
+          "active": {
+            "id": 169,
+            "serial": 14,
+            "hp": 130,
+            "maxHp": 130,
+            "n_energy": 0
+          },
+          "bench": [],
+          "poisoned": false,
+          "burned": false,
+          "asleep": false,
+          "paralyzed": false,
+          "confused": false
+        }
+      },
+      {
+        "step": 73,
+        "ctx": 43,
+        "sel_type": 9,
+        "opt_type": 1,
+        "chosen_target": null,
+        "my": {
+          "active": {
+            "id": 190,
+            "serial": 19,
+            "hp": 300,
+            "maxHp": 300,
+            "n_energy": 0
+          },
+          "bench": [],
+          "poisoned": false,
+          "burned": false,
+          "asleep": false,
+          "paralyzed": false,
+          "confused": false
+        }
+      },
+      {
+        "step": 74,
+        "ctx": 22,
+        "sel_type": 1,
+        "opt_type": 3,
+        "chosen_target": null,
+        "my": {
+          "active": {
+            "id": 190,
+            "serial": 19,
+            "hp": 300,
+            "maxHp": 300,
+            "n_energy": 0
+          },
+          "bench": [],
+          "poisoned": false,
+          "burned": false,
+          "asleep": false,
+          "paralyzed": false,
+          "confused": false
+        }
+      },
+      {
+        "step": 75,
+        "ctx": 21,
+        "sel_type": 1,
+        "opt_type": 3,
+        "chosen_target": {
+          "id": 190,
+          "serial": 19,
+          "hp": 300,
+          "maxHp": 300,
+          "n_energy": 0
+        },
+        "my": {
+          "active": {
+            "id": 190,
+            "serial": 19,
+            "hp": 300,
+            "maxHp": 300,
+            "n_energy": 0
+          },
+          "bench": [],
+          "poisoned": false,
+          "burned": false,
+          "asleep": false,
+          "paralyzed": false,
+          "confused": false
+        }
+      },
+      {
+        "step": 76,
+        "ctx": 21,
+        "sel_type": 1,
+        "opt_type": 3,
+        "chosen_target": {
+          "id": 190,
+          "serial": 19,
+          "hp": 300,
+          "maxHp": 300,
+          "n_energy": 1
+        },
+        "my": {
+          "active": {
+            "id": 190,
+            "serial": 19,
+            "hp": 300,
+            "maxHp": 300,
+            "n_energy": 1
+          },
+          "bench": [],
+          "poisoned": false,
+          "burned": false,
+          "asleep": false,
+          "paralyzed": false,
+          "confused": false
+        }
+      },
+      {
+        "step": 77,
+        "ctx": 0,
+        "sel_type": 0,
+        "opt_type": 7,
+        "chosen_target": null,
+        "my": {
+          "active": {
+            "id": 190,
+            "serial": 19,
+            "hp": 300,
+            "maxHp": 300,
+            "n_energy": 2
+          },
+          "bench": [],
+          "poisoned": false,
+          "burned": false,
+          "asleep": false,
+          "paralyzed": false,
+          "confused": false
+        }
+      },
+      {
+        "step": 78,
+        "ctx": 7,
+        "sel_type": 1,
+        "opt_type": 3,
+        "chosen_target": null,
+        "my": {
+          "active": {
+            "id": 190,
+            "serial": 19,
+            "hp": 300,
+            "maxHp": 300,
+            "n_energy": 2
+          },
+          "bench": [],
+          "poisoned": false,
+          "burned": false,
+          "asleep": false,
+          "paralyzed": false,
+          "confused": false
+        }
+      },
+      {
+        "step": 79,
+        "ctx": 0,
+        "sel_type": 0,
+        "opt_type": 7,
+        "chosen_target": null,
+        "my": {
+          "active": {
+            "id": 190,
+            "serial": 19,
+            "hp": 300,
+            "maxHp": 300,
+            "n_energy": 2
+          },
+          "bench": [],
+          "poisoned": false,
+          "burned": false,
+          "asleep": false,
+          "paralyzed": false,
+          "confused": false
+        }
+      },
+      {
+        "step": 80,
+        "ctx": 0,
+        "sel_type": 0,
+        "opt_type": 14,
+        "chosen_target": null,
+        "my": {
+          "active": {
+            "id": 190,
+            "serial": 19,
+            "hp": 300,
+            "maxHp": 300,
+            "n_energy": 2
+          },
+          "bench": [
+            {
+              "id": 169,
+              "serial": 15,
+              "hp": 130,
+              "maxHp": 130,
+              "n_energy": 0
+            }
+          ],
+          "poisoned": false,
+          "burned": false,
+          "asleep": false,
+          "paralyzed": false,
+          "confused": false
+        }
+      },
+      {
+        "step": 87,
+        "ctx": 4,
+        "sel_type": 1,
+        "opt_type": 3,
+        "chosen_target": {
+          "id": 190,
+          "serial": 19,
+          "hp": 300,
+          "maxHp": 300,
+          "n_energy": 2
+        },
+        "my": {
+          "active": null,
+          "bench": [
+            {
+              "id": 190,
+              "serial": 19,
+              "hp": 300,
+              "maxHp": 300,
+              "n_energy": 2
+            }
+          ],
+          "poisoned": false,
+          "burned": false,
+          "asleep": false,
+          "paralyzed": false,
+          "confused": false
+        }
+      },
+      {
+        "step": 88,
+        "ctx": 0,
+        "sel_type": 0,
+        "opt_type": 7,
+        "chosen_target": null,
+        "my": {
+          "active": {
+            "id": 190,
+            "serial": 19,
+            "hp": 300,
+            "maxHp": 300,
+            "n_energy": 2
+          },
+          "bench": [],
+          "poisoned": false,
+          "burned": false,
+          "asleep": false,
+          "paralyzed": false,
+          "confused": false
+        }
+      },
+      {
+        "step": 89,
+        "ctx": 0,
+        "sel_type": 0,
+        "opt_type": 7,
+        "chosen_target": null,
+        "my": {
+          "active": {
+            "id": 190,
+            "serial": 19,
+            "hp": 300,
+            "maxHp": 300,
+            "n_energy": 2
+          },
+          "bench": [],
+          "poisoned": false,
+          "burned": false,
+          "asleep": false,
+          "paralyzed": false,
+          "confused": false
+        }
+      },
+      {
+        "step": 90,
+        "ctx": 0,
+        "sel_type": 0,
+        "opt_type": 7,
+        "chosen_target": null,
+        "my": {
+          "active": {
+            "id": 190,
+            "serial": 19,
+            "hp": 300,
+            "maxHp": 300,
+            "n_energy": 2
+          },
+          "bench": [
+            {
+              "id": 57,
+              "serial": 59,
+              "hp": 100,
+              "maxHp": 100,
+              "n_energy": 0
+            }
+          ],
+          "poisoned": false,
+          "burned": false,
+          "asleep": false,
+          "paralyzed": false,
+          "confused": false
+        }
+      },
+      {
+        "step": 91,
+        "ctx": 7,
+        "sel_type": 1,
+        "opt_type": null,
+        "chosen_target": null,
+        "my": {
+          "active": {
+            "id": 190,
+            "serial": 19,
+            "hp": 300,
+            "maxHp": 300,
+            "n_energy": 2
+          },
+          "bench": [
+            {
+              "id": 57,
+              "serial": 59,
+              "hp": 100,
+              "maxHp": 100,
+              "n_energy": 0
+            }
+          ],
+          "poisoned": false,
+          "burned": false,
+          "asleep": false,
+          "paralyzed": false,
+          "confused": false
+        }
+      },
+      {
+        "step": 92,
+        "ctx": 0,
+        "sel_type": 0,
+        "opt_type": 7,
+        "chosen_target": null,
+        "my": {
+          "active": {
+            "id": 190,
+            "serial": 19,
+            "hp": 300,
+            "maxHp": 300,
+            "n_energy": 2
+          },
+          "bench": [
+            {
+              "id": 57,
+              "serial": 59,
+              "hp": 100,
+              "maxHp": 100,
+              "n_energy": 0
+            }
+          ],
+          "poisoned": false,
+          "burned": false,
+          "asleep": false,
+          "paralyzed": false,
+          "confused": false
+        }
+      },
+      {
+        "step": 93,
+        "ctx": 7,
+        "sel_type": 1,
+        "opt_type": 3,
+        "chosen_target": null,
+        "my": {
+          "active": {
+            "id": 190,
+            "serial": 19,
+            "hp": 300,
+            "maxHp": 300,
+            "n_energy": 2
+          },
+          "bench": [
+            {
+              "id": 57,
+              "serial": 59,
+              "hp": 100,
+              "maxHp": 100,
+              "n_energy": 0
+            }
+          ],
+          "poisoned": false,
+          "burned": false,
+          "asleep": false,
+          "paralyzed": false,
+          "confused": false
+        }
+      },
+      {
+        "step": 94,
+        "ctx": 0,
+        "sel_type": 0,
+        "opt_type": 7,
+        "chosen_target": null,
+        "my": {
+          "active": {
+            "id": 190,
+            "serial": 19,
+            "hp": 300,
+            "maxHp": 300,
+            "n_energy": 2
+          },
+          "bench": [
+            {
+              "id": 57,
+              "serial": 59,
+              "hp": 100,
+              "maxHp": 100,
+              "n_energy": 0
+            }
+          ],
+          "poisoned": false,
+          "burned": false,
+          "asleep": false,
+          "paralyzed": false,
+          "confused": false
+        }
+      },
+      {
+        "step": 95,
+        "ctx": 7,
+        "sel_type": 1,
+        "opt_type": 3,
+        "chosen_target": null,
+        "my": {
+          "active": {
+            "id": 190,
+            "serial": 19,
+            "hp": 300,
+            "maxHp": 300,
+            "n_energy": 2
+          },
+          "bench": [
+            {
+              "id": 57,
+              "serial": 59,
+              "hp": 100,
+              "maxHp": 100,
+              "n_energy": 0
+            }
+          ],
+          "poisoned": false,
+          "burned": false,
+          "asleep": false,
+          "paralyzed": false,
+          "confused": false
+        }
+      },
+      {
+        "step": 96,
+        "ctx": 0,
+        "sel_type": 0,
+        "opt_type": 8,
+        "chosen_target": null,
+        "my": {
+          "active": {
+            "id": 190,
+            "serial": 19,
+            "hp": 300,
+            "maxHp": 300,
+            "n_energy": 2
+          },
+          "bench": [
+            {
+              "id": 57,
+              "serial": 59,
+              "hp": 100,
+              "maxHp": 100,
+              "n_energy": 0
+            }
+          ],
+          "poisoned": false,
+          "burned": false,
+          "asleep": false,
+          "paralyzed": false,
+          "confused": false
+        }
+      },
+      {
+        "step": 97,
+        "ctx": 0,
+        "sel_type": 0,
+        "opt_type": 13,
+        "chosen_target": null,
+        "my": {
+          "active": {
+            "id": 190,
+            "serial": 19,
+            "hp": 300,
+            "maxHp": 300,
+            "n_energy": 3
+          },
+          "bench": [
+            {
+              "id": 57,
+              "serial": 59,
+              "hp": 100,
+              "maxHp": 100,
+              "n_energy": 0
+            }
+          ],
+          "poisoned": false,
+          "burned": false,
+          "asleep": false,
+          "paralyzed": false,
+          "confused": false
+        }
+      },
+      {
+        "step": 102,
+        "ctx": 0,
+        "sel_type": 0,
+        "opt_type": 7,
+        "chosen_target": null,
+        "my": {
+          "active": {
+            "id": 190,
+            "serial": 19,
+            "hp": 10,
+            "maxHp": 300,
+            "n_energy": 3
+          },
+          "bench": [
+            {
+              "id": 57,
+              "serial": 59,
+              "hp": 100,
+              "maxHp": 100,
+              "n_energy": 0
+            }
+          ],
+          "poisoned": false,
+          "burned": false,
+          "asleep": false,
+          "paralyzed": false,
+          "confused": false
+        }
+      },
+      {
+        "step": 103,
+        "ctx": 7,
+        "sel_type": 1,
+        "opt_type": 3,
+        "chosen_target": null,
+        "my": {
+          "active": {
+            "id": 190,
+            "serial": 19,
+            "hp": 10,
+            "maxHp": 300,
+            "n_energy": 3
+          },
+          "bench": [
+            {
+              "id": 57,
+              "serial": 59,
+              "hp": 100,
+              "maxHp": 100,
+              "n_energy": 0
+            }
+          ],
+          "poisoned": false,
+          "burned": false,
+          "asleep": false,
+          "paralyzed": false,
+          "confused": false
+        }
+      },
+      {
+        "step": 104,
+        "ctx": 0,
+        "sel_type": 0,
+        "opt_type": 7,
+        "chosen_target": null,
+        "my": {
+          "active": {
+            "id": 190,
+            "serial": 19,
+            "hp": 10,
+            "maxHp": 300,
+            "n_energy": 3
+          },
+          "bench": [
+            {
+              "id": 57,
+              "serial": 59,
+              "hp": 100,
+              "maxHp": 100,
+              "n_energy": 0
+            }
+          ],
+          "poisoned": false,
+          "burned": false,
+          "asleep": false,
+          "paralyzed": false,
+          "confused": false
+        }
+      },
+      {
+        "step": 105,
+        "ctx": 0,
+        "sel_type": 0,
+        "opt_type": 13,
+        "chosen_target": null,
+        "my": {
+          "active": {
+            "id": 190,
+            "serial": 19,
+            "hp": 90,
+            "maxHp": 300,
+            "n_energy": 3
+          },
+          "bench": [
+            {
+              "id": 57,
+              "serial": 59,
+              "hp": 100,
+              "maxHp": 100,
+              "n_energy": 0
+            }
+          ],
+          "poisoned": false,
+          "burned": false,
+          "asleep": false,
+          "paralyzed": false,
+          "confused": false
+        }
+      },
+      {
+        "step": 106,
+        "ctx": 7,
+        "sel_type": 1,
+        "opt_type": 3,
+        "chosen_target": null,
+        "my": {
+          "active": {
+            "id": 190,
+            "serial": 19,
+            "hp": 90,
+            "maxHp": 300,
+            "n_energy": 3
+          },
+          "bench": [
+            {
+              "id": 57,
+              "serial": 59,
+              "hp": 100,
+              "maxHp": 100,
+              "n_energy": 0
+            }
+          ],
+          "poisoned": false,
+          "burned": false,
+          "asleep": false,
+          "paralyzed": false,
+          "confused": false
+        }
+      }
+    ]
+  }
+]

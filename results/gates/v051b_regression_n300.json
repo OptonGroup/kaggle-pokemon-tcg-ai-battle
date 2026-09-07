@@ -1,0 +1,52 @@
+{
+  "tag": "v051b_regression_n300",
+  "agent": {
+    "ckpt": null,
+    "agent_dir": "v051_lopunny_crustle",
+    "deck": "/Users/max/kaggle-pokemon-tcg-ai-battle/submissions/v051_lopunny_crustle/deck.csv",
+    "label": "submission:v051_lopunny_crustle"
+  },
+  "agent_ckpt_exceptions": null,
+  "opponents": {
+    "v017_alakazam_heur": {
+      "opponent": "v017_alakazam_heur",
+      "opponent_dir": "v017_alakazam_heur",
+      "n_games": 300,
+      "wins": 286,
+      "losses": 14,
+      "draws": 0,
+      "win_rate": 0.9533333333333334,
+      "wilson95_lo": 0.9232019646862172,
+      "wilson95_hi": 0.9720013254491692,
+      "decisive_win_rate": 0.9533333333333334,
+      "decisive_n": 300,
+      "avg_game_length": 89.83,
+      "min_game_length": 15,
+      "max_game_length": 196,
+      "exc_agent": 0,
+      "exc_opp": 0,
+      "elapsed_s": 6.413236125023104
+    },
+    "v044_archaludon_abomasnow": {
+      "opponent": "v044_archaludon_abomasnow",
+      "opponent_dir": "v044_archaludon_abomasnow",
+      "n_games": 300,
+      "wins": 135,
+      "losses": 165,
+      "draws": 0,
+      "win_rate": 0.45,
+      "wilson95_lo": 0.39468890948161645,
+      "wilson95_hi": 0.506575433518157,
+      "decisive_win_rate": 0.45,
+      "decisive_n": 300,
+      "avg_game_length": 116.53,
+      "min_game_length": 25,
+      "max_game_length": 171,
+      "exc_agent": 0,
+      "exc_opp": 0,
+      "elapsed_s": 7.901511749951169
+    }
+  },
+  "overall_win_rate": 0.7016666666666667,
+  "generated": "2026-07-21 02:12:59"
+}

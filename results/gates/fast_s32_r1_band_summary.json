@@ -1,0 +1,160 @@
+{
+  "tag": "fast_s32_r1_band_summary",
+  "candidate": "scout_s32",
+  "baseline_source": "/Users/max/kaggle-pokemon-tcg-ai-battle/results/gates/v073_core_gate.json",
+  "excluded_pairs": [
+    {
+      "key": "v070_h2h",
+      "opp_dir": "/Users/max/kaggle-pokemon-tcg-ai-battle/.claude/worktrees/v070-grimmsnarl-hybrid/submissions/v070_grimmsnarl_hybrid",
+      "reason": "dir not found: /Users/max/kaggle-pokemon-tcg-ai-battle/.claude/worktrees/v070-grimmsnarl-hybrid/submissions/v070_grimmsnarl_hybrid"
+    }
+  ],
+  "archetype_wr": {
+    "alakazam": 0.525,
+    "archaludon": 0.3,
+    "crustle": 0.9375,
+    "dragapult": 0.5,
+    "lucario": 0.3333333333333333,
+    "mirror": 0.5666666666666667,
+    "rest": 0.5,
+    "starmie": 0.5
+  },
+  "archetype_degraded": {
+    "alakazam": false,
+    "archaludon": false,
+    "crustle": false,
+    "dragapult": false,
+    "lucario": false,
+    "mirror": false,
+    "rest": false,
+    "starmie": true
+  },
+  "bands": {
+    "band_700_799": {
+      "mix": {
+        "lucario": 0.2625,
+        "archaludon": 0.1775,
+        "alakazam": 0.17,
+        "dragapult": 0.115,
+        "starmie": 0.0588,
+        "rest": 0.2162
+      },
+      "weighted_wr": 0.42499999999999993,
+      "degraded_components": [
+        "starmie"
+      ],
+      "passed": false
+    },
+    "band_800_899": {
+      "mix": {
+        "archaludon": 0.2903,
+        "alakazam": 0.2716,
+        "lucario": 0.0719,
+        "crustle": 0.0479,
+        "mirror": 0.0519,
+        "rest": 0.3664
+      },
+      "weighted_wr": 0.5111629166666667,
+      "degraded_components": [],
+      "passed": false
+    },
+    "band_900_1099": {
+      "mix": {
+        "alakazam": 0.38,
+        "mirror": 0.23,
+        "crustle": 0.09,
+        "archaludon": 0.09,
+        "lucario": 0.07,
+        "starmie": 0.026,
+        "rest": 0.114
+      },
+      "weighted_wr": 0.5345416666666667,
+      "degraded_components": [
+        "starmie"
+      ],
+      "passed": true
+    }
+  },
+  "regressions": [
+    {
+      "key": "v009a",
+      "has_baseline": true,
+      "candidate_wr": 0.9333333333333333,
+      "candidate_n": 120,
+      "baseline_wr": 0.279,
+      "baseline_n": 1000,
+      "ztest_z": 14.208444538419347,
+      "ztest_p_value": 8.120931008125549e-46,
+      "is_regression": false
+    },
+    {
+      "key": "v044",
+      "has_baseline": true,
+      "candidate_wr": 0.3,
+      "candidate_n": 120,
+      "baseline_wr": 0.333,
+      "baseline_n": 1000,
+      "ztest_z": -0.726742272618672,
+      "ztest_p_value": 0.46738385231361895,
+      "is_regression": false
+    },
+    {
+      "key": "v073_h2h",
+      "has_baseline": false
+    },
+    {
+      "key": "ext_prvsiyan_alak_v9",
+      "has_baseline": true,
+      "candidate_wr": 0.525,
+      "candidate_n": 120,
+      "baseline_wr": 0.401,
+      "baseline_n": 1000,
+      "ztest_z": 2.605615983019601,
+      "ztest_p_value": 0.009170921821882349,
+      "is_regression": false
+    },
+    {
+      "key": "ext_maulikgajera_lucario",
+      "has_baseline": true,
+      "candidate_wr": 0.3333333333333333,
+      "candidate_n": 120,
+      "baseline_wr": 0.269,
+      "baseline_n": 1000,
+      "ztest_z": 1.4898619263356796,
+      "ztest_p_value": 0.13626054432377557,
+      "is_regression": false
+    },
+    {
+      "key": "ext_tusk_crustle",
+      "has_baseline": true,
+      "candidate_wr": 0.9416666666666667,
+      "candidate_n": 120,
+      "baseline_wr": 0.622,
+      "baseline_n": 1000,
+      "ztest_z": 6.966633318754461,
+      "ztest_p_value": 3.2461527771175483e-12,
+      "is_regression": false
+    }
+  ],
+  "acceptance": {
+    "band_wr_pass": {
+      "band_700_799": false,
+      "band_800_899": false,
+      "band_900_1099": true
+    },
+    "band_wr_pass_all": false,
+    "mirror_pass": false,
+    "mirror_v063_h2h_wr": null,
+    "mirror_v070_h2h_wr": null,
+    "incumbent_pass": false,
+    "incumbent_v072_h2h_wr": null,
+    "incumbent_v072_h2h_lo": null,
+    "no_regressions_pass": true,
+    "n_significant_regressions": 0,
+    "regression_keys": [],
+    "no_crashes_pass": true,
+    "crash_total": 0,
+    "overall_pass": false
+  },
+  "generated": "2026-07-27 23:07:32"
+}

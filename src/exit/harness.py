@@ -299,7 +299,7 @@ def _worker_fn(args: _WorkerArgs) -> list[GameResult]:
                 except Exception:
                     # Фолбэк: выбираем минимальное число первых опций
                     if obs.select is not None and obs.select.option is not None:
-                        min_c = int(obs.select.minCount or 1)
+                        min_c = int(obs.select.minCount if obs.select.minCount is not None else 1)
                         chosen = list(range(min(min_c, len(obs.select.option))))
                     else:
                         chosen = []

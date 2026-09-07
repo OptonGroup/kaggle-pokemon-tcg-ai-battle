@@ -1,0 +1,23 @@
+{
+  "opponent": "v001_random",
+  "candidates": [
+    "v035_makthanithin"
+  ],
+  "rows": {
+    "v035_makthanithin": {
+      "n": 18,
+      "w": 18,
+      "l": 0,
+      "d": 0,
+      "bad": 0,
+      "wr": 1.0,
+      "wilson_lo": 0.8241154494176252,
+      "wilson_hi": 1.0,
+      "n_exceptions": 0,
+      "n_illegal": 0,
+      "n_aborted": 0,
+      "median_moves": 64.0,
+      "mean_moves": 63.833333333333336
+    }
+  }
+}

@@ -544,8 +544,8 @@ class Pilot:
             return list(self.deck)
 
         n_options = len(sel.get("option") or [])
-        min_count = int(sel.get("minCount") or 1)
-        max_count = int(sel.get("maxCount") or 1)
+        min_count = int(sel.get("minCount") if sel.get("minCount") is not None else 1)
+        max_count = int(sel.get("maxCount") if sel.get("maxCount") is not None else 1)
 
         if n_options == 0:
             return []
@@ -834,8 +834,8 @@ def _il_decide(obs_dict: dict) -> list[int]:
     sel = obs_dict.get("select") or {{}}
     opts = sel.get("option") or []
     n_opts = len(opts)
-    min_count = int(sel.get("minCount") or 1)
-    max_count = int(sel.get("maxCount") or 1)
+    min_count = int(sel.get("minCount") if sel.get("minCount") is not None else 1)
+    max_count = int(sel.get("maxCount") if sel.get("maxCount") is not None else 1)
 
     if n_opts == 0:
         return []
@@ -869,8 +869,8 @@ def agent(obs_dict: dict) -> list[int]:
         return my_deck
 
     n_options = len((sel.get("option") or []))
-    min_count = int(sel.get("minCount") or 1)
-    max_count = int(sel.get("maxCount") or 1)
+    min_count = int(sel.get("minCount") if sel.get("minCount") is not None else 1)
+    max_count = int(sel.get("maxCount") if sel.get("maxCount") is not None else 1)
 
     if n_options == 0:
         _n_trivial_fallback += 1

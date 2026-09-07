@@ -1,0 +1,671 @@
+{
+  "summary": {
+    "h2h_p0_vs_v049": {
+      "job": {
+        "tag": "h2h_p0_vs_v049",
+        "kind": "h2h",
+        "a": "v050_p0",
+        "b": "v049",
+        "n_games": 1000,
+        "seed_base": 700000
+      },
+      "n": 1000,
+      "wins": 480,
+      "losses": 520,
+      "draws": 0,
+      "aborted": 0,
+      "win_rate": 0.48,
+      "wilson95_lo": 0.4491702320581413,
+      "wilson95_hi": 0.5109828438853143,
+      "avg_moves": 114.728
+    },
+    "h2h_p0p1_vs_v049": {
+      "job": {
+        "tag": "h2h_p0p1_vs_v049",
+        "kind": "h2h",
+        "a": "v050_p0p1",
+        "b": "v049",
+        "n_games": 1000,
+        "seed_base": 710000
+      },
+      "n": 1000,
+      "wins": 494,
+      "losses": 506,
+      "draws": 0,
+      "aborted": 0,
+      "win_rate": 0.494,
+      "wilson95_lo": 0.4630942141573671,
+      "wilson95_hi": 0.5249517086256698,
+      "avg_moves": 117.175
+    },
+    "alakazam_v049_vs_v017": {
+      "job": {
+        "tag": "alakazam_v049_vs_v017",
+        "kind": "pool",
+        "agent": "v049",
+        "opponent": "v017",
+        "n_games": 1000,
+        "seed_base": 720000
+      },
+      "n": 1000,
+      "wins": 972,
+      "losses": 28,
+      "draws": 0,
+      "aborted": 0,
+      "win_rate": 0.972,
+      "wilson95_lo": 0.9598295551975795,
+      "wilson95_hi": 0.9805578525368679,
+      "avg_moves": 89.609
+    },
+    "alakazam_v050_p0_vs_v017": {
+      "job": {
+        "tag": "alakazam_v050_p0_vs_v017",
+        "kind": "pool",
+        "agent": "v050_p0",
+        "opponent": "v017",
+        "n_games": 1000,
+        "seed_base": 720000
+      },
+      "n": 1000,
+      "wins": 973,
+      "losses": 27,
+      "draws": 0,
+      "aborted": 0,
+      "win_rate": 0.973,
+      "wilson95_lo": 0.9610010105865644,
+      "wilson95_hi": 0.9813787433507103,
+      "avg_moves": 90.618
+    },
+    "alakazam_v050_p0p1_vs_v017": {
+      "job": {
+        "tag": "alakazam_v050_p0p1_vs_v017",
+        "kind": "pool",
+        "agent": "v050_p0p1",
+        "opponent": "v017",
+        "n_games": 1000,
+        "seed_base": 720000
+      },
+      "n": 1000,
+      "wins": 979,
+      "losses": 21,
+      "draws": 0,
+      "aborted": 0,
+      "win_rate": 0.979,
+      "wilson95_lo": 0.9681094652438844,
+      "wilson95_hi": 0.9862243659103536,
+      "avg_moves": 89.46
+    },
+    "alakazam_v049_vs_v033": {
+      "job": {
+        "tag": "alakazam_v049_vs_v033",
+        "kind": "pool",
+        "agent": "v049",
+        "opponent": "v033",
+        "n_games": 1000,
+        "seed_base": 730000
+      },
+      "n": 1000,
+      "wins": 780,
+      "losses": 213,
+      "draws": 7,
+      "aborted": 0,
+      "win_rate": 0.7835,
+      "wilson95_lo": 0.7569135985960247,
+      "wilson95_hi": 0.8079165499054919,
+      "avg_moves": 69.40382678751259
+    },
+    "alakazam_v050_p0_vs_v033": {
+      "job": {
+        "tag": "alakazam_v050_p0_vs_v033",
+        "kind": "pool",
+        "agent": "v050_p0",
+        "opponent": "v033",
+        "n_games": 1000,
+        "seed_base": 730000
+      },
+      "n": 1000,
+      "wins": 777,
+      "losses": 215,
+      "draws": 8,
+      "aborted": 0,
+      "win_rate": 0.781,
+      "wilson95_lo": 0.7543178981817001,
+      "wilson95_hi": 0.8055313848127484,
+      "avg_moves": 69.41733870967742
+    },
+    "alakazam_v050_p0p1_vs_v033": {
+      "job": {
+        "tag": "alakazam_v050_p0p1_vs_v033",
+        "kind": "pool",
+        "agent": "v050_p0p1",
+        "opponent": "v033",
+        "n_games": 1000,
+        "seed_base": 730000
+      },
+      "n": 1000,
+      "wins": 760,
+      "losses": 234,
+      "draws": 6,
+      "aborted": 0,
+      "win_rate": 0.763,
+      "wilson95_lo": 0.7356679698590534,
+      "wilson95_hi": 0.7883190814845054,
+      "avg_moves": 71.28169014084507
+    },
+    "pool_v049_vs_v007": {
+      "job": {
+        "tag": "pool_v049_vs_v007",
+        "kind": "pool",
+        "agent": "v049",
+        "opponent": "v007",
+        "n_games": 300,
+        "seed_base": 740000
+      },
+      "n": 300,
+      "wins": 223,
+      "losses": 76,
+      "draws": 1,
+      "aborted": 0,
+      "win_rate": 0.745,
+      "wilson95_lo": 0.6927950181469227,
+      "wilson95_hi": 0.7910097011541868,
+      "avg_moves": 73.50836120401338
+    },
+    "pool_v050_p0_vs_v007": {
+      "job": {
+        "tag": "pool_v050_p0_vs_v007",
+        "kind": "pool",
+        "agent": "v050_p0",
+        "opponent": "v007",
+        "n_games": 300,
+        "seed_base": 740000
+      },
+      "n": 300,
+      "wins": 236,
+      "losses": 64,
+      "draws": 0,
+      "aborted": 0,
+      "win_rate": 0.7866666666666666,
+      "wilson95_lo": 0.7368363171534565,
+      "wilson95_hi": 0.8292481163145083,
+      "avg_moves": 74.12
+    },
+    "pool_v050_p0p1_vs_v007": {
+      "job": {
+        "tag": "pool_v050_p0p1_vs_v007",
+        "kind": "pool",
+        "agent": "v050_p0p1",
+        "opponent": "v007",
+        "n_games": 300,
+        "seed_base": 740000
+      },
+      "n": 300,
+      "wins": 220,
+      "losses": 77,
+      "draws": 3,
+      "aborted": 0,
+      "win_rate": 0.7383333333333333,
+      "wilson95_lo": 0.6858047743679447,
+      "wilson95_hi": 0.7848351906664679,
+      "avg_moves": 73.64983164983165
+    },
+    "pool_v049_vs_v009a": {
+      "job": {
+        "tag": "pool_v049_vs_v009a",
+        "kind": "pool",
+        "agent": "v049",
+        "opponent": "v009a",
+        "n_games": 300,
+        "seed_base": 741000
+      },
+      "n": 300,
+      "wins": 251,
+      "losses": 47,
+      "draws": 2,
+      "aborted": 0,
+      "win_rate": 0.84,
+      "wilson95_lo": 0.7942554091313135,
+      "wilson95_hi": 0.8771470584702262,
+      "avg_moves": 70.6241610738255
+    },
+    "pool_v050_p0_vs_v009a": {
+      "job": {
+        "tag": "pool_v050_p0_vs_v009a",
+        "kind": "pool",
+        "agent": "v050_p0",
+        "opponent": "v009a",
+        "n_games": 300,
+        "seed_base": 741000
+      },
+      "n": 300,
+      "wins": 264,
+      "losses": 34,
+      "draws": 2,
+      "aborted": 0,
+      "win_rate": 0.8833333333333333,
+      "wilson95_lo": 0.8420660083343473,
+      "wilson95_hi": 0.9149073620007219,
+      "avg_moves": 68.0738255033557
+    },
+    "pool_v050_p0p1_vs_v009a": {
+      "job": {
+        "tag": "pool_v050_p0p1_vs_v009a",
+        "kind": "pool",
+        "agent": "v050_p0p1",
+        "opponent": "v009a",
+        "n_games": 300,
+        "seed_base": 741000
+      },
+      "n": 300,
+      "wins": 254,
+      "losses": 46,
+      "draws": 0,
+      "aborted": 0,
+      "win_rate": 0.8466666666666667,
+      "wilson95_lo": 0.8015330360133669,
+      "wilson95_hi": 0.8830341858548697,
+      "avg_moves": 69.87
+    },
+    "pool_v049_vs_v018": {
+      "job": {
+        "tag": "pool_v049_vs_v018",
+        "kind": "pool",
+        "agent": "v049",
+        "opponent": "v018",
+        "n_games": 300,
+        "seed_base": 742000
+      },
+      "n": 300,
+      "wins": 287,
+      "losses": 13,
+      "draws": 0,
+      "aborted": 0,
+      "win_rate": 0.9566666666666667,
+      "wilson95_lo": 0.927281870871939,
+      "wilson95_hi": 0.9745037963967957,
+      "avg_moves": 122.63666666666667
+    },
+    "pool_v050_p0_vs_v018": {
+      "job": {
+        "tag": "pool_v050_p0_vs_v018",
+        "kind": "pool",
+        "agent": "v050_p0",
+        "opponent": "v018",
+        "n_games": 300,
+        "seed_base": 742000
+      },
+      "n": 300,
+      "wins": 283,
+      "losses": 17,
+      "draws": 0,
+      "aborted": 0,
+      "win_rate": 0.9433333333333334,
+      "wilson95_lo": 0.9111333346485289,
+      "wilson95_hi": 0.9643228240868122,
+      "avg_moves": 118.04666666666667
+    },
+    "pool_v050_p0p1_vs_v018": {
+      "job": {
+        "tag": "pool_v050_p0p1_vs_v018",
+        "kind": "pool",
+        "agent": "v050_p0p1",
+        "opponent": "v018",
+        "n_games": 300,
+        "seed_base": 742000
+      },
+      "n": 300,
+      "wins": 287,
+      "losses": 13,
+      "draws": 0,
+      "aborted": 0,
+      "win_rate": 0.9566666666666667,
+      "wilson95_lo": 0.927281870871939,
+      "wilson95_hi": 0.9745037963967957,
+      "avg_moves": 121.92666666666666
+    },
+    "pool_v049_vs_v024": {
+      "job": {
+        "tag": "pool_v049_vs_v024",
+        "kind": "pool",
+        "agent": "v049",
+        "opponent": "v024",
+        "n_games": 300,
+        "seed_base": 743000
+      },
+      "n": 300,
+      "wins": 278,
+      "losses": 22,
+      "draws": 0,
+      "aborted": 0,
+      "win_rate": 0.9266666666666666,
+      "wilson95_lo": 0.8914679042010732,
+      "wilson95_hi": 0.9510763688675256,
+      "avg_moves": 56.013333333333335
+    },
+    "pool_v050_p0_vs_v024": {
+      "job": {
+        "tag": "pool_v050_p0_vs_v024",
+        "kind": "pool",
+        "agent": "v050_p0",
+        "opponent": "v024",
+        "n_games": 300,
+        "seed_base": 743000
+      },
+      "n": 300,
+      "wins": 283,
+      "losses": 17,
+      "draws": 0,
+      "aborted": 0,
+      "win_rate": 0.9433333333333334,
+      "wilson95_lo": 0.9111333346485289,
+      "wilson95_hi": 0.9643228240868122,
+      "avg_moves": 54.19
+    },
+    "pool_v050_p0p1_vs_v024": {
+      "job": {
+        "tag": "pool_v050_p0p1_vs_v024",
+        "kind": "pool",
+        "agent": "v050_p0p1",
+        "opponent": "v024",
+        "n_games": 300,
+        "seed_base": 743000
+      },
+      "n": 300,
+      "wins": 277,
+      "losses": 23,
+      "draws": 0,
+      "aborted": 0,
+      "win_rate": 0.9233333333333333,
+      "wilson95_lo": 0.8875891334382622,
+      "wilson95_hi": 0.9483727624969882,
+      "avg_moves": 55.056666666666665
+    },
+    "pool_v049_vs_v034": {
+      "job": {
+        "tag": "pool_v049_vs_v034",
+        "kind": "pool",
+        "agent": "v049",
+        "opponent": "v034",
+        "n_games": 300,
+        "seed_base": 744000
+      },
+      "n": 300,
+      "wins": 143,
+      "losses": 157,
+      "draws": 0,
+      "aborted": 0,
+      "win_rate": 0.4766666666666667,
+      "wilson95_lo": 0.4208006536261767,
+      "wilson95_hi": 0.5331227064403843,
+      "avg_moves": 119.08333333333333
+    },
+    "pool_v050_p0_vs_v034": {
+      "job": {
+        "tag": "pool_v050_p0_vs_v034",
+        "kind": "pool",
+        "agent": "v050_p0",
+        "opponent": "v034",
+        "n_games": 300,
+        "seed_base": 744000
+      },
+      "n": 300,
+      "wins": 132,
+      "losses": 168,
+      "draws": 0,
+      "aborted": 0,
+      "win_rate": 0.44,
+      "wilson95_lo": 0.3849382095794712,
+      "wilson95_hi": 0.49657900202025707,
+      "avg_moves": 119.43
+    },
+    "pool_v050_p0p1_vs_v034": {
+      "job": {
+        "tag": "pool_v050_p0p1_vs_v034",
+        "kind": "pool",
+        "agent": "v050_p0p1",
+        "opponent": "v034",
+        "n_games": 300,
+        "seed_base": 744000
+      },
+      "n": 300,
+      "wins": 139,
+      "losses": 161,
+      "draws": 0,
+      "aborted": 0,
+      "win_rate": 0.4633333333333333,
+      "wilson95_lo": 0.40772488257071904,
+      "wilson95_hi": 0.5198689689624482,
+      "avg_moves": 120.55
+    },
+    "pool_v049_vs_v036": {
+      "job": {
+        "tag": "pool_v049_vs_v036",
+        "kind": "pool",
+        "agent": "v049",
+        "opponent": "v036",
+        "n_games": 300,
+        "seed_base": 745000
+      },
+      "n": 300,
+      "wins": 156,
+      "losses": 144,
+      "draws": 0,
+      "aborted": 0,
+      "win_rate": 0.52,
+      "wilson95_lo": 0.46357005360167935,
+      "wilson95_hi": 0.5759242091984114,
+      "avg_moves": 121.40666666666667
+    },
+    "pool_v050_p0_vs_v036": {
+      "job": {
+        "tag": "pool_v050_p0_vs_v036",
+        "kind": "pool",
+        "agent": "v050_p0",
+        "opponent": "v036",
+        "n_games": 300,
+        "seed_base": 745000
+      },
+      "n": 300,
+      "wins": 146,
+      "losses": 154,
+      "draws": 0,
+      "aborted": 0,
+      "win_rate": 0.4866666666666667,
+      "wilson95_lo": 0.43063348243848176,
+      "wilson95_hi": 0.5430370090281246,
+      "avg_moves": 117.46333333333334
+    },
+    "pool_v050_p0p1_vs_v036": {
+      "job": {
+        "tag": "pool_v050_p0p1_vs_v036",
+        "kind": "pool",
+        "agent": "v050_p0p1",
+        "opponent": "v036",
+        "n_games": 300,
+        "seed_base": 745000
+      },
+      "n": 300,
+      "wins": 134,
+      "losses": 166,
+      "draws": 0,
+      "aborted": 0,
+      "win_rate": 0.44666666666666666,
+      "wilson95_lo": 0.39143616500447354,
+      "wilson95_hi": 0.5032458008619516,
+      "avg_moves": 123.12333333333333
+    },
+    "pool_v049_vs_v039": {
+      "job": {
+        "tag": "pool_v049_vs_v039",
+        "kind": "pool",
+        "agent": "v049",
+        "opponent": "v039",
+        "n_games": 300,
+        "seed_base": 746000
+      },
+      "n": 300,
+      "wins": 237,
+      "losses": 63,
+      "draws": 0,
+      "aborted": 0,
+      "win_rate": 0.79,
+      "wilson95_lo": 0.7403879054849664,
+      "wilson95_hi": 0.832278905116347,
+      "avg_moves": 124.17666666666666
+    },
+    "pool_v050_p0_vs_v039": {
+      "job": {
+        "tag": "pool_v050_p0_vs_v039",
+        "kind": "pool",
+        "agent": "v050_p0",
+        "opponent": "v039",
+        "n_games": 300,
+        "seed_base": 746000
+      },
+      "n": 300,
+      "wins": 247,
+      "losses": 53,
+      "draws": 0,
+      "aborted": 0,
+      "win_rate": 0.8233333333333334,
+      "wilson95_lo": 0.7761666509606149,
+      "wilson95_hi": 0.8623239309741828,
+      "avg_moves": 124.91333333333333
+    },
+    "pool_v050_p0p1_vs_v039": {
+      "job": {
+        "tag": "pool_v050_p0p1_vs_v039",
+        "kind": "pool",
+        "agent": "v050_p0p1",
+        "opponent": "v039",
+        "n_games": 300,
+        "seed_base": 746000
+      },
+      "n": 300,
+      "wins": 240,
+      "losses": 60,
+      "draws": 0,
+      "aborted": 0,
+      "win_rate": 0.8,
+      "wilson95_lo": 0.7510701139033206,
+      "wilson95_hi": 0.8413438280980382,
+      "avg_moves": 127.32333333333334
+    },
+    "pool_v049_vs_v046": {
+      "job": {
+        "tag": "pool_v049_vs_v046",
+        "kind": "pool",
+        "agent": "v049",
+        "opponent": "v046",
+        "n_games": 300,
+        "seed_base": 747000
+      },
+      "n": 300,
+      "wins": 145,
+      "losses": 155,
+      "draws": 0,
+      "aborted": 0,
+      "win_rate": 0.48333333333333334,
+      "wilson95_lo": 0.4273534010031743,
+      "wilson95_hi": 0.5397347133300835,
+      "avg_moves": 118.55333333333333
+    },
+    "pool_v050_p0_vs_v046": {
+      "job": {
+        "tag": "pool_v050_p0_vs_v046",
+        "kind": "pool",
+        "agent": "v050_p0",
+        "opponent": "v046",
+        "n_games": 300,
+        "seed_base": 747000
+      },
+      "n": 300,
+      "wins": 134,
+      "losses": 166,
+      "draws": 0,
+      "aborted": 0,
+      "win_rate": 0.44666666666666666,
+      "wilson95_lo": 0.39143616500447354,
+      "wilson95_hi": 0.5032458008619516,
+      "avg_moves": 118.12
+    },
+    "pool_v050_p0p1_vs_v046": {
+      "job": {
+        "tag": "pool_v050_p0p1_vs_v046",
+        "kind": "pool",
+        "agent": "v050_p0p1",
+        "opponent": "v046",
+        "n_games": 300,
+        "seed_base": 747000
+      },
+      "n": 300,
+      "wins": 153,
+      "losses": 147,
+      "draws": 0,
+      "aborted": 0,
+      "win_rate": 0.51,
+      "wilson95_lo": 0.45366316504261445,
+      "wilson95_hi": 0.5660839663574307,
+      "avg_moves": 114.31333333333333
+    },
+    "pool_v049_vs_v044": {
+      "job": {
+        "tag": "pool_v049_vs_v044",
+        "kind": "pool",
+        "agent": "v049",
+        "opponent": "v044",
+        "n_games": 300,
+        "seed_base": 748000
+      },
+      "n": 300,
+      "wins": 131,
+      "losses": 169,
+      "draws": 0,
+      "aborted": 0,
+      "win_rate": 0.43666666666666665,
+      "wilson95_lo": 0.38169301003457207,
+      "wilson95_hi": 0.4932418244318077,
+      "avg_moves": 119.21
+    },
+    "pool_v050_p0_vs_v044": {
+      "job": {
+        "tag": "pool_v050_p0_vs_v044",
+        "kind": "pool",
+        "agent": "v050_p0",
+        "opponent": "v044",
+        "n_games": 300,
+        "seed_base": 748000
+      },
+      "n": 300,
+      "wins": 124,
+      "losses": 176,
+      "draws": 0,
+      "aborted": 0,
+      "win_rate": 0.41333333333333333,
+      "wilson95_lo": 0.35904776475728883,
+      "wilson95_hi": 0.469810429775652,
+      "avg_moves": 118.84
+    },
+    "pool_v050_p0p1_vs_v044": {
+      "job": {
+        "tag": "pool_v050_p0p1_vs_v044",
+        "kind": "pool",
+        "agent": "v050_p0p1",
+        "opponent": "v044",
+        "n_games": 300,
+        "seed_base": 748000
+      },
+      "n": 300,
+      "wins": 131,
+      "losses": 169,
+      "draws": 0,
+      "aborted": 0,
+      "win_rate": 0.43666666666666665,
+      "wilson95_lo": 0.38169301003457207,
+      "wilson95_hi": 0.4932418244318077,
+      "avg_moves": 115.33333333333333
+    }
+  },
+  "elapsed_s": 128.88655805587769,
+  "n_tasks": 16100
+}

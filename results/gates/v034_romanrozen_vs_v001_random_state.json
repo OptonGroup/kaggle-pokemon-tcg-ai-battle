@@ -1,0 +1,339 @@
+{
+  "cells": {
+    "v034_romanrozen_clone": {
+      "candidate": "v034_romanrozen_clone",
+      "games": [
+        {
+          "candidate": "v034_romanrozen_clone",
+          "opponent": "v001_random",
+          "our_first": true,
+          "outcome": "illegal",
+          "winner": null,
+          "moves": 5,
+          "n_illegal": 1,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v034_romanrozen_clone",
+          "opponent": "v001_random",
+          "our_first": false,
+          "outcome": "our_win",
+          "winner": 1,
+          "moves": 35,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v034_romanrozen_clone",
+          "opponent": "v001_random",
+          "our_first": false,
+          "outcome": "illegal",
+          "winner": null,
+          "moves": 4,
+          "n_illegal": 1,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v034_romanrozen_clone",
+          "opponent": "v001_random",
+          "our_first": false,
+          "outcome": "illegal",
+          "winner": null,
+          "moves": 4,
+          "n_illegal": 1,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v034_romanrozen_clone",
+          "opponent": "v001_random",
+          "our_first": true,
+          "outcome": "our_win",
+          "winner": 0,
+          "moves": 40,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v034_romanrozen_clone",
+          "opponent": "v001_random",
+          "our_first": true,
+          "outcome": "our_win",
+          "winner": 0,
+          "moves": 81,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v034_romanrozen_clone",
+          "opponent": "v001_random",
+          "our_first": true,
+          "outcome": "our_win",
+          "winner": 0,
+          "moves": 138,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v034_romanrozen_clone",
+          "opponent": "v001_random",
+          "our_first": false,
+          "outcome": "our_win",
+          "winner": 1,
+          "moves": 40,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v034_romanrozen_clone",
+          "opponent": "v001_random",
+          "our_first": false,
+          "outcome": "illegal",
+          "winner": null,
+          "moves": 4,
+          "n_illegal": 1,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v034_romanrozen_clone",
+          "opponent": "v001_random",
+          "our_first": true,
+          "outcome": "illegal",
+          "winner": null,
+          "moves": 4,
+          "n_illegal": 1,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v034_romanrozen_clone",
+          "opponent": "v001_random",
+          "our_first": true,
+          "outcome": "our_win",
+          "winner": 0,
+          "moves": 40,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v034_romanrozen_clone",
+          "opponent": "v001_random",
+          "our_first": true,
+          "outcome": "our_win",
+          "winner": 0,
+          "moves": 37,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v034_romanrozen_clone",
+          "opponent": "v001_random",
+          "our_first": false,
+          "outcome": "our_win",
+          "winner": 1,
+          "moves": 29,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v034_romanrozen_clone",
+          "opponent": "v001_random",
+          "our_first": false,
+          "outcome": "our_win",
+          "winner": 1,
+          "moves": 51,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v034_romanrozen_clone",
+          "opponent": "v001_random",
+          "our_first": true,
+          "outcome": "our_win",
+          "winner": 0,
+          "moves": 57,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v034_romanrozen_clone",
+          "opponent": "v001_random",
+          "our_first": false,
+          "outcome": "illegal",
+          "winner": null,
+          "moves": 3,
+          "n_illegal": 1,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v034_romanrozen_clone",
+          "opponent": "v001_random",
+          "our_first": false,
+          "outcome": "illegal",
+          "winner": null,
+          "moves": 3,
+          "n_illegal": 1,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v034_romanrozen_clone",
+          "opponent": "v001_random",
+          "our_first": true,
+          "outcome": "illegal",
+          "winner": null,
+          "moves": 4,
+          "n_illegal": 1,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v034_romanrozen_clone",
+          "opponent": "v001_random",
+          "our_first": true,
+          "outcome": "illegal",
+          "winner": null,
+          "moves": 3,
+          "n_illegal": 1,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v034_romanrozen_clone",
+          "opponent": "v001_random",
+          "our_first": false,
+          "outcome": "illegal",
+          "winner": null,
+          "moves": 3,
+          "n_illegal": 1,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v034_romanrozen_clone",
+          "opponent": "v001_random",
+          "our_first": true,
+          "outcome": "our_win",
+          "winner": 0,
+          "moves": 37,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v034_romanrozen_clone",
+          "opponent": "v001_random",
+          "our_first": false,
+          "outcome": "our_win",
+          "winner": 1,
+          "moves": 42,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v034_romanrozen_clone",
+          "opponent": "v001_random",
+          "our_first": true,
+          "outcome": "illegal",
+          "winner": null,
+          "moves": 4,
+          "n_illegal": 1,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v034_romanrozen_clone",
+          "opponent": "v001_random",
+          "our_first": false,
+          "outcome": "our_win",
+          "winner": 1,
+          "moves": 25,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v034_romanrozen_clone",
+          "opponent": "v001_random",
+          "our_first": false,
+          "outcome": "illegal",
+          "winner": null,
+          "moves": 4,
+          "n_illegal": 1,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v034_romanrozen_clone",
+          "opponent": "v001_random",
+          "our_first": true,
+          "outcome": "illegal",
+          "winner": null,
+          "moves": 25,
+          "n_illegal": 1,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v034_romanrozen_clone",
+          "opponent": "v001_random",
+          "our_first": false,
+          "outcome": "illegal",
+          "winner": null,
+          "moves": 3,
+          "n_illegal": 1,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v034_romanrozen_clone",
+          "opponent": "v001_random",
+          "our_first": true,
+          "outcome": "our_win",
+          "winner": 0,
+          "moves": 45,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v034_romanrozen_clone",
+          "opponent": "v001_random",
+          "our_first": false,
+          "outcome": "illegal",
+          "winner": null,
+          "moves": 4,
+          "n_illegal": 1,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v034_romanrozen_clone",
+          "opponent": "v001_random",
+          "our_first": true,
+          "outcome": "our_win",
+          "winner": 0,
+          "moves": 36,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        }
+      ]
+    }
+  }
+}

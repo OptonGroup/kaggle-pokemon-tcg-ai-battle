@@ -1,0 +1,127 @@
+{
+  "tag": "v051_lopunny_crustle_gate",
+  "generated": "2026-07-21",
+  "mechanism_verification": {
+    "source": "out/lopunny_verify/ (prior engine verification, not repeated) + this session smoke test",
+    "smoke_test_v2": "out/v051_smoke/smoke_vs_v009a_v2.json (20 games)",
+    "spiky_hopper_landed_160dmg_count": 16,
+    "note": "Confirmed Spiky Hopper (attackId 1226) fires and lands unreduced 160 dmg vs Crustle active in real in-agent games after apply_overrides energy-priority fix (Lopunny attach was being starved by the pre-existing +10000 Duraludon bench-energy override)."
+  },
+  "crustle_matchup": {
+    "v007_crustle": {
+      "v050_p0p1_baseline_n1000": 0.7875,
+      "v050_p0p1_baseline_ci95": [
+        0.7610695855728391,
+        0.8117299477399864
+      ],
+      "v051_n1000": 0.7135,
+      "v051_ci95": [
+        0.684701649864191,
+        0.7406642644394202
+      ],
+      "delta_pp": -7.4,
+      "ci_overlap": false
+    },
+    "v009a_crustle": {
+      "v050_p0p1_baseline_n1000": 0.835,
+      "v050_p0p1_baseline_ci95": [
+        0.8107202824572156,
+        0.8567156954899028
+      ],
+      "v051_n1000": 0.8095,
+      "v051_ci95": [
+        0.7839938163752309,
+        0.8326373333997934
+      ],
+      "delta_pp": -2.55,
+      "ci_overlap": true
+    },
+    "verdict": "REGRESSION vs v050_p0p1 baseline on BOTH Crustle refs, not the intended improvement (v007: significant, CIs disjoint; v009a: directional, CIs narrowly overlap)"
+  },
+  "h2h_vs_v050_p0p1_n1000": {
+    "opponent": "v050_p0p1",
+    "opponent_dir": "v050_p0p1",
+    "n_games": 1000,
+    "wins": 451,
+    "losses": 549,
+    "draws": 0,
+    "win_rate": 0.451,
+    "wilson95_lo": 0.420404869897352,
+    "wilson95_hi": 0.4819701661641144,
+    "decisive_win_rate": 0.451,
+    "decisive_n": 1000,
+    "avg_game_length": 110.63,
+    "min_game_length": 21,
+    "max_game_length": 198,
+    "exc_agent": 0,
+    "exc_opp": 0,
+    "elapsed_s": 23.97113429196179
+  },
+  "h2h_verdict": "FAIL: WR=0.451, CI95=[0.420,0.482] -- significantly BELOW 0.5. Root cause: v050_p0p1 plays the mirror archaludon deck (no Crustle-line ids), so the Lopunny line never activates (dead cards); the only difference vs v050 in this matchup is the deck.csv cut of 2x Poke Pad (draw supporter), which purely weakens the mirror.",
+  "regression_slice_n300": {
+    "v017_alakazam_heur": {
+      "v050_baseline": 0.9733333333333334,
+      "v051": 0.9566666666666667,
+      "delta_pp": -1.67,
+      "v050_ci95": [
+        0.9482704597024538,
+        0.9864270932330232
+      ],
+      "v051_ci95": [
+        0.927281870871939,
+        0.9745037963967957
+      ]
+    },
+    "v016_alakazam": {
+      "v050_baseline": 0.9633333333333334,
+      "v051": 0.9666666666666667,
+      "delta_pp": 0.33,
+      "v050_ci95": [
+        0.9355455130036123,
+        0.9794049085318193
+      ],
+      "v051_ci95": [
+        0.9397375485424309,
+        0.9817952501263492
+      ]
+    },
+    "v034_romanrozen_clone": {
+      "v050_baseline": 0.48,
+      "v051": 0.41,
+      "delta_pp": -7.0,
+      "v050_ci95": [
+        0.4240757908015887,
+        0.5364299463983206
+      ],
+      "v051_ci95": [
+        0.3558229870903305,
+        0.4664528303092618
+      ]
+    },
+    "v044_archaludon_abomasnow": {
+      "v050_baseline": 0.45,
+      "v051": 0.4033333333333333,
+      "delta_pp": -4.67,
+      "v050_ci95": [
+        0.39468890948161645,
+        0.506575433518157
+      ],
+      "v051_ci95": [
+        0.34938121291407215,
+        0.45972985021882334
+      ]
+    }
+  },
+  "avg_game_length_shift": {
+    "v007_crustle": {
+      "v050": 72.01,
+      "v051": 77.216
+    },
+    "v009a_crustle": {
+      "v050": 70.165,
+      "v051": 72.385
+    },
+    "note": "v051 games run longer vs both Crustle refs -- consistent with the Lopunny-line energy-priority override (apply_overrides, +20000) diverting early attach decisions away from Duraludon/Archaludon toward building the 2-turn Lopunny line, delaying the pre-existing Raging Hammer chip-damage plan that already won most of these games unassisted."
+  },
+  "overall_verdict": "FAIL"
+}

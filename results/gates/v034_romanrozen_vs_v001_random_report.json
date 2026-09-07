@@ -1,0 +1,23 @@
+{
+  "opponent": "v001_random",
+  "candidates": [
+    "v034_romanrozen_clone"
+  ],
+  "rows": {
+    "v034_romanrozen_clone": {
+      "n": 30,
+      "w": 15,
+      "l": 0,
+      "d": 0,
+      "bad": 15,
+      "wr": 1.0,
+      "wilson_lo": 0.7961107336956521,
+      "wilson_hi": 1.0,
+      "n_exceptions": 0,
+      "n_illegal": 15,
+      "n_aborted": 0,
+      "median_moves": 25.0,
+      "mean_moves": 27.0
+    }
+  }
+}

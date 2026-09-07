@@ -1,0 +1,23 @@
+{
+  "opponent": "v009a_crustle",
+  "candidates": [
+    "v036_archaludon_patched"
+  ],
+  "rows": {
+    "v036_archaludon_patched": {
+      "n": 150,
+      "w": 131,
+      "l": 18,
+      "d": 1,
+      "bad": 0,
+      "wr": 0.8791946308724832,
+      "wilson_lo": 0.8171241452018015,
+      "wilson_hi": 0.9222033677266158,
+      "n_exceptions": 0,
+      "n_illegal": 0,
+      "n_aborted": 0,
+      "median_moves": 70.0,
+      "mean_moves": 70.46
+    }
+  }
+}

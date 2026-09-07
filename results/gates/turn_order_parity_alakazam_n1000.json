@@ -1,0 +1,41 @@
+{
+  "alakazam_aidy": {
+    "first": {
+      "mode": "first",
+      "opp_deck_name": "alakazam_aidy",
+      "n_games": 1000,
+      "wins": 965,
+      "losses": 35,
+      "draws": 0,
+      "win_equivalent": 965.0,
+      "win_rate": 0.965,
+      "wilson95_lo": 0.9517130967996695,
+      "wilson95_hi": 0.9747278875149873,
+      "exceptions": 0,
+      "illegal": 0,
+      "timeouts": 0,
+      "elapsed_s": 9.558631181716919,
+      "games_per_sec": 104.61748978376005
+    },
+    "second": {
+      "mode": "second",
+      "opp_deck_name": "alakazam_aidy",
+      "n_games": 1000,
+      "wins": 949,
+      "losses": 51,
+      "draws": 0,
+      "win_equivalent": 949.0,
+      "win_rate": 0.949,
+      "wilson95_lo": 0.9335641957120492,
+      "wilson95_hi": 0.9609992493573721,
+      "exceptions": 0,
+      "illegal": 0,
+      "timeouts": 0,
+      "elapsed_s": 9.164600849151611,
+      "games_per_sec": 109.11549956838245
+    },
+    "delta_wr": 0.016000000000000014,
+    "z": 1.7636596871878696,
+    "p_value": 0.07778929211070883
+  }
+}

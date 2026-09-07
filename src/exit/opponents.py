@@ -160,8 +160,8 @@ def _make_inline_random_policy(deck: list[int]) -> Callable[[dict], list[int]]:
         n = len(opts)
         if n == 0:
             return []
-        min_c = int(sel.get("minCount") or 1)
-        max_c = int(sel.get("maxCount") or 1)
+        min_c = int(sel.get("minCount") if sel.get("minCount") is not None else 1)
+        max_c = int(sel.get("maxCount") if sel.get("maxCount") is not None else 1)
         k = max(1, min_c)
         k = min(k, max_c, n)
         return _rng.sample(range(n), k)

@@ -20,6 +20,10 @@ data/*.pdf
 data/*.zip
 data/episodes/
 data/il/*.npz
+data/deck_scan_maj_pool/pairs.jsonl
+data/il_grimmsnarl_v2/pairs.jsonl
+data/il_grimmsnarl_v2/pairs_by_day/
+data/kaggle_daily/
 
 # Trained models (binary weights)
 models/
@@ -56,3 +60,20 @@ scratchpad/gold/cardemb_out*/
 data/il/cardemb/*.pt
 *.pth
 new_data/
+
+# --- Крупные артефакты (добавлено при архивации проекта) ---
+data/kaggle_daily_zips/
+data/belief/
+data/deck_scan/
+data/deck_scan_maj/
+data/deck_scan_maj_pool/
+data/il_grimmsnarl_v2/
+data/busyaprime_live_meta/
+data/external_agents/
+out/
+scratchpad/
+worktree_backup_*/
+.claude_merge_backup_*/
+submissions/*/
+*.bak
+episode-*-agent-*-logs.json

@@ -1,0 +1,38 @@
+{
+  "tag": "guard_smoke_core_gate",
+  "agent": {
+    "ckpt": null,
+    "agent_dir": "scout_guard",
+    "deck": "/Users/max/kaggle-pokemon-tcg-ai-battle/submissions/scout_guard/deck.csv",
+    "label": "submission:scout_guard"
+  },
+  "agent_ckpt_exceptions": null,
+  "excluded_pairs": [],
+  "opponents": {
+    "scout_deeper_h2h": {
+      "opponent": "scout_deeper_h2h",
+      "opponent_dir": "sub:/Users/max/kaggle-pokemon-tcg-ai-battle/submissions/scout_deeper",
+      "n_games": 4,
+      "wins": 0,
+      "losses": 4,
+      "draws": 0,
+      "win_rate": 0.0,
+      "wilson95_lo": 0.0,
+      "wilson95_hi": 0.48990002040399916,
+      "decisive_win_rate": 0.0,
+      "decisive_n": 4,
+      "avg_game_length": 110.5,
+      "min_game_length": 70,
+      "max_game_length": 138,
+      "exc_agent": 0,
+      "exc_opp": 0,
+      "illegal_agent": 0,
+      "illegal_opp": 0,
+      "timeouts": 0,
+      "crashes": 0,
+      "elapsed_s": 92.15802907943726
+    }
+  },
+  "overall_win_rate": 0.0,
+  "generated": "2026-07-29 20:37:12"
+}

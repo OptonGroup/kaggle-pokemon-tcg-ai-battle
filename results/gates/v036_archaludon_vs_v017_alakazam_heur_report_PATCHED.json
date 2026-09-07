@@ -1,0 +1,23 @@
+{
+  "opponent": "v017_alakazam_heur",
+  "candidates": [
+    "v036_archaludon_patched"
+  ],
+  "rows": {
+    "v036_archaludon_patched": {
+      "n": 100,
+      "w": 85,
+      "l": 15,
+      "d": 0,
+      "bad": 0,
+      "wr": 0.85,
+      "wilson_lo": 0.7671626666784216,
+      "wilson_hi": 0.906940968088377,
+      "n_exceptions": 0,
+      "n_illegal": 0,
+      "n_aborted": 0,
+      "median_moves": 88.5,
+      "mean_moves": 94.78
+    }
+  }
+}

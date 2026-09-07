@@ -1,0 +1,118 @@
+{
+  "tag": "scout_g_p0_band_summary",
+  "candidate": "scout_g_p0",
+  "baseline_source": "/Users/max/kaggle-pokemon-tcg-ai-battle/results/gates/v073_core_gate.json",
+  "excluded_pairs": [],
+  "archetype_wr": {
+    "alakazam": 0.5,
+    "archaludon": 0.5,
+    "crustle": 0.5,
+    "dragapult": 0.5,
+    "lucario": 0.39,
+    "mirror": 0.5,
+    "rest": 0.5,
+    "starmie": 0.5
+  },
+  "archetype_degraded": {
+    "alakazam": true,
+    "archaludon": true,
+    "crustle": true,
+    "dragapult": false,
+    "lucario": false,
+    "mirror": true,
+    "rest": false,
+    "starmie": true
+  },
+  "bands": {
+    "band_700_799": {
+      "mix": {
+        "lucario": 0.2625,
+        "archaludon": 0.1775,
+        "alakazam": 0.17,
+        "dragapult": 0.115,
+        "starmie": 0.0588,
+        "rest": 0.2162
+      },
+      "weighted_wr": 0.471125,
+      "degraded_components": [
+        "archaludon",
+        "alakazam",
+        "starmie"
+      ],
+      "passed": false
+    },
+    "band_800_899": {
+      "mix": {
+        "archaludon": 0.2903,
+        "alakazam": 0.2716,
+        "lucario": 0.0719,
+        "crustle": 0.0479,
+        "mirror": 0.0519,
+        "rest": 0.3664
+      },
+      "weighted_wr": 0.5420910000000001,
+      "degraded_components": [
+        "archaludon",
+        "alakazam",
+        "crustle",
+        "mirror"
+      ],
+      "passed": true
+    },
+    "band_900_1099": {
+      "mix": {
+        "alakazam": 0.38,
+        "mirror": 0.23,
+        "crustle": 0.09,
+        "archaludon": 0.09,
+        "lucario": 0.07,
+        "starmie": 0.026,
+        "rest": 0.114
+      },
+      "weighted_wr": 0.49229999999999996,
+      "degraded_components": [
+        "alakazam",
+        "mirror",
+        "crustle",
+        "archaludon",
+        "starmie"
+      ],
+      "passed": false
+    }
+  },
+  "regressions": [
+    {
+      "key": "v009a_crustle",
+      "has_baseline": false
+    },
+    {
+      "key": "v044_archaludon",
+      "has_baseline": false
+    },
+    {
+      "key": "ext_maulikgajera_lucario",
+      "has_baseline": false
+    }
+  ],
+  "acceptance": {
+    "band_wr_pass": {
+      "band_700_799": false,
+      "band_800_899": true,
+      "band_900_1099": false
+    },
+    "band_wr_pass_all": false,
+    "mirror_pass": false,
+    "mirror_v063_h2h_wr": null,
+    "mirror_v070_h2h_wr": null,
+    "incumbent_pass": false,
+    "incumbent_v072_h2h_wr": null,
+    "incumbent_v072_h2h_lo": null,
+    "no_regressions_pass": true,
+    "n_significant_regressions": 0,
+    "regression_keys": [],
+    "no_crashes_pass": true,
+    "crash_total": 0,
+    "overall_pass": false
+  },
+  "generated": "2026-07-29 22:38:43"
+}

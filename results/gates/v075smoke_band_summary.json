@@ -1,0 +1,263 @@
+{
+  "tag": "v075smoke_band_summary",
+  "candidate": "v075_promo",
+  "baseline_source": "/Users/max/kaggle-pokemon-tcg-ai-battle/results/gates/v073_core_gate.json",
+  "excluded_pairs": [
+    {
+      "key": "v070_h2h",
+      "opp_dir": "/Users/max/kaggle-pokemon-tcg-ai-battle/.claude/worktrees/v070-grimmsnarl-hybrid/submissions/v070_grimmsnarl_hybrid",
+      "reason": "dir not found: /Users/max/kaggle-pokemon-tcg-ai-battle/.claude/worktrees/v070-grimmsnarl-hybrid/submissions/v070_grimmsnarl_hybrid"
+    }
+  ],
+  "archetype_wr": {
+    "alakazam": 0.75,
+    "archaludon": 0.25,
+    "crustle": 0.625,
+    "dragapult": 0.5,
+    "lucario": 0.375,
+    "mirror": 0.5,
+    "rest": 0.5,
+    "starmie": 0.5
+  },
+  "archetype_degraded": {
+    "alakazam": false,
+    "archaludon": false,
+    "crustle": false,
+    "dragapult": false,
+    "lucario": false,
+    "mirror": false,
+    "rest": false,
+    "starmie": true
+  },
+  "bands": {
+    "band_700_799": {
+      "mix": {
+        "lucario": 0.2625,
+        "archaludon": 0.1775,
+        "alakazam": 0.17,
+        "dragapult": 0.115,
+        "starmie": 0.0588,
+        "rest": 0.2162
+      },
+      "weighted_wr": 0.4653125,
+      "degraded_components": [
+        "starmie"
+      ],
+      "passed": false
+    },
+    "band_800_899": {
+      "mix": {
+        "archaludon": 0.2903,
+        "alakazam": 0.2716,
+        "lucario": 0.0719,
+        "crustle": 0.0479,
+        "mirror": 0.0519,
+        "rest": 0.3664
+      },
+      "weighted_wr": 0.5423250000000001,
+      "degraded_components": [],
+      "passed": true
+    },
+    "band_900_1099": {
+      "mix": {
+        "alakazam": 0.38,
+        "mirror": 0.23,
+        "crustle": 0.09,
+        "archaludon": 0.09,
+        "lucario": 0.07,
+        "starmie": 0.026,
+        "rest": 0.114
+      },
+      "weighted_wr": 0.5750000000000002,
+      "degraded_components": [
+        "starmie"
+      ],
+      "passed": true
+    }
+  },
+  "regressions": [
+    {
+      "key": "v017",
+      "has_baseline": true,
+      "candidate_wr": 1.0,
+      "candidate_n": 4,
+      "baseline_wr": 0.97,
+      "baseline_n": 1000,
+      "ztest_z": 0.3517045614754359,
+      "ztest_p_value": 0.7250598393085272,
+      "is_regression": false
+    },
+    {
+      "key": "v016",
+      "has_baseline": true,
+      "candidate_wr": 1.0,
+      "candidate_n": 4,
+      "baseline_wr": 0.9855,
+      "baseline_n": 1000,
+      "ztest_z": 0.24259003319209801,
+      "ztest_p_value": 0.8083230029780479,
+      "is_regression": false
+    },
+    {
+      "key": "v009a",
+      "has_baseline": true,
+      "candidate_wr": 0.75,
+      "candidate_n": 4,
+      "baseline_wr": 0.279,
+      "baseline_n": 1000,
+      "ztest_z": 2.091821422144864,
+      "ztest_p_value": 0.03645449330414129,
+      "is_regression": false
+    },
+    {
+      "key": "v044",
+      "has_baseline": true,
+      "candidate_wr": 0.5,
+      "candidate_n": 4,
+      "baseline_wr": 0.333,
+      "baseline_n": 1000,
+      "ztest_z": 0.706932357985334,
+      "ztest_p_value": 0.47960851424791273,
+      "is_regression": false
+    },
+    {
+      "key": "v049",
+      "has_baseline": true,
+      "candidate_wr": 0.25,
+      "candidate_n": 4,
+      "baseline_wr": 0.344,
+      "baseline_n": 1000,
+      "ztest_z": -0.3950685430989713,
+      "ztest_p_value": 0.6927923034658272,
+      "is_regression": false
+    },
+    {
+      "key": "v065_h2h",
+      "has_baseline": true,
+      "candidate_wr": 0.5,
+      "candidate_n": 4,
+      "baseline_wr": 0.5085,
+      "baseline_n": 1000,
+      "ztest_z": -0.03393706858041277,
+      "ztest_p_value": 0.9729273337498957,
+      "is_regression": false
+    },
+    {
+      "key": "v072_h2h",
+      "has_baseline": true,
+      "candidate_wr": 0.5,
+      "candidate_n": 4,
+      "baseline_wr": 0.49,
+      "baseline_n": 1000,
+      "ztest_z": 0.039928162117499263,
+      "ztest_p_value": 0.9681503988775713,
+      "is_regression": false
+    },
+    {
+      "key": "v073_h2h",
+      "has_baseline": false
+    },
+    {
+      "key": "v063_h2h",
+      "has_baseline": true,
+      "candidate_wr": 0.5,
+      "candidate_n": 4,
+      "baseline_wr": 0.5065,
+      "baseline_n": 1000,
+      "ztest_z": -0.02595033093823576,
+      "ztest_p_value": 0.9792969552623445,
+      "is_regression": false
+    },
+    {
+      "key": "ext_prvsiyan_alak_v8",
+      "has_baseline": true,
+      "candidate_wr": 0.75,
+      "candidate_n": 4,
+      "baseline_wr": 0.426,
+      "baseline_n": 1000,
+      "ztest_z": 1.3073121390410782,
+      "ztest_p_value": 0.1911067231655917,
+      "is_regression": false
+    },
+    {
+      "key": "ext_prvsiyan_alak_v9",
+      "has_baseline": true,
+      "candidate_wr": 0.25,
+      "candidate_n": 4,
+      "baseline_wr": 0.401,
+      "baseline_n": 1000,
+      "ztest_z": -0.6151237948739388,
+      "ztest_p_value": 0.5384729689360667,
+      "is_regression": false
+    },
+    {
+      "key": "ext_maulikgajera_lucario",
+      "has_baseline": true,
+      "candidate_wr": 0.5,
+      "candidate_n": 4,
+      "baseline_wr": 0.269,
+      "baseline_n": 1000,
+      "ztest_z": 1.0386571120086128,
+      "ztest_p_value": 0.2989642340622194,
+      "is_regression": false
+    },
+    {
+      "key": "ext_nursrijan_lucario",
+      "has_baseline": true,
+      "candidate_wr": 0.25,
+      "candidate_n": 4,
+      "baseline_wr": 0.249,
+      "baseline_n": 1000,
+      "ztest_z": 0.0046157382711542955,
+      "ztest_p_value": 0.9963171867738241,
+      "is_regression": false
+    },
+    {
+      "key": "v036_h2h",
+      "has_baseline": true,
+      "candidate_wr": 0.0,
+      "candidate_n": 4,
+      "baseline_wr": 0.279,
+      "baseline_n": 1000,
+      "ztest_z": -1.2431683659934791,
+      "ztest_p_value": 0.21380579716949882,
+      "is_regression": false
+    },
+    {
+      "key": "ext_tusk_crustle",
+      "has_baseline": true,
+      "candidate_wr": 0.5,
+      "candidate_n": 4,
+      "baseline_wr": 0.622,
+      "baseline_n": 1000,
+      "ztest_z": -0.5020796158188288,
+      "ztest_p_value": 0.6156115183036376,
+      "is_regression": false
+    },
+    {
+      "key": "ext_masamikobayashi_archaludon",
+      "has_baseline": false
+    }
+  ],
+  "acceptance": {
+    "band_wr_pass": {
+      "band_700_799": false,
+      "band_800_899": true,
+      "band_900_1099": true
+    },
+    "band_wr_pass_all": false,
+    "mirror_pass": false,
+    "mirror_v063_h2h_wr": 0.5,
+    "mirror_v070_h2h_wr": null,
+    "incumbent_pass": false,
+    "incumbent_v072_h2h_wr": 0.5,
+    "incumbent_v072_h2h_lo": 0.15003570882017148,
+    "no_regressions_pass": true,
+    "n_significant_regressions": 0,
+    "regression_keys": [],
+    "no_crashes_pass": true,
+    "crash_total": 0,
+    "overall_pass": false
+  },
+  "generated": "2026-07-25 13:59:27"
+}

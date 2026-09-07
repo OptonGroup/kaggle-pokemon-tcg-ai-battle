@@ -1,0 +1,141 @@
+{
+  "tag": "smoke_phase3_proxy_gate",
+  "candidates": {
+    "smoke_phase3": "/Users/max/kaggle-pokemon-tcg-ai-battle/submissions/v074_fullmetal"
+  },
+  "proxy_decks": [
+    "Starmie_live",
+    "Lopunny_live",
+    "OgerponTeal_live",
+    "Dragapult",
+    "Garchomp"
+  ],
+  "proxies": {
+    "Starmie_live": {
+      "smoke_phase3": {
+        "opponent": "smoke_phase3_vs_Starmie_live",
+        "opponent_dir": "meta:Starmie_live",
+        "n_games": 10,
+        "wins": 8,
+        "losses": 2,
+        "draws": 0,
+        "win_rate": 0.8,
+        "wilson95_lo": 0.49015684672072335,
+        "wilson95_hi": 0.9433190520193067,
+        "decisive_win_rate": 0.8,
+        "decisive_n": 10,
+        "avg_game_length": 85.4,
+        "min_game_length": 33,
+        "max_game_length": 122,
+        "exc_agent": 0,
+        "exc_opp": 0,
+        "illegal_agent": 0,
+        "illegal_opp": 0,
+        "timeouts": 0,
+        "crashes": 0,
+        "elapsed_s": 0.14712905883789062
+      }
+    },
+    "Lopunny_live": {
+      "smoke_phase3": {
+        "opponent": "smoke_phase3_vs_Lopunny_live",
+        "opponent_dir": "meta:Lopunny_live",
+        "n_games": 10,
+        "wins": 9,
+        "losses": 1,
+        "draws": 0,
+        "win_rate": 0.9,
+        "wilson95_lo": 0.5958436145024278,
+        "wilson95_hi": 0.9821242504842788,
+        "decisive_win_rate": 0.9,
+        "decisive_n": 10,
+        "avg_game_length": 104.5,
+        "min_game_length": 14,
+        "max_game_length": 244,
+        "exc_agent": 0,
+        "exc_opp": 0,
+        "illegal_agent": 0,
+        "illegal_opp": 0,
+        "timeouts": 0,
+        "crashes": 0,
+        "elapsed_s": 0.15966176986694336
+      }
+    },
+    "OgerponTeal_live": {
+      "smoke_phase3": {
+        "opponent": "smoke_phase3_vs_OgerponTeal_live",
+        "opponent_dir": "meta:OgerponTeal_live",
+        "n_games": 10,
+        "wins": 5,
+        "losses": 5,
+        "draws": 0,
+        "win_rate": 0.5,
+        "wilson95_lo": 0.23658959361548731,
+        "wilson95_hi": 0.7634104063845126,
+        "decisive_win_rate": 0.5,
+        "decisive_n": 10,
+        "avg_game_length": 88.4,
+        "min_game_length": 55,
+        "max_game_length": 148,
+        "exc_agent": 0,
+        "exc_opp": 0,
+        "illegal_agent": 0,
+        "illegal_opp": 0,
+        "timeouts": 0,
+        "crashes": 0,
+        "elapsed_s": 0.13921904563903809
+      }
+    },
+    "Dragapult": {
+      "smoke_phase3": {
+        "opponent": "smoke_phase3_vs_Dragapult",
+        "opponent_dir": "meta:Dragapult",
+        "n_games": 10,
+        "wins": 10,
+        "losses": 0,
+        "draws": 0,
+        "win_rate": 1.0,
+        "wilson95_lo": 0.7224598312333834,
+        "wilson95_hi": 1.0,
+        "decisive_win_rate": 1.0,
+        "decisive_n": 10,
+        "avg_game_length": 123.9,
+        "min_game_length": 91,
+        "max_game_length": 172,
+        "exc_agent": 0,
+        "exc_opp": 0,
+        "illegal_agent": 0,
+        "illegal_opp": 0,
+        "timeouts": 0,
+        "crashes": 0,
+        "elapsed_s": 0.16768693923950195
+      }
+    },
+    "Garchomp": {
+      "smoke_phase3": {
+        "opponent": "smoke_phase3_vs_Garchomp",
+        "opponent_dir": "meta:Garchomp",
+        "n_games": 10,
+        "wins": 10,
+        "losses": 0,
+        "draws": 0,
+        "win_rate": 1.0,
+        "wilson95_lo": 0.7224598312333834,
+        "wilson95_hi": 1.0,
+        "decisive_win_rate": 1.0,
+        "decisive_n": 10,
+        "avg_game_length": 126.6,
+        "min_game_length": 34,
+        "max_game_length": 174,
+        "exc_agent": 0,
+        "exc_opp": 0,
+        "illegal_agent": 0,
+        "illegal_opp": 0,
+        "timeouts": 0,
+        "crashes": 0,
+        "elapsed_s": 0.16417384147644043
+      }
+    }
+  },
+  "generated": "2026-08-02 12:14:19"
+}

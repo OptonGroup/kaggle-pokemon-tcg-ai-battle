@@ -52,10 +52,14 @@ def wilson_ci(wins: int, n: int, z: float = 1.96) -> tuple[float, float]:
 # Timed game loop
 # ---------------------------------------------------------------------------
 
-def run_game_timed(agent0, agent1, deck0: list[int], deck1: list[int]) -> tuple[int, int, float]:
+def run_game_timed(agent0, agent1, deck0: list[int], deck1: list[int],
+                   overage_bank: float = 600.0) -> tuple[int, int, float]:
     """Run a single game and return (winner, move_count, mean_move_time_seconds).
 
     winner: 0, 1, or -1 (draw).
+
+    overage_bank mirrors the live per-episode time bank each agent may spend
+    (600s on Kaggle). Exhausting it loses the game, as DeadlineExceeded does live.
     """
     obs_dict, start_data = battle_start(deck0, deck1)
     if obs_dict is None:
@@ -66,6 +70,11 @@ def run_game_timed(agent0, agent1, deck0: list[int], deck1: list[int]) -> tuple[
 
     move_count = 0
     total_move_time = 0.0
+    # The live engine bills each move against a per-episode bank and exposes what
+    # is left as observation.remainingOverageTime (actTimeout=0, 600s bank). Time-
+    # budgeted agents read it to pace themselves, so a harness that omits it makes
+    # them behave as if the bank were empty and measures the wrong pilot.
+    bank = {0: overage_bank, 1: overage_bank}
 
     try:
         while True:
@@ -79,9 +88,17 @@ def run_game_timed(agent0, agent1, deck0: list[int], deck1: list[int]) -> tuple[
             your_index = obs.current.yourIndex if obs.current else 0
             agent = agent0 if your_index == 0 else agent1
 
+            obs_dict["remainingOverageTime"] = bank[your_index]
             t0 = time.perf_counter()
             select = agent(obs_dict)
-            total_move_time += time.perf_counter() - t0
+            dt = time.perf_counter() - t0
+            total_move_time += dt
+            bank[your_index] -= dt
+            if bank[your_index] <= 0:
+                # Live, this is DeadlineExceeded: the offender's reward is nulled.
+                return (1 - your_index), move_count, (
+                    total_move_time / move_count if move_count else 0.0
+                )
 
             obs_dict = battle_select(select)
             move_count += 1

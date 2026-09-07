@@ -1,0 +1,71 @@
+{
+  "tag": "v060_antitank_tank",
+  "agent": {
+    "ckpt": null,
+    "agent_dir": "v060_grimmsnarl_jiatu",
+    "deck": "/Users/max/kaggle-pokemon-tcg-ai-battle/submissions/v060_grimmsnarl_jiatu/deck.csv",
+    "label": "submission:v060_grimmsnarl_jiatu"
+  },
+  "agent_ckpt_exceptions": null,
+  "opponents": {
+    "v009a_crustle": {
+      "opponent": "v009a_crustle",
+      "opponent_dir": "v009a_crustle",
+      "n_games": 500,
+      "wins": 94,
+      "losses": 405,
+      "draws": 1,
+      "win_rate": 0.189,
+      "wilson95_lo": 0.1571029508821285,
+      "wilson95_hi": 0.2256395618440934,
+      "decisive_win_rate": 0.18837675350701402,
+      "decisive_n": 499,
+      "avg_game_length": 136.906,
+      "min_game_length": 19,
+      "max_game_length": 310,
+      "exc_agent": 0,
+      "exc_opp": 0,
+      "elapsed_s": 14.496770708006807
+    },
+    "v044_archaludon_abomasnow": {
+      "opponent": "v044_archaludon_abomasnow",
+      "opponent_dir": "v044_archaludon_abomasnow",
+      "n_games": 500,
+      "wins": 32,
+      "losses": 468,
+      "draws": 0,
+      "win_rate": 0.064,
+      "wilson95_lo": 0.045695733565557124,
+      "wilson95_hi": 0.08895293379339062,
+      "decisive_win_rate": 0.064,
+      "decisive_n": 500,
+      "avg_game_length": 140.316,
+      "min_game_length": 23,
+      "max_game_length": 284,
+      "exc_agent": 0,
+      "exc_opp": 0,
+      "elapsed_s": 15.079479958047159
+    },
+    "v049_bench_sticky_guard": {
+      "opponent": "v049_bench_sticky_guard",
+      "opponent_dir": "v049_bench_sticky_guard",
+      "n_games": 500,
+      "wins": 33,
+      "losses": 467,
+      "draws": 0,
+      "win_rate": 0.066,
+      "wilson95_lo": 0.04737823802541255,
+      "wilson95_hi": 0.09123993085941157,
+      "decisive_win_rate": 0.066,
+      "decisive_n": 500,
+      "avg_game_length": 137.496,
+      "min_game_length": 19,
+      "max_game_length": 278,
+      "exc_agent": 0,
+      "exc_opp": 0,
+      "elapsed_s": 16.34058354201261
+    }
+  },
+  "overall_win_rate": 0.106,
+  "generated": "2026-07-21 02:13:07"
+}

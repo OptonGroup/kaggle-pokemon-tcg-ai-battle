@@ -1,0 +1,101 @@
+{
+  "summary": {
+    "v060_vs_v009a": {
+      "job": {
+        "tag": "v060_vs_v009a",
+        "kind": "pool",
+        "agent": "v060",
+        "opponent": "v009a",
+        "n_games": 300,
+        "seed_base": 20260721001
+      },
+      "n": 300,
+      "wins": 16,
+      "losses": 284,
+      "draws": 0,
+      "aborted": 0,
+      "win_rate": 0.05333333333333334,
+      "wilson95_lo": 0.03309162538404202,
+      "wilson95_hi": 0.08486983874726851,
+      "avg_moves": 130.39
+    },
+    "v060_vs_v017": {
+      "job": {
+        "tag": "v060_vs_v017",
+        "kind": "pool",
+        "agent": "v060",
+        "opponent": "v017",
+        "n_games": 300,
+        "seed_base": 20260721002
+      },
+      "n": 300,
+      "wins": 210,
+      "losses": 90,
+      "draws": 0,
+      "aborted": 0,
+      "win_rate": 0.7,
+      "wilson95_lo": 0.6458814453011743,
+      "wilson95_hi": 0.7490611826997313,
+      "avg_moves": 136.77666666666667
+    },
+    "v060_vs_v016": {
+      "job": {
+        "tag": "v060_vs_v016",
+        "kind": "pool",
+        "agent": "v060",
+        "opponent": "v016",
+        "n_games": 300,
+        "seed_base": 20260721003
+      },
+      "n": 300,
+      "wins": 244,
+      "losses": 56,
+      "draws": 0,
+      "aborted": 0,
+      "win_rate": 0.8133333333333334,
+      "wilson95_lo": 0.7653802718106468,
+      "wilson95_hi": 0.8533631787241056,
+      "avg_moves": 168.51
+    },
+    "v060_vs_v044": {
+      "job": {
+        "tag": "v060_vs_v044",
+        "kind": "pool",
+        "agent": "v060",
+        "opponent": "v044",
+        "n_games": 300,
+        "seed_base": 20260721004
+      },
+      "n": 300,
+      "wins": 11,
+      "losses": 289,
+      "draws": 0,
+      "aborted": 0,
+      "win_rate": 0.03666666666666667,
+      "wilson95_lo": 0.02059509146818067,
+      "wilson95_hi": 0.06445448699638771,
+      "avg_moves": 137.54666666666665
+    },
+    "v060_vs_v049": {
+      "job": {
+        "tag": "v060_vs_v049",
+        "kind": "pool",
+        "agent": "v060",
+        "opponent": "v049",
+        "n_games": 300,
+        "seed_base": 20260721005
+      },
+      "n": 300,
+      "wins": 19,
+      "losses": 281,
+      "draws": 0,
+      "aborted": 0,
+      "win_rate": 0.06333333333333334,
+      "wilson95_lo": 0.04091655604878176,
+      "wilson95_hi": 0.09679203948257407,
+      "avg_moves": 139.8
+    }
+  },
+  "elapsed_s": 17.160277128219604,
+  "n_tasks": 1500
+}

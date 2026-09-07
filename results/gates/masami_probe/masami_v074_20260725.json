@@ -1,0 +1,59 @@
+{
+  "tag": "v074_core_gate",
+  "agent": {
+    "ckpt": null,
+    "agent_dir": "v074_fullmetal",
+    "deck": "/Users/max/kaggle-pokemon-tcg-ai-battle/.claude/worktrees/ext-masami-archaludon/submissions/v074_fullmetal/deck.csv",
+    "label": "submission:v074_fullmetal"
+  },
+  "agent_ckpt_exceptions": null,
+  "excluded_pairs": [
+    {
+      "key": "v044",
+      "opp_dir": "/Users/max/kaggle-pokemon-tcg-ai-battle/.claude/worktrees/ext-masami-archaludon/submissions/v044_archaludon_abomasnow",
+      "reason": "dir not found: /Users/max/kaggle-pokemon-tcg-ai-battle/.claude/worktrees/ext-masami-archaludon/submissions/v044_archaludon_abomasnow"
+    },
+    {
+      "key": "v049",
+      "opp_dir": "/Users/max/kaggle-pokemon-tcg-ai-battle/.claude/worktrees/ext-masami-archaludon/submissions/v049_bench_sticky_guard",
+      "reason": "dir not found: /Users/max/kaggle-pokemon-tcg-ai-battle/.claude/worktrees/ext-masami-archaludon/submissions/v049_bench_sticky_guard"
+    },
+    {
+      "key": "v070_h2h",
+      "opp_dir": "/Users/max/kaggle-pokemon-tcg-ai-battle/.claude/worktrees/ext-masami-archaludon/.claude/worktrees/v070-grimmsnarl-hybrid/submissions/v070_grimmsnarl_hybrid",
+      "reason": "dir not found: /Users/max/kaggle-pokemon-tcg-ai-battle/.claude/worktrees/ext-masami-archaludon/.claude/worktrees/v070-grimmsnarl-hybrid/submissions/v070_grimmsnarl_hybrid"
+    },
+    {
+      "key": "v036_h2h",
+      "opp_dir": "/Users/max/kaggle-pokemon-tcg-ai-battle/.claude/worktrees/ext-masami-archaludon/submissions/v036_archaludon_patched",
+      "reason": "dir not found: /Users/max/kaggle-pokemon-tcg-ai-battle/.claude/worktrees/ext-masami-archaludon/submissions/v036_archaludon_patched"
+    }
+  ],
+  "opponents": {
+    "ext_masamikobayashi_archaludon": {
+      "opponent": "ext_masamikobayashi_archaludon",
+      "opponent_dir": "sub:/Users/max/kaggle-pokemon-tcg-ai-battle/.claude/worktrees/ext-masami-archaludon/submissions/external_masamikobayashi_archaludon",
+      "n_games": 300,
+      "wins": 105,
+      "losses": 195,
+      "draws": 0,
+      "win_rate": 0.35,
+      "wilson95_lo": 0.2982310964752725,
+      "wilson95_hi": 0.4055619325240481,
+      "decisive_win_rate": 0.35,
+      "decisive_n": 300,
+      "avg_game_length": 142.12333333333333,
+      "min_game_length": 27,
+      "max_game_length": 242,
+      "exc_agent": 0,
+      "exc_opp": 0,
+      "illegal_agent": 0,
+      "illegal_opp": 0,
+      "timeouts": 0,
+      "crashes": 0,
+      "elapsed_s": 13.173727989196777
+    }
+  },
+  "overall_win_rate": 0.35,
+  "generated": "2026-07-25 00:50:37"
+}

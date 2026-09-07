@@ -1,0 +1,84 @@
+{
+  "description": "v060 anti-tank guard gate (2026-07-21): item 3.6 ko_guard Rock-Inn fix + Adrena-Brain opportunistic tank branch, vs v060_diag_gate.json baseline (same day, pre-patch).",
+  "baseline_ref": "results/gates/v060_diag_gate.json",
+  "opponents": {
+    "v009a_crustle": {
+      "n_games": 500,
+      "wins": 94,
+      "losses": 405,
+      "draws": 1,
+      "win_rate": 0.189,
+      "wilson95_lo": 0.1571029508821285,
+      "wilson95_hi": 0.2256395618440934,
+      "baseline_win_rate": 0.05333333333333334,
+      "delta": 0.13566666666666666,
+      "avg_game_length": 136.906
+    },
+    "v044_archaludon_abomasnow": {
+      "n_games": 500,
+      "wins": 32,
+      "losses": 468,
+      "draws": 0,
+      "win_rate": 0.064,
+      "wilson95_lo": 0.045695733565557124,
+      "wilson95_hi": 0.08895293379339062,
+      "baseline_win_rate": 0.03666666666666667,
+      "delta": 0.027333333333333334,
+      "avg_game_length": 140.316
+    },
+    "v049_bench_sticky_guard": {
+      "n_games": 500,
+      "wins": 33,
+      "losses": 467,
+      "draws": 0,
+      "win_rate": 0.066,
+      "wilson95_lo": 0.04737823802541255,
+      "wilson95_hi": 0.09123993085941157,
+      "baseline_win_rate": 0.06333333333333334,
+      "delta": 0.0026666666666666644,
+      "avg_game_length": 137.496
+    },
+    "v016_alakazam": {
+      "n_games": 300,
+      "wins": 240,
+      "losses": 60,
+      "draws": 0,
+      "win_rate": 0.8,
+      "wilson95_lo": 0.7510701139033206,
+      "wilson95_hi": 0.8413438280980382,
+      "baseline_win_rate": 0.8133333333333334,
+      "delta": -0.013333333333333308,
+      "avg_game_length": 170.86
+    },
+    "v017_alakazam_heur": {
+      "n_games": 300,
+      "wins": 211,
+      "losses": 88,
+      "draws": 1,
+      "win_rate": 0.705,
+      "wilson95_lo": 0.6510638146399235,
+      "wilson95_hi": 0.7537523790610048,
+      "baseline_win_rate": 0.7,
+      "delta": 0.0050000000000000044,
+      "avg_game_length": 130.85666666666665
+    }
+  },
+  "tank_cohort_summary": {
+    "opponents": [
+      "v009a_crustle",
+      "v044_archaludon_abomasnow",
+      "v049_bench_sticky_guard"
+    ],
+    "baseline_avg_wr": 0.05111111111111111,
+    "patched_avg_wr": 0.10633333333333334
+  },
+  "alakazam_cohort_summary": {
+    "opponents": [
+      "v016_alakazam",
+      "v017_alakazam_heur"
+    ],
+    "baseline_avg_wr": 0.7566666666666666,
+    "patched_avg_wr": 0.7525
+  },
+  "generated": "2026-07-21"
+}

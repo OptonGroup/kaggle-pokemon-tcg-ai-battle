@@ -1,0 +1,37 @@
+{
+  "tag": "v073_paired_proxy_gate",
+  "candidates": {
+    "v073_paired": "/Users/max/kaggle-pokemon-tcg-ai-battle/submissions/v073_rockinn_damage"
+  },
+  "proxy_decks": [
+    "Starmie_live"
+  ],
+  "proxies": {
+    "Starmie_live": {
+      "v073_paired": {
+        "opponent": "v073_paired_vs_Starmie_live",
+        "opponent_dir": "meta:Starmie_live",
+        "n_games": 1000,
+        "wins": 866,
+        "losses": 134,
+        "draws": 0,
+        "win_rate": 0.866,
+        "wilson95_lo": 0.8434794492074035,
+        "wilson95_hi": 0.8857192610273587,
+        "decisive_win_rate": 0.866,
+        "decisive_n": 1000,
+        "avg_game_length": 86.049,
+        "min_game_length": 16,
+        "max_game_length": 202,
+        "exc_agent": 0,
+        "exc_opp": 0,
+        "illegal_agent": 0,
+        "illegal_opp": 0,
+        "timeouts": 0,
+        "crashes": 0,
+        "elapsed_s": 10.117935180664062
+      }
+    }
+  },
+  "generated": "2026-07-24 23:06:27"
+}

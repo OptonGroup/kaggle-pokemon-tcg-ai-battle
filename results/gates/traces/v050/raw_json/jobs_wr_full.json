@@ -1,0 +1,282 @@
+[
+  {
+    "tag": "h2h_p0_vs_v049",
+    "kind": "h2h",
+    "a": "v050_p0",
+    "b": "v049",
+    "n_games": 1000,
+    "seed_base": 700000
+  },
+  {
+    "tag": "h2h_p0p1_vs_v049",
+    "kind": "h2h",
+    "a": "v050_p0p1",
+    "b": "v049",
+    "n_games": 1000,
+    "seed_base": 710000
+  },
+  {
+    "tag": "alakazam_v049_vs_v017",
+    "kind": "pool",
+    "agent": "v049",
+    "opponent": "v017",
+    "n_games": 1000,
+    "seed_base": 720000
+  },
+  {
+    "tag": "alakazam_v050_p0_vs_v017",
+    "kind": "pool",
+    "agent": "v050_p0",
+    "opponent": "v017",
+    "n_games": 1000,
+    "seed_base": 720000
+  },
+  {
+    "tag": "alakazam_v050_p0p1_vs_v017",
+    "kind": "pool",
+    "agent": "v050_p0p1",
+    "opponent": "v017",
+    "n_games": 1000,
+    "seed_base": 720000
+  },
+  {
+    "tag": "alakazam_v049_vs_v033",
+    "kind": "pool",
+    "agent": "v049",
+    "opponent": "v033",
+    "n_games": 1000,
+    "seed_base": 730000
+  },
+  {
+    "tag": "alakazam_v050_p0_vs_v033",
+    "kind": "pool",
+    "agent": "v050_p0",
+    "opponent": "v033",
+    "n_games": 1000,
+    "seed_base": 730000
+  },
+  {
+    "tag": "alakazam_v050_p0p1_vs_v033",
+    "kind": "pool",
+    "agent": "v050_p0p1",
+    "opponent": "v033",
+    "n_games": 1000,
+    "seed_base": 730000
+  },
+  {
+    "tag": "pool_v049_vs_v007",
+    "kind": "pool",
+    "agent": "v049",
+    "opponent": "v007",
+    "n_games": 300,
+    "seed_base": 740000
+  },
+  {
+    "tag": "pool_v050_p0_vs_v007",
+    "kind": "pool",
+    "agent": "v050_p0",
+    "opponent": "v007",
+    "n_games": 300,
+    "seed_base": 740000
+  },
+  {
+    "tag": "pool_v050_p0p1_vs_v007",
+    "kind": "pool",
+    "agent": "v050_p0p1",
+    "opponent": "v007",
+    "n_games": 300,
+    "seed_base": 740000
+  },
+  {
+    "tag": "pool_v049_vs_v009a",
+    "kind": "pool",
+    "agent": "v049",
+    "opponent": "v009a",
+    "n_games": 300,
+    "seed_base": 741000
+  },
+  {
+    "tag": "pool_v050_p0_vs_v009a",
+    "kind": "pool",
+    "agent": "v050_p0",
+    "opponent": "v009a",
+    "n_games": 300,
+    "seed_base": 741000
+  },
+  {
+    "tag": "pool_v050_p0p1_vs_v009a",
+    "kind": "pool",
+    "agent": "v050_p0p1",
+    "opponent": "v009a",
+    "n_games": 300,
+    "seed_base": 741000
+  },
+  {
+    "tag": "pool_v049_vs_v018",
+    "kind": "pool",
+    "agent": "v049",
+    "opponent": "v018",
+    "n_games": 300,
+    "seed_base": 742000
+  },
+  {
+    "tag": "pool_v050_p0_vs_v018",
+    "kind": "pool",
+    "agent": "v050_p0",
+    "opponent": "v018",
+    "n_games": 300,
+    "seed_base": 742000
+  },
+  {
+    "tag": "pool_v050_p0p1_vs_v018",
+    "kind": "pool",
+    "agent": "v050_p0p1",
+    "opponent": "v018",
+    "n_games": 300,
+    "seed_base": 742000
+  },
+  {
+    "tag": "pool_v049_vs_v024",
+    "kind": "pool",
+    "agent": "v049",
+    "opponent": "v024",
+    "n_games": 300,
+    "seed_base": 743000
+  },
+  {
+    "tag": "pool_v050_p0_vs_v024",
+    "kind": "pool",
+    "agent": "v050_p0",
+    "opponent": "v024",
+    "n_games": 300,
+    "seed_base": 743000
+  },
+  {
+    "tag": "pool_v050_p0p1_vs_v024",
+    "kind": "pool",
+    "agent": "v050_p0p1",
+    "opponent": "v024",
+    "n_games": 300,
+    "seed_base": 743000
+  },
+  {
+    "tag": "pool_v049_vs_v034",
+    "kind": "pool",
+    "agent": "v049",
+    "opponent": "v034",
+    "n_games": 300,
+    "seed_base": 744000
+  },
+  {
+    "tag": "pool_v050_p0_vs_v034",
+    "kind": "pool",
+    "agent": "v050_p0",
+    "opponent": "v034",
+    "n_games": 300,
+    "seed_base": 744000
+  },
+  {
+    "tag": "pool_v050_p0p1_vs_v034",
+    "kind": "pool",
+    "agent": "v050_p0p1",
+    "opponent": "v034",
+    "n_games": 300,
+    "seed_base": 744000
+  },
+  {
+    "tag": "pool_v049_vs_v036",
+    "kind": "pool",
+    "agent": "v049",
+    "opponent": "v036",
+    "n_games": 300,
+    "seed_base": 745000
+  },
+  {
+    "tag": "pool_v050_p0_vs_v036",
+    "kind": "pool",
+    "agent": "v050_p0",
+    "opponent": "v036",
+    "n_games": 300,
+    "seed_base": 745000
+  },
+  {
+    "tag": "pool_v050_p0p1_vs_v036",
+    "kind": "pool",
+    "agent": "v050_p0p1",
+    "opponent": "v036",
+    "n_games": 300,
+    "seed_base": 745000
+  },
+  {
+    "tag": "pool_v049_vs_v039",
+    "kind": "pool",
+    "agent": "v049",
+    "opponent": "v039",
+    "n_games": 300,
+    "seed_base": 746000
+  },
+  {
+    "tag": "pool_v050_p0_vs_v039",
+    "kind": "pool",
+    "agent": "v050_p0",
+    "opponent": "v039",
+    "n_games": 300,
+    "seed_base": 746000
+  },
+  {
+    "tag": "pool_v050_p0p1_vs_v039",
+    "kind": "pool",
+    "agent": "v050_p0p1",
+    "opponent": "v039",
+    "n_games": 300,
+    "seed_base": 746000
+  },
+  {
+    "tag": "pool_v049_vs_v046",
+    "kind": "pool",
+    "agent": "v049",
+    "opponent": "v046",
+    "n_games": 300,
+    "seed_base": 747000
+  },
+  {
+    "tag": "pool_v050_p0_vs_v046",
+    "kind": "pool",
+    "agent": "v050_p0",
+    "opponent": "v046",
+    "n_games": 300,
+    "seed_base": 747000
+  },
+  {
+    "tag": "pool_v050_p0p1_vs_v046",
+    "kind": "pool",
+    "agent": "v050_p0p1",
+    "opponent": "v046",
+    "n_games": 300,
+    "seed_base": 747000
+  },
+  {
+    "tag": "pool_v049_vs_v044",
+    "kind": "pool",
+    "agent": "v049",
+    "opponent": "v044",
+    "n_games": 300,
+    "seed_base": 748000
+  },
+  {
+    "tag": "pool_v050_p0_vs_v044",
+    "kind": "pool",
+    "agent": "v050_p0",
+    "opponent": "v044",
+    "n_games": 300,
+    "seed_base": 748000
+  },
+  {
+    "tag": "pool_v050_p0p1_vs_v044",
+    "kind": "pool",
+    "agent": "v050_p0p1",
+    "opponent": "v044",
+    "n_games": 300,
+    "seed_base": 748000
+  }
+]

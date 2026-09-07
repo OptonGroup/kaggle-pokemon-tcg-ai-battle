@@ -1,0 +1,80 @@
+{
+  "alakazam_aidy": {
+    "first": {
+      "mode": "first",
+      "opp_deck_name": "alakazam_aidy",
+      "n_games": 300,
+      "wins": 289,
+      "losses": 11,
+      "draws": 0,
+      "win_equivalent": 289.0,
+      "win_rate": 0.9633333333333334,
+      "wilson95_lo": 0.9355455130036123,
+      "wilson95_hi": 0.9794049085318193,
+      "exceptions": 0,
+      "illegal": 0,
+      "timeouts": 0,
+      "elapsed_s": 2.3237950801849365,
+      "games_per_sec": 129.09916307083535
+    },
+    "second": {
+      "mode": "second",
+      "opp_deck_name": "alakazam_aidy",
+      "n_games": 300,
+      "wins": 275,
+      "losses": 25,
+      "draws": 0,
+      "win_equivalent": 275.0,
+      "win_rate": 0.9166666666666666,
+      "wilson95_lo": 0.8798776190248736,
+      "wilson95_hi": 0.94291952264368,
+      "exceptions": 0,
+      "illegal": 0,
+      "timeouts": 0,
+      "elapsed_s": 2.602729082107544,
+      "games_per_sec": 115.26362926604594
+    },
+    "delta_wr": 0.046666666666666745,
+    "z": 2.406649574603854,
+    "p_value": 0.01609960974310161
+  },
+  "Dragapult": {
+    "first": {
+      "mode": "first",
+      "opp_deck_name": "Dragapult",
+      "n_games": 300,
+      "wins": 298,
+      "losses": 2,
+      "draws": 0,
+      "win_equivalent": 298.0,
+      "win_rate": 0.9933333333333333,
+      "wilson95_lo": 0.9760219257685385,
+      "wilson95_hi": 0.9981698899670288,
+      "exceptions": 0,
+      "illegal": 0,
+      "timeouts": 0,
+      "elapsed_s": 2.551851987838745,
+      "games_per_sec": 117.56167733461719
+    },
+    "second": {
+      "mode": "second",
+      "opp_deck_name": "Dragapult",
+      "n_games": 300,
+      "wins": 296,
+      "losses": 4,
+      "draws": 0,
+      "win_equivalent": 296.0,
+      "win_rate": 0.9866666666666667,
+      "wilson95_lo": 0.9662239391535502,
+      "wilson95_hi": 0.9948031223153205,
+      "exceptions": 0,
+      "illegal": 0,
+      "timeouts": 0,
+      "elapsed_s": 2.6388821601867676,
+      "games_per_sec": 113.68450040177899
+    },
+    "delta_wr": 0.006666666666666599,
+    "z": 0.8206099398622093,
+    "p_value": 0.4118684840579562
+  }
+}

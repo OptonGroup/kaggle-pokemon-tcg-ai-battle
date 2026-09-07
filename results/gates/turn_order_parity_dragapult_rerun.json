@@ -1,0 +1,41 @@
+{
+  "Dragapult": {
+    "first": {
+      "mode": "first",
+      "opp_deck_name": "Dragapult",
+      "n_games": 300,
+      "wins": 297,
+      "losses": 3,
+      "draws": 0,
+      "win_equivalent": 297.0,
+      "win_rate": 0.99,
+      "wilson95_lo": 0.9710159953649371,
+      "wilson95_hi": 0.9965934432372818,
+      "exceptions": 0,
+      "illegal": 0,
+      "timeouts": 0,
+      "elapsed_s": 5.821048974990845,
+      "games_per_sec": 51.53710289827476
+    },
+    "second": {
+      "mode": "second",
+      "opp_deck_name": "Dragapult",
+      "n_games": 300,
+      "wins": 298,
+      "losses": 2,
+      "draws": 0,
+      "win_equivalent": 298.0,
+      "win_rate": 0.9933333333333333,
+      "wilson95_lo": 0.9760219257685385,
+      "wilson95_hi": 0.9981698899670288,
+      "exceptions": 0,
+      "illegal": 0,
+      "timeouts": 0,
+      "elapsed_s": 6.2726149559021,
+      "games_per_sec": 47.826943325721054
+    },
+    "delta_wr": -0.0033333333333332993,
+    "z": -0.449088713139068,
+    "p_value": 0.653367662199903
+  }
+}

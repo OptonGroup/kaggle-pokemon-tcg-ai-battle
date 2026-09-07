@@ -1,0 +1,207 @@
+{
+  "cells": {
+    "v035_makthanithin": {
+      "candidate": "v035_makthanithin",
+      "games": [
+        {
+          "candidate": "v035_makthanithin",
+          "opponent": "v001_random",
+          "our_first": true,
+          "outcome": "our_win",
+          "winner": 0,
+          "moves": 80,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v035_makthanithin",
+          "opponent": "v001_random",
+          "our_first": false,
+          "outcome": "our_win",
+          "winner": 1,
+          "moves": 90,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v035_makthanithin",
+          "opponent": "v001_random",
+          "our_first": true,
+          "outcome": "our_win",
+          "winner": 0,
+          "moves": 26,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v035_makthanithin",
+          "opponent": "v001_random",
+          "our_first": false,
+          "outcome": "our_win",
+          "winner": 1,
+          "moves": 61,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v035_makthanithin",
+          "opponent": "v001_random",
+          "our_first": false,
+          "outcome": "our_win",
+          "winner": 1,
+          "moves": 99,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v035_makthanithin",
+          "opponent": "v001_random",
+          "our_first": true,
+          "outcome": "our_win",
+          "winner": 0,
+          "moves": 103,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v035_makthanithin",
+          "opponent": "v001_random",
+          "our_first": false,
+          "outcome": "our_win",
+          "winner": 1,
+          "moves": 33,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v035_makthanithin",
+          "opponent": "v001_random",
+          "our_first": true,
+          "outcome": "our_win",
+          "winner": 0,
+          "moves": 91,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v035_makthanithin",
+          "opponent": "v001_random",
+          "our_first": true,
+          "outcome": "our_win",
+          "winner": 0,
+          "moves": 40,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v035_makthanithin",
+          "opponent": "v001_random",
+          "our_first": true,
+          "outcome": "our_win",
+          "winner": 0,
+          "moves": 54,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v035_makthanithin",
+          "opponent": "v001_random",
+          "our_first": false,
+          "outcome": "our_win",
+          "winner": 1,
+          "moves": 22,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v035_makthanithin",
+          "opponent": "v001_random",
+          "our_first": false,
+          "outcome": "our_win",
+          "winner": 1,
+          "moves": 67,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v035_makthanithin",
+          "opponent": "v001_random",
+          "our_first": true,
+          "outcome": "our_win",
+          "winner": 0,
+          "moves": 53,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v035_makthanithin",
+          "opponent": "v001_random",
+          "our_first": true,
+          "outcome": "our_win",
+          "winner": 0,
+          "moves": 61,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v035_makthanithin",
+          "opponent": "v001_random",
+          "our_first": false,
+          "outcome": "our_win",
+          "winner": 1,
+          "moves": 71,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v035_makthanithin",
+          "opponent": "v001_random",
+          "our_first": false,
+          "outcome": "our_win",
+          "winner": 1,
+          "moves": 90,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v035_makthanithin",
+          "opponent": "v001_random",
+          "our_first": false,
+          "outcome": "our_win",
+          "winner": 1,
+          "moves": 35,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v035_makthanithin",
+          "opponent": "v001_random",
+          "our_first": true,
+          "outcome": "our_win",
+          "winner": 0,
+          "moves": 73,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        }
+      ]
+    }
+  }
+}

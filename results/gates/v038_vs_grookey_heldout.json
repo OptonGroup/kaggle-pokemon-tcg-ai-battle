@@ -1,0 +1,31 @@
+{
+  "records": [
+    {
+      "tag": "v038_vs_v009a_crustle_grookey_heldout",
+      "opponent": "v009a_crustle",
+      "opp_deck_override": "data/deck_scan/meta_decks/grookey.csv",
+      "n_games": 150,
+      "wins": 138,
+      "losses": 12,
+      "draws": 0,
+      "WR": 0.92,
+      "wilson95_lo": 0.8653774250568131,
+      "wilson95_hi": 0.9536468180607831,
+      "decisive_WR": 0.92,
+      "decisive_n": 150,
+      "avg_moves": 119.91333333333333,
+      "min_moves": 29,
+      "max_moves": 190,
+      "exc_v033": 0,
+      "exc_opp": 0,
+      "elapsed_s": 11.108158332994208,
+      "v033_nn_decisions": 7195,
+      "v033_fallback_decisions": 0,
+      "v033_trivial_fallback": 0,
+      "v033_exceptions": 0,
+      "verdict": "PASS",
+      "threshold": 0.65
+    }
+  ],
+  "updated": "2026-07-17 23:01:32"
+}

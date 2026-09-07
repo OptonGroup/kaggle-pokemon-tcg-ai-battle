@@ -1,0 +1,52 @@
+{
+  "tag": "v060_antitank_alakazam",
+  "agent": {
+    "ckpt": null,
+    "agent_dir": "v060_grimmsnarl_jiatu",
+    "deck": "/Users/max/kaggle-pokemon-tcg-ai-battle/submissions/v060_grimmsnarl_jiatu/deck.csv",
+    "label": "submission:v060_grimmsnarl_jiatu"
+  },
+  "agent_ckpt_exceptions": null,
+  "opponents": {
+    "v016_alakazam": {
+      "opponent": "v016_alakazam",
+      "opponent_dir": "v016_alakazam",
+      "n_games": 300,
+      "wins": 240,
+      "losses": 60,
+      "draws": 0,
+      "win_rate": 0.8,
+      "wilson95_lo": 0.7510701139033206,
+      "wilson95_hi": 0.8413438280980382,
+      "decisive_win_rate": 0.8,
+      "decisive_n": 300,
+      "avg_game_length": 170.86,
+      "min_game_length": 16,
+      "max_game_length": 330,
+      "exc_agent": 0,
+      "exc_opp": 0,
+      "elapsed_s": 11.398002834059298
+    },
+    "v017_alakazam_heur": {
+      "opponent": "v017_alakazam_heur",
+      "opponent_dir": "v017_alakazam_heur",
+      "n_games": 300,
+      "wins": 211,
+      "losses": 88,
+      "draws": 1,
+      "win_rate": 0.705,
+      "wilson95_lo": 0.6510638146399235,
+      "wilson95_hi": 0.7537523790610048,
+      "decisive_win_rate": 0.705685618729097,
+      "decisive_n": 299,
+      "avg_game_length": 130.85666666666665,
+      "min_game_length": 15,
+      "max_game_length": 313,
+      "exc_agent": 0,
+      "exc_opp": 0,
+      "elapsed_s": 7.6637967500137165
+    }
+  },
+  "overall_win_rate": 0.7516666666666667,
+  "generated": "2026-07-21 02:13:20"
+}

@@ -1,0 +1,339 @@
+{
+  "cells": {
+    "v036_archaludon_patched": {
+      "candidate": "v036_archaludon_patched",
+      "games": [
+        {
+          "candidate": "v036_archaludon_patched",
+          "opponent": "v001_random",
+          "our_first": false,
+          "outcome": "our_win",
+          "winner": 1,
+          "moves": 35,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v036_archaludon_patched",
+          "opponent": "v001_random",
+          "our_first": true,
+          "outcome": "our_win",
+          "winner": 0,
+          "moves": 35,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v036_archaludon_patched",
+          "opponent": "v001_random",
+          "our_first": false,
+          "outcome": "our_win",
+          "winner": 1,
+          "moves": 31,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v036_archaludon_patched",
+          "opponent": "v001_random",
+          "our_first": true,
+          "outcome": "our_win",
+          "winner": 0,
+          "moves": 72,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v036_archaludon_patched",
+          "opponent": "v001_random",
+          "our_first": false,
+          "outcome": "our_win",
+          "winner": 1,
+          "moves": 25,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v036_archaludon_patched",
+          "opponent": "v001_random",
+          "our_first": true,
+          "outcome": "our_win",
+          "winner": 0,
+          "moves": 29,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v036_archaludon_patched",
+          "opponent": "v001_random",
+          "our_first": true,
+          "outcome": "our_win",
+          "winner": 0,
+          "moves": 36,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v036_archaludon_patched",
+          "opponent": "v001_random",
+          "our_first": false,
+          "outcome": "our_win",
+          "winner": 1,
+          "moves": 51,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v036_archaludon_patched",
+          "opponent": "v001_random",
+          "our_first": false,
+          "outcome": "our_win",
+          "winner": 1,
+          "moves": 51,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v036_archaludon_patched",
+          "opponent": "v001_random",
+          "our_first": true,
+          "outcome": "our_win",
+          "winner": 0,
+          "moves": 51,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v036_archaludon_patched",
+          "opponent": "v001_random",
+          "our_first": false,
+          "outcome": "our_win",
+          "winner": 1,
+          "moves": 29,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v036_archaludon_patched",
+          "opponent": "v001_random",
+          "our_first": true,
+          "outcome": "our_win",
+          "winner": 0,
+          "moves": 121,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v036_archaludon_patched",
+          "opponent": "v001_random",
+          "our_first": true,
+          "outcome": "our_win",
+          "winner": 0,
+          "moves": 48,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v036_archaludon_patched",
+          "opponent": "v001_random",
+          "our_first": false,
+          "outcome": "our_win",
+          "winner": 1,
+          "moves": 44,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v036_archaludon_patched",
+          "opponent": "v001_random",
+          "our_first": false,
+          "outcome": "opp_win",
+          "winner": 0,
+          "moves": 15,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v036_archaludon_patched",
+          "opponent": "v001_random",
+          "our_first": true,
+          "outcome": "our_win",
+          "winner": 0,
+          "moves": 63,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v036_archaludon_patched",
+          "opponent": "v001_random",
+          "our_first": false,
+          "outcome": "opp_win",
+          "winner": 0,
+          "moves": 23,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v036_archaludon_patched",
+          "opponent": "v001_random",
+          "our_first": true,
+          "outcome": "our_win",
+          "winner": 0,
+          "moves": 45,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v036_archaludon_patched",
+          "opponent": "v001_random",
+          "our_first": true,
+          "outcome": "our_win",
+          "winner": 0,
+          "moves": 52,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v036_archaludon_patched",
+          "opponent": "v001_random",
+          "our_first": false,
+          "outcome": "our_win",
+          "winner": 1,
+          "moves": 61,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v036_archaludon_patched",
+          "opponent": "v001_random",
+          "our_first": true,
+          "outcome": "our_win",
+          "winner": 0,
+          "moves": 45,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v036_archaludon_patched",
+          "opponent": "v001_random",
+          "our_first": false,
+          "outcome": "our_win",
+          "winner": 1,
+          "moves": 73,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v036_archaludon_patched",
+          "opponent": "v001_random",
+          "our_first": true,
+          "outcome": "our_win",
+          "winner": 0,
+          "moves": 34,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v036_archaludon_patched",
+          "opponent": "v001_random",
+          "our_first": false,
+          "outcome": "our_win",
+          "winner": 1,
+          "moves": 39,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v036_archaludon_patched",
+          "opponent": "v001_random",
+          "our_first": true,
+          "outcome": "our_win",
+          "winner": 0,
+          "moves": 36,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v036_archaludon_patched",
+          "opponent": "v001_random",
+          "our_first": false,
+          "outcome": "our_win",
+          "winner": 1,
+          "moves": 34,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v036_archaludon_patched",
+          "opponent": "v001_random",
+          "our_first": true,
+          "outcome": "opp_win",
+          "winner": 1,
+          "moves": 27,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v036_archaludon_patched",
+          "opponent": "v001_random",
+          "our_first": false,
+          "outcome": "our_win",
+          "winner": 1,
+          "moves": 53,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v036_archaludon_patched",
+          "opponent": "v001_random",
+          "our_first": true,
+          "outcome": "our_win",
+          "winner": 0,
+          "moves": 81,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        },
+        {
+          "candidate": "v036_archaludon_patched",
+          "opponent": "v001_random",
+          "our_first": false,
+          "outcome": "opp_win",
+          "winner": 0,
+          "moves": 28,
+          "n_illegal": 0,
+          "n_exceptions": 0,
+          "exc_side": null
+        }
+      ]
+    }
+  }
+}

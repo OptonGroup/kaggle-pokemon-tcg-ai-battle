@@ -1,0 +1,30 @@
+{
+  "tag": "v070_vs_tusk",
+  "candidate": "v070_grimmsnarl_hybrid",
+  "opponent": "tusk_crustle_libout",
+  "opponents": {
+    "tusk_crustle": {
+      "opponent": "tusk_crustle",
+      "opponent_dir": "sub:/Users/max/kaggle-pokemon-tcg-ai-battle/data/external_agents/tusk_crustle_libout/tusk_crustle_submission",
+      "n_games": 500,
+      "wins": 333,
+      "losses": 167,
+      "draws": 0,
+      "win_rate": 0.666,
+      "wilson95_lo": 0.6235317332195806,
+      "wilson95_hi": 0.7059368934281597,
+      "decisive_win_rate": 0.666,
+      "decisive_n": 500,
+      "avg_game_length": 164.538,
+      "min_game_length": 35,
+      "max_game_length": 291,
+      "exc_agent": 0,
+      "exc_opp": 0,
+      "illegal_agent": 0,
+      "illegal_opp": 0,
+      "timeouts": 0,
+      "crashes": 0,
+      "elapsed_s": 20.64988112449646
+    }
+  }
+}

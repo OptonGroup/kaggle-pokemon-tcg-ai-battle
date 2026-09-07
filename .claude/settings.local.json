@@ -1,5 +1,13 @@
 {
   "permissions": {
+    "allow": [
+      "Bash(.venv/bin/kaggle competitions *)",
+      "Bash(unzip -o pokemon-tcg-ai-battle.zip)",
+      "Bash(python3 -c ' *)",
+      "Bash(.venv/bin/python scripts/download_episodes.py out/v063_full_download A=54896368 B=54896381)",
+      "Bash(python3 *)",
+      "Bash(ls docs/gold/ && echo \"---\" && ls docs/ && echo \"---PLAN---\" && wc -l PLAN.md 2>/dev/null; echo \"---POKE---\" && ls ~/poke 2>/dev/null | head -40)"
+    ],
     "defaultMode": "bypassPermissions"
   }
 }

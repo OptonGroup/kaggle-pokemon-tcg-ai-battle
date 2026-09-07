@@ -1,0 +1,31 @@
+{
+  "records": [
+    {
+      "tag": "v037_baseline_vs_v017_alakazam_heur",
+      "opponent": "v017_alakazam_heur",
+      "opp_deck_override": null,
+      "n_games": 150,
+      "wins": 61,
+      "losses": 89,
+      "draws": 0,
+      "WR": 0.4066666666666667,
+      "wilson95_lo": 0.33133978704521405,
+      "wilson95_hi": 0.48665482559532014,
+      "decisive_WR": 0.4066666666666667,
+      "decisive_n": 150,
+      "avg_moves": 81.9,
+      "min_moves": 13,
+      "max_moves": 231,
+      "exc_v033": 0,
+      "exc_opp": 0,
+      "elapsed_s": 3.586397083941847,
+      "v033_nn_decisions": 4731,
+      "v033_fallback_decisions": 0,
+      "v033_trivial_fallback": 0,
+      "v033_exceptions": 0,
+      "verdict": "FAIL",
+      "threshold": 0.65
+    }
+  ],
+  "updated": "2026-07-17 21:39:26"
+}

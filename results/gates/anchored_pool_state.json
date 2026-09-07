@@ -63127,5 +63127,6021 @@
       ]
     }
   },
-  "candidate": {}
+  "candidate": {
+    "v032_crustle_clone__vs__v001_random": {
+      "left": "v032_crustle_clone",
+      "right": "v001_random",
+      "games": [
+        {
+          "game_idx": 0,
+          "left_first": true,
+          "seed": 20947340,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 41,
+          "wall_time": 0.19813849998172373,
+          "exception_who": null
+        },
+        {
+          "game_idx": 1,
+          "left_first": false,
+          "seed": 20394149,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 49,
+          "wall_time": 0.20088474999647588,
+          "exception_who": null
+        },
+        {
+          "game_idx": 2,
+          "left_first": true,
+          "seed": 20697783,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 55,
+          "wall_time": 0.010461209109053016,
+          "exception_who": null
+        },
+        {
+          "game_idx": 4,
+          "left_first": true,
+          "seed": 21183330,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 28,
+          "wall_time": 0.005451667006127536,
+          "exception_who": null
+        },
+        {
+          "game_idx": 3,
+          "left_first": false,
+          "seed": 20328080,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 90,
+          "wall_time": 0.019536125008016825,
+          "exception_who": null
+        },
+        {
+          "game_idx": 5,
+          "left_first": false,
+          "seed": 20630139,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 110,
+          "wall_time": 0.022520666010677814,
+          "exception_who": null
+        },
+        {
+          "game_idx": 6,
+          "left_first": true,
+          "seed": 20933773,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 100,
+          "wall_time": 0.02214566699694842,
+          "exception_who": null
+        },
+        {
+          "game_idx": 7,
+          "left_first": false,
+          "seed": 20564070,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 76,
+          "wall_time": 0.016403084038756788,
+          "exception_who": null
+        },
+        {
+          "game_idx": 8,
+          "left_first": true,
+          "seed": 20562495,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 98,
+          "wall_time": 0.020582042052410543,
+          "exception_who": null
+        },
+        {
+          "game_idx": 9,
+          "left_first": false,
+          "seed": 20866129,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 43,
+          "wall_time": 0.007668167003430426,
+          "exception_who": null
+        },
+        {
+          "game_idx": 10,
+          "left_first": true,
+          "seed": 20864554,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 100,
+          "wall_time": 0.022814707946963608,
+          "exception_who": null
+        },
+        {
+          "game_idx": 11,
+          "left_first": false,
+          "seed": 20800060,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 49,
+          "wall_time": 0.009479500004090369,
+          "exception_who": null
+        },
+        {
+          "game_idx": 12,
+          "left_first": true,
+          "seed": 20798485,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 83,
+          "wall_time": 0.017533125006593764,
+          "exception_who": null
+        },
+        {
+          "game_idx": 13,
+          "left_first": false,
+          "seed": 21102119,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 69,
+          "wall_time": 0.014175583026371896,
+          "exception_who": null
+        },
+        {
+          "game_idx": 14,
+          "left_first": true,
+          "seed": 21100544,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 70,
+          "wall_time": 0.013295249897055328,
+          "exception_who": null
+        },
+        {
+          "game_idx": 15,
+          "left_first": false,
+          "seed": 20730841,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 47,
+          "wall_time": 0.008783500059507787,
+          "exception_who": null
+        },
+        {
+          "game_idx": 16,
+          "left_first": true,
+          "seed": 21034475,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 100,
+          "wall_time": 0.019490708014927804,
+          "exception_who": null
+        },
+        {
+          "game_idx": 17,
+          "left_first": false,
+          "seed": 21032900,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 85,
+          "wall_time": 0.017384666018188,
+          "exception_who": null
+        },
+        {
+          "game_idx": 18,
+          "left_first": true,
+          "seed": 20336534,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 66,
+          "wall_time": 0.012715124990791082,
+          "exception_who": null
+        },
+        {
+          "game_idx": 19,
+          "left_first": false,
+          "seed": 20334959,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 63,
+          "wall_time": 0.01164416701067239,
+          "exception_who": null
+        },
+        {
+          "game_idx": 21,
+          "left_first": false,
+          "seed": 20268890,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 99,
+          "wall_time": 0.019066084059886634,
+          "exception_who": null
+        },
+        {
+          "game_idx": 20,
+          "left_first": true,
+          "seed": 20270465,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 57,
+          "wall_time": 0.010797125054523349,
+          "exception_who": null
+        },
+        {
+          "game_idx": 22,
+          "left_first": true,
+          "seed": 20267315,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 124,
+          "wall_time": 0.02641687507275492,
+          "exception_who": null
+        },
+        {
+          "game_idx": 24,
+          "left_first": true,
+          "seed": 21201246,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 46,
+          "wall_time": 0.008581957896240056,
+          "exception_who": null
+        },
+        {
+          "game_idx": 23,
+          "left_first": false,
+          "seed": 20570949,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 40,
+          "wall_time": 0.0074327499605715275,
+          "exception_who": null
+        },
+        {
+          "game_idx": 25,
+          "left_first": false,
+          "seed": 20504880,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 25,
+          "wall_time": 0.004282000008970499,
+          "exception_who": null
+        },
+        {
+          "game_idx": 26,
+          "left_first": true,
+          "seed": 20503305,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 25,
+          "wall_time": 0.0046742919366806746,
+          "exception_who": null
+        },
+        {
+          "game_idx": 27,
+          "left_first": false,
+          "seed": 20950114,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 76,
+          "wall_time": 0.013795707956887782,
+          "exception_who": null
+        },
+        {
+          "game_idx": 28,
+          "left_first": true,
+          "seed": 20437236,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 44,
+          "wall_time": 0.010916290921159089,
+          "exception_who": null
+        },
+        {
+          "game_idx": 29,
+          "left_first": false,
+          "seed": 20884045,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 44,
+          "wall_time": 0.008807042031548917,
+          "exception_who": null
+        },
+        {
+          "game_idx": 30,
+          "left_first": true,
+          "seed": 20739295,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 67,
+          "wall_time": 0.013064790982753038,
+          "exception_who": null
+        },
+        {
+          "game_idx": 31,
+          "left_first": false,
+          "seed": 21186104,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 123,
+          "wall_time": 0.026581875048577785,
+          "exception_who": null
+        },
+        {
+          "game_idx": 32,
+          "left_first": true,
+          "seed": 20673226,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 123,
+          "wall_time": 0.02604245801921934,
+          "exception_who": null
+        },
+        {
+          "game_idx": 33,
+          "left_first": false,
+          "seed": 21120035,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 126,
+          "wall_time": 0.025865749921649694,
+          "exception_who": null
+        },
+        {
+          "game_idx": 34,
+          "left_first": true,
+          "seed": 21118460,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 116,
+          "wall_time": 0.02563149994239211,
+          "exception_who": null
+        },
+        {
+          "game_idx": 35,
+          "left_first": false,
+          "seed": 20422094,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 64,
+          "wall_time": 0.01315433403942734,
+          "exception_who": null
+        },
+        {
+          "game_idx": 36,
+          "left_first": true,
+          "seed": 21052391,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 170,
+          "wall_time": 0.038444124977104366,
+          "exception_who": null
+        },
+        {
+          "game_idx": 38,
+          "left_first": true,
+          "seed": 20354450,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 124,
+          "wall_time": 0.024693916086107492,
+          "exception_who": null
+        },
+        {
+          "game_idx": 37,
+          "left_first": false,
+          "seed": 20907641,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 110,
+          "wall_time": 0.024246833054348826,
+          "exception_who": null
+        },
+        {
+          "game_idx": 39,
+          "left_first": false,
+          "seed": 20658084,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 55,
+          "wall_time": 0.009984333999454975,
+          "exception_who": null
+        },
+        {
+          "game_idx": 40,
+          "left_first": true,
+          "seed": 20288381,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 99,
+          "wall_time": 0.022532542003318667,
+          "exception_who": null
+        },
+        {
+          "game_idx": 41,
+          "left_first": false,
+          "seed": 20286806,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 122,
+          "wall_time": 0.0262208329513669,
+          "exception_who": null
+        },
+        {
+          "game_idx": 42,
+          "left_first": true,
+          "seed": 20590440,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 40,
+          "wall_time": 0.0072624580934643745,
+          "exception_who": null
+        },
+        {
+          "game_idx": 43,
+          "left_first": false,
+          "seed": 20588865,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 117,
+          "wall_time": 0.025141249992884696,
+          "exception_who": null
+        },
+        {
+          "game_idx": 44,
+          "left_first": true,
+          "seed": 20892499,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 97,
+          "wall_time": 0.02030925010330975,
+          "exception_who": null
+        },
+        {
+          "game_idx": 45,
+          "left_first": false,
+          "seed": 20522796,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 114,
+          "wall_time": 0.022596541908569634,
+          "exception_who": null
+        },
+        {
+          "game_idx": 47,
+          "left_first": false,
+          "seed": 20824855,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 118,
+          "wall_time": 0.023862833972088993,
+          "exception_who": null
+        },
+        {
+          "game_idx": 46,
+          "left_first": true,
+          "seed": 20521221,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 58,
+          "wall_time": 0.011527042021043599,
+          "exception_who": null
+        },
+        {
+          "game_idx": 48,
+          "left_first": true,
+          "seed": 20823280,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 143,
+          "wall_time": 0.03062583296559751,
+          "exception_who": null
+        },
+        {
+          "game_idx": 49,
+          "left_first": false,
+          "seed": 20758786,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 111,
+          "wall_time": 0.025404333020560443,
+          "exception_who": null
+        },
+        {
+          "game_idx": 50,
+          "left_first": true,
+          "seed": 20757211,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 109,
+          "wall_time": 0.02062099997419864,
+          "exception_who": null
+        },
+        {
+          "game_idx": 51,
+          "left_first": false,
+          "seed": 21060845,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 93,
+          "wall_time": 0.018361374968662858,
+          "exception_who": null
+        },
+        {
+          "game_idx": 52,
+          "left_first": true,
+          "seed": 21059270,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 33,
+          "wall_time": 0.006306083989329636,
+          "exception_who": null
+        },
+        {
+          "game_idx": 53,
+          "left_first": false,
+          "seed": 20689567,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 50,
+          "wall_time": 0.009308708016760647,
+          "exception_who": null
+        },
+        {
+          "game_idx": 54,
+          "left_first": true,
+          "seed": 20993201,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 58,
+          "wall_time": 0.011666832957416773,
+          "exception_who": null
+        },
+        {
+          "game_idx": 55,
+          "left_first": false,
+          "seed": 20440010,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 125,
+          "wall_time": 0.026215874939225614,
+          "exception_who": null
+        },
+        {
+          "game_idx": 56,
+          "left_first": true,
+          "seed": 20295260,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 29,
+          "wall_time": 0.005831999937072396,
+          "exception_who": null
+        },
+        {
+          "game_idx": 57,
+          "left_first": false,
+          "seed": 20925557,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 59,
+          "wall_time": 0.011546082911081612,
+          "exception_who": null
+        },
+        {
+          "game_idx": 58,
+          "left_first": true,
+          "seed": 21229191,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 111,
+          "wall_time": 0.02083162497729063,
+          "exception_who": null
+        },
+        {
+          "game_idx": 59,
+          "left_first": false,
+          "seed": 20676000,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 38,
+          "wall_time": 0.007655833964236081,
+          "exception_who": null
+        },
+        {
+          "game_idx": 61,
+          "left_first": false,
+          "seed": 21161547,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 103,
+          "wall_time": 0.022152791963890195,
+          "exception_who": null
+        },
+        {
+          "game_idx": 60,
+          "left_first": true,
+          "seed": 20674425,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 117,
+          "wall_time": 0.025484332931227982,
+          "exception_who": null
+        },
+        {
+          "game_idx": 62,
+          "left_first": true,
+          "seed": 20608356,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 67,
+          "wall_time": 0.013414292014203966,
+          "exception_who": null
+        },
+        {
+          "game_idx": 63,
+          "left_first": false,
+          "seed": 20463606,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 111,
+          "wall_time": 0.023604084039106965,
+          "exception_who": null
+        },
+        {
+          "game_idx": 65,
+          "left_first": false,
+          "seed": 21214049,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 18,
+          "wall_time": 0.0031835000263527036,
+          "exception_who": null
+        },
+        {
+          "game_idx": 64,
+          "left_first": true,
+          "seed": 20910415,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 81,
+          "wall_time": 0.01513674994930625,
+          "exception_who": null
+        },
+        {
+          "game_idx": 66,
+          "left_first": true,
+          "seed": 20844346,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 41,
+          "wall_time": 0.007736249943263829,
+          "exception_who": null
+        },
+        {
+          "game_idx": 68,
+          "left_first": true,
+          "seed": 21146405,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 61,
+          "wall_time": 0.011067750048823655,
+          "exception_who": null
+        },
+        {
+          "game_idx": 67,
+          "left_first": false,
+          "seed": 20842771,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 86,
+          "wall_time": 0.017109291977249086,
+          "exception_who": null
+        },
+        {
+          "game_idx": 69,
+          "left_first": false,
+          "seed": 21144830,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 134,
+          "wall_time": 0.029286166070960462,
+          "exception_who": null
+        },
+        {
+          "game_idx": 71,
+          "left_first": false,
+          "seed": 21078761,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 54,
+          "wall_time": 0.010579916997812688,
+          "exception_who": null
+        },
+        {
+          "game_idx": 70,
+          "left_first": true,
+          "seed": 21080336,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 65,
+          "wall_time": 0.011939415941014886,
+          "exception_who": null
+        },
+        {
+          "game_idx": 72,
+          "left_first": true,
+          "seed": 21077186,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 76,
+          "wall_time": 0.014737167046405375,
+          "exception_who": null
+        },
+        {
+          "game_idx": 73,
+          "left_first": false,
+          "seed": 20380820,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 44,
+          "wall_time": 0.0084447500994429,
+          "exception_who": null
+        },
+        {
+          "game_idx": 74,
+          "left_first": true,
+          "seed": 21011117,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 35,
+          "wall_time": 0.006448208005167544,
+          "exception_who": null
+        },
+        {
+          "game_idx": 75,
+          "left_first": false,
+          "seed": 20314751,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 116,
+          "wall_time": 0.023973084054887295,
+          "exception_who": null
+        },
+        {
+          "game_idx": 76,
+          "left_first": true,
+          "seed": 20313176,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 106,
+          "wall_time": 0.024258916033431888,
+          "exception_who": null
+        },
+        {
+          "game_idx": 77,
+          "left_first": false,
+          "seed": 20616810,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 58,
+          "wall_time": 0.011444667004980147,
+          "exception_who": null
+        },
+        {
+          "game_idx": 78,
+          "left_first": true,
+          "seed": 21247107,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 86,
+          "wall_time": 0.019223125069402158,
+          "exception_who": null
+        },
+        {
+          "game_idx": 79,
+          "left_first": false,
+          "seed": 21245532,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 40,
+          "wall_time": 0.0072688329964876175,
+          "exception_who": null
+        },
+        {
+          "game_idx": 80,
+          "left_first": true,
+          "seed": 20549166,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 50,
+          "wall_time": 0.009306124993599951,
+          "exception_who": null
+        },
+        {
+          "game_idx": 81,
+          "left_first": false,
+          "seed": 20995975,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 128,
+          "wall_time": 0.026073000044561923,
+          "exception_who": null
+        },
+        {
+          "game_idx": 83,
+          "left_first": false,
+          "seed": 20481522,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 121,
+          "wall_time": 0.024343666969798505,
+          "exception_who": null
+        },
+        {
+          "game_idx": 82,
+          "left_first": true,
+          "seed": 20483097,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 175,
+          "wall_time": 0.03555933304596692,
+          "exception_who": null
+        },
+        {
+          "game_idx": 84,
+          "left_first": true,
+          "seed": 20785156,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 109,
+          "wall_time": 0.022130625089630485,
+          "exception_who": null
+        },
+        {
+          "game_idx": 85,
+          "left_first": false,
+          "seed": 20783581,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 87,
+          "wall_time": 0.018253792077302933,
+          "exception_who": null
+        },
+        {
+          "game_idx": 86,
+          "left_first": true,
+          "seed": 20862262,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 85,
+          "wall_time": 0.017609291011467576,
+          "exception_who": null
+        },
+        {
+          "game_idx": 87,
+          "left_first": false,
+          "seed": 20717512,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 115,
+          "wall_time": 0.025387458968907595,
+          "exception_who": null
+        },
+        {
+          "game_idx": 89,
+          "left_first": false,
+          "seed": 21019571,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 110,
+          "wall_time": 0.02275299991015345,
+          "exception_who": null
+        },
+        {
+          "game_idx": 88,
+          "left_first": true,
+          "seed": 21164321,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 56,
+          "wall_time": 0.010791458073072135,
+          "exception_who": null
+        },
+        {
+          "game_idx": 90,
+          "left_first": true,
+          "seed": 20466380,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 57,
+          "wall_time": 0.011083458084613085,
+          "exception_who": null
+        },
+        {
+          "game_idx": 92,
+          "left_first": true,
+          "seed": 20400311,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 54,
+          "wall_time": 0.010344082955271006,
+          "exception_who": null
+        },
+        {
+          "game_idx": 91,
+          "left_first": false,
+          "seed": 21096677,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 56,
+          "wall_time": 0.010365250054746866,
+          "exception_who": null
+        },
+        {
+          "game_idx": 93,
+          "left_first": false,
+          "seed": 20398736,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 40,
+          "wall_time": 0.006884707952849567,
+          "exception_who": null
+        },
+        {
+          "game_idx": 95,
+          "left_first": false,
+          "seed": 20332667,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 30,
+          "wall_time": 0.005204624962061644,
+          "exception_who": null
+        },
+        {
+          "game_idx": 94,
+          "left_first": true,
+          "seed": 20702370,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 65,
+          "wall_time": 0.01439483289141208,
+          "exception_who": null
+        },
+        {
+          "game_idx": 96,
+          "left_first": true,
+          "seed": 20636301,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 38,
+          "wall_time": 0.00747458403930068,
+          "exception_who": null
+        },
+        {
+          "game_idx": 97,
+          "left_first": false,
+          "seed": 20634726,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 39,
+          "wall_time": 0.008158207987435162,
+          "exception_who": null
+        },
+        {
+          "game_idx": 98,
+          "left_first": true,
+          "seed": 20633151,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 159,
+          "wall_time": 0.035323958029039204,
+          "exception_who": null
+        },
+        {
+          "game_idx": 99,
+          "left_first": false,
+          "seed": 20568657,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 91,
+          "wall_time": 0.01782708300743252,
+          "exception_who": null
+        },
+        {
+          "game_idx": 100,
+          "left_first": true,
+          "seed": 20567082,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 127,
+          "wall_time": 0.025394749944098294,
+          "exception_who": null
+        },
+        {
+          "game_idx": 102,
+          "left_first": true,
+          "seed": 20869141,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 85,
+          "wall_time": 0.016963041969574988,
+          "exception_who": null
+        },
+        {
+          "game_idx": 101,
+          "left_first": false,
+          "seed": 20870716,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 50,
+          "wall_time": 0.01043362496420741,
+          "exception_who": null
+        },
+        {
+          "game_idx": 103,
+          "left_first": false,
+          "seed": 20804647,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 153,
+          "wall_time": 0.03335866704583168,
+          "exception_who": null
+        },
+        {
+          "game_idx": 104,
+          "left_first": true,
+          "seed": 20803072,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 152,
+          "wall_time": 0.03204862505663186,
+          "exception_who": null
+        },
+        {
+          "game_idx": 106,
+          "left_first": true,
+          "seed": 21105131,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 91,
+          "wall_time": 0.018853707937523723,
+          "exception_who": null
+        },
+        {
+          "game_idx": 105,
+          "left_first": false,
+          "seed": 20801497,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 161,
+          "wall_time": 0.0337872919626534,
+          "exception_who": null
+        },
+        {
+          "game_idx": 107,
+          "left_first": false,
+          "seed": 20735428,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 140,
+          "wall_time": 0.03125320898834616,
+          "exception_who": null
+        },
+        {
+          "game_idx": 109,
+          "left_first": false,
+          "seed": 21037487,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 65,
+          "wall_time": 0.014015833963640034,
+          "exception_who": null
+        },
+        {
+          "game_idx": 108,
+          "left_first": true,
+          "seed": 21039062,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 147,
+          "wall_time": 0.03300941700581461,
+          "exception_who": null
+        },
+        {
+          "game_idx": 110,
+          "left_first": true,
+          "seed": 20341121,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 133,
+          "wall_time": 0.02997987496200949,
+          "exception_who": null
+        },
+        {
+          "game_idx": 112,
+          "left_first": true,
+          "seed": 20418227,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 54,
+          "wall_time": 0.010336208040826023,
+          "exception_who": null
+        },
+        {
+          "game_idx": 111,
+          "left_first": false,
+          "seed": 20971418,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 125,
+          "wall_time": 0.026113874977454543,
+          "exception_who": null
+        },
+        {
+          "game_idx": 113,
+          "left_first": false,
+          "seed": 20273477,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 36,
+          "wall_time": 0.006693333969451487,
+          "exception_who": null
+        },
+        {
+          "game_idx": 114,
+          "left_first": true,
+          "seed": 20720286,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 57,
+          "wall_time": 0.011094958055764437,
+          "exception_who": null
+        },
+        {
+          "game_idx": 115,
+          "left_first": false,
+          "seed": 20575536,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 149,
+          "wall_time": 0.03165612497832626,
+          "exception_who": null
+        },
+        {
+          "game_idx": 116,
+          "left_first": true,
+          "seed": 21205833,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 68,
+          "wall_time": 0.012921167071908712,
+          "exception_who": null
+        },
+        {
+          "game_idx": 117,
+          "left_first": false,
+          "seed": 20652642,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 63,
+          "wall_time": 0.012239124975167215,
+          "exception_who": null
+        },
+        {
+          "game_idx": 118,
+          "left_first": true,
+          "seed": 20956276,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 56,
+          "wall_time": 0.0111573749454692,
+          "exception_who": null
+        },
+        {
+          "game_idx": 119,
+          "left_first": false,
+          "seed": 20954701,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 63,
+          "wall_time": 0.012207999941892922,
+          "exception_who": null
+        },
+        {
+          "game_idx": 120,
+          "left_first": true,
+          "seed": 20441823,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 100,
+          "wall_time": 0.02220333309378475,
+          "exception_who": null
+        },
+        {
+          "game_idx": 121,
+          "left_first": false,
+          "seed": 20888632,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 127,
+          "wall_time": 0.02385941694956273,
+          "exception_who": null
+        },
+        {
+          "game_idx": 122,
+          "left_first": true,
+          "seed": 20743882,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 76,
+          "wall_time": 0.015456416993401945,
+          "exception_who": null
+        },
+        {
+          "game_idx": 123,
+          "left_first": false,
+          "seed": 21190691,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 106,
+          "wall_time": 0.02038995805196464,
+          "exception_who": null
+        },
+        {
+          "game_idx": 124,
+          "left_first": true,
+          "seed": 20820988,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 72,
+          "wall_time": 0.012158291065134108,
+          "exception_who": null
+        },
+        {
+          "game_idx": 125,
+          "left_first": false,
+          "seed": 21124622,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 47,
+          "wall_time": 0.008979334030300379,
+          "exception_who": null
+        },
+        {
+          "game_idx": 127,
+          "left_first": false,
+          "seed": 20426681,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 81,
+          "wall_time": 0.01605083397589624,
+          "exception_who": null
+        },
+        {
+          "game_idx": 126,
+          "left_first": true,
+          "seed": 21123047,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 55,
+          "wall_time": 0.011031416011974216,
+          "exception_who": null
+        },
+        {
+          "game_idx": 128,
+          "left_first": true,
+          "seed": 21056978,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 75,
+          "wall_time": 0.013757459004409611,
+          "exception_who": null
+        },
+        {
+          "game_idx": 130,
+          "left_first": true,
+          "seed": 20359037,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 40,
+          "wall_time": 0.007852000067941844,
+          "exception_who": null
+        },
+        {
+          "game_idx": 129,
+          "left_first": false,
+          "seed": 20360612,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 41,
+          "wall_time": 0.007754457998089492,
+          "exception_who": null
+        },
+        {
+          "game_idx": 131,
+          "left_first": false,
+          "seed": 20357462,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 67,
+          "wall_time": 0.013404333963990211,
+          "exception_who": null
+        },
+        {
+          "game_idx": 133,
+          "left_first": false,
+          "seed": 20291393,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 84,
+          "wall_time": 0.018126208917237818,
+          "exception_who": null
+        },
+        {
+          "game_idx": 132,
+          "left_first": true,
+          "seed": 20292968,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 28,
+          "wall_time": 0.004899417050182819,
+          "exception_who": null
+        },
+        {
+          "game_idx": 134,
+          "left_first": true,
+          "seed": 20595027,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 44,
+          "wall_time": 0.009159541921690106,
+          "exception_who": null
+        },
+        {
+          "game_idx": 135,
+          "left_first": false,
+          "seed": 20593452,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 112,
+          "wall_time": 0.022369915968738496,
+          "exception_who": null
+        },
+        {
+          "game_idx": 136,
+          "left_first": true,
+          "seed": 21040261,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 101,
+          "wall_time": 0.021904040942899883,
+          "exception_who": null
+        },
+        {
+          "game_idx": 137,
+          "left_first": false,
+          "seed": 20527383,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 54,
+          "wall_time": 0.011249833973124623,
+          "exception_who": null
+        },
+        {
+          "game_idx": 138,
+          "left_first": true,
+          "seed": 20525808,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 38,
+          "wall_time": 0.007108541904017329,
+          "exception_who": null
+        },
+        {
+          "game_idx": 139,
+          "left_first": false,
+          "seed": 20829442,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 137,
+          "wall_time": 0.029340708977542818,
+          "exception_who": null
+        },
+        {
+          "game_idx": 140,
+          "left_first": true,
+          "seed": 20276251,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 49,
+          "wall_time": 0.009791999938897789,
+          "exception_who": null
+        },
+        {
+          "game_idx": 141,
+          "left_first": false,
+          "seed": 20763373,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 111,
+          "wall_time": 0.025837959023192525,
+          "exception_who": null
+        },
+        {
+          "game_idx": 142,
+          "left_first": true,
+          "seed": 20761798,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 97,
+          "wall_time": 0.020911125000566244,
+          "exception_who": null
+        },
+        {
+          "game_idx": 144,
+          "left_first": true,
+          "seed": 21063857,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 25,
+          "wall_time": 0.00461041706148535,
+          "exception_who": null
+        },
+        {
+          "game_idx": 143,
+          "left_first": false,
+          "seed": 21208607,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 77,
+          "wall_time": 0.01659312506671995,
+          "exception_who": null
+        },
+        {
+          "game_idx": 145,
+          "left_first": false,
+          "seed": 21142538,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 74,
+          "wall_time": 0.015501458081416786,
+          "exception_who": null
+        },
+        {
+          "game_idx": 146,
+          "left_first": true,
+          "seed": 20997788,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 32,
+          "wall_time": 0.005693624960258603,
+          "exception_who": null
+        },
+        {
+          "game_idx": 147,
+          "left_first": false,
+          "seed": 20444597,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 61,
+          "wall_time": 0.011512459022924304,
+          "exception_who": null
+        },
+        {
+          "game_idx": 148,
+          "left_first": true,
+          "seed": 20299847,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 54,
+          "wall_time": 0.00953716691583395,
+          "exception_who": null
+        },
+        {
+          "game_idx": 149,
+          "left_first": false,
+          "seed": 20378528,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 86,
+          "wall_time": 0.01784704194869846,
+          "exception_who": null
+        },
+        {
+          "game_idx": 150,
+          "left_first": true,
+          "seed": 20376953,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 120,
+          "wall_time": 0.025549459038302302,
+          "exception_who": null
+        },
+        {
+          "game_idx": 151,
+          "left_first": false,
+          "seed": 20680587,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 77,
+          "wall_time": 0.015752917039208114,
+          "exception_who": null
+        },
+        {
+          "game_idx": 152,
+          "left_first": true,
+          "seed": 20679012,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 34,
+          "wall_time": 0.005882834084331989,
+          "exception_who": null
+        },
+        {
+          "game_idx": 153,
+          "left_first": false,
+          "seed": 21166134,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 87,
+          "wall_time": 0.018894874956458807,
+          "exception_who": null
+        },
+        {
+          "game_idx": 154,
+          "left_first": true,
+          "seed": 20612943,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 35,
+          "wall_time": 0.007120292051695287,
+          "exception_who": null
+        },
+        {
+          "game_idx": 155,
+          "left_first": false,
+          "seed": 20916577,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 48,
+          "wall_time": 0.008292875019833446,
+          "exception_who": null
+        },
+        {
+          "game_idx": 156,
+          "left_first": true,
+          "seed": 20915002,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 40,
+          "wall_time": 0.0081128750462085,
+          "exception_who": null
+        },
+        {
+          "game_idx": 157,
+          "left_first": false,
+          "seed": 20545299,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 119,
+          "wall_time": 0.025412207935005426,
+          "exception_who": null
+        },
+        {
+          "game_idx": 158,
+          "left_first": true,
+          "seed": 20848933,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 121,
+          "wall_time": 0.027102208929136395,
+          "exception_who": null
+        },
+        {
+          "game_idx": 159,
+          "left_first": false,
+          "seed": 20847358,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 73,
+          "wall_time": 0.013479374931193888,
+          "exception_who": null
+        },
+        {
+          "game_idx": 160,
+          "left_first": true,
+          "seed": 21150992,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 114,
+          "wall_time": 0.024293499998748302,
+          "exception_who": null
+        },
+        {
+          "game_idx": 161,
+          "left_first": false,
+          "seed": 21149417,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 35,
+          "wall_time": 0.007040750002488494,
+          "exception_who": null
+        },
+        {
+          "game_idx": 162,
+          "left_first": true,
+          "seed": 20779714,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 81,
+          "wall_time": 0.016896167071536183,
+          "exception_who": null
+        },
+        {
+          "game_idx": 163,
+          "left_first": false,
+          "seed": 21083348,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 72,
+          "wall_time": 0.015118333976715803,
+          "exception_who": null
+        },
+        {
+          "game_idx": 164,
+          "left_first": true,
+          "seed": 21081773,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 103,
+          "wall_time": 0.021309249917976558,
+          "exception_who": null
+        },
+        {
+          "game_idx": 165,
+          "left_first": false,
+          "seed": 20385407,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 41,
+          "wall_time": 0.007350417086854577,
+          "exception_who": null
+        },
+        {
+          "game_idx": 166,
+          "left_first": true,
+          "seed": 21015704,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 78,
+          "wall_time": 0.016129666939377785,
+          "exception_who": null
+        },
+        {
+          "game_idx": 167,
+          "left_first": false,
+          "seed": 20319338,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 47,
+          "wall_time": 0.008231290965341032,
+          "exception_who": null
+        },
+        {
+          "game_idx": 168,
+          "left_first": true,
+          "seed": 20317763,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 112,
+          "wall_time": 0.021071875002235174,
+          "exception_who": null
+        },
+        {
+          "game_idx": 169,
+          "left_first": false,
+          "seed": 20764572,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 140,
+          "wall_time": 0.029870082973502576,
+          "exception_who": null
+        },
+        {
+          "game_idx": 170,
+          "left_first": true,
+          "seed": 21251694,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 74,
+          "wall_time": 0.016777207958512008,
+          "exception_who": null
+        },
+        {
+          "game_idx": 171,
+          "left_first": false,
+          "seed": 20698503,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 98,
+          "wall_time": 0.021508249919861555,
+          "exception_who": null
+        },
+        {
+          "game_idx": 172,
+          "left_first": true,
+          "seed": 20553753,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 120,
+          "wall_time": 0.025083916960284114,
+          "exception_who": null
+        },
+        {
+          "game_idx": 173,
+          "left_first": false,
+          "seed": 21000562,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 115,
+          "wall_time": 0.023964166059158742,
+          "exception_who": null
+        },
+        {
+          "game_idx": 174,
+          "left_first": true,
+          "seed": 20487684,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 61,
+          "wall_time": 0.012251249980181456,
+          "exception_who": null
+        },
+        {
+          "game_idx": 175,
+          "left_first": false,
+          "seed": 20486109,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 73,
+          "wall_time": 0.013807915966026485,
+          "exception_who": null
+        },
+        {
+          "game_idx": 176,
+          "left_first": true,
+          "seed": 20932918,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 74,
+          "wall_time": 0.015186292002908885,
+          "exception_who": null
+        },
+        {
+          "game_idx": 177,
+          "left_first": false,
+          "seed": 21236552,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 34,
+          "wall_time": 0.006345083005726337,
+          "exception_who": null
+        },
+        {
+          "game_idx": 178,
+          "left_first": true,
+          "seed": 20866849,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 75,
+          "wall_time": 0.015190292033366859,
+          "exception_who": null
+        },
+        {
+          "game_idx": 179,
+          "left_first": false,
+          "seed": 20722099,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 79,
+          "wall_time": 0.016680083004757762,
+          "exception_who": null
+        },
+        {
+          "game_idx": 180,
+          "left_first": true,
+          "seed": 21168908,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 148,
+          "wall_time": 0.0298355829436332,
+          "exception_who": null
+        },
+        {
+          "game_idx": 181,
+          "left_first": false,
+          "seed": 21167333,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 108,
+          "wall_time": 0.023880791966803372,
+          "exception_who": null
+        },
+        {
+          "game_idx": 182,
+          "left_first": true,
+          "seed": 21102839,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 127,
+          "wall_time": 0.02593329199589789,
+          "exception_who": null
+        },
+        {
+          "game_idx": 183,
+          "left_first": false,
+          "seed": 21101264,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 103,
+          "wall_time": 0.019306082976981997,
+          "exception_who": null
+        },
+        {
+          "game_idx": 185,
+          "left_first": false,
+          "seed": 20403323,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 130,
+          "wall_time": 0.025439125020056963,
+          "exception_who": null
+        },
+        {
+          "game_idx": 184,
+          "left_first": true,
+          "seed": 20404898,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 157,
+          "wall_time": 0.0330976250115782,
+          "exception_who": null
+        },
+        {
+          "game_idx": 186,
+          "left_first": true,
+          "seed": 20706957,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 97,
+          "wall_time": 0.019288416020572186,
+          "exception_who": null
+        },
+        {
+          "game_idx": 187,
+          "left_first": false,
+          "seed": 20337254,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 105,
+          "wall_time": 0.021088041947223246,
+          "exception_who": null
+        },
+        {
+          "game_idx": 188,
+          "left_first": true,
+          "seed": 20335679,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 157,
+          "wall_time": 0.03298829204868525,
+          "exception_who": null
+        },
+        {
+          "game_idx": 189,
+          "left_first": false,
+          "seed": 20639313,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 68,
+          "wall_time": 0.01174045808147639,
+          "exception_who": null
+        },
+        {
+          "game_idx": 190,
+          "left_first": true,
+          "seed": 20637738,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 52,
+          "wall_time": 0.009419166948646307,
+          "exception_who": null
+        },
+        {
+          "game_idx": 191,
+          "left_first": false,
+          "seed": 20573244,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 96,
+          "wall_time": 0.021887292037717998,
+          "exception_who": null
+        },
+        {
+          "game_idx": 192,
+          "left_first": true,
+          "seed": 20571669,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 67,
+          "wall_time": 0.012439165962859988,
+          "exception_who": null
+        },
+        {
+          "game_idx": 193,
+          "left_first": false,
+          "seed": 20875303,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 135,
+          "wall_time": 0.030801292043179274,
+          "exception_who": null
+        },
+        {
+          "game_idx": 194,
+          "left_first": true,
+          "seed": 20873728,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 28,
+          "wall_time": 0.005120958085171878,
+          "exception_who": null
+        },
+        {
+          "game_idx": 195,
+          "left_first": false,
+          "seed": 20504025,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 51,
+          "wall_time": 0.009328457992523909,
+          "exception_who": null
+        },
+        {
+          "game_idx": 196,
+          "left_first": true,
+          "seed": 20807659,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 39,
+          "wall_time": 0.00722745805978775,
+          "exception_who": null
+        },
+        {
+          "game_idx": 198,
+          "left_first": true,
+          "seed": 21109718,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 79,
+          "wall_time": 0.01348412490915507,
+          "exception_who": null
+        },
+        {
+          "game_idx": 197,
+          "left_first": false,
+          "seed": 20806084,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 65,
+          "wall_time": 0.011215792037546635,
+          "exception_who": null
+        },
+        {
+          "game_idx": 199,
+          "left_first": false,
+          "seed": 20740015,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 43,
+          "wall_time": 0.007818583981133997,
+          "exception_who": null
+        },
+        {
+          "game_idx": 200,
+          "left_first": true,
+          "seed": 21043649,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 112,
+          "wall_time": 0.027420917060226202,
+          "exception_who": null
+        },
+        {
+          "game_idx": 201,
+          "left_first": false,
+          "seed": 21042074,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 82,
+          "wall_time": 0.018467458081431687,
+          "exception_who": null
+        },
+        {
+          "game_idx": 202,
+          "left_first": true,
+          "seed": 20488883,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 103,
+          "wall_time": 0.022941790986806154,
+          "exception_who": null
+        },
+        {
+          "game_idx": 203,
+          "left_first": false,
+          "seed": 20976005,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 105,
+          "wall_time": 0.020877333008684218,
+          "exception_who": null
+        },
+        {
+          "game_idx": 204,
+          "left_first": true,
+          "seed": 20422814,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 41,
+          "wall_time": 0.007277124910615385,
+          "exception_who": null
+        },
+        {
+          "game_idx": 205,
+          "left_first": false,
+          "seed": 20278064,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 37,
+          "wall_time": 0.007079167058691382,
+          "exception_who": null
+        },
+        {
+          "game_idx": 207,
+          "left_first": false,
+          "seed": 20723298,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 80,
+          "wall_time": 0.01605762494727969,
+          "exception_who": null
+        },
+        {
+          "game_idx": 206,
+          "left_first": true,
+          "seed": 20724873,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 60,
+          "wall_time": 0.012392375036142766,
+          "exception_who": null
+        },
+        {
+          "game_idx": 208,
+          "left_first": true,
+          "seed": 20658804,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 118,
+          "wall_time": 0.026333916932344437,
+          "exception_who": null
+        },
+        {
+          "game_idx": 209,
+          "left_first": false,
+          "seed": 20657229,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 29,
+          "wall_time": 0.004839833010919392,
+          "exception_who": null
+        },
+        {
+          "game_idx": 210,
+          "left_first": true,
+          "seed": 20960863,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 76,
+          "wall_time": 0.013788625015877187,
+          "exception_who": null
+        },
+        {
+          "game_idx": 211,
+          "left_first": false,
+          "seed": 20959288,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 29,
+          "wall_time": 0.0056617920054122806,
+          "exception_who": null
+        },
+        {
+          "game_idx": 212,
+          "left_first": true,
+          "seed": 20446410,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 65,
+          "wall_time": 0.012773791910149157,
+          "exception_who": null
+        },
+        {
+          "game_idx": 214,
+          "left_first": true,
+          "seed": 20891644,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 45,
+          "wall_time": 0.008441916084848344,
+          "exception_who": null
+        },
+        {
+          "game_idx": 213,
+          "left_first": false,
+          "seed": 20893219,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 129,
+          "wall_time": 0.02726375008933246,
+          "exception_who": null
+        },
+        {
+          "game_idx": 215,
+          "left_first": false,
+          "seed": 21195278,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 107,
+          "wall_time": 0.02366341697052121,
+          "exception_who": null
+        },
+        {
+          "game_idx": 217,
+          "left_first": false,
+          "seed": 21129209,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 79,
+          "wall_time": 0.01450587494764477,
+          "exception_who": null
+        },
+        {
+          "game_idx": 216,
+          "left_first": true,
+          "seed": 20825575,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 118,
+          "wall_time": 0.024270916008390486,
+          "exception_who": null
+        },
+        {
+          "game_idx": 218,
+          "left_first": true,
+          "seed": 21127634,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 73,
+          "wall_time": 0.015501874964684248,
+          "exception_who": null
+        },
+        {
+          "game_idx": 220,
+          "left_first": true,
+          "seed": 21061565,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 108,
+          "wall_time": 0.02232104097492993,
+          "exception_who": null
+        },
+        {
+          "game_idx": 219,
+          "left_first": false,
+          "seed": 20431268,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 60,
+          "wall_time": 0.011798333027400076,
+          "exception_who": null
+        },
+        {
+          "game_idx": 221,
+          "left_first": false,
+          "seed": 21059990,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 72,
+          "wall_time": 0.014125125017017126,
+          "exception_who": null
+        },
+        {
+          "game_idx": 222,
+          "left_first": true,
+          "seed": 20363624,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 79,
+          "wall_time": 0.013863833039067686,
+          "exception_who": null
+        },
+        {
+          "game_idx": 223,
+          "left_first": false,
+          "seed": 20362049,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 33,
+          "wall_time": 0.005845458013936877,
+          "exception_who": null
+        },
+        {
+          "game_idx": 224,
+          "left_first": true,
+          "seed": 20297555,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 118,
+          "wall_time": 0.02582783403340727,
+          "exception_who": null
+        },
+        {
+          "game_idx": 226,
+          "left_first": true,
+          "seed": 20742789,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 97,
+          "wall_time": 0.020172249991446733,
+          "exception_who": null
+        },
+        {
+          "game_idx": 225,
+          "left_first": false,
+          "seed": 20295980,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 32,
+          "wall_time": 0.005741499946452677,
+          "exception_who": null
+        },
+        {
+          "game_idx": 227,
+          "left_first": false,
+          "seed": 20598039,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 47,
+          "wall_time": 0.008860667003318667,
+          "exception_who": null
+        },
+        {
+          "game_idx": 229,
+          "left_first": false,
+          "seed": 20531970,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 111,
+          "wall_time": 0.023372250027023256,
+          "exception_who": null
+        },
+        {
+          "game_idx": 228,
+          "left_first": true,
+          "seed": 21228336,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 54,
+          "wall_time": 0.010663999943062663,
+          "exception_who": null
+        },
+        {
+          "game_idx": 230,
+          "left_first": true,
+          "seed": 20978779,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 40,
+          "wall_time": 0.007038375013507903,
+          "exception_who": null
+        },
+        {
+          "game_idx": 231,
+          "left_first": false,
+          "seed": 20834029,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 117,
+          "wall_time": 0.023776749963872135,
+          "exception_who": null
+        },
+        {
+          "game_idx": 232,
+          "left_first": true,
+          "seed": 20280838,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 105,
+          "wall_time": 0.022213791962713003,
+          "exception_who": null
+        },
+        {
+          "game_idx": 233,
+          "left_first": false,
+          "seed": 20911135,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 72,
+          "wall_time": 0.015145916026085615,
+          "exception_who": null
+        },
+        {
+          "game_idx": 234,
+          "left_first": true,
+          "seed": 20766385,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 79,
+          "wall_time": 0.01786429202184081,
+          "exception_who": null
+        },
+        {
+          "game_idx": 235,
+          "left_first": false,
+          "seed": 21213194,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 100,
+          "wall_time": 0.02187000005505979,
+          "exception_who": null
+        },
+        {
+          "game_idx": 236,
+          "left_first": true,
+          "seed": 20516828,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 144,
+          "wall_time": 0.02971258305478841,
+          "exception_who": null
+        },
+        {
+          "game_idx": 238,
+          "left_first": true,
+          "seed": 21002375,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 119,
+          "wall_time": 0.023272665916010737,
+          "exception_who": null
+        },
+        {
+          "game_idx": 237,
+          "left_first": false,
+          "seed": 21147125,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 102,
+          "wall_time": 0.019957292010076344,
+          "exception_who": null
+        },
+        {
+          "game_idx": 239,
+          "left_first": false,
+          "seed": 20449184,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 105,
+          "wall_time": 0.021243458962999284,
+          "exception_who": null
+        },
+        {
+          "game_idx": 241,
+          "left_first": false,
+          "seed": 20383115,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 109,
+          "wall_time": 0.02021574997343123,
+          "exception_who": null
+        },
+        {
+          "game_idx": 240,
+          "left_first": true,
+          "seed": 20447609,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 175,
+          "wall_time": 0.03828987502492964,
+          "exception_who": null
+        },
+        {
+          "game_idx": 242,
+          "left_first": true,
+          "seed": 20381540,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 129,
+          "wall_time": 0.027341249980963767,
+          "exception_who": null
+        },
+        {
+          "game_idx": 243,
+          "left_first": false,
+          "seed": 20685174,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 71,
+          "wall_time": 0.01425374997779727,
+          "exception_who": null
+        },
+        {
+          "game_idx": 244,
+          "left_first": true,
+          "seed": 20683599,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 128,
+          "wall_time": 0.028642792021855712,
+          "exception_who": null
+        },
+        {
+          "game_idx": 245,
+          "left_first": false,
+          "seed": 20619105,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 114,
+          "wall_time": 0.02379166695754975,
+          "exception_who": null
+        },
+        {
+          "game_idx": 246,
+          "left_first": true,
+          "seed": 20617530,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 91,
+          "wall_time": 0.01688895805273205,
+          "exception_who": null
+        },
+        {
+          "game_idx": 247,
+          "left_first": false,
+          "seed": 20615955,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 116,
+          "wall_time": 0.022567500011064112,
+          "exception_who": null
+        },
+        {
+          "game_idx": 248,
+          "left_first": true,
+          "seed": 20919589,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 119,
+          "wall_time": 0.024696917040273547,
+          "exception_who": null
+        },
+        {
+          "game_idx": 249,
+          "left_first": false,
+          "seed": 20549886,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 109,
+          "wall_time": 0.02203224995173514,
+          "exception_who": null
+        },
+        {
+          "game_idx": 250,
+          "left_first": true,
+          "seed": 20853520,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 142,
+          "wall_time": 0.030029291985556483,
+          "exception_who": null
+        },
+        {
+          "game_idx": 251,
+          "left_first": false,
+          "seed": 20851945,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 101,
+          "wall_time": 0.021843249909579754,
+          "exception_who": null
+        },
+        {
+          "game_idx": 252,
+          "left_first": true,
+          "seed": 20298754,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 84,
+          "wall_time": 0.017110000015236437,
+          "exception_who": null
+        },
+        {
+          "game_idx": 253,
+          "left_first": false,
+          "seed": 20785876,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 92,
+          "wall_time": 0.019591207965277135,
+          "exception_who": null
+        },
+        {
+          "game_idx": 255,
+          "left_first": false,
+          "seed": 21087935,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 78,
+          "wall_time": 0.01516029192134738,
+          "exception_who": null
+        },
+        {
+          "game_idx": 254,
+          "left_first": true,
+          "seed": 20784301,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 52,
+          "wall_time": 0.00930845900438726,
+          "exception_who": null
+        },
+        {
+          "game_idx": 256,
+          "left_first": true,
+          "seed": 21086360,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 60,
+          "wall_time": 0.012395375058986247,
+          "exception_who": null
+        },
+        {
+          "game_idx": 258,
+          "left_first": true,
+          "seed": 21020291,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 35,
+          "wall_time": 0.007030709064565599,
+          "exception_who": null
+        },
+        {
+          "game_idx": 257,
+          "left_first": false,
+          "seed": 20389994,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 96,
+          "wall_time": 0.01857454190030694,
+          "exception_who": null
+        },
+        {
+          "game_idx": 259,
+          "left_first": false,
+          "seed": 20467100,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 27,
+          "wall_time": 0.005237833014689386,
+          "exception_who": null
+        },
+        {
+          "game_idx": 260,
+          "left_first": true,
+          "seed": 20322350,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 81,
+          "wall_time": 0.017004666035063565,
+          "exception_who": null
+        },
+        {
+          "game_idx": 261,
+          "left_first": false,
+          "seed": 20769159,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 57,
+          "wall_time": 0.011858084006235003,
+          "exception_who": null
+        },
+        {
+          "game_idx": 262,
+          "left_first": true,
+          "seed": 21256281,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 90,
+          "wall_time": 0.016921541886404157,
+          "exception_who": null
+        },
+        {
+          "game_idx": 263,
+          "left_first": false,
+          "seed": 20703090,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 56,
+          "wall_time": 0.01334512501489371,
+          "exception_who": null
+        },
+        {
+          "game_idx": 264,
+          "left_first": true,
+          "seed": 20558340,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 81,
+          "wall_time": 0.018114875070750713,
+          "exception_who": null
+        },
+        {
+          "game_idx": 265,
+          "left_first": false,
+          "seed": 21005149,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 110,
+          "wall_time": 0.02226258406881243,
+          "exception_who": null
+        },
+        {
+          "game_idx": 266,
+          "left_first": true,
+          "seed": 20635446,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 98,
+          "wall_time": 0.020745042013004422,
+          "exception_who": null
+        },
+        {
+          "game_idx": 267,
+          "left_first": false,
+          "seed": 20939080,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 50,
+          "wall_time": 0.010133625008165836,
+          "exception_who": null
+        },
+        {
+          "game_idx": 268,
+          "left_first": true,
+          "seed": 20937505,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 62,
+          "wall_time": 0.011586125008761883,
+          "exception_who": null
+        },
+        {
+          "game_idx": 269,
+          "left_first": false,
+          "seed": 21241139,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 94,
+          "wall_time": 0.021646791021339595,
+          "exception_who": null
+        },
+        {
+          "game_idx": 270,
+          "left_first": true,
+          "seed": 20871436,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 142,
+          "wall_time": 0.029224750003777444,
+          "exception_who": null
+        },
+        {
+          "game_idx": 271,
+          "left_first": false,
+          "seed": 20869861,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 130,
+          "wall_time": 0.04192941600922495,
+          "exception_who": null
+        },
+        {
+          "game_idx": 272,
+          "left_first": true,
+          "seed": 21173495,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 109,
+          "wall_time": 0.021429041982628405,
+          "exception_who": null
+        },
+        {
+          "game_idx": 273,
+          "left_first": false,
+          "seed": 21171920,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 98,
+          "wall_time": 0.01890175009611994,
+          "exception_who": null
+        },
+        {
+          "game_idx": 274,
+          "left_first": true,
+          "seed": 21107426,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 29,
+          "wall_time": 0.005662749987095594,
+          "exception_who": null
+        },
+        {
+          "game_idx": 275,
+          "left_first": false,
+          "seed": 21105851,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 81,
+          "wall_time": 0.016991666052490473,
+          "exception_who": null
+        },
+        {
+          "game_idx": 276,
+          "left_first": true,
+          "seed": 20409485,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 51,
+          "wall_time": 0.010999541031196713,
+          "exception_who": null
+        },
+        {
+          "game_idx": 277,
+          "left_first": false,
+          "seed": 20407910,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 41,
+          "wall_time": 0.007322666002437472,
+          "exception_who": null
+        },
+        {
+          "game_idx": 278,
+          "left_first": true,
+          "seed": 20854719,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 53,
+          "wall_time": 0.009665124933235347,
+          "exception_who": null
+        },
+        {
+          "game_idx": 279,
+          "left_first": false,
+          "seed": 20341841,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 127,
+          "wall_time": 0.029379375046119094,
+          "exception_who": null
+        },
+        {
+          "game_idx": 280,
+          "left_first": true,
+          "seed": 20340266,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 123,
+          "wall_time": 0.027578625013120472,
+          "exception_who": null
+        },
+        {
+          "game_idx": 281,
+          "left_first": false,
+          "seed": 20643900,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 76,
+          "wall_time": 0.016177707933820784,
+          "exception_who": null
+        },
+        {
+          "game_idx": 282,
+          "left_first": true,
+          "seed": 20642325,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 49,
+          "wall_time": 0.008710082969628274,
+          "exception_who": null
+        },
+        {
+          "game_idx": 283,
+          "left_first": false,
+          "seed": 20577831,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 35,
+          "wall_time": 0.006418999982997775,
+          "exception_who": null
+        },
+        {
+          "game_idx": 284,
+          "left_first": true,
+          "seed": 20576256,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 35,
+          "wall_time": 0.007144208066165447,
+          "exception_who": null
+        },
+        {
+          "game_idx": 285,
+          "left_first": false,
+          "seed": 21023065,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 44,
+          "wall_time": 0.009506791946478188,
+          "exception_who": null
+        },
+        {
+          "game_idx": 287,
+          "left_first": false,
+          "seed": 20508612,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 68,
+          "wall_time": 0.013593583018518984,
+          "exception_who": null
+        },
+        {
+          "game_idx": 286,
+          "left_first": true,
+          "seed": 20878315,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 54,
+          "wall_time": 0.010713167022913694,
+          "exception_who": null
+        },
+        {
+          "game_idx": 288,
+          "left_first": true,
+          "seed": 20812246,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 134,
+          "wall_time": 0.029654291924089193,
+          "exception_who": null
+        },
+        {
+          "game_idx": 290,
+          "left_first": true,
+          "seed": 21114305,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 102,
+          "wall_time": 0.022805250016972423,
+          "exception_who": null
+        },
+        {
+          "game_idx": 289,
+          "left_first": false,
+          "seed": 21259055,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 92,
+          "wall_time": 0.019928707974031568,
+          "exception_who": null
+        },
+        {
+          "game_idx": 291,
+          "left_first": false,
+          "seed": 20744602,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 63,
+          "wall_time": 0.012011209037154913,
+          "exception_who": null
+        },
+        {
+          "game_idx": 292,
+          "left_first": true,
+          "seed": 21191411,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 131,
+          "wall_time": 0.02919650007970631,
+          "exception_who": null
+        },
+        {
+          "game_idx": 294,
+          "left_first": true,
+          "seed": 20493470,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 47,
+          "wall_time": 0.00959720800165087,
+          "exception_who": null
+        },
+        {
+          "game_idx": 293,
+          "left_first": false,
+          "seed": 20495045,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 135,
+          "wall_time": 0.029351458069868386,
+          "exception_who": null
+        },
+        {
+          "game_idx": 295,
+          "left_first": false,
+          "seed": 20980592,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 74,
+          "wall_time": 0.015058832941576838,
+          "exception_who": null
+        },
+        {
+          "game_idx": 296,
+          "left_first": true,
+          "seed": 20427401,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 57,
+          "wall_time": 0.01098374999128282,
+          "exception_who": null
+        },
+        {
+          "game_idx": 297,
+          "left_first": false,
+          "seed": 20425826,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 80,
+          "wall_time": 0.015897042001597583,
+          "exception_who": null
+        },
+        {
+          "game_idx": 298,
+          "left_first": true,
+          "seed": 20729460,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 101,
+          "wall_time": 0.020308042061515152,
+          "exception_who": null
+        },
+        {
+          "game_idx": 299,
+          "left_first": false,
+          "seed": 20359757,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 73,
+          "wall_time": 0.013277458027005196,
+          "exception_who": null
+        }
+      ]
+    },
+    "v032_crustle_clone__vs__v009a_crustle": {
+      "left": "v032_crustle_clone",
+      "right": "v009a_crustle",
+      "games": [
+        {
+          "game_idx": 0,
+          "left_first": true,
+          "seed": 20634144,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 103,
+          "wall_time": 0.21157495793886483,
+          "exception_who": null
+        },
+        {
+          "game_idx": 1,
+          "left_first": false,
+          "seed": 20937778,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 121,
+          "wall_time": 0.21649699995759875,
+          "exception_who": null
+        },
+        {
+          "game_idx": 2,
+          "left_first": true,
+          "seed": 20936203,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 110,
+          "wall_time": 0.023846333962865174,
+          "exception_who": null
+        },
+        {
+          "game_idx": 3,
+          "left_first": false,
+          "seed": 20383012,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 89,
+          "wall_time": 0.024264374980702996,
+          "exception_who": null
+        },
+        {
+          "game_idx": 4,
+          "left_first": true,
+          "seed": 20870134,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 110,
+          "wall_time": 0.02377625007648021,
+          "exception_who": null
+        },
+        {
+          "game_idx": 5,
+          "left_first": false,
+          "seed": 20316943,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 127,
+          "wall_time": 0.02785987500101328,
+          "exception_who": null
+        },
+        {
+          "game_idx": 6,
+          "left_first": true,
+          "seed": 21172193,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 115,
+          "wall_time": 0.025376874953508377,
+          "exception_who": null
+        },
+        {
+          "game_idx": 7,
+          "left_first": false,
+          "seed": 20619002,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 103,
+          "wall_time": 0.022461250075139105,
+          "exception_who": null
+        },
+        {
+          "game_idx": 8,
+          "left_first": true,
+          "seed": 20617427,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 94,
+          "wall_time": 0.019602540996856987,
+          "exception_who": null
+        },
+        {
+          "game_idx": 9,
+          "left_first": false,
+          "seed": 20552933,
+          "status": "ok",
+          "outcome": "draw",
+          "moves": 46,
+          "wall_time": 0.00871891702990979,
+          "exception_who": null
+        },
+        {
+          "game_idx": 10,
+          "left_first": true,
+          "seed": 20551358,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 102,
+          "wall_time": 0.02156379201915115,
+          "exception_who": null
+        },
+        {
+          "game_idx": 11,
+          "left_first": false,
+          "seed": 20854992,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 110,
+          "wall_time": 0.024073833017610013,
+          "exception_who": null
+        },
+        {
+          "game_idx": 13,
+          "left_first": false,
+          "seed": 20340539,
+          "status": "ok",
+          "outcome": "draw",
+          "moves": 57,
+          "wall_time": 0.010590165969915688,
+          "exception_who": null
+        },
+        {
+          "game_idx": 12,
+          "left_first": true,
+          "seed": 20853417,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 80,
+          "wall_time": 0.016836542054079473,
+          "exception_who": null
+        },
+        {
+          "game_idx": 14,
+          "left_first": true,
+          "seed": 20787348,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 122,
+          "wall_time": 0.026731125079095364,
+          "exception_who": null
+        },
+        {
+          "game_idx": 15,
+          "left_first": false,
+          "seed": 20785773,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 106,
+          "wall_time": 0.022207874921150506,
+          "exception_who": null
+        },
+        {
+          "game_idx": 16,
+          "left_first": true,
+          "seed": 21089407,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 116,
+          "wall_time": 0.02593999996315688,
+          "exception_who": null
+        },
+        {
+          "game_idx": 17,
+          "left_first": false,
+          "seed": 20719704,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 62,
+          "wall_time": 0.012304042000323534,
+          "exception_who": null
+        },
+        {
+          "game_idx": 18,
+          "left_first": true,
+          "seed": 21023338,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 113,
+          "wall_time": 0.022536041913554072,
+          "exception_who": null
+        },
+        {
+          "game_idx": 19,
+          "left_first": false,
+          "seed": 21021763,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 121,
+          "wall_time": 0.027949417009949684,
+          "exception_who": null
+        },
+        {
+          "game_idx": 20,
+          "left_first": true,
+          "seed": 20325397,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 106,
+          "wall_time": 0.022801124956458807,
+          "exception_who": null
+        },
+        {
+          "game_idx": 21,
+          "left_first": false,
+          "seed": 20955694,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 93,
+          "wall_time": 0.018884291988797486,
+          "exception_who": null
+        },
+        {
+          "game_idx": 22,
+          "left_first": true,
+          "seed": 20954119,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 122,
+          "wall_time": 0.030173499952070415,
+          "exception_who": null
+        },
+        {
+          "game_idx": 23,
+          "left_first": false,
+          "seed": 21257753,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 103,
+          "wall_time": 0.021261667017824948,
+          "exception_who": null
+        },
+        {
+          "game_idx": 24,
+          "left_first": true,
+          "seed": 21256178,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 107,
+          "wall_time": 0.0218193749897182,
+          "exception_who": null
+        },
+        {
+          "game_idx": 25,
+          "left_first": false,
+          "seed": 21191684,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 52,
+          "wall_time": 0.010665124980732799,
+          "exception_who": null
+        },
+        {
+          "game_idx": 26,
+          "left_first": true,
+          "seed": 21190109,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 90,
+          "wall_time": 0.01896754198241979,
+          "exception_who": null
+        },
+        {
+          "game_idx": 27,
+          "left_first": false,
+          "seed": 20636918,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 148,
+          "wall_time": 0.03576520807109773,
+          "exception_who": null
+        },
+        {
+          "game_idx": 28,
+          "left_first": true,
+          "seed": 20492168,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 58,
+          "wall_time": 0.012250208063051105,
+          "exception_who": null
+        },
+        {
+          "game_idx": 29,
+          "left_first": false,
+          "seed": 21122465,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 94,
+          "wall_time": 0.019482458010315895,
+          "exception_who": null
+        },
+        {
+          "game_idx": 30,
+          "left_first": true,
+          "seed": 20426099,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 104,
+          "wall_time": 0.022518916986882687,
+          "exception_who": null
+        },
+        {
+          "game_idx": 31,
+          "left_first": false,
+          "seed": 20872908,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 127,
+          "wall_time": 0.032549207913689315,
+          "exception_who": null
+        },
+        {
+          "game_idx": 32,
+          "left_first": true,
+          "seed": 20728158,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 32,
+          "wall_time": 0.006109707988798618,
+          "exception_who": null
+        },
+        {
+          "game_idx": 33,
+          "left_first": false,
+          "seed": 21174967,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 27,
+          "wall_time": 0.005264749983325601,
+          "exception_who": null
+        },
+        {
+          "game_idx": 34,
+          "left_first": true,
+          "seed": 20805264,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 145,
+          "wall_time": 0.03476520802360028,
+          "exception_who": null
+        },
+        {
+          "game_idx": 35,
+          "left_first": false,
+          "seed": 20660514,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 80,
+          "wall_time": 0.01603454095311463,
+          "exception_who": null
+        },
+        {
+          "game_idx": 36,
+          "left_first": true,
+          "seed": 21107323,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 109,
+          "wall_time": 0.024368875077925622,
+          "exception_who": null
+        },
+        {
+          "game_idx": 37,
+          "left_first": false,
+          "seed": 20410957,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 86,
+          "wall_time": 0.017062791041098535,
+          "exception_who": null
+        },
+        {
+          "game_idx": 38,
+          "left_first": true,
+          "seed": 21041254,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 125,
+          "wall_time": 0.025951000046916306,
+          "exception_who": null
+        },
+        {
+          "game_idx": 39,
+          "left_first": false,
+          "seed": 20896504,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 98,
+          "wall_time": 0.02259833295829594,
+          "exception_who": null
+        },
+        {
+          "game_idx": 40,
+          "left_first": true,
+          "seed": 20343313,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 128,
+          "wall_time": 0.028385916957631707,
+          "exception_who": null
+        },
+        {
+          "game_idx": 41,
+          "left_first": false,
+          "seed": 20341738,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 114,
+          "wall_time": 0.025173582951538265,
+          "exception_who": null
+        },
+        {
+          "game_idx": 42,
+          "left_first": true,
+          "seed": 20277244,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 71,
+          "wall_time": 0.013874750002287328,
+          "exception_who": null
+        },
+        {
+          "game_idx": 43,
+          "left_first": false,
+          "seed": 20275669,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 148,
+          "wall_time": 0.03539083304349333,
+          "exception_who": null
+        },
+        {
+          "game_idx": 44,
+          "left_first": true,
+          "seed": 20579303,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 101,
+          "wall_time": 0.020393084036186337,
+          "exception_who": null
+        },
+        {
+          "game_idx": 45,
+          "left_first": false,
+          "seed": 20577728,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 134,
+          "wall_time": 0.029424624983221292,
+          "exception_who": null
+        },
+        {
+          "game_idx": 46,
+          "left_first": true,
+          "seed": 20513234,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 78,
+          "wall_time": 0.015217124950140715,
+          "exception_who": null
+        },
+        {
+          "game_idx": 47,
+          "left_first": false,
+          "seed": 20511659,
+          "status": "ok",
+          "outcome": "draw",
+          "moves": 65,
+          "wall_time": 0.012767666019499302,
+          "exception_who": null
+        },
+        {
+          "game_idx": 48,
+          "left_first": true,
+          "seed": 20510084,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 86,
+          "wall_time": 0.016746583045460284,
+          "exception_who": null
+        },
+        {
+          "game_idx": 49,
+          "left_first": false,
+          "seed": 20813718,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 120,
+          "wall_time": 0.027795208035968244,
+          "exception_who": null
+        },
+        {
+          "game_idx": 50,
+          "left_first": true,
+          "seed": 20444015,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 64,
+          "wall_time": 0.013338541961275041,
+          "exception_who": null
+        },
+        {
+          "game_idx": 51,
+          "left_first": false,
+          "seed": 20747649,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 138,
+          "wall_time": 0.030180249945260584,
+          "exception_who": null
+        },
+        {
+          "game_idx": 52,
+          "left_first": true,
+          "seed": 20746074,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 105,
+          "wall_time": 0.02360200008843094,
+          "exception_who": null
+        },
+        {
+          "game_idx": 53,
+          "left_first": false,
+          "seed": 21192883,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 114,
+          "wall_time": 0.028752958052791655,
+          "exception_who": null
+        },
+        {
+          "game_idx": 54,
+          "left_first": true,
+          "seed": 21048133,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 113,
+          "wall_time": 0.02550783404149115,
+          "exception_who": null
+        },
+        {
+          "game_idx": 55,
+          "left_first": false,
+          "seed": 20678430,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 119,
+          "wall_time": 0.027145333006046712,
+          "exception_who": null
+        },
+        {
+          "game_idx": 56,
+          "left_first": true,
+          "seed": 20982064,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 77,
+          "wall_time": 0.015831666067242622,
+          "exception_who": null
+        },
+        {
+          "game_idx": 57,
+          "left_first": false,
+          "seed": 20428873,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 74,
+          "wall_time": 0.015015957993455231,
+          "exception_who": null
+        },
+        {
+          "game_idx": 59,
+          "left_first": false,
+          "seed": 20914420,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 88,
+          "wall_time": 0.017281792010180652,
+          "exception_who": null
+        },
+        {
+          "game_idx": 58,
+          "left_first": true,
+          "seed": 20284123,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 126,
+          "wall_time": 0.030060541001148522,
+          "exception_who": null
+        },
+        {
+          "game_idx": 60,
+          "left_first": true,
+          "seed": 20361229,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 72,
+          "wall_time": 0.015078417025506496,
+          "exception_who": null
+        },
+        {
+          "game_idx": 61,
+          "left_first": false,
+          "seed": 21216479,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 128,
+          "wall_time": 0.02781225007493049,
+          "exception_who": null
+        },
+        {
+          "game_idx": 62,
+          "left_first": true,
+          "seed": 20663288,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 93,
+          "wall_time": 0.020071000093594193,
+          "exception_who": null
+        },
+        {
+          "game_idx": 64,
+          "left_first": true,
+          "seed": 20597219,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 92,
+          "wall_time": 0.01905354205518961,
+          "exception_who": null
+        },
+        {
+          "game_idx": 63,
+          "left_first": false,
+          "seed": 21150410,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 107,
+          "wall_time": 0.024488292052410543,
+          "exception_who": null
+        },
+        {
+          "game_idx": 65,
+          "left_first": false,
+          "seed": 20452469,
+          "status": "ok",
+          "outcome": "draw",
+          "moves": 105,
+          "wall_time": 0.02281175006646663,
+          "exception_who": null
+        },
+        {
+          "game_idx": 66,
+          "left_first": true,
+          "seed": 20899278,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 77,
+          "wall_time": 0.015765167074277997,
+          "exception_who": null
+        },
+        {
+          "game_idx": 67,
+          "left_first": false,
+          "seed": 20529575,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 107,
+          "wall_time": 0.02265941700898111,
+          "exception_who": null
+        },
+        {
+          "game_idx": 68,
+          "left_first": true,
+          "seed": 20833209,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 107,
+          "wall_time": 0.022113458020612597,
+          "exception_who": null
+        },
+        {
+          "game_idx": 69,
+          "left_first": false,
+          "seed": 20831634,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 115,
+          "wall_time": 0.025816792040131986,
+          "exception_who": null
+        },
+        {
+          "game_idx": 70,
+          "left_first": true,
+          "seed": 21135268,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 99,
+          "wall_time": 0.02134912507608533,
+          "exception_who": null
+        },
+        {
+          "game_idx": 71,
+          "left_first": false,
+          "seed": 20765565,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 109,
+          "wall_time": 0.023601666907779872,
+          "exception_who": null
+        },
+        {
+          "game_idx": 72,
+          "left_first": true,
+          "seed": 20763990,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 68,
+          "wall_time": 0.013585458043962717,
+          "exception_who": null
+        },
+        {
+          "game_idx": 73,
+          "left_first": false,
+          "seed": 21067624,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 133,
+          "wall_time": 0.029986250097863376,
+          "exception_who": null
+        },
+        {
+          "game_idx": 74,
+          "left_first": true,
+          "seed": 21066049,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 109,
+          "wall_time": 0.0257332919863984,
+          "exception_who": null
+        },
+        {
+          "game_idx": 75,
+          "left_first": false,
+          "seed": 21001555,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 114,
+          "wall_time": 0.02495841693598777,
+          "exception_who": null
+        },
+        {
+          "game_idx": 76,
+          "left_first": true,
+          "seed": 20999980,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 121,
+          "wall_time": 0.025341040920466185,
+          "exception_who": null
+        },
+        {
+          "game_idx": 77,
+          "left_first": false,
+          "seed": 20303614,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 87,
+          "wall_time": 0.0184370840433985,
+          "exception_who": null
+        },
+        {
+          "game_idx": 78,
+          "left_first": true,
+          "seed": 20302039,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 97,
+          "wall_time": 0.02035904093645513,
+          "exception_who": null
+        },
+        {
+          "game_idx": 79,
+          "left_first": false,
+          "seed": 20748848,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 97,
+          "wall_time": 0.02529566700104624,
+          "exception_who": null
+        },
+        {
+          "game_idx": 80,
+          "left_first": true,
+          "seed": 21235970,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 86,
+          "wall_time": 0.017737457994371653,
+          "exception_who": null
+        },
+        {
+          "game_idx": 81,
+          "left_first": false,
+          "seed": 21234395,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 116,
+          "wall_time": 0.02399679203517735,
+          "exception_who": null
+        },
+        {
+          "game_idx": 82,
+          "left_first": true,
+          "seed": 20538029,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 93,
+          "wall_time": 0.02099470898974687,
+          "exception_who": null
+        },
+        {
+          "game_idx": 83,
+          "left_first": false,
+          "seed": 20536454,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 38,
+          "wall_time": 0.007906249957159162,
+          "exception_who": null
+        },
+        {
+          "game_idx": 84,
+          "left_first": true,
+          "seed": 20471960,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 119,
+          "wall_time": 0.03060829092282802,
+          "exception_who": null
+        },
+        {
+          "game_idx": 85,
+          "left_first": false,
+          "seed": 20470385,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 104,
+          "wall_time": 0.02213966695126146,
+          "exception_who": null
+        },
+        {
+          "game_idx": 86,
+          "left_first": true,
+          "seed": 20917194,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 112,
+          "wall_time": 0.02389483293518424,
+          "exception_who": null
+        },
+        {
+          "game_idx": 87,
+          "left_first": false,
+          "seed": 20772444,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 110,
+          "wall_time": 0.02533700002823025,
+          "exception_who": null
+        },
+        {
+          "game_idx": 88,
+          "left_first": true,
+          "seed": 20851125,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 85,
+          "wall_time": 0.01673358294647187,
+          "exception_who": null
+        },
+        {
+          "game_idx": 89,
+          "left_first": false,
+          "seed": 20706375,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 58,
+          "wall_time": 0.011959999916143715,
+          "exception_who": null
+        },
+        {
+          "game_idx": 91,
+          "left_first": false,
+          "seed": 21008434,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 114,
+          "wall_time": 0.023857958032749593,
+          "exception_who": null
+        },
+        {
+          "game_idx": 90,
+          "left_first": true,
+          "seed": 21153184,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 80,
+          "wall_time": 0.01678649999666959,
+          "exception_who": null
+        },
+        {
+          "game_idx": 92,
+          "left_first": true,
+          "seed": 20638731,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 53,
+          "wall_time": 0.010512791923247278,
+          "exception_who": null
+        },
+        {
+          "game_idx": 93,
+          "left_first": false,
+          "seed": 21085540,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 89,
+          "wall_time": 0.019275999977253377,
+          "exception_who": null
+        },
+        {
+          "game_idx": 94,
+          "left_first": true,
+          "seed": 20389174,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 98,
+          "wall_time": 0.020576959010213614,
+          "exception_who": null
+        },
+        {
+          "game_idx": 95,
+          "left_first": false,
+          "seed": 20387599,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 106,
+          "wall_time": 0.02310516603756696,
+          "exception_who": null
+        },
+        {
+          "game_idx": 96,
+          "left_first": true,
+          "seed": 20874721,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 118,
+          "wall_time": 0.026642999961040914,
+          "exception_who": null
+        },
+        {
+          "game_idx": 97,
+          "left_first": false,
+          "seed": 20321530,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 70,
+          "wall_time": 0.014150957926176488,
+          "exception_who": null
+        },
+        {
+          "game_idx": 98,
+          "left_first": true,
+          "seed": 20319955,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 110,
+          "wall_time": 0.02329195791389793,
+          "exception_who": null
+        },
+        {
+          "game_idx": 99,
+          "left_first": false,
+          "seed": 20623589,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 104,
+          "wall_time": 0.02251058304682374,
+          "exception_who": null
+        },
+        {
+          "game_idx": 100,
+          "left_first": true,
+          "seed": 21253886,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 97,
+          "wall_time": 0.018811582936905324,
+          "exception_who": null
+        },
+        {
+          "game_idx": 101,
+          "left_first": false,
+          "seed": 20557520,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 111,
+          "wall_time": 0.02434087498113513,
+          "exception_who": null
+        },
+        {
+          "game_idx": 102,
+          "left_first": true,
+          "seed": 20555945,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 99,
+          "wall_time": 0.020951083046384156,
+          "exception_who": null
+        },
+        {
+          "game_idx": 104,
+          "left_first": true,
+          "seed": 20858004,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 104,
+          "wall_time": 0.023643041029572487,
+          "exception_who": null
+        },
+        {
+          "game_idx": 103,
+          "left_first": false,
+          "seed": 20859579,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 69,
+          "wall_time": 0.014070208999328315,
+          "exception_who": null
+        },
+        {
+          "game_idx": 105,
+          "left_first": false,
+          "seed": 20488301,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 91,
+          "wall_time": 0.020869542029686272,
+          "exception_who": null
+        },
+        {
+          "game_idx": 106,
+          "left_first": true,
+          "seed": 20791935,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 80,
+          "wall_time": 0.017334916978143156,
+          "exception_who": null
+        },
+        {
+          "game_idx": 108,
+          "left_first": true,
+          "seed": 21093994,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 104,
+          "wall_time": 0.02196945797186345,
+          "exception_who": null
+        },
+        {
+          "game_idx": 107,
+          "left_first": false,
+          "seed": 20790360,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 108,
+          "wall_time": 0.025132416980341077,
+          "exception_who": null
+        },
+        {
+          "game_idx": 109,
+          "left_first": false,
+          "seed": 20724291,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 121,
+          "wall_time": 0.030665500089526176,
+          "exception_who": null
+        },
+        {
+          "game_idx": 111,
+          "left_first": false,
+          "seed": 21026350,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 54,
+          "wall_time": 0.010647041024640203,
+          "exception_who": null
+        },
+        {
+          "game_idx": 110,
+          "left_first": true,
+          "seed": 21027925,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 101,
+          "wall_time": 0.021180209005251527,
+          "exception_who": null
+        },
+        {
+          "game_idx": 112,
+          "left_first": true,
+          "seed": 20473159,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 154,
+          "wall_time": 0.036854209029115736,
+          "exception_who": null
+        },
+        {
+          "game_idx": 113,
+          "left_first": false,
+          "seed": 20960281,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 34,
+          "wall_time": 0.006669625057838857,
+          "exception_who": null
+        },
+        {
+          "game_idx": 114,
+          "left_first": true,
+          "seed": 20958706,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 108,
+          "wall_time": 0.023123207967728376,
+          "exception_who": null
+        },
+        {
+          "game_idx": 115,
+          "left_first": false,
+          "seed": 20262340,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 76,
+          "wall_time": 0.01607666607014835,
+          "exception_who": null
+        },
+        {
+          "game_idx": 116,
+          "left_first": true,
+          "seed": 20709149,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 97,
+          "wall_time": 0.01942337502259761,
+          "exception_who": null
+        },
+        {
+          "game_idx": 118,
+          "left_first": true,
+          "seed": 21194696,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 102,
+          "wall_time": 0.02208200003951788,
+          "exception_who": null
+        },
+        {
+          "game_idx": 117,
+          "left_first": false,
+          "seed": 20339446,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 98,
+          "wall_time": 0.02181279205251485,
+          "exception_who": null
+        },
+        {
+          "game_idx": 119,
+          "left_first": false,
+          "seed": 20641505,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 115,
+          "wall_time": 0.02521420898847282,
+          "exception_who": null
+        },
+        {
+          "game_idx": 120,
+          "left_first": true,
+          "seed": 20496755,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 74,
+          "wall_time": 0.015339375007897615,
+          "exception_who": null
+        },
+        {
+          "game_idx": 121,
+          "left_first": false,
+          "seed": 20575436,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 120,
+          "wall_time": 0.026483916910365224,
+          "exception_who": null
+        },
+        {
+          "game_idx": 122,
+          "left_first": true,
+          "seed": 20430686,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 73,
+          "wall_time": 0.014657750027254224,
+          "exception_who": null
+        },
+        {
+          "game_idx": 123,
+          "left_first": false,
+          "seed": 20877495,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 66,
+          "wall_time": 0.012915833038277924,
+          "exception_who": null
+        },
+        {
+          "game_idx": 124,
+          "left_first": true,
+          "seed": 20875920,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 111,
+          "wall_time": 0.02407195803243667,
+          "exception_who": null
+        },
+        {
+          "game_idx": 125,
+          "left_first": false,
+          "seed": 21179554,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 125,
+          "wall_time": 0.02797595807351172,
+          "exception_who": null
+        },
+        {
+          "game_idx": 126,
+          "left_first": true,
+          "seed": 20809851,
+          "status": "ok",
+          "outcome": "draw",
+          "moves": 41,
+          "wall_time": 0.008037082967348397,
+          "exception_who": null
+        },
+        {
+          "game_idx": 127,
+          "left_first": false,
+          "seed": 21113485,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 102,
+          "wall_time": 0.023156667011789978,
+          "exception_who": null
+        },
+        {
+          "game_idx": 129,
+          "left_first": false,
+          "seed": 20415544,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 73,
+          "wall_time": 0.014363166992552578,
+          "exception_who": null
+        },
+        {
+          "game_idx": 128,
+          "left_first": true,
+          "seed": 21111910,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 129,
+          "wall_time": 0.02689550002105534,
+          "exception_who": null
+        },
+        {
+          "game_idx": 130,
+          "left_first": true,
+          "seed": 21045841,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 129,
+          "wall_time": 0.02891491597983986,
+          "exception_who": null
+        },
+        {
+          "game_idx": 131,
+          "left_first": false,
+          "seed": 21044266,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 100,
+          "wall_time": 0.021744375000707805,
+          "exception_who": null
+        },
+        {
+          "game_idx": 132,
+          "left_first": true,
+          "seed": 20347900,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 98,
+          "wall_time": 0.02336616604588926,
+          "exception_who": null
+        },
+        {
+          "game_idx": 133,
+          "left_first": false,
+          "seed": 20346325,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 114,
+          "wall_time": 0.023761666961945593,
+          "exception_who": null
+        },
+        {
+          "game_idx": 134,
+          "left_first": true,
+          "seed": 20281831,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 111,
+          "wall_time": 0.022838959004729986,
+          "exception_who": null
+        },
+        {
+          "game_idx": 135,
+          "left_first": false,
+          "seed": 20280256,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 123,
+          "wall_time": 0.026548416004516184,
+          "exception_who": null
+        },
+        {
+          "game_idx": 136,
+          "left_first": true,
+          "seed": 20583890,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 131,
+          "wall_time": 0.032700750045478344,
+          "exception_who": null
+        },
+        {
+          "game_idx": 137,
+          "left_first": false,
+          "seed": 20582315,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 148,
+          "wall_time": 0.03247245796956122,
+          "exception_who": null
+        },
+        {
+          "game_idx": 138,
+          "left_first": true,
+          "seed": 21212612,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 105,
+          "wall_time": 0.02336258301511407,
+          "exception_who": null
+        },
+        {
+          "game_idx": 139,
+          "left_first": false,
+          "seed": 20516246,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 133,
+          "wall_time": 0.0293377919588238,
+          "exception_who": null
+        },
+        {
+          "game_idx": 140,
+          "left_first": true,
+          "seed": 20514671,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 109,
+          "wall_time": 0.023389750043861568,
+          "exception_who": null
+        },
+        {
+          "game_idx": 141,
+          "left_first": false,
+          "seed": 20818305,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 103,
+          "wall_time": 0.024507082998752594,
+          "exception_who": null
+        },
+        {
+          "game_idx": 142,
+          "left_first": true,
+          "seed": 20448602,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 115,
+          "wall_time": 0.02731004194356501,
+          "exception_who": null
+        },
+        {
+          "game_idx": 143,
+          "left_first": false,
+          "seed": 20895411,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 80,
+          "wall_time": 0.01802562503144145,
+          "exception_who": null
+        },
+        {
+          "game_idx": 144,
+          "left_first": true,
+          "seed": 20750661,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 84,
+          "wall_time": 0.018302290933206677,
+          "exception_who": null
+        },
+        {
+          "game_idx": 145,
+          "left_first": false,
+          "seed": 21197470,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 107,
+          "wall_time": 0.022732292069122195,
+          "exception_who": null
+        },
+        {
+          "game_idx": 146,
+          "left_first": true,
+          "seed": 20684592,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 76,
+          "wall_time": 0.01564841705840081,
+          "exception_who": null
+        },
+        {
+          "game_idx": 147,
+          "left_first": false,
+          "seed": 21131401,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 101,
+          "wall_time": 0.02126620803028345,
+          "exception_who": null
+        },
+        {
+          "game_idx": 148,
+          "left_first": true,
+          "seed": 20986651,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 59,
+          "wall_time": 0.011793083045631647,
+          "exception_who": null
+        },
+        {
+          "game_idx": 149,
+          "left_first": false,
+          "seed": 20433460,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 78,
+          "wall_time": 0.016535750008188188,
+          "exception_who": null
+        },
+        {
+          "game_idx": 150,
+          "left_first": true,
+          "seed": 20431885,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 98,
+          "wall_time": 0.021389708039350808,
+          "exception_who": null
+        },
+        {
+          "game_idx": 152,
+          "left_first": true,
+          "seed": 20365816,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 118,
+          "wall_time": 0.024131667101755738,
+          "exception_who": null
+        },
+        {
+          "game_idx": 151,
+          "left_first": false,
+          "seed": 20919007,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 105,
+          "wall_time": 0.02217891695909202,
+          "exception_who": null
+        },
+        {
+          "game_idx": 153,
+          "left_first": false,
+          "seed": 20669450,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 97,
+          "wall_time": 0.020300167030654848,
+          "exception_who": null
+        },
+        {
+          "game_idx": 154,
+          "left_first": true,
+          "seed": 20667875,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 107,
+          "wall_time": 0.022802457911893725,
+          "exception_who": null
+        },
+        {
+          "game_idx": 155,
+          "left_first": false,
+          "seed": 21154997,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 116,
+          "wall_time": 0.02510687499307096,
+          "exception_who": null
+        },
+        {
+          "game_idx": 156,
+          "left_first": true,
+          "seed": 20601806,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 129,
+          "wall_time": 0.02990754204802215,
+          "exception_who": null
+        },
+        {
+          "game_idx": 157,
+          "left_first": false,
+          "seed": 20600231,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 126,
+          "wall_time": 0.02890679193660617,
+          "exception_who": null
+        },
+        {
+          "game_idx": 158,
+          "left_first": true,
+          "seed": 20903865,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 128,
+          "wall_time": 0.026619583019055426,
+          "exception_who": null
+        },
+        {
+          "game_idx": 159,
+          "left_first": false,
+          "seed": 20534162,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 102,
+          "wall_time": 0.020998458960093558,
+          "exception_who": null
+        },
+        {
+          "game_idx": 160,
+          "left_first": true,
+          "seed": 20837796,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 47,
+          "wall_time": 0.009272333001717925,
+          "exception_who": null
+        },
+        {
+          "game_idx": 161,
+          "left_first": false,
+          "seed": 20836221,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 67,
+          "wall_time": 0.013794375001452863,
+          "exception_who": null
+        },
+        {
+          "game_idx": 162,
+          "left_first": true,
+          "seed": 20834646,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 130,
+          "wall_time": 0.02951204194687307,
+          "exception_who": null
+        },
+        {
+          "game_idx": 163,
+          "left_first": false,
+          "seed": 20770152,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 45,
+          "wall_time": 0.008387999958358705,
+          "exception_who": null
+        },
+        {
+          "game_idx": 164,
+          "left_first": true,
+          "seed": 20768577,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 122,
+          "wall_time": 0.027563125011511147,
+          "exception_who": null
+        },
+        {
+          "game_idx": 165,
+          "left_first": false,
+          "seed": 21072211,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 92,
+          "wall_time": 0.021543000009842217,
+          "exception_who": null
+        },
+        {
+          "game_idx": 166,
+          "left_first": true,
+          "seed": 21070636,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 107,
+          "wall_time": 0.022426582989282906,
+          "exception_who": null
+        },
+        {
+          "game_idx": 167,
+          "left_first": false,
+          "seed": 21006142,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 106,
+          "wall_time": 0.0231190420454368,
+          "exception_who": null
+        },
+        {
+          "game_idx": 168,
+          "left_first": true,
+          "seed": 21004567,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 92,
+          "wall_time": 0.019772291998378932,
+          "exception_who": null
+        },
+        {
+          "game_idx": 170,
+          "left_first": true,
+          "seed": 20306626,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 94,
+          "wall_time": 0.02262670802883804,
+          "exception_who": null
+        },
+        {
+          "game_idx": 169,
+          "left_first": false,
+          "seed": 20451376,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 153,
+          "wall_time": 0.03516774997115135,
+          "exception_who": null
+        },
+        {
+          "game_idx": 171,
+          "left_first": false,
+          "seed": 20936923,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 127,
+          "wall_time": 0.03230512503068894,
+          "exception_who": null
+        },
+        {
+          "game_idx": 172,
+          "left_first": true,
+          "seed": 21240557,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 81,
+          "wall_time": 0.016408791998401284,
+          "exception_who": null
+        },
+        {
+          "game_idx": 173,
+          "left_first": false,
+          "seed": 21238982,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 121,
+          "wall_time": 0.02944412489887327,
+          "exception_who": null
+        },
+        {
+          "game_idx": 174,
+          "left_first": true,
+          "seed": 20542616,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 119,
+          "wall_time": 0.026106207980774343,
+          "exception_who": null
+        },
+        {
+          "game_idx": 175,
+          "left_first": false,
+          "seed": 20989425,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 74,
+          "wall_time": 0.01425733300857246,
+          "exception_who": null
+        },
+        {
+          "game_idx": 176,
+          "left_first": true,
+          "seed": 20619722,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 93,
+          "wall_time": 0.01994641695637256,
+          "exception_who": null
+        },
+        {
+          "game_idx": 177,
+          "left_first": false,
+          "seed": 20474972,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 76,
+          "wall_time": 0.014920584042556584,
+          "exception_who": null
+        },
+        {
+          "game_idx": 178,
+          "left_first": true,
+          "seed": 20921781,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 99,
+          "wall_time": 0.02197108301334083,
+          "exception_who": null
+        },
+        {
+          "game_idx": 179,
+          "left_first": false,
+          "seed": 20777031,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 95,
+          "wall_time": 0.020216667093336582,
+          "exception_who": null
+        },
+        {
+          "game_idx": 180,
+          "left_first": true,
+          "seed": 20855712,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 50,
+          "wall_time": 0.009432791965082288,
+          "exception_who": null
+        },
+        {
+          "game_idx": 181,
+          "left_first": false,
+          "seed": 20710962,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 102,
+          "wall_time": 0.0200128749711439,
+          "exception_who": null
+        },
+        {
+          "game_idx": 182,
+          "left_first": true,
+          "seed": 21157771,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 45,
+          "wall_time": 0.0084780000615865,
+          "exception_who": null
+        },
+        {
+          "game_idx": 183,
+          "left_first": false,
+          "seed": 21156196,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 27,
+          "wall_time": 0.005421458976343274,
+          "exception_who": null
+        },
+        {
+          "game_idx": 184,
+          "left_first": true,
+          "seed": 21091702,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 140,
+          "wall_time": 0.03282916697207838,
+          "exception_who": null
+        },
+        {
+          "game_idx": 185,
+          "left_first": false,
+          "seed": 21090127,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 96,
+          "wall_time": 0.020752832992002368,
+          "exception_who": null
+        },
+        {
+          "game_idx": 187,
+          "left_first": false,
+          "seed": 20392186,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 93,
+          "wall_time": 0.019349875045008957,
+          "exception_who": null
+        },
+        {
+          "game_idx": 186,
+          "left_first": true,
+          "seed": 20393761,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 109,
+          "wall_time": 0.02337170799728483,
+          "exception_who": null
+        },
+        {
+          "game_idx": 188,
+          "left_first": true,
+          "seed": 21022483,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 78,
+          "wall_time": 0.01560479192994535,
+          "exception_who": null
+        },
+        {
+          "game_idx": 189,
+          "left_first": false,
+          "seed": 20326117,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 118,
+          "wall_time": 0.025000291992910206,
+          "exception_who": null
+        },
+        {
+          "game_idx": 190,
+          "left_first": true,
+          "seed": 20324542,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 37,
+          "wall_time": 0.006954125012271106,
+          "exception_who": null
+        },
+        {
+          "game_idx": 191,
+          "left_first": false,
+          "seed": 20628176,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 92,
+          "wall_time": 0.01963854196947068,
+          "exception_who": null
+        },
+        {
+          "game_idx": 192,
+          "left_first": true,
+          "seed": 21258473,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 91,
+          "wall_time": 0.0176685000769794,
+          "exception_who": null
+        },
+        {
+          "game_idx": 194,
+          "left_first": true,
+          "seed": 20560532,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 111,
+          "wall_time": 0.024096666951663792,
+          "exception_who": null
+        },
+        {
+          "game_idx": 193,
+          "left_first": false,
+          "seed": 20562107,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 85,
+          "wall_time": 0.016635874984785914,
+          "exception_who": null
+        },
+        {
+          "game_idx": 195,
+          "left_first": false,
+          "seed": 20558957,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 112,
+          "wall_time": 0.024058750015683472,
+          "exception_who": null
+        },
+        {
+          "game_idx": 197,
+          "left_first": false,
+          "seed": 20492888,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 103,
+          "wall_time": 0.02393625001423061,
+          "exception_who": null
+        },
+        {
+          "game_idx": 196,
+          "left_first": true,
+          "seed": 20862591,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 124,
+          "wall_time": 0.029246791964396834,
+          "exception_who": null
+        },
+        {
+          "game_idx": 198,
+          "left_first": true,
+          "seed": 20796522,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 97,
+          "wall_time": 0.02218458300922066,
+          "exception_who": null
+        },
+        {
+          "game_idx": 199,
+          "left_first": false,
+          "seed": 20794947,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 87,
+          "wall_time": 0.019320584018714726,
+          "exception_who": null
+        },
+        {
+          "game_idx": 200,
+          "left_first": true,
+          "seed": 21098581,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 62,
+          "wall_time": 0.013041792088188231,
+          "exception_who": null
+        },
+        {
+          "game_idx": 201,
+          "left_first": false,
+          "seed": 20728878,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 144,
+          "wall_time": 0.035054166917689145,
+          "exception_who": null
+        },
+        {
+          "game_idx": 202,
+          "left_first": true,
+          "seed": 21175687,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 55,
+          "wall_time": 0.011049791937693954,
+          "exception_who": null
+        },
+        {
+          "game_idx": 203,
+          "left_first": false,
+          "seed": 21030937,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 114,
+          "wall_time": 0.024097415967844427,
+          "exception_who": null
+        },
+        {
+          "game_idx": 204,
+          "left_first": true,
+          "seed": 20477746,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 107,
+          "wall_time": 0.026581750018522143,
+          "exception_who": null
+        },
+        {
+          "game_idx": 205,
+          "left_first": false,
+          "seed": 20964868,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 122,
+          "wall_time": 0.028428624966181815,
+          "exception_who": null
+        },
+        {
+          "game_idx": 206,
+          "left_first": true,
+          "seed": 20411677,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 89,
+          "wall_time": 0.01990637497510761,
+          "exception_who": null
+        },
+        {
+          "game_idx": 207,
+          "left_first": false,
+          "seed": 20410102,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 43,
+          "wall_time": 0.008875875035300851,
+          "exception_who": null
+        },
+        {
+          "game_idx": 208,
+          "left_first": true,
+          "seed": 20713736,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 102,
+          "wall_time": 0.02153516700491309,
+          "exception_who": null
+        },
+        {
+          "game_idx": 209,
+          "left_first": false,
+          "seed": 20344033,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 96,
+          "wall_time": 0.021774958935566247,
+          "exception_who": null
+        },
+        {
+          "game_idx": 210,
+          "left_first": true,
+          "seed": 21199283,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 97,
+          "wall_time": 0.020189750008285046,
+          "exception_who": null
+        },
+        {
+          "game_idx": 211,
+          "left_first": false,
+          "seed": 20646092,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 119,
+          "wall_time": 0.027823957963846624,
+          "exception_who": null
+        },
+        {
+          "game_idx": 212,
+          "left_first": true,
+          "seed": 20949726,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 98,
+          "wall_time": 0.021457958035171032,
+          "exception_who": null
+        },
+        {
+          "game_idx": 213,
+          "left_first": false,
+          "seed": 20580023,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 82,
+          "wall_time": 0.016931500053033233,
+          "exception_who": null
+        },
+        {
+          "game_idx": 214,
+          "left_first": true,
+          "seed": 20578448,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 117,
+          "wall_time": 0.026135749998502433,
+          "exception_who": null
+        },
+        {
+          "game_idx": 215,
+          "left_first": false,
+          "seed": 20882082,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 103,
+          "wall_time": 0.0222557500237599,
+          "exception_who": null
+        },
+        {
+          "game_idx": 216,
+          "left_first": true,
+          "seed": 20880507,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 82,
+          "wall_time": 0.017489999998360872,
+          "exception_who": null
+        },
+        {
+          "game_idx": 217,
+          "left_first": false,
+          "seed": 20816013,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 99,
+          "wall_time": 0.02041141700465232,
+          "exception_who": null
+        },
+        {
+          "game_idx": 219,
+          "left_first": false,
+          "seed": 21118072,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 53,
+          "wall_time": 0.009900499950163066,
+          "exception_who": null
+        },
+        {
+          "game_idx": 218,
+          "left_first": true,
+          "seed": 20814438,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 66,
+          "wall_time": 0.013401292031630874,
+          "exception_who": null
+        },
+        {
+          "game_idx": 220,
+          "left_first": true,
+          "seed": 21116497,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 102,
+          "wall_time": 0.021670624963007867,
+          "exception_who": null
+        },
+        {
+          "game_idx": 221,
+          "left_first": false,
+          "seed": 21114922,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 118,
+          "wall_time": 0.026495708036236465,
+          "exception_who": null
+        },
+        {
+          "game_idx": 222,
+          "left_first": true,
+          "seed": 21050428,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 104,
+          "wall_time": 0.023995458032004535,
+          "exception_who": null
+        },
+        {
+          "game_idx": 223,
+          "left_first": false,
+          "seed": 21048853,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 93,
+          "wall_time": 0.02083237492479384,
+          "exception_who": null
+        },
+        {
+          "game_idx": 224,
+          "left_first": true,
+          "seed": 20352487,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 70,
+          "wall_time": 0.014266250072978437,
+          "exception_who": null
+        },
+        {
+          "game_idx": 225,
+          "left_first": false,
+          "seed": 20350912,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 94,
+          "wall_time": 0.01913949998561293,
+          "exception_who": null
+        },
+        {
+          "game_idx": 226,
+          "left_first": true,
+          "seed": 20286418,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 97,
+          "wall_time": 0.0224972500000149,
+          "exception_who": null
+        },
+        {
+          "game_idx": 227,
+          "left_first": false,
+          "seed": 20284843,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 95,
+          "wall_time": 0.020619916962459683,
+          "exception_who": null
+        },
+        {
+          "game_idx": 228,
+          "left_first": true,
+          "seed": 20731652,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 32,
+          "wall_time": 0.006567874923348427,
+          "exception_who": null
+        },
+        {
+          "game_idx": 229,
+          "left_first": false,
+          "seed": 20586902,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 62,
+          "wall_time": 0.012498541036620736,
+          "exception_who": null
+        },
+        {
+          "game_idx": 230,
+          "left_first": true,
+          "seed": 21217199,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 103,
+          "wall_time": 0.024503084016032517,
+          "exception_who": null
+        },
+        {
+          "game_idx": 231,
+          "left_first": false,
+          "seed": 20520833,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 111,
+          "wall_time": 0.02321470796596259,
+          "exception_who": null
+        },
+        {
+          "game_idx": 232,
+          "left_first": true,
+          "seed": 20519258,
+          "status": "ok",
+          "outcome": "draw",
+          "moves": 100,
+          "wall_time": 0.020898375078104436,
+          "exception_who": null
+        },
+        {
+          "game_idx": 234,
+          "left_first": true,
+          "seed": 20453189,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 101,
+          "wall_time": 0.021988834021613002,
+          "exception_who": null
+        },
+        {
+          "game_idx": 233,
+          "left_first": false,
+          "seed": 20966067,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 65,
+          "wall_time": 0.01448683300986886,
+          "exception_who": null
+        },
+        {
+          "game_idx": 235,
+          "left_first": false,
+          "seed": 20899998,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 118,
+          "wall_time": 0.026823249994777143,
+          "exception_who": null
+        },
+        {
+          "game_idx": 236,
+          "left_first": true,
+          "seed": 20755248,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 104,
+          "wall_time": 0.02306341694202274,
+          "exception_who": null
+        },
+        {
+          "game_idx": 237,
+          "left_first": false,
+          "seed": 21202057,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 96,
+          "wall_time": 0.020361125003546476,
+          "exception_who": null
+        },
+        {
+          "game_idx": 238,
+          "left_first": true,
+          "seed": 20689179,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 107,
+          "wall_time": 0.02227387495804578,
+          "exception_who": null
+        },
+        {
+          "game_idx": 239,
+          "left_first": false,
+          "seed": 21135988,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 106,
+          "wall_time": 0.023686790955252945,
+          "exception_who": null
+        },
+        {
+          "game_idx": 240,
+          "left_first": true,
+          "seed": 21134413,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 39,
+          "wall_time": 0.007877083029597998,
+          "exception_who": null
+        },
+        {
+          "game_idx": 241,
+          "left_first": false,
+          "seed": 20438047,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 75,
+          "wall_time": 0.01529224996920675,
+          "exception_who": null
+        },
+        {
+          "game_idx": 242,
+          "left_first": true,
+          "seed": 21068344,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 96,
+          "wall_time": 0.020301917102187872,
+          "exception_who": null
+        },
+        {
+          "game_idx": 243,
+          "left_first": false,
+          "seed": 20371978,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 117,
+          "wall_time": 0.02561608306132257,
+          "exception_who": null
+        },
+        {
+          "game_idx": 244,
+          "left_first": true,
+          "seed": 20370403,
+          "status": "ok",
+          "outcome": "draw",
+          "moves": 38,
+          "wall_time": 0.007168082986027002,
+          "exception_who": null
+        },
+        {
+          "game_idx": 245,
+          "left_first": false,
+          "seed": 20674037,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 106,
+          "wall_time": 0.023473083041608334,
+          "exception_who": null
+        },
+        {
+          "game_idx": 246,
+          "left_first": true,
+          "seed": 20672462,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 118,
+          "wall_time": 0.025192165980115533,
+          "exception_who": null
+        },
+        {
+          "game_idx": 247,
+          "left_first": false,
+          "seed": 20302759,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 127,
+          "wall_time": 0.028130250051617622,
+          "exception_who": null
+        },
+        {
+          "game_idx": 248,
+          "left_first": true,
+          "seed": 20606393,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 86,
+          "wall_time": 0.01934745896141976,
+          "exception_who": null
+        },
+        {
+          "game_idx": 249,
+          "left_first": false,
+          "seed": 20604818,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 107,
+          "wall_time": 0.022524792002514005,
+          "exception_who": null
+        },
+        {
+          "game_idx": 251,
+          "left_first": false,
+          "seed": 20538749,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 85,
+          "wall_time": 0.016540999989956617,
+          "exception_who": null
+        },
+        {
+          "game_idx": 250,
+          "left_first": true,
+          "seed": 20908452,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 71,
+          "wall_time": 0.0145369169767946,
+          "exception_who": null
+        },
+        {
+          "game_idx": 252,
+          "left_first": true,
+          "seed": 20537174,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 121,
+          "wall_time": 0.027599332970567048,
+          "exception_who": null
+        },
+        {
+          "game_idx": 253,
+          "left_first": false,
+          "seed": 20840808,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 119,
+          "wall_time": 0.028406583005562425,
+          "exception_who": null
+        },
+        {
+          "game_idx": 254,
+          "left_first": true,
+          "seed": 20287617,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 99,
+          "wall_time": 0.021858167019672692,
+          "exception_who": null
+        },
+        {
+          "game_idx": 255,
+          "left_first": false,
+          "seed": 20774739,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 127,
+          "wall_time": 0.028894542017951608,
+          "exception_who": null
+        },
+        {
+          "game_idx": 256,
+          "left_first": true,
+          "seed": 20773164,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 58,
+          "wall_time": 0.012174749979749322,
+          "exception_who": null
+        },
+        {
+          "game_idx": 257,
+          "left_first": false,
+          "seed": 21076798,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 109,
+          "wall_time": 0.023423584061674774,
+          "exception_who": null
+        },
+        {
+          "game_idx": 258,
+          "left_first": true,
+          "seed": 21075223,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 120,
+          "wall_time": 0.02805083303246647,
+          "exception_who": null
+        },
+        {
+          "game_idx": 260,
+          "left_first": true,
+          "seed": 21009154,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 104,
+          "wall_time": 0.021984957973472774,
+          "exception_who": null
+        },
+        {
+          "game_idx": 259,
+          "left_first": false,
+          "seed": 21153904,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 103,
+          "wall_time": 0.024561833939515054,
+          "exception_who": null
+        },
+        {
+          "game_idx": 261,
+          "left_first": false,
+          "seed": 20455963,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 128,
+          "wall_time": 0.027033291989937425,
+          "exception_who": null
+        },
+        {
+          "game_idx": 262,
+          "left_first": true,
+          "seed": 20311213,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 86,
+          "wall_time": 0.018194542033597827,
+          "exception_who": null
+        },
+        {
+          "game_idx": 263,
+          "left_first": false,
+          "seed": 20941510,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 118,
+          "wall_time": 0.028205999988131225,
+          "exception_who": null
+        },
+        {
+          "game_idx": 264,
+          "left_first": true,
+          "seed": 21245144,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 84,
+          "wall_time": 0.017469583079218864,
+          "exception_who": null
+        },
+        {
+          "game_idx": 266,
+          "left_first": true,
+          "seed": 20690378,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 70,
+          "wall_time": 0.014332124963402748,
+          "exception_who": null
+        },
+        {
+          "game_idx": 265,
+          "left_first": false,
+          "seed": 20691953,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 112,
+          "wall_time": 0.025941792060621083,
+          "exception_who": null
+        },
+        {
+          "game_idx": 267,
+          "left_first": false,
+          "seed": 20994012,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 94,
+          "wall_time": 0.019049666938371956,
+          "exception_who": null
+        },
+        {
+          "game_idx": 268,
+          "left_first": true,
+          "seed": 20624309,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 121,
+          "wall_time": 0.02778379200026393,
+          "exception_who": null
+        },
+        {
+          "game_idx": 269,
+          "left_first": false,
+          "seed": 20927943,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 119,
+          "wall_time": 0.026085250079631805,
+          "exception_who": null
+        },
+        {
+          "game_idx": 270,
+          "left_first": true,
+          "seed": 20926368,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 85,
+          "wall_time": 0.01769591704942286,
+          "exception_who": null
+        },
+        {
+          "game_idx": 271,
+          "left_first": false,
+          "seed": 21230002,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 124,
+          "wall_time": 0.04444316599983722,
+          "exception_who": null
+        },
+        {
+          "game_idx": 272,
+          "left_first": true,
+          "seed": 20860299,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 103,
+          "wall_time": 0.023015374899841845,
+          "exception_who": null
+        },
+        {
+          "game_idx": 273,
+          "left_first": false,
+          "seed": 20858724,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 53,
+          "wall_time": 0.010805999976582825,
+          "exception_who": null
+        },
+        {
+          "game_idx": 274,
+          "left_first": true,
+          "seed": 21162358,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 111,
+          "wall_time": 0.025160874938592315,
+          "exception_who": null
+        },
+        {
+          "game_idx": 276,
+          "left_first": true,
+          "seed": 21096289,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 55,
+          "wall_time": 0.011469708057120442,
+          "exception_who": null
+        },
+        {
+          "game_idx": 275,
+          "left_first": false,
+          "seed": 21160783,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 54,
+          "wall_time": 0.010781083023175597,
+          "exception_who": null
+        },
+        {
+          "game_idx": 277,
+          "left_first": false,
+          "seed": 21094714,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 51,
+          "wall_time": 0.010174999944865704,
+          "exception_who": null
+        },
+        {
+          "game_idx": 279,
+          "left_first": false,
+          "seed": 20396773,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 68,
+          "wall_time": 0.013580000028014183,
+          "exception_who": null
+        },
+        {
+          "game_idx": 278,
+          "left_first": true,
+          "seed": 21093139,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 76,
+          "wall_time": 0.015956791932694614,
+          "exception_who": null
+        },
+        {
+          "game_idx": 280,
+          "left_first": true,
+          "seed": 21027070,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 73,
+          "wall_time": 0.05296854197513312,
+          "exception_who": null
+        },
+        {
+          "game_idx": 281,
+          "left_first": false,
+          "seed": 20330704,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 75,
+          "wall_time": 0.01928899995982647,
+          "exception_who": null
+        },
+        {
+          "game_idx": 282,
+          "left_first": true,
+          "seed": 20329129,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 90,
+          "wall_time": 0.01895941700786352,
+          "exception_who": null
+        },
+        {
+          "game_idx": 283,
+          "left_first": false,
+          "seed": 20632763,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 120,
+          "wall_time": 0.028441500035114586,
+          "exception_who": null
+        },
+        {
+          "game_idx": 284,
+          "left_first": true,
+          "seed": 20263060,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 121,
+          "wall_time": 0.028966208919882774,
+          "exception_who": null
+        },
+        {
+          "game_idx": 285,
+          "left_first": false,
+          "seed": 20261485,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 152,
+          "wall_time": 0.03522949991747737,
+          "exception_who": null
+        },
+        {
+          "game_idx": 286,
+          "left_first": true,
+          "seed": 20565119,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 88,
+          "wall_time": 0.019908374990336597,
+          "exception_who": null
+        },
+        {
+          "game_idx": 287,
+          "left_first": false,
+          "seed": 21011928,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 27,
+          "wall_time": 0.005349416984245181,
+          "exception_who": null
+        },
+        {
+          "game_idx": 288,
+          "left_first": true,
+          "seed": 20499050,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 120,
+          "wall_time": 0.028827207977883518,
+          "exception_who": null
+        },
+        {
+          "game_idx": 289,
+          "left_first": false,
+          "seed": 20497475,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 116,
+          "wall_time": 0.026180666987784207,
+          "exception_who": null
+        },
+        {
+          "game_idx": 290,
+          "left_first": true,
+          "seed": 20801109,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 79,
+          "wall_time": 0.015735624940134585,
+          "exception_who": null
+        },
+        {
+          "game_idx": 291,
+          "left_first": false,
+          "seed": 21247918,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 112,
+          "wall_time": 0.025957916979677975,
+          "exception_who": null
+        },
+        {
+          "game_idx": 292,
+          "left_first": true,
+          "seed": 21246343,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 121,
+          "wall_time": 0.02970299997832626,
+          "exception_who": null
+        },
+        {
+          "game_idx": 293,
+          "left_first": false,
+          "seed": 20733465,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 107,
+          "wall_time": 0.021397874923422933,
+          "exception_who": null
+        },
+        {
+          "game_idx": 294,
+          "left_first": true,
+          "seed": 21180274,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 169,
+          "wall_time": 0.03921245795208961,
+          "exception_who": null
+        },
+        {
+          "game_idx": 295,
+          "left_first": false,
+          "seed": 21035524,
+          "status": "ok",
+          "outcome": "left_win",
+          "moves": 78,
+          "wall_time": 0.01673583302181214,
+          "exception_who": null
+        },
+        {
+          "game_idx": 296,
+          "left_first": true,
+          "seed": 20482333,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 118,
+          "wall_time": 0.0274629999184981,
+          "exception_who": null
+        },
+        {
+          "game_idx": 297,
+          "left_first": false,
+          "seed": 21112630,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 88,
+          "wall_time": 0.018349000019952655,
+          "exception_who": null
+        },
+        {
+          "game_idx": 298,
+          "left_first": true,
+          "seed": 20416264,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 115,
+          "wall_time": 0.02518854197114706,
+          "exception_who": null
+        },
+        {
+          "game_idx": 299,
+          "left_first": false,
+          "seed": 20414689,
+          "status": "ok",
+          "outcome": "right_win",
+          "moves": 108,
+          "wall_time": 0.02182562497910112,
+          "exception_who": null
+        }
+      ]
+    }
+  },
+  "_candidate_dirs": {
+    "v032_crustle_clone": "/Users/max/kaggle-pokemon-tcg-ai-battle/submissions/v032_crustle_clone"
+  }
 }
